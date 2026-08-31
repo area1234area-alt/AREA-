@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>スタッフ募集｜まずはLINEで気軽に話を聞いてみませんか？</title>
+<meta name="description" content="未経験歓迎・シフト自由のお仕事です。まずは話を聞くだけでもOK。LINEで気軽に問い合わせできます。">
+
+<!-- ▼OGP設定（画像URLは差し替えてください）▼ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="スタッフ募集｜まずはLINEで気軽に話を聞いてみませんか？">
+<meta property="og:description" content="未経験歓迎・シフト自由のお仕事です。まずは話を聞くだけでもOK。">
+<meta property="og:image" content="https://example.com/ogp-image.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- ▲OGP設定ここまで▲ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* ===== カラートークン ===== */
+    --ink:        #1F2B24;   /* 本文・見出し用の深い墨緑 */
+    --ink-soft:   #56655B;   /* 補助テキスト */
+    --paper:      #F2F5EC;   /* 外側の背景（薄い若草紙） */
+    --chat-bg:    #E9F0E5;   /* チャットスレッドの背景（LINEの背景を意識） */
+    --bubble:     #FFFFFF;   /* 相手（アカウント）側の吹き出し */
+    --bubble-border: #E4E9DF;
+    --line-green: #06C755;   /* LINE公式グリーン（機能色として使用） */
+    --line-green-dark: #05a848;
+    --user-bubble: #DFF3E5;  /* 自分側（ユーザー）の吹き出し */
+    --user-text:  #16532C;
+    --coral:      #FF8961;   /* あたたかみのあるアクセント */
+    --coral-soft: #FFE7DC;
+    --card-bg:    #FBFAF5;
+    --shadow: 0 2px 10px rgba(31,43,36,0.06);
+
+    --font-display: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+    --font-body: "Noto Sans JP", sans-serif;
+
+    --lp-width: 460px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* デスクトップ幅ではスマホサイズのコンテンツを中央に */
+  .app{
+    max-width: var(--lp-width);
+    margin: 0 auto;
+    background: var(--chat-bg);
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 60px rgba(31,43,36,0.08);
+  }
+  @media (min-width: 560px){
+    body{ background: linear-gradient(180deg, #EFF2E7, #E7EBDE); padding: 32px 0 0; }
+    .app{ border-radius: 28px; overflow: hidden; box-shadow: 0 24px 60px rgba(31,43,36,0.16); }
+  }
+
+  a{ color: inherit; }
+  img{ max-width:100%; display:block; }
+
+  /* ===== 固定ヘッダー：チャットのヘッダーを模した部分 ===== */
+  .chat-header{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--bubble);
+    border-bottom: 1px solid var(--bubble-border);
+  }
+  .chat-header__icon{
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, var(--line-green), #0aa04c);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family: var(--font-display); font-weight:700; font-size:16px;
+    flex-shrink:0;
+  }
+  .chat-header__name{ font-weight:700; font-size:15px; }
+  .chat-header__status{
+    font-size:12px; color: var(--ink-soft);
+    display:flex; align-items:center; gap:5px;
+  }
+  .dot{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--line-green);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.35; }
+  }
+  @media (prefers-reduced-motion: reduce){ .dot{ animation:none; } }
+
+  /* ===== チャットスレッド全体 ===== */
+  .thread{ padding: 18px 16px 140px; }
+
+  .date-chip{
+    text-align:center;
+    margin: 4px 0 18px;
+  }
+  .date-chip span{
+    display:inline-block;
+    font-size:12px;
+    color: var(--ink-soft);
+    background: rgba(255,255,255,0.7);
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  .row{
+    display:flex;
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  .row.is-visible{ opacity:1; transform: translateY(0); }
+  .row--from{ justify-content:flex-start; }
+  .row--user{ justify-content:flex-end; }
+
+  .bubble{
+    background: var(--bubble);
+    border: 1px solid var(--bubble-border);
+    border-radius: 4px 18px 18px 18px;
+    padding: 16px 16px;
+    max-width: 84%;
+    box-shadow: var(--shadow);
+  }
+  .bubble--user{
+    background: var(--user-bubble);
+    color: var(--user-text);
+    border: none;
+    border-radius: 18px 4px 18px 18px;
+    max-width: 78%;
+  }
+  .bubble p{ margin: 0 0 10px; font-size:15px; }
+  .bubble p:last-child{ margin-bottom:0; }
+
+  /* ===== 見出し ===== */
+  .headline{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.55;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .hero-catch{
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 1.5;
+    margin: 4px 0 10px;
+  }
+  .lead{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  /* ===== タグ／チップ ===== */
+  .chip-row{
+    display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 16px;
+  }
+  .chip{
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: var(--coral-soft);
+    color: #B24C1E;
+  }
+
+  /* ===== CTAボタン（吹き出し内のインライン用） ===== */
+  .cta-pill{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    padding: 15px 18px;
+    background: var(--line-green);
+    color:#fff;
+    text-decoration:none;
+    font-family: var(--font-display);
+    font-weight:700;
+    font-size:15px;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(6,199,85,0.35);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .cta-pill:active{ transform: scale(0.97); }
+  .cta-pill svg{ flex-shrink:0; }
+  .cta-pill--ghost{
+    background: #fff;
+    color: var(--line-green-dark);
+    border: 1.5px solid var(--line-green);
+    box-shadow:none;
+  }
+
+  /* ===== リスト ===== */
+  .check-list{ list-style:none; margin:0; padding:0; }
+  .check-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:14.5px;
+    margin-bottom: 10px;
+  }
+  .check-list li:last-child{ margin-bottom:0; }
+  .check-list .mark{
+    flex-shrink:0;
+    width:18px; height:18px;
+    border-radius:50%;
+    background: var(--line-green);
+    color:#fff;
+    font-size:11px;
+    display:flex; align-items:center; justify-content:center;
+    margin-top:2px;
+  }
+
+  /* ===== メリットカード ===== */
+  .merit-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top: 4px;
+  }
+  .merit-card{
+    background: var(--card-bg);
+    border: 1px solid var(--bubble-border);
+    border-radius: 14px;
+    padding: 12px 12px 13px;
+  }
+  .merit-card__label{
+    font-family: var(--font-display);
+    font-weight:700;
+    font-size: 14px;
+    color: var(--line-green-dark);
+    margin-bottom: 4px;
+  }
+  .merit-card__text{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height:1.6;
+  }
+
+  /* ===== 募集条件テーブル ===== */
+  .cond-list{
+    margin:0; padding:0;
+  }
+  .cond-list dt{
+    font-size:12px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+  }
+  .cond-list dt:first-child{ margin-top:0; }
+  .cond-list dd{
+    margin: 3px 0 0;
+    font-size: 14.5px;
+    font-weight:500;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--bubble-border);
+  }
+  .cond-list dd[data-editable]::after{
+    content: "";
+  }
+
+  /* ===== ステップ（応募の流れ） ===== */
+  .steps{ margin-top: 6px; }
+  .step{
+    display:flex; gap:12px;
+    padding-bottom: 18px;
+    position:relative;
+  }
+  .step:not(:last-child)::before{
+    content:"";
+    position:absolute;
+    left: 15px; top: 34px; bottom:0;
+    width: 2px;
+    background: var(--bubble-border);
+  }
+  .step__num{
+    flex-shrink:0;
+    width:32px; height:32px;
+    border-radius:50%;
+    background: var(--line-green);
+    color:#fff;
+    font-family: var(--font-display);
+    font-weight:700;
+    font-size:14px;
+    display:flex; align-items:center; justify-content:center;
+    z-index:1;
+  }
+  .step__title{ font-weight:700; font-size:14.5px; margin-bottom:3px; }
+  .step__text{ font-size:13px; color: var(--ink-soft); }
+
+  /* ===== FAQ ===== */
+  .faq-q{
+    font-size:14px;
+    font-weight:700;
+  }
+  .faq-a p{ font-size:14.5px; }
+
+  /* ===== 最終CTAバナー ===== */
+  .final-cta{
+    margin: 28px 0 8px;
+    padding: 26px 20px 24px;
+    text-align:center;
+    background: linear-gradient(165deg, #103322, #16512F);
+    border-radius: 20px;
+    color:#fff;
+  }
+  .final-cta__eyebrow{
+    font-size:13px;
+    opacity:.85;
+    margin-bottom:8px;
+  }
+  .final-cta__title{
+    font-family: var(--font-display);
+    font-weight:900;
+    font-size:21px;
+    line-height:1.5;
+    margin: 0 0 16px;
+  }
+  .final-cta .cta-pill{
+    background:#fff;
+    color: var(--line-green-dark);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+  .final-cta__note{
+    font-size:12px;
+    opacity:.75;
+    margin-top:12px;
+  }
+
+  /* ===== 固定下部バー（スマホ） ===== */
+  .fixed-bar{
+    position: fixed;
+    left:0; right:0; bottom:0;
+    z-index: 30;
+    max-width: var(--lp-width);
+    margin:0 auto;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid var(--bubble-border);
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  }
+  .fixed-bar__inner{
+    display:flex; align-items:center; gap:10px;
+  }
+  .fixed-bar__fake-input{
+    flex:1;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    background: var(--chat-bg);
+    border-radius: 20px;
+    padding: 11px 16px;
+  }
+  .fixed-bar__send{
+    flex-shrink:0;
+    width:42px; height:42px;
+    border-radius:50%;
+    background: var(--line-green);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none;
+    box-shadow: 0 4px 10px rgba(6,199,85,0.4);
+  }
+
+  .footer-note{
+    text-align:center;
+    font-size:11px;
+    color: var(--ink-soft);
+    padding: 10px 16px 24px;
+  }
+
+  @media (min-width: 560px){
+    .fixed-bar{ position: sticky; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== チャットヘッダー ===== -->
+  <header class="chat-header">
+    <div class="chat-header__icon" aria-hidden="true">求</div>
+    <div>
+      <!-- ▼会社名・アカウント名はここを変更してください▼ -->
+      <div class="chat-header__name">採用担当スタッフ</div>
+      <div class="chat-header__status"><span class="dot"></span>オンライン・すぐ返信できます</div>
+    </div>
+  </header>
+
+  <main class="thread">
+
+    <div class="date-chip"><span>本日</span></div>
+
+    <!-- ===== ファーストビュー ===== -->
+    <div class="row row--from">
+      <div class="bubble">
+        <p>はじめまして😊 求人ページを見つけてくれて、ありがとうございます。</p>
+        <h1 class="hero-catch">「まずは話を聞いてみる」から、はじめませんか？</h1>
+        <p class="lead">未経験も歓迎。自分のペースで働けるお仕事、募集しています。応募はまだ先でも大丈夫、気になったタイミングで話しかけてください。</p>
+        <div class="chip-row">
+          <span class="chip">未経験OK</span>
+          <span class="chip">シフト自由</span>
+          <span class="chip">話を聞くだけもOK</span>
+        </div>
+        <a class="cta-pill" href="#" data-line-cta>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 3.06 2.02 5.75 5.06 7.3-.14.53-.9 3.06-.93 3.26 0 0-.02.16.08.22.1.07.22.02.22.02.29-.04 3.36-2.2 3.9-2.58.53.08 1.08.12 1.65.12 5.52 0 10-3.94 10-8.8S17.52 2 12 2z" fill="white"/></svg>
+          LINEで求人について聞いてみる
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== こんな方におすすめ ===== -->
+    <div class="row row--from">
+      <div class="bubble">
+        <p class="headline" style="font-size:16.5px;">こんな方から、よくご連絡いただいています</p>
+        <ul class="check-list">
+          <li><span class="mark">✓</span>新しい働き方を探している</li>
+          <li><span class="mark">✓</span>転職や副業を考えはじめた</li>
+          <li><span class="mark">✓</span>自分のペースで働きたい</li>
+          <li><span class="mark">✓</span>まずは条件だけでも知りたい</li>
+          <li><span class="mark">✓</span>未経験だけど挑戦してみたい</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row row--user">
+      <div class="bubble bubble--user"><p>話を聞くだけでも、大丈夫ですか…？</p></div>
+    </div>
+    <div class="row row--from">
+      <div class="bubble"><p>もちろんです🙌 気になった時点で、気軽に聞いてもらえたら嬉しいです。</p></div>
+    </div>
+
+    <!-- ===== この仕事のメリット ===== -->
+    <div class="row row--from">
+      <div class="bubble">
+        <p class="headline" style="font-size:16.5px;">この仕事、選ばれている理由</p>
+        <div class="merit-grid">
+          <div class="merit-card">
+            <div class="merit-card__label">給与</div>
+            <div class="merit-card__text">安定した収入に加えて、頑張りが見えやすい仕組みです。</div>
+          </div>
+          <div class="merit-card">
+            <div class="merit-card__label">働き方</div>
+            <div class="merit-card__text">シフトは相談OK。予定に合わせて働けます。</div>
+          </div>
+          <div class="merit-card">
+            <div class="merit-card__label">自由度</div>
+            <div class="merit-card__text">勤務日数や時間帯は、あなたのペースに合わせて調整可能。</div>
+          </div>
+          <div class="merit-card">
+            <div class="merit-card__label">未経験可</div>
+            <div class="merit-card__text">研修とサポートがあるので、はじめてでも安心です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 仕事内容 ===== -->
+    <div class="row row--from">
+      <div class="bubble">
+        <p class="headline" style="font-size:16.5px;">仕事内容</p>
+        <p>お仕事の内容は、むずかしい専門知識がなくても大丈夫なように組み立てています。最初は簡単な業務からスタートし、慣れてきたら少しずつできることを増やしていくイメージです。</p>
+        <p>「自分にできるかな…」という不安があっても、まずは話しながら一緒に確認していきましょう。</p>
+      </div>
+    </div>
+
+    <!-- ===== 募集条件 ===== -->
+    <div class="row row--from">
+      <div class="bubble" style="max-width:92%;">
+        <p class="headline" style="font-size:16.5px;">募集条件</p>
+        <dl class="cond-list">
+          <dt>対象年齢</dt>
+          <dd data-editable>18歳以上（例）</dd>
+          <dt>勤務時間</dt>
+          <dd data-editable>10:00〜19:00（応相談）</dd>
+          <dt>勤務日数</dt>
+          <dd data-editable>週2日〜OK</dd>
+          <dt>給与</dt>
+          <dd data-editable>時給1,300円〜（例）</dd>
+          <dt>勤務地</dt>
+          <dd data-editable>◯◯エリア（詳細はLINEにて）</dd>
+          <dt>応募条件</dt>
+          <dd data-editable>未経験・経験者いずれも歓迎</dd>
+          <dt>その他待遇</dt>
+          <dd data-editable>交通費支給・研修ありなど（要調整）</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- ===== 応募から採用までの流れ ===== -->
+    <div class="row row--from">
+      <div class="bubble" style="max-width:92%;">
+        <p class="headline" style="font-size:16.5px;">応募から採用までの流れ</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <div>
+              <div class="step__title">LINEから問い合わせ</div>
+              <div class="step__text">まずは気軽にメッセージを送るだけ。</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <div>
+              <div class="step__title">仕事内容・条件の説明</div>
+              <div class="step__text">気になることは何でも聞いてください。</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <div>
+              <div class="step__title">面接</div>
+              <div class="step__text">堅苦しい雰囲気ではなく、対話を大切にしています。</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">4</div>
+            <div>
+              <div class="step__title">採用・勤務開始</div>
+              <div class="step__text">不安な点は事前にすり合わせてからスタート。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== よくある質問 ===== -->
+    <div class="row row--from">
+      <div class="bubble"><p class="headline" style="font-size:16.5px; margin:0;">よくある質問にお答えします</p></div>
+    </div>
+
+    <div class="row row--user">
+      <div class="bubble bubble--user"><p class="faq-q">未経験でも応募できますか？</p></div>
+    </div>
+    <div class="row row--from">
+      <div class="bubble faq-a"><p>はい、大丈夫です。多くの方が未経験からスタートしています。</p></div>
+    </div>
+
+    <div class="row row--user">
+      <div class="bubble bubble--user"><p class="faq-q">勤務日数は相談できますか？</p></div>
+    </div>
+    <div class="row row--from">
+      <div class="bubble faq-a"><p>もちろんです。まずはご希望を聞かせてください。</p></div>
+    </div>
+
+    <div class="row row--user">
+      <div class="bubble bubble--user"><p class="faq-q">話を聞くだけでも大丈夫ですか？</p></div>
+    </div>
+    <div class="row row--from">
+      <div class="bubble faq-a"><p>大丈夫です。応募を決めていない段階でのご連絡も歓迎しています。</p></div>
+    </div>
+
+    <div class="row row--user">
+      <div class="bubble bubble--user"><p class="faq-q">面接時に必要なものはありますか？</p></div>
+    </div>
+    <div class="row row--from">
+      <div class="bubble faq-a"><p>詳しくはLINEでご案内します。特別な準備は基本的に不要です。</p></div>
+    </div>
+
+    <div class="row row--user">
+      <div class="bubble bubble--user"><p class="faq-q">すぐに働くことはできますか？</p></div>
+    </div>
+    <div class="row row--from">
+      <div class="bubble faq-a"><p>ご希望の時期に合わせて調整できますので、まずはご相談ください。</p></div>
+    </div>
+
+    <!-- ===== 最終CTA ===== -->
+    <div class="final-cta">
+      <div class="final-cta__eyebrow">気になったら、まずは一言だけでも</div>
+      <div class="final-cta__title">まずはLINEで<br>話を聞いてみる</div>
+      <a class="cta-pill" href="#" data-line-cta>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 3.06 2.02 5.75 5.06 7.3-.14.53-.9 3.06-.93 3.26 0 0-.02.16.08.22.1.07.22.02.22.02.29-.04 3.36-2.2 3.9-2.58.53.08 1.08.12 1.65.12 5.52 0 10-3.94 10-8.8S17.52 2 12 2z" fill="#06C755"/></svg>
+          LINEで気軽に問い合わせる
+      </a>
+      <div class="final-cta__note">登録は不要です。気になることだけ聞いてみるのも歓迎です。</div>
+    </div>
+
+    <p class="footer-note">© 採用担当スタッフ／掲載内容は変更になる場合があります</p>
+  </main>
+
+  <!-- ===== 固定下部バー ===== -->
+  <div class="fixed-bar">
+    <div class="fixed-bar__inner">
+      <div class="fixed-bar__fake-input">LINEで求人について聞く</div>
+      <a class="fixed-bar__send" href="#" data-line-cta aria-label="LINEで問い合わせる">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M3 11L21 3L13 21L11 13L3 11Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ===== LINE問い合わせURL（ここだけ変更すれば全ボタンに反映されます） =====
+  const LINE_URL = "https://line.me/ti/p/q4bbqWARGD";
+
+  document.querySelectorAll('[data-line-cta]').forEach(function(el){
+    el.setAttribute('href', LINE_URL);
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener');
+  });
+
+  // ===== 吹き出しをスクロールで順番にフェードイン =====
+  const rows = document.querySelectorAll('.row');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    rows.forEach(row => io.observe(row));
+  } else {
+    rows.forEach(row => row.classList.add('is-visible'));
+  }
+</script>
+</body>
+</html>
