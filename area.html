@@ -133,6 +133,17 @@
   .dc-over .dc-name{display:block;font-size:2rem;line-height:1.05;filter:drop-shadow(0 2px 6px rgba(0,0,0,.7))}
   .dc-over .dc-kana{display:block;font-size:.7rem;letter-spacing:.45em;color:#E6DFD5;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.8)}
   .dc-in.dc-bottom{margin-top:22px}
+  /* 写真そのものの額縁：金のグラデ枠＋内側の細線＋四すみの飾り */
+  .dc-ph{border:3px solid transparent;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%) border-box;box-shadow:0 0 0 1px #000,0 12px 30px rgba(0,0,0,.6)}
+  .dc-pw::after{content:"";position:absolute;inset:10px;z-index:1;border:1px solid rgba(241,218,156,.75);pointer-events:none;
+    background:
+      linear-gradient(#F1DA9C,#F1DA9C) top left/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) top left/1px 14px no-repeat,
+      linear-gradient(#F1DA9C,#F1DA9C) top right/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) top right/1px 14px no-repeat,
+      linear-gradient(#F1DA9C,#F1DA9C) bottom left/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) bottom left/1px 14px no-repeat,
+      linear-gradient(#F1DA9C,#F1DA9C) bottom right/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) bottom right/1px 14px no-repeat;
+    outline:1px solid rgba(241,218,156,.35);outline-offset:-5px}
+  .dc-tate{z-index:2;left:18px;top:3px}
+  .dc-over{right:22px;bottom:20px}
 </style>
 </head>
 <body>
