@@ -28,7 +28,7 @@ window.AREA_JOBS = [
     features: ["きれいで快適な店内・分煙", "テーブル7卓", "衣装はミニドレス"],
     tel: "0665850181", reviewKey: "candy ?pop|キャンディ", added: "2026-10-12" },
   { name: "club 華門（昼の部）", nameEn: "Club Kamon", kana: "華門・昼の部", type: "昼キャバ", area: "梅田", address: "大阪府 大阪市 堂山町",
-    pay: "お店に確認中", url: "kamon.html", pickup: true, pref: "大阪府", city: "大阪市",
+    pay: "お店に確認中", url: "kamon.html", photo: "img/kamon/photo1.jpg", pickup: true, pref: "大阪府", city: "大阪市",
     catchCopy: "13:30〜21:00、お昼の時間に働ける和モダンの昼キャバ",
     hours: "営業時間 13:30〜21:00", station: "梅田駅・大阪駅・中崎町駅 徒歩圏内", transport: "要確認",
     qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
