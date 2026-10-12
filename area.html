@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>エリア別の求人一覧｜Area</title>
+<meta name="description" content="エリア・職種ごとのナイトワーク求人一覧。応募は各店舗へ直接。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0A0D; --panel:#141117; --line:rgba(201,162,39,.22); --line2:rgba(255,255,255,.08);
+    --ink:#F4EFE6; --ink-soft:#B7AEA6; --ink-dim:#8C847D; --gold:#C9A227; --gold-lt:#F1DA9C;
+    --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
+    --font-serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+    --font-en:'Cormorant Garamond','Times New Roman',serif;
+    --font-body:'Noto Sans JP','Hiragino Sans',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#050406;color:var(--ink);font-family:var(--font-body);line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ul{margin:0;padding:0;list-style:none}
+  [hidden]{display:none !important}
+  .gold-text{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .beta-bar{background:#000;color:var(--gold-lt);text-align:center;font-size:.68rem;letter-spacing:.08em;line-height:1.5;padding:6px 14px;border-bottom:1px solid var(--line)}
+  .beta-bar b{font-weight:500;margin-right:6px}
+  header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .header-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px}
+  .logo{font-family:var(--font-en);font-weight:700;font-size:1.7rem;line-height:1;letter-spacing:.06em;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .head-links{display:flex;gap:6px}
+  .head-links a{color:var(--gold-lt);border:1px solid var(--line);padding:6px 12px;font-size:.74rem;letter-spacing:.08em}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px;background:var(--bg)}
+  .crumb{font-size:.7rem;color:var(--ink-dim);padding:12px 0 0}
+  .crumb a{text-decoration:underline;text-underline-offset:3px}
+
+  .list-head{text-align:center;padding:34px 0 10px;margin:0 -18px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.2),transparent 70%)}
+  .shop-kind{font-family:var(--font-en);font-style:italic;letter-spacing:.3em;font-size:.84rem;color:var(--gold)}
+  .list-head h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.5rem,6.4vw,2rem);letter-spacing:.14em;margin:6px 0 0;line-height:1.4}
+  .list-head h1::after{content:"";display:block;width:56px;height:1px;margin:14px auto 12px;background:var(--goldgrad)}
+  .count{margin:0;color:var(--ink-soft);font-size:.84rem;letter-spacing:.1em}
+  .count b{font-family:var(--font-en);font-size:1.7rem;color:var(--gold-lt);margin-right:4px;font-weight:600}
+
+  .filter{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 6px}
+  .filter button{font:inherit;font-size:.8rem;letter-spacing:.1em;padding:6px 16px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer}
+  .filter button[aria-pressed="true"]{border-color:var(--gold);color:#1A1406;background:var(--goldgrad)}
+
+  .job-grid{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+  .job-card{background:var(--panel);border:1px solid var(--line2);padding:20px;display:grid;position:relative}
+  .job-card:has(.job-detail-link){border-color:var(--gold);background:radial-gradient(ellipse at 100% 0%,rgba(201,162,39,.14),transparent 60%),var(--panel)}
+  .job-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+  .tag{font-size:.68rem;letter-spacing:.1em;border:1px solid var(--line);color:var(--gold-lt);padding:2px 10px}
+  .tag.gold{background:var(--goldgrad);color:#1A1406;border-color:transparent;font-weight:700}
+  .job-card h3{font-family:var(--font-serif);font-weight:700;font-size:1.12rem;letter-spacing:.06em;margin:0 0 2px}
+  .job-card .area{color:var(--ink-dim);font-size:.8rem;margin-bottom:8px}
+  .pay{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--gold-lt);letter-spacing:.06em}
+  .pay-ask{color:var(--ink-dim);font-weight:500;font-size:.88rem}
+  .job-apply-note{margin-top:12px;font-size:.72rem;color:var(--ink-dim);border-top:1px solid var(--line2);padding-top:10px}
+  .job-detail-link{display:block;text-align:center;margin-top:14px;background:var(--goldgrad);color:#1A1406;padding:11px 18px;font-family:var(--font-serif);font-weight:700;font-size:.9rem;letter-spacing:.14em}
+  .empty{text-align:center;border:1px solid var(--line);padding:26px 16px;color:var(--ink-soft);font-size:.88rem;margin-top:16px}
+
+  .others{margin-top:48px}
+  .others h2{text-align:center;font-family:var(--font-serif);font-weight:700;font-size:1.2rem;letter-spacing:.14em;margin:0 0 6px}
+  .others h2::before{content:"Area";display:block;font-family:var(--font-en);font-style:italic;font-weight:600;font-size:.88rem;letter-spacing:.3em;color:var(--gold)}
+  .region{font-family:var(--font-serif);font-size:.86rem;letter-spacing:.3em;display:flex;align-items:center;gap:12px;margin:22px 0 10px;color:var(--gold-lt)}
+  .region::before,.region::after{content:"";flex:1;height:1px;background:var(--line)}
+  .pills{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .pills a,.pills span{text-align:center;padding:11px 6px;font-family:var(--font-serif);font-weight:700;font-size:.9rem;letter-spacing:.08em;border:1px solid var(--gold);color:var(--gold-lt);line-height:1.5}
+  .pills span{border-color:var(--line2);color:var(--ink-dim);font-size:.82rem;font-weight:600}
+  .pills span small{display:block;font-family:var(--font-body);font-size:.62rem;letter-spacing:.1em}
+  .pills a.is-current{background:var(--goldgrad);color:#1A1406;border-color:transparent}
+
+  .notes{margin-top:36px;border-top:1px solid var(--line2);padding:18px 0 0;font-size:.76rem;color:var(--ink-dim)}
+  .notes li{padding-left:1.1em;position:relative;margin:4px 0}
+  .notes li::before{content:"※";position:absolute;left:0}
+  .back{display:block;text-align:center;padding:24px 0 34px;font-size:.86rem;letter-spacing:.08em;color:var(--gold-lt);text-decoration:underline;text-underline-offset:5px}
+  footer{background:#000;border-top:1px solid var(--line);color:var(--ink-dim);text-align:center;font-size:.74rem;padding:24px 16px;letter-spacing:.06em}
+  footer a{color:var(--ink-soft);margin:0 8px}
+  footer p{margin:8px 0 0;font-family:var(--font-en);letter-spacing:.14em}
+</style>
+</head>
+<body>
+
+<div class="beta-bar"><b>試作中</b>Areaはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Area</a>
+    <div class="head-links">
+      <a href="index.html#areas">エリア</a>
+      <a href="index.html#voices">口コミ</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="index.html">Area</a> ＞ <span id="crumbName">求人一覧</span></div>
+
+  <div class="list-head">
+    <span class="shop-kind" id="kind">Recruit</span>
+    <h1 id="title">求人一覧</h1>
+    <p class="count"><b id="count">0</b>件の求人</p>
+  </div>
+
+  <div class="filter" id="filter" hidden></div>
+  <div class="job-grid" id="list"></div>
+  <div class="empty" id="empty" hidden>この条件の求人は準備中です。</div>
+
+  <div class="others">
+    <h2>ほかのエリアで探す</h2>
+    <div class="region">関東</div>
+    <div class="pills" data-areas="歌舞伎町,六本木,銀座,池袋,上野,横浜"></div>
+    <div class="region">関西</div>
+    <div class="pills" data-areas="北新地,難波,梅田,三宮,祇園,京都駅"></div>
+  </div>
+
+  <ul class="notes">
+    <li>18歳未満の方、高校生の方は応募できません。</li>
+    <li>給与・待遇などの条件は、面接のときに必ずお店へ直接ご確認ください。</li>
+    <li>Areaは求人情報を掲載する広告媒体です。お仕事の紹介・あっせんは行っていません。</li>
+  </ul>
+
+  <a class="back" href="index.html">← トップにもどる</a>
+</main>
+
+<footer>
+  <div><a href="index.html">トップ</a><a href="index.html#jobs">新着求人</a><a href="index.html#voices">口コミを見る</a></div>
+  <p>© 2026 Area</p>
+</footer>
+
+<script src="jobs.js"></script>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var area = q.get("area") || "", type = q.get("type") || "";
+  var jobs = window.AREA_JOBS || [];
+  var base = jobs.filter(function(j){ return (!area || j.area === area) && (!type || j.type === type); });
+  var sub = "";   // エリアページ内の職種しぼりこみ（職種ページならエリア）
+  var subKey = area ? "type" : "area";
+
+  var label = area ? area : type ? type : "すべて";
+  document.getElementById("kind").textContent = area ? "Area ・ Recruit" : type ? "Job type ・ Recruit" : "Recruit";
+  document.getElementById("title").textContent = (area || type) ? label + "の求人一覧" : "すべての求人";
+  document.getElementById("crumbName").textContent = (area || type) ? label + "の求人" : "すべての求人";
+  document.title = ((area || type) ? label + "のナイトワーク求人一覧" : "求人一覧") + "｜Area";
+
+  // しぼりこみボタン（2種類以上あるときだけ出す）
+  var kinds = [];
+  base.forEach(function(j){ if (kinds.indexOf(j[subKey]) < 0) kinds.push(j[subKey]); });
+  var f = document.getElementById("filter");
+  if (kinds.length > 1) {
+    f.hidden = false;
+    ["すべて"].concat(kinds).forEach(function(k){
+      var b = document.createElement("button"); b.type = "button"; b.textContent = k;
+      b.setAttribute("aria-pressed", k === "すべて" ? "true" : "false");
+      b.addEventListener("click", function(){
+        sub = k === "すべて" ? "" : k;
+        [].forEach.call(f.children, function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+        render();
+      });
+      f.appendChild(b);
+    });
+  }
+  function render(){
+    var rows = base.filter(function(j){ return !sub || j[subKey] === sub; });
+    // 詳細ページがある求人（店名入り）を先に
+    rows = rows.filter(function(j){ return j.url; }).concat(rows.filter(function(j){ return !j.url; }));
+    document.getElementById("list").innerHTML = rows.map(areaJobCard).join("");
+    document.getElementById("count").textContent = rows.length;
+    document.getElementById("empty").hidden = rows.length > 0;
+  }
+  render();
+
+  // ほかのエリア
+  [].forEach.call(document.querySelectorAll(".pills"), function(box){
+    box.innerHTML = box.dataset.areas.split(",").map(function(a){
+      var n = jobs.filter(function(j){ return j.area === a; }).length;
+      return n ? '<a href="area.html?area=' + encodeURIComponent(a) + '"' + (a === area ? ' class="is-current"' : '') + '>' + a + '</a>'
+               : '<span>' + a + '<small>準備中</small></span>';
+    }).join("");
+  });
+})();
+</script>
+</body>
+</html>
