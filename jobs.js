@@ -21,7 +21,7 @@ window.AREA_JOBS = [
     features: ["黒・ダークグレー基調のシックな店内", "テーブル11卓", "定休日：火曜日"],
     tel: "0643015115", reviewKey: "blanc|ブラン", added: "2026-10-12" },
   { name: "Candy Pop（キャンディーポップ）", nameEn: "Candy Pop", kana: "キャンディーポップ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
-    pay: "お店に確認中", url: "candy.html", pickup: true, pref: "大阪府", city: "大阪市",
+    pay: "お店に確認中", url: "candy.html", photo: "img/candy/main.jpg", logoInPhoto: true, pickup: true, pref: "大阪府", city: "大阪市",
     catchCopy: "ミニドレスでお迎えする、きれいで快適な店内のキャバクラ",
     hours: "営業時間 19:00〜LAST", station: "東梅田駅・梅田駅・中崎町駅 徒歩圏内", transport: "要確認",
     qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],

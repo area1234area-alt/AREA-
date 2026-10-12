@@ -17,7 +17,7 @@ var SHOP = {
   tel: "0665850181",
   telLabel: "06-6585-0181",
   line: "",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "",            // 一番上の大きい画像
+  heroImage: "img/candy/main.jpg", // 一番上の大きい画像
   messageImage: "",         // 「お店からのメッセージ」の画像
   pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
   gallery: ["", "", ""], // お店の写真（何枚でも）
@@ -218,6 +218,7 @@ var SHOP = {
   .dock .d-main{flex:1.7;background:var(--goldgrad);color:#1A1406;font-family:var(--font-serif);font-weight:700;font-size:1.02rem;letter-spacing:.14em}
   .dock .d-main small{font-family:var(--font-body);font-size:.68rem;font-weight:500;letter-spacing:.04em}
   .dock svg{width:18px;height:18px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -254,8 +255,7 @@ var SHOP = {
   <section class="blk" id="top">
     <div class="shop-title">
       <div class="pre">Umeda ・ Cabaret Club</div>
-      <h1 class="gold-text">Candy Pop</h1>
-      <div class="kana">キャンディーポップ</div>
+      <h1 class="sr-only">Candy Pop（キャンディーポップ）</h1>
       <div class="orn">RECRUIT</div>
     </div>
     <div class="ph hero" data-img="heroImage">画像準備中<br>（お店のメイン画像）</div>
