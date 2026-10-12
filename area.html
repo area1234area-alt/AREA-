@@ -98,6 +98,32 @@
   .dc-info{font-size:.76rem;color:#B7AEA6;margin-top:2px}
   .dc-btn{display:block;width:100%;text-align:center;margin-top:16px;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1A1406 !important;font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;font-weight:700;font-size:1.1rem;letter-spacing:.2em;padding:16px 16px;box-shadow:0 10px 26px rgba(201,162,39,.22);white-space:nowrap}
   .dc-btn.off{background:none;border:1px solid rgba(255,255,255,.15);color:#8C847D !important}
+
+  /* カード下半分：アールデコの扇模様＋金の飾り */
+  .job-card.photo-card{position:relative;overflow:hidden}
+  .dc-in{display:block;position:relative;margin:18px -18px -20px;padding:22px 22px 24px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.16),transparent 65%),linear-gradient(180deg,#110E13,#0B0A0D)}
+  .dc-in::before{content:"";position:absolute;inset:0;background:url("img/pattern/damask-black.png") center top/101px auto repeat;opacity:.5;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.15) 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.15) 100%)}
+  .dc-in::after{content:"";position:absolute;inset:10px;border:1px solid rgba(201,162,39,.35);pointer-events:none;
+    -webkit-mask:linear-gradient(#000 0 0) top left/22px 22px no-repeat,linear-gradient(#000 0 0) top right/22px 22px no-repeat,linear-gradient(#000 0 0) bottom left/22px 22px no-repeat,linear-gradient(#000 0 0) bottom right/22px 22px no-repeat;
+    mask:linear-gradient(#000 0 0) top left/22px 22px no-repeat,linear-gradient(#000 0 0) top right/22px 22px no-repeat,linear-gradient(#000 0 0) bottom left/22px 22px no-repeat,linear-gradient(#000 0 0) bottom right/22px 22px no-repeat}
+  .dc-in > *{position:relative;z-index:1}
+  .dc-head{text-align:center}
+  .dc-kana{font-size:.72rem;letter-spacing:.5em;color:#B7AEA6;padding-left:.5em;margin-top:4px}
+  .dc-orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 4px}
+  .dc-orn span{width:56px;height:1px;background:linear-gradient(90deg,transparent,#C9A227)}
+  .dc-orn span:last-child{background:linear-gradient(90deg,#C9A227,transparent)}
+  .dc-orn b{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#8E6F1C,#FFF1C4,#D4AF4F)}
+  .dc-dl{margin:12px 0 0;border-top:1px solid rgba(201,162,39,.22)}
+  .dc-dl > div{display:grid;grid-template-columns:3.4em 1fr;gap:10px;padding:8px 2px;border-bottom:1px solid rgba(255,255,255,.07);font-size:.82rem;line-height:1.5}
+  .dc-dl dt{font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;color:#C9A227;letter-spacing:.2em}
+  .dc-dl dd{margin:0;color:#E6DFD5}
+  .dc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .dc-tags span{font-size:.68rem;letter-spacing:.06em;color:#F1DA9C;border:1px solid rgba(201,162,39,.4);padding:2px 9px;background:rgba(201,162,39,.05)}
+  .dc-btn{position:relative}
+  .dc-btn > span{display:block;border:1px solid rgba(26,20,6,.45);margin:-10px;padding:10px}
+  .dc-btn > span::before,.dc-btn > span::after{content:"";display:inline-block;width:22px;height:1px;background:#1A1406;vertical-align:middle;margin:0 12px;opacity:.6}
+  .dc-head .dc-badge{margin-bottom:8px}
+  .dc-head .dc-name{font-size:2rem}
 </style>
 </head>
 <body>

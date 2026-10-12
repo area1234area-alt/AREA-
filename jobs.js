@@ -33,11 +33,18 @@ window.areaJobCard = function (j) {
     return '<div class="job-card photo-card">' +
       '<a class="dc-pw"' + href + '><span class="dc-ph"><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy"></span>' +
         '<span class="dc-tate">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span></a>' +
-      '<div class="dc-in"><div class="dc-txt">' +
-        (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
-        '<div class="dc-name">' + esc(en) + '</div>' +
-        '<div class="dc-info">' + (kana ? esc(kana) + ' ／ ' : '') + esc(j.pay || "給与は確認中です") + '</div></div>' +
-        (j.url ? '<a class="dc-btn" href="' + esc(j.url) + '">詳しく見る</a>' : '<span class="dc-btn off">準備中</span>') +
+      '<div class="dc-in">' +
+        '<div class="dc-head">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
+          '<div class="dc-name">' + esc(en) + '</div>' +
+          (kana ? '<div class="dc-kana">' + esc(kana) + '</div>' : '') +
+          '<div class="dc-orn"><span></span><b></b><span></span></div></div>' +
+        '<dl class="dc-dl">' +
+          '<div><dt>給与</dt><dd>' + esc(j.pay || "確認中") + '</dd></div>' +
+          (j.hours ? '<div><dt>勤務</dt><dd>' + esc(String(j.hours).split("（")[0]) + '</dd></div>' : '') +
+          (j.station ? '<div><dt>最寄</dt><dd>' + esc(j.station) + '</dd></div>' : '') +
+        '</dl>' +
+        ((j.tags || []).length ? '<div class="dc-tags">' + j.tags.slice(0, 4).map(function (t) { return '<span>' + esc(t) + '</span>'; }).join("") + '</div>' : '') +
+        (j.url ? '<a class="dc-btn" href="' + esc(j.url) + '"><span>詳しく見る</span></a>' : '<span class="dc-btn off"><span>準備中</span></span>') +
       '</div></div>';
   }
   return '<div class="job-card' + (j.photo ? ' has-photo' : '') + '"><div class="job-body">' +
