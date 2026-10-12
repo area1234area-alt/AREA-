@@ -23,17 +23,20 @@ window.AREA_JOBS = [
 /* 求人カードのHTMLを作る（両ページ共通） */
 window.areaJobCard = function (j) {
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
-  // 写真がある求人：写真を大きく出し、タグを左上、店名を写真の上、ボタンを写真の下にかぶせる
+  // 写真がある求人：雑誌風（写真の後ろにずらした金の額縁＋縦書きのエリア・職種）
   if (j.photo) {
     var href = j.url ? ' href="' + esc(j.url) + '"' : '';
+    var en = j.nameEn || String(j.name).replace(/（.*?）|\(.*?\)/g, "").trim();
+    var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
-      '<a class="pc-photo"' + href + '><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' +
-        '<div class="pc-tags"><span>' + esc(j.type) + '</span>' + (j.trial ? '<span class="gold">体験入店あり</span>' : '') + '</div>' +
-        '<div class="pc-info"><h3>' + esc(j.name) + '</h3><div class="pc-area">' + esc(j.address) + ' ' + esc(j.area) + '</div>' +
-        '<div class="pc-pay">' + esc(j.pay || "給与は確認中です") + '</div></div>' +
-      '</a>' +
-      (j.url ? '<a class="pc-btn" href="' + esc(j.url) + '">求人の詳細を見る</a>' : '<div class="pc-btn off">応募先は準備中です</div>') +
-      '</div>';
+      '<a class="dc-pw"' + href + '><span class="dc-ph"><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy"></span>' +
+        '<span class="dc-tate">' + esc(j.area) + '・' + esc(j.type) + '</span></a>' +
+      '<div class="dc-in"><div class="dc-txt">' +
+        (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
+        '<div class="dc-name">' + esc(en) + '</div>' +
+        '<div class="dc-info">' + (kana ? esc(kana) + ' ／ ' : '') + esc(j.pay || "給与は確認中です") + '</div></div>' +
+        (j.url ? '<a class="dc-btn" href="' + esc(j.url) + '">詳しく見る</a>' : '<span class="dc-btn off">準備中</span>') +
+      '</div></div>';
   }
   return '<div class="job-card' + (j.photo ? ' has-photo' : '') + '"><div class="job-body">' +
     '<div class="job-tags"><span class="tag">' + esc(j.type) + '</span>' + (j.trial ? '<span class="tag gold">体験入店あり</span>' : '') + '</div>' +
