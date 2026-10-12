@@ -23,6 +23,18 @@ window.AREA_JOBS = [
 /* 求人カードのHTMLを作る（両ページ共通） */
 window.areaJobCard = function (j) {
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  // 写真がある求人：写真を大きく出し、タグを左上、店名を写真の上、ボタンを写真の下にかぶせる
+  if (j.photo) {
+    var href = j.url ? ' href="' + esc(j.url) + '"' : '';
+    return '<div class="job-card photo-card">' +
+      '<a class="pc-photo"' + href + '><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' +
+        '<div class="pc-tags"><span>' + esc(j.type) + '</span>' + (j.trial ? '<span class="gold">体験入店あり</span>' : '') + '</div>' +
+        '<div class="pc-info"><h3>' + esc(j.name) + '</h3><div class="pc-area">' + esc(j.address) + ' ' + esc(j.area) + '</div>' +
+        '<div class="pc-pay">' + esc(j.pay || "給与は確認中です") + '</div></div>' +
+      '</a>' +
+      (j.url ? '<a class="pc-btn" href="' + esc(j.url) + '">求人の詳細を見る</a>' : '<div class="pc-btn off">応募先は準備中です</div>') +
+      '</div>';
+  }
   return '<div class="job-card' + (j.photo ? ' has-photo' : '') + '"><div class="job-body">' +
     '<div class="job-tags"><span class="tag">' + esc(j.type) + '</span>' + (j.trial ? '<span class="tag gold">体験入店あり</span>' : '') + '</div>' +
     '<h3>' + esc(j.name) + '</h3>' +
