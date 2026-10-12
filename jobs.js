@@ -31,12 +31,11 @@ window.areaJobCard = function (j) {
     var en = j.nameEn || String(j.name).replace(/（.*?）|\(.*?\)/g, "").trim();
     var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
-      '<div class="dc-in dc-top"><div class="dc-head">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
-        '<div class="dc-name">' + esc(en) + '</div>' +
-        (kana ? '<div class="dc-kana">' + esc(kana) + '</div>' : '') +
-        '<div class="dc-orn"><span></span><b></b><span></span></div></div></div>' +
       '<a class="dc-pw"' + href + '><span class="dc-ph"><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy"></span>' +
-        '<span class="dc-tate">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span></a>' +
+        '<span class="dc-tate">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
+        '<span class="dc-over">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
+          '<span class="dc-name">' + esc(en) + '</span>' +
+          (kana ? '<span class="dc-kana">' + esc(kana) + '</span>' : '') + '</span></a>' +
       '<div class="dc-in dc-bottom">' +
         '<dl class="dc-dl">' +
           '<div><dt>給与</dt><dd>' + esc(j.pay || "確認中") + '</dd></div>' +
