@@ -357,6 +357,12 @@ var OSAKA_PERKS = ["即日体験入店OK", "未経験歓迎", "日払いOK", "�
     }).join("");
   };
   btns("typeBtns", OSAKA_TYPES, "type"); btns("areaBtns", OSAKA_AREAS, "area"); btns("cityBtns", OSAKA_CITIES, "city");
+  // 「エリアから探す」はエリアごとのページへ移動
+  var OSA = (window.AREA_DIRECTORY || [])[0];
+  if (OSA) $("areaBtns").innerHTML = OSA.areas.map(function(a){
+    var n = (window.AREA_JOBS || []).filter(function(j){ return j.area === a.key; }).length;
+    return n ? '<a class="btn-cell" href="area.html?area=' + encodeURIComponent(a.key) + '">' + esc(a.label) + '</a>' : '<span class="btn-cell soon">' + esc(a.label) + '</span>';
+  }).join("");
   document.addEventListener("click", function(e){
     var b = e.target.closest("[data-key]");
     if (b) { st[b.dataset.key] = st[b.dataset.key] === b.dataset.val ? "" : b.dataset.val; go(); return; }

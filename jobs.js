@@ -92,3 +92,45 @@ window.areaShopName = function (name) {
   }
   return String(name || "");
 };
+
+/* エリアの一覧（エリアページ・大阪ページ共通）
+   key は求人データの area と同じ名前にする。stations は「駅で絞り込む」に出る駅、near は「近くのエリア」。 */
+window.AREA_DIRECTORY = [
+  { pref: "大阪府", group: "大阪", areas: [
+    { key: "梅田", label: "梅田・キタ", en: "Umeda", stations: ["梅田駅", "大阪駅", "東梅田駅", "中崎町駅", "扇町駅"], near: ["北新地", "天満"] },
+    { key: "北新地", label: "北新地", en: "Kitashinchi", stations: ["北新地駅", "西梅田駅", "大江橋駅"], near: ["梅田", "本町"] },
+    { key: "天満", label: "天満・南森町", en: "Tenma", stations: ["天満駅", "天神橋筋六丁目駅", "南森町駅"], near: ["梅田", "京橋"] },
+    { key: "本町", label: "本町・堺筋本町", en: "Honmachi", stations: ["本町駅", "堺筋本町駅"], near: ["北新地", "心斎橋"] },
+    { key: "心斎橋", label: "心斎橋", en: "Shinsaibashi", stations: ["心斎橋駅", "長堀橋駅"], near: ["難波", "本町"] },
+    { key: "難波", label: "難波・ミナミ", en: "Namba", stations: ["難波駅", "日本橋駅", "大阪難波駅"], near: ["心斎橋", "谷町九丁目"] },
+    { key: "谷町九丁目", label: "谷町九丁目", en: "Tanimachi", stations: ["谷町九丁目駅", "大阪上本町駅"], near: ["難波", "心斎橋"] },
+    { key: "京橋", label: "京橋・守口", en: "Kyobashi", stations: ["京橋駅", "守口市駅"], near: ["天満", "東大阪"] },
+    { key: "十三", label: "十三・新大阪", en: "Juso", stations: ["十三駅", "新大阪駅", "西中島南方駅"], near: ["梅田", "江坂"] },
+    { key: "江坂", label: "江坂・豊中", en: "Esaka", stations: ["江坂駅", "豊中駅"], near: ["十三", "梅田"] },
+    { key: "東大阪", label: "東大阪・八尾", en: "Higashi-Osaka", stations: ["布施駅", "八尾駅"], near: ["京橋", "谷町九丁目"] },
+    { key: "堺", label: "堺・南大阪", en: "Sakai", stations: ["堺東駅", "堺駅"], near: ["難波"] }
+  ]},
+  { pref: "兵庫県", group: "兵庫", areas: [
+    { key: "三宮", label: "神戸・三宮", en: "Sannomiya", stations: ["三宮駅", "元町駅"], near: [] },
+    { key: "尼崎", label: "尼崎・西宮", en: "Amagasaki", stations: ["尼崎駅", "西宮北口駅"], near: [] }
+  ]},
+  { pref: "京都府", group: "京都", areas: [
+    { key: "祇園", label: "祇園・木屋町", en: "Gion", stations: ["祇園四条駅", "河原町駅"], near: ["京都駅"] },
+    { key: "京都駅", label: "京都駅周辺", en: "Kyoto Sta.", stations: ["京都駅"], near: ["祇園"] }
+  ]},
+  { pref: "東京都・神奈川県", group: "関東", areas: [
+    { key: "歌舞伎町", label: "歌舞伎町", en: "Kabukicho", stations: [], near: [] },
+    { key: "六本木", label: "六本木", en: "Roppongi", stations: [], near: [] },
+    { key: "銀座", label: "銀座", en: "Ginza", stations: [], near: [] },
+    { key: "池袋", label: "池袋", en: "Ikebukuro", stations: [], near: [] },
+    { key: "上野", label: "上野", en: "Ueno", stations: [], near: [] },
+    { key: "横浜", label: "横浜", en: "Yokohama", stations: [], near: [] }
+  ]}
+];
+window.areaInfo = function (key) {
+  for (var g = 0; g < window.AREA_DIRECTORY.length; g++) {
+    var G = window.AREA_DIRECTORY[g];
+    for (var i = 0; i < G.areas.length; i++) if (G.areas[i].key === key) return Object.assign({ pref: G.pref, group: G.group }, G.areas[i]);
+  }
+  return null;
+};
