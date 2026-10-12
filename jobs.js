@@ -52,7 +52,7 @@ window.areaJobCard = function (j) {
     var en = j.nameEn || String(j.name).replace(/（.*?）|\(.*?\)/g, "").trim();
     var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
-      '<a class="dc-pw"' + href + '><span class="dc-ph' + (j.photo ? '' : ' noimg') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
+      '<a class="dc-pw"' + href + '><span class="dc-ph' + (j.photo ? '' : ' noimg') + (j.logoInPhoto ? ' logo' : '') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
         '<span class="dc-tate' + (j.logoInPhoto ? ' right' : '') + '">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
         (j.logoInPhoto ? (j.trial ? '<span class="dc-over"><span class="dc-badge">体験入店あり</span></span>' : '') :
         '<span class="dc-over">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
