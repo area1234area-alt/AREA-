@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>求人カード見本｜Area</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0A0D; --panel:#141117; --line:rgba(201,162,39,.28); --line2:rgba(255,255,255,.08);
+    --ink:#F4EFE6; --soft:#B7AEA6; --dim:#8C847D; --gold:#C9A227; --gold-lt:#F1DA9C;
+    --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
+    --serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+    --en:'Cormorant Garamond','Times New Roman',serif;
+    --body:'Noto Sans JP','Hiragino Sans',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#050406;color:var(--ink);font-family:var(--body);line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .page{max-width:760px;margin:0 auto;background:var(--bg);padding:24px 18px 60px}
+  h1{font-family:var(--serif);font-size:1.3rem;letter-spacing:.1em;text-align:center;margin:10px 0 4px}
+  .lead{text-align:center;color:var(--soft);font-size:.82rem;margin:0 0 10px}
+  .sample{margin-top:46px}
+  .label{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .label b{font-family:var(--en);font-size:2rem;font-weight:600;line-height:1;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .label span{font-family:var(--serif);font-weight:700;font-size:1rem;letter-spacing:.06em}
+  .desc{font-size:.8rem;color:var(--soft);margin:0 0 14px}
+  .gt{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* A：写真左・文字右 */
+  .a{display:grid;grid-template-columns:42% 1fr;border:1px solid var(--line);background:var(--panel)}
+  .a .ph{position:relative;min-height:190px}
+  .a .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .a .in{padding:16px 16px 14px;display:flex;flex-direction:column}
+  .a .cat{font-family:var(--en);font-style:italic;color:var(--gold);font-size:.8rem;letter-spacing:.16em}
+  .a h3{font-family:var(--serif);font-size:1.12rem;margin:2px 0 0;letter-spacing:.04em;line-height:1.4}
+  .a .area{font-size:.72rem;color:var(--dim)}
+  .a .rule{height:1px;background:var(--goldgrad);width:40px;margin:10px 0}
+  .a .pay{font-family:var(--serif);font-size:.9rem;color:var(--gold-lt)}
+  .a .tags{font-size:.68rem;color:var(--soft);margin-top:4px}
+  .a .more{margin-top:auto;padding-top:10px;font-family:var(--en);font-size:.92rem;letter-spacing:.18em;color:var(--gold-lt);display:flex;align-items:center;gap:8px}
+  .a .more::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* B：ホテル風（写真上・中央そろえ） */
+  .b{border:1px solid var(--line);background:var(--panel);text-align:center}
+  .b .ph{aspect-ratio:16/10;overflow:hidden}
+  .b .ph img{width:100%;height:100%;object-fit:cover}
+  .b .in{padding:20px 18px 22px}
+  .b .cat{font-size:.68rem;letter-spacing:.3em;color:var(--gold)}
+  .b h3{font-family:var(--en);font-weight:600;font-size:2rem;line-height:1.1;margin:6px 0 0;letter-spacing:.06em}
+  .b .kana{font-family:var(--serif);font-size:.76rem;letter-spacing:.4em;color:var(--soft)}
+  .b .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0;color:var(--gold);font-size:.6rem}
+  .b .orn::before,.b .orn::after{content:"";width:40px;height:1px;background:var(--goldgrad)}
+  .b .info{font-size:.78rem;color:var(--soft)}
+  .b .pay{font-family:var(--serif);color:var(--gold-lt);font-size:.95rem;margin-top:2px}
+  .b .btn{display:inline-block;margin-top:16px;border:1px solid var(--gold);padding:10px 34px;font-family:var(--serif);font-size:.86rem;letter-spacing:.2em;color:var(--gold-lt)}
+
+  /* C：写真全面・ミニマル */
+  .c{position:relative;aspect-ratio:4/3;overflow:hidden;display:block}
+  .c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+  .c::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,4,6,0) 35%,rgba(5,4,6,.92) 100%);z-index:1}
+  .c::after{content:"";position:absolute;inset:10px;border:1px solid rgba(241,218,156,.55);z-index:2;pointer-events:none}
+  .c .in{position:absolute;left:24px;right:24px;bottom:22px;z-index:3;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+  .c .cat{font-size:.66rem;letter-spacing:.24em;color:var(--gold-lt)}
+  .c h3{font-family:var(--en);font-weight:600;font-size:1.9rem;line-height:1.05;margin:2px 0 4px;letter-spacing:.04em}
+  .c .info{font-size:.74rem;color:#D9D3DB}
+  .c .arrow{flex:0 0 52px;height:52px;border-radius:50%;border:1px solid var(--gold-lt);display:grid;place-items:center;color:var(--gold-lt);font-size:1.2rem}
+
+  /* D：雑誌風（ずらした金の額縁＋縦書き） */
+  .d{display:block}
+  .d .pw{position:relative;margin:14px 14px 0 0}
+  .d .pw::before{content:"";position:absolute;top:-14px;right:-14px;width:100%;height:100%;border:1px solid var(--gold)}
+  .d .ph{position:relative;aspect-ratio:16/10;overflow:hidden}
+  .d .ph img{width:100%;height:100%;object-fit:cover}
+  .d .tate{position:absolute;top:0;left:14px;writing-mode:vertical-rl;font-family:var(--serif);font-size:.78rem;letter-spacing:.4em;color:var(--gold-lt);background:rgba(5,4,6,.82);padding:12px 6px;border-bottom:1px solid var(--gold)}
+  .d .in{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:16px 2px 0}
+  .d .no{font-family:var(--en);font-style:italic;color:var(--gold);font-size:.86rem;letter-spacing:.1em}
+  .d h3{font-family:var(--en);font-weight:600;font-size:1.7rem;line-height:1.1;margin:0;letter-spacing:.04em}
+  .d .info{font-size:.74rem;color:var(--soft)}
+  .d .btn{flex:0 0 auto;background:var(--goldgrad);color:#1A1406;font-family:var(--serif);font-weight:700;font-size:.82rem;letter-spacing:.14em;padding:10px 16px}
+
+  /* E：黒の帯＋斜めに切った写真 */
+  .e{display:grid;grid-template-columns:1fr 46%;background:linear-gradient(120deg,#17131A,#0B0A0D);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);min-height:200px;position:relative;overflow:hidden}
+  .e .in{padding:18px 4px 18px 18px;position:relative;z-index:2;display:flex;flex-direction:column}
+  .e .badge{align-self:flex-start;background:var(--goldgrad);color:#1A1406;font-size:.62rem;font-weight:800;letter-spacing:.14em;padding:2px 10px}
+  .e h3{font-family:var(--serif);font-size:1.15rem;margin:10px 0 0;letter-spacing:.04em;line-height:1.4}
+  .e .info{font-size:.72rem;color:var(--dim)}
+  .e .pay{font-family:var(--serif);font-size:.88rem;color:var(--gold-lt);margin-top:8px}
+  .e .btn{margin-top:auto;align-self:flex-start;font-size:.78rem;letter-spacing:.14em;color:var(--gold-lt);border-bottom:1px solid var(--gold);padding:10px 0 2px}
+  .e .ph{position:relative;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
+  .e .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .e .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,13,.5),transparent 40%)}
+
+  .now{margin-top:46px;opacity:.9}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1 class="gt">求人カード 見本</h1>
+  <p class="lead">気に入ったものを A〜E で教えてください。<br>組み合わせ（例：Bの写真＋Cのボタン）もできます。</p>
+
+  <section class="sample">
+    <div class="label"><b>A</b><span>写真左・文字右（上品・定番）</span></div>
+    <p class="desc">写真と文字を横に並べ、細い金の線でまとめた形。一覧にたくさん並べても落ち着いて見えます。</p>
+    <a class="a" href="lilith.html">
+      <div class="ph"><img src="img/lilith/photo1.jpg" alt=""></div>
+      <div class="in">
+        <span class="cat">Cabaret Club</span>
+        <h3>club Lilith<br><small style="font-size:.72rem;color:var(--soft)">リリス</small></h3>
+        <span class="area">大阪市 梅田（堂山町）</span>
+        <span class="rule"></span>
+        <span class="pay">時給制＋各種バック</span>
+        <span class="tags">体験入店あり・未経験歓迎・日払いOK</span>
+        <span class="more">DETAIL</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="sample">
+    <div class="label"><b>B</b><span>ホテル風（中央そろえ）</span></div>
+    <p class="desc">高級ホテルのサイトのように、英字の店名を大きく中央に置いた形。1店舗ずつじっくり見せたいときに向いています。</p>
+    <a class="b" href="lilith.html" style="display:block">
+      <div class="ph"><img src="img/lilith/photo1.jpg" alt=""></div>
+      <div class="in">
+        <div class="cat">UMEDA ・ CABARET CLUB</div>
+        <h3 class="gt">Club Lilith</h3>
+        <div class="kana">リリス</div>
+        <div class="orn">◆</div>
+        <div class="info">体験入店あり ／ 未経験歓迎 ／ 週1日〜OK</div>
+        <div class="pay">時給制＋各種バック</div>
+        <span class="btn">求人を見る</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="sample">
+    <div class="label"><b>C</b><span>写真全面・ミニマル</span></div>
+    <p class="desc">写真を主役にして文字は最小限。大きなボタンの代わりに金の丸い矢印を置いた形。写真の質が良いほど映えます。</p>
+    <a class="c" href="lilith.html">
+      <img src="img/lilith/photo1.jpg" alt="">
+      <div class="in">
+        <div>
+          <div class="cat">UMEDA ／ CABARET CLUB</div>
+          <h3 class="gt">Club Lilith</h3>
+          <div class="info">体験入店あり ・ 時給制＋各種バック</div>
+        </div>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="sample">
+    <div class="label"><b>D</b><span>雑誌風（金の額縁＋縦書き）</span></div>
+    <p class="desc">写真の後ろに少しずらした金の額縁、左上に縦書きの「梅田・キャバクラ」。雑誌の誌面のような特別感が出ます。</p>
+    <a class="d" href="lilith.html">
+      <div class="pw"><div class="ph"><img src="img/lilith/photo1.jpg" alt=""></div><span class="tate">梅田・キャバクラ</span></div>
+      <div class="in">
+        <div>
+          <div class="no">No. 01</div>
+          <h3 class="gt">Club Lilith</h3>
+          <div class="info">リリス ／ 体験入店あり ／ 時給制＋各種バック</div>
+        </div>
+        <span class="btn">詳しく見る</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="sample">
+    <div class="label"><b>E</b><span>黒の帯＋斜めの写真</span></div>
+    <p class="desc">黒い帯の右側に、斜めに切った写真を入れた形。動きがあり、キャンペーンや「掲載店」を目立たせたいときに向いています。</p>
+    <a class="e" href="lilith.html">
+      <div class="in">
+        <span class="badge">掲載店</span>
+        <h3>club Lilith<br><small style="font-size:.72rem;color:var(--soft)">リリス</small></h3>
+        <span class="info">大阪市 梅田 ／ キャバクラ</span>
+        <span class="pay">時給制＋各種バック</span>
+        <span class="btn">求人の詳細を見る →</span>
+      </div>
+      <div class="ph"><img src="img/lilith/photo1.jpg" alt=""></div>
+    </a>
+  </section>
+</div>
+</body>
+</html>
