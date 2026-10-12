@@ -13,6 +13,27 @@ window.AREA_JOBS = [
     tags: ["即日体験入店OK", "未経験歓迎", "日払いOK", "ノルマなし", "送りあり", "レンタルドレス", "履歴書不要", "週1日〜OK", "Wワーク歓迎"],
     features: ["シフトは1週間ごとの自己申告制", "終電後は車での送りあり", "手ぶらで体験入店OK（ドレス・ロッカーあり）"],
     tel: "09063988010", line: "", reviewKey: "lilith|リリス", added: "2026-10-12" },
+  { name: "CLUB BLANC（ブラン）", nameEn: "Club Blanc", kana: "ブラン", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
+    pay: "お店に確認中", url: "blanc.html", pickup: true, pref: "大阪府", city: "大阪市",
+    catchCopy: "黒とダークグレーでまとめた、シックで落ち着いた店内のキャバクラ",
+    hours: "営業時間 19:00〜LAST", station: "東梅田駅・梅田駅・中崎町駅 徒歩圏内", transport: "要確認",
+    qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
+    features: ["黒・ダークグレー基調のシックな店内", "テーブル11卓", "定休日：火曜日"],
+    tel: "0643015115", reviewKey: "blanc|ブラン", added: "2026-10-12" },
+  { name: "Candy Pop（キャンディーポップ）", nameEn: "Candy Pop", kana: "キャンディーポップ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
+    pay: "お店に確認中", url: "candy.html", pickup: true, pref: "大阪府", city: "大阪市",
+    catchCopy: "ミニドレスでお迎えする、きれいで快適な店内のキャバクラ",
+    hours: "営業時間 19:00〜LAST", station: "東梅田駅・梅田駅・中崎町駅 徒歩圏内", transport: "要確認",
+    qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
+    features: ["きれいで快適な店内・分煙", "テーブル7卓", "衣装はミニドレス"],
+    tel: "0665850181", reviewKey: "candy ?pop|キャンディ", added: "2026-10-12" },
+  { name: "club 華門（昼の部）", nameEn: "Club Kamon", kana: "華門・昼の部", type: "昼キャバ", area: "梅田", address: "大阪府 大阪市 堂山町",
+    pay: "お店に確認中", url: "kamon.html", pickup: true, pref: "大阪府", city: "大阪市",
+    catchCopy: "13:30〜21:00、お昼の時間に働ける和モダンの昼キャバ",
+    hours: "営業時間 13:30〜21:00", station: "梅田駅・大阪駅・中崎町駅 徒歩圏内", transport: "要確認",
+    qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
+    features: ["お昼から夕方に働ける", "和モダンの店内・VIPルームあり", "定休日：月曜日"],
+    tel: "0647928802", reviewKey: "華門|カモン|kamon", added: "2026-10-12" },
   { name: "梅田のキャバクラ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市", pay: "2万5千円〜3万円" },
   { name: "北新地のキャバクラ", type: "キャバクラ", area: "北新地", address: "大阪府 大阪市", pay: "3万5千円〜5万円" },
   { name: "梅田のキャバクラ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市", pay: "2万5千円〜2万8千円" },
@@ -24,14 +45,14 @@ window.AREA_JOBS = [
 window.areaJobCard = function (j) {
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   // 写真がある求人：雑誌風（写真の後ろにずらした金の額縁＋縦書きのエリア・職種）
-  if (j.photo) {
+  if (j.photo || j.url) {
     var href = j.url ? ' href="' + esc(j.url) + '"' : '';
     // 縦書きは1文字ずつ縦に積む（端末によって文字が重なるのを防ぐ）
     var tate = function (s) { return Array.from(String(s || "")).map(function (c) { return '<i>' + esc(c) + '</i>'; }).join(""); };
     var en = j.nameEn || String(j.name).replace(/（.*?）|\(.*?\)/g, "").trim();
     var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
-      '<a class="dc-pw"' + href + '><span class="dc-ph"><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy"></span>' +
+      '<a class="dc-pw"' + href + '><span class="dc-ph' + (j.photo ? '' : ' noimg') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
         '<span class="dc-tate">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
         '<span class="dc-over">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
           '<span class="dc-name">' + esc(en) + '</span>' +
