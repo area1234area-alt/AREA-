@@ -14,7 +14,7 @@ window.AREA_JOBS = [
     features: ["シフトは1週間ごとの自己申告制", "終電後は車での送りあり", "手ぶらで体験入店OK（ドレス・ロッカーあり）"],
     tel: "09063988010", line: "", reviewKey: "lilith|リリス", added: "2026-10-12" },
   { name: "CLUB BLANC（ブラン）", nameEn: "Club Blanc", kana: "ブラン", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
-    pay: "お店に確認中", url: "blanc.html", pickup: true, pref: "大阪府", city: "大阪市",
+    pay: "お店に確認中", url: "blanc.html", photo: "img/blanc/main.jpg", logoInPhoto: true, pickup: true, pref: "大阪府", city: "大阪市",
     catchCopy: "黒とダークグレーでまとめた、シックで落ち着いた店内のキャバクラ",
     hours: "営業時間 19:00〜LAST", station: "東梅田駅・梅田駅・中崎町駅 徒歩圏内", transport: "要確認",
     qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
