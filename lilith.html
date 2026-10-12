@@ -17,10 +17,10 @@ var SHOP = {
   tel: "09063988010",
   telLabel: "090-6398-8010",
   line: "",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "",            // 一番上の大きい画像
+  heroImage: "img/lilith/main.jpg", // 一番上の大きい画像
   messageImage: "",         // 「お店からのメッセージ」の画像
   pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: ["", "", "", "", ""], // お店の写真（何枚でも）
+  gallery: ["img/lilith/photo1.jpg", "img/lilith/photo2.jpg", "img/lilith/photo3.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -97,6 +97,8 @@ var SHOP = {
   .shop-title .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;color:var(--gold);font-size:.7rem;letter-spacing:.2em}
   .shop-title .orn::before,.shop-title .orn::after{content:"";width:48px;height:1px;background:var(--goldgrad)}
   .hero{aspect-ratio:5/4;margin:0 -20px;border-left:0;border-right:0}
+  .hero.has{aspect-ratio:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hero.has img{position:static;height:auto}
   .chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
   .chip{font-size:.72rem;letter-spacing:.08em;padding:4px 12px;border:1px solid var(--gold);color:var(--gold-lt);background:rgba(201,162,39,.06)}
   .catch{font-family:var(--font-serif);font-weight:600;font-size:1.12rem;line-height:1.9;margin:18px 0 0;text-align:center;letter-spacing:.08em;text-wrap:balance}
@@ -149,9 +151,9 @@ var SHOP = {
   .safe-body .ph::before{width:18px;height:14px}
   .safe-body p{margin:0;font-size:.84rem;color:var(--ink-soft)}
 
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-  .gallery .ph{aspect-ratio:1/1}
-  .gallery .ph:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+  .gallery .ph{aspect-ratio:3/2}
+  .gallery .ph:first-child{grid-column:span 2}
 
   .ig-head{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;margin-bottom:14px}
   .ig-head .ph{width:64px;height:64px;border-radius:50%;font-size:.6rem}
