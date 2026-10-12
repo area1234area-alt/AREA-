@@ -26,11 +26,13 @@ window.areaJobCard = function (j) {
   // 写真がある求人：雑誌風（写真の後ろにずらした金の額縁＋縦書きのエリア・職種）
   if (j.photo) {
     var href = j.url ? ' href="' + esc(j.url) + '"' : '';
+    // 縦書きは1文字ずつ縦に積む（端末によって文字が重なるのを防ぐ）
+    var tate = function (s) { return Array.from(String(s || "")).map(function (c) { return '<i>' + esc(c) + '</i>'; }).join(""); };
     var en = j.nameEn || String(j.name).replace(/（.*?）|\(.*?\)/g, "").trim();
     var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
       '<a class="dc-pw"' + href + '><span class="dc-ph"><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy"></span>' +
-        '<span class="dc-tate">' + esc(j.area) + '・' + esc(j.type) + '</span></a>' +
+        '<span class="dc-tate">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span></a>' +
       '<div class="dc-in"><div class="dc-txt">' +
         (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
         '<div class="dc-name">' + esc(en) + '</div>' +
