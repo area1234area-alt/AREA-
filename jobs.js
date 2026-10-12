@@ -34,3 +34,16 @@ window.areaJobCard = function (j) {
     (j.photo ? '<a class="job-photo"' + (j.url ? ' href="' + esc(j.url) + '"' : '') + '><img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy"></a>' : '') +
     '</div>';
 };
+
+/* 口コミで「店名だけ非公開」にするお店（口コミの本文はそのまま表示し、店名を「店名非公開」に置きかえる）
+   ここに店名を足すだけでOK。空白・記号・大文字小文字の違いは気にしなくて大丈夫です。 */
+window.AREA_HIDDEN_SHOPS = ["わたしのブラジャーどこ行った"];
+window.areaShopName = function (name) {
+  var norm = function (s) { return String(s || "").toLowerCase().replace(/[\s　「」『』【】()（）!！?？・。、,.\-ー〜~]/g, ""); };
+  var n = norm(name);
+  for (var i = 0; i < window.AREA_HIDDEN_SHOPS.length; i++) {
+    var h = norm(window.AREA_HIDDEN_SHOPS[i]);
+    if (h && (n.indexOf(h) >= 0 || h.indexOf(n) >= 0 && n.length >= 4)) return "店名非公開";
+  }
+  return String(name || "");
+};

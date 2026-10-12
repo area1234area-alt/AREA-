@@ -466,7 +466,7 @@ var OSAKA_PERKS = ["即日体験入店OK", "未経験歓迎", "日払いOK", "�
     return '<div class="rv"><div class="rv-top"><span class="rv-badge">' + label + '</span><span>' + esc(r.age || "") + '</span><span class="rv-stars">' + stars(r.overall) + '</span></div>' +
       (r.period ? '<div class="rv-top" style="margin-top:4px">働いた時期：' + esc(r.period) + '</div>' : '') +
       (r.good ? '<p>' + esc(r.good) + '</p>' : r.bad ? '<p>' + esc(r.bad) + '</p>' : '') +
-      '<div class="shop">' + esc(r.shop) + '（' + esc(r.area) + (r.genre ? ' ／ ' + esc(r.genre) : '') + '）</div></div>';
+      '<div class="shop">' + esc(areaShopName(r.shop)) + '（' + esc(r.area) + (r.genre ? ' ／ ' + esc(r.genre) : '') + '）</div></div>';
   };
   var URL = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec?view=reviews";
   var noneMsg = '<div class="rv-empty">まだ口コミはありません。</div>';

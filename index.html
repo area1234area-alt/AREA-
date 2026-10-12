@@ -1119,7 +1119,7 @@
   function card(r){
     var c = el("div", "voice-card");
     var head = el("div", "voice-head");
-    head.appendChild(el("div", "voice-shop", r.shop + (r.area ? "（" + r.area + "）" : "")));
+    head.appendChild(el("div", "voice-shop", (window.areaShopName ? areaShopName(r.shop) : r.shop) + (r.area ? "（" + r.area + "）" : "")));
     var n = Math.max(0, Math.min(5, Math.round(Number(r.overall) || 0)));
     var st = el("div", "voice-stars", "★★★★★".slice(0, n)); st.setAttribute("aria-label", "5点中" + n + "点");
     st.appendChild(el("i", "", "★★★★★".slice(0, 5 - n))); head.appendChild(st);
