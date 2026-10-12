@@ -815,6 +815,12 @@
   }
   .job-grid .job-card{ grid-template-columns: 1fr; grid-template-areas: "tags" "title" "area" "pay" "note"; }
   .job-detail-link{ grid-area: note; display:inline-block; justify-self:start; margin-top:10px; background: var(--pink); color:#141115; border:1.5px solid var(--gold); border-radius:999px; padding:9px 18px; font-family: var(--font-display); font-weight:800; font-size:.86rem; }
+  .job-card .job-body{min-width:0}
+  .job-card.has-photo{grid-template-columns:1fr 38%; grid-template-areas:none; gap:16px; align-items:stretch}
+  .job-photo{display:block; overflow:hidden; border-radius:12px; min-height:110px}
+  .job-photo img{width:100%; height:100%; object-fit:cover; display:block}
+  .job-card .job-detail-link{display:inline-block}
+  @media (max-width:560px){ .job-card.has-photo{grid-template-columns:1fr 34%; gap:12px} }
 </style>
 </head>
 <body>
