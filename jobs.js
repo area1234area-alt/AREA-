@@ -28,7 +28,7 @@ window.AREA_JOBS = [
     features: ["きれいで快適な店内・分煙", "テーブル7卓", "衣装はミニドレス"],
     tel: "0665850181", reviewKey: "candy ?pop|キャンディ", added: "2026-10-12" },
   { name: "club 華門（昼の部）", nameEn: "Club Kamon", kana: "華門・昼の部", type: "昼キャバ", area: "梅田", address: "大阪府 大阪市 堂山町",
-    pay: "お店に確認中", url: "kamon.html", photo: "img/kamon/photo1.jpg", pickup: true, pref: "大阪府", city: "大阪市",
+    pay: "お店に確認中", url: "kamon.html", photo: "img/kamon/main.jpg", logoInPhoto: true, pickup: true, pref: "大阪府", city: "大阪市",
     catchCopy: "13:30〜21:00、お昼の時間に働ける和モダンの昼キャバ",
     hours: "営業時間 13:30〜21:00", station: "梅田駅・大阪駅・中崎町駅 徒歩圏内", transport: "要確認",
     qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
@@ -53,10 +53,11 @@ window.areaJobCard = function (j) {
     var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
       '<a class="dc-pw"' + href + '><span class="dc-ph' + (j.photo ? '' : ' noimg') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
-        '<span class="dc-tate">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
+        '<span class="dc-tate' + (j.logoInPhoto ? ' right' : '') + '">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
+        (j.logoInPhoto ? (j.trial ? '<span class="dc-over"><span class="dc-badge">体験入店あり</span></span>' : '') :
         '<span class="dc-over">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
           '<span class="dc-name">' + esc(en) + '</span>' +
-          (kana ? '<span class="dc-kana">' + esc(kana) + '</span>' : '') + '</span></a>' +
+          (kana ? '<span class="dc-kana">' + esc(kana) + '</span>' : '') + '</span>') + '</a>' +
       '<div class="dc-in dc-bottom">' +
         '<dl class="dc-dl">' +
           '<div><dt>給与</dt><dd>' + esc(j.pay || "確認中") + '</dd></div>' +
