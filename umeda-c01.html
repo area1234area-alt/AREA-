@@ -446,7 +446,7 @@ var SHOP = {
     <p>応募はお店へ直接ご連絡ください。<br>「Areaを見た」と伝えるとスムーズです。質問だけでも大丈夫です。</p>
     <a class="tel" id="applyTel" href="#apply">お店に電話する</a>
     <span class="num" id="applyNum"></span>
-    <p id="telWait" hidden style="margin-top:18px;border:1px solid var(--line);padding:14px">お店の連絡先は準備中です。<br>掲載までもうしばらくお待ちください。</p>
+    <p id="telWait" hidden style="margin-top:18px;border:1px solid var(--line);padding:14px">お店の電話番号は、ただいま準備中です。<br>もうすぐ掲載しますので、少しだけお待ちください。</p>
     <a class="line" id="applyLine" hidden target="_blank" rel="noopener">LINEで応募する</a>
   </section>
 
@@ -507,11 +507,15 @@ var SHOP = {
     ["applyTel","dockTel"].forEach(function(id){ document.getElementById(id).href = "tel:" + SHOP.tel; });
     document.getElementById("applyNum").textContent = SHOP.telLabel;
   } else {
-    // 電話番号がまだ無いときは、電話ボタンを隠して「準備中」を出す
-    document.getElementById("applyTel").hidden = true;
+    // 電話番号がまだ無いときも応募ボタンは出しておき、押したら「準備中」の案内を出す
     document.getElementById("applyNum").hidden = true;
-    document.getElementById("dockTel").hidden = true;
-    document.getElementById("telWait").hidden = false;
+    ["applyTel","dockTel"].forEach(function(id){
+      document.getElementById(id).addEventListener("click", function(e){
+        e.preventDefault();
+        var w = document.getElementById("telWait"); w.hidden = false;
+        document.getElementById("apply").scrollIntoView({ behavior: "smooth" });
+      });
+    });
   }
   if (SHOP.line) ["applyLine","dockLine"].forEach(function(id){ var e = document.getElementById(id); e.href = SHOP.line; e.hidden = false; });
 
