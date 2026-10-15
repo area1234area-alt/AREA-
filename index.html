@@ -982,9 +982,13 @@
       </div>
       <h3 class="area-region">関西</h3>
       <div class="area-pill-grid">
-        <a class="area-pill" href="#jobs"><span>北新地</span><span class="chev">›</span></a>
-        <a class="area-pill" href="#jobs"><span>難波</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>梅田</span><span class="chev">›</span></a>
+        <a class="area-pill" href="#jobs"><span>北新地</span><span class="chev">›</span></a>
+        <a class="area-pill" href="#jobs"><span>心斎橋</span><span class="chev">›</span></a>
+        <a class="area-pill" href="#jobs"><span>難波</span><span class="chev">›</span></a>
+        <a class="area-pill" href="#jobs"><span>天満</span><span class="chev">›</span></a>
+        <a class="area-pill" href="#jobs"><span>十三</span><span class="chev">›</span></a>
+        <a class="area-pill" href="#jobs" data-key="江坂"><span>江坂・豊中</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>三宮</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>祇園</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>京都駅</span><span class="chev">›</span></a>
@@ -1153,8 +1157,11 @@
   pills.forEach(function(p){
     var isType = typesHead && (typesHead.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING);
     p.dataset.kind = isType ? "type" : "area";
-    p.dataset.label = txt(p.querySelector("span"));
-    var n = cards.filter(function(c){ return c.dataset[p.dataset.kind] === p.dataset.label; }).length;
+    p.dataset.label = p.dataset.key || txt(p.querySelector("span"));
+    // 件数は求人データ（jobs.js）から数える。写真付きカードも含めて正しく数えるため
+    var data = window.AREA_JOBS || [];
+    var n = data.filter(function(j){ return j[p.dataset.kind] === p.dataset.label; }).length ||
+            cards.filter(function(c){ return c.dataset[p.dataset.kind] === p.dataset.label; }).length;
     if (!n) {
       p.classList.add("is-soon"); p.setAttribute("aria-disabled", "true"); p.removeAttribute("href");
       var ch = p.querySelector(".chev"); if (ch) { ch.className = "soon"; ch.textContent = "準備中"; }
