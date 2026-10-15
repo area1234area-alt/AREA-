@@ -34,6 +34,13 @@ window.AREA_JOBS = [
     qualify: "18歳以上（高校生不可）", payDetail: "お店に確認中（面接時に確認）", tags: [],
     features: ["お昼から夕方に働ける", "和モダンの店内・VIPルームあり", "定休日：月曜日"],
     tel: "0647928802", reviewKey: "華門|カモン|kamon", added: "2026-10-12" },
+  { name: "E●●●● HOUSE（エ●●ハウス）", nameEn: "E●●●● HOUSE", kana: "エ●●ハウス", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
+    pay: "時給2,000円〜5,000円", url: "elena.html", photo: "", pickup: true, pref: "大阪府", city: "大阪市", // 店名は一部伏せ字。写真が来たら photo: "img/elena/main.jpg"
+    catchCopy: "時給2,000円〜5,000円。送りあり・終電上がりOKの、梅田・堂山町のキャバクラ",
+    hours: "営業時間 20:00〜翌1:00", station: "梅田駅", transport: "要確認",
+    qualify: "19歳以上（18歳・高校生不可）", payDetail: "時給2,000円〜5,000円（本指名スライド制）／全額日払いは不可", tags: ["送りあり", "終電上がりOK", "ヘアメイク店内"],
+    features: ["本指名スライド制", "客層はサラリーマン中心", "定休日：日曜日"],
+    tel: "", reviewKey: "elena|エレナ", added: "2026-10-15" },
   { name: "梅田のキャバクラ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市", pay: "2万5千円〜3万円" },
   { name: "北新地のキャバクラ", type: "キャバクラ", area: "北新地", address: "大阪府 大阪市", pay: "3万5千円〜5万円" },
   { name: "梅田のキャバクラ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市", pay: "2万5千円〜2万8千円" },
