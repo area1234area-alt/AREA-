@@ -114,6 +114,20 @@ var SHOP = {
   .points li{padding:8px 16px 8px 34px;position:relative;font-size:.88rem}
   .points li::before{content:"";position:absolute;left:16px;top:17px;width:7px;height:7px;transform:rotate(45deg);background:var(--goldgrad)}
 
+  /* お店のポイント：スライド */
+  .pslide{margin-top:20px;border:1px solid var(--line);background:var(--panel)}
+  .pslide h3{padding:12px 16px;margin:0;font-size:.92rem;border-bottom:1px solid var(--line);color:var(--gold-lt);text-align:center;letter-spacing:.2em}
+  .pslide-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pslide-track::-webkit-scrollbar{display:none}
+  .pslide-card{flex:0 0 100%;scroll-snap-align:center;text-align:center;padding:26px 22px 18px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.14),transparent 70%)}
+  .pslide-no{display:block;font-family:var(--font-en);font-style:italic;font-size:.82rem;letter-spacing:.3em;color:var(--gold)}
+  .pslide-big{display:block;margin-top:8px;font-family:var(--font-serif);font-weight:700;font-size:1.5rem;letter-spacing:.08em;line-height:1.5}
+  .pslide-card p{margin:10px 0 0;font-size:.88rem;color:var(--ink-soft)}
+  .pslide-nav{display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 0 14px}
+  .pslide-arrow{width:34px;height:34px;border:1px solid var(--line);background:transparent;color:var(--gold-lt);font-size:1.3rem;line-height:1;cursor:pointer;border-radius:50%}
+  .pslide-dots{display:flex;gap:8px}
+  .pslide-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer}
+  .pslide-dots button.on{background:var(--gold);width:22px;border-radius:4px}
   .dl > div,.tbl > div{display:grid;grid-template-columns:5.8em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line2)}
   .dl dt,.tbl dt{font-family:var(--font-serif);font-weight:600;font-size:.84rem;color:var(--gold-lt);letter-spacing:.08em}
   .dl dd,.tbl dd{margin:0;font-size:.9rem}
@@ -269,14 +283,20 @@ var SHOP = {
       <div class="val">時給 最大5,000円<small>2,000円〜／経験・実績に合わせて面接で決定。本指名スライド制なので、指名が増えるほど時給も上がります。</small></div>
     </div>
 
-    <div class="points">
+    <!-- お店のポイント（横にスワイプできるスライド） -->
+    <div class="pslide" aria-roledescription="スライド">
       <h3>お店のポイント</h3>
-      <ul>
-        <li>経験・実績しだいで時給最大5,000円</li>
-        <li>本指名スライド制で、指名が増えるほど時給アップ</li>
-        <li>終電上がりOK・送りあり</li>
-        <li>ヘアメイクはお店の中でできる</li>
-      </ul>
+      <div class="pslide-track" id="pTrack">
+        <div class="pslide-card"><span class="pslide-no">POINT 01</span><b class="pslide-big gold-text">時給 最大5,000円</b><p>経験・実績しだいで、時給は最大5,000円</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 02</span><b class="pslide-big gold-text">指名で時給アップ</b><p>本指名スライド制で、指名が増えるほど時給が上がる</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 03</span><b class="pslide-big gold-text">終電上がりOK</b><p>終電で上がれて、送りもあり</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 04</span><b class="pslide-big gold-text">ヘアメイク店内</b><p>ヘアメイクはお店の中でできる</p></div>
+      </div>
+      <div class="pslide-nav">
+        <button type="button" class="pslide-arrow" id="pPrev" aria-label="前へ">‹</button>
+        <div class="pslide-dots" id="pDots"></div>
+        <button type="button" class="pslide-arrow" id="pNext" aria-label="次へ">›</button>
+      </div>
     </div>
 
     <dl class="dl" style="margin-top:22px">
@@ -494,6 +514,24 @@ var SHOP = {
     document.getElementById("telWait").hidden = false;
   }
   if (SHOP.line) ["applyLine","dockLine"].forEach(function(id){ var e = document.getElementById(id); e.href = SHOP.line; e.hidden = false; });
+
+  // お店のポイントのスライド（4秒ごとに自動で次へ。さわっている間は止まる）
+  (function(){
+    var tr = document.getElementById("pTrack"), dots = document.getElementById("pDots");
+    var cards = tr.children, n = cards.length, cur = 0, timer, rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    for (var i = 0; i < n; i++) { var d = document.createElement("button"); d.type = "button"; d.setAttribute("aria-label", (i + 1) + "枚目"); d.dataset.i = i; dots.appendChild(d); }
+    function go(i){ cur = (i + n) % n; tr.scrollTo({ left: cur * tr.clientWidth, behavior: rm ? "auto" : "smooth" }); mark(); }
+    function mark(){ [].forEach.call(dots.children, function(d, i){ d.classList.toggle("on", i === cur); }); }
+    function start(){ if (rm) return; stop(); timer = setInterval(function(){ go(cur + 1); }, 4000); }
+    function stop(){ clearInterval(timer); }
+    tr.addEventListener("scroll", function(){ var i = Math.round(tr.scrollLeft / tr.clientWidth); if (i !== cur) { cur = i; mark(); } }, { passive: true });
+    dots.addEventListener("click", function(e){ if (e.target.dataset.i) { go(+e.target.dataset.i); start(); } });
+    document.getElementById("pPrev").addEventListener("click", function(){ go(cur - 1); start(); });
+    document.getElementById("pNext").addEventListener("click", function(){ go(cur + 1); start(); });
+    ["touchstart","mouseenter"].forEach(function(ev){ tr.addEventListener(ev, stop, { passive: true }); });
+    ["touchend","mouseleave"].forEach(function(ev){ tr.addEventListener(ev, start, { passive: true }); });
+    mark(); start();
+  })();
 
   // 続きを見る
   [].forEach.call(document.querySelectorAll("[data-more]"), function(btn){
