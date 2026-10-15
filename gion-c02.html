@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G●LLE（ガ●） の求人｜祇園のキャバクラ｜Area</title>
+<meta name="description" content="京都・祇園のキャバクラのフロアレディ求人。時給4,000円〜、入店から2ヶ月の保証あり。元クラブで客層が良いお店。応募はお店へ直接。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+/* ================================================================
+   ここだけ書き換えれば、画像・リンクが反映されます
+   （空欄 "" のままだと「画像準備中」の枠が出ます）
+   ================================================================ */
+var SHOP = {
+  tel: "",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
+  telLabel: "",             // 表示用の電話番号 例）06-1234-5678
+  line: "",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
+  heroImage: "", // 一番上の大きい画像
+  messageImage: "",         // 「お店からのメッセージ」の画像
+  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["", "", ""], // お店の写真（何枚でも）
+  instagram: {
+    url: "",                // 例）https://www.instagram.com/アカウント名/
+    id: "",                 // 例）club_lilith
+    icon: "",               // アイコン画像
+    posts: ["", "", "", "", "", ""] // 投稿のサムネイル6枚
+  },
+  tiktok: { url: "", id: "", thumb: "" }
+};
+</script>
+<style>
+  :root{
+    --bg:#0B0A0D; --panel:#141117; --panel2:#1B171F; --line:rgba(201,162,39,.22); --line2:rgba(255,255,255,.08);
+    --ink:#F4EFE6; --ink-soft:#B7AEA6; --ink-dim:#8C847D;
+    --gold:#C9A227; --gold-lt:#F1DA9C; --gold-dk:#8E6F1C; --rose:#E9A5B9;
+    --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
+    --font-serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+    --font-en:'Cormorant Garamond','Times New Roman',serif;
+    --font-body:'Noto Sans JP','Hiragino Sans',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:120px}
+  body{margin:0;background:#050406;color:var(--ink);font-family:var(--font-body);line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+  a{color:inherit;text-decoration:none}
+  ul,ol{margin:0;padding:0;list-style:none}
+  img{display:block;max-width:100%}
+  [hidden]{display:none !important}
+  .page{max-width:760px;margin:0 auto;background:var(--bg);box-shadow:0 0 0 1px var(--line2)}
+  .gold-text{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .beta-bar{background:#000;color:var(--gold-lt);text-align:center;font-size:.68rem;letter-spacing:.08em;line-height:1.5;padding:6px 14px;border-bottom:1px solid var(--line)}
+  .site-head{background:#000;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+  .logo{font-family:var(--font-en);font-weight:700;font-size:1.7rem;line-height:1;letter-spacing:.06em}
+  .site-head nav{display:flex;gap:6px}
+  .site-head nav a{color:var(--gold-lt);border:1px solid var(--line);border-radius:2px;padding:6px 12px;font-size:.74rem;letter-spacing:.08em}
+  .crumb{font-size:.7rem;color:var(--ink-dim);padding:8px 16px;background:#000;white-space:nowrap;overflow-x:auto;border-top:1px solid var(--line2)}
+  .crumb a{text-decoration:underline;text-underline-offset:3px}
+
+  .shop-bar{position:sticky;top:0;z-index:30;background:rgba(11,10,13,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .shop-bar-in{display:flex;align-items:stretch}
+  .shop-badge{flex:0 0 auto;width:70px;background:var(--goldgrad);color:#1A1406;font-weight:800;font-size:.64rem;line-height:1.3;display:grid;place-items:center;text-align:center;padding:6px;letter-spacing:.06em}
+  .shop-badge b{display:block;font-family:var(--font-en);font-size:1.15rem;letter-spacing:.08em}
+  .shop-name{flex:1;min-width:0;padding:8px 12px}
+  .shop-name strong{font-family:var(--font-en);font-size:1.3rem;font-weight:700;line-height:1.2;letter-spacing:.06em;color:var(--gold-lt)}
+  .shop-name strong small{font-family:var(--font-serif);font-size:.72rem;font-weight:600;color:var(--ink-soft);margin-left:4px;letter-spacing:.1em}
+  .shop-name span{display:block;font-size:.72rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.06em}
+  .menu-btn{flex:0 0 56px;border:0;border-left:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center}
+  .menu-btn i{display:grid;grid-template-columns:repeat(3,5px);gap:4px}
+  .menu-btn i b{width:5px;height:5px;border-radius:50%;background:var(--gold-lt)}
+  .tabs{display:flex;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--line2)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{flex:1 0 auto;text-align:center;padding:10px 14px;font-size:.78rem;letter-spacing:.08em;color:var(--ink-dim);border-bottom:2px solid transparent;white-space:nowrap}
+  .tabs a.on{color:var(--gold-lt);border-bottom-color:var(--gold)}
+  .menu-panel{border-top:1px solid var(--line);background:var(--panel);padding:8px 16px 14px}
+  .menu-panel a{display:block;padding:11px 4px;border-bottom:1px solid var(--line2);font-family:var(--font-serif);font-size:.92rem;letter-spacing:.08em}
+
+  .ph{position:relative;background:radial-gradient(ellipse at 50% 30%,rgba(201,162,39,.12),transparent 65%),linear-gradient(160deg,#1A161D,#0F0D11);border:1px solid var(--line);overflow:hidden;color:var(--ink-dim);display:grid;place-items:center;align-content:center;text-align:center;font-size:.72rem;letter-spacing:.08em;line-height:1.6}
+  .ph::before{content:"";width:26px;height:20px;margin:0 auto 6px;border:1px solid var(--gold);border-radius:2px;display:block;opacity:.6}
+  .ph.has{border:0;background:none}
+  .ph.has::before{display:none}
+  .ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+
+  .blk{padding:42px 20px;border-top:1px solid var(--line2);position:relative}
+  .blk h2{text-align:center;font-family:var(--font-serif);font-weight:600;font-size:1.28rem;letter-spacing:.14em;margin:0 0 26px;line-height:1.5;color:var(--ink)}
+  .blk h2[data-en]::before{content:attr(data-en);display:block;font-family:var(--font-en);font-weight:600;font-style:italic;font-size:.9rem;letter-spacing:.24em;color:var(--gold);margin-bottom:2px}
+  .blk h2::after{content:"";display:block;width:56px;height:1px;margin:12px auto 0;background:var(--goldgrad)}
+  .blk h3{font-family:var(--font-serif);font-weight:600;font-size:1rem;margin:0 0 8px;letter-spacing:.08em}
+
+  /* トップ */
+  #top{padding-top:0}
+  .shop-title{text-align:center;padding:34px 16px 26px;margin:0 -20px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.22),transparent 70%)}
+  .shop-title .pre{font-family:var(--font-en);font-style:italic;letter-spacing:.3em;font-size:.82rem;color:var(--gold)}
+  .shop-title h1{margin:4px 0 0;font-family:var(--font-en);font-weight:600;font-size:clamp(2.6rem,12vw,3.6rem);line-height:1;letter-spacing:.08em}
+  .shop-title .kana{font-family:var(--font-serif);letter-spacing:.5em;font-size:.84rem;color:var(--ink-soft);margin-top:10px;padding-left:.5em}
+  .shop-title .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;color:var(--gold);font-size:.7rem;letter-spacing:.2em}
+  .shop-title .orn::before,.shop-title .orn::after{content:"";width:48px;height:1px;background:var(--goldgrad)}
+  .hero{aspect-ratio:5/4;margin:0 -20px;border-left:0;border-right:0}
+  .hero.has{aspect-ratio:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hero.has img{position:static;height:auto}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .chip{font-size:.72rem;letter-spacing:.08em;padding:4px 12px;border:1px solid var(--gold);color:var(--gold-lt);background:rgba(201,162,39,.06)}
+  .catch{font-family:var(--font-serif);font-weight:600;font-size:1.12rem;line-height:1.9;margin:18px 0 0;text-align:center;letter-spacing:.08em;text-wrap:balance}
+
+  .pay-row{display:flex;align-items:stretch;border:1px solid var(--gold);margin-top:24px;position:relative}
+  .pay-row .lbl{flex:0 0 auto;background:var(--goldgrad);color:#1A1406;font-family:var(--font-serif);font-weight:700;font-size:.84rem;letter-spacing:.2em;display:grid;place-items:center;padding:8px 14px;writing-mode:vertical-rl}
+  .pay-row .val{flex:1;padding:14px 16px;font-family:var(--font-serif);font-weight:700;font-size:1.12rem;letter-spacing:.08em;background:rgba(201,162,39,.06)}
+  .pay-row .val small{display:block;font-family:var(--font-body);font-weight:400;font-size:.76rem;color:var(--ink-soft);margin-top:4px;letter-spacing:.02em}
+
+  .points{margin-top:20px;border:1px solid var(--line);background:var(--panel)}
+  .points h3{padding:12px 16px;margin:0;font-size:.92rem;border-bottom:1px solid var(--line);color:var(--gold-lt);text-align:center;letter-spacing:.2em}
+  .points ul{padding:6px 0}
+  .points li{padding:8px 16px 8px 34px;position:relative;font-size:.88rem}
+  .points li::before{content:"";position:absolute;left:16px;top:17px;width:7px;height:7px;transform:rotate(45deg);background:var(--goldgrad)}
+
+  /* お店のポイント：スライド */
+  .pslide{margin-top:20px;border:1px solid var(--line);background:var(--panel)}
+  .pslide h3{padding:12px 16px;margin:0;font-size:.92rem;border-bottom:1px solid var(--line);color:var(--gold-lt);text-align:center;letter-spacing:.2em}
+  .pslide-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pslide-track::-webkit-scrollbar{display:none}
+  .pslide-card{flex:0 0 100%;scroll-snap-align:center;text-align:center;padding:26px 22px 18px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.14),transparent 70%)}
+  .pslide-no{display:block;font-family:var(--font-en);font-style:italic;font-size:.82rem;letter-spacing:.3em;color:var(--gold)}
+  .pslide-big{display:block;margin-top:8px;font-family:var(--font-serif);font-weight:700;font-size:1.5rem;letter-spacing:.08em;line-height:1.5}
+  .pslide-card p{margin:10px 0 0;font-size:.88rem;color:var(--ink-soft)}
+  .pslide-nav{display:flex;align-items:center;justify-content:center;gap:14px;padding:4px 0 14px}
+  .pslide-arrow{width:34px;height:34px;border:1px solid var(--line);background:transparent;color:var(--gold-lt);font-size:1.3rem;line-height:1;cursor:pointer;border-radius:50%}
+  .pslide-dots{display:flex;gap:8px}
+  .pslide-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer}
+  .pslide-dots button.on{background:var(--gold);width:22px;border-radius:4px}
+  /* スライド表など */
+  .slide-tbl{width:100%;border-collapse:collapse;margin-top:8px;font-size:.84rem}
+  .slide-tbl th,.slide-tbl td{border:1px solid var(--line2);padding:7px 10px;text-align:center}
+  .slide-tbl th{background:rgba(201,162,39,.1);color:var(--gold-lt);font-family:var(--font-serif);font-weight:600}
+  .slide-tbl tr.top td{color:var(--gold-lt);font-weight:700}
+  .dl > div,.tbl > div{display:grid;grid-template-columns:5.8em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line2)}
+  .dl dt,.tbl dt{font-family:var(--font-serif);font-weight:600;font-size:.84rem;color:var(--gold-lt);letter-spacing:.08em}
+  .dl dd,.tbl dd{margin:0;font-size:.9rem}
+  .dl dd small,.tbl dd small{display:block;color:var(--ink-soft);font-size:.78rem;margin-top:2px}
+
+  .cta{display:flex;margin-top:24px}
+  .cta a{flex:1;text-align:center;padding:15px 10px;font-family:var(--font-serif);font-weight:700;font-size:1rem;letter-spacing:.14em;background:var(--goldgrad);color:#1A1406;box-shadow:0 10px 30px rgba(201,162,39,.25)}
+
+  .msg-img{aspect-ratio:1/1;margin-bottom:20px}
+  .msg p{margin:0 0 12px;font-size:.92rem;line-height:2.1;color:#E6DFD5}
+  .more{display:block;margin:16px auto 0;max-width:280px;text-align:center;border:1px solid var(--gold);padding:10px;font-size:.84rem;letter-spacing:.14em;background:transparent;color:var(--gold-lt);cursor:pointer;font-family:var(--font-serif);width:100%}
+  .clamp{max-height:10em;overflow:hidden;position:relative}
+  .clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3.5em;background:linear-gradient(transparent,var(--bg))}
+  .clamp.open{max-height:none}
+  .clamp.open::after{display:none}
+
+  .legend{display:flex;justify-content:center;gap:18px;font-size:.78rem;margin-bottom:14px;color:var(--ink-soft)}
+  .mk{display:inline-grid;place-items:center;width:20px;height:20px;font-size:.7rem;font-weight:800;vertical-align:-4px;margin-right:6px;font-style:normal}
+  .mk.o{background:var(--goldgrad);color:#1A1406} .mk.t{border:1px solid var(--gold);color:var(--gold-lt)}
+  .ids{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .ids li{border:1px solid var(--line2);background:var(--panel);padding:9px 10px;font-size:.8rem;line-height:1.4;display:flex;align-items:center}
+  .note{font-size:.78rem;color:var(--ink-soft);margin:14px 0 0}
+
+  .flow{position:relative}
+  .flow li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;position:relative}
+  .flow li:not(:last-child)::after{content:"";position:absolute;left:21px;top:56px;bottom:-6px;width:1px;background:var(--line)}
+  .flow .n{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--font-en);font-size:1.3rem;font-weight:600;color:var(--gold-lt);background:var(--bg)}
+  .flow b{display:block;font-family:var(--font-serif);font-size:1rem;letter-spacing:.08em;padding-top:8px}
+  .flow p{margin:4px 0 0;font-size:.85rem;color:var(--ink-soft)}
+
+  .safe{border:1px solid var(--line);background:var(--panel);margin-bottom:12px}
+  .safe-head{padding:8px 16px;font-family:var(--font-en);font-style:italic;font-size:.9rem;letter-spacing:.2em;color:var(--gold);border-bottom:1px solid var(--line2)}
+  .safe-body{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 16px;align-items:start}
+  .safe-body .ph{aspect-ratio:4/3;font-size:.64rem}
+  .safe-body .ph::before{width:18px;height:14px}
+  .safe-body p{margin:0;font-size:.84rem;color:var(--ink-soft)}
+
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+  .gallery .ph{aspect-ratio:3/2}
+  .gallery .ph:first-child{grid-column:span 2}
+
+  .ig-head{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;margin-bottom:14px}
+  .ig-head .ph{width:64px;height:64px;border-radius:50%;font-size:.6rem}
+  .ig-head .ph::before{width:16px;height:12px;margin-bottom:2px}
+  .ig-head b{display:block;font-size:.95rem;font-weight:600}
+  .ig-head span{font-size:.78rem;color:var(--ink-soft)}
+  .ig-logo{width:28px;height:28px;border-radius:8px;border:1.5px solid var(--gold-lt);position:relative}
+  .ig-logo::before{content:"";position:absolute;inset:6px;border:1.5px solid var(--gold-lt);border-radius:50%}
+  .ig-logo::after{content:"";position:absolute;right:4px;top:4px;width:3px;height:3px;border-radius:50%;background:var(--gold-lt)}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+  .ig-grid .ph{aspect-ratio:1/1}
+  .sns-link{display:block;text-align:center;margin-top:14px;font-size:.84rem;letter-spacing:.1em;border:1px solid var(--gold);color:var(--gold-lt);padding:10px}
+  .tt .ph{aspect-ratio:9/16;max-width:220px;margin:0 auto}
+
+  .upd{font-size:.72rem;color:var(--ink-dim);margin:-14px 0 10px;text-align:center;letter-spacing:.08em}
+  .tag-group{margin-top:20px}
+  .tag-group h3{font-size:.86rem;margin:0 0 10px;color:var(--gold-lt);display:flex;align-items:center;gap:10px}
+  .tag-group h3::after{content:"";flex:1;height:1px;background:var(--line)}
+  .tag-group .chips{justify-content:flex-start}
+  .tag-group .chips span{font-size:.74rem;border:1px solid var(--line2);padding:4px 11px;background:var(--panel);color:#E6DFD5}
+
+  .faq details{border-bottom:1px solid var(--line2)}
+  .faq summary{list-style:none;cursor:pointer;padding:15px 28px 15px 0;font-size:.92rem;position:relative;font-family:var(--font-serif);font-weight:600;letter-spacing:.04em}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"Q.";color:var(--gold);font-family:var(--font-en);font-size:1.15rem;font-weight:600;margin-right:8px}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:1.2rem;color:var(--gold)}
+  .faq details[open] summary::after{content:"−"}
+  .faq p{margin:0 0 14px;font-size:.88rem;color:var(--ink-soft);padding-left:1.9em}
+
+  .rv{border:1px solid var(--line2);background:var(--panel);padding:14px 16px;margin-bottom:10px}
+  .rv-top{display:flex;justify-content:space-between;gap:8px;font-size:.78rem;color:var(--ink-soft)}
+  .rv-stars{color:var(--gold);letter-spacing:2px}
+  .rv p{margin:6px 0 0;font-size:.88rem}
+  .rv-empty{text-align:center;border:1px solid var(--line);padding:22px 14px;font-size:.86rem;color:var(--ink-soft)}
+  .rv-write{display:block;text-align:center;margin-top:14px;border:1px solid var(--gold);padding:11px;font-family:var(--font-serif);font-size:.9rem;letter-spacing:.12em;color:var(--gold-lt)}
+
+  .map-btns{display:flex;gap:8px;margin-top:12px}
+  .map-btns a,.map-btns button{flex:1;text-align:center;border:1px solid var(--line);padding:9px;font-size:.8rem;background:transparent;cursor:pointer;font-family:inherit;color:var(--gold-lt);letter-spacing:.06em;line-height:1.5}
+
+  .apply{text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.2),transparent 70%),#000;border-top:1px solid var(--line)}
+  .apply p{margin:0;font-size:.86rem;color:var(--ink-soft)}
+  .apply .tel{display:block;margin:20px auto 0;max-width:360px;background:var(--goldgrad);color:#1A1406;padding:15px;font-family:var(--font-serif);font-weight:700;font-size:1.06rem;letter-spacing:.14em;box-shadow:0 10px 30px rgba(201,162,39,.25)}
+  .apply .tel small{display:block;font-family:var(--font-body);font-size:.72rem;font-weight:500;letter-spacing:.06em}
+  .apply .num{display:block;margin-top:12px;font-family:var(--font-en);font-size:1.4rem;letter-spacing:.12em;color:var(--gold-lt)}
+  .apply .line{display:block;margin:10px auto 0;max-width:360px;border:1px solid #06C755;color:#fff;padding:12px;font-weight:700}
+
+  .notes{background:#000}
+  .notes ul{font-size:.76rem;color:var(--ink-dim)}
+  .notes li{padding-left:1.1em;position:relative;margin:4px 0}
+  .notes li::before{content:"※";position:absolute;left:0}
+  .back{display:block;text-align:center;padding:20px;font-size:.86rem;letter-spacing:.08em;color:var(--gold-lt);text-decoration:underline;text-underline-offset:5px;background:#000}
+
+  footer{background:#000;border-top:1px solid var(--line);color:var(--ink-dim);text-align:center;font-size:.74rem;padding:24px 16px;letter-spacing:.06em}
+  footer a{color:var(--ink-soft);margin:0 8px}
+  footer p{margin:8px 0 0;font-family:var(--font-en);letter-spacing:.14em}
+
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(5,4,6,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+  .dock-in{max-width:760px;margin:0 auto;display:flex;gap:8px}
+  .dock a{flex:1;text-align:center;padding:8px 6px;font-size:.78rem;letter-spacing:.06em;line-height:1.35;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:54px}
+  .dock .d-tel{border:1px solid var(--gold);color:var(--gold-lt)}
+  .dock .d-line{border:1px solid #06C755;color:#fff}
+  .dock .d-main{flex:1.7;background:var(--goldgrad);color:#1A1406;font-family:var(--font-serif);font-weight:700;font-size:1.02rem;letter-spacing:.14em}
+  .dock .d-main small{font-family:var(--font-body);font-size:.68rem;font-weight:500;letter-spacing:.04em}
+  .dock svg{width:18px;height:18px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="beta-bar">Areaはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
+<div class="site-head">
+  <a href="index.html" class="logo gold-text">Area</a>
+  <nav><a href="area.html?area=%E7%A5%87%E5%9C%92">祇園の求人</a><a href="index.html#voices">口コミ</a></nav>
+</div>
+<div class="crumb"><a href="index.html">Area</a> ＞ <a href="osaka.html">大阪府</a> ＞ <a href="area.html?area=%E7%A5%87%E5%9C%92">祇園の求人</a> ＞ G●LLE（ガ●）</div>
+
+<!-- お店の固定バー -->
+<div class="shop-bar">
+  <div class="shop-bar-in">
+    <div class="shop-badge"><span>求人<b>募集</b></span></div>
+    <div class="shop-name">
+      <strong>G●LLE<small>（ガ●）</small></strong>
+      <span>京都市 東山区（祇園） ／ キャバクラ</span>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="ページ内メニュー" aria-expanded="false"><i><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i></button>
+  </div>
+  <div class="menu-panel" id="menuPanel" hidden>
+    <a href="#top">トップ</a><a href="#flow">体験入店の流れ</a><a href="#gallery">お店の写真・SNS</a><a href="#youkou">募集要項</a><a href="#faq">よくある質問</a><a href="#voices">口コミ</a><a href="#shop">お店情報</a><a href="#apply">応募・連絡先</a>
+  </div>
+  <nav class="tabs" id="tabs">
+    <a href="#top" class="on">トップ</a><a href="#shop">お店情報</a><a href="#youkou">募集要項</a><a href="#faq">よくある質問</a><a href="#voices">口コミ</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- トップ -->
+  <section class="blk" id="top">
+    <div class="shop-title">
+      <div class="pre">Gion ・ Cabaret Club</div>
+      <h1 class="sr-only">G●LLE（ガ●）</h1>
+      <div class="orn">RECRUIT</div>
+    </div>
+    <div class="ph hero" data-img="heroImage">画像準備中<br>（お店のメイン画像）</div>
+    <div class="chips" style="margin-top:22px">
+      <span class="chip">祇園四条駅</span><span class="chip">キャバクラ</span><span class="chip">時給4,000円〜</span><span class="chip">2ヶ月保証</span><span class="chip">送りあり</span>
+    </div>
+    <p class="catch">時給4,000円から、入店から2ヶ月は保証つき。<br>元クラブで客層の良い、祇園のキャバクラです。</p>
+
+    <div class="pay-row">
+      <div class="lbl">給与</div>
+      <div class="val">時給 4,000円〜<small>経験などにより決定。入店から2ヶ月は保証あり。売上スライド制で、売上に合わせて時給が上がります。</small></div>
+    </div>
+
+    <!-- お店のポイント（横にスワイプできるスライド） -->
+    <div class="pslide" aria-roledescription="スライド">
+      <h3>お店のポイント</h3>
+      <div class="pslide-track" id="pTrack">
+        <div class="pslide-card"><span class="pslide-no">POINT 01</span><b class="pslide-big gold-text">時給 4,000円〜</b><p>売上スライド制で、売上に合わせて時給アップ</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 02</span><b class="pslide-big gold-text">2ヶ月の保証</b><p>入店から2ヶ月は保証つきで安心</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 03</span><b class="pslide-big gold-text">客層が良い</b><p>元クラブのお店で、落ち着いたお客様が多い</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 04</span><b class="pslide-big gold-text">体験日は全額日払い</b><p>入店後も1日のお給料の7割まで日払いOK</p></div>
+      </div>
+      <div class="pslide-nav">
+        <button type="button" class="pslide-arrow" id="pPrev" aria-label="前へ">‹</button>
+        <div class="pslide-dots" id="pDots"></div>
+        <button type="button" class="pslide-arrow" id="pNext" aria-label="次へ">›</button>
+      </div>
+    </div>
+
+    <dl class="dl" style="margin-top:22px">
+      <div><dt>業種</dt><dd>キャバクラ</dd></div>
+      <div><dt>営業時間</dt><dd>20:00〜翌1:00<small>勤務時間・シフトはお店に確認中</small></dd></div>
+      <div><dt>最寄駅</dt><dd>祇園四条駅<small>徒歩時間は確認中</small></dd></div>
+    </dl>
+
+    <div class="cta"><a href="#apply">応募・お問い合わせへ進む</a></div>
+  </section>
+
+  <!-- お店からのメッセージ -->
+  <section class="blk msg">
+    <h2 data-en="Message">お店からのメッセージ</h2>
+    <div class="ph msg-img dark" data-img="messageImage">画像準備中<br>（メッセージ用の画像）</div>
+    <div class="clamp" id="msgText">
+      <p>京都・祇園のキャバクラで、フロアレディを募集しています。</p>
+      <p>もともとクラブだったお店で、お客様の客層が良いのが自慢です。</p>
+      <p>時給は4,000円からで、入店から2ヶ月は保証があります。売上スライド制で、売上に合わせて時給が上がります。21時までの同伴は5,000円のバック。体験入店の日はお給料を全額その日に受け取れます。</p>
+      <p>給与や勤務条件は、面接のときにお店から直接説明があります。気になることは、まずは気軽にお店に聞いてみてください。</p>
+    </div>
+    <button class="more" type="button" data-more="msgText">続きを見る</button>
+  </section>
+
+  <!-- 必要なもの -->
+  <section class="blk">
+    <h2 data-en="What to bring">体験入店・面接に必要なもの</h2>
+    <div class="legend"><span><i class="mk o">○</i>必要</span></div>
+    <ul class="ids">
+      <li><i class="mk o">○</i>顔写真付きの身分証明書</li>
+      <li><i class="mk o">○</i>本籍地の書かれた住民票 または パスポート</li>
+    </ul>
+    <p class="note">顔写真付きの身分証明書と、本籍地の書かれた住民票かパスポートのどちらか1点が必要です。履歴書がいるかどうかは、事前にお店へご確認ください。</p>
+  </section>
+
+  <!-- 体験入店の流れ -->
+  <section class="blk" id="flow">
+    <h2 data-en="Flow">体験入店の流れ</h2>
+    <ol class="flow">
+      <li><span class="n">1</span><div><b>お店に連絡する</b><p>「Areaを見た」と伝えて、面接の日を決めます。</p></div></li>
+      <li><span class="n">2</span><div><b>面接</b><p>顔写真付きの身分証明書と、本籍地の書かれた住民票かパスポートを持ってお店へ。</p></div></li>
+      <li><span class="n">3</span><div><b>お給料などの説明</b><p>時給やバック、勤務の決まりを直接聞けます。気になることはその場で質問してください。</p></div></li>
+      <li><span class="n">4</span><div><b>体験入店</b><p>体験入店ができるか、その日のお給料の受け取り方は、面接のときに確認してください。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 安心ポイント -->
+  <section class="blk">
+    <h2 data-en="Point">お店のポイント</h2>
+    <div class="safe">
+      <div class="safe-head">ポイント 1</div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.0">画像準備中</div><div><h3>2ヶ月の保証</h3><p>入店から2ヶ月は保証あり。はじめてでも安心です。</p></div></div>
+    </div>
+    <div class="safe">
+      <div class="safe-head">ポイント 2</div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.1">画像準備中</div><div><h3>客層が良い</h3><p>元クラブのお店で、落ち着いたお客様が多いです。</p></div></div>
+    </div>
+    <div class="safe">
+      <div class="safe-head">ポイント 3</div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.2">画像準備中</div><div><h3>日払いOK</h3><p>体験入店の日は全額、入店後も1日の7割まで日払いできます。</p></div></div>
+    </div>
+  </section>
+
+  <!-- ギャラリー・SNS -->
+  <section class="blk" id="gallery">
+    <h2 data-en="Gallery">ギャラリー</h2>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
+
+  <section class="blk">
+    <h2 data-en="Official">Instagram</h2>
+    <div class="ig-head">
+      <div class="ph" data-img="instagram.icon">アイコン</div>
+      <div><b id="igId">アカウント準備中</b><span>G●LLE</span></div>
+      <span class="ig-logo" aria-hidden="true"></span>
+    </div>
+    <div class="ig-grid" id="igGrid"></div>
+    <a class="sns-link" id="igLink" hidden target="_blank" rel="noopener">Instagramでプロフィールを見る</a>
+  </section>
+
+  <section class="blk tt">
+    <h2 data-en="Official">TikTok</h2>
+    <div class="ph" data-img="tiktok.thumb">画像準備中<br>（TikTokの動画）</div>
+    <a class="sns-link" id="ttLink" hidden target="_blank" rel="noopener">TikTokで見る</a>
+  </section>
+
+  <!-- 募集要項 -->
+  <section class="blk" id="youkou">
+    <h2 data-en="Recruit">募集要項</h2>
+    <p class="upd">情報の確認日：2026年10月15日</p>
+    <dl class="tbl">
+      <div><dt>職種</dt><dd>キャバクラのフロアレディ</dd></div>
+      <div><dt>応募資格</dt><dd>19歳以上（18歳の方・高校生は不可）</dd></div>
+      <div><dt>給与</dt><dd>時給 4,000円〜<small>経験などにより個人ごとに決定。入店から2ヶ月は保証あり。売上スライド制</small></dd></div>
+      <div><dt>バック</dt><dd>同伴 5,000円（21時までの入店）<small>本指名は売上に加算</small></dd></div>
+      <div><dt>給料日</dt><dd>月末締め・翌月15日払い<small>体験入店の日は全額日払い。入店後は1日のお給料の7割まで日払い可能</small></dd></div>
+      <div><dt>差し引き</dt><dd>所得税 10%・厚生費 1出勤700円</dd></div>
+      <div><dt>ノルマ</dt><dd>なし</dd></div>
+      <div><dt>勤務日</dt><dd>お店に確認中</dd></div>
+      <div><dt>勤務時間</dt><dd>営業時間 20:00〜翌1:00 の間<small>終電での上がりは不可</small></dd></div>
+      <div><dt>休日</dt><dd>日曜日（店休日）</dd></div>
+      <div><dt>服装</dt><dd>ドレス（黒はNG）</dd></div>
+      <div><dt>送り</dt><dd>あり（0時〜4時ごろ）<small>滋賀県・大阪府まで。市内500円・市外1,000円・遠方1,500円</small></dd></div>
+      <div><dt>ヘアメイク</dt><dd>各自で（お店の外で済ませて出勤）</dd></div>
+      <div><dt>寮</dt><dd>なし</dd></div>
+      <div><dt>交通費</dt><dd>要確認</dd></div>
+    </dl>
+    <p class="note" style="margin-top:16px">遅刻・欠勤のときの決まりは、面接のときに必ずお店へご確認ください。</p>
+
+    <div class="cta"><a href="#apply">応募・お問い合わせへ進む</a></div>
+  </section>
+
+  <!-- よくある質問 -->
+  <section class="blk faq" id="faq">
+    <h2 data-en="Q &amp; A">よくある質問</h2>
+    <details><summary>時給はいくらですか？</summary><p>時給は4,000円からで、入店から2ヶ月は保証があります。売上に合わせて上がります。</p></details>
+    <details><summary>面接には何を持っていけばいいですか？</summary><p>顔写真付きの身分証明書と、本籍地の書かれた住民票またはパスポートのどちらか1点が必要です。</p></details>
+    <details><summary>日払いはできますか？</summary><p>体験入店の日は全額日払いです。入店後は1日のお給料の7割まで日払いできます。</p></details>
+    <details><summary>18歳でも働けますか？</summary><p>このお店では18歳の方は働けません。19歳以上の方が応募できます（高校生不可）。</p></details>
+  </section>
+
+  <!-- 口コミ（Areaに投稿された口コミのうち、このお店のもの） -->
+  <section class="blk" id="voices">
+    <h2 data-en="Voice">口コミ</h2>
+    <div id="rvList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
+    <a class="rv-write" href="https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec">このお店の口コミを書く</a>
+  </section>
+
+  <!-- お店情報 -->
+  <section class="blk" id="shop">
+    <h2 data-en="Shop info">お店情報</h2>
+    <dl class="tbl">
+      <div><dt>店舗名</dt><dd>G●LLE<small>ガ●（店名の一部を伏せています。正式な店名はお問い合わせ時にご案内します）</small></dd></div>
+      <div><dt>業種</dt><dd>キャバクラ</dd></div>
+      <div><dt>エリア</dt><dd>京都府京都市 東山区（祇園）</dd></div>
+      <div><dt>SNS</dt><dd><span id="snsCell">準備中</span></dd></div>
+      <div><dt>住所</dt><dd>京都府京都市東山区<small>祇園四条駅から徒歩圏内（くわしい場所は面接が決まったときにご案内します）</small></dd></div>
+      <div><dt>営業時間</dt><dd>20:00〜翌1:00<small>定休日：日曜日</small></dd></div>
+    </dl>
+  </section>
+
+  <!-- 応募 -->
+  <section class="blk apply" id="apply">
+    <h2 data-en="Contact">応募・お問い合わせ</h2>
+    <p>応募はお店へ直接ご連絡ください。<br>「Areaを見た」と伝えるとスムーズです。質問だけでも大丈夫です。</p>
+    <a class="tel" id="applyTel" href="#apply">お店に電話する</a>
+    <span class="num" id="applyNum"></span>
+    <p id="telWait" hidden style="margin-top:18px;border:1px solid var(--line);padding:14px">お店の連絡先は準備中です。<br>掲載までもうしばらくお待ちください。</p>
+    <a class="line" id="applyLine" hidden target="_blank" rel="noopener">LINEで応募する</a>
+  </section>
+
+  <section class="blk notes">
+    <ul>
+      <li>このお店は18歳の方・高校生の方は応募できません（19歳以上）。</li>
+      <li>掲載内容はお店から提供された情報をもとにしています（2026年10月15日時点）。</li>
+      <li>時給・保証・バックなどの条件は、面接のときに必ずお店へ直接ご確認ください。</li>
+      <li>Areaは求人情報を掲載する広告媒体です。お仕事の紹介・あっせんは行っていません。</li>
+    </ul>
+  </section>
+
+  <a class="back" href="area.html?area=%E7%A5%87%E5%9C%92">← 祇園の求人一覧にもどる</a>
+</main>
+
+<footer>
+  <div><a href="index.html">トップ</a><a href="area.html?area=%E7%A5%87%E5%9C%92">祇園の求人</a><a href="index.html#voices">口コミ</a></div>
+  <p>© 2026 Area</p>
+</footer>
+</div>
+
+<div class="dock">
+  <div class="dock-in">
+    <a class="d-line" id="dockLine" hidden target="_blank" rel="noopener">LINE<br>応募</a>
+    <a class="d-tel" id="dockTel" href="#apply"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>TEL応募</a>
+    <a class="d-main" href="#apply">応募する<small>質問だけでもOK</small></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var get = function(path){ return path.split(".").reduce(function(o,k){ return o == null ? o : o[k]; }, SHOP); };
+  function fill(el, src){
+    if (!src) return;
+    el.classList.add("has"); el.innerHTML = ""; var im = new Image(); im.src = src; im.alt = ""; im.loading = "lazy"; el.appendChild(im);
+  }
+  // 画像枠
+  [].forEach.call(document.querySelectorAll("[data-img]"), function(el){ fill(el, get(el.dataset.img)); });
+  var mk = function(box, list, label, url){
+    list.forEach(function(src, i){
+      var el = document.createElement(url ? "a" : "div"); el.className = "ph"; el.textContent = label + (i + 1);
+      if (url) { el.href = url; el.target = "_blank"; el.rel = "noopener"; }
+      box.appendChild(el); fill(el, src);
+    });
+  };
+  mk(document.getElementById("galleryGrid"), SHOP.gallery, "写真", "");
+  mk(document.getElementById("igGrid"), SHOP.instagram.posts, "投稿", SHOP.instagram.url);
+
+  // SNSリンク
+  var ig = SHOP.instagram, tt = SHOP.tiktok, sns = [];
+  if (ig.id) document.getElementById("igId").textContent = ig.id;
+  if (ig.url) { var a = document.getElementById("igLink"); a.href = ig.url; a.hidden = false; sns.push('<a href="' + ig.url + '" target="_blank" rel="noopener" style="text-decoration:underline">Instagram</a>'); }
+  if (tt.url) { var b = document.getElementById("ttLink"); b.href = tt.url; b.hidden = false; sns.push('<a href="' + tt.url + '" target="_blank" rel="noopener" style="text-decoration:underline">TikTok</a>'); }
+  if (sns.length) document.getElementById("snsCell").innerHTML = sns.join("　");
+
+  // 電話・LINE
+  if (SHOP.tel) {
+    ["applyTel","dockTel"].forEach(function(id){ document.getElementById(id).href = "tel:" + SHOP.tel; });
+    document.getElementById("applyNum").textContent = SHOP.telLabel;
+  } else {
+    // 電話番号がまだ無いときは、電話ボタンを隠して「準備中」を出す
+    document.getElementById("applyTel").hidden = true;
+    document.getElementById("applyNum").hidden = true;
+    document.getElementById("dockTel").hidden = true;
+    document.getElementById("telWait").hidden = false;
+  }
+  if (SHOP.line) ["applyLine","dockLine"].forEach(function(id){ var e = document.getElementById(id); e.href = SHOP.line; e.hidden = false; });
+
+  // お店のポイントのスライド（4秒ごとに自動で次へ。さわっている間は止まる）
+  (function(){
+    var tr = document.getElementById("pTrack"), dots = document.getElementById("pDots");
+    var cards = tr.children, n = cards.length, cur = 0, timer, rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    for (var i = 0; i < n; i++) { var d = document.createElement("button"); d.type = "button"; d.setAttribute("aria-label", (i + 1) + "枚目"); d.dataset.i = i; dots.appendChild(d); }
+    function go(i){ cur = (i + n) % n; tr.scrollTo({ left: cur * tr.clientWidth, behavior: rm ? "auto" : "smooth" }); mark(); }
+    function mark(){ [].forEach.call(dots.children, function(d, i){ d.classList.toggle("on", i === cur); }); }
+    function start(){ if (rm) return; stop(); timer = setInterval(function(){ go(cur + 1); }, 4000); }
+    function stop(){ clearInterval(timer); }
+    tr.addEventListener("scroll", function(){ var i = Math.round(tr.scrollLeft / tr.clientWidth); if (i !== cur) { cur = i; mark(); } }, { passive: true });
+    dots.addEventListener("click", function(e){ if (e.target.dataset.i) { go(+e.target.dataset.i); start(); } });
+    document.getElementById("pPrev").addEventListener("click", function(){ go(cur - 1); start(); });
+    document.getElementById("pNext").addEventListener("click", function(){ go(cur + 1); start(); });
+    ["touchstart","mouseenter"].forEach(function(ev){ tr.addEventListener(ev, stop, { passive: true }); });
+    ["touchend","mouseleave"].forEach(function(ev){ tr.addEventListener(ev, start, { passive: true }); });
+    mark(); start();
+  })();
+
+  // 続きを見る
+  [].forEach.call(document.querySelectorAll("[data-more]"), function(btn){
+    var box = document.getElementById(btn.dataset.more); box.classList.add("clamp");
+    btn.addEventListener("click", function(){ var o = box.classList.toggle("open"); btn.textContent = o ? "閉じる" : "続きを見る"; });
+  });
+
+  // メニュー
+  var mb = document.getElementById("menuBtn"), mp = document.getElementById("menuPanel");
+  mb.addEventListener("click", function(){ mp.hidden = !mp.hidden; mb.setAttribute("aria-expanded", String(!mp.hidden)); });
+  mp.addEventListener("click", function(e){ if (e.target.tagName === "A") { mp.hidden = true; mb.setAttribute("aria-expanded","false"); } });
+
+  // タブの選択状態
+  var tabs = [].slice.call(document.querySelectorAll("#tabs a"));
+  var secs = tabs.map(function(t){ return document.querySelector(t.getAttribute("href")); });
+  function onScroll(){
+    var y = window.scrollY + 140, cur = 0;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= y) cur = i; });
+    // 下から順に並んでいないので、一番近い上の見出しを選ぶ
+    var best = -1, bestTop = -1;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= y && s.offsetTop > bestTop) { best = i; bestTop = s.offsetTop; } });
+    tabs.forEach(function(t, i){ t.classList.toggle("on", i === (best < 0 ? 0 : best)); });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // 口コミ：Areaに承認済みの口コミから、このお店のものを表示
+  var URL = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec?view=reviews";
+  var box = document.getElementById("rvList");
+  var esc = function(s){ return String(s || "").replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+  var none = function(){ box.innerHTML = '<div class="rv-empty">まだ口コミはありません。<br>働いたことのある方は、ぜひ口コミを書いてください。</div>'; };
+  fetch(URL).then(function(r){ return r.json(); }).then(function(d){
+    var rows = (d.rows || []).filter(function(r){ return /\u0067\u0061\u006c\u006c\u0065|\u30ac\u30ec/i.test(r.shop); });
+    if (!rows.length) return none();
+    box.innerHTML = rows.slice(0, 5).map(function(r){
+      var n = Math.max(0, Math.min(5, Number(r.overall) || 0));
+      return '<div class="rv"><div class="rv-top"><span>' + esc(r.age || "") + (r.style ? "・" + esc(r.style) : "") + '</span><span class="rv-stars">' + "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n) + '</span></div>' +
+        (r.good ? '<p><b>良かった点：</b>' + esc(r.good) + '</p>' : '') + (r.bad ? '<p><b>気になった点：</b>' + esc(r.bad) + '</p>' : '') + '</div>';
+    }).join("");
+  }).catch(none);
+})();
+</script>
+</body>
+</html>
