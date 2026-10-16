@@ -1,0 +1,8 @@
+{
+  "name": "area-site",
+  "private": true,
+  "description": "Area 求人サイト（静的ページ＋アクセス計測用のNetlify Functions）",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

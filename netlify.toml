@@ -1,0 +1,10 @@
+# Area サイトの公開設定
+# ・サイトのファイルを _site にコピーして公開（node_modules などは公開しない）
+# ・netlify/functions に、アクセス計測（/api/track）と集計（/api/stats）の仕組みがある
+[build]
+  command = 'mkdir -p _site && for f in $(ls -A); do case "$f" in _site|node_modules|netlify|.git|.gitignore|package.json|package-lock.json|netlify.toml|README.md) ;; *) cp -R "$f" _site/ ;; esac; done'
+  publish = "_site"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

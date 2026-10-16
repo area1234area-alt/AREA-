@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>アクセス集計｜Area 管理用</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="jobs.js"></script>
+<style>
+  :root{
+    --bg:#0B0A0D; --panel:#141117; --line:rgba(201,162,39,.22); --line2:rgba(255,255,255,.08);
+    --ink:#F4EFE6; --ink-soft:#B7AEA6; --ink-dim:#8C847D; --gold:#C9A227; --gold-lt:#F1DA9C;
+    --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
+    --font-serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+    --font-en:'Cormorant Garamond','Times New Roman',serif;
+    --font-body:'Noto Sans JP','Hiragino Sans',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#050406;color:var(--ink);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .page{max-width:900px;margin:0 auto;background:var(--bg);min-height:100vh;padding:0 16px 40px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+  .logo{font-family:var(--font-en);font-weight:700;font-size:1.6rem;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+  header span{font-size:.74rem;color:var(--ink-dim);letter-spacing:.08em}
+  h1{font-family:var(--font-serif);font-weight:600;font-size:1.3rem;letter-spacing:.1em;margin:22px 0 4px}
+  .sub{font-size:.78rem;color:var(--ink-soft);margin:0 0 16px}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .tabs button{flex:1 1 0;min-width:70px;background:transparent;border:1px solid var(--line);color:var(--ink-soft);padding:9px 6px;font:inherit;font-size:.82rem;cursor:pointer;letter-spacing:.06em}
+  .tabs button.on{background:var(--goldgrad);color:#1A1406;border-color:transparent;font-weight:700}
+  .sum{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:18px}
+  .sum div{border:1px solid var(--line);background:var(--panel);padding:10px 8px;text-align:center}
+  .sum b{display:block;font-family:var(--font-en);font-size:1.6rem;line-height:1.2;color:var(--gold-lt);font-variant-numeric:tabular-nums}
+  .sum small{font-size:.7rem;color:var(--ink-soft)}
+  @media (max-width:520px){ .sum{grid-template-columns:repeat(2,1fr)} }
+  .ctrl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font-size:.78rem;color:var(--ink-soft)}
+  .ctrl select{background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:6px 8px;font:inherit;font-size:.8rem}
+  .wrap{overflow-x:auto;border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  @media (max-width:560px){ th:nth-child(3),td:nth-child(3){display:none} th,td{padding:9px 6px} th:first-child,td:first-child{min-width:0} }
+  th,td{padding:9px 10px;border-bottom:1px solid var(--line2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  th{background:rgba(201,162,39,.1);color:var(--gold-lt);font-family:var(--font-serif);font-weight:600;font-size:.78rem;cursor:pointer;user-select:none;position:sticky;top:0}
+  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:150px}
+  td:first-child a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--ink-dim)}
+  td:first-child small{display:block;color:var(--ink-dim);font-size:.7rem}
+  tr.zero td{color:var(--ink-dim)}
+  .pend{display:inline-block;font-size:.64rem;border:1px solid var(--ink-dim);color:var(--ink-dim);padding:0 5px;margin-left:4px;vertical-align:1px}
+  .note{font-size:.74rem;color:var(--ink-dim);margin-top:14px;line-height:1.8}
+  .note b{color:var(--ink-soft)}
+  .msg{border:1px solid var(--line);padding:16px;text-align:center;color:var(--ink-soft);font-size:.86rem}
+  .me{margin-top:10px;font-size:.74rem;color:var(--ink-dim)}
+  .me button{background:none;border:1px solid var(--line);color:var(--gold-lt);font:inherit;font-size:.72rem;padding:3px 8px;cursor:pointer;margin-left:6px}
+</style>
+</head>
+<body>
+<div class="page">
+  <header><a class="logo" href="index.html">Area</a><span>管理用・一般公開しないページ</span></header>
+
+  <h1>店舗ページのアクセス集計</h1>
+  <p class="sub" id="upd">読み込み中…</p>
+
+  <div class="tabs" id="tabs">
+    <button type="button" data-d="1" class="on">今日</button>
+    <button type="button" data-d="7">7日間</button>
+    <button type="button" data-d="30">30日間</button>
+    <button type="button" data-d="0">全期間</button>
+  </div>
+
+  <div class="sum" id="sum"></div>
+
+  <div class="ctrl">
+    <label>エリア <select id="area"><option value="">すべて</option></select></label>
+  </div>
+  <div class="wrap" id="tableWrap"><div class="msg">読み込み中…</div></div>
+
+  <p class="note">
+    <b>見た人数</b>：その日にページを開いた人の数（同じスマホで1日に何回見ても1人）。<br>
+    <b>閲覧数</b>：ページが開かれた回数。<br>
+    <b>電話ボタン</b>：「お店に電話する」「TEL応募」が押された回数（電話番号が準備中のページでも数えます）。<br>
+    <b>押した率</b>：電話ボタン ÷ 見た人数。<br>
+    日付は日本時間で区切っています。検索エンジンなどの自動アクセスは数えていません。表の見出しを押すと並び替えできます。
+  </p>
+  <p class="me" id="me"></p>
+</div>
+
+<script>
+(function(){
+  // このページを開いたブラウザは、店舗ページを見ても数えない（自分のアクセスを除く）
+  var me = document.getElementById("me");
+  function meText(){
+    var off = false; try { off = !!localStorage.getItem("area_nocount"); } catch (e) {}
+    me.innerHTML = off ? 'このブラウザでの閲覧は集計に入りません。<button type="button" id="meBtn">数えるように戻す</button>'
+                       : 'このブラウザでの閲覧も集計に入ります。<button type="button" id="meBtn">数えないようにする</button>';
+    document.getElementById("meBtn").onclick = function(){
+      try { off ? localStorage.removeItem("area_nocount") : localStorage.setItem("area_nocount", "1"); } catch (e) {}
+      meText();
+    };
+  }
+  try { localStorage.setItem("area_nocount", "1"); } catch (e) {}
+  meText();
+
+  // 店舗名（伏せ字）とエリアは jobs.js から。一覧に出ていないページは非公開扱い
+  var INFO = {};
+  (window.AREA_JOBS || []).forEach(function(j){
+    if (!j.url) return;
+    var slug = j.url.replace(/\.html$/, "");
+    INFO[slug] = { name: j.name, area: j.area, type: j.type };
+  });
+  // 一覧に出していない（非公開待機の）ページ
+  var PENDING = { "umeda-f01": { name: "Z●RO（ゼ●）", area: "梅田", type: "ホテル・派遣型エステ" }, "namba-f01": { name: "ア●マワン", area: "難波", type: "ホテル型エステ" } };
+  Object.keys(PENDING).forEach(function(s){ if (!INFO[s]) { INFO[s] = PENDING[s]; INFO[s].pending = true; } });
+  var esc = function(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return { "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]; }); };
+  var nf = function(n){ return Number(n || 0).toLocaleString("ja-JP"); };
+  var jst = function(offset){ return new Date(Date.now() + 9 * 36e5 - offset * 864e5).toISOString().slice(0, 10); };
+
+  var DATA = null, days = 1, sortKey = "u", sortDir = -1, areaSel = "";
+
+  function rows(){
+    var since = days ? jst(days - 1) : "0000-00-00";
+    var out = [];
+    var slugs = Object.keys(DATA.pages).concat(Object.keys(INFO));
+    var seen = {};
+    slugs.forEach(function(s){
+      if (seen[s] || /^zz-/.test(s)) return; seen[s] = 1;
+      var info = INFO[s] || { name: s, area: "（非公開）", type: "", pending: true };
+      if (areaSel && info.area !== areaSel) return;
+      var d = DATA.pages[s] || {}, v = 0, u = 0, t = 0;
+      Object.keys(d).forEach(function(day){ if (day >= since) { v += d[day].v || 0; u += d[day].u || 0; t += d[day].t || 0; } });
+      out.push({ slug: s, info: info, v: v, u: u, t: t, r: u ? t / u : 0 });
+    });
+    out.sort(function(a, b){
+      var x = a[sortKey], y = b[sortKey];
+      if (sortKey === "name") { x = a.info.area + a.info.name; y = b.info.area + b.info.name; return x < y ? -sortDir : x > y ? sortDir : 0; }
+      return (x - y) * sortDir || (b.u - a.u);
+    });
+    return out;
+  }
+
+  function render(){
+    var list = rows(), V = 0, U = 0, T = 0;
+    list.forEach(function(r){ V += r.v; U += r.u; T += r.t; });
+    document.getElementById("sum").innerHTML =
+      '<div><b>' + nf(U) + '</b><small>見た人数</small></div>' +
+      '<div><b>' + nf(V) + '</b><small>閲覧数</small></div>' +
+      '<div><b>' + nf(T) + '</b><small>電話ボタン</small></div>' +
+      '<div><b>' + (U ? (T / U * 100).toFixed(1) : "0.0") + '%</b><small>押した率</small></div>';
+    var arrow = function(k){ return sortKey === k ? (sortDir < 0 ? " ▼" : " ▲") : ""; };
+    var html = '<table><thead><tr>' +
+      '<th data-k="name">店舗' + arrow("name") + '</th><th data-k="u">見た人数' + arrow("u") + '</th><th data-k="v">閲覧数' + arrow("v") +
+      '</th><th data-k="t">電話ボタン' + arrow("t") + '</th><th data-k="r">押した率' + arrow("r") + '</th></tr></thead><tbody>';
+    list.forEach(function(r){
+      html += '<tr class="' + (r.v ? "" : "zero") + '"><td><a href="' + esc(r.slug) + '.html" target="_blank" rel="noopener">' + esc(r.info.name) + '</a>' +
+        (r.info.pending ? '<span class="pend">非公開</span>' : '') +
+        '<small>' + esc(r.info.area) + (r.info.type ? '・' + esc(r.info.type) : '') + '／' + esc(r.slug) + '</small></td>' +
+        '<td>' + nf(r.u) + '</td><td>' + nf(r.v) + '</td><td>' + nf(r.t) + '</td><td>' + (r.u ? (r.r * 100).toFixed(1) + "%" : "-") + '</td></tr>';
+    });
+    html += '</tbody></table>';
+    document.getElementById("tableWrap").innerHTML = list.length ? html : '<div class="msg">このエリアのページはまだありません。</div>';
+    [].forEach.call(document.querySelectorAll("th[data-k]"), function(th){
+      th.onclick = function(){ var k = th.dataset.k; if (sortKey === k) sortDir = -sortDir; else { sortKey = k; sortDir = k === "name" ? 1 : -1; } render(); };
+    });
+  }
+
+  document.getElementById("tabs").addEventListener("click", function(e){
+    var b = e.target.closest("button"); if (!b) return;
+    days = +b.dataset.d;
+    [].forEach.call(this.children, function(x){ x.classList.toggle("on", x === b); });
+    if (DATA) render();
+  });
+
+  var areas = [];
+  Object.keys(INFO).forEach(function(s){ if (areas.indexOf(INFO[s].area) < 0) areas.push(INFO[s].area); });
+  var sel = document.getElementById("area");
+  areas.forEach(function(a){ var o = document.createElement("option"); o.value = a; o.textContent = a; sel.appendChild(o); });
+  sel.onchange = function(){ areaSel = sel.value; if (DATA) render(); };
+
+  fetch("/api/stats", { cache: "no-store" }).then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(d){
+    DATA = d;
+    var t = new Date(d.generated);
+    document.getElementById("upd").textContent = "最終更新：" + t.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }) + "（ページを開き直すと最新になります）";
+    render();
+  }).catch(function(){
+    document.getElementById("upd").textContent = "";
+    document.getElementById("tableWrap").innerHTML = '<div class="msg">集計を読み込めませんでした。少し時間をおいて開き直してください。</div>';
+  });
+})();
+</script>
+</body>
+</html>
