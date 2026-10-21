@@ -1004,7 +1004,6 @@
         <h2>💼 職種で探す</h2>
         <p>職種を選ぶと、その職種の求人一覧ページが開きます。求人がまだない職種は「準備中」と表示しています。</p>
       </div>
-      <h3 class="area-region">飲み屋</h3>
       <div class="area-pill-grid">
         <a class="area-pill" href="#jobs"><span>キャバクラ</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>ラウンジ</span><span class="chev">›</span></a>
@@ -1012,13 +1011,6 @@
         <a class="area-pill" href="#jobs"><span>ガールズバー</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>コンカフェ</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>スナック</span><span class="chev">›</span></a>
-      </div>
-      <h3 class="area-region">飲み屋以外</h3>
-      <div class="area-pill-grid type-grid">
-        <a class="area-pill" href="#jobs"><span>セクキャバ</span><span class="chev">›</span></a>
-        <a class="area-pill" href="#jobs"><span>メンズエステ</span><span class="chev">›</span></a>
-        <!-- 非公開中（2026-10-12）：専門家の確認が取れるまで表示しない。戻すときは hidden を外す -->
-        <a class="area-pill" href="#jobs" hidden><span>その他風俗</span><span class="chev">›</span></a>
       </div>
     </div>
   </section>
@@ -1241,7 +1233,10 @@
   more.addEventListener("click", function(){ shown += STEP; render(); });
   fetch(REVIEW_URL + "?view=reviews").then(function(r){ return r.json(); }).then(function(j){
     if (!j || !j.ok || !j.rows || !j.rows.length) return;      // 0件なら見本のまま
-    list = j.rows; render();
+    var OTHER = /風俗|デリヘル|ヘルス|ホテヘル|ソープ|ピンサロ|メンズエステ|メンエス|エステ|セクキャバ|おっパブ|いちゃキャバ|性感/i;
+    list = j.rows.filter(function(r){ return !OTHER.test(String(r.genre || "") + " " + String(r.style || "") + " " + String(r.shop || "")); });
+    if (!list.length) return;
+    render();
   }).catch(function(){});
 })();
 </script>

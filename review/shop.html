@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>口コミ・評判｜Area REVIEW</title>
+<meta name="description" content="実際に働いた女性の口コミだけを掲載。勤務時間・日給・時給換算と、良かった点・気になった点をお店ごとに確認できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .shop-head{padding:10px 0 2px}
+  .shop-tags{display:flex;gap:6px;flex-wrap:wrap}
+  .shop-tags span{font-size:.68rem;letter-spacing:.06em;padding:2px 9px;border:1px solid var(--gold);color:var(--gold-ink);background:#fff}
+  .shop-tags span.pk{border-color:var(--pink-line);background:var(--pink-soft);color:var(--pink-deep)}
+  .shop-head h1{margin:10px 0 0;font-family:var(--serif);font-size:1.7rem;letter-spacing:.04em;line-height:1.45;font-weight:700;background:linear-gradient(90deg,#E0527F,#C9A227);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E0527F}
+  .shop-head .kana{font-size:.78rem;color:var(--ink-soft);margin:0 0 12px}
+  .shop-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:.86rem;margin-bottom:6px}
+  .shop-meta a.cnt{color:var(--pink-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .shop-meta .btn{padding:10px 18px;font-size:.84rem}
+
+  .tabs{display:flex;gap:8px;margin:18px 0 0;position:sticky;top:56px;z-index:30;background:var(--bg);padding-top:8px;border-bottom:2px solid #141115}
+  .tabs button{flex:1;border:1px solid var(--line);border-bottom:0;background:#fff;color:var(--ink-soft);padding:12px 6px 11px;font-size:.92rem;font-weight:700;letter-spacing:.08em;border-radius:12px 12px 0 0;cursor:pointer}
+  .tabs button[aria-selected="true"]{background:#141115;color:var(--gold-lt);border-color:#141115}
+  .panel{padding:18px 0 6px}
+
+  .outline{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:.86rem}
+  .outline th,.outline td{border-bottom:1px solid var(--line);padding:12px 12px;text-align:left;vertical-align:top}
+  .outline tr:last-child th,.outline tr:last-child td{border-bottom:0}
+  .outline th{width:32%;background:#F6F1F3;font-weight:700;font-size:.78rem;color:var(--ink);letter-spacing:.04em}
+  .outline td b{font-size:1rem}
+  .outline td small{display:block;color:var(--ink-soft);font-size:.76rem;margin-top:2px}
+  .outline .subh{display:block;margin-top:10px;font-size:.7rem;font-weight:700;color:var(--gold-ink);letter-spacing:.08em}
+  .outline .avg b{color:var(--pink-deep)}
+  @media (max-width:420px){ .outline th{width:30%;padding:11px 9px} .outline td{padding:11px 10px} }
+  .notice{font-size:.72rem;color:var(--dim);margin:10px 0 0}
+
+  .rv-tools{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:.8rem;color:var(--ink-soft)}
+  .rv-tools select{font:inherit;font-size:.8rem;border:1px solid var(--line);background:#fff;padding:6px 8px}
+
+  .cta{margin:26px 0 0;background:#141115;color:#fff;text-align:center;padding:26px 18px;position:relative}
+  .cta::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,39,.35);pointer-events:none}
+  .cta h2{font-family:var(--serif);font-size:1.08rem;letter-spacing:.08em;margin:0 0 6px}
+  .cta p{font-size:.8rem;color:#CFC6BD;margin:0 0 16px}
+  .cta .btn{position:relative;z-index:1}
+
+  .missing{padding:60px 0;text-align:center}
+  .missing p{color:var(--ink-soft);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="beta">Area REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
+<header class="head"><div class="wrap">
+  <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
+  <nav><a href="./#shops">お店一覧</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
+</div></header>
+
+<main class="wrap" id="main">
+  <div class="crumb" id="crumb"></div>
+
+  <section class="shop-head" id="shopHead">
+    <div class="shop-tags" id="tags"></div>
+    <h1 id="shopName"></h1>
+    <p class="kana" id="kana"></p>
+    <div class="shop-meta">
+      <a href="#" class="cnt" id="cntLink">口コミ数（<span id="cnt">0</span>）</a>
+      <a href="#" class="btn btn-pink" data-write>口コミを書く</a>
+    </div>
+  </section>
+
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" id="t-outline" aria-controls="p-outline" aria-selected="true">店舗概要</button>
+    <button type="button" role="tab" id="t-reviews" aria-controls="p-reviews" aria-selected="false">口コミ（<span id="cnt2">0</span>）</button>
+  </div>
+
+  <section class="panel" id="p-outline" role="tabpanel" aria-labelledby="t-outline">
+    <table class="outline"><tbody id="outline"></tbody></table>
+    <p class="notice">※この欄は、お店から確認できた内容と、投稿された口コミをまとめたものです。最新の条件は、お店に直接ご確認ください。</p>
+  </section>
+
+  <section class="panel" id="p-reviews" role="tabpanel" aria-labelledby="t-reviews" hidden>
+    <div class="rv-tools"><span id="rvCount">口コミを読み込んでいます…</span>
+      <select id="sort" aria-label="並び替え"><option value="new">新着順</option><option value="hr">時給換算が高い順</option></select>
+    </div>
+    <div id="rvList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
+    <button type="button" class="btn btn-line more" id="more" hidden>口コミをもっと見る</button>
+  </section>
+
+  <section class="cta">
+    <h2>あなたの体験を、これから働く人へ</h2>
+    <p>良かったことも、気になったことも。率直な口コミをお待ちしています。</p>
+    <a href="#" class="btn btn-gold" data-write>このお店の口コミを書く</a>
+  </section>
+</main>
+
+<footer>
+  <div class="f-logo">Area REVIEW</div>
+  <p>働いた女性の口コミを、運営が確認したうえで掲載しています。お店の紹介・あっせんは行っていません。18歳未満の方はご覧になれません。</p>
+  <div>© 2026 Area</div>
+</footer>
+
+<script src="shops.js"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = RV.esc;
+  var id = new URLSearchParams(location.search).get("id") || "";
+  var S = RV.byId(id);
+  if (!S || S.soon) {
+    $("main").innerHTML = '<div class="missing"><p>このお店のページは準備中です。</p><a class="btn btn-dark" href="./">お店一覧にもどる</a></div>';
+    return;
+  }
+  var label = S.areaLabel || S.area;
+  document.title = S.name + "の口コミ・評判｜" + label + "の" + S.genre + "｜Area REVIEW";
+  var md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute("content", S.name + "（" + label + "・" + S.genre + "）で実際に働いた女性の口コミ。勤務時間・日給・時給換算、良かった点・気になった点を掲載。");
+
+  // 投稿フォーム（店名を入れた状態で開く）
+  var write = RV_API + "?shop=" + encodeURIComponent(S.name) + "&area=" + encodeURIComponent(label);
+  [].forEach.call(document.querySelectorAll("[data-write]"), function(a){ a.href = write; a.target = "_blank"; a.rel = "noopener"; });
+
+  var info = window.AREA_DIR_PREF || "大阪";
+  $("crumb").innerHTML = '<a href="./">Area REVIEW</a> › ' + esc(info) + ' › <a href="./?area=' + encodeURIComponent(S.area) + '#shops">' + esc(label) + '</a> › <a href="./?genre=' + encodeURIComponent(S.genre) + '#shops">' + esc(S.genre) + '</a> › <b>' + esc(S.name) + '</b>';
+  $("tags").innerHTML = '<span class="pk">' + esc(S.genre) + '</span>' + (S.style ? '<span>' + esc(S.style) + '</span>' : '') + '<span>' + esc(label) + '</span>';
+  $("shopName").textContent = S.name;
+  $("kana").textContent = S.kana ? "（" + S.kana + "）" : "";
+
+  // 店舗概要の表
+  function row(th, td){ return td ? '<tr><th>' + th + '</th><td>' + td + '</td></tr>' : ''; }
+  function outline(avg){
+    var pay = S.pay ? '<b>' + esc(S.pay) + '</b>' + (S.paySub ? '<small>' + esc(S.paySub) + '</small>' : '') : '';
+    if (S.back) pay += '<span class="subh">指名・オプションのバック</span>' + esc(S.back);
+    $("outline").innerHTML =
+      row("ジャンル", esc(S.genre + (S.style ? "（" + S.style + "）" : ""))) +
+      row("エリア・アクセス", esc(label) + (S.access ? '<small>' + esc(S.access) + '</small>' : '')) +
+      row("営業時間", esc(S.hours || "")) +
+      row("待機形態", esc(S.wait || "")) +
+      row("女子給", pay || "お店に確認中") +
+      row("口コミでの稼ぎ目安", avg) +
+      row("引かれ物", esc(S.deduct || "お店に確認中")) +
+      row("その他", esc(S.other || "—"));
+  }
+  outline('<span style="color:var(--dim)">口コミを読み込んでいます…</span>');
+
+  // タブ
+  function tab(which){
+    ["outline","reviews"].forEach(function(k){
+      var on = k === which;
+      $("t-" + k).setAttribute("aria-selected", String(on));
+      $("p-" + k).hidden = !on;
+    });
+  }
+  $("t-outline").onclick = function(){ tab("outline"); };
+  $("t-reviews").onclick = function(){ tab("reviews"); };
+  $("cntLink").onclick = function(e){ e.preventDefault(); tab("reviews"); $("t-reviews").scrollIntoView({ behavior: "smooth", block: "start" }); };
+  if (location.hash === "#reviews") tab("reviews");
+
+  // 口コミ1件
+  function card(r){
+    var h = RV.hoursOf(r), y = RV.dailyOf(r);
+    var earn = (h && y)
+      ? '<div class="earn"><div><small>勤務時間</small><b>' + (Math.round(h * 10) / 10) + '<span>時間</span></b></div><i>→</i>' +
+        '<div><small>日給</small><b>' + RV.man(y).replace("万円", "") + '<span>万円</span></b></div><i>＝</i>' +
+        '<div class="hr"><small>時給換算</small><b>' + RV.perHour(y, h).toLocaleString("ja-JP") + '<span>円</span></b></div></div>'
+      : '<div class="earn-none">勤務時間・日給の記入なし</div>';
+    var body = '';
+    if (r.good) body += '<p><span class="rv-label">良かった点</span>' + esc(r.good) + '</p>';
+    if (r.bad)  body += '<p><span class="rv-label bad">気になった点</span>' + esc(r.bad) + '</p>';
+    var who = [r.age, RV.period(r.period) ? "働いた時期：" + RV.period(r.period) : ""].filter(Boolean).join("・") || "匿名";
+    return '<article class="rv"><div class="rv-top"><div><div class="rv-meta">' + esc(who) + '</div></div>' +
+      (r.style ? '<span class="rv-genre">' + esc(r.style) + '</span>' : '') + '</div>' +
+      earn + '<div class="rv-body">' + body + '</div></article>';
+  }
+
+  var list = [], shown = 0, STEP = 10;
+  function render(reset){
+    if (reset) shown = STEP;
+    var rows = list.slice();
+    if ($("sort").value === "hr") rows.sort(function(a, b){
+      var ha = RV.hoursOf(a), ya = RV.dailyOf(a), hb = RV.hoursOf(b), yb = RV.dailyOf(b);
+      return (hb && yb ? yb / hb : -1) - (ha && ya ? ya / ha : -1);
+    });
+    $("rvList").innerHTML = rows.length ? rows.slice(0, shown).map(card).join("")
+      : '<div class="rv-empty">このお店の口コミは、まだありません。<br>働いたことがある方は、ぜひ最初の口コミを。</div>';
+    $("more").hidden = rows.length <= shown;
+    $("rvCount").textContent = rows.length ? "運営が確認した口コミ " + rows.length + "件" : "口コミ 0件";
+  }
+  $("sort").onchange = function(){ render(true); };
+  $("more").onclick = function(){ shown += STEP; render(); };
+
+  RV.load().then(function(rows){
+    list = rows.filter(function(r){ return RV.shopOf(r) === S; });
+    $("cnt").textContent = $("cnt2").textContent = list.length;
+    // 口コミでの稼ぎ目安（勤務時間と日給の両方が入っている口コミの平均）
+    var ok = list.filter(function(r){ return RV.hoursOf(r) && RV.dailyOf(r); });
+    var avg;
+    if (ok.length) {
+      var hs = 0, ys = 0; ok.forEach(function(r){ hs += RV.hoursOf(r); ys += RV.dailyOf(r); });
+      var h = hs / ok.length, y = ys / ok.length;
+      avg = '<span class="avg"><b>日給 約' + RV.man(y) + '</b>（時給換算 約' + RV.perHour(y, h).toLocaleString("ja-JP") + '円）</span><small>平均 ' + (Math.round(h * 10) / 10) + '時間勤務／口コミ ' + ok.length + '件の平均</small>';
+    } else {
+      avg = '<span style="color:var(--dim)">勤務時間・日給が入った口コミが集まると、ここに平均を表示します</span>';
+    }
+    outline(avg);
+    render(true);
+  });
+  RV.gate();
+})();
+</script>
+</body>
+</html>

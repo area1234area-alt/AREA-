@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Area REVIEW｜風俗・メンズエステ・セクキャバで働いた女性の口コミ</title>
+<meta name="description" content="風俗・メンズエステ・セクキャバで実際に働いた女性の口コミサイト。勤務時間・日給・時給換算と、良かった点・気になった点をお店ごとに確認できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero{background:radial-gradient(ellipse at 50% 0%,rgba(224,82,127,.22),transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(201,162,39,.18),transparent 65%),#0B0A0D;color:#F4EFE6;text-align:center;padding:42px 16px 38px}
+  .hero .en{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.34em;font-size:.92rem;color:var(--gold)}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.45rem,6vw,2.1rem);letter-spacing:.1em;line-height:1.55;margin:8px 0 0}
+  .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0}
+  .orn span{width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .orn span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+  .orn b{width:7px;height:7px;transform:rotate(45deg);background:var(--goldgrad)}
+  .hero p{margin:0 auto;max-width:30em;font-size:.86rem;color:#CFC6BD}
+  .hero-actions{display:flex;gap:10px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+  .hero-actions .btn{min-width:150px;padding:14px 18px;letter-spacing:.14em}
+  .stats{display:flex;justify-content:center;gap:26px;margin-top:22px;font-size:.74rem;color:#B7AEA6;letter-spacing:.08em}
+  .stats b{display:block;font-family:var(--en);font-size:1.8rem;font-weight:700;color:var(--gold-lt);line-height:1.1}
+
+  .pills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  @media (max-width:520px){ .pills{grid-template-columns:repeat(2,1fr)} }
+  .pill{display:flex;justify-content:space-between;align-items:center;gap:6px;background:#141115;color:var(--gold-lt);border:1px solid #141115;padding:13px 14px;font-size:.88rem;font-weight:700;letter-spacing:.04em;cursor:pointer;text-align:left}
+  .pill small{font-family:var(--en);font-size:.95rem;color:#F7A9C4}
+  .pill[aria-pressed="true"]{background:var(--goldgrad);color:#1A1406;border-color:transparent}
+  .pill[aria-pressed="true"] small{color:#5A2A3A}
+  .pill.soon{background:#EFE9DC;color:#8A8377;border-color:#EFE9DC;cursor:default;font-weight:500}
+  .pill.soon small{font-family:var(--body);font-size:.66rem;color:#8A8377;white-space:nowrap}
+  .pill-h{font-size:.74rem;color:var(--gold-ink);letter-spacing:.14em;font-weight:700;margin:18px 0 8px}
+  .pill-h:first-of-type{margin-top:0}
+
+  .filter-now{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px;font-size:.8rem;color:var(--pink-deep);font-weight:700}
+  .filter-now button{border:1px solid var(--line);background:#fff;padding:4px 10px;font-size:.74rem;color:var(--ink-soft);cursor:pointer;font-weight:500}
+
+  .shops{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media (max-width:560px){ .shops{grid-template-columns:1fr} }
+  .shop{display:flex;flex-direction:column;background:#fff;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.3);outline-offset:3px;margin:4px}
+  .shop-in{padding:14px 14px 12px;flex:1}
+  .shop-tags{display:flex;gap:6px;flex-wrap:wrap}
+  .shop-tags span{font-size:.64rem;letter-spacing:.06em;padding:1px 8px;border:1px solid var(--gold);color:var(--gold-ink)}
+  .shop-tags span.pk{border-color:var(--pink-line);background:var(--pink-soft);color:var(--pink-deep)}
+  .shop h3{font-family:var(--serif);font-size:1.18rem;letter-spacing:.04em;margin:8px 0 0;line-height:1.4}
+  .shop .kana{font-size:.7rem;color:var(--dim)}
+  .shop dl{margin:10px 0 0;font-size:.8rem}
+  .shop dl div{display:flex;gap:10px;padding:4px 0;border-top:1px dashed var(--line)}
+  .shop dt{flex:none;width:5.2em;color:var(--ink-soft);font-size:.72rem;padding-top:1px}
+  .shop dd{margin:0;font-weight:500}
+  .shop dd.rc b{color:var(--pink-deep);font-size:.95rem}
+  .shop .go{display:flex;justify-content:center;align-items:center;gap:6px;background:#141115;color:var(--gold-lt);padding:12px;font-size:.86rem;font-weight:700;letter-spacing:.1em}
+  .shop .go.off{background:#EFE9DC;color:#8A8377}
+  .shop.is-soon{border-color:var(--line);outline-color:transparent}
+  .empty{background:#fff;border:1px dashed var(--line);padding:22px;text-align:center;font-size:.84rem;color:var(--ink-soft)}
+
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media (max-width:560px){ .how{grid-template-columns:1fr} }
+  .how div{background:#fff;border:1px solid var(--line);padding:14px}
+  .how b{display:block;font-family:var(--serif);font-size:.96rem;letter-spacing:.06em;margin-bottom:4px}
+  .how b i{font-style:normal;font-family:var(--en);color:var(--pink);font-size:1.2rem;margin-right:6px}
+  .how p{margin:0;font-size:.8rem;color:var(--ink-soft)}
+
+  .cta{background:#141115;color:#fff;text-align:center;padding:28px 18px;position:relative}
+  .cta::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,39,.35);pointer-events:none}
+  .cta h2{font-family:var(--serif);font-size:1.1rem;letter-spacing:.08em;margin:0 0 6px}
+  .cta p{font-size:.8rem;color:#CFC6BD;margin:0 0 16px}
+  .cta .btn{position:relative;z-index:1}
+</style>
+</head>
+<body>
+<div class="beta">Area REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
+<header class="head"><div class="wrap">
+  <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
+  <nav><a href="#shops">お店一覧</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
+</div></header>
+
+<section class="hero">
+  <div class="en">Real Voices</div>
+  <h1>働いた女性の、<br>ほんとうの口コミ。</h1>
+  <div class="orn"><span></span><b></b><span></span></div>
+  <p>風俗・メンズエステ・セクキャバのお店で実際に働いた方の口コミを、お店ごとにまとめています。勤務時間・日給・時給換算で、お店どうしをくらべられます。</p>
+  <div class="hero-actions">
+    <a href="#find" class="btn btn-gold">お店を探す</a>
+    <a href="#" class="btn btn-dark" data-write>口コミを書く</a>
+  </div>
+  <div class="stats"><div><b id="stShops">0</b>掲載店舗</div><div><b id="stReviews">–</b>口コミ</div></div>
+</section>
+
+<main class="wrap">
+  <section class="sec" id="find">
+    <h2 class="sec-h">お店を探す <small>Search</small></h2>
+    <p class="pill-h">ジャンル</p>
+    <div class="pills" id="genrePills"></div>
+    <p class="pill-h">エリア</p>
+    <div class="pills" id="areaPills"></div>
+  </section>
+
+  <section class="sec" id="shops">
+    <h2 class="sec-h">お店一覧 <small>Shops</small></h2>
+    <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
+    <div class="shops" id="shopGrid"></div>
+    <div class="empty" id="shopEmpty" hidden>この条件のお店は準備中です。</div>
+  </section>
+
+  <section class="sec" id="latest">
+    <h2 class="sec-h">新着の口コミ <small>New</small></h2>
+    <p class="lead">運営が内容を確認した口コミだけを掲載しています。</p>
+    <div id="latestList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="sec-h">口コミの見かた <small>Guide</small></h2>
+    <div class="how">
+      <div><b><i>01</i>稼ぎを数字で</b><p>口コミごとに、勤務時間・日給・時給換算を同じ形で並べています。</p></div>
+      <div><b><i>02</i>良い点も、悪い点も</b><p>良かった点と気になった点の両方を、そのまま掲載しています。</p></div>
+      <div><b><i>03</i>運営が確認して掲載</b><p>個人が特定される内容や、事実と異なる内容は掲載しません。</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>あなたの体験を、これから働く人へ</h2>
+    <p>働いたことのあるお店の口コミを、匿名で投稿できます。</p>
+    <a href="#" class="btn btn-gold" data-write>口コミを書く</a>
+  </section>
+</main>
+
+<footer>
+  <div class="f-logo">Area REVIEW</div>
+  <p>働いた女性の口コミを、運営が確認したうえで掲載しています。お店の紹介・あっせんは行っていません。18歳未満の方はご覧になれません。</p>
+  <div>© 2026 Area</div>
+</footer>
+
+<script src="shops.js"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = RV.esc;
+  [].forEach.call(document.querySelectorAll("[data-write]"), function(a){ a.href = RV_API; a.target = "_blank"; a.rel = "noopener"; });
+
+  var shops = RV.listed();
+  var counts = {};            // 店ごとの口コミ件数
+  var AREAS = [["梅田","梅田"],["北新地","北新地"],["難波","難波・日本橋"],["心斎橋","心斎橋"],["本町","本町"],["十三","十三・新大阪"],["天満","天満"],["京橋","京橋"],["谷町九丁目","谷九"]];
+  var q = new URLSearchParams(location.search);
+  var state = { genre: q.get("genre") || "", area: q.get("area") || "" };
+
+  $("stShops").textContent = shops.filter(function(s){ return !s.soon; }).length;
+
+  function pills(box, list, kind){
+    box.innerHTML = list.map(function(p){
+      var n = shops.filter(function(s){ return s[kind] === p[0] || (kind === "genre" && p[0] === "風俗" && s.genre === "風俗"); }).length;
+      return n ? '<button type="button" class="pill" data-kind="' + kind + '" data-key="' + esc(p[0]) + '"><span>' + esc(p[1]) + '</span><small>' + n + '</small></button>'
+               : '<span class="pill soon"><span>' + esc(p[1]) + '</span><small>準備中</small></span>';
+    }).join("");
+  }
+  pills($("genrePills"), RV_GENRES.map(function(g){ return [g.key, g.label]; }), "genre");
+  pills($("areaPills"), AREAS, "area");
+  document.addEventListener("click", function(e){
+    var b = e.target.closest(".pill[data-kind]"); if (!b) return;
+    var k = b.dataset.kind; state[k] = state[k] === b.dataset.key ? "" : b.dataset.key;
+    render(); $("shops").scrollIntoView({ behavior: "smooth" });
+  });
+  $("filterClear").onclick = function(){ state.genre = state.area = ""; render(); };
+
+  function card(s){
+    var label = s.areaLabel || s.area;
+    var tags = '<div class="shop-tags"><span class="pk">' + esc(s.genre) + '</span><span>' + esc(label) + '</span>' + (s.style ? '<span>' + esc(s.style) + '</span>' : '') + '</div>';
+    if (s.soon) {
+      return '<div class="shop is-soon"><div class="shop-in">' + tags + '<h3>' + esc(s.name) + '</h3><span class="kana">店名・詳しい情報を確認中です</span>' +
+        '<dl>' + (s.pay ? '<div><dt>女子給</dt><dd>' + esc(s.pay) + '</dd></div>' : '') + '</dl></div><span class="go off">準備中</span></div>';
+    }
+    var c = counts[s.id];
+    return '<a class="shop" href="shop.html?id=' + encodeURIComponent(s.id) + '"><div class="shop-in">' + tags +
+      '<h3>' + esc(s.name) + '</h3>' + (s.kana && s.kana !== s.name ? '<span class="kana">' + esc(s.kana) + '</span>' : '') +
+      '<dl><div><dt>女子給</dt><dd>' + esc(s.pay || "お店に確認中") + '</dd></div>' +
+      (s.deduct ? '<div><dt>引かれ物</dt><dd>' + esc(s.deduct) + '</dd></div>' : '') +
+      '<div><dt>口コミ</dt><dd class="rc">' + (c == null ? "読み込み中" : '<b>' + c + '</b> 件') + '</dd></div></dl></div>' +
+      '<span class="go">口コミを見る ›</span></a>';
+  }
+  function render(){
+    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area); });
+    $("shopGrid").innerHTML = rows.map(card).join("");
+    $("shopEmpty").hidden = rows.length > 0;
+    var on = [state.genre, state.area].filter(Boolean);
+    $("filterNow").hidden = !on.length;
+    $("filterText").textContent = "絞り込み中：" + on.join(" × ") + "（" + rows.length + "件）";
+    [].forEach.call(document.querySelectorAll(".pill[data-kind]"), function(b){ b.setAttribute("aria-pressed", String(state[b.dataset.kind] === b.dataset.key)); });
+  }
+  render();
+
+  // 新着の口コミ
+  function rv(r){
+    var s = RV.shopOf(r), h = RV.hoursOf(r), y = RV.dailyOf(r);
+    var name = s && !s.hold && !s.soon ? '<a href="shop.html?id=' + encodeURIComponent(s.id) + '#reviews">' + esc(s.name) + '</a>' : esc(r.shop || "");
+    var earn = (h && y)
+      ? '<div class="earn"><div><small>勤務時間</small><b>' + (Math.round(h * 10) / 10) + '<span>時間</span></b></div><i>→</i>' +
+        '<div><small>日給</small><b>' + RV.man(y).replace("万円", "") + '<span>万円</span></b></div><i>＝</i>' +
+        '<div class="hr"><small>時給換算</small><b>' + RV.perHour(y, h).toLocaleString("ja-JP") + '<span>円</span></b></div></div>' : '';
+    var body = (r.good ? '<p><span class="rv-label">良かった点</span>' + esc(r.good) + '</p>' : '') + (r.bad ? '<p><span class="rv-label bad">気になった点</span>' + esc(r.bad) + '</p>' : '');
+    var who = [r.age, RV.period(r.period) ? "働いた時期：" + RV.period(r.period) : ""].filter(Boolean).join("・");
+    return '<article class="rv"><div class="rv-top"><div><div class="rv-shop">' + name + '</div>' + (r.area ? '<div class="rv-meta">' + esc(r.area) + '</div>' : '') + '</div>' +
+      (r.genre ? '<span class="rv-genre">' + esc(r.genre) + '</span>' : '') + '</div>' + earn + '<div class="rv-body">' + body + '</div>' +
+      (who ? '<div class="rv-who">' + esc(who) + '</div>' : '') + '</article>';
+  }
+  RV.load().then(function(rows){
+    // 届出確認待ちなど、非公開のお店の口コミは出さない
+    rows = rows.filter(function(r){ var s = RV.shopOf(r); return !(s && s.hold); });
+    shops.forEach(function(s){ counts[s.id] = rows.filter(function(r){ return RV.shopOf(r) === s; }).length; });
+    $("stReviews").textContent = rows.length;
+    render();
+    $("latestList").innerHTML = rows.length ? rows.slice(0, 6).map(rv).join("")
+      : '<div class="rv-empty">口コミはまだありません。最初の口コミをお待ちしています。</div>';
+  });
+  RV.gate();
+})();
+</script>
+</body>
+</html>
