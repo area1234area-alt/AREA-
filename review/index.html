@@ -150,7 +150,7 @@
 
   function pills(box, list, kind){
     box.innerHTML = list.map(function(p){
-      var n = shops.filter(function(s){ return s[kind] === p[0] || (kind === "genre" && p[0] === "風俗" && s.genre === "風俗"); }).length;
+      var n = shops.filter(function(s){ return s[kind] === p[0]; }).length;
       return n ? '<button type="button" class="pill" data-kind="' + kind + '" data-key="' + esc(p[0]) + '"><span>' + esc(p[1]) + '</span><small>' + n + '</small></button>'
                : '<span class="pill soon"><span>' + esc(p[1]) + '</span><small>準備中</small></span>';
     }).join("");
