@@ -167,3 +167,30 @@ window.areaInfo = function (key) {
   }
   return null;
 };
+
+/* ===== 口コミ（飲み屋）共通 =====
+   口コミ台帳から承認済みの口コミを読み、求人の reviewKey（店名の言い方を | で区切ったもの）で店ごとに振り分ける。
+   口コミページは kuchikomi.html?u=（求人ページのファイル名） で開く */
+window.AREA_REVIEW_API = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec";
+window.areaReviews = (function () {
+  var cache = null;
+  var keyOf = function (j) {
+    if (j.reviewKey) return j.reviewKey;
+    var base = String(j.name || "").replace(/（.*?）|\(.*?\)/g, "").trim();
+    return base.indexOf("●") >= 0 ? "" : base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  };
+  var match = function (j, r) {
+    var k = keyOf(j); if (!k) return false;
+    try { return new RegExp(k, "i").test(String(r.shop || "")); } catch (e) { return false; }
+  };
+  return {
+    load: function () {
+      if (!cache) cache = fetch(window.AREA_REVIEW_API + "?view=reviews").then(function (r) { return r.json(); })
+        .then(function (d) { return d && d.rows ? d.rows : []; }).catch(function () { return []; });
+      return cache;
+    },
+    of: function (j, rows) { return (rows || []).filter(function (r) { return match(j, r); }); },
+    pageUrl: function (j) { return "kuchikomi.html?u=" + encodeURIComponent(j.url || ""); },
+    writeUrl: function (j) { return window.AREA_REVIEW_API + "?shop=" + encodeURIComponent(String(j.name || "").replace(/（.*?）/g, "").trim()) + "&area=" + encodeURIComponent(j.area || ""); }
+  };
+})();
