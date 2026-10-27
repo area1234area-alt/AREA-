@@ -53,6 +53,11 @@
   .shop dd.rc b{color:var(--pink-deep);font-size:.95rem}
   .shop .go{display:flex;justify-content:center;align-items:center;gap:6px;background:#141115;color:var(--gold-lt);padding:12px;font-size:.86rem;font-weight:700;letter-spacing:.1em}
   .shop .go.off{background:#EFE9DC;color:#8A8377}
+  .shop .acts{display:grid;grid-template-columns:1fr 1fr}
+  .shop .acts a{display:flex;justify-content:center;align-items:center;padding:13px 6px;font-size:.86rem;font-weight:700;letter-spacing:.08em}
+  .shop .acts .see{background:#141115;color:var(--gold-lt)}
+  .shop .acts .wr{background:var(--pink);color:#fff}
+  .shop h3 a{color:inherit}
   .shop.is-soon{border-color:var(--line);outline-color:transparent}
   .empty{background:#fff;border:1px dashed var(--line);padding:22px;text-align:center;font-size:.84rem;color:var(--ink-soft)}
 
@@ -172,12 +177,15 @@
         '<dl>' + (s.pay ? '<div><dt>女子給</dt><dd>' + esc(s.pay) + '</dd></div>' : '') + '</dl></div><span class="go off">準備中</span></div>';
     }
     var c = counts[s.id];
-    return '<a class="shop" href="shop.html?id=' + encodeURIComponent(s.id) + '"><div class="shop-in">' + tags +
-      '<h3>' + esc(s.name) + '</h3>' + (s.kana && s.kana !== s.name ? '<span class="kana">' + esc(s.kana) + '</span>' : '') +
+    var see = 'shop.html?id=' + encodeURIComponent(s.id);
+    var write = RV_API + '?shop=' + encodeURIComponent(s.name) + '&area=' + encodeURIComponent(label);
+    return '<div class="shop"><div class="shop-in">' + tags +
+      '<h3><a href="' + see + '">' + esc(s.name) + '</a></h3>' + (s.kana && s.kana !== s.name ? '<span class="kana">' + esc(s.kana) + '</span>' : '') +
       '<dl><div><dt>女子給</dt><dd>' + esc(s.pay || "お店に確認中") + '</dd></div>' +
       (s.deduct ? '<div><dt>引かれ物</dt><dd>' + esc(s.deduct) + '</dd></div>' : '') +
       '<div><dt>口コミ</dt><dd class="rc">' + (c == null ? "読み込み中" : '<b>' + c + '</b> 件') + '</dd></div></dl></div>' +
-      '<span class="go">口コミを見る ›</span></a>';
+      '<div class="acts"><a class="see" href="' + see + '#reviews">口コミを見る ›</a>' +
+      '<a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く ✎</a></div></div>';
   }
   function render(){
     var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area); });
