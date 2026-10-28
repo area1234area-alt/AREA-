@@ -3,6 +3,7 @@
    ・店舗ページは shop.html?id=（id の値） で開きます
    ・hold: "理由" を入れると、一覧にも店舗ページにも出しません（理由は画面に出ません）
    ・soon: true は、一覧に「準備中」のカードだけ出します（店舗ページはまだ開けません）
+   ・ext は、他サイトに投稿された「働いた女性の口コミ」の要約（本文は転載せず、出典リンク付きで別枠に表示）
    ・keys は、口コミの「お店の名前」と照らし合わせる言葉。どれかを含む口コミがこの店の口コミになります */
 window.RV_SHOPS = [
   { id: "kanojonchi", name: "彼女ん家", kana: "カノジョンチ", genre: "メンズエステ", style: "マンション型",
@@ -51,20 +52,24 @@ window.RV_SHOPS = [
     pay: "60分 5,000〜8,000円", paySub: "90分 6,000〜10,000円／120分 9,000〜13,000円／150分 12,000〜15,000円",
     back: "指名料・オプションは全額バック", deduct: "雑費・罰金なし",
     other: "日払いOK／未経験歓迎（DVDと口頭の講習）／無料の寮あり／送迎あり",
-    keys: ["極SPA", "極スパ", "きわみスパ", "gokuspa"], checked: "2026-10-28" },
+    keys: ["極SPA", "極スパ", "きわみスパ", "gokuspa"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=80", checked: "2026-10-28", good: "バック50%に、オプション（3,000円〜）の分が上乗せになる", bad: "", note: "集客はそこそこある" }] },
   { id: "alivie", name: "Alivie", kana: "アリビエ", genre: "メンズエステ", style: "ルーム型（アロマオイル）",
     area: "新大阪", areaLabel: "新大阪・西中島", access: "JR新大阪駅 東口すぐ／西中島南方駅すぐ（2ルーム）",
     hours: "10:00〜翌5:00", wait: "完全個室待機",
     pay: "90分 7,000〜16,000円", back: "指名料・衣装・オリジナル 各最高3,000円",
     deduct: "罰金なし（雑費は確認中）",
     other: "当日払い可（規定あり）／未経験は無料研修／ノルマなし／制服貸与",
-    keys: ["Alivie", "アリビエ"], checked: "2026-10-28" },
+    keys: ["Alivie", "アリビエ"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=80", checked: "2026-10-28", good: "バック50%スタートで、指名が増えると上がる／客層は悪くない", bad: "バック単価が低めで、稼ぐには本数をこなす必要がある", note: "新人期間は比較的忙しい" }] },
   { id: "4h", name: "4h", kana: "フォーエイチ", genre: "メンズエステ",
     area: "新大阪", areaLabel: "新大阪", access: "大阪市東淀川区東中島",
-    keys: ["4h", "フォーエイチ"], checked: "2026-10-28" },
+    keys: ["4h", "フォーエイチ"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=80", checked: "2026-10-28", good: "オプション・雑費がない／フリー客が多く、そこそこ繁盛", bad: "性的なサービスを求める客が多め", note: "" }] },
   { id: "mokukindo", name: "もくきん堂", kana: "モクキンドウ", genre: "メンズエステ",
     area: "新大阪", areaLabel: "西中島", access: "大阪市淀川区西中島",
-    keys: ["もくきん堂"], checked: "2026-10-28" },
+    keys: ["もくきん堂"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=80", checked: "2026-10-28", good: "100分8,000円バック、指名料・オプションは全額バック／交通費も出た", bad: "", note: "待機は少なめで、客層は悪くない" }] },
 
   // --- 新大阪・西中島：セクキャバ ---
   { id: "bijinkan", name: "びじん館 本店", kana: "ビジンカン", genre: "セクキャバ",
@@ -88,20 +93,23 @@ window.RV_SHOPS = [
   { id: "usaginoheya", name: "うさぎのお部屋", kana: "ウサギノオヘヤ", genre: "メンズエステ", style: "ルーム型",
     area: "梅田", areaLabel: "梅田", access: "梅田駅周辺（日本橋にも事務所）",
     pay: "90分 15,000円〜", other: "日払い可／未経験歓迎／送迎あり／週1日・3時間からOK",
-    keys: ["うさぎのお部屋"], checked: "2026-10-28" },
+    keys: ["うさぎのお部屋"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=70", checked: "2026-10-28", good: "集客が良く、客層も良い", bad: "", note: "バック50%（60分6,000円）" }] },
   { id: "madam-shinshi", name: "マダムと紳士", kana: "マダムトシンシ", genre: "メンズエステ", style: "ルーム型",
     area: "梅田", areaLabel: "梅田", access: "梅田駅 徒歩10分（日本橋にもルーム）",
     pay: "90分 14,000円〜", other: "日払い可／未経験歓迎／送迎あり／罰金・ノルマなし",
     keys: ["マダムと紳士"], checked: "2026-10-28" },
   { id: "darlin-premium", name: "Darlin Premium", kana: "ダーリンプレミアム", genre: "メンズエステ",
     area: "梅田", areaLabel: "梅田", access: "大阪市北区西天満4丁目",
-    keys: ["Darlin Premium", "ダーリンプレミアム"], checked: "2026-10-28" },
+    keys: ["Darlin Premium", "ダーリンプレミアム"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=70", checked: "2026-10-28", good: "", bad: "料金は店と折半（50%）／部屋が古い／お触りなどを求める客が多い", note: "求人では「指名料全額バック・客層良好」とあり、口コミと食い違う" }] },
   { id: "belchic", name: "BELCHIC", genre: "メンズエステ",
     area: "梅田", areaLabel: "梅田", access: "大阪市北区（梅田）",
     keys: ["BELCHIC", "ベルシック"], checked: "2026-10-28" },
   { id: "prince", name: "PRINCE", kana: "プリンス", genre: "メンズエステ",
     area: "梅田", areaLabel: "梅田", access: "大阪市北区（梅田）",
-    keys: ["PRINCE", "プリンス"], checked: "2026-10-28" },
+    keys: ["PRINCE", "プリンス"], checked: "2026-10-28",
+    ext: [{ site: "メンエス求人", url: "https://men-esthe-job.jp/area.php?id=70", checked: "2026-10-28", good: "", bad: "90分コースで基本給は約7,000円", note: "求人の「最大バック70%」とは金額が合わない。水着はなく、ベビードールはオプション" }] },
 
   // --- 梅田：セクキャバ ---
   { id: "bakeneko", name: "BAKENEKO俱楽部", kana: "バケネコクラブ", genre: "セクキャバ",

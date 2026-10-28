@@ -47,6 +47,14 @@
 
   .missing{padding:60px 0;text-align:center}
   .missing p{color:var(--ink-soft);font-size:.9rem}
+  .ext{margin-top:22px;padding-top:18px;border-top:2px dashed var(--line)}
+  .ext-h{font-family:var(--serif);font-size:1rem;letter-spacing:.08em;margin:0 0 4px}
+  .ext-lead{font-size:.74rem;color:var(--dim);margin:0 0 12px}
+  .rv.is-ext{background:#FCFAF6;border-style:dashed}
+  .ext-badge{flex:none;font-size:.64rem;letter-spacing:.06em;padding:2px 8px;background:#EFE9DC;color:#6B5A2A}
+  .rv-label.note{background:#F1F0F6;color:#4A4660;border-color:#DCDAE6}
+  .ext-src{margin-top:10px;font-size:.72rem;color:var(--dim)}
+  .ext-src a{text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -85,6 +93,11 @@
     </div>
     <div id="rvList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
     <button type="button" class="btn btn-line more" id="more" hidden>口コミをもっと見る</button>
+    <div class="ext" id="ext" hidden>
+      <h3 class="ext-h">他サイトの口コミ（要約）</h3>
+      <p class="ext-lead">ほかの求人サイトに投稿された、働いた女性の口コミを運営が要約したものです。Areaに投稿された口コミではありません。くわしくは出典をご覧ください。</p>
+      <div id="extList"></div>
+    </div>
   </section>
 
   <section class="cta">
@@ -186,13 +199,27 @@
       return (hb && yb ? yb / hb : -1) - (ha && ya ? ya / ha : -1);
     });
     $("rvList").innerHTML = rows.length ? rows.slice(0, shown).map(card).join("")
-      : '<div class="rv-empty">このお店の口コミは、まだありません。<br>働いたことがある方は、ぜひ最初の口コミを。</div>';
+      : '<div class="rv-empty">Areaに投稿された口コミは、まだありません。<br>働いたことがある方は、ぜひ最初の口コミを。</div>';
     $("more").hidden = rows.length <= shown;
     $("rvCount").textContent = rows.length ? "運営が確認した口コミ " + rows.length + "件" : "口コミ 0件";
   }
   $("sort").onchange = function(){ render(true); };
   $("more").onclick = function(){ shown += STEP; render(); };
 
+
+  // 他サイトの口コミ（要約）
+  if (S.ext && S.ext.length) {
+    $("ext").hidden = false;
+    $("extList").innerHTML = S.ext.map(function(x){
+      var d = String(x.checked || "").split("-");
+      var body = (x.good ? '<p><span class="rv-label">良かった点</span>' + esc(x.good) + '</p>' : '') +
+                 (x.bad ? '<p><span class="rv-label bad">気になった点</span>' + esc(x.bad) + '</p>' : '') +
+                 (x.note ? '<p><span class="rv-label note">そのほか</span>' + esc(x.note) + '</p>' : '');
+      return '<article class="rv is-ext"><div class="rv-top"><div class="rv-meta">働いた女性の口コミ（要約）</div><span class="ext-badge">他サイト</span></div>' +
+        '<div class="rv-body">' + body + '</div>' +
+        '<div class="ext-src">出典：<a href="' + esc(x.url) + '" target="_blank" rel="noopener nofollow">' + esc(x.site) + '</a>' + (d.length === 3 ? '（' + d[0] + '年' + Number(d[1]) + '月' + Number(d[2]) + '日に確認）' : '') + '</div></article>';
+    }).join("");
+  }
   RV.load().then(function(rows){
     list = rows.filter(function(r){ return RV.shopOf(r) === S; });
     $("cnt").textContent = $("cnt2").textContent = list.length;
