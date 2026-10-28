@@ -10,7 +10,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .hero{background:radial-gradient(ellipse at 50% 0%,rgba(224,82,127,.22),transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(201,162,39,.18),transparent 65%),#0B0A0D;color:#F4EFE6;text-align:center;padding:42px 16px 38px}
+  .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 0%,rgba(224,82,127,.22),transparent 60%),radial-gradient(ellipse at 70% 100%,rgba(201,162,39,.18),transparent 65%),#0B0A0D;color:#F4EFE6;text-align:center;padding:0 0 34px}
+  .hero-ph{position:relative;height:min(92vw,420px);overflow:hidden}
+  .hero-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .hero-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,13,0) 45%,rgba(11,10,13,.75) 80%,#0B0A0D 100%)}
+  .hero-ph .tag{position:absolute;left:16px;top:16px;z-index:1;font-family:var(--en);font-style:italic;font-weight:600;font-size:.8rem;letter-spacing:.24em;color:#fff;border:1px solid rgba(232,203,122,.7);background:rgba(11,10,13,.45);padding:4px 12px}
+  .hero-copy{position:relative;z-index:1;margin-top:-64px;padding:0 16px}
+  @media (min-width:760px){
+    .hero{display:grid;grid-template-columns:40% 1fr;align-items:center;padding:0;height:560px;text-align:left}
+    .hero-ph{height:560px}
+    .hero-ph::after{background:linear-gradient(90deg,rgba(11,10,13,0) 50%,rgba(11,10,13,.6) 80%,rgba(28,18,24,1) 100%)}
+    .hero-copy{margin:0;padding:44px 48px 44px 28px}
+    .hero-copy .orn{justify-content:flex-start}
+    .hero .hero-copy p{margin:0;max-width:32em}
+    .hero-copy .hero-actions,.hero-copy .stats{justify-content:flex-start}
+  }
   .hero .en{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.34em;font-size:.92rem;color:var(--gold)}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.45rem,6vw,2.1rem);letter-spacing:.1em;line-height:1.55;margin:8px 0 0}
   .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0}
@@ -112,6 +126,8 @@
 </div></header>
 
 <section class="hero">
+  <div class="hero-ph"><img src="img/hero.jpg" alt="Area REVIEW｜働いた女性のほんとうの口コミ"><span class="tag">Area REVIEW</span></div>
+  <div class="hero-copy">
   <div class="en">Real Voices</div>
   <h1>働いた女性の、<br>ほんとうの口コミ。</h1>
   <div class="orn"><span></span><b></b><span></span></div>
@@ -121,6 +137,7 @@
     <a href="#" class="btn btn-dark" data-write>口コミを書く</a>
   </div>
   <div class="stats"><div><b id="stShops">0</b>掲載店舗</div><div><b id="stReviews">–</b>口コミ</div></div>
+  </div>
 </section>
 
 <section class="pk-sec" id="pickup"><div class="wrap">
