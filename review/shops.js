@@ -6,7 +6,7 @@
    ・keys は、口コミの「お店の名前」と照らし合わせる言葉。どれかを含む口コミがこの店の口コミになります */
 window.RV_SHOPS = [
   { id: "kanojonchi", name: "彼女ん家", kana: "カノジョンチ", genre: "メンズエステ", style: "マンション型",
-    area: "十三", areaLabel: "新大阪", access: "JR・大阪メトロ 新大阪駅",
+    area: "新大阪", areaLabel: "新大阪", access: "JR・大阪メトロ 新大阪駅",
     hours: "12:00〜翌5:00（受付 11:30〜）", wait: "マンションの個室待機",
     pay: "60分 6,000円〜", paySub: "90分 7,800円〜／120分 10,200円〜／180分 15,000円〜",
     back: "パネル指名 500円／本指名 1,000円／延長15分 2,000円",
@@ -41,10 +41,135 @@ window.RV_SHOPS = [
     other: "宣材撮影はお店負担／衣装の貸し出しあり",
     keys: ["アロマワン", "aroma one", "aromaone"], hold: "届出の確認待ち", added: "2026-10-15" },
 
-  { id: "umeda-sk01", name: "梅田のセクキャバ", genre: "セクキャバ", area: "梅田", areaLabel: "梅田",
-    pay: "日給 2万8千円〜3万5千円", soon: true },
-  { id: "umeda-sk02", name: "梅田のセクキャバ", genre: "セクキャバ", area: "梅田", areaLabel: "梅田",
-    pay: "", soon: true }
+  /* ===== ピックアップ（2026-10-28 追加）：新大阪・梅田 =====
+     求人媒体などの公開情報から確認できた範囲だけ載せています。空欄の項目は画面に「確認中」と出ます */
+
+  // --- 新大阪・西中島：メンズエステ ---
+  { id: "kiwamispa", name: "極SPA", kana: "キワミスパ", genre: "メンズエステ", style: "ルーム型",
+    area: "新大阪", areaLabel: "新大阪", access: "新大阪駅 東口・7番出口から徒歩約3分",
+    hours: "11:00〜翌5:00", wait: "個室待機（自宅待機も可）",
+    pay: "60分 5,000〜8,000円", paySub: "90分 6,000〜10,000円／120分 9,000〜13,000円／150分 12,000〜15,000円",
+    back: "指名料・オプションは全額バック", deduct: "雑費・罰金なし",
+    other: "日払いOK／未経験歓迎（DVDと口頭の講習）／無料の寮あり／送迎あり",
+    keys: ["極SPA", "極スパ", "きわみスパ", "gokuspa"], checked: "2026-10-28" },
+  { id: "alivie", name: "Alivie", kana: "アリビエ", genre: "メンズエステ", style: "ルーム型（アロマオイル）",
+    area: "新大阪", areaLabel: "新大阪・西中島", access: "JR新大阪駅 東口すぐ／西中島南方駅すぐ（2ルーム）",
+    hours: "10:00〜翌5:00", wait: "完全個室待機",
+    pay: "90分 7,000〜16,000円", back: "指名料・衣装・オリジナル 各最高3,000円",
+    deduct: "罰金なし（雑費は確認中）",
+    other: "当日払い可（規定あり）／未経験は無料研修／ノルマなし／制服貸与",
+    keys: ["Alivie", "アリビエ"], checked: "2026-10-28" },
+  { id: "4h", name: "4h", kana: "フォーエイチ", genre: "メンズエステ",
+    area: "新大阪", areaLabel: "新大阪", access: "大阪市東淀川区東中島",
+    keys: ["4h", "フォーエイチ"], checked: "2026-10-28" },
+  { id: "mokukindo", name: "もくきん堂", kana: "モクキンドウ", genre: "メンズエステ",
+    area: "新大阪", areaLabel: "西中島", access: "大阪市淀川区西中島",
+    keys: ["もくきん堂"], checked: "2026-10-28" },
+
+  // --- 新大阪・西中島：セクキャバ ---
+  { id: "bijinkan", name: "びじん館 本店", kana: "ビジンカン", genre: "セクキャバ",
+    area: "新大阪", areaLabel: "西中島", access: "大阪市淀川区西中島1-12-20 山よしビルB1F",
+    pay: "体験 3時間 15,000円／5時間 22,000円（昼の部）", paySub: "本入店 時給2,000円〜＋ポイント",
+    other: "昼の部あり",
+    keys: ["びじん館", "美人館"], checked: "2026-10-28" },
+
+  // --- 新大阪・西中島：ホテヘル・その他 ---
+  { id: "fuzokujo", name: "風俗城", genre: "ホテヘル",
+    area: "新大阪", areaLabel: "新大阪・西中島", access: "西中島・新大阪周辺",
+    hours: "10:00〜翌5:00", wait: "個室待機",
+    deduct: "ノルマ・罰金なし（雑費は確認中）",
+    other: "完全日払い／週1日・2〜3時間からOK／未経験歓迎／託児所・寮・送迎あり／デリバリーも受付",
+    keys: ["風俗城"], checked: "2026-10-28" },
+  { id: "shinosaka-himitsu", name: "新大阪秘密倶楽部", genre: "その他風俗", style: "M性感",
+    area: "新大阪", areaLabel: "西中島", access: "大阪市淀川区西中島3-16-8",
+    keys: ["新大阪秘密倶楽部", "秘密倶楽部"], checked: "2026-10-28" },
+
+  // --- 梅田：メンズエステ ---
+  { id: "usaginoheya", name: "うさぎのお部屋", kana: "ウサギノオヘヤ", genre: "メンズエステ", style: "ルーム型",
+    area: "梅田", areaLabel: "梅田", access: "梅田駅周辺（日本橋にも事務所）",
+    pay: "90分 15,000円〜", other: "日払い可／未経験歓迎／送迎あり／週1日・3時間からOK",
+    keys: ["うさぎのお部屋"], checked: "2026-10-28" },
+  { id: "madam-shinshi", name: "マダムと紳士", kana: "マダムトシンシ", genre: "メンズエステ", style: "ルーム型",
+    area: "梅田", areaLabel: "梅田", access: "梅田駅 徒歩10分（日本橋にもルーム）",
+    pay: "90分 14,000円〜", other: "日払い可／未経験歓迎／送迎あり／罰金・ノルマなし",
+    keys: ["マダムと紳士"], checked: "2026-10-28" },
+  { id: "darlin-premium", name: "Darlin Premium", kana: "ダーリンプレミアム", genre: "メンズエステ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区西天満4丁目",
+    keys: ["Darlin Premium", "ダーリンプレミアム"], checked: "2026-10-28" },
+  { id: "belchic", name: "BELCHIC", genre: "メンズエステ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区（梅田）",
+    keys: ["BELCHIC", "ベルシック"], checked: "2026-10-28" },
+  { id: "prince", name: "PRINCE", kana: "プリンス", genre: "メンズエステ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区（梅田）",
+    keys: ["PRINCE", "プリンス"], checked: "2026-10-28" },
+
+  // --- 梅田：セクキャバ ---
+  { id: "bakeneko", name: "BAKENEKO俱楽部", kana: "バケネコクラブ", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区神山町", hours: "20:00〜翌1:00",
+    pay: "体験 時給7,000円保証", paySub: "本入店 時給4,000〜6,000円＋バック", deduct: "10%＋1,500円",
+    other: "衣装：ドレス", keys: ["BAKENEKO", "バケネコ", "化け猫"], checked: "2026-10-28" },
+  { id: "rich-collection", name: "RICH COLLECTION", kana: "リッチコレクション", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区神山町（東通り）", hours: "18:00〜LAST",
+    pay: "体験 時給4,000〜7,000円保証", paySub: "日給保証 15,000円（6時間以上）", deduct: "1,000円＋10%",
+    other: "衣装：ベビードール", keys: ["RICH COLLECTION", "リッチコレクション"], checked: "2026-10-28" },
+  { id: "rich-academy", name: "RICH ACADEMY", kana: "リッチアカデミー", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", access: "最寄り 東梅田駅", hours: "15:00〜LAST",
+    pay: "体験 時給4,000〜7,000円（全額日払い）", paySub: "本入店 売上の半分", deduct: "10%＋1,000円",
+    other: "衣装：制服", keys: ["RICH ACADEMY", "リッチアカデミー"], checked: "2026-10-28" },
+  { id: "club-kiss", name: "club Kiss", kana: "キス", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", hours: "20:00〜LAST",
+    pay: "体験 4時間 25,000円／3時間 18,000円（以降 時給5,000円）", paySub: "本入店 時給4,000円〜＋バック",
+    other: "体験は日払い／本入店は翌月20日払い／衣装：ドレス", keys: ["club Kiss", "クラブキス", "クラブ キス"], checked: "2026-10-28" },
+  { id: "peachpie-umeda", name: "ピーチパイ 梅田", kana: "ピーチパイ", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", hours: "19:00〜LAST（土日 17:00〜）",
+    pay: "体験 4時間 30,000円（以降 時給3,000円〜）", deduct: "10%＋500円",
+    other: "衣装：ドレス", keys: ["ピーチパイ"], checked: "2026-10-28" },
+  { id: "vacances", name: "Vacances", kana: "バカンス", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", hours: "18:00〜LAST",
+    pay: "体験 時給5,000円保証＋バック", paySub: "本入店 時給3,000円〜保証＋バック",
+    other: "体験は日払い／本入店も日払い可", keys: ["Vacances", "バカンス"], checked: "2026-10-28" },
+  { id: "pamyu", name: "和風ぱみゅぱみゅ総本舗", kana: "ワフウパミュパミュ", genre: "セクキャバ",
+    area: "梅田", areaLabel: "梅田", hours: "19:00〜LAST",
+    pay: "体験 3時間 22,000円／5時間 30,000円", paySub: "本入店 時給4,000円〜＋バック", deduct: "10%＋1,500円",
+    other: "衣装：和服", keys: ["ぱみゅぱみゅ", "パミュパミュ"], checked: "2026-10-28" },
+
+  // --- 梅田：ホテヘル ---
+  { id: "speed-umeda", name: "スピード 梅田", genre: "ホテヘル", style: "スピードグループ",
+    area: "梅田", areaLabel: "梅田", access: "梅田（グループで京橋・難波・日本橋・天王寺・谷九にも）",
+    keys: ["スピード"], checked: "2026-10-28" },
+  { id: "tsumaten-umeda", name: "妻天 梅田", genre: "ホテヘル", style: "妻天グループ",
+    area: "梅田", areaLabel: "梅田", access: "梅田（グループで日本橋・十三・京橋・尼崎にも）",
+    keys: ["妻天"], checked: "2026-10-28" },
+  { id: "yancha-umeda", name: "やんちゃな子猫 梅田", genre: "ホテヘル", style: "やんちゃな子猫グループ",
+    area: "梅田", areaLabel: "梅田", access: "梅田（グループで大阪各地・神戸にも）",
+    keys: ["やんちゃな子猫"], checked: "2026-10-28" },
+  { id: "spark-umeda", name: "スパーク 梅田", genre: "ホテヘル", style: "スパークグループ",
+    area: "梅田", areaLabel: "梅田", access: "梅田（グループで日本橋・京橋にも）",
+    keys: ["スパーク"], checked: "2026-10-28" },
+  { id: "gekiyasu-umeda", name: "激安商事 梅田", genre: "ホテヘル", style: "激安商事グループ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区",
+    keys: ["激安商事"], checked: "2026-10-28" },
+
+  // --- 梅田：デリヘル ---
+  { id: "alice-umeda", name: "アリス 梅田", genre: "デリヘル", style: "アリスグループ",
+    area: "梅田", areaLabel: "梅田", access: "梅田（グループで日本橋・谷九・堺にも）",
+    keys: ["アリスグループ", "アリス梅田"], checked: "2026-10-28" },
+  { id: "melvis", name: "メルビス＆アトリアーナ", genre: "デリヘル",
+    area: "梅田", areaLabel: "梅田", keys: ["メルビス", "アトリアーナ"], checked: "2026-10-28" },
+  { id: "casualrich5", name: "Casual Rich 5", kana: "カジュアルリッチファイブ", genre: "デリヘル",
+    area: "梅田", areaLabel: "梅田", keys: ["Casual Rich", "カジュアルリッチ"], checked: "2026-10-28" },
+  { id: "jukujoya-umeda", name: "熟女家 梅田", genre: "デリヘル", style: "熟女家グループ",
+    area: "梅田", areaLabel: "梅田", keys: ["熟女家"], checked: "2026-10-28" },
+
+  // --- 梅田：その他（店舗型ヘルスなど） ---
+  { id: "umeda-golden", name: "梅田ゴールデン俱楽部", genre: "その他風俗", style: "店舗型ヘルス",
+    area: "梅田", areaLabel: "梅田", keys: ["ゴールデン俱楽部", "ゴールデン倶楽部", "ゴールデンクラブ"], checked: "2026-10-28" }
+];
+
+/* ピックアップする地域（トップの「ピックアップ」のタブ）。area がこの key と同じお店が出ます */
+window.RV_PICKUP_AREAS = [
+  { key: "新大阪", label: "新大阪・西中島" },
+  { key: "梅田", label: "梅田" }
 ];
 
 /* ジャンル（トップの「ジャンルで探す」）。お店が0件のジャンルは「準備中」と出ます

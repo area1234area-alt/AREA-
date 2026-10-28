@@ -73,6 +73,35 @@
   .cta h2{font-family:var(--serif);font-size:1.1rem;letter-spacing:.08em;margin:0 0 6px}
   .cta p{font-size:.8rem;color:#CFC6BD;margin:0 0 16px}
   .cta .btn{position:relative;z-index:1}
+
+  /* ピックアップ（地域 → ジャンル） */
+  .pk-sec{background:#0B0A0D;color:#F4EFE6;padding:30px 0 26px}
+  .pk-sec .sec-h{color:#F4EFE6}
+  .pk-sec .sec-h small{color:var(--gold)}
+  .pk-sec .lead{color:#B7AEA6}
+  .pk-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--gold);margin-bottom:18px}
+  .pk-tabs button{background:transparent;border:0;color:var(--gold-lt);padding:13px 6px;font-family:var(--serif);font-weight:700;font-size:.98rem;letter-spacing:.1em;cursor:pointer}
+  .pk-tabs button small{font-family:var(--en);font-size:.9rem;margin-left:6px;color:#F7A9C4}
+  .pk-tabs button[aria-selected="true"]{background:var(--goldgrad);color:#1A1406}
+  .pk-tabs button[aria-selected="true"] small{color:#5A2A3A}
+  .pk-g{margin-bottom:20px}
+  .pk-gh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(201,162,39,.35);padding-bottom:6px;margin-bottom:10px}
+  .pk-gh h3{margin:0;font-family:var(--serif);font-size:1.02rem;letter-spacing:.08em}
+  .pk-gh h3 span{font-family:var(--en);color:#F7A9C4;font-size:1rem;margin-left:6px}
+  .pk-gh a{font-size:.74rem;color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px}
+  .pk-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px}
+  .pk-card{flex:0 0 72%;max-width:260px;scroll-snap-align:start;background:#16121A;border:1px solid rgba(201,162,39,.5);display:flex;flex-direction:column}
+  @media (min-width:640px){ .pk-card{flex-basis:31%} }
+  .pk-in{padding:12px 12px 10px;flex:1}
+  .pk-in .st{font-size:.64rem;color:var(--gold);letter-spacing:.08em}
+  .pk-in h4{margin:4px 0 6px;font-family:var(--serif);font-size:1.05rem;line-height:1.4;color:#fff}
+  .pk-in p{margin:0;font-size:.74rem;color:#CFC6BD;line-height:1.6}
+  .pk-in p b{color:#F7A9C4;font-weight:700}
+  .pk-acts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,162,39,.35)}
+  .pk-acts a{text-align:center;padding:10px 4px;font-size:.76rem;font-weight:700;letter-spacing:.06em}
+  .pk-acts .see{color:var(--gold-lt)}
+  .pk-acts .wr{background:var(--pink);color:#fff}
+  .pk-soon{font-size:.78rem;color:#8C847D;border:1px dashed #3A3440;padding:14px;text-align:center}
 </style>
 </head>
 <body>
@@ -88,11 +117,18 @@
   <div class="orn"><span></span><b></b><span></span></div>
   <p>風俗・メンズエステ・セクキャバのお店で実際に働いた方の口コミを、お店ごとにまとめています。勤務時間・日給・時給換算で、お店どうしをくらべられます。</p>
   <div class="hero-actions">
-    <a href="#find" class="btn btn-gold">お店を探す</a>
+    <a href="#pickup" class="btn btn-gold">お店を探す</a>
     <a href="#" class="btn btn-dark" data-write>口コミを書く</a>
   </div>
   <div class="stats"><div><b id="stShops">0</b>掲載店舗</div><div><b id="stReviews">–</b>口コミ</div></div>
 </section>
+
+<section class="pk-sec" id="pickup"><div class="wrap">
+  <h2 class="sec-h">ピックアップ <small>Pick Up</small></h2>
+  <p class="lead">地域とジャンルごとに、口コミを集めているお店をまとめました。</p>
+  <div class="pk-tabs" role="tablist" id="pkTabs"></div>
+  <div id="pkBody"></div>
+</div></section>
 
 <main class="wrap">
   <section class="sec" id="find">
@@ -147,7 +183,7 @@
 
   var shops = RV.listed();
   var counts = {};            // 店ごとの口コミ件数
-  var AREAS = [["梅田","梅田"],["北新地","北新地"],["難波","難波・日本橋"],["心斎橋","心斎橋"],["本町","本町"],["十三","十三・新大阪"],["天満","天満"],["京橋","京橋"],["谷町九丁目","谷九"]];
+  var AREAS = [["梅田","梅田"],["新大阪","新大阪・西中島"],["北新地","北新地"],["難波","難波・日本橋"],["心斎橋","心斎橋"],["本町","本町"],["十三","十三"],["天満","天満"],["京橋","京橋"],["谷町九丁目","谷九"]];
   var q = new URLSearchParams(location.search);
   var state = { genre: q.get("genre") || "", area: q.get("area") || "" };
 
@@ -198,6 +234,36 @@
   }
   render();
 
+  // ピックアップ（地域タブ → ジャンルごとの横スクロール）
+  var pkArea = (window.RV_PICKUP_AREAS || [])[0] ? RV_PICKUP_AREAS[0].key : "";
+  function pkCard(s){
+    var see = 'shop.html?id=' + encodeURIComponent(s.id);
+    var write = RV_API + '?shop=' + encodeURIComponent(s.name) + '&area=' + encodeURIComponent(s.areaLabel || s.area);
+    var c = counts[s.id];
+    return '<div class="pk-card"><a class="pk-in" href="' + see + '"><div class="st">' + esc([s.areaLabel || s.area, s.style].filter(Boolean).join("・")) + '</div>' +
+      '<h4>' + esc(s.name) + '</h4><p>' + esc(s.pay || "女子給は確認中") + '</p>' +
+      '<p>口コミ <b>' + (c == null ? "–" : c) + '</b> 件</p></a>' +
+      '<div class="pk-acts"><a class="see" href="' + see + '#reviews">口コミを見る</a><a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く</a></div></div>';
+  }
+  function renderPickup(){
+    $("pkTabs").innerHTML = RV_PICKUP_AREAS.map(function(a){
+      var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length;
+      return '<button type="button" role="tab" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '">' + esc(a.label) + '<small>' + n + '</small></button>';
+    }).join("");
+    $("pkBody").innerHTML = RV_GENRES.map(function(g){
+      var rows = shops.filter(function(s){ return s.area === pkArea && s.genre === g.key && !s.soon; });
+      return '<div class="pk-g"><div class="pk-gh"><h3>' + esc(g.label) + '<span>' + rows.length + '</span></h3>' +
+        (rows.length ? '<a href="./?area=' + encodeURIComponent(pkArea) + '&genre=' + encodeURIComponent(g.key) + '#shops" data-pkmore="' + esc(g.key) + '">一覧で見る ›</a>' : '') + '</div>' +
+        (rows.length ? '<div class="pk-row">' + rows.map(pkCard).join("") + '</div>' : '<div class="pk-soon">このジャンルのお店は準備中です</div>') + '</div>';
+    }).join("");
+  }
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-pk]"); if (t) { pkArea = t.dataset.pk; renderPickup(); return; }
+    var m = e.target.closest("[data-pkmore]");
+    if (m) { e.preventDefault(); state.area = pkArea; state.genre = m.dataset.pkmore; render(); $("shops").scrollIntoView({ behavior: "smooth" }); }
+  });
+  renderPickup();
+
   // 新着の口コミ
   function rv(r){
     var s = RV.shopOf(r), h = RV.hoursOf(r), y = RV.dailyOf(r);
@@ -217,7 +283,7 @@
     rows = rows.filter(function(r){ var s = RV.shopOf(r); return !(s && s.hold); });
     shops.forEach(function(s){ counts[s.id] = rows.filter(function(r){ return RV.shopOf(r) === s; }).length; });
     $("stReviews").textContent = rows.length;
-    render();
+    render(); renderPickup();
     $("latestList").innerHTML = rows.length ? rows.slice(0, 6).map(rv).join("")
       : '<div class="rv-empty">口コミはまだありません。最初の口コミをお待ちしています。</div>';
   });

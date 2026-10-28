@@ -76,7 +76,7 @@
 
   <section class="panel" id="p-outline" role="tabpanel" aria-labelledby="t-outline">
     <table class="outline"><tbody id="outline"></tbody></table>
-    <p class="notice">※この欄は、お店から確認できた内容と、投稿された口コミをまとめたものです。最新の条件は、お店に直接ご確認ください。</p>
+    <p class="notice" id="notice">※この欄は、お店から確認できた内容と、投稿された口コミをまとめたものです。最新の条件は、お店に直接ご確認ください。</p>
   </section>
 
   <section class="panel" id="p-reviews" role="tabpanel" aria-labelledby="t-reviews" hidden>
@@ -134,14 +134,18 @@
     $("outline").innerHTML =
       row("ジャンル", esc(S.genre + (S.style ? "（" + S.style + "）" : ""))) +
       row("エリア・アクセス", esc(label) + (S.access ? '<small>' + esc(S.access) + '</small>' : '')) +
-      row("営業時間", esc(S.hours || "")) +
-      row("待機形態", esc(S.wait || "")) +
+      row("営業時間", esc(S.hours || "確認中")) +
+      row("待機形態", esc(S.wait || "確認中")) +
       row("女子給", pay || "お店に確認中") +
       row("口コミでの稼ぎ目安", avg) +
       row("引かれ物", esc(S.deduct || "お店に確認中")) +
       row("その他", esc(S.other || "—"));
   }
   outline('<span style="color:var(--dim)">口コミを読み込んでいます…</span>');
+  if (S.checked) {
+    var d = S.checked.split("-");
+    $("notice").textContent = "※この欄は、求人情報などの公開情報と投稿された口コミをまとめたものです（" + d[0] + "年" + Number(d[1]) + "月" + Number(d[2]) + "日時点）。「確認中」の項目は順次追加します。最新の条件は、お店に直接ご確認ください。";
+  }
 
   // タブ
   function tab(which){
