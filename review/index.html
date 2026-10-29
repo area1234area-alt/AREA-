@@ -13,7 +13,19 @@
   .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 0%,rgba(224,82,127,.22),transparent 60%),radial-gradient(ellipse at 70% 100%,rgba(201,162,39,.18),transparent 65%),#0B0A0D;color:#F4EFE6;text-align:center;padding:0 0 34px}
   .hero-ph{position:relative;max-width:1100px;margin:0 auto}
   .hero-ph img{width:100%;height:auto;aspect-ratio:1672/941}
-  .hero-copy{position:relative;z-index:1;padding:26px 16px 0;max-width:760px;margin:0 auto}
+  .hero-copy{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:26px 18px 24px;background:linear-gradient(180deg,rgba(20,17,23,.96),rgba(11,10,13,.98));border:1px solid var(--gold);border-top:0;outline:1px solid rgba(201,162,39,.25);outline-offset:-6px}
+  .hero-copy .hc-l,.hero-copy .hc-r{position:relative}
+  @media (min-width:860px){
+    .hero-copy{display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1.15fr);gap:0 44px;align-items:center;text-align:left;padding:40px 52px}
+    .hero-copy::before{content:"";grid-column:2;grid-row:1;align-self:stretch;background:linear-gradient(180deg,transparent,var(--gold),transparent)}
+    .hero-copy .hc-l{grid-column:1;grid-row:1}
+    .hero-copy .hc-r{grid-column:3;grid-row:1}
+    .hero-copy .orn{justify-content:flex-start;margin-bottom:0}
+    .hero .hero-copy p{margin:0;max-width:none;font-size:.92rem}
+    .hero-copy .hero-actions,.hero-copy .stats{justify-content:flex-start}
+    .hero-copy .hero-actions .btn{flex:1 1 0;min-width:0}
+    .hero h1{font-size:2.1rem}
+  }
   .hero .en{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.34em;font-size:.92rem;color:var(--gold)}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.45rem,6vw,2.1rem);letter-spacing:.1em;line-height:1.55;margin:8px 0 0}
   .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0}
@@ -117,15 +129,19 @@
 <section class="hero">
   <div class="hero-ph"><img src="img/hero.jpg?v=3" alt="Area｜ナイトワーク専門のサイト。既存の求人口コミを見て決められる。あなたの「やりたい」を応援します"></div>
   <div class="hero-copy">
-  <div class="en">Real Voices</div>
-  <h1>働いた女性の、<br>ほんとうの口コミ。</h1>
-  <div class="orn"><span></span><b></b><span></span></div>
-  <p>風俗・メンズエステ・セクキャバのお店で実際に働いた方の口コミを、お店ごとにまとめています。勤務時間・日給・時給換算で、お店どうしをくらべられます。</p>
-  <div class="hero-actions">
-    <a href="#pickup" class="btn btn-gold">お店を探す</a>
-    <a href="#" class="btn btn-dark" data-write>口コミを書く</a>
-  </div>
-  <div class="stats"><div><b id="stShops">0</b>掲載店舗</div><div><b id="stReviews">–</b>口コミ</div></div>
+    <div class="hc-l">
+      <div class="en">Real Voices</div>
+      <h1>働いた女性の、<br>ほんとうの口コミ。</h1>
+      <div class="orn"><span></span><b></b><span></span></div>
+    </div>
+    <div class="hc-r">
+      <p>風俗・メンズエステ・セクキャバのお店で実際に働いた方の口コミを、お店ごとにまとめています。勤務時間・日給・時給換算で、お店どうしをくらべられます。</p>
+      <div class="hero-actions">
+        <a href="#pickup" class="btn btn-gold">お店を探す</a>
+        <a href="#" class="btn btn-dark" data-write>口コミを書く</a>
+      </div>
+      <div class="stats"><div><b id="stShops">0</b>掲載店舗</div><div><b id="stReviews">–</b>口コミ</div></div>
+    </div>
   </div>
 </section>
 
