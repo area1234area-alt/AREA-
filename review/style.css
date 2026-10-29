@@ -16,7 +16,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit}
 [hidden]{display:none !important}
-.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1132px;margin:0 auto;padding:0 16px}  /* 中身の幅 1100px（ヒーロー画像と同じ） */
 
 /* 上の帯・ヘッダー */
 .beta{background:#000;color:var(--gold-lt);text-align:center;font-size:.68rem;letter-spacing:.08em;padding:6px 14px}

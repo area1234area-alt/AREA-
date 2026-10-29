@@ -54,6 +54,7 @@
 
   .shops{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   @media (max-width:560px){ .shops{grid-template-columns:1fr} }
+  @media (min-width:900px){ .shops{grid-template-columns:repeat(3,1fr)} #latestList{display:grid;grid-template-columns:repeat(2,1fr);gap:0 14px;align-items:start} #latestList .rv-empty{grid-column:1/-1} .pills{grid-template-columns:repeat(5,1fr)} .pk-card{flex-basis:23.5%;max-width:none} }
   .shop{display:flex;flex-direction:column;background:#fff;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.3);outline-offset:3px;margin:4px}
   .shop-in{padding:14px 14px 12px;flex:1}
   .shop-tags{display:flex;gap:6px;flex-wrap:wrap}
