@@ -3,6 +3,7 @@
    ・店舗ページは shop.html?id=（id の値） で開きます
    ・hold: "理由" を入れると、一覧にも店舗ページにも出しません（理由は画面に出ません）
    ・soon: true は、一覧に「準備中」のカードだけ出します（店舗ページはまだ開けません）
+   ・banner はお店のメイン画像、photos は店内写真（どちらもお店に使用OKをもらったものを入れる）。income はお店が出している月収例
    ・ext は、他サイトに投稿された「働いた女性の口コミ」の要約（本文は転載せず、出典リンク付きで別枠に表示）
    ・keys は、口コミの「お店の名前」と照らし合わせる言葉。どれかを含む口コミがこの店の口コミになります */
 window.RV_SHOPS = [
@@ -116,10 +117,17 @@ window.RV_SHOPS = [
     area: "梅田", areaLabel: "梅田", access: "大阪市北区神山町", hours: "20:00〜翌1:00",
     pay: "体験 時給7,000円保証", paySub: "本入店 時給4,000〜6,000円＋バック", deduct: "10%＋1,500円",
     other: "衣装：ドレス", keys: ["BAKENEKO", "バケネコ", "化け猫"], checked: "2026-10-28" },
-  { id: "rich-collection", name: "RICH COLLECTION", kana: "リッチコレクション", genre: "セクキャバ",
-    area: "梅田", areaLabel: "梅田", access: "大阪市北区神山町（東通り）", hours: "18:00〜LAST",
-    pay: "体験 時給4,000〜7,000円保証", paySub: "日給保証 15,000円（6時間以上）", deduct: "1,000円＋10%",
-    other: "衣装：ベビードール", keys: ["RICH COLLECTION", "リッチコレクション"], checked: "2026-10-28" },
+  { id: "rich-collection", name: "RICH COLLECTION", kana: "リッチコレクション", genre: "セクキャバ", style: "ツーショットキャバクラ",
+    area: "梅田", areaLabel: "梅田", access: "大阪市北区神山町8-9 マンビル 地下1階",
+    hours: "18:00〜LAST（勤務時間は相談可／週1日〜OK）", wait: "個別待機",
+    pay: "体験 時給4,000〜7,000円 確実保証", paySub: "日給保証 最低15,000円（6時間以上の勤務で）",
+    back: "各種バック・ボトルバックあり／友達紹介ボーナスあり",
+    deduct: "雑費1,000円＋10%",
+    other: "体験入店は全額日払い／本入店後は一部日払い可／ノルマなし／衣装（ベビードール）無料貸与／鍵付きロッカー／送りあり（大阪府内・他県もOK）／面接〜体験時のお迎えあり／応募資格：18〜32歳くらいまで（高校生不可）／体験入店に必要なもの：顔写真付きの身分証と、本籍地入りのマイナンバーカードか住民票",
+    income: ["月収173万円＋ボトルバック（週3〜4日・1日6時間）", "月収132万円＋ボトルバック（週6日・1日5〜8時間）", "月収113万円＋ボトルバック（週4日・1日4時間）", "月収83万円（週4日・1日4時間）", "月収74万円（週2〜3日・1日5〜6時間）"],
+    banner: "img/shops/rich-collection/banner.jpg",
+    photos: ["img/shops/rich-collection/1.jpg", "img/shops/rich-collection/2.jpg", "img/shops/rich-collection/3.jpg", "img/shops/rich-collection/4.jpg"],
+    keys: ["RICH COLLECTION", "リッチコレクション", "リッチコレ"], checked: "2026-10-29" },
   { id: "rich-academy", name: "RICH ACADEMY", kana: "リッチアカデミー", genre: "セクキャバ",
     area: "梅田", areaLabel: "梅田", access: "最寄り 東梅田駅", hours: "15:00〜LAST",
     pay: "体験 時給4,000〜7,000円（全額日払い）", paySub: "本入店 売上の半分", deduct: "10%＋1,000円",
