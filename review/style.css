@@ -83,3 +83,11 @@ footer p{margin:6px auto 0;max-width:36em}
 .gate-box p{font-size:.8rem;color:#B7AEA6;margin:0 0 18px}
 .gate-box .row{display:flex;gap:10px;position:relative;z-index:1}
 .gate-box .row > *{flex:1}
+
+/* LINEの相談ボタン */
+.line-fab{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:8px;background:#06C755;color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.04em;padding:10px 16px 10px 12px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.line-fab b{background:#fff;color:#06C755;font-size:.68rem;padding:2px 6px;border-radius:4px;letter-spacing:.02em}
+.btn-linebtn{background:#06C755;color:#fff}
+.cta .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.cta .line-note{position:relative;z-index:1;font-size:.7rem;color:#B7AEA6;margin:10px 0 0}
+footer{padding-bottom:76px}

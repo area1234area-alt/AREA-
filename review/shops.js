@@ -204,6 +204,9 @@ window.RV_GENRES = [
   { key: "その他風俗", label: "その他" }   // ヘルス・ソープ・ピンサロなど。お店の genre に "その他風俗" と書く
 ];
 
+/* LINEの相談窓口（店舗のLINE担当が決まるまでの仮）。応募の受付ではなく、口コミ・掲載についての相談用 */
+window.RV_LINE = "https://lin.ee/v7GLaD2";
+
 /* 口コミの読み込み先（Areaの口コミ台帳と同じ） */
 window.RV_API = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec";
 
@@ -269,6 +272,14 @@ window.RV = (function () {
       g.remove(); document.body.style.overflow = "";
     };
   };
+  // LINEの相談ボタン（画面左下に固定 ＋ data-line のリンクに URL を入れる）
+  var line = function () {
+    if (!window.RV_LINE) return;
+    [].forEach.call(document.querySelectorAll("[data-line]"), function (a) { a.href = window.RV_LINE; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; });
+    var f = document.createElement("a"); f.className = "line-fab"; f.href = window.RV_LINE; f.target = "_blank"; f.rel = "noopener";
+    f.innerHTML = '<b>LINE</b>相談・お問い合わせ'; document.body.appendChild(f);
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", line); else line();
   return { norm: norm, esc: esc, listed: listed, byId: byId, shopOf: shopOf, isOurs: isOurs,
            hoursOf: hoursOf, dailyOf: dailyOf, man: man, yen: yen, perHour: perHour, period: period, load: load, gate: gate };
 })();
