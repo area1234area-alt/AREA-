@@ -215,7 +215,13 @@
       var body = (x.good ? '<p><span class="rv-label">良かった点</span>' + esc(x.good) + '</p>' : '') +
                  (x.bad ? '<p><span class="rv-label bad">気になった点</span>' + esc(x.bad) + '</p>' : '') +
                  (x.note ? '<p><span class="rv-label note">そのほか</span>' + esc(x.note) + '</p>' : '');
-      return '<article class="rv is-ext"><div class="rv-top"><div class="rv-meta">働いた女性の口コミ（要約）</div><span class="ext-badge">他サイト</span></div>' +
+      var h = Number(x.hours) || 0, y = Number(x.daily) || 0;
+      var earn = (h && y) ? '<div class="earn"><div><small>勤務時間</small><b>' + h + '<span>時間</span></b></div><i>→</i>' +
+        '<div><small>' + esc(x.payLabel || "日給") + '</small><b>' + RV.man(y).replace("万円", "") + '<span>万円</span></b></div><i>＝</i>' +
+        '<div class="hr"><small>時給換算</small><b>' + RV.perHour(y, h).toLocaleString("ja-JP") + '<span>円</span></b></div></div>' : '';
+      var meta = [x.when, x.kind || "働いた女性の口コミ（要約）"].filter(Boolean).join("・");
+      return '<article class="rv is-ext"><div class="rv-top"><div class="rv-meta">' + esc(meta) + '</div><span class="ext-badge">他サイト</span></div>' +
+        earn + (x.extra ? '<div class="rv-who" style="margin-top:4px">' + esc(x.extra) + '</div>' : '') +
         '<div class="rv-body">' + body + '</div>' +
         '<div class="ext-src">出典：<a href="' + esc(x.url) + '" target="_blank" rel="noopener nofollow">' + esc(x.site) + '</a>' + (d.length === 3 ? '（' + d[0] + '年' + Number(d[1]) + '月' + Number(d[2]) + '日に確認）' : '') + '</div></article>';
     }).join("");
