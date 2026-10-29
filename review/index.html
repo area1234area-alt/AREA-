@@ -118,6 +118,25 @@
   .pk-acts .see{color:var(--gold-lt)}
   .pk-acts .wr{background:var(--pink);color:#fff}
   .pk-soon{font-size:.78rem;color:#8C847D;border:1px dashed #3A3440;padding:14px;text-align:center}
+
+  /* 広告バナー枠 */
+  .ad-sec{background:#0B0A0D;padding:18px 0 4px}
+  .ad{position:relative;aspect-ratio:1100/300;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.3);outline-offset:3px;overflow:hidden;background:#141115}
+  .ad a{position:absolute;inset:0;display:block;opacity:0;transition:opacity .6s}
+  .ad a.on{opacity:1;z-index:1}
+  .ad img{width:100%;height:100%;object-fit:cover}
+  .ad .pr{position:absolute;left:8px;top:8px;z-index:3;font-size:.62rem;font-weight:700;letter-spacing:.1em;background:rgba(0,0,0,.65);color:#F1DA9C;border:1px solid rgba(201,162,39,.6);padding:1px 7px}
+  .ad .dots{position:absolute;left:0;right:0;bottom:8px;z-index:3;display:flex;justify-content:center;gap:6px}
+  .ad .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45)}
+  .ad .dots i.on{background:#F1DA9C}
+  .ad-ph{position:absolute;inset:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:0 4%;padding:0 5%;background:radial-gradient(ellipse at 20% 50%,rgba(224,82,127,.28),transparent 60%),radial-gradient(ellipse at 85% 50%,rgba(201,162,39,.25),transparent 60%),linear-gradient(135deg,#120E15,#1E1622);color:#F4EFE6}
+  .ad-ph .crown{font-family:var(--en);font-style:italic;font-weight:700;font-size:clamp(.9rem,3.6vw,2rem);letter-spacing:.12em;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1;text-align:center}
+  .ad-ph .crown small{display:block;font-size:.5em;letter-spacing:.3em}
+  .ad-ph h3{margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(.92rem,3.6vw,2rem);letter-spacing:.08em;line-height:1.35}
+  .ad-ph h3 b{background:linear-gradient(90deg,#F7A9C4,#E0527F);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ad-ph p{margin:4px 0 0;font-size:clamp(.58rem,1.9vw,.9rem);color:#CFC6BD;letter-spacing:.04em}
+  .ad-ph .go{white-space:nowrap;background:var(--goldgrad);color:#1A1406;font-weight:700;font-size:clamp(.6rem,2vw,.95rem);letter-spacing:.1em;padding:.7em 1.2em}
+  @media (max-width:520px){ .ad-ph{grid-template-columns:1fr auto;padding:0 4%} .ad-ph .crown{display:none} }
 </style>
 </head>
 <body>
@@ -145,6 +164,9 @@
     </div>
   </div>
 </section>
+
+<!-- 広告バナー枠（トップのヒーロー直下）。中身は shops.js の RV_ADS で管理 -->
+<section class="ad-sec" aria-label="広告"><div class="wrap"><div class="ad" id="adSlot"></div></div></section>
 
 <section class="pk-sec" id="pickup"><div class="wrap">
   <h2 class="sec-h">ピックアップ <small>Pick Up</small></h2>
@@ -258,6 +280,26 @@
   }
   render();
 
+
+  // 広告バナー（期限切れは出さない。0件なら仮バナー）
+  (function(){
+    var box = $("adSlot"); if (!box) return;
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var ads = (window.RV_ADS || []).filter(function(a){ return a && a.img && (!a.until || new Date(a.until + "T23:59:59") >= today); });
+    if (!ads.length) {
+      box.innerHTML = '<a class="on" href="' + esc(window.RV_LINE || "#") + '" target="_blank" rel="noopener"><div class="ad-ph">' +
+        '<div class="crown">Area<small>REVIEW</small></div>' +
+        '<div><h3>この枠に、<b>あなたのお店</b>を。</h3><p>トップページの特別枠に、お店のバナーを掲載できます。</p></div>' +
+        '<span class="go">広告掲載のご相談 ›</span></div></a><span class="pr">広告枠</span>';
+      return;
+    }
+    box.innerHTML = ads.map(function(a, i){ return '<a href="' + esc(a.url || "#") + '"' + (i ? '' : ' class="on"') + '><img src="' + esc(a.img) + '" alt="' + esc(a.name || "広告") + '"></a>'; }).join("") +
+      '<span class="pr">PR</span>' + (ads.length > 1 ? '<div class="dots">' + ads.map(function(a, i){ return '<i' + (i ? '' : ' class="on"') + '></i>'; }).join("") + '</div>' : '');
+    if (ads.length > 1) {
+      var n = 0, links = box.querySelectorAll("a"), dots = box.querySelectorAll(".dots i");
+      setInterval(function(){ links[n].classList.remove("on"); dots[n].classList.remove("on"); n = (n + 1) % links.length; links[n].classList.add("on"); dots[n].classList.add("on"); }, 5000);
+    }
+  })();
   // ピックアップ（地域タブ → ジャンルごとの横スクロール）
   var pkArea = (window.RV_PICKUP_AREAS || [])[0] ? RV_PICKUP_AREAS[0].key : "";
   function pkCard(s){
