@@ -84,6 +84,13 @@
   .job-acts a{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 6px;border-radius:8px;font-weight:700;font-size:.9rem;letter-spacing:.06em}
   .job-acts .tel{background:var(--goldgrad);color:#1A1406}
   .job-acts .hp{border:1px solid var(--gold);color:var(--gold-lt)}
+  .points{margin:16px 0 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
+  .points h3{font-family:var(--serif);font-size:.98rem;letter-spacing:.08em;margin:0 0 4px}
+  .points .pt-lead{font-size:.7rem;color:var(--dim);margin:0 0 10px}
+  .points ul{list-style:none;margin:0;padding:0;font-size:.86rem;line-height:1.8}
+  .points li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px dashed var(--line)}
+  .points li:first-child{border-top:0}
+  .points li .rv-label{flex:none;margin:3px 0 0}
   .job-note{margin:12px 0 0;font-size:.7rem;color:#B7AEA6;line-height:1.7}
 </style>
 </head>
@@ -116,6 +123,7 @@
   <section class="panel" id="p-outline" role="tabpanel" aria-labelledby="t-outline">
     <div class="gallery" id="gallery" hidden><h3>店内の写真</h3><div class="gal" id="gal"></div></div>
     <table class="outline"><tbody id="outline"></tbody></table>
+    <section class="points" id="points" hidden><h3>運営メモ</h3><p class="pt-lead">運営がお店や関係者から聞き取った特徴です（口コミではありません）。</p><ul id="pointsList"></ul></section>
     <details class="income acc" id="income" hidden><summary><span id="incomeTitle">月収例（お店の掲載より）</span><small id="incomeCount"></small></summary><ol id="incomeList"></ol><p>※お店が公開している実績です。働き方によって変わります。</p></details>
     <section class="jobbox" id="jobBox" hidden>
       <h3 class="job-h"><span>求人情報</span><b id="jobTitle"></b></h3>
@@ -273,6 +281,12 @@
     $("jobActs").innerHTML = (J.tel ? '<a class="tel" href="tel:' + esc(J.tel.replace(/[^0-9+]/g, "")) + '">📞 お店に電話する</a>' : '') +
       (J.hp ? '<a class="hp" href="' + esc(J.hp) + '" target="_blank" rel="noopener nofollow">お店のHPを見る ›</a>' : '');
     $("jobBox").hidden = false;
+  }
+  // 運営メモ（良い点・気になる点）
+  if (S.points && ((S.points.good || []).length || (S.points.bad || []).length)) {
+    $("pointsList").innerHTML = (S.points.good || []).map(function(t){ return '<li><span class="rv-label">良い点</span><span>' + esc(t) + '</span></li>'; }).join("") +
+      (S.points.bad || []).map(function(t){ return '<li><span class="rv-label bad">気になる点</span><span>' + esc(t) + '</span></li>'; }).join("");
+    $("points").hidden = false;
   }
   // お店の画像・月収例
   if (S.banner) { $("banner").innerHTML = '<img src="' + esc(S.banner) + '" alt="' + esc(S.name) + 'のメイン画像">'; $("banner").hidden = false; }
