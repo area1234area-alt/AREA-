@@ -217,17 +217,18 @@ window.RV_SHOPS = [
 
 /* ピックアップする地域（トップの「ピックアップ」のタブ）。area がこの key と同じお店が出ます */
 window.RV_PICKUP_AREAS = [
+  // main: true は「主要エリア」。大きいボタンで先に表示する
+  { key: "梅田", label: "大阪キタ・梅田", main: true, sub: "兎我野町・堂山町" },
+  { key: "難波", label: "難波・日本橋", main: true, sub: "ミナミ" },
+  { key: "新大阪", label: "西中島・新大阪", main: true, sub: "淀川区" },
+  { key: "京橋", label: "京橋・守口", main: true, sub: "城東区・都島区" },
   { key: "十三", label: "十三・西淀川" },
-  { key: "新大阪", label: "西中島・新大阪" },
   { key: "江坂", label: "江坂・豊中" },
-  { key: "梅田", label: "大阪キタ・梅田" },
   { key: "天満", label: "天満・南森町" },
-  { key: "京橋", label: "京橋・守口" },
-  { key: "難波", label: "難波・日本橋" },
   { key: "心斎橋", label: "心斎橋" },
   { key: "本町", label: "本町・堺筋本町" },
-  { key: "堺", label: "堺・南大阪" },
   { key: "谷町九丁目", label: "谷町九丁目" },
+  { key: "堺", label: "堺・南大阪" },
   { key: "東大阪", label: "東大阪・八尾" }
 ];
 
