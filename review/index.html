@@ -114,11 +114,15 @@
   .pk-sec .sec-h{color:#F4EFE6}
   .pk-sec .sec-h small{color:var(--gold)}
   .pk-sec .lead{color:#B7AEA6}
-  .pk-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--gold);margin-bottom:18px}
-  .pk-tabs button{background:transparent;border:0;color:var(--gold-lt);padding:13px 6px;font-family:var(--serif);font-weight:700;font-size:.98rem;letter-spacing:.1em;cursor:pointer}
-  .pk-tabs button small{font-family:var(--en);font-size:.9rem;margin-left:6px;color:#F7A9C4}
-  .pk-tabs button[aria-selected="true"]{background:var(--goldgrad);color:#1A1406}
+  .pk-areas-h{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:var(--serif);font-size:1.05rem;letter-spacing:.06em}
+  .pk-areas-h::before{content:"";width:4px;height:1.3em;background:var(--goldgrad)}
+  .pk-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+  @media (min-width:860px){ .pk-tabs{grid-template-columns:repeat(4,1fr)} }
+  .pk-tabs button{position:relative;background:linear-gradient(180deg,#24202B,#1A171F);border:1px solid #3A3442;border-radius:12px;color:#F4EFE6;padding:15px 8px;font-weight:700;font-size:.92rem;letter-spacing:.04em;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.35)}
+  .pk-tabs button small{position:absolute;right:8px;top:6px;font-family:var(--en);font-size:.78rem;color:#F7A9C4}
+  .pk-tabs button[aria-selected="true"]{background:var(--goldgrad);border-color:transparent;color:#1A1406}
   .pk-tabs button[aria-selected="true"] small{color:#5A2A3A}
+  .pk-tabs button.none{background:#0B0A0D;border-color:#1E1B22;color:#4E4854;cursor:default;box-shadow:none}
   .pk-g{margin-bottom:8px;border-bottom:1px solid rgba(201,162,39,.35)}
   .pk-gh{display:flex;justify-content:space-between;align-items:center;padding:12px 2px;cursor:pointer;list-style:none}
   .pk-gh::-webkit-details-marker{display:none}
@@ -197,6 +201,7 @@
 <section class="pk-sec" id="pickup"><div class="wrap">
   <h2 class="sec-h">ピックアップ <small>Pick Up</small></h2>
   <p class="lead">地域とジャンルごとに、口コミを集めているお店をまとめました。</p>
+  <h3 class="pk-areas-h">エリアから探す</h3>
   <div class="pk-tabs" role="tablist" id="pkTabs"></div>
   <div id="pkBody"></div>
 </div></section>
@@ -328,7 +333,9 @@
     }
   })();
   // ピックアップ（地域タブ → ジャンルごとの横スクロール）
-  var pkArea = (window.RV_PICKUP_AREAS || [])[0] ? RV_PICKUP_AREAS[0].key : "";
+  // 最初に開くエリア：お店がいちばん多いエリア
+  var pkArea = "", pkMax = 0;
+  (window.RV_PICKUP_AREAS || []).forEach(function(a){ var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length; if (n > pkMax) { pkMax = n; pkArea = a.key; } });
   function pkCard(s){
     var see = 'shop.html?id=' + encodeURIComponent(s.id);
     var write = RV_API + '?shop=' + encodeURIComponent(s.name) + '&area=' + encodeURIComponent(s.areaLabel || s.area);
@@ -343,6 +350,7 @@
   function renderPickup(){
     $("pkTabs").innerHTML = RV_PICKUP_AREAS.map(function(a){
       var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length;
+      if (!n) return '<button type="button" class="none" disabled aria-disabled="true">' + esc(a.label) + '</button>';
       return '<button type="button" role="tab" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '">' + esc(a.label) + '<small>' + n + '</small></button>';
     }).join("");
     var firstWith = "";
