@@ -119,6 +119,13 @@
   .pk-tabs{margin-bottom:22px}
   .pk-sub-h{margin:0 0 8px;font-size:.74rem;font-weight:700;letter-spacing:.14em;color:var(--gold)}
   .pk-main{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .pk-oacc{border:1px solid #2A2530;border-radius:12px;padding:0 12px;background:#0F0D12}
+  .pk-oacc summary{display:flex;align-items:center;gap:10px;padding:13px 2px;cursor:pointer;list-style:none;font-size:.86rem;font-weight:700;color:var(--gold-lt);letter-spacing:.08em}
+  .pk-oacc summary::-webkit-details-marker{display:none}
+  .pk-oacc summary small{font-weight:500;font-size:.7rem;color:#8C847D;letter-spacing:.02em}
+  .pk-oacc summary .pk-chev{margin-left:auto}
+  .pk-oacc[open] .pk-chev{transform:rotate(-135deg);margin-bottom:-4px}
+  .pk-oacc .pk-other{padding:2px 0 12px}
   .pk-other{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
   @media (min-width:860px){ .pk-main{grid-template-columns:repeat(4,1fr)} .pk-other{grid-template-columns:repeat(4,1fr)} }
   .pk-tabs button.main{padding:20px 10px 16px;border:1px solid rgba(201,162,39,.6);display:flex;flex-direction:column;align-items:center;gap:4px}
@@ -360,6 +367,8 @@
       '<p>口コミ <b>' + (c == null ? "–" : c) + '</b> 件</p></a>' +
       '<div class="pk-acts"><a class="see" href="' + see + '#reviews">口コミを見る</a><a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く</a></div></div>';
   }
+  var pkOtherOpen = false;   // 「ほかのエリア」の開閉
+  document.addEventListener("toggle", function(e){ if (e.target.classList && e.target.classList.contains("pk-oacc")) pkOtherOpen = e.target.open; }, true);
   var pkOpen = {};   // ジャンルごとの開閉（タブを切り替えても覚えておく）
   document.addEventListener("toggle", function(e){ var d = e.target; if (d.classList && d.classList.contains("pk-g")) pkOpen[d.dataset.k] = d.open; }, true);
   function renderPickup(){
@@ -371,7 +380,13 @@
     };
     $("pkTabs").innerHTML =
       '<p class="pk-sub-h">主要エリア</p><div class="pk-main">' + RV_PICKUP_AREAS.filter(function(a){ return a.main; }).map(btn).join("") + '</div>' +
-      '<p class="pk-sub-h">ほかのエリア</p><div class="pk-other">' + RV_PICKUP_AREAS.filter(function(a){ return !a.main; }).map(btn).join("") + '</div>';
+      (function(){
+        var others = RV_PICKUP_AREAS.filter(function(a){ return !a.main; });
+        var nOpen = others.filter(function(a){ return shops.some(function(s){ return s.area === a.key && !s.soon; }); }).length;
+        var selInOther = others.some(function(a){ return a.key === pkArea; });
+        return '<details class="pk-oacc"' + (pkOtherOpen || selInOther ? ' open' : '') + '><summary><span>ほかのエリア</span><small>' + others.length + 'エリア（掲載あり ' + nOpen + '）</small><i class="pk-chev" aria-hidden="true"></i></summary>' +
+          '<div class="pk-other">' + others.map(btn).join("") + '</div></details>';
+      })();
     var firstWith = "";
     RV_GENRES.forEach(function(g){ if (!firstWith && shops.some(function(s){ return s.area === pkArea && s.genre === g.key && !s.soon; })) firstWith = g.key; });
     $("pkBody").innerHTML = RV_GENRES.map(function(g){
