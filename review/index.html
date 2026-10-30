@@ -152,6 +152,9 @@
   /* 広告バナー枠 */
   .ad-sec{background:#0B0A0D;padding:18px 0 4px}
   .ad{position:relative;aspect-ratio:1100/300;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.3);outline-offset:3px;overflow:hidden;background:#141115}
+  /* 画像・見出しの枠と同じ幅にそろえる（1100px未満では画面いっぱい） */
+  .ad{outline-offset:-6px}
+  @media (max-width:1131px){ .ad-sec .wrap{padding:0} }
   .ad a{position:absolute;inset:0;display:block;opacity:0;transition:opacity .6s}
   .ad a.on{opacity:1;z-index:1}
   .ad img{width:100%;height:100%;object-fit:cover}
