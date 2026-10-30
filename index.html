@@ -914,6 +914,24 @@
   .dc-tate.right{left:auto;right:18px}
   .dc-ph.logo{aspect-ratio:480/210}
   .dc-ph.logo ~ .dc-tate{display:none}
+
+  /* 広告バナー枠 */
+  .area-ad-sec{background:#0B0A0D;padding:18px 0 6px}
+  .area-ad{position:relative;aspect-ratio:1672/730;overflow:hidden;border:1px solid #C9A227;background:#141115}
+  .area-ad::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,39,.35);pointer-events:none;z-index:2}
+  .aa-track{position:absolute;inset:0;display:flex;transition:transform .6s ease}
+  .aa-track a{flex:0 0 100%;height:100%;display:block}
+  .aa-track img{width:100%;height:100%;object-fit:cover;display:block}
+  .aa-pr{position:absolute;left:10px;top:10px;z-index:3;font-size:.62rem;font-weight:700;letter-spacing:.1em;background:rgba(0,0,0,.65);color:#F1DA9C;border:1px solid rgba(201,162,39,.6);padding:1px 7px}
+  .aa-dots{position:absolute;left:0;right:0;bottom:10px;z-index:3;display:flex;justify-content:center;gap:6px}
+  .aa-dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer}
+  .aa-dots i.on{background:#F1DA9C}
+  .area-ad.ph{aspect-ratio:auto;min-height:150px}
+  .aa-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:40px 7% 20px;color:#F4EFE6;text-decoration:none;background:radial-gradient(ellipse at 20% 50%,rgba(224,82,127,.28),transparent 60%),radial-gradient(ellipse at 85% 50%,rgba(201,162,39,.25),transparent 60%),linear-gradient(135deg,#120E15,#1E1622)}
+  .aa-t{font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:clamp(1.05rem,3.4vw,1.8rem);letter-spacing:.06em}
+  .aa-t b{color:#F7A9C4}
+  .aa-s{font-size:clamp(.7rem,1.8vw,.9rem);color:#CFC6BD}
+  .aa-go{align-self:flex-start;margin-top:6px;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1A1406;font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:.6em 1.1em}
 </style>
 </head>
 <body>
@@ -954,6 +972,10 @@
     </div>
   </section>
 
+
+  <!-- ============ 広告バナー枠（ヒーロー直下）。中身は area-ads.js の AREA_ADS で管理 ============ -->
+  <section class="area-ad-sec" aria-label="広告"><div class="wrap"><div class="area-ad" id="areaAd"></div></div></section>
+  <script src="area-ads.js"></script>
 
   <!-- ============ SEARCH VISUAL ============ -->
   <!-- 差し替え方法: 下のimgのsrcを新しい画像に置き換えます。透明ボタン(.sv-hit)の位置は下のCSSで % 指定です。 -->
