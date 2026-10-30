@@ -1,0 +1,15 @@
+/* Area（飲み屋）共通：角の丸み（2026-10-30）。カード12px・ボタン8px・タグ6px（Area REVIEWと同じ）
+   全ページの </head> の直前で読み込んでいます */
+/* カード・枠 */
+.hero-img,.sv-frame,.sv-img,.area-ad,.job-card,.job-card.photo-card,.job-empty,.job-filter,.voice-card,.feature,
+.pick,.rank,.rv,.rv2,.rvc,.rv-empty,.rv-none,.sumbox,.notes,.panel,.find-panel,.img-card,.search,.shop,
+.points,.pslide,.pslide-card,.safe,.tbl,.blk .ph,.ph,.hero.has,.faq details,.stat,.info,.motive,.cta,.dc-ph{border-radius:12px}
+.area-ad,.job-card.photo-card,.pick,.rank,.voice-card,.img-card,.pslide,.safe,.points,.rvc,.sumbox,.shop,.ph{overflow:hidden}
+.hero-copy{border-radius:0 0 12px 12px}
+.hero-img{border-radius:12px 12px 0 0}
+/* ボタン */
+.btn,.hc-btn,.dc-btn,.area-pill,.rv-write,.write,.more-btn,.tel,.web,.line,.apply .line,.dock a,.d-line,.see,.wr,
+.btn-cell,.rank-acts a,.acts a,.pill,.sort,.chip,.header-voice,.header-cta,.site-head nav a,.head nav a,.sns-link,.tabs a,.tabs button{border-radius:8px}
+/* タグ・小さい表示 */
+.tag,.dc-badge,.dc-tags span,.chips span,.rank-tags span,.shop-badge,.rv-badge,.soon,.iv,.aa-pr,.cnt,.beta b{border-radius:6px}
+.area-ad{outline-offset:-6px}
