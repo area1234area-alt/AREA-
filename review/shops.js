@@ -249,9 +249,11 @@ window.RV_LINE = "https://lin.ee/v7GLaD2";
    ・広告費をいただいているお店のバナーをここに足す。複数あると5秒ごとに切り替わる
    ・img：バナー画像（横長 1100×300 くらい）、url：押したときの行き先（例 "shop.html?id=kingdom"）
    ・until：掲載の最終日（この日を過ぎると自動で消える）。空なら期限なし
+   ・ratio：バナー画像の縦横比（例 "976/211"）。枠がこの形になり、画像が切れずに全部見える
    ・1件もないときは「広告掲載店舗 募集中」の仮バナーが出る
    例） { name: "KINGDOM", img: "img/ads/kingdom.jpg", url: "shop.html?id=kingdom", until: "2026-11-30" } */
 window.RV_ADS = [
+  { name: "club Kiss", img: "img/ads/club-kiss.jpg", ratio: "976/211", url: "shop.html?id=club-kiss", until: "" }
 ];
 
 /* 口コミの読み込み先（Areaの口コミ台帳と同じ） */
