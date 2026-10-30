@@ -197,6 +197,29 @@
   .ad-ph p{margin:4px 0 0;font-size:clamp(.58rem,1.9vw,.9rem);color:#CFC6BD;letter-spacing:.04em}
   .ad-ph .go{white-space:nowrap;background:var(--goldgrad);color:#1A1406;font-weight:700;font-size:clamp(.6rem,2vw,.95rem);letter-spacing:.1em;padding:.7em 1.2em}
   @media (max-width:520px){ .ad.ph{aspect-ratio:auto;min-height:170px} .ad-ph{grid-template-columns:1fr;gap:10px;padding:44px 16px 18px;align-content:center} .ad-ph .crown{display:none} .ad-ph h3{font-size:1.15rem} .ad-ph p{font-size:.74rem} .ad-ph .go{justify-self:start;font-size:.8rem} }
+
+  /* 有料店舗ランキング（PCはピックアップの左側、スマホはピックアップの上に横スクロール） */
+  .rank{background:#141117;border:1px solid rgba(201,162,39,.45);padding:14px 12px 12px;margin-bottom:22px}
+  .rank-h{display:flex;align-items:center;gap:6px;margin:0 0 12px;font-family:var(--serif);font-size:1rem;letter-spacing:.06em;color:#F4EFE6}
+  .rank-ic{color:#F7A9C4}
+  .rank-pr{margin-left:auto;font-size:.6rem;font-weight:700;letter-spacing:.1em;color:#F1DA9C;border:1px solid rgba(201,162,39,.6);padding:1px 6px;font-family:var(--body)}
+  .rank-list{list-style:none;margin:0;padding:0;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}
+  .rank-list li{flex:0 0 70%;scroll-snap-align:start}
+  .rank-list a{display:block;color:inherit}
+  .rank-list img{display:block;width:100%;aspect-ratio:1672/730;object-fit:cover;border:1px solid rgba(201,162,39,.35)}
+  .rank-name{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:.92rem;font-weight:700;color:#F4EFE6}
+  .rank-name b{flex:none;width:22px;height:22px;display:grid;place-items:center;font-family:var(--en);font-size:.9rem;color:#1A1406;background:#CFC6BD}
+  .rank-list li:nth-child(1) .rank-name b{background:var(--goldgrad)}
+  .rank-list li:nth-child(2) .rank-name b{background:linear-gradient(135deg,#9AA0A6,#E9EDF1,#9AA0A6)}
+  .rank-list li:nth-child(3) .rank-name b{background:linear-gradient(135deg,#8A5A2B,#E2A66B,#8A5A2B)}
+  .rank-sub{display:block;font-size:.68rem;color:#8C847D;margin:1px 0 0 30px}
+  .rank-note{margin:8px 0 0;font-size:.62rem;color:#6E6773}
+  @media (min-width:1000px){
+    .pk-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:0 28px;align-items:start}
+    .rank{position:sticky;top:72px;margin:0}
+    .rank-list{flex-direction:column;overflow:visible;gap:14px}
+    .rank-list li{flex:none}
+  }
 </style>
 </head>
 <body>
@@ -228,12 +251,19 @@
 <!-- 広告バナー枠（トップのヒーロー直下）。中身は shops.js の RV_ADS で管理 -->
 <section class="ad-sec" aria-label="広告"><div class="wrap"><div class="ad" id="adSlot"></div></div></section>
 
-<section class="pk-sec" id="pickup"><div class="wrap">
+<section class="pk-sec" id="pickup"><div class="wrap pk-layout">
+  <aside class="rank" id="rankBox" aria-label="有料掲載店ランキング" hidden>
+    <h3 class="rank-h"><span class="rank-ic" aria-hidden="true">✿</span>優良店ランキング<span class="rank-pr">PR</span></h3>
+    <ol class="rank-list" id="rankList"></ol>
+    <p class="rank-note">※広告掲載店のランキングです。</p>
+  </aside>
+  <div class="pk-main-col">
   <h2 class="sec-h">ピックアップ <small>Pick Up</small></h2>
   <p class="lead">地域とジャンルごとに、口コミを集めているお店をまとめました。</p>
   <h3 class="pk-areas-h">エリアから探す</h3>
   <div class="pk-tabs" role="tablist" id="pkTabs"></div>
   <div id="pkBody"></div>
+  </div>
 </div></section>
 
 <main class="wrap">
@@ -378,6 +408,18 @@
       box.addEventListener("click", function(e){ if (moved) { e.preventDefault(); moved = false; } }, true);
       start();
     }
+  })();
+
+  // 有料店舗ランキング
+  (function(){
+    var list = window.RV_RANK || []; if (!list.length) return;
+    $("rankList").innerHTML = list.map(function(r, i){
+      var ext = /^https?:/.test(r.url || "");
+      return '<li><a' + (r.url ? ' href="' + esc(r.url) + '"' + (ext ? ' target="_blank" rel="noopener sponsored"' : '') : '') + '>' +
+        '<img src="' + esc(r.img) + '" alt="' + esc(r.name) + '" loading="lazy">' +
+        '<span class="rank-name"><b>' + (i + 1) + '</b>' + esc(r.name) + '</span>' + (r.sub ? '<span class="rank-sub">' + esc(r.sub) + '</span>' : '') + '</a></li>';
+    }).join("");
+    $("rankBox").hidden = false;
   })();
   // ピックアップ（地域タブ → ジャンルごとの横スクロール）
   // 最初に開くエリア：お店がいちばん多いエリア
