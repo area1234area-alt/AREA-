@@ -155,7 +155,7 @@
   .pk-gh h3{margin:0;font-family:var(--serif);font-size:1.02rem;letter-spacing:.08em}
   .pk-gh h3 span{font-family:var(--en);color:#F7A9C4;font-size:1rem;margin-left:6px}
   .pk-gh a{font-size:.74rem;color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px}
-  .pk-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px}
+  .pk-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0;padding:2px 0 8px}
   .pk-card{flex:0 0 72%;max-width:260px;scroll-snap-align:start;background:#16121A;border:1px solid rgba(201,162,39,.5);display:flex;flex-direction:column}
   @media (min-width:640px){ .pk-card{flex-basis:31%} }
   .pk-in{padding:12px 12px 10px;flex:1}
@@ -174,14 +174,13 @@
   .ad{position:relative;aspect-ratio:1100/300;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.3);outline-offset:3px;overflow:hidden;background:#141115}
   /* 画像・見出しの枠と同じ幅にそろえる（1100px未満では画面いっぱい） */
   .ad{outline-offset:-6px}
-  @media (max-width:1131px){ .ad-sec .wrap{padding:0} }
+  /* スマホ・タブレット：ヒーロー画像・見出しの枠・バナーも、ほかの項目と同じ左右16pxの余白でそろえる */
+  @media (max-width:1131px){ .hero-ph,.hero-copy{margin-left:16px;margin-right:16px} .hero-copy{border-top:1px solid var(--gold)} .hero-ph img{display:block} }
   .ad a{position:absolute;inset:0;display:block;opacity:0;transition:opacity .6s}
   .ad a.on{opacity:1;z-index:1}
   .ad img{width:100%;height:100%;object-fit:cover}
-  .ad.img{outline-offset:3px}
-  /* 画像バナーは半分の大きさ（PC・タブレットは幅550pxで中央。スマホは画面の約7割） */
-  .ad.img{max-width:550px;margin:0 auto}
-  @media (max-width:600px){ .ad.img{max-width:72%} }
+  .ad.img{outline-offset:-6px}
+  /* 画像バナーも、ヒーロー画像・見出しの枠と同じ幅（スマホは画面いっぱい） */
 
   .ad .pr{position:absolute;left:8px;top:8px;z-index:3;font-size:.62rem;font-weight:700;letter-spacing:.1em;background:rgba(0,0,0,.65);color:#F1DA9C;border:1px solid rgba(201,162,39,.6);padding:1px 7px}
   .ad .dots{position:absolute;left:0;right:0;bottom:8px;z-index:3;display:flex;justify-content:center;gap:6px}
