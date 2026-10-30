@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>条件マッチ サンプル｜Area REVIEW</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  body{background:#0B0A0D;color:#F4EFE6}
+  .wrap{max-width:760px}
+  .intro{padding:22px 0 8px}
+  .intro h1{font-family:var(--serif);font-size:1.3rem;letter-spacing:.06em;margin:0 0 6px}
+  .intro p{font-size:.8rem;color:#B7AEA6;margin:0}
+  .ptabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:16px 0 14px}
+  .ptabs button{background:#141117;border:1px solid #3A3442;border-radius:10px;color:#F4EFE6;padding:10px 4px;font-weight:700;font-size:.82rem;cursor:pointer;line-height:1.4}
+  .ptabs button small{display:block;font-weight:500;font-size:.64rem;color:#8C847D}
+  .ptabs button[aria-selected="true"]{background:var(--goldgrad);color:#1A1406;border-color:transparent}
+  .ptabs button[aria-selected="true"] small{color:#4A3A12}
+  .pane{background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:16px 14px}
+  .pane h2{margin:0 0 4px;font-family:var(--serif);font-size:1.05rem}
+  .pane .what{font-size:.74rem;color:#B7AEA6;margin:0 0 14px}
+
+  /* A：チャット */
+  .chat{display:flex;flex-direction:column;gap:10px;max-height:460px;overflow-y:auto;padding:4px 2px 8px}
+  .msg{max-width:84%;padding:10px 12px;border-radius:14px;font-size:.86rem;line-height:1.6}
+  .msg.bot{background:#221D27;border:1px solid #3A3442;align-self:flex-start;border-top-left-radius:4px}
+  .msg.me{background:#E0527F;color:#fff;align-self:flex-end;border-top-right-radius:4px}
+  .msg .bn{display:block;font-size:.66rem;color:#FFD84D;margin-bottom:2px;font-weight:700}
+  .choices{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .choices button{background:transparent;border:1px solid var(--gold);color:var(--gold-lt);border-radius:999px;padding:7px 12px;font-size:.8rem;cursor:pointer}
+  .choices button.on{background:var(--gold);color:#1A1406}
+  .choices .go{background:var(--pink);border-color:var(--pink);color:#fff}
+
+  /* B：フォーム */
+  .fgrp{margin-bottom:14px}
+  .fgrp p{margin:0 0 6px;font-size:.78rem;color:#FFD84D;font-weight:700}
+  .fgrp .choices button{border-radius:8px}
+
+  /* C：自由入力 */
+  .ask{display:flex;gap:8px}
+  .ask textarea{flex:1;min-height:70px;border-radius:10px;border:1px solid #3A3442;background:#0F0D12;color:#F4EFE6;padding:10px;font:inherit;font-size:.86rem;resize:vertical}
+  .ask button{flex:none;width:76px;border:0;border-radius:10px;background:var(--pink);color:#fff;font-weight:700;cursor:pointer}
+  .ex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+  .ex button{background:#221D27;border:1px solid #3A3442;color:#CFC6BD;border-radius:999px;padding:5px 10px;font-size:.72rem;cursor:pointer}
+  .understood{margin:12px 0 0;font-size:.76rem;color:#B7AEA6}
+  .understood b{display:inline-block;background:#221D27;border:1px solid #3A3442;color:#FFD84D;border-radius:6px;padding:1px 8px;margin:2px 4px 2px 0;font-weight:500}
+
+  /* 結果カード（共通） */
+  .res{margin-top:14px}
+  .res-h{font-size:.78rem;color:#B7AEA6;margin:0 0 8px}
+  .rcard{display:block;background:#0F0D12;border:1px solid rgba(201,162,39,.5);border-radius:12px;padding:12px;margin-bottom:10px;color:inherit}
+  .rcard .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+  .rcard h3{margin:0;font-family:var(--serif);font-size:1rem}
+  .rcard .sub{font-size:.7rem;color:#8C847D}
+  .score{flex:none;text-align:center;font-size:.62rem;color:#B7AEA6}
+  .score b{display:block;font-family:var(--en);font-size:1.3rem;color:#F7A9C4;line-height:1}
+  .rcard .pay{margin:6px 0 0;font-size:.82rem}
+  .hits{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+  .hits span{font-size:.66rem;border-radius:6px;padding:1px 7px;background:rgba(224,82,127,.15);border:1px solid rgba(224,82,127,.5);color:#F7A9C4}
+  .hits span.miss{background:transparent;border-color:#3A3442;color:#6E6773;text-decoration:line-through}
+  .disc{margin:10px 0 0;font-size:.68rem;color:#8C847D;line-height:1.7}
+  .none{font-size:.82rem;color:#B7AEA6}
+</style>
+</head>
+<body>
+<div class="beta">サンプル画面です（本番には出していません）。お店の条件は、今掲載しているデータから自動で読み取っています。</div>
+<header class="head"><div class="wrap">
+  <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
+  <nav><a href="./">トップへ</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="intro">
+    <h1>希望に近いお店をさがす（3つの見本）</h1>
+    <p>同じ「条件が近い掲載店を並べるだけ」の仕組みを、3通りの見せ方で作りました。上のボタンで切り替えて比べてみてください。</p>
+  </div>
+
+  <div class="ptabs" role="tablist">
+    <button type="button" data-p="a" aria-selected="true">A チャット型<small>1問ずつ答える</small></button>
+    <button type="button" data-p="b" aria-selected="false">B かんたん選択型<small>1画面で選ぶ</small></button>
+    <button type="button" data-p="c" aria-selected="false">C 自由入力型<small>文章で伝える</small></button>
+  </div>
+
+  <section class="pane" id="pa">
+    <h2>A チャット型</h2>
+    <p class="what">AIと話しているような見た目で、質問に1つずつ答えます。AIは使わず、スマホの中だけで計算します（費用なし）。</p>
+    <div class="chat" id="chat"></div>
+    <div class="res" id="resA"></div>
+  </section>
+
+  <section class="pane" id="pb" hidden>
+    <h2>B かんたん選択型</h2>
+    <p class="what">条件を1画面でまとめて選ぶと、すぐに結果が変わります。いちばんシンプルで、迷わず使えます（費用なし）。</p>
+    <div id="formB"></div>
+    <div class="res" id="resB"></div>
+  </section>
+
+  <section class="pane" id="pc" hidden>
+    <h2>C 自由入力型</h2>
+    <p class="what">文章で希望を書くと、読み取った条件で探します。本番でAI（Claudeなど）につなぐと、もっと自由な書き方にも対応できます。この見本はキーワードで読み取っています。</p>
+    <div class="ask"><textarea id="askC" placeholder="例）梅田で日払い、未経験でも大丈夫なお店がいい"></textarea><button type="button" id="goC">探す</button></div>
+    <div class="ex" id="exC"></div>
+    <div class="understood" id="undC"></div>
+    <div class="res" id="resC"></div>
+  </section>
+  <div style="height:40px"></div>
+</main>
+
+<script src="shops.js"></script>
+<script>
+(function(){
+  var esc = RV.esc, $ = function(id){ return document.getElementById(id); };
+
+  /* ---- お店のデータを「比べられる形」に読み取る（本番ではデータ側に項目を持たせる） ---- */
+  var shops = RV.listed().filter(function(s){ return !s.soon; }).map(function(s){
+    var text = [s.pay, s.paySub, s.back, s.deduct, s.other, s.wait, s.hours, s.style, s.job ? JSON.stringify(s.job) : ""].join(" ");
+    var has = function(re){ return re.test(text); };
+    return { s: s, f: {
+      hibarai: has(/日払/), ryo: has(/寮/), sougei: has(/送迎|送り/), mikeiken: has(/未経験/),
+      norma: has(/ノルマ(なし|無)|罰金・ノルマなし|ノルマ・罰金なし/), kao: has(/顔出し(なし|しなくて)|顔出しは/),
+      koshitsu: has(/個室/), dekasegi: has(/出稼ぎ/), hoshou: has(/保証/)
+    }};
+  });
+  var FEAT = [["hibarai","日払い"],["mikeiken","未経験OK"],["ryo","寮あり"],["sougei","送迎・送りあり"],["norma","ノルマなし"],["kao","顔出しなし"],["koshitsu","個室待機"],["hoshou","保証あり"],["dekasegi","出稼ぎOK"]];
+  var AREAS = (window.RV_PICKUP_AREAS || []).filter(function(a){ return shops.some(function(x){ return x.s.area === a.key; }); });
+  var GENRES = (window.RV_GENRES || []).filter(function(g){ return shops.some(function(x){ return x.s.genre === g.key; }); });
+
+  /* 点数：エリア一致 40点、ジャンル一致 30点、こだわり条件 1つにつき 30点を割り振り */
+  function match(want){
+    var feats = want.feats || [];
+    return shops.map(function(x){
+      var sc = 0, max = 0, hits = [];
+      if (want.area) { max += 40; if (x.s.area === want.area) sc += 40; }
+      if (want.genre) { max += 30; if (x.s.genre === want.genre) sc += 30; }
+      feats.forEach(function(k){ max += 30 / Math.max(1, feats.length) * 1; if (x.f[k]) { sc += 30 / Math.max(1, feats.length); hits.push([k, true]); } else hits.push([k, false]); });
+      return { x: x, pct: max ? Math.round(sc / max * 100) : 0, hits: hits };
+    }).filter(function(r){ return (!want.area || r.x.s.area === want.area) && r.pct >= 40; })
+      .sort(function(a, b){ return b.pct - a.pct; }).slice(0, 5);
+  }
+  function label(k){ for (var i = 0; i < FEAT.length; i++) if (FEAT[i][0] === k) return FEAT[i][1]; return k; }
+  function render(box, want){
+    var rows = match(want);
+    if (!rows.length) { box.innerHTML = '<p class="none">条件に近い掲載店が見つかりませんでした。条件を減らしてみてください。</p>'; return; }
+    box.innerHTML = '<p class="res-h">あなたの希望に近い掲載店（' + rows.length + '件）</p>' + rows.map(function(r){
+      var s = r.x.s;
+      return '<a class="rcard" href="shop.html?id=' + encodeURIComponent(s.id) + '"><div class="top"><div><h3>' + esc(s.name) + '</h3><span class="sub">' + esc([s.areaLabel || s.area, s.genre === "その他風俗" ? (s.style || "その他") : s.genre].join("・")) + '</span></div>' +
+        '<div class="score"><b>' + r.pct + '%</b>希望に近い</div></div>' +
+        '<p class="pay">' + esc(s.pay || "女子給は確認中") + '</p>' +
+        (r.hits.length ? '<div class="hits">' + r.hits.map(function(h){ return '<span' + (h[1] ? '' : ' class="miss"') + '>' + esc(label(h[0])) + '</span>'; }).join("") + '</div>' : '') + '</a>';
+    }).join("") + '<p class="disc">※条件が近い掲載店を表示しているだけで、Areaはお仕事の紹介・あっせんを行いません。応募は各お店に直接ご連絡ください。入力した条件は保存しません。「確認中」の条件は、一致しないものとして計算しています。</p>';
+  }
+
+  /* ---- A：チャット型 ---- */
+  (function(){
+    var chat = $("chat"), want = { feats: [] }, step = 0;
+    var bot = function(t){ chat.insertAdjacentHTML("beforeend", '<div class="msg bot"><span class="bn">Area ナビ</span>' + t + '</div>'); chat.scrollTop = chat.scrollHeight; };
+    var me = function(t){ chat.insertAdjacentHTML("beforeend", '<div class="msg me">' + esc(t) + '</div>'); chat.scrollTop = chat.scrollHeight; };
+    var ask = function(q, opts, multi, done){
+      var id = "c" + Math.random().toString(36).slice(2);
+      bot(q + '<div class="choices" id="' + id + '">' + opts.map(function(o){ return '<button type="button" data-v="' + esc(o[0]) + '">' + esc(o[1]) + '</button>'; }).join("") + (multi ? '<button type="button" class="go">これで探す</button>' : '') + '</div>');
+      var box = $(id), picked = [];
+      box.addEventListener("click", function(e){
+        var b = e.target.closest("button"); if (!b || box.dataset.done) return;
+        if (b.classList.contains("go")) { box.dataset.done = 1; me(picked.length ? picked.map(label).join("・") : "特になし"); done(picked); return; }
+        if (!multi) { box.dataset.done = 1; b.classList.add("on"); me(b.textContent); done(b.dataset.v); return; }
+        b.classList.toggle("on"); var v = b.dataset.v, i = picked.indexOf(v); if (i >= 0) picked.splice(i, 1); else picked.push(v);
+      });
+    };
+    bot("こんにちは。働きたい条件に近いお店を、掲載店の中から探します。<br>名前や連絡先は聞きません。");
+    ask("働きたいエリアは？", AREAS.map(function(a){ return [a.key, a.label]; }).concat([["", "どこでも"]]), false, function(v){
+      want.area = v;
+      ask("お仕事のジャンルは？", GENRES.map(function(g){ return [g.key, g.label]; }).concat([["", "こだわらない"]]), false, function(v){
+        want.genre = v;
+        ask("こだわりたい条件はありますか？（いくつでも）", FEAT.map(function(f){ return f; }), true, function(v){
+          want.feats = v; bot("この条件で探しました。下に、希望に近い順で表示しています。"); render($("resA"), want);
+        });
+      });
+    });
+  })();
+
+  /* ---- B：かんたん選択型 ---- */
+  (function(){
+    var want = { area: "", genre: "", feats: [] };
+    var grp = function(title, key, opts, multi){
+      return '<div class="fgrp"><p>' + title + '</p><div class="choices" data-k="' + key + '"' + (multi ? ' data-m="1"' : '') + '>' +
+        opts.map(function(o){ return '<button type="button" data-v="' + esc(o[0]) + '"' + (o[0] === "" ? ' class="on"' : '') + '>' + esc(o[1]) + '</button>'; }).join("") + '</div></div>';
+    };
+    $("formB").innerHTML = grp("エリア", "area", [["", "どこでも"]].concat(AREAS.map(function(a){ return [a.key, a.label]; }))) +
+      grp("ジャンル", "genre", [["", "こだわらない"]].concat(GENRES.map(function(g){ return [g.key, g.label]; }))) +
+      grp("こだわり条件（いくつでも）", "feats", FEAT, true);
+    $("formB").addEventListener("click", function(e){
+      var b = e.target.closest("button"); if (!b) return; var box = b.parentNode, k = box.dataset.k;
+      if (box.dataset.m) { b.classList.toggle("on"); want.feats = [].map.call(box.querySelectorAll(".on"), function(x){ return x.dataset.v; }); }
+      else { [].forEach.call(box.children, function(x){ x.classList.remove("on"); }); b.classList.add("on"); want[k] = b.dataset.v; }
+      render($("resB"), want);
+    });
+    render($("resB"), want);
+  })();
+
+  /* ---- C：自由入力型（見本はキーワードで読み取り） ---- */
+  (function(){
+    var DICT = [[/日払|当日払/, "hibarai"], [/未経験|初めて|はじめて/, "mikeiken"], [/寮|住み込み/, "ryo"], [/送迎|送り/, "sougei"], [/ノルマ/, "norma"], [/顔出し|顔バレ|身バレ/, "kao"], [/個室/, "koshitsu"], [/保証/, "hoshou"], [/出稼ぎ/, "dekasegi"]];
+    var AREA_WORDS = [[/梅田|キタ|兎我野|堂山/, "梅田"], [/新大阪|西中島/, "新大阪"], [/難波|なんば|日本橋|ミナミ/, "難波"], [/京橋/, "京橋"], [/本町/, "本町"], [/米子|鳥取/, "米子"], [/十三/, "十三"]];
+    var GENRE_WORDS = [[/メンエス|メンズエステ|エステ/, "メンズエステ"], [/セクキャバ|いちゃキャバ|ツーショット/, "セクキャバ"], [/デリヘル|派遣/, "デリヘル"], [/ホテヘル/, "ホテヘル"], [/ソープ|ヘルス|M性感/, "その他風俗"]];
+    var EX = ["梅田で日払い、未経験でも大丈夫なお店", "新大阪のメンエスで個室待機がいい", "出稼ぎで寮と保証があるところ", "顔出しなしでノルマのないセクキャバ"];
+    $("exC").innerHTML = EX.map(function(t){ return '<button type="button">' + esc(t) + '</button>'; }).join("");
+    $("exC").addEventListener("click", function(e){ var b = e.target.closest("button"); if (!b) return; $("askC").value = b.textContent; go(); });
+    function go(){
+      var t = $("askC").value, want = { feats: [] };
+      AREA_WORDS.forEach(function(w){ if (!want.area && w[0].test(t)) want.area = w[1]; });
+      GENRE_WORDS.forEach(function(w){ if (!want.genre && w[0].test(t)) want.genre = w[1]; });
+      DICT.forEach(function(w){ if (w[0].test(t) && want.feats.indexOf(w[1]) < 0) want.feats.push(w[1]); });
+      var parts = [];
+      if (want.area) parts.push("エリア：" + (AREAS.filter(function(a){ return a.key === want.area; })[0] || { label: want.area }).label);
+      if (want.genre) parts.push("ジャンル：" + want.genre.replace("その他風俗", "その他"));
+      want.feats.forEach(function(k){ parts.push(label(k)); });
+      $("undC").innerHTML = parts.length ? '読み取った条件：' + parts.map(function(p){ return '<b>' + esc(p) + '</b>'; }).join("") : '条件を読み取れませんでした。エリアや「日払い」「寮」などの言葉を入れてみてください。';
+      if (parts.length) render($("resC"), want); else $("resC").innerHTML = "";
+    }
+    $("goC").addEventListener("click", go);
+  })();
+
+  /* タブ切り替え */
+  [].forEach.call(document.querySelectorAll(".ptabs button"), function(b){
+    b.addEventListener("click", function(){
+      [].forEach.call(document.querySelectorAll(".ptabs button"), function(x){ x.setAttribute("aria-selected", String(x === b)); });
+      ["a","b","c"].forEach(function(k){ $("p" + k).hidden = k !== b.dataset.p; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
