@@ -178,6 +178,9 @@
   @media (max-width:1131px){ .hero-ph,.hero-copy{margin-left:16px;margin-right:16px} .hero-copy{border-top:1px solid var(--gold)} .hero-ph img{display:block} }
   .ad a{position:absolute;inset:0;display:block;opacity:0;transition:opacity .6s}
   .ad a.on{opacity:1;z-index:1}
+  .ad-track{position:absolute;inset:0;display:flex;transition:transform .6s ease}
+  .ad-track a{position:relative;flex:0 0 100%;opacity:1;inset:auto;height:100%}
+  .ad .dots i{cursor:pointer}
   .ad img{width:100%;height:100%;object-fit:cover}
   .ad.img{outline-offset:-6px}
   /* 画像バナーも、ヒーロー画像・見出しの枠と同じ幅（スマホは画面いっぱい） */
@@ -360,11 +363,20 @@
       return;
     }
     box.classList.add("img"); if (ads[0].ratio) box.style.aspectRatio = ads[0].ratio;
-    box.innerHTML = ads.map(function(a, i){ return '<a href="' + esc(a.url || "#") + '"' + (i ? '' : ' class="on"') + '><img src="' + esc(a.img) + '" alt="' + esc(a.name || "広告") + '"></a>'; }).join("") +
-      '<span class="pr">PR</span>' + (ads.length > 1 ? '<div class="dots">' + ads.map(function(a, i){ return '<i' + (i ? '' : ' class="on"') + '></i>'; }).join("") + '</div>' : '');
+    // スライド式：横にすべって切り替わる（5秒ごと・指でスワイプ・下の点を押しても切り替え）
+    box.innerHTML = '<div class="ad-track">' + ads.map(function(a){ return '<a href="' + esc(a.url || "#") + '"><img src="' + esc(a.img) + '" alt="' + esc(a.name || "広告") + '"></a>'; }).join("") + '</div>' +
+      '<span class="pr">PR</span>' + (ads.length > 1 ? '<div class="dots">' + ads.map(function(a, i){ return '<i data-i="' + i + '"' + (i ? '' : ' class="on"') + '></i>'; }).join("") + '</div>' : '');
     if (ads.length > 1) {
-      var n = 0, links = box.querySelectorAll("a"), dots = box.querySelectorAll(".dots i");
-      setInterval(function(){ links[n].classList.remove("on"); dots[n].classList.remove("on"); n = (n + 1) % links.length; links[n].classList.add("on"); dots[n].classList.add("on"); }, 5000);
+      var n = 0, track = box.querySelector(".ad-track"), dots = box.querySelectorAll(".dots i"), timer;
+      var go = function(i){ n = (i + ads.length) % ads.length; track.style.transform = "translateX(" + (-100 * n) + "%)"; [].forEach.call(dots, function(d, k){ d.classList.toggle("on", k === n); }); };
+      var start = function(){ clearInterval(timer); timer = setInterval(function(){ go(n + 1); }, 5000); };
+      [].forEach.call(dots, function(d){ d.addEventListener("click", function(){ go(+d.dataset.i); start(); }); });
+      var x0 = null, moved = false;
+      box.addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; moved = false; }, { passive: true });
+      box.addEventListener("touchmove", function(e){ if (x0 !== null && Math.abs(e.touches[0].clientX - x0) > 10) moved = true; }, { passive: true });
+      box.addEventListener("touchend", function(e){ if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { go(n + (dx < 0 ? 1 : -1)); start(); } x0 = null; });
+      box.addEventListener("click", function(e){ if (moved) { e.preventDefault(); moved = false; } }, true);
+      start();
     }
   })();
   // ピックアップ（地域タブ → ジャンルごとの横スクロール）
