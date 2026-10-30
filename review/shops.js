@@ -257,7 +257,7 @@ window.RV_ADS = [
   { name: "RICH COLLECTION", img: "img/ads/rich-collection.jpg", url: "shop.html?id=rich-collection", until: "" },
   { name: "KINGDOM", img: "img/ads/kingdom.jpg", url: "shop.html?id=kingdom", until: "" },
   { name: "VANCOOL", img: "img/ads/vancool.jpg", url: "", until: "" },   // 押したときの行き先（お店のURL）が決まったら url に入れる
-  { name: "Y's", img: "img/ads/ys.jpg", url: "", until: "" }            // 同上
+  { name: "Y's", img: "img/ads/ys.jpg", url: "https://claude.ai/artifact/YPLwWJQiW9We1dAoJmLaKA", until: "" }   // Y's｜本日の出勤
 ];
 
 /* 口コミの読み込み先（Areaの口コミ台帳と同じ） */
