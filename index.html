@@ -932,6 +932,22 @@
   .aa-t b{color:#F7A9C4}
   .aa-s{font-size:clamp(.7rem,1.8vw,.9rem);color:#CFC6BD}
   .aa-go{align-self:flex-start;margin-top:6px;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1A1406;font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:.6em 1.1em}
+
+  /* ===== 横幅そろえ（2026-10-30）：中身の幅を1100px、スマホは左右16pxの余白で全項目をそろえる（Area REVIEWと同じ） ===== */
+  .wrap{max-width:1132px !important;padding-left:16px !important;padding-right:16px !important}
+  .header-inner{max-width:1132px;margin:0 auto;padding-left:16px !important;padding-right:16px !important}
+  .hero{max-width:1100px;margin-left:auto;margin-right:auto}
+  .hero-img{width:100%}
+  .hero{box-shadow:0 0 0 100vmax #0B0A0D;clip-path:inset(0 -100vmax)}   /* 幅を絞ったヒーローの左右も黒で埋める */
+  @media (min-width:860px){ #jobs .job-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;align-items:start} }
+  .hero-copy{max-width:none !important}
+  .sv-frame{max-width:1100px}
+  #jobs .job-grid, .job-filter, .job-empty{max-width:none !important}
+  @media (max-width:1131px){ .hero, .sv-frame{margin-left:16px;margin-right:16px;width:auto} }
+  /* 広告バナー：Area REVIEWと同じ形（金の枠＋内側の細線、左上にPR） */
+  .area-ad-sec{padding:18px 0 4px}
+  .area-ad{border:1px solid #C9A227;outline:1px solid rgba(201,162,39,.3);outline-offset:-6px}
+  .area-ad::after{display:none}
 </style>
 </head>
 <body>
