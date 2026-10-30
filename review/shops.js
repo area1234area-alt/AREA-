@@ -305,6 +305,17 @@ window.RV_ADS = [
   { name: "Y's", img: "img/ads/ys.jpg", url: "https://claude.ai/artifact/YPLwWJQiW9We1dAoJmLaKA", until: "" }   // Y's｜本日の出勤
 ];
 
+/* 新着ニュース（トップの広告バナーの下の欄）。新しいものを上に足す
+   ・date：日付（"2026-10-30" の形）、text：表示する文、url：押したときの行き先（空なら押せない）
+   ・新しい順に並べて、最大8件まで流れる */
+window.RV_NEWS = [
+  { date: "2026-10-30", text: "【出稼ぎ募集】鳥取・米子のソープ「やんちゃ姫」の求人情報を掲載しました", url: "shop.html?id=yancha-hime" },
+  { date: "2026-10-30", text: "梅田のホテヘル「クラブ ブレンダ 梅田北店」に働いた女性の口コミ9件を追加", url: "shop.html?id=brenda-umeda-kita#reviews" },
+  { date: "2026-10-29", text: "梅田のセクキャバ「KINGDOM」を追加しました", url: "shop.html?id=kingdom" },
+  { date: "2026-10-29", text: "「RICH ACADEMY」の月収例（2026年4月の実績）を更新", url: "shop.html?id=rich-academy" },
+  { date: "2026-10-29", text: "「RICH COLLECTION」の店内写真と月収例を追加", url: "shop.html?id=rich-collection" }
+];
+
 /* 有料店舗ランキング（トップのピックアップ左側の欄。スマホではピックアップの上に横スクロールで表示）
    ・広告費をいただいているお店を、表示したい順に並べる（1番目が1位）
    ・img：バナー画像、url：押したときの行き先、sub：小さく出す説明（ジャンル・エリアなど）

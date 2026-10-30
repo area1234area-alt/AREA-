@@ -223,6 +223,22 @@
   /* お店一覧のカードに少し丸み */
   .shop{border-radius:12px;overflow:hidden}
   .shop .shop-tags span{border-radius:6px}
+
+  /* 新着ニュース（黒地にピンクと黄色。最初の数秒だけ枠が点滅） */
+  .news-sec{background:#0B0A0D;padding:14px 0 0}
+  .news{display:flex;align-items:stretch;background:#0B0A0D;border:2px solid #E0527F;border-radius:12px;overflow:hidden;animation:newsBlink .5s ease-in-out 6 alternate}
+  @keyframes newsBlink{from{border-color:#E0527F;box-shadow:0 0 0 0 rgba(224,82,127,0)}to{border-color:#FFD84D;box-shadow:0 0 14px 2px rgba(255,216,77,.55)}}
+  .news-lb{flex:none;display:flex;align-items:center;gap:6px;padding:0 12px;background:linear-gradient(135deg,#E0527F,#C23A6B);color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.06em;white-space:nowrap}
+  .news-lb b{background:#FFD84D;color:#141115;font-family:var(--en);font-size:.72rem;letter-spacing:.08em;padding:1px 6px;border-radius:4px;animation:newsTag 1s steps(2,end) 6}
+  @keyframes newsTag{50%{background:#fff}}
+  .news-view{flex:1;min-width:0;height:44px;overflow:hidden;position:relative}
+  .news-track{list-style:none;margin:0;padding:0;transition:transform .5s ease}
+  .news-track li{height:44px;display:flex;align-items:center;gap:10px;padding:0 14px;white-space:nowrap;overflow:hidden}
+  .news-track time{flex:none;font-family:var(--en);font-size:.8rem;color:#FFD84D;letter-spacing:.04em}
+  .news-track a,.news-track span{color:#F4EFE6;font-size:.84rem;overflow:hidden;text-overflow:ellipsis}
+  .news-track a:hover{color:#F7A9C4;text-decoration:underline}
+  @media (max-width:520px){ .news-lb{font-size:0;gap:0;padding:0 8px} .news-lb b{font-size:.7rem} .news-track li{padding:0 10px} .news-track a,.news-track span{font-size:.78rem} }
+  @media (prefers-reduced-motion:reduce){ .news,.news-lb b{animation:none} .news-track{transition:none} }
 </style>
 </head>
 <body>
@@ -253,6 +269,12 @@
 
 <!-- 広告バナー枠（トップのヒーロー直下）。中身は shops.js の RV_ADS で管理 -->
 <section class="ad-sec" aria-label="広告"><div class="wrap"><div class="ad" id="adSlot"></div></div></section>
+
+<!-- 新着ニュース（中身は shops.js の RV_NEWS で管理） -->
+<section class="news-sec" aria-label="新着ニュース"><div class="wrap"><div class="news" id="newsBox" hidden>
+  <span class="news-lb"><b>NEW</b>新着ニュース</span>
+  <div class="news-view"><ul class="news-track" id="newsTrack"></ul></div>
+</div></div></section>
 
 <section class="pk-sec" id="pickup"><div class="wrap pk-layout">
   <aside class="rank" id="rankBox" aria-label="有料掲載店ランキング" hidden>
@@ -413,6 +435,23 @@
     }
   })();
 
+
+  // 新着ニュース（3.5秒ごとに上へ切り替え）
+  (function(){
+    var list = (window.RV_NEWS || []).slice().sort(function(a, b){ return String(b.date).localeCompare(String(a.date)); }).slice(0, 8);
+    if (!list.length) return;
+    var fmt = function(d){ var p = String(d).split("-"); return p.length === 3 ? Number(p[1]) + "/" + Number(p[2]) : d; };
+    var item = function(n){ return '<li><time>' + esc(fmt(n.date)) + '</time>' + (n.url ? '<a href="' + esc(n.url) + '">' + esc(n.text) + '</a>' : '<span>' + esc(n.text) + '</span>') + '</li>'; };
+    var tr = $("newsTrack");
+    tr.innerHTML = list.map(item).join("") + (list.length > 1 ? item(list[0]) : "");
+    $("newsBox").hidden = false;
+    if (list.length < 2 || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    var i = 0, H = 44;
+    setInterval(function(){
+      i++; tr.style.transition = "transform .5s ease"; tr.style.transform = "translateY(" + (-H * i) + "px)";
+      if (i === list.length) setTimeout(function(){ tr.style.transition = "none"; tr.style.transform = "translateY(0)"; i = 0; }, 520);
+    }, 3500);
+  })();
   // 有料店舗ランキング
   (function(){
     var list = window.RV_RANK || []; if (!list.length) return;
