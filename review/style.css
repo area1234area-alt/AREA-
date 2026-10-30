@@ -91,3 +91,15 @@ footer p{margin:6px auto 0;max-width:36em}
 .cta .cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .cta .line-note{position:relative;z-index:1;font-size:.7rem;color:#B7AEA6;margin:10px 0 0}
 footer{padding-bottom:76px}
+
+/* 運営サイトのリンクバナー（フッター上部） */
+footer .f-sites{max-width:760px;margin:0 auto 22px;padding-bottom:22px;border-bottom:1px solid rgba(201,162,39,.25)}
+footer .f-sites-h{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.3em;color:var(--gold);font-size:.9rem;margin:0 0 10px}
+.f-sites-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.f-sites-grid a{display:grid;grid-template-columns:1fr auto;grid-template-areas:"s i" "b i" "t i";align-items:center;text-align:left;background:#141115;border:1px solid rgba(201,162,39,.45);outline:1px solid rgba(201,162,39,.18);outline-offset:-5px;padding:14px 16px;color:#F4EFE6;text-decoration:none;line-height:1.5;transition:border-color .2s,background .2s}
+.f-sites-grid a:hover,.f-sites-grid a:focus-visible{border-color:var(--gold);background:#1C171D}
+.f-sites-grid small{grid-area:s;font-family:var(--en);font-style:italic;letter-spacing:.2em;color:#F7A9C4;font-size:.72rem}
+.f-sites-grid b{grid-area:b;font-family:var(--serif);font-size:1rem;letter-spacing:.06em;color:var(--gold-lt)}
+.f-sites-grid span{grid-area:t;font-size:.7rem;color:#B7AEA6}
+.f-sites-grid i{grid-area:i;font-style:normal;color:var(--gold);font-size:1.1rem;padding-left:10px}
+@media (max-width:420px){ .f-sites-grid a{padding:12px 12px} .f-sites-grid b{font-size:.9rem} .f-sites-grid span{font-size:.64rem} }
