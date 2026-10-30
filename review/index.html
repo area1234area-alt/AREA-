@@ -364,7 +364,7 @@
     }
     box.classList.add("img"); if (ads[0].ratio) box.style.aspectRatio = ads[0].ratio;
     // スライド式：横にすべって切り替わる（5秒ごと・指でスワイプ・下の点を押しても切り替え）
-    box.innerHTML = '<div class="ad-track">' + ads.map(function(a){ return '<a href="' + esc(a.url || "#") + '"><img src="' + esc(a.img) + '" alt="' + esc(a.name || "広告") + '"></a>'; }).join("") + '</div>' +
+    box.innerHTML = '<div class="ad-track">' + ads.map(function(a){ return '<a' + (a.url ? ' href="' + esc(a.url) + '"' + (/^https?:/.test(a.url) ? ' target="_blank" rel="noopener sponsored"' : '') : '') + '><img src="' + esc(a.img) + '" alt="' + esc(a.name || "広告") + '"></a>'; }).join("") + '</div>' +
       '<span class="pr">PR</span>' + (ads.length > 1 ? '<div class="dots">' + ads.map(function(a, i){ return '<i data-i="' + i + '"' + (i ? '' : ' class="on"') + '></i>'; }).join("") + '</div>' : '');
     if (ads.length > 1) {
       var n = 0, track = box.querySelector(".ad-track"), dots = box.querySelectorAll(".dots i"), timer;

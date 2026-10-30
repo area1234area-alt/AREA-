@@ -253,7 +253,11 @@ window.RV_LINE = "https://lin.ee/v7GLaD2";
    ・1件もないときは「広告掲載店舗 募集中」の仮バナーが出る
    例） { name: "KINGDOM", img: "img/ads/kingdom.jpg", url: "shop.html?id=kingdom", until: "2026-11-30" } */
 window.RV_ADS = [
-  { name: "club Kiss", img: "img/ads/club-kiss.jpg?v=3", ratio: "1672/730", url: "shop.html?id=club-kiss", until: "" }
+  { name: "club Kiss", img: "img/ads/club-kiss.jpg?v=3", ratio: "1672/730", url: "shop.html?id=club-kiss", until: "" },
+  { name: "RICH COLLECTION", img: "img/ads/rich-collection.jpg", url: "shop.html?id=rich-collection", until: "" },
+  { name: "KINGDOM", img: "img/ads/kingdom.jpg", url: "shop.html?id=kingdom", until: "" },
+  { name: "VANCOOL", img: "img/ads/vancool.jpg", url: "", until: "" },   // 押したときの行き先（お店のURL）が決まったら url に入れる
+  { name: "Y's", img: "img/ads/ys.jpg", url: "", until: "" }            // 同上
 ];
 
 /* 口コミの読み込み先（Areaの口コミ台帳と同じ） */
