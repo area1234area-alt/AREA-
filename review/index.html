@@ -128,14 +128,15 @@
   .pk-oacc .pk-other{padding:2px 0 12px}
   .pk-other{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
   @media (min-width:860px){ .pk-main{grid-template-columns:repeat(4,1fr)} .pk-other{grid-template-columns:repeat(4,1fr)} }
-  .pk-tabs button.main{padding:20px 10px 16px;border:1px solid rgba(201,162,39,.6);display:flex;flex-direction:column;align-items:center;gap:4px}
-  .pk-tabs button.main .pk-l{font-family:var(--serif);font-size:1.08rem;letter-spacing:.06em}
-  .pk-tabs button.main .pk-s{font-size:.66rem;font-weight:500;color:#B7AEA6;letter-spacing:.06em}
+  .pk-tabs button.main{padding:11px 8px 10px;border:1px solid rgba(201,162,39,.6);display:flex;flex-direction:column;align-items:center;gap:3px}
+  .pk-tabs button.main .pk-l{font-family:var(--serif);font-size:.98rem;letter-spacing:.04em;line-height:1.3}
+  .pk-tabs button.main .pk-s{font-size:.64rem;font-weight:500;color:#B7AEA6;letter-spacing:.02em}
+  .pk-tabs button.main .pk-s em{font-style:normal;margin:0 4px;opacity:.5}
+  .pk-tabs button.main .pk-s b{font-family:var(--en);font-size:.9rem;color:#F7A9C4;margin-right:1px}
   .pk-tabs button.main[aria-selected="true"] .pk-s{color:#4A3A12}
-  .pk-tabs button.none .pk-s{color:#3E3944}
-  .pk-tabs button.main small{position:static;font-size:1.05rem;margin-top:2px}
-  .pk-tabs button.main small i{font-style:normal;font-family:var(--body);font-size:.66rem;margin-left:2px}
-  .pk-tabs button.main small.pk-n0{font-family:var(--body);font-size:.66rem;color:#4E4854}
+  .pk-tabs button.main[aria-selected="true"] .pk-s b{color:#5A2A3A}
+  .pk-tabs button.main.none .pk-s{color:#3E3944}
+  .pk-main{gap:8px}
   .pk-other button{padding:11px 6px;font-size:.82rem}
   .pk-tabs button{position:relative;background:linear-gradient(180deg,#24202B,#1A171F);border:1px solid #3A3442;border-radius:12px;color:#F4EFE6;padding:15px 8px;font-weight:700;font-size:.92rem;letter-spacing:.04em;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.35)}
   .pk-tabs button small{position:absolute;right:8px;top:6px;font-family:var(--en);font-size:.78rem;color:#F7A9C4}
@@ -374,9 +375,13 @@
   function renderPickup(){
     var btn = function(a){
       var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length;
-      var inner = '<span class="pk-l">' + esc(a.label) + '</span>' + (a.main && a.sub ? '<span class="pk-s">' + esc(a.sub) + '</span>' : '');
-      if (!n) return '<button type="button" class="' + (a.main ? 'main ' : '') + 'none" disabled aria-disabled="true">' + inner + (a.main ? '<small class="pk-n0">準備中</small>' : '') + '</button>';
-      return '<button type="button" role="tab" class="' + (a.main ? 'main' : '') + '" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '">' + inner + '<small>' + n + (a.main ? '<i>店</i>' : '') + '</small></button>';
+      if (a.main) {
+        var meta = '<span class="pk-s">' + (a.sub ? esc(a.sub) + '<em>｜</em>' : '') + (n ? '<b>' + n + '</b>店' : '準備中') + '</span>';
+        if (!n) return '<button type="button" class="main none" disabled aria-disabled="true"><span class="pk-l">' + esc(a.label) + '</span>' + meta + '</button>';
+        return '<button type="button" role="tab" class="main" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '"><span class="pk-l">' + esc(a.label) + '</span>' + meta + '</button>';
+      }
+      if (!n) return '<button type="button" class="none" disabled aria-disabled="true">' + esc(a.label) + '</button>';
+      return '<button type="button" role="tab" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '">' + esc(a.label) + '<small>' + n + '</small></button>';
     };
     $("pkTabs").innerHTML =
       '<p class="pk-sub-h">主要エリア</p><div class="pk-main">' + RV_PICKUP_AREAS.filter(function(a){ return a.main; }).map(btn).join("") + '</div>' +
