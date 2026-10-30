@@ -231,17 +231,25 @@
   .news-lb{flex:none;display:flex;align-items:center;gap:6px;padding:0 12px;background:linear-gradient(135deg,#E0527F,#C23A6B);color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.06em;white-space:nowrap}
   .news-lb b{background:#FFD84D;color:#141115;font-family:var(--en);font-size:.72rem;letter-spacing:.08em;padding:1px 6px;border-radius:4px;animation:newsTag 1s steps(2,end) 6}
   @keyframes newsTag{50%{background:#fff}}
-  .news-view{flex:1;min-width:0;height:44px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 16px),transparent);mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 16px),transparent)}
-  .news-track{list-style:none;margin:0;padding:0;display:flex;width:max-content;height:44px;align-items:center;animation:newsScroll var(--dur,40s) linear infinite}
-  .news-view:hover .news-track,.news-view.hold .news-track{animation-play-state:paused}
-  @keyframes newsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .news-track li{flex:none;display:flex;align-items:center;gap:8px;padding:0 18px;white-space:nowrap;border-right:1px solid rgba(255,216,77,.35)}
-  .news-track time{flex:none;font-family:var(--en);font-size:.8rem;color:#FFD84D;letter-spacing:.04em}
-  .news-track a,.news-track span{color:#F4EFE6;font-size:.84rem}
-  .news-track a{text-decoration:underline;text-decoration-color:rgba(247,169,196,.5);text-underline-offset:4px}
-  .news-track a:hover{color:#F7A9C4}
-  @media (max-width:520px){ .news-lb{font-size:0;gap:0;padding:0 8px} .news-lb b{font-size:.7rem} .news-track li{padding:0 14px} .news-track a,.news-track span{font-size:.8rem} }
-  @media (prefers-reduced-motion:reduce){ .news,.news-lb b{animation:none} .news-track{animation:none} .news-view{overflow-x:auto} }
+  .news{display:block}
+  .news-sum{display:flex;align-items:stretch;min-height:44px;cursor:pointer;list-style:none}
+  .news-sum::-webkit-details-marker{display:none}
+  .news-first{flex:1;min-width:0;display:flex;align-items:center;padding:0 12px;color:#F4EFE6;font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .news-first time{flex:none;font-family:var(--en);color:#FFD84D;margin-right:8px;font-size:.8rem}
+  .news-first em{font-style:normal;overflow:hidden;text-overflow:ellipsis}
+  .news-cnt{flex:none;align-self:center;font-size:.7rem;color:#FFD84D;margin-right:4px;white-space:nowrap}
+  .news-chev{flex:none;align-self:center;width:9px;height:9px;border-right:2px solid #FFD84D;border-bottom:2px solid #FFD84D;transform:rotate(45deg);margin:0 16px 4px 8px;transition:transform .2s}
+  .news[open] .news-chev{transform:rotate(-135deg);margin-bottom:-4px}
+  .news[open] .news-first{visibility:hidden}
+  .news-list{margin:0;padding:6px 16px 10px 40px;border-top:1px solid rgba(224,82,127,.45);counter-reset:none}
+  .news-list li{padding:10px 0;border-bottom:1px dashed rgba(255,216,77,.25);color:#F4EFE6;font-size:.86rem;line-height:1.6}
+  .news-list li:last-child{border-bottom:0}
+  .news-list li::marker{color:#F7A9C4;font-family:var(--en);font-weight:700}
+  .news-list time{font-family:var(--en);color:#FFD84D;font-size:.8rem;margin-right:8px}
+  .news-list a{color:#F4EFE6;text-decoration:underline;text-decoration-color:rgba(247,169,196,.5);text-underline-offset:4px}
+  .news-list a:hover{color:#F7A9C4}
+  @media (max-width:520px){ .news-lb{font-size:0;gap:0;padding:0 8px} .news-lb b{font-size:.7rem} .news-first{font-size:.8rem;padding:0 10px} .news-cnt{display:none} .news-list{padding-left:32px;padding-right:12px} .news-list li{font-size:.82rem} }
+  @media (prefers-reduced-motion:reduce){ .news,.news-lb b{animation:none} }
 </style>
 </head>
 <body>
@@ -274,10 +282,10 @@
 <section class="ad-sec" aria-label="広告"><div class="wrap"><div class="ad" id="adSlot"></div></div></section>
 
 <!-- 新着ニュース（中身は shops.js の RV_NEWS で管理） -->
-<section class="news-sec" aria-label="新着ニュース"><div class="wrap"><div class="news" id="newsBox" hidden>
-  <span class="news-lb"><b>NEW</b>新着ニュース</span>
-  <div class="news-view"><ul class="news-track" id="newsTrack"></ul></div>
-</div></div></section>
+<section class="news-sec" aria-label="新着ニュース"><div class="wrap"><details class="news" id="newsBox" hidden>
+  <summary class="news-sum"><span class="news-lb"><b>NEW</b>新着ニュース</span><span class="news-first" id="newsFirst"></span><span class="news-cnt" id="newsCnt"></span><i class="news-chev" aria-hidden="true"></i></summary>
+  <ol class="news-list" id="newsList"></ol>
+</details></div></section>
 
 <section class="pk-sec" id="pickup"><div class="wrap pk-layout">
   <aside class="rank" id="rankBox" aria-label="有料掲載店ランキング" hidden>
@@ -439,19 +447,15 @@
   })();
 
 
-  // 新着ニュース（横に流れる。1件ずつクリックできる。指で触れている間・マウスを乗せている間は止まる）
+  // 新着ニュース（閉じているときは最新の1件、押すと一覧が開く）
   (function(){
-    var list = (window.RV_NEWS || []).slice().sort(function(a, b){ return String(b.date).localeCompare(String(a.date)); }).slice(0, 8);
+    var list = (window.RV_NEWS || []).slice().sort(function(a, b){ return String(b.date).localeCompare(String(a.date)); }).slice(0, 10);
     if (!list.length) return;
     var fmt = function(d){ var p = String(d).split("-"); return p.length === 3 ? Number(p[1]) + "/" + Number(p[2]) : d; };
-    var item = function(n){ return '<li><time>' + esc(fmt(n.date)) + '</time>' + (n.url ? '<a href="' + esc(n.url) + '">' + esc(n.text) + '</a>' : '<span>' + esc(n.text) + '</span>') + '</li>'; };
-    var tr = $("newsTrack"), view = tr.parentNode, once = list.map(item).join("");
-    tr.innerHTML = once + once;                       // 2回並べて、切れ目なく流す
+    $("newsFirst").innerHTML = '<time>' + esc(fmt(list[0].date)) + '</time><em>' + esc(list[0].text) + '</em>';
+    $("newsCnt").textContent = "全" + list.length + "件";
+    $("newsList").innerHTML = list.map(function(n){ return '<li><time>' + esc(fmt(n.date)) + '</time>' + (n.url ? '<a href="' + esc(n.url) + '">' + esc(n.text) + '</a>' : esc(n.text)) + '</li>'; }).join("");
     $("newsBox").hidden = false;
-    var setSpeed = function(){ tr.style.setProperty("--dur", Math.max(20, Math.round(tr.scrollWidth / 2 / 60)) + "s"); };   // 1秒に約60pxの速さ
-    setSpeed(); window.addEventListener("resize", setSpeed);
-    view.addEventListener("touchstart", function(){ view.classList.add("hold"); }, { passive: true });
-    view.addEventListener("touchend", function(){ setTimeout(function(){ view.classList.remove("hold"); }, 1500); });
   })();
   // 有料店舗ランキング
   (function(){
