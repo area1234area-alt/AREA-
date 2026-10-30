@@ -104,3 +104,16 @@ footer .f-sites-h{max-width:none;font-family:var(--en);font-style:italic;font-we
 .f-sites-grid a:hover img{transform:scale(1.03)}
 @media (prefers-reduced-motion:reduce){ .f-sites-grid img{transition:none} .f-sites-grid a:hover img{transform:none} }
 @media (max-width:420px){ .f-sites-grid span{font-size:.66rem;padding:7px 4px} }
+
+/* ===== 角の丸み（2026-10-30）：カード12px・ボタンやタグ6〜8pxで全体をそろえる ===== */
+.btn{border-radius:8px}
+.rv,.rv-empty,.empty,.cta,.how div,.rank,.pk-card,.pk-soon,.pk-oacc,.shop,.ad,.income,.outline,.shop-banner,.gate-box,.f-sites-grid a{border-radius:12px;overflow:hidden}
+.outline{border-collapse:separate;border-spacing:0}
+.earn{border-radius:8px}
+.rv-label,.rv-genre,.ext-badge,.shop-tags span,.pk-chev+*,.ad .pr,.rank-pr,.chip,.filter-now button,.head nav a{border-radius:6px}
+.pill,.pk-tabs button{border-radius:10px}
+.hero-ph{border-radius:12px 12px 0 0;overflow:hidden}
+.hero-copy{border-radius:0 0 12px 12px}
+.rank-list img,.gal img,.pk-in img{border-radius:8px}
+.cta::after,.gate-box::after{border-radius:8px}
+.line-fab{border-radius:999px}
