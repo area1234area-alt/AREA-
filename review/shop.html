@@ -75,6 +75,16 @@
   details.income[open] summary{margin-bottom:8px}
   details.income ol{margin:0;padding-left:1.4em;font-size:.84rem;line-height:1.8}
   details.income li{margin-bottom:6px}
+  .jobbox{margin:22px 0 4px;padding:16px 14px;background:#141115;border:1px solid var(--gold);border-radius:12px;color:#F4EFE6}
+  .job-h{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-family:var(--serif);font-size:1.05rem;letter-spacing:.06em}
+  .job-h b{font-size:.72rem;font-family:var(--body);background:var(--pink);color:#fff;padding:2px 10px;border-radius:999px}
+  .job-catch{margin:0 0 12px;font-size:.84rem;color:#F1DA9C}
+  .job-tbl{background:#fff;color:var(--ink)}
+  .job-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+  .job-acts a{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 6px;border-radius:8px;font-weight:700;font-size:.9rem;letter-spacing:.06em}
+  .job-acts .tel{background:var(--goldgrad);color:#1A1406}
+  .job-acts .hp{border:1px solid var(--gold);color:var(--gold-lt)}
+  .job-note{margin:12px 0 0;font-size:.7rem;color:#B7AEA6;line-height:1.7}
 </style>
 </head>
 <body>
@@ -107,6 +117,13 @@
     <div class="gallery" id="gallery" hidden><h3>店内の写真</h3><div class="gal" id="gal"></div></div>
     <table class="outline"><tbody id="outline"></tbody></table>
     <details class="income acc" id="income" hidden><summary><span id="incomeTitle">月収例（お店の掲載より）</span><small id="incomeCount"></small></summary><ol id="incomeList"></ol><p>※お店が公開している実績です。働き方によって変わります。</p></details>
+    <section class="jobbox" id="jobBox" hidden>
+      <h3 class="job-h"><span>求人情報</span><b id="jobTitle"></b></h3>
+      <p class="job-catch" id="jobCatch"></p>
+      <table class="outline job-tbl"><tbody id="jobRows"></tbody></table>
+      <div class="job-acts" id="jobActs"></div>
+      <p class="job-note">応募・面接・採用は、お店が直接行います。Areaはお仕事の紹介・あっせんを行っていません。18歳未満の方、高校生の方は応募できません。</p>
+    </section>
     <p class="notice" id="notice">※この欄は、お店から確認できた内容と、投稿された口コミをまとめたものです。最新の条件は、お店に直接ご確認ください。</p>
   </section>
 
@@ -246,6 +263,17 @@
 
 
 
+
+  // 求人情報（応募はお店に直接）
+  if (S.job) {
+    var J = S.job;
+    $("jobTitle").textContent = J.title || "";
+    $("jobCatch").textContent = J.catchCopy || ""; if (!J.catchCopy) $("jobCatch").hidden = true;
+    $("jobRows").innerHTML = (J.rows || []).map(function(r){ return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join("");
+    $("jobActs").innerHTML = (J.tel ? '<a class="tel" href="tel:' + esc(J.tel.replace(/[^0-9+]/g, "")) + '">📞 お店に電話する</a>' : '') +
+      (J.hp ? '<a class="hp" href="' + esc(J.hp) + '" target="_blank" rel="noopener nofollow">お店のHPを見る ›</a>' : '');
+    $("jobBox").hidden = false;
+  }
   // お店の画像・月収例
   if (S.banner) { $("banner").innerHTML = '<img src="' + esc(S.banner) + '" alt="' + esc(S.name) + 'のメイン画像">'; $("banner").hidden = false; }
   if (S.photos && S.photos.length) { $("gal").innerHTML = S.photos.map(function(u, i){ return '<img src="' + esc(u) + '" alt="' + esc(S.name) + 'の店内' + (i + 1) + '" loading="lazy">'; }).join(""); $("gallery").hidden = false; }
