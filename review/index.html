@@ -119,8 +119,15 @@
   .pk-tabs button small{font-family:var(--en);font-size:.9rem;margin-left:6px;color:#F7A9C4}
   .pk-tabs button[aria-selected="true"]{background:var(--goldgrad);color:#1A1406}
   .pk-tabs button[aria-selected="true"] small{color:#5A2A3A}
-  .pk-g{margin-bottom:20px}
-  .pk-gh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(201,162,39,.35);padding-bottom:6px;margin-bottom:10px}
+  .pk-g{margin-bottom:8px;border-bottom:1px solid rgba(201,162,39,.35)}
+  .pk-gh{display:flex;justify-content:space-between;align-items:center;padding:12px 2px;cursor:pointer;list-style:none}
+  .pk-gh::-webkit-details-marker{display:none}
+  .pk-chev{width:9px;height:9px;border-right:2px solid var(--gold-lt);border-bottom:2px solid var(--gold-lt);transform:rotate(45deg);margin:0 6px 4px 0;transition:transform .2s}
+  .pk-g[open] .pk-chev{transform:rotate(-135deg);margin-bottom:-4px}
+  .pk-g[open] .pk-gh{padding-bottom:8px}
+  .pk-g .pk-row{margin-bottom:6px}
+  .pk-more{display:block;text-align:right;font-size:.74rem;color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px;margin:2px 0 14px}
+  .pk-g .pk-soon{margin-bottom:14px}
   .pk-gh h3{margin:0;font-family:var(--serif);font-size:1.02rem;letter-spacing:.08em}
   .pk-gh h3 span{font-family:var(--en);color:#F7A9C4;font-size:1rem;margin-left:6px}
   .pk-gh a{font-size:.74rem;color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px}
@@ -331,16 +338,23 @@
       '<p>口コミ <b>' + (c == null ? "–" : c) + '</b> 件</p></a>' +
       '<div class="pk-acts"><a class="see" href="' + see + '#reviews">口コミを見る</a><a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く</a></div></div>';
   }
+  var pkOpen = {};   // ジャンルごとの開閉（タブを切り替えても覚えておく）
+  document.addEventListener("toggle", function(e){ var d = e.target; if (d.classList && d.classList.contains("pk-g")) pkOpen[d.dataset.k] = d.open; }, true);
   function renderPickup(){
     $("pkTabs").innerHTML = RV_PICKUP_AREAS.map(function(a){
       var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length;
       return '<button type="button" role="tab" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '">' + esc(a.label) + '<small>' + n + '</small></button>';
     }).join("");
+    var firstWith = "";
+    RV_GENRES.forEach(function(g){ if (!firstWith && shops.some(function(s){ return s.area === pkArea && s.genre === g.key && !s.soon; })) firstWith = g.key; });
     $("pkBody").innerHTML = RV_GENRES.map(function(g){
       var rows = shops.filter(function(s){ return s.area === pkArea && s.genre === g.key && !s.soon; });
-      return '<div class="pk-g"><div class="pk-gh"><h3>' + esc(g.label) + '<span>' + rows.length + '</span></h3>' +
-        (rows.length ? '<a href="./?area=' + encodeURIComponent(pkArea) + '&genre=' + encodeURIComponent(g.key) + '#shops" data-pkmore="' + esc(g.key) + '">一覧で見る ›</a>' : '') + '</div>' +
-        (rows.length ? '<div class="pk-row">' + rows.map(pkCard).join("") + '</div>' : '<div class="pk-soon">このジャンルのお店は準備中です</div>') + '</div>';
+      var k = pkArea + "|" + g.key;
+      var open = (k in pkOpen) ? pkOpen[k] : (g.key === firstWith);
+      return '<details class="pk-g" data-k="' + esc(k) + '"' + (open ? ' open' : '') + '><summary class="pk-gh"><h3>' + esc(g.label) + '<span>' + rows.length + '</span></h3><i class="pk-chev" aria-hidden="true"></i></summary>' +
+        (rows.length ? '<div class="pk-row">' + rows.map(pkCard).join("") + '</div>' +
+          '<a class="pk-more" href="./?area=' + encodeURIComponent(pkArea) + '&genre=' + encodeURIComponent(g.key) + '#shops" data-pkmore="' + esc(g.key) + '">' + esc(g.label) + 'の一覧で見る ›</a>'
+          : '<div class="pk-soon">このジャンルのお店は準備中です</div>') + '</details>';
     }).join("");
   }
   document.addEventListener("click", function(e){
