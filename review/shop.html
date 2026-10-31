@@ -91,6 +91,13 @@
   .points li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px dashed var(--line)}
   .points li:first-child{border-top:0}
   .points li .rv-label{flex:none;margin:3px 0 0}
+  .menus{margin:16px 0 0}
+  .menus h3{font-family:var(--serif);font-size:.98rem;letter-spacing:.08em;margin:0 0 8px}
+  .menus details.income{margin:8px 0 0;padding:10px 14px}
+  .menu-tbl{width:100%;border-collapse:collapse;font-size:.86rem}
+  .menu-tbl th,.menu-tbl td{padding:7px 4px;border-top:1px dashed var(--line);text-align:left;font-weight:500}
+  .menu-tbl tr:first-child th,.menu-tbl tr:first-child td{border-top:0}
+  .menu-tbl td{text-align:right;font-weight:700;color:var(--pink-deep)}
   .job-note{margin:12px 0 0;font-size:.7rem;color:#B7AEA6;line-height:1.7}
 </style>
 </head>
@@ -124,6 +131,7 @@
     <div class="gallery" id="gallery" hidden><h3>店内の写真</h3><div class="gal" id="gal"></div></div>
     <table class="outline"><tbody id="outline"></tbody></table>
     <section class="points" id="points" hidden><h3>運営メモ</h3><p class="pt-lead">運営がお店や関係者から聞き取った特徴です（口コミではありません）。</p><ul id="pointsList"></ul></section>
+    <section class="menus" id="menus" hidden><h3>女子給の一覧</h3><div id="menuList"></div></section>
     <details class="income acc" id="income" hidden><summary><span id="incomeTitle">月収例（お店の掲載より）</span><small id="incomeCount"></small></summary><ol id="incomeList"></ol><p>※お店が公開している実績です。働き方によって変わります。</p></details>
     <section class="jobbox" id="jobBox" hidden>
       <h3 class="job-h"><span>求人情報</span><b id="jobTitle"></b></h3>
@@ -189,8 +197,8 @@
   var write = RV_API + "?shop=" + encodeURIComponent(S.name) + "&area=" + encodeURIComponent(label);
   [].forEach.call(document.querySelectorAll("[data-write]"), function(a){ a.href = write; a.target = "_blank"; a.rel = "noopener"; });
 
-  var info = window.AREA_DIR_PREF || "大阪";
-  $("crumb").innerHTML = '<a href="./">Area REVIEW</a> › ' + esc(info) + ' › <a href="./?area=' + encodeURIComponent(S.area) + '#shops">' + esc(label) + '</a> › <a href="./?genre=' + encodeURIComponent(S.genre) + '#shops">' + esc(S.genre) + '</a> › <b>' + esc(S.name) + '</b>';
+  var info = S.pref || ((S.areaLabel || "").indexOf("・") > 0 && /^(鳥取|愛媛|島根|香川|徳島|高知|岡山|広島|山口|兵庫|京都|奈良|和歌山|滋賀)/.test(S.areaLabel) ? "" : (window.AREA_DIR_PREF || "大阪"));
+  $("crumb").innerHTML = '<a href="./">Area REVIEW</a> › ' + (info ? esc(info) + ' › ' : '') + '<a href="./?area=' + encodeURIComponent(S.area) + '#shops">' + esc(label) + '</a> › <a href="./?genre=' + encodeURIComponent(S.genre) + '#shops">' + esc(S.genre) + '</a> › <b>' + esc(S.name) + '</b>';
   $("tags").innerHTML = '<span class="pk">' + esc(S.genre) + '</span>' + (S.style ? '<span>' + esc(S.style) + '</span>' : '') + '<span>' + esc(label) + '</span>';
   $("shopName").textContent = S.name;
   $("kana").textContent = S.kana ? "（" + S.kana + "）" : "";
@@ -281,6 +289,14 @@
     $("jobActs").innerHTML = (J.tel ? '<a class="tel" href="tel:' + esc(J.tel.replace(/[^0-9+]/g, "")) + '">📞 お店に電話する</a>' : '') +
       (J.hp ? '<a class="hp" href="' + esc(J.hp) + '" target="_blank" rel="noopener nofollow">お店のHPを見る ›</a>' : '');
     $("jobBox").hidden = false;
+  }
+  // 女子給の一覧（コースごと・アコーディオン）
+  if (S.menus && S.menus.length) {
+    $("menuList").innerHTML = S.menus.map(function(m, i){
+      return '<details class="income acc"' + (i === 0 ? ' open' : '') + '><summary><span>' + esc(m.title) + '</span><small>' + (m.rows || []).length + '項目</small></summary>' +
+        '<table class="menu-tbl"><tbody>' + (m.rows || []).map(function(r){ return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join("") + '</tbody></table></details>';
+    }).join("");
+    $("menus").hidden = false;
   }
   // 運営メモ（良い点・気になる点）
   if (S.points && ((S.points.good || []).length || (S.points.bad || []).length)) {
