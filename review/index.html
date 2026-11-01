@@ -508,7 +508,9 @@
     $("ivGrid").innerHTML = iv.length ? iv.map(function(x){
       var inner = '<img src="' + esc(x.img) + '" alt="' + esc(x.title || x.shop || "取材写真") + '" loading="lazy"><span>' + esc(x.title || "") + (x.shop ? '<small>' + esc(x.shop) + '</small>' : '') + '</span>';
       return x.url ? '<a href="' + esc(x.url) + '">' + inner + '</a>' : '<div class="iv-ph">' + inner + '</div>';
-    }).join("") : [1,2,3,4,5,6].map(function(){ return '<div class="iv-ph"><div class="iv-box"><div><b>📷</b>取材写真<br>準備中</div></div><span>店内・待機室・スタッフ<small>近日公開</small></span></div>'; }).join("");
+    }).join("") : "";
+    // 写真がそろうまで「取材レポート」の見出しと枠は出さない（上の取材画像だけ出す）
+    if (!iv.length) { $("ivGrid").hidden = true; document.querySelector(".iv-h").hidden = true; document.querySelector(".iv-top").style.marginBottom = "0"; }
   })();
 
   // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
