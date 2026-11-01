@@ -106,6 +106,18 @@
   .shop .acts .wr{background:var(--pink);color:#fff}
   .shop h3 a{color:inherit}
   .shop.is-soon{border-color:var(--line);outline-color:transparent}
+  .kw{display:flex;gap:8px;margin:0 0 8px}
+  .kw input{flex:1;min-width:0;font:inherit;font-size:16px;border:1.5px solid var(--gold);border-radius:8px;background:#fff;padding:11px 12px;color:var(--ink)}
+  .kw input:focus{outline:2px solid var(--pink-line);border-color:var(--pink)}
+  .kw .btn{flex:none;padding:11px 18px}
+  .kw-ex{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.72rem;color:var(--dim);margin:0 0 16px}
+  .kw-ex button{border:1px solid var(--pink-line);background:var(--pink-soft);color:var(--pink-deep);font-size:.72rem;padding:3px 10px;border-radius:999px;cursor:pointer}
+  .guide-box{background:#141115;color:#F4EFE6;border:1px solid var(--gold);border-radius:12px;padding:20px 16px;text-align:center}
+  .gb-t{font-family:var(--serif);font-size:1rem;font-weight:700;letter-spacing:.06em;margin:0 0 6px;color:var(--gold-lt)}
+  .gb-s{font-size:.78rem;color:#CFC6BD;margin:0 0 14px}
+  .gb-btns{display:grid;grid-template-columns:1fr;gap:8px;max-width:780px;margin:0 auto}
+  @media (min-width:700px){ .gb-btns{grid-template-columns:repeat(3,1fr)} }
+  .guide-box .btn-line{background:#fff;color:var(--ink);border-color:#fff}
   .empty{background:#fff;border:1px dashed var(--line);padding:22px;text-align:center;font-size:.84rem;color:var(--ink-soft)}
 
   .how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -279,7 +291,7 @@
 <div class="beta">Area REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
 <header class="head"><div class="wrap">
   <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
-  <nav><a href="#shops">お店一覧</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
+  <nav><a href="#find">お店を探す</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
 </div></header>
 
 <section class="hero">
@@ -337,6 +349,8 @@
 <main class="wrap">
   <section class="sec" id="find">
     <h2 class="sec-h">お店を探す <small>Search</small></h2>
+    <form class="kw" id="kwForm" role="search"><input type="search" id="kw" placeholder="店名・駅名・条件など" aria-label="フリーワードで探す" enterkeyhint="search"><button type="submit" class="btn btn-pink">検索</button></form>
+    <p class="kw-ex">例：<button type="button" data-kw="日払い">日払い</button><button type="button" data-kw="寮">寮</button><button type="button" data-kw="出稼ぎ">出稼ぎ</button><button type="button" data-kw="未経験">未経験</button><button type="button" data-kw="個室待機">個室待機</button><button type="button" data-kw="日本橋">日本橋</button></p>
     <p class="pill-h">ジャンル</p>
     <div class="pills" id="genrePills"></div>
     <p class="pill-h">エリア</p>
@@ -352,6 +366,11 @@
   <section class="sec" id="shops">
     <h2 class="sec-h">お店一覧 <small>Shops</small></h2>
     <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
+    <div class="guide-box" id="shopGuide">
+      <p class="gb-t">エリアやフリーワードで探すと、ここにお店が表示されます</p>
+      <p class="gb-s">掲載店は大阪を中心に全国へ広がっています。働きたい場所や、気になる条件から探してください。</p>
+      <div class="gb-btns"><a href="#pickup" class="btn btn-dark">📍 エリアから探す</a><a href="#find" class="btn btn-pink" data-focus-kw>🔍 フリーワードで探す</a><a href="#pref" class="btn btn-line">🗾 大阪府外から探す</a></div>
+    </div>
     <div class="shops" id="shopGrid"></div>
     <div class="empty" id="shopEmpty" hidden>この条件のお店は準備中です。</div>
   </section>
@@ -403,7 +422,7 @@
   var counts = {};            // 店ごとの口コミ件数
   var AREAS = [["梅田","梅田"],["米子","鳥取・米子"],["新大阪","新大阪・西中島"],["北新地","北新地"],["難波","難波・日本橋"],["心斎橋","心斎橋"],["本町","本町"],["十三","十三"],["天満","天満"],["京橋","京橋"],["谷町九丁目","谷九"]];
   var q = new URLSearchParams(location.search);
-  var state = { genre: q.get("genre") || "", area: q.get("area") || "", pref: q.get("pref") || "" };
+  var state = { genre: q.get("genre") || "", area: q.get("area") || "", pref: q.get("pref") || "", kw: q.get("q") || "" };
 
   $("stShops").textContent = shops.filter(function(s){ return !s.soon; }).length;
 
@@ -421,7 +440,17 @@
     var k = b.dataset.kind; state[k] = state[k] === b.dataset.key ? "" : b.dataset.key;
     render(); $("shops").scrollIntoView({ behavior: "smooth" });
   });
-  $("filterClear").onclick = function(){ state.genre = state.area = state.pref = ""; render(); };
+  $("filterClear").onclick = function(){ state.genre = state.area = state.pref = state.kw = ""; $("kw").value = ""; render(); };
+
+  // フリーワード検索（店名・かな・エリア・アクセス・ジャンル・条件などから探す）
+  function hay(s){ return RV.norm([s.name, s.kana, s.genre, s.style, s.area, s.areaLabel, s.pref, s.access, s.hours, s.wait, s.pay, s.paySub, s.back, s.deduct, s.other, (s.keys || []).join(" "), s.job ? (s.job.title + " " + s.job.catchCopy + " " + (s.job.rows || []).map(function(r){ return r.join(" "); }).join(" ")) : ""].join(" ")); }
+  function kwHit(s){ var h = hay(s); return String(state.kw).split(/[\s　]+/).map(RV.norm).filter(Boolean).every(function(w){ return h.indexOf(w) >= 0; }); }
+  $("kw").value = state.kw;
+  $("kwForm").onsubmit = function(e){ e.preventDefault(); state.kw = $("kw").value.trim(); $("kw").blur(); render(); $("shops").scrollIntoView({ behavior: "smooth" }); };
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-kw]"); if (b) { state.kw = $("kw").value = b.dataset.kw; render(); $("shops").scrollIntoView({ behavior: "smooth" }); return; }
+    if (e.target.closest("[data-focus-kw]")) { e.preventDefault(); $("find").scrollIntoView({ behavior: "smooth" }); setTimeout(function(){ $("kw").focus(); }, 400); }
+  });
 
   // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
   var PREFS = [
@@ -465,10 +494,13 @@
       '<a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く ✎</a></div></div>';
   }
   function render(){
-    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area) && (!state.pref || s.pref === state.pref); });
+    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area) && (!state.pref || s.pref === state.pref) && (!state.kw || kwHit(s)); });
+    var any = !!(state.genre || state.area || state.pref || state.kw);
+    $("shopGuide").hidden = any;
+    if (!any) rows = [];
     $("shopGrid").innerHTML = rows.map(card).join("");
-    $("shopEmpty").hidden = rows.length > 0;
-    var on = [state.pref ? prefName(state.pref) : "", state.genre, state.area].filter(Boolean);
+    $("shopEmpty").hidden = !any || rows.length > 0;
+    var on = [state.kw ? "「" + state.kw + "」" : "", state.pref ? prefName(state.pref) : "", state.genre, state.area].filter(Boolean);
     $("filterNow").hidden = !on.length;
     $("filterText").textContent = "絞り込み中：" + on.join(" × ") + "（" + rows.length + "件）";
     [].forEach.call(document.querySelectorAll(".pref-a"), function(a){ a.setAttribute("aria-pressed", String(state.pref === a.dataset.pref)); });
