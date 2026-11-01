@@ -268,6 +268,9 @@
   .ss-list img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
   .ss-list span{display:block;padding:7px 8px 8px;font-size:.8rem;font-weight:700;letter-spacing:.04em;line-height:1.4}
   .ss-list small{display:block;font-size:.66rem;font-weight:500;color:var(--gold-lt);margin-top:2px}
+  /* スマホでは Our Sites をランキングの下に出さず、「大阪府外の求人」の上にだけ出す */
+  .ss-sp{display:none}
+  @media (max-width:999px){ .side .side-sites{display:none} .ss-sp{display:block;margin:26px 0 0} .ss-sp .ss-list{grid-template-columns:1fr 1fr} }
   .rank-note{margin:8px 0 0;font-size:.62rem;color:#6E6773}
   @media (min-width:1000px){
     .pk-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:0 28px;align-items:start}
@@ -419,6 +422,13 @@
     <div class="cta-btns"><a href="#" class="btn btn-gold" data-write>口コミを書く</a><a href="#" class="btn btn-linebtn" data-line hidden>LINEで相談する</a></div>
     <p class="line-note">口コミや掲載内容についてのご相談・お問い合わせは、LINEでも受け付けています。</p>
   </section>
+  <nav class="side-sites ss-sp" aria-label="運営サイト">
+    <h3 class="rank-h"><span class="rank-ic" aria-hidden="true">✿</span><span class="ss-en">Our Sites</span><span class="rank-pr">運営</span></h3>
+    <div class="ss-list">
+      <a href="https://claude.ai/artifact/A3Wtfu5AhBqyPnWY3kkc2F" target="_blank" rel="noopener"><img src="img/site-nightroom.jpg" alt="NIGHT ROOM 関西｜夜に生きるあなたへ、上質な住まいを。" width="800" height="400" loading="lazy"><span>NIGHT ROOM 関西<small>お部屋探しはこちら →</small></span></a>
+      <a href="https://hadalog-sample.netlify.app" target="_blank" rel="noopener"><img src="img/site-hadalog.jpg" alt="肌ログ｜コスメのクチコミ・ランキング" width="800" height="400" loading="lazy"><span>肌ログ<small>コスメの口コミを見る →</small></span></a>
+    </div>
+  </nav>
   <section class="sec pref-sec" id="pref">
     <h2 class="sec-h">大阪府外の求人を探す <small>Japan</small></h2>
     <p class="lead">大阪以外のお店（出稼ぎ求人など）は、都道府県から探せます。</p>
