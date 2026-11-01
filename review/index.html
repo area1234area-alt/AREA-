@@ -174,7 +174,7 @@
   .pk-oacc[open] .pk-chev{transform:rotate(-135deg);margin-bottom:-4px}
   .pk-oacc .pk-other{padding:2px 0 12px}
   .pk-other{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-  @media (min-width:860px){ .pk-main{grid-template-columns:repeat(4,1fr)} .pk-other{grid-template-columns:repeat(4,1fr)} }
+  @media (min-width:860px){ .pk-main{grid-template-columns:repeat(5,1fr)} .pk-other{grid-template-columns:repeat(4,1fr)} }
   .pk-tabs button.main{padding:11px 8px 10px;border:1px solid rgba(201,162,39,.6);display:flex;flex-direction:column;align-items:center;gap:3px}
   .pk-tabs button.main .pk-l{font-family:var(--serif);font-size:.98rem;letter-spacing:.04em;line-height:1.3}
   .pk-tabs button.main .pk-s{font-size:.64rem;font-weight:500;color:#B7AEA6;letter-spacing:.02em}
@@ -448,7 +448,8 @@
 
   var shops = RV.listed();
   var counts = {};            // 店ごとの口コミ件数
-  var AREAS = [["梅田","梅田"],["米子","鳥取・米子"],["新大阪","新大阪・西中島"],["北新地","北新地"],["難波","難波・日本橋"],["心斎橋","心斎橋"],["本町","本町"],["十三","十三"],["天満","天満"],["京橋","京橋"],["谷町九丁目","谷九"]];
+  var AREAS = (window.RV_PICKUP_AREAS || []).map(function(a){ return [a.key, a.label]; });
+  function inArea(s, key){ return key === "大阪全域" ? !s.pref : s.area === key; }
   var q = new URLSearchParams(location.search);
   var state = { genre: q.get("genre") || "", area: q.get("area") || "", pref: q.get("pref") || "", kw: q.get("q") || "" };
 
@@ -456,7 +457,7 @@
 
   function pills(box, list, kind){
     box.innerHTML = list.map(function(p){
-      var n = shops.filter(function(s){ return s[kind] === p[0]; }).length;
+      var n = shops.filter(function(s){ return kind === "area" ? inArea(s, p[0]) : s[kind] === p[0]; }).length;
       return n ? '<button type="button" class="pill" data-kind="' + kind + '" data-key="' + esc(p[0]) + '"><span>' + esc(p[1]) + '</span><small>' + n + '</small></button>'
                : '<span class="pill soon"><span>' + esc(p[1]) + '</span><small>準備中</small></span>';
     }).join("");
@@ -516,7 +517,7 @@
     var label = s.areaLabel || s.area;
     var tags = '<div class="shop-tags"><span class="pk">' + esc(s.genre) + '</span><span>' + esc(label) + '</span>' + (s.style ? '<span>' + esc(s.style) + '</span>' : '') + '</div>';
     if (s.soon) {
-      return '<div class="shop is-soon"><div class="shop-in">' + tags + '<h3>' + esc(s.name) + '</h3><span class="kana">店名・詳しい情報を確認中です</span>' +
+      return '<div class="shop is-soon"><div class="shop-in">' + tags + '<h3>' + esc(s.name) + '</h3><span class="kana">女子給・待遇などの情報を確認中です</span>' +
         '<dl>' + (s.pay ? '<div><dt>女子給</dt><dd>' + esc(s.pay) + '</dd></div>' : '') + '</dl></div><span class="go off">準備中</span></div>';
     }
     var c = counts[s.id];
@@ -531,7 +532,7 @@
       '<a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く ✎</a></div></div>';
   }
   function render(){
-    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area) && (!state.pref || s.pref === state.pref) && (!state.kw || kwHit(s)); });
+    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || inArea(s, state.area)) && (!state.pref || s.pref === state.pref) && (!state.kw || kwHit(s)); });
     var any = !!(state.genre || state.area || state.pref || state.kw);
     if (!any) rows = [];
     $("shopGrid").innerHTML = rows.map(card).join("");
@@ -618,7 +619,7 @@
   document.addEventListener("toggle", function(e){ var d = e.target; if (d.classList && d.classList.contains("pk-g")) pkOpen[d.dataset.k] = d.open; }, true);
   function renderPickup(){
     var btn = function(a){
-      var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length;
+      var n = shops.filter(function(s){ return inArea(s, a.key); }).length;   // 準備中カードも数える
       if (a.main) {
         var meta = '<span class="pk-s">' + (a.sub ? esc(a.sub) + '<em>｜</em>' : '') + (n ? '<b>' + n + '</b>店' : '準備中') + '</span>';
         if (!n) return '<button type="button" class="main none" disabled aria-disabled="true"><span class="pk-l">' + esc(a.label) + '</span>' + meta + '</button>';
@@ -628,9 +629,10 @@
       return '<button type="button" role="tab" data-pk="' + esc(a.key) + '" aria-selected="' + (a.key === pkArea) + '">' + esc(a.label) + '<small>' + n + '</small></button>';
     };
     $("pkTabs").innerHTML =
-      '<p class="pk-sub-h">主要エリア</p><div class="pk-main">' + RV_PICKUP_AREAS.filter(function(a){ return a.main; }).map(btn).join("") + '</div>' +
+      '<p class="pk-sub-h">大阪のエリア</p><div class="pk-main">' + RV_PICKUP_AREAS.filter(function(a){ return a.main; }).map(btn).join("") + '</div>' +
       (function(){
         var others = RV_PICKUP_AREAS.filter(function(a){ return !a.main; });
+        if (!others.length) return "";
         var nOpen = others.filter(function(a){ return shops.some(function(s){ return s.area === a.key && !s.soon; }); }).length;
         var selInOther = others.some(function(a){ return a.key === pkArea; });
         return '<details class="pk-oacc"' + (pkOtherOpen || selInOther ? ' open' : '') + '><summary><span>ほかのエリア</span><small>' + others.length + 'エリア（掲載あり ' + nOpen + '）</small><i class="pk-chev" aria-hidden="true"></i></summary>' +
