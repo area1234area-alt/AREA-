@@ -662,12 +662,11 @@ window.RV_INTERVIEWS = [
 /* 有料店舗ランキング（トップのピックアップ左側の欄。スマホではピックアップの上に横スクロールで表示）
    ・広告費をいただいているお店を、表示したい順に並べる（1番目が1位）
    ・img：バナー画像、url：押したときの行き先、sub：小さく出す説明（ジャンル・エリアなど）
-   ・広告なので「PR」と表示される */
+   ・広告なので「PR」と表示される。表示は3位まで */
 window.RV_RANK = [
   { name: "club Kiss", sub: "梅田・セクキャバ", img: "img/ads/club-kiss.jpg?v=3", url: "shop.html?id=club-kiss" },
   { name: "RICH COLLECTION", sub: "梅田・セクキャバ", img: "img/ads/rich-collection.jpg", url: "shop.html?id=rich-collection" },
-  { name: "KINGDOM", sub: "梅田・セクキャバ", img: "img/ads/kingdom.jpg", url: "shop.html?id=kingdom" },
-  { name: "Y's", sub: "出張マッサージ", img: "img/ads/ys.jpg", url: "https://claude.ai/artifact/YPLwWJQiW9We1dAoJmLaKA" }
+  { name: "Y's", sub: "デリヘル", img: "img/ads/ys.jpg", url: "https://claude.ai/artifact/YPLwWJQiW9We1dAoJmLaKA" }
 ];
 
 /* 口コミの読み込み先（Areaの口コミ台帳と同じ） */

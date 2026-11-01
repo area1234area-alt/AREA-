@@ -306,6 +306,7 @@
     .rank{padding:12px 10px 10px}
     .rank-h{font-size:.9rem;margin-bottom:10px}
     .rank .rank-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px}
+    .rank .rank-list li:first-child{grid-column:1 / -1}
     .rank-list img{border-radius:6px}
     .rank-name{gap:6px;margin-top:5px;font-size:.76rem;line-height:1.3}
     .rank-name b{width:18px;height:18px;font-size:.74rem}
@@ -658,7 +659,7 @@
   })();
   // 有料店舗ランキング
   (function(){
-    var list = window.RV_RANK || []; if (!list.length) return;
+    var list = (window.RV_RANK || []).slice(0, 3); if (!list.length) return;   // 3位まで表示
     $("rankList").innerHTML = list.map(function(r, i){
       var ext = /^https?:/.test(r.url || "");
       return '<li><a' + (r.url ? ' href="' + esc(r.url) + '"' + (ext ? ' target="_blank" rel="noopener sponsored"' : '') : '') + '>' +
