@@ -535,6 +535,13 @@ window.RV_NEWS = [
   { date: "2026-10-29", text: "「RICH COLLECTION」の店内写真と月収例を追加", url: "shop.html?id=rich-collection" }
 ];
 
+/* 取材写真（トップの「エリアから探す」の下。エリアや検索で絞り込むとお店一覧に切り替わる）
+   ・img：写真（横長 4:3 くらい）、title：見出し、shop：店名など小さく出す文、url：押したときの行き先（空なら押せない）
+   ・0件のときは「取材写真 準備中」の枠が6つ出る
+   例） { img: "img/interview/kiss-1.jpg", title: "club Kiss の待機室", shop: "梅田・セクキャバ", url: "shop.html?id=club-kiss" } */
+window.RV_INTERVIEWS = [
+];
+
 /* 有料店舗ランキング（トップのピックアップ左側の欄。スマホではピックアップの上に横スクロールで表示）
    ・広告費をいただいているお店を、表示したい順に並べる（1番目が1位）
    ・img：バナー画像、url：押したときの行き先、sub：小さく出す説明（ジャンル・エリアなど）

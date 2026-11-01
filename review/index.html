@@ -80,6 +80,18 @@
   .pill-h{font-size:.74rem;color:var(--gold-ink);letter-spacing:.14em;font-weight:700;margin:18px 0 8px}
   .pill-h:first-of-type{margin-top:0}
 
+  .iv{margin-top:18px;background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:14px 12px 12px}
+  .iv-h{display:flex;align-items:baseline;gap:8px;margin:0 0 12px;font-family:var(--serif);font-size:1rem;letter-spacing:.06em;color:#F4EFE6}
+  .iv-h small{font-family:var(--en);font-style:italic;font-weight:600;color:var(--gold);font-size:.86rem;letter-spacing:.18em}
+  .iv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  @media (min-width:700px){ .iv-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+  .iv-grid a,.iv-grid .iv-ph{display:block;color:#F4EFE6;border:1px solid rgba(201,162,39,.35);border-radius:8px;overflow:hidden;background:#0F0D12}
+  .iv-grid a:hover{border-color:var(--gold)}
+  .iv-grid img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+  .iv-grid span{display:block;padding:7px 9px 9px;font-size:.8rem;font-weight:700;line-height:1.45}
+  .iv-grid small{display:block;font-size:.66rem;font-weight:500;color:var(--gold-lt);margin-top:2px}
+  .iv-ph .iv-box{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;font-size:.72rem;color:#8C847D;letter-spacing:.06em;border-bottom:1px dashed #2A2530}
+  .iv-ph .iv-box b{display:block;font-size:1.4rem;color:#3A3340;margin-bottom:4px}
   .pk-res{margin-top:16px}
   .pk-res .shop{color:var(--ink)}
   .pk-res .shop h3,.pk-res .shop h3 a{color:var(--ink)}
@@ -360,6 +372,10 @@
   <h3 class="pk-areas-h">エリアから探す</h3>
   <div class="pk-tabs" role="tablist" id="pkTabs"></div>
   <div id="pkBody" hidden></div><!-- ジャンル別のアコーディオンはいったん非表示 -->
+  <section class="iv" id="interview" aria-label="取材写真">
+    <h3 class="iv-h"><span class="rank-ic" aria-hidden="true">✿</span>取材レポート<small>Interview</small></h3>
+    <div class="iv-grid" id="ivGrid"></div>
+  </section>
   <div class="pk-res" id="shops">
     <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
     <div class="shops" id="shopGrid"></div>
@@ -461,6 +477,15 @@
     if (e.target.closest("[data-focus-kw]")) { e.preventDefault(); $("search").scrollIntoView({ behavior: "smooth" }); setTimeout(function(){ $("kw").focus(); }, 400); }
   });
 
+  // 取材写真（shops.js の RV_INTERVIEWS。0件のときは「準備中」の枠を出す）
+  (function(){
+    var iv = (window.RV_INTERVIEWS || []).filter(function(x){ return x && x.img; });
+    $("ivGrid").innerHTML = iv.length ? iv.map(function(x){
+      var inner = '<img src="' + esc(x.img) + '" alt="' + esc(x.title || x.shop || "取材写真") + '" loading="lazy"><span>' + esc(x.title || "") + (x.shop ? '<small>' + esc(x.shop) + '</small>' : '') + '</span>';
+      return x.url ? '<a href="' + esc(x.url) + '">' + inner + '</a>' : '<div class="iv-ph">' + inner + '</div>';
+    }).join("") : [1,2,3,4,5,6].map(function(){ return '<div class="iv-ph"><div class="iv-box"><div><b>📷</b>取材写真<br>準備中</div></div><span>店内・待機室・スタッフ<small>近日公開</small></span></div>'; }).join("");
+  })();
+
   // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
   var PREFS = [
     ["北海道・東北", ["北海道","青森","岩手","宮城","秋田","山形","福島"]],
@@ -508,6 +533,7 @@
     if (!any) rows = [];
     $("shopGrid").innerHTML = rows.map(card).join("");
     $("shopEmpty").hidden = !any || rows.length > 0;
+    $("interview").hidden = any;   // 絞り込み中はお店を見せる。なにも選んでいないときは取材写真
     var on = [state.kw ? "「" + state.kw + "」" : "", state.pref ? prefName(state.pref) : "", state.genre, state.area].filter(Boolean);
     $("filterNow").hidden = !on.length;
     $("filterText").textContent = "絞り込み中：" + on.join(" × ") + "（" + rows.length + "件）";
