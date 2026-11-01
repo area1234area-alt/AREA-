@@ -65,6 +65,18 @@
   .pill[aria-pressed="true"] small{color:#5A2A3A}
   .pill.soon{background:#EFE9DC;color:#8A8377;border-color:#EFE9DC;cursor:default;font-weight:500}
   .pill.soon small{font-family:var(--body);font-size:.66rem;color:#8A8377;white-space:nowrap}
+  .pref-reg{margin:0 0 18px}
+  .pref-reg:last-child{margin-bottom:0}
+  .pref-reg h3{font-size:.84rem;font-weight:700;letter-spacing:.06em;margin:0 0 6px}
+  .pref-list{display:flex;flex-wrap:wrap;align-items:center;font-size:.88rem;line-height:2.2}
+  .pref-list a{display:inline-flex;align-items:baseline;gap:4px;color:var(--ink-soft);padding:0 12px}
+  .pref-list a:first-child{padding-left:0}
+  .pref-list a + a{border-left:1px solid var(--line)}
+  .pref-list a:nth-child(3n+3){border-left-color:var(--pink)}
+  .pref-list a.on{color:var(--pink-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  .pref-list a small{font-size:.68rem;color:var(--pink);font-weight:700;text-decoration:none}
+  .pref-list a.off small{color:var(--dim);font-weight:500}
+  .pref-list a[aria-pressed="true"]{background:var(--pink-soft);border-radius:6px}
   .pill-h{font-size:.74rem;color:var(--gold-ink);letter-spacing:.14em;font-weight:700;margin:18px 0 8px}
   .pill-h:first-of-type{margin-top:0}
 
@@ -311,6 +323,12 @@
     <div class="pills" id="areaPills"></div>
   </section>
 
+  <section class="sec" id="pref">
+    <h2 class="sec-h">大阪府外の求人を探す <small>Japan</small></h2>
+    <p class="lead">大阪以外のお店（出稼ぎ求人など）は、都道府県から探せます。</p>
+    <div id="prefBox"></div>
+  </section>
+
   <section class="sec" id="shops">
     <h2 class="sec-h">お店一覧 <small>Shops</small></h2>
     <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
@@ -365,7 +383,7 @@
   var counts = {};            // 店ごとの口コミ件数
   var AREAS = [["梅田","梅田"],["米子","鳥取・米子"],["新大阪","新大阪・西中島"],["北新地","北新地"],["難波","難波・日本橋"],["心斎橋","心斎橋"],["本町","本町"],["十三","十三"],["天満","天満"],["京橋","京橋"],["谷町九丁目","谷九"]];
   var q = new URLSearchParams(location.search);
-  var state = { genre: q.get("genre") || "", area: q.get("area") || "" };
+  var state = { genre: q.get("genre") || "", area: q.get("area") || "", pref: q.get("pref") || "" };
 
   $("stShops").textContent = shops.filter(function(s){ return !s.soon; }).length;
 
@@ -383,7 +401,30 @@
     var k = b.dataset.kind; state[k] = state[k] === b.dataset.key ? "" : b.dataset.key;
     render(); $("shops").scrollIntoView({ behavior: "smooth" });
   });
-  $("filterClear").onclick = function(){ state.genre = state.area = ""; render(); };
+  $("filterClear").onclick = function(){ state.genre = state.area = state.pref = ""; render(); };
+
+  // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
+  var PREFS = [
+    ["北海道・東北", ["北海道","青森","岩手","宮城","秋田","山形","福島"]],
+    ["関東", ["東京","神奈川","千葉","埼玉","茨城","栃木","群馬"]],
+    ["北陸・甲信越", ["新潟","富山","石川","福井","山梨","長野"]],
+    ["東海", ["愛知","静岡","岐阜","三重"]],
+    ["関西（大阪府外）", ["京都","兵庫","奈良","滋賀","和歌山"]],
+    ["中国・四国", ["鳥取","島根","岡山","広島","山口","徳島","香川","愛媛","高知"]],
+    ["九州・沖縄", ["福岡","佐賀","長崎","熊本","大分","宮崎","鹿児島","沖縄"]]
+  ];
+  function prefName(p){ return p === "北海道" ? p : p + (p === "東京" ? "都" : (p === "京都" || p === "大阪") ? "府" : "県"); }
+  $("prefBox").innerHTML = PREFS.map(function(r){
+    return '<div class="pref-reg"><h3>' + esc(r[0]) + 'の求人を探す</h3><div class="pref-list">' + r[1].map(function(p){
+      var n = shops.filter(function(s){ return s.pref === p && !s.hold; }).length;
+      return '<a href="./?pref=' + encodeURIComponent(p) + '#shops" class="pref-a ' + (n ? 'on' : 'off') + '" data-pref="' + esc(p) + '">' + esc(prefName(p)) + 'の求人' + (n ? '<small>' + n + '</small>' : '') + '</a>';
+    }).join("") + '</div></div>';
+  }).join("");
+  document.addEventListener("click", function(e){
+    var a = e.target.closest(".pref-a"); if (!a) return;
+    e.preventDefault(); state.pref = state.pref === a.dataset.pref ? "" : a.dataset.pref; state.area = "";
+    render(); $("shops").scrollIntoView({ behavior: "smooth" });
+  });
 
   function card(s){
     var label = s.areaLabel || s.area;
@@ -404,12 +445,13 @@
       '<a class="wr" href="' + write + '" target="_blank" rel="noopener">口コミを書く ✎</a></div></div>';
   }
   function render(){
-    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area); });
+    var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area) && (!state.pref || s.pref === state.pref); });
     $("shopGrid").innerHTML = rows.map(card).join("");
     $("shopEmpty").hidden = rows.length > 0;
-    var on = [state.genre, state.area].filter(Boolean);
+    var on = [state.pref ? prefName(state.pref) : "", state.genre, state.area].filter(Boolean);
     $("filterNow").hidden = !on.length;
     $("filterText").textContent = "絞り込み中：" + on.join(" × ") + "（" + rows.length + "件）";
+    [].forEach.call(document.querySelectorAll(".pref-a"), function(a){ a.setAttribute("aria-pressed", String(state.pref === a.dataset.pref)); });
     [].forEach.call(document.querySelectorAll(".pill[data-kind]"), function(b){ b.setAttribute("aria-pressed", String(state[b.dataset.kind] === b.dataset.key)); });
   }
   render();
