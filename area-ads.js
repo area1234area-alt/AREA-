@@ -16,7 +16,7 @@ window.AREA_PICKUP = [
     text: "池袋プリンスグループ4号店。内装費1.4億円の大型高級店が2026年12月1日にオープン。オープニングキャストを募集しています。",
     url: "regent.html", column: "column/regent-club-ikebukuro.html", until: "2027-01-31" },
   { label: "注目の4店", area: "京都・祇園／キャバクラ", name: "祇園 注目の4店", kana: "華小町・Club UNJOUR 祇園・GALLE・MILANO",
-    img: "img/gion/feature.jpg", pay: "華小町・MILANOは時給 8,000円〜",
+    img: "img/gion/feature.jpg", pay: "3店が時給 8,000円〜",
     text: "京都・祇園でキャバクラを探すなら知っておきたい4店。時給・日払い・保証・ヘアメイクなど、それぞれの強みをくらべました。",
     url: "area.html?area=%E7%A5%87%E5%9C%92", urlLabel: "祇園の求人を見る", column: "column/gion-4shops.html", until: "2027-01-31" }
 ];
