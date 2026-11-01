@@ -4,6 +4,15 @@
 /* 風俗・メンズエステ・セクキャバは別サイト（review/ フォルダの Area REVIEW）に移しました（2026-10-21）。
    ここには飲み屋（キャバクラ・ラウンジ・クラブ・ガールズバー・スナックなど）だけを載せます。 */
 window.AREA_JOBS = [
+  { name: "Regent Club（リージェントクラブ）", nameEn: "Regent Club", kana: "リージェントクラブ", type: "キャバクラ", area: "池袋", address: "東京都 豊島区 池袋（西口・ロマンス通り）",
+    pay: "時給 6,000円〜15,000円", url: "regent.html", photo: "img/regent/main.jpg", pickup: true, isNew: true, pref: "東京都", city: "豊島区",
+    catchCopy: "池袋プリンスグループ4号店。内装費1.4億円の大型高級店が2026年12月1日オープン。オープニングキャスト募集",
+    hours: "お店に確認", station: "池袋駅西口（ロマンス通り）", transport: "要確認",
+    qualify: "18歳以上（高校生不可）・経験者優遇・週4日以上歓迎",
+    payDetail: "時給6,000円〜15,000円／売上歩合（小計売上の40〜55％）と時給＋バックの高いほうを毎月支給",
+    tags: ["新規オープン", "オープニングスタッフ", "高時給", "売上歩合", "経験者優遇", "大型店"],
+    features: ["2026年12月1日グランドオープン", "完全フリー席の場内指名は小計30％を本指名売上に計上", "営業後のアフターバー「ANNEX」で売上を伸ばせる"],
+    tel: "", line: "https://lin.ee/v7GLaD2", reviewKey: "regent|リージェント", column: "column/regent-club-ikebukuro.html", added: "2026-11-01" },
   { name: "club Lilith（リリス）", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
     pay: "時給制＋各種バック", trial: true, url: "lilith.html", photo: "img/lilith/photo1.jpg", // photo＝カードの右に出る写真
     // ↓ 大阪の求人一覧（osaka.html）で使う詳しい情報
@@ -88,7 +97,7 @@ window.areaJobCard = function (j) {
       '<a class="dc-pw"' + href + '><span class="dc-ph' + (j.photo ? '' : ' noimg') + (j.logoInPhoto ? ' logo' : '') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
         '<span class="dc-tate' + (j.logoInPhoto ? ' right' : '') + '">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
         (j.logoInPhoto ? (j.trial ? '<span class="dc-over"><span class="dc-badge">体験入店あり</span></span>' : '') :
-        '<span class="dc-over">' + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
+        '<span class="dc-over">' + (j.isNew ? '<span class="dc-badge">NEW OPEN</span>' : '') + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
           '<span class="dc-name">' + esc(en) + '</span>' +
           (kana ? '<span class="dc-kana">' + esc(kana) + '</span>' : '') + '</span>') + '</a>' +
       '<div class="dc-in dc-bottom">' +

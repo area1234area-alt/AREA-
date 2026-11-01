@@ -7,6 +7,28 @@ window.AREA_ADS = [
   { name: "VANCOOL", img: "img/ads/vancool.jpg", url: "", until: "" }   // 求人ページができたら url に入れる
 ];
 window.AREA_LINE = "https://lin.ee/v7GLaD2";
+
+/* ピックアップ（広告枠の下）。新店オープンなど、運営がおすすめするお店を大きく出す（広告ではない）
+   ・video か img、url（求人ページ）、column（コラム記事。空ならボタンなし）、until（最終日。過ぎると消える） */
+window.AREA_PICKUP = [
+  { label: "NEW OPEN", area: "東京・池袋（西口・ロマンス通り）／キャバクラ", name: "Regent Club", kana: "リージェントクラブ",
+    video: "img/regent/opening.mp4", img: "img/regent/main.jpg", pay: "時給 6,000円〜15,000円",
+    text: "池袋プリンスグループ4号店。内装費1.4億円の大型高級店が2026年12月1日にオープン。オープニングキャストを募集しています。",
+    url: "regent.html", column: "column/regent-club-ikebukuro.html", until: "2027-01-31" }
+];
+(function () {
+  var sec = document.getElementById("pickupNew"), box = document.getElementById("puBox"); if (!sec || !box) return;
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var p = (window.AREA_PICKUP || []).filter(function (a) { return a && (!a.until || new Date(a.until + "T23:59:59") >= today); })[0];
+  if (!p) return;
+  box.innerHTML = '<div class="pu-h">PICK UP<b>' + esc(p.label || "注目") + '</b></div><div class="pu-body">' +
+    (p.video ? '<a href="' + esc(p.url) + '" aria-label="' + esc(p.name) + 'の求人を見る"><video src="' + esc(p.video) + '" poster="' + esc(p.img || "") + '" autoplay muted loop playsinline preload="metadata"></video></a>' : '<a href="' + esc(p.url) + '"><img src="' + esc(p.img) + '" alt="' + esc(p.name) + '"></a>') +
+    '<div class="pu-tx"><span class="pu-area">' + esc(p.area) + '</span><h3>' + esc(p.name) + (p.kana ? '<small>' + esc(p.kana) + '</small>' : '') + '</h3>' +
+    (p.pay ? '<span class="pu-pay">' + esc(p.pay) + '</span>' : '') + '<p>' + esc(p.text) + '</p>' +
+    '<div class="pu-btns"><a class="go" href="' + esc(p.url) + '">求人を見る</a>' + (p.column ? '<a class="col" href="' + esc(p.column) + '">コラムを読む</a>' : '') + '</div></div></div>';
+  sec.hidden = false;
+})();
 (function () {
   var box = document.getElementById("areaAd"); if (!box) return;
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };

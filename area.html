@@ -315,7 +315,7 @@
         '<a class="see" href="' + esc(window.areaReviews.pageUrl(j)) + '">口コミを見る<span data-rvc="' + j._i + '"></span></a>' +
         '<a class="wr" href="' + esc(window.areaReviews.writeUrl(j)) + '" target="_blank" rel="noopener">口コミを書く</a>'
        : '<div class="rank-acts"><span class="off">詳細は準備中</span>') +
-        (j.tel ? '<a class="tel" href="tel:' + esc(j.tel) + '">電話する</a>' : '<span class="off">応募先は準備中</span>') +
+        (j.tel ? '<a class="tel" href="tel:' + esc(j.tel) + '">電話する</a>' : (j.line ? '<a class="tel" href="' + esc(j.line) + '" target="_blank" rel="noopener">LINEで問い合わせ</a>' : '<span class="off">応募先は準備中</span>')) +
       '</div></article>';
   }
   function render(){
