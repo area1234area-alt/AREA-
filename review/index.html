@@ -270,6 +270,17 @@
   .ss-list small{display:block;font-size:.66rem;font-weight:500;color:var(--gold-lt);margin-top:2px}
   /* スマホでは Our Sites をランキングの下に出さず、「大阪府外の求人」の上にだけ出す */
   .ss-sp{display:none}
+  /* スマホのランキングは2列で小さくまとめる */
+  @media (max-width:999px){
+    .rank{padding:12px 10px 10px}
+    .rank-h{font-size:.9rem;margin-bottom:10px}
+    .rank .rank-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px}
+    .rank-list img{border-radius:6px}
+    .rank-name{gap:6px;margin-top:5px;font-size:.76rem;line-height:1.3}
+    .rank-name b{width:18px;height:18px;font-size:.74rem}
+    .rank-sub{font-size:.6rem;margin-left:24px}
+    .rank-note{margin-top:6px}
+  }
   @media (max-width:999px){ .side .side-sites{display:none} .ss-sp{display:block;margin:26px 0 0} .ss-sp .ss-list{grid-template-columns:1fr 1fr} }
   .rank-note{margin:8px 0 0;font-size:.62rem;color:#6E6773}
   @media (min-width:1000px){
