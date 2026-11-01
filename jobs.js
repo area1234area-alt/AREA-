@@ -5,7 +5,7 @@
    ここには飲み屋（キャバクラ・ラウンジ・クラブ・ガールズバー・スナックなど）だけを載せます。 */
 window.AREA_JOBS = [
   { name: "Regent Club（リージェントクラブ）", nameEn: "Regent Club", kana: "リージェントクラブ", type: "キャバクラ", area: "池袋", address: "東京都 豊島区 池袋（西口・ロマンス通り）",
-    pay: "時給 6,000円〜15,000円", url: "regent.html", photo: "img/regent/main.jpg", pickup: true, isNew: true, pref: "東京都", city: "豊島区",
+    pay: "時給 6,000円〜15,000円", url: "regent.html", photo: "img/regent/entrance.jpg", pickup: true, isNew: true, pref: "東京都", city: "豊島区",
     catchCopy: "池袋プリンスグループ4号店。内装費1.4億円の大型高級店が2026年12月1日オープン。オープニングキャスト募集",
     hours: "お店に確認", station: "池袋駅西口（ロマンス通り）", transport: "要確認",
     qualify: "18歳以上（高校生不可）・経験者優遇・週4日以上歓迎",
