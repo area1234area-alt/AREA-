@@ -110,6 +110,43 @@
   .iv-grid small{display:block;font-size:.66rem;font-weight:500;color:var(--gold-lt);margin-top:2px}
   .iv-ph .iv-box{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;font-size:.72rem;color:#8C847D;letter-spacing:.06em;border-bottom:1px dashed #2A2530}
   .iv-ph .iv-box b{display:block;font-size:1.4rem;color:#3A3340;margin-bottom:4px}
+
+  /* ===== スマホを見やすく（2026-11-01） ===== */
+  .gpills{margin-bottom:6px}
+  .gpills .pill{border-color:rgba(201,162,39,.5);border-radius:10px;background:linear-gradient(180deg,#24202B,#1A171F)}
+  @media (min-width:860px){ .gpills{grid-template-columns:repeat(5,1fr)} }
+  .pref-reg summary{list-style:none;display:flex;align-items:center;gap:10px;cursor:pointer;padding:4px 0}
+  .pref-reg summary::-webkit-details-marker{display:none}
+  .pref-reg summary h3{margin:0}
+  .pref-n{font-size:.68rem;font-weight:700;color:var(--pink-deep);background:var(--pink-soft);border:1px solid var(--pink-line);border-radius:999px;padding:0 8px}
+  .pref-reg summary .pk-chev{margin-left:auto;border-color:var(--gold-ink)}
+  .pref-reg[open] summary .pk-chev{transform:rotate(-135deg)}
+  .pref-reg[open] summary{margin-bottom:4px}
+  @media (max-width:999px){
+    footer .f-sites{display:none}
+    .pref-reg{margin:0;border-top:1px solid var(--line);padding:10px 0}
+    .pref-reg:last-child{border-bottom:1px solid var(--line)}
+    .pref-list{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;line-height:1.5}
+    .pref-list a,.pref-list a:first-child{padding:9px 10px;border:1px solid var(--line)!important;border-radius:8px;background:#fff;justify-content:space-between;font-size:.82rem}
+    .pref-list a.on{border-color:var(--pink-line)!important;background:var(--pink-soft);text-decoration:none}
+  }
+  @media (max-width:640px){
+    .beta{font-size:.6rem;padding:4px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hero .hero-copy p{display:none}
+    .hero .hero-copy h1{font-size:1.2rem}
+    .pk-sec .pk-tabs button.main{padding:9px 6px 8px;gap:1px;min-height:0}
+    .pk-sec .pk-tabs button.main .pk-l{font-size:.86rem;line-height:1.35}
+    .pk-sec .pk-tabs button.main .pk-s{font-size:.6rem}
+    .pk-sec .pk-main{gap:6px}
+    .pk-sec .gpills{grid-template-columns:repeat(3,1fr);gap:6px}
+    .pk-sec .gpills .pill{padding:10px 8px;font-size:.74rem;letter-spacing:0;white-space:nowrap}
+    .pk-sec .gpills .pill small{font-size:.74rem}
+    main .how{gap:6px}
+    main .how div{padding:10px 12px}
+    main .how b{font-size:.88rem;margin-bottom:2px}
+    main .how p{font-size:.74rem;line-height:1.6}
+    .sec{padding:22px 0}
+  }
   .pk-res{margin-top:16px}
   .pk-res .shop{color:var(--ink)}
   .pk-res .shop h3,.pk-res .shop h3 a{color:var(--ink)}
@@ -361,7 +398,7 @@
 <div class="beta">Area REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
 <header class="head"><div class="wrap">
   <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
-  <nav><a href="#find">お店を探す</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
+  <nav><a href="#search">お店を探す</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
 </div></header>
 
 <section class="hero">
@@ -417,6 +454,8 @@
   <div class="pk-main-col">
   <h3 class="pk-areas-h">エリアから探す</h3>
   <div class="pk-tabs" role="tablist" id="pkTabs"></div>
+  <h3 class="pk-areas-h">ジャンルから探す</h3>
+  <div class="pills gpills" id="genrePills"></div>
   <div id="pkBody" hidden></div><!-- ジャンル別のアコーディオンはいったん非表示 -->
   <section class="iv" id="interview" aria-label="取材写真">
     <div class="iv-top"><img src="img/interview/deli-report.jpg?v=1" alt="デリヘルのお仕事のリアルレポート！1日密着取材　お仕事内容・稼げる金額・未経験でも大丈夫？現役嬢の本音を直撃" width="1400" height="788" loading="lazy"></div>
@@ -436,13 +475,6 @@
 </div></section>
 
 <main class="wrap">
-  <section class="sec" id="find">
-    <h2 class="sec-h">お店を探す <small>Search</small></h2>
-    <p class="pill-h">ジャンル</p>
-    <div class="pills" id="genrePills"></div>
-    <p class="pill-h">エリア</p>
-    <div class="pills" id="areaPills"></div>
-  </section>
 
 
 
@@ -519,7 +551,7 @@
     }).join("");
   }
   pills($("genrePills"), RV_GENRES.map(function(g){ return [g.key, g.label]; }), "genre");
-  pills($("areaPills"), AREAS, "area");
+
   document.addEventListener("click", function(e){
     var b = e.target.closest(".pill[data-kind]"); if (!b) return;
     var k = b.dataset.kind; state[k] = state[k] === b.dataset.key ? "" : b.dataset.key;
@@ -570,10 +602,11 @@
   ];
   function prefName(p){ return p === "北海道" ? p : p + (p === "東京" ? "都" : (p === "京都" || p === "大阪") ? "府" : "県"); }
   $("prefBox").innerHTML = PREFS.map(function(r){
-    return '<div class="pref-reg"><h3>' + esc(r[0]) + 'の求人を探す</h3><div class="pref-list">' + r[1].map(function(p){
+    var nr = shops.filter(function(s){ return r[1].indexOf(s.pref) >= 0 && !s.hold; }).length;
+    return '<details class="pref-reg"' + (window.matchMedia("(min-width:1000px)").matches ? ' open' : '') + '><summary><h3>' + esc(r[0]) + 'の求人を探す</h3>' + (nr ? '<small class="pref-n">掲載 ' + nr + '件</small>' : '') + '<i class="pk-chev" aria-hidden="true"></i></summary><div class="pref-list">' + r[1].map(function(p){
       var n = shops.filter(function(s){ return s.pref === p && !s.hold; }).length;
       return '<a href="./?pref=' + encodeURIComponent(p) + '#shops" class="pref-a ' + (n ? 'on' : 'off') + '" data-pref="' + esc(p) + '">' + esc(prefName(p)) + 'の求人' + (n ? '<small>' + n + '</small>' : '') + '</a>';
-    }).join("") + '</div></div>';
+    }).join("") + '</div></details>';
   }).join("");
   document.addEventListener("click", function(e){
     var a = e.target.closest(".pref-a"); if (!a) return;
