@@ -14,19 +14,23 @@ window.AREA_PICKUP = [
   { label: "NEW OPEN", area: "東京・池袋（西口・ロマンス通り）／キャバクラ", name: "Regent Club", kana: "リージェントクラブ",
     video: "img/regent/opening.mp4", img: "img/regent/main.jpg", pay: "時給 6,000円〜15,000円",
     text: "池袋プリンスグループ4号店。内装費1.4億円の大型高級店が2026年12月1日にオープン。オープニングキャストを募集しています。",
-    url: "regent.html", column: "column/regent-club-ikebukuro.html", until: "2027-01-31" }
+    url: "regent.html", column: "column/regent-club-ikebukuro.html", until: "2027-01-31" },
+  { label: "注目の4店", area: "京都・祇園／キャバクラ", name: "祇園 注目の4店", kana: "華小町・Club UNJOUR 祇園・GALLE・MILANO",
+    img: "img/gion/feature.jpg", pay: "華小町・MILANOは時給 8,000円〜",
+    text: "京都・祇園でキャバクラを探すなら知っておきたい4店。時給・日払い・保証・ヘアメイクなど、それぞれの強みをくらべました。",
+    url: "area.html?area=%E7%A5%87%E5%9C%92", urlLabel: "祇園の求人を見る", column: "column/gion-4shops.html", until: "2027-01-31" }
 ];
 (function () {
   var sec = document.getElementById("pickupNew"), box = document.getElementById("puBox"); if (!sec || !box) return;
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var today = new Date(); today.setHours(0, 0, 0, 0);
-  var p = (window.AREA_PICKUP || []).filter(function (a) { return a && (!a.until || new Date(a.until + "T23:59:59") >= today); })[0];
-  if (!p) return;
-  box.innerHTML = '<div class="pu-h">PICK UP<b>' + esc(p.label || "注目") + '</b></div><div class="pu-body">' +
+  var list = (window.AREA_PICKUP || []).filter(function (a) { return a && (!a.until || new Date(a.until + "T23:59:59") >= today); });
+  if (!list.length) return;
+  box.innerHTML = list.map(function (p) { return '<div class="pu"><div class="pu-h">PICK UP<b>' + esc(p.label || "注目") + '</b></div><div class="pu-body">' +
     (p.video ? '<a href="' + esc(p.url) + '" aria-label="' + esc(p.name) + 'の求人を見る"><video src="' + esc(p.video) + '" poster="' + esc(p.img || "") + '" autoplay muted loop playsinline preload="metadata"></video></a>' : '<a href="' + esc(p.url) + '"><img src="' + esc(p.img) + '" alt="' + esc(p.name) + '"></a>') +
     '<div class="pu-tx"><span class="pu-area">' + esc(p.area) + '</span><h3>' + esc(p.name) + (p.kana ? '<small>' + esc(p.kana) + '</small>' : '') + '</h3>' +
     (p.pay ? '<span class="pu-pay">' + esc(p.pay) + '</span>' : '') + '<p>' + esc(p.text) + '</p>' +
-    '<div class="pu-btns"><a class="go" href="' + esc(p.url) + '">求人を見る</a>' + (p.column ? '<a class="col" href="' + esc(p.column) + '">コラムを読む</a>' : '') + '</div></div></div>';
+    '<div class="pu-btns"><a class="go" href="' + esc(p.url) + '">' + esc(p.urlLabel || "求人を見る") + '</a>' + (p.column ? '<a class="col" href="' + esc(p.column) + '">コラムを読む</a>' : '') + '</div></div></div></div>'; }).join('');
   sec.hidden = false;
 })();
 (function () {

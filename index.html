@@ -951,6 +951,9 @@
 
   /* ---------- ピックアップ（新店など。area-ads.js の AREA_PICKUP） ---------- */
   .pu-sec{background:#0B0A0D;padding:14px 0 4px}
+  .pu-wrap{display:grid;gap:12px}
+  .pu-body > a > img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+  @media (min-width:1000px){ .pu-wrap{grid-template-columns:1fr 1fr} .pu-wrap .pu-body{grid-template-columns:1fr} }
   .pu{border:1px solid rgba(201,162,39,.55);border-radius:12px;overflow:hidden;background:#141117;color:#F4EFE6}
   .pu-h{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(201,162,39,.25);font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:.2em;font-size:.86rem;color:#F1DA9C}
   .pu-h b{font-family:'Noto Sans JP',sans-serif;font-size:.62rem;letter-spacing:.08em;color:#1A1406;background:linear-gradient(135deg,#8E6F1C,#E8CB7A 30%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C);border-radius:4px;padding:1px 7px}
@@ -1011,7 +1014,7 @@
 
   <!-- ============ 広告バナー枠（ヒーロー直下）。中身は area-ads.js の AREA_ADS で管理 ============ -->
   <section class="area-ad-sec" aria-label="広告"><div class="wrap"><div class="area-ad" id="areaAd"></div></div></section>
-  <section class="pu-sec" id="pickupNew" aria-label="ピックアップ" hidden><div class="wrap"><div class="pu" id="puBox"></div></div></section>
+  <section class="pu-sec" id="pickupNew" aria-label="ピックアップ" hidden><div class="wrap"><div class="pu-wrap" id="puBox"></div></div></section>
   <script src="area-ads.js"></script>
 
   <!-- ============ SEARCH VISUAL ============ -->
