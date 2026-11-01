@@ -699,12 +699,12 @@
     };
     if (rows.length && groups.length > 1) {
       $("shopGrid").className = "res-groups";
-      $("shopGrid").innerHTML = '<p class="rg-lead"><b>STEP1</b> エリアを選ぶ → <b>STEP2</b> 職種を選ぶ → お店</p>' + groups.map(function(lb){
+      $("shopGrid").innerHTML = groups.map(function(lb){
         return '<details class="rg"><summary><b>' + esc(lb) + '</b><small>' + gmap[lb].length + '件</small><i class="pk-chev" aria-hidden="true"></i></summary>' + genreBox(gmap[lb], "rg-sub") + '</details>';
       }).join("");
     } else if (rows.length && !state.genre && rows.length > 3) {
       $("shopGrid").className = "res-groups";
-      $("shopGrid").innerHTML = '<p class="rg-lead"><b>STEP2</b> 職種を選ぶと、お店が表示されます</p>' + genreBox(rows, "res-groups");
+      $("shopGrid").innerHTML = genreBox(rows, "res-groups");
     } else {
       $("shopGrid").className = "shops";
       $("shopGrid").innerHTML = rows.map(card).join("");
