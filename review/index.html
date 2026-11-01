@@ -165,6 +165,22 @@
   .pa-b[aria-pressed="true"]{background:var(--goldgrad);color:#1A1406;border-color:transparent}
   .pa-b[aria-pressed="true"] small{color:#5A2A3A}
   .pa-b:disabled{opacity:.4;cursor:default}
+  .res-groups{display:grid;gap:8px}
+  .rg-lead{margin:0 0 2px;font-size:.74rem;color:#B7AEA6}
+  .rg-lead b{font-family:var(--en);font-size:.72rem;letter-spacing:.08em;color:#1A1406;background:var(--goldgrad);border-radius:4px;padding:0 5px;margin-right:3px}
+  .rg{background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;overflow:hidden}
+  .rg > summary{list-style:none;display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;color:#F4EFE6}
+  .rg > summary::-webkit-details-marker{display:none}
+  .rg > summary b{font-family:var(--serif);font-size:.96rem;letter-spacing:.04em}
+  .rg > summary small{font-family:var(--en);font-size:.9rem;color:#F7A9C4}
+  .rg > summary .pk-chev{margin-left:auto}
+  .rg[open] > summary .pk-chev{transform:rotate(-135deg)}
+  .rg .shops{padding:0 10px 12px}
+  .rg-sub{display:grid;gap:6px;padding:0 10px 12px}
+  .rg2{background:#0F0D12;border-color:rgba(201,162,39,.3)}
+  .rg2 > summary{padding:10px 12px}
+  .rg2 > summary b{font-size:.86rem}
+  .rg2 .shops{padding:0 6px 10px}
   .pk-res{margin-top:16px}
   .pk-res .shop{color:var(--ink)}
   .pk-res .shop h3,.pk-res .shop h3 a{color:var(--ink)}
@@ -663,11 +679,40 @@
     var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || inArea(s, state.area)) && (!state.pref || s.pref === state.pref) && (!state.kw || kwHit(s)); });
     var any = !!(state.genre || state.area || state.pref || state.kw);
     if (!any) rows = [];
-    $("shopGrid").innerHTML = rows.map(card).join("");
+    // エリア → 職種（ジャンル） → お店 の順に絞って見せる（一覧で全部は出さない）
+    var areaList = [].concat(window.RV_PICKUP_AREAS || [], (window.RV_PREF_AREAS && RV_PREF_AREAS[state.pref]) || []);
+    var labelOf = function(k){ for (var i = 0; i < areaList.length; i++) if (areaList[i].key === k && k !== "大阪全域") return areaList[i].label; return ""; };
+    var order = function(lb){ for (var i = 0; i < areaList.length; i++) if (areaList[i].label === lb) return i; return 999; };
+    var groups = [], gmap = {};
+    rows.forEach(function(s){
+      var lb = labelOf(s.area) || (s.pref ? prefName(s.pref) : "大阪（エリア確認中）");
+      if (!gmap[lb]) { gmap[lb] = []; groups.push(lb); }
+      gmap[lb].push(s);
+    });
+    groups.sort(function(x, y){ return order(x) - order(y); });
+    var genreBox = function(list, cls){
+      if (state.genre) return '<div class="shops">' + list.map(card).join("") + '</div>';   // 職種を選んでいるときはそのまま
+      return '<div class="' + cls + '">' + (window.RV_GENRES || []).map(function(g){
+        var r = list.filter(function(s){ return s.genre === g.key; });
+        return r.length ? '<details class="rg rg2"><summary><b>' + esc(g.label) + '</b><small>' + r.length + '件</small><i class="pk-chev" aria-hidden="true"></i></summary><div class="shops">' + r.map(card).join("") + '</div></details>' : '';
+      }).join("") + '</div>';
+    };
+    if (rows.length && groups.length > 1) {
+      $("shopGrid").className = "res-groups";
+      $("shopGrid").innerHTML = '<p class="rg-lead"><b>STEP1</b> エリアを選ぶ → <b>STEP2</b> 職種を選ぶ → お店</p>' + groups.map(function(lb){
+        return '<details class="rg"><summary><b>' + esc(lb) + '</b><small>' + gmap[lb].length + '件</small><i class="pk-chev" aria-hidden="true"></i></summary>' + genreBox(gmap[lb], "rg-sub") + '</details>';
+      }).join("");
+    } else if (rows.length && !state.genre && rows.length > 3) {
+      $("shopGrid").className = "res-groups";
+      $("shopGrid").innerHTML = '<p class="rg-lead"><b>STEP2</b> 職種を選ぶと、お店が表示されます</p>' + genreBox(rows, "res-groups");
+    } else {
+      $("shopGrid").className = "shops";
+      $("shopGrid").innerHTML = rows.map(card).join("");
+    }
     $("shopEmpty").hidden = !any || rows.length > 0;
     $("interview").hidden = any;   // 絞り込み中はお店を見せる。なにも選んでいないときは取材写真
     // 府外の県を選んでいるときは、その県の中のエリアボタンを出す
-    var pas = state.pref && window.RV_PREF_AREAS && RV_PREF_AREAS[state.pref];
+    var pas = false;   // 地域ごとのアコーディオンで分けるので、エリアボタンは出さない（2026-11-01）
     $("prefAreas").hidden = !pas;
     if (pas) $("prefAreas").innerHTML = '<p class="pa-h">' + esc(prefName(state.pref)) + 'のエリア</p>' + pas.map(function(a){
       var n = shops.filter(function(s){ return s.pref === state.pref && s.area === a.key; }).length;
