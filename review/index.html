@@ -225,10 +225,21 @@
   .rank-list li:nth-child(2) .rank-name b{background:linear-gradient(135deg,#9AA0A6,#E9EDF1,#9AA0A6)}
   .rank-list li:nth-child(3) .rank-name b{background:linear-gradient(135deg,#8A5A2B,#E2A66B,#8A5A2B)}
   .rank-sub{display:block;font-size:.68rem;color:#8C847D;margin:1px 0 0 30px}
+  .side-sites{background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:14px 12px 12px;margin:-8px 0 22px}
+  .ss-en{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.2em;color:var(--gold)}
+  .ss-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ss-list a{display:block;color:#F4EFE6;border:1px solid rgba(201,162,39,.35);border-radius:8px;overflow:hidden;transition:border-color .2s}
+  .ss-list a:hover{border-color:var(--gold)}
+  .ss-list img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+  .ss-list span{display:block;padding:7px 8px 8px;font-size:.8rem;font-weight:700;letter-spacing:.04em;line-height:1.4}
+  .ss-list small{display:block;font-size:.66rem;font-weight:500;color:var(--gold-lt);margin-top:2px}
   .rank-note{margin:8px 0 0;font-size:.62rem;color:#6E6773}
   @media (min-width:1000px){
     .pk-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:0 28px;align-items:start}
-    .rank{position:sticky;top:72px;margin:0}
+    .side{position:static}
+    .rank{margin:0 0 14px}
+    .side-sites{margin:0}
+    .ss-list{grid-template-columns:1fr}
     .rank-list{flex-direction:column;overflow:visible;gap:14px}
     .rank-list li{flex:none}
   }
@@ -300,11 +311,20 @@
 </details></div></section>
 
 <section class="pk-sec" id="pickup"><div class="wrap pk-layout">
+  <div class="side">
   <aside class="rank" id="rankBox" aria-label="有料掲載店ランキング" hidden>
     <h3 class="rank-h"><span class="rank-ic" aria-hidden="true">✿</span>優良店ランキング<span class="rank-pr">PR</span></h3>
     <ol class="rank-list" id="rankList"></ol>
     <p class="rank-note">※広告掲載店のランキングです。</p>
   </aside>
+  <nav class="side-sites" aria-label="運営サイト">
+    <h3 class="rank-h"><span class="rank-ic" aria-hidden="true">✿</span><span class="ss-en">Our Sites</span><span class="rank-pr">運営</span></h3>
+    <div class="ss-list">
+      <a href="https://claude.ai/artifact/A3Wtfu5AhBqyPnWY3kkc2F" target="_blank" rel="noopener"><img src="img/site-nightroom.jpg" alt="NIGHT ROOM 関西｜夜に生きるあなたへ、上質な住まいを。" width="800" height="400" loading="lazy"><span>NIGHT ROOM 関西<small>お部屋探しはこちら →</small></span></a>
+      <a href="https://hadalog-sample.netlify.app" target="_blank" rel="noopener"><img src="img/site-hadalog.jpg" alt="肌ログ｜コスメのクチコミ・ランキング" width="800" height="400" loading="lazy"><span>肌ログ<small>コスメの口コミを見る →</small></span></a>
+    </div>
+  </nav>
+  </div>
   <div class="pk-main-col">
   <h2 class="sec-h">ピックアップ <small>Pick Up</small></h2>
   <p class="lead">地域とジャンルごとに、口コミを集めているお店をまとめました。</p>
