@@ -141,6 +141,21 @@
   .gb-btns{display:grid;grid-template-columns:1fr;gap:8px;max-width:780px;margin:0 auto}
   @media (min-width:700px){ .gb-btns{grid-template-columns:repeat(3,1fr)} }
   .guide-box .btn-line{background:#fff;color:var(--ink);border-color:#fff}
+  .ra{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .ra summary{list-style:none;cursor:pointer;padding:12px 40px 12px 14px;position:relative;display:block}
+  .ra summary::-webkit-details-marker{display:none}
+  .ra-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .ra-shop{font-size:.92rem;color:var(--pink-deep)}
+  .ra-meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.72rem;color:var(--dim);margin-top:2px}
+  .ra-hr b{color:var(--pink-deep);font-size:.84rem}
+  .ra-lead{display:block;margin-top:4px;font-size:.8rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ra[open] .ra-lead{display:none}
+  .ra-chev{position:absolute;right:16px;top:20px;width:9px;height:9px;border-right:2px solid var(--gold-ink);border-bottom:2px solid var(--gold-ink);transform:rotate(45deg);transition:transform .2s}
+  .ra[open] .ra-chev{transform:rotate(-135deg);top:24px}
+  .ra-body{padding:0 14px 12px}
+  .ra-body .rv{border:0;padding:0;margin:0;border-top:1px dashed var(--line);border-radius:0;padding-top:4px}
+  .ra-body .rv-top{display:none}
+  .ra-link{display:inline-block;margin-top:10px;font-size:.78rem;color:var(--pink-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
   .empty{background:#fff;border:1px dashed var(--line);padding:22px;text-align:center;font-size:.84rem;color:var(--ink-soft)}
 
   .how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -694,13 +709,25 @@
       (r.genre ? '<span class="rv-genre">' + esc(r.genre) + '</span>' : '') + '</div>' + earn + '<div class="rv-body">' + body + '</div>' +
       (who ? '<div class="rv-who">' + esc(who) + '</div>' : '') + '</article>';
   }
+  // 新着の口コミは見出しだけ出して、押すと中身が開く（アコーディオン）
+  function rvAcc(r){
+    var s = RV.shopOf(r), h = RV.hoursOf(r), y = RV.dailyOf(r);
+    var hr = (h && y) ? '<span class="ra-hr">時給換算 <b>' + RV.perHour(y, h).toLocaleString("ja-JP") + '</b>円</span>' : '';
+    var lead = String(r.good || r.bad || "").replace(/\s+/g, " ");
+    var link = s && !s.hold && !s.soon ? '<a class="ra-link" href="shop.html?id=' + encodeURIComponent(s.id) + '#reviews">このお店の口コミをすべて見る ›</a>' : '';
+    return '<details class="ra"><summary><span class="ra-top"><b class="ra-shop">' + esc(r.shop || (s && s.name) || "") + '</b>' +
+      (r.genre ? '<span class="rv-genre">' + esc(r.genre) + '</span>' : '') + '</span>' +
+      '<span class="ra-meta">' + (r.area ? esc(r.area) : '') + hr + '</span>' +
+      (lead ? '<span class="ra-lead">' + esc(lead) + '</span>' : '') + '<i class="ra-chev" aria-hidden="true"></i></summary>' +
+      '<div class="ra-body">' + rv(r) + link + '</div></details>';
+  }
   RV.load().then(function(rows){
     // 届出確認待ちなど、非公開のお店の口コミは出さない
     rows = rows.filter(function(r){ var s = RV.shopOf(r); return !(s && s.hold); });
     shops.forEach(function(s){ counts[s.id] = rows.filter(function(r){ return RV.shopOf(r) === s; }).length; });
     $("stReviews").textContent = rows.length;
     render(); renderPickup();
-    $("latestList").innerHTML = rows.length ? rows.slice(0, 6).map(rv).join("")
+    $("latestList").innerHTML = rows.length ? rows.slice(0, 6).map(rvAcc).join("")
       : '<div class="rv-empty">口コミはまだありません。最初の口コミをお待ちしています。</div>';
   });
   RV.gate();
