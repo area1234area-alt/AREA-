@@ -80,6 +80,11 @@
   .pill-h{font-size:.74rem;color:var(--gold-ink);letter-spacing:.14em;font-weight:700;margin:18px 0 8px}
   .pill-h:first-of-type{margin-top:0}
 
+  .pk-res{margin-top:16px}
+  .pk-res .shop{color:var(--ink)}
+  .pk-res .shop h3,.pk-res .shop h3 a{color:var(--ink)}
+  .pk-res .filter-now{color:var(--gold-lt)}
+  .pref-sec{border-top:1px solid var(--line);margin-top:24px}
   .filter-now{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px;font-size:.8rem;color:var(--pink-deep);font-weight:700}
   .filter-now button{border:1px solid var(--line);background:#fff;padding:4px 10px;font-size:.74rem;color:var(--ink-soft);cursor:pointer;font-weight:500}
 
@@ -353,7 +358,12 @@
   <p class="lead">地域とジャンルごとに、口コミを集めているお店をまとめました。</p>
   <h3 class="pk-areas-h">エリアから探す</h3>
   <div class="pk-tabs" role="tablist" id="pkTabs"></div>
-  <div id="pkBody"></div>
+  <div id="pkBody" hidden></div><!-- ジャンル別のアコーディオンはいったん非表示 -->
+  <div class="pk-res" id="shops">
+    <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
+    <div class="shops" id="shopGrid"></div>
+    <div class="empty" id="shopEmpty" hidden>この条件のお店は準備中です。</div>
+  </div>
   </div>
 </div></section>
 
@@ -366,23 +376,7 @@
     <div class="pills" id="areaPills"></div>
   </section>
 
-  <section class="sec" id="pref">
-    <h2 class="sec-h">大阪府外の求人を探す <small>Japan</small></h2>
-    <p class="lead">大阪以外のお店（出稼ぎ求人など）は、都道府県から探せます。</p>
-    <div id="prefBox"></div>
-  </section>
 
-  <section class="sec" id="shops">
-    <h2 class="sec-h">お店一覧 <small>Shops</small></h2>
-    <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
-    <div class="guide-box" id="shopGuide">
-      <p class="gb-t">エリアやフリーワードで探すと、ここにお店が表示されます</p>
-      <p class="gb-s">掲載店は大阪を中心に全国へ広がっています。働きたい場所や、気になる条件から探してください。</p>
-      <div class="gb-btns"><a href="#pickup" class="btn btn-dark">📍 エリアから探す</a><a href="#search" class="btn btn-pink" data-focus-kw>🔍 フリーワードで探す</a><a href="#pref" class="btn btn-line">🗾 大阪府外から探す</a></div>
-    </div>
-    <div class="shops" id="shopGrid"></div>
-    <div class="empty" id="shopEmpty" hidden>この条件のお店は準備中です。</div>
-  </section>
 
   <section class="sec" id="latest">
     <h2 class="sec-h">新着の口コミ <small>New</small></h2>
@@ -404,6 +398,11 @@
     <p>働いたことのあるお店の口コミを、匿名で投稿できます。</p>
     <div class="cta-btns"><a href="#" class="btn btn-gold" data-write>口コミを書く</a><a href="#" class="btn btn-linebtn" data-line hidden>LINEで相談する</a></div>
     <p class="line-note">口コミや掲載内容についてのご相談・お問い合わせは、LINEでも受け付けています。</p>
+  </section>
+  <section class="sec pref-sec" id="pref">
+    <h2 class="sec-h">大阪府外の求人を探す <small>Japan</small></h2>
+    <p class="lead">大阪以外のお店（出稼ぎ求人など）は、都道府県から探せます。</p>
+    <div id="prefBox"></div>
   </section>
 </main>
 
@@ -449,7 +448,7 @@
     var k = b.dataset.kind; state[k] = state[k] === b.dataset.key ? "" : b.dataset.key;
     render(); $("shops").scrollIntoView({ behavior: "smooth" });
   });
-  $("filterClear").onclick = function(){ state.genre = state.area = state.pref = state.kw = ""; $("kw").value = ""; render(); };
+  $("filterClear").onclick = function(){ state.genre = state.area = state.pref = state.kw = ""; $("kw").value = ""; pkArea = ""; renderPickup(); render(); };
 
   // フリーワード検索（店名・かな・エリア・アクセス・ジャンル・条件などから探す）
   function hay(s){ return RV.norm([s.name, s.kana, s.genre, s.style, s.area, s.areaLabel, s.pref, s.access, s.hours, s.wait, s.pay, s.paySub, s.back, s.deduct, s.other, (s.keys || []).join(" "), s.job ? (s.job.title + " " + s.job.catchCopy + " " + (s.job.rows || []).map(function(r){ return r.join(" "); }).join(" ")) : ""].join(" ")); }
@@ -505,7 +504,6 @@
   function render(){
     var rows = shops.filter(function(s){ return (!state.genre || s.genre === state.genre) && (!state.area || s.area === state.area) && (!state.pref || s.pref === state.pref) && (!state.kw || kwHit(s)); });
     var any = !!(state.genre || state.area || state.pref || state.kw);
-    $("shopGuide").hidden = any;
     if (!any) rows = [];
     $("shopGrid").innerHTML = rows.map(card).join("");
     $("shopEmpty").hidden = !any || rows.length > 0;
@@ -574,7 +572,7 @@
   // ピックアップ（地域タブ → ジャンルごとの横スクロール）
   // 最初に開くエリア：お店がいちばん多いエリア
   var pkArea = "", pkMax = 0;
-  (window.RV_PICKUP_AREAS || []).forEach(function(a){ var n = shops.filter(function(s){ return s.area === a.key && !s.soon; }).length; if (n > pkMax) { pkMax = n; pkArea = a.key; } });
+  pkArea = state.area || "";   // 最初はどのエリアも選んでいない状態（押すとお店が出る）
   function pkCard(s){
     var see = 'shop.html?id=' + encodeURIComponent(s.id);
     var write = RV_API + '?shop=' + encodeURIComponent(s.name) + '&area=' + encodeURIComponent(s.areaLabel || s.area);
@@ -621,7 +619,7 @@
     }).join("");
   }
   document.addEventListener("click", function(e){
-    var t = e.target.closest("[data-pk]"); if (t) { pkArea = t.dataset.pk; renderPickup(); return; }
+    var t = e.target.closest("[data-pk]"); if (t) { pkArea = t.dataset.pk; renderPickup(); state.area = pkArea; state.pref = state.genre = state.kw = ""; $("kw").value = ""; render(); $("shops").scrollIntoView({ behavior: "smooth" }); return; }
     var m = e.target.closest("[data-pkmore]");
     if (m) { e.preventDefault(); state.area = pkArea; state.genre = m.dataset.pkmore; render(); $("shops").scrollIntoView({ behavior: "smooth" }); }
   });
