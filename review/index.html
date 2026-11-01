@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="Area REVIEW ブログ" href="feed.xml">
 <style>
   .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 0%,rgba(224,82,127,.22),transparent 60%),radial-gradient(ellipse at 70% 100%,rgba(201,162,39,.18),transparent 65%),#0B0A0D;color:#F4EFE6;text-align:center;padding:0 0 34px}
   .hero-ph{position:relative;max-width:1100px;margin:0 auto}
@@ -83,6 +84,21 @@
   .iv{margin-top:18px;background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:14px 12px 12px}
   .iv-top{margin:0 0 14px;border:1px solid rgba(201,162,39,.5);border-radius:8px;overflow:hidden}
   .iv-top img{display:block;width:100%;height:auto}
+  .blog{margin:0 0 4px}
+  .blog-h{display:flex;align-items:baseline;gap:8px;margin:0 0 10px;font-family:var(--serif);font-size:1rem;letter-spacing:.06em;color:#F4EFE6}
+  .blog-h small{font-family:var(--en);font-style:italic;font-weight:600;color:var(--gold);font-size:.86rem;letter-spacing:.18em}
+  .blog-rss{margin-left:auto;font-family:var(--body);font-size:.62rem;font-weight:700;color:#1A1406;background:var(--goldgrad);border-radius:6px;padding:1px 7px}
+  .blog-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+  @media (min-width:700px){ .blog-list{grid-template-columns:repeat(3,minmax(0,1fr))} }
+  .blog-list a{display:flex;flex-direction:column;height:100%;background:#0F0D12;border:1px solid rgba(201,162,39,.35);border-radius:8px;overflow:hidden;color:#F4EFE6}
+  .blog-list a:hover{border-color:var(--gold)}
+  .bl-th{aspect-ratio:16/9;background:linear-gradient(135deg,#2A1A24,#141117 60%,#3A2E14);display:grid;place-items:center;font-family:var(--serif);font-size:.9rem;letter-spacing:.12em;color:var(--gold-lt)}
+  .bl-th img{width:100%;height:100%;object-fit:cover}
+  @media (max-width:699px){ .blog-list a{flex-direction:row} .bl-th{flex:0 0 112px;aspect-ratio:auto;min-height:84px;font-size:.74rem} }
+  .bl-tx{padding:8px 10px 10px;display:flex;flex-direction:column;gap:3px}
+  .bl-c{font-size:.62rem;font-weight:700;color:var(--pink);letter-spacing:.06em}
+  .bl-t{font-size:.82rem;font-weight:700;line-height:1.5}
+  .bl-d{font-size:.62rem;color:#8C847D}
   .iv-h{display:flex;align-items:baseline;gap:8px;margin:0 0 12px;font-family:var(--serif);font-size:1rem;letter-spacing:.06em;color:#F4EFE6}
   .iv-h small{font-family:var(--en);font-style:italic;font-weight:600;color:var(--gold);font-size:.86rem;letter-spacing:.18em}
   .iv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -405,6 +421,10 @@
   <div id="pkBody" hidden></div><!-- ジャンル別のアコーディオンはいったん非表示 -->
   <section class="iv" id="interview" aria-label="取材写真">
     <div class="iv-top"><img src="img/interview/deli-report.jpg?v=1" alt="デリヘルのお仕事のリアルレポート！1日密着取材　お仕事内容・稼げる金額・未経験でも大丈夫？現役嬢の本音を直撃" width="1400" height="788" loading="lazy"></div>
+    <div class="blog" id="blog">
+      <h3 class="blog-h"><span class="rank-ic" aria-hidden="true">✿</span>ブログ・コラム<small>Blog</small><a class="blog-rss" href="feed.xml">RSS</a></h3>
+      <ul class="blog-list" id="blogList"></ul>
+    </div>
     <h3 class="iv-h"><span class="rank-ic" aria-hidden="true">✿</span>取材レポート<small>Interview</small></h3>
     <div class="iv-grid" id="ivGrid"></div>
   </section>
@@ -476,6 +496,7 @@
 </footer>
 
 <script src="shops.js"></script>
+<script src="blog-data.js"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -517,6 +538,16 @@
     if (e.target.closest("[data-focus-kw]")) { e.preventDefault(); $("search").scrollIntoView({ behavior: "smooth" }); setTimeout(function(){ $("kw").focus(); }, 400); }
   });
 
+  // ブログ記事（blog-data.js の RV_BLOG。新しい順）
+  (function(){
+    var bl = (window.RV_BLOG || []).slice().sort(function(a, b){ return String(b.date).localeCompare(String(a.date)); });
+    if (!bl.length) { $("blog").hidden = true; return; }
+    $("blogList").innerHTML = bl.slice(0, 6).map(function(x){
+      return '<li><a href="blog/' + encodeURIComponent(x.slug) + '.html"><span class="bl-th">' + (x.img ? '<img src="' + esc(x.img) + '" alt="" loading="lazy">' : esc(x.cat || "COLUMN")) + '</span>' +
+        '<span class="bl-tx"><span class="bl-c">' + esc(x.cat || "") + '</span><span class="bl-t">' + esc(x.title) + '</span><span class="bl-d">' + esc(String(x.date).replace(/-/g, ".")) + '</span></span></a></li>';
+    }).join("");
+  })();
+
   // 取材写真（shops.js の RV_INTERVIEWS。0件のときは「準備中」の枠を出す）
   (function(){
     var iv = (window.RV_INTERVIEWS || []).filter(function(x){ return x && x.img; });
@@ -525,7 +556,7 @@
       return x.url ? '<a href="' + esc(x.url) + '">' + inner + '</a>' : '<div class="iv-ph">' + inner + '</div>';
     }).join("") : "";
     // 写真がそろうまで「取材レポート」の見出しと枠は出さない（上の取材画像だけ出す）
-    if (!iv.length) { $("ivGrid").hidden = true; document.querySelector(".iv-h").hidden = true; document.querySelector(".iv-top").style.marginBottom = "0"; }
+    if (!iv.length) { $("ivGrid").hidden = true; document.querySelector(".iv-h").hidden = true; }
   })();
 
   // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
