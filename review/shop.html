@@ -105,7 +105,7 @@
 <div class="beta">Area REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
 <header class="head"><div class="wrap">
   <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
-  <nav><a href="./#shops">お店一覧</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
+  <nav><a href="./#search">お店を探す</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
 </div></header>
 
 <main class="wrap" id="main">
@@ -229,6 +229,11 @@
   if (S.checked) {
     var d = S.checked.split("-");
     $("notice").textContent = "※この欄は、求人情報などの公開情報と投稿された口コミをまとめたものです（" + d[0] + "年" + Number(d[1]) + "月" + Number(d[2]) + "日時点）。「確認中」の項目は順次追加します。最新の条件は、お店に直接ご確認ください。";
+  }
+  // 出典（求人サイトのまとめ記事を要約したお店）
+  if (S.src && S.src.url) {
+    var sd = String(S.src.date || "").split("-");
+    $("notice").innerHTML = "※女子給・待遇は、求人サイトのまとめ記事に載っていたお店の掲載内容を、運営が要約したものです（記事の更新：" + (sd[0] ? esc(sd[0]) + "年" + (sd[1] ? Number(sd[1]) + "月" : "") : "不明") + "）。「日給〇万円以上」などはお店の宣伝としての表記で、収入を保証するものではありません。最新の条件は、お店に直接ご確認ください。<br>出典：<a href=\"" + esc(S.src.url) + "\" target=\"_blank\" rel=\"noopener nofollow\" style=\"text-decoration:underline\">" + esc(S.src.site) + "</a>";
   }
 
   // タブ

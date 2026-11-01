@@ -155,6 +155,16 @@
   .sec-acc[open] > summary{margin-bottom:14px}
   .sa-n{font-family:var(--body);font-size:.68rem;font-weight:700;color:var(--pink-deep);background:var(--pink-soft);border:1px solid var(--pink-line);border-radius:999px;padding:0 8px;letter-spacing:0}
   .sa-n:empty{display:none}
+  .pref-areas{margin:0 0 12px}
+  .pa-h{margin:0 0 8px;font-size:.74rem;font-weight:700;letter-spacing:.14em;color:var(--gold)}
+  .pref-areas{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+  .pref-areas .pa-h{grid-column:1/-1}
+  @media (min-width:700px){ .pref-areas{grid-template-columns:repeat(4,1fr)} }
+  .pa-b{display:flex;justify-content:space-between;align-items:center;gap:6px;background:linear-gradient(180deg,#24202B,#1A171F);border:1px solid rgba(201,162,39,.5);border-radius:10px;color:#F4EFE6;padding:9px 10px;font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;text-align:left}
+  .pa-b small{font-family:var(--en);font-size:.86rem;color:#F7A9C4}
+  .pa-b[aria-pressed="true"]{background:var(--goldgrad);color:#1A1406;border-color:transparent}
+  .pa-b[aria-pressed="true"] small{color:#5A2A3A}
+  .pa-b:disabled{opacity:.4;cursor:default}
   .pk-res{margin-top:16px}
   .pk-res .shop{color:var(--ink)}
   .pk-res .shop h3,.pk-res .shop h3 a{color:var(--ink)}
@@ -475,6 +485,7 @@
     <div class="iv-grid" id="ivGrid"></div>
   </section>
   <div class="pk-res" id="shops">
+    <div class="pref-areas" id="prefAreas" hidden></div>
     <div class="filter-now" id="filterNow" hidden><span id="filterText"></span><button type="button" id="filterClear">条件をクリア</button></div>
     <div class="shops" id="shopGrid"></div>
     <div class="empty" id="shopEmpty" hidden>この条件のお店は準備中です。</div>
@@ -602,6 +613,10 @@
     if (!iv.length) { $("ivGrid").hidden = true; document.querySelector(".iv-h").hidden = true; }
   })();
 
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-parea]"); if (!b) return;
+    state.area = state.area === b.dataset.parea ? "" : b.dataset.parea; render();
+  });
   // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
   var PREFS = [
     ["北海道・東北", ["北海道","青森","岩手","宮城","秋田","山形","福島"]],
@@ -651,7 +666,16 @@
     $("shopGrid").innerHTML = rows.map(card).join("");
     $("shopEmpty").hidden = !any || rows.length > 0;
     $("interview").hidden = any;   // 絞り込み中はお店を見せる。なにも選んでいないときは取材写真
-    var on = [state.kw ? "「" + state.kw + "」" : "", state.pref ? prefName(state.pref) : "", state.genre, state.area].filter(Boolean);
+    // 府外の県を選んでいるときは、その県の中のエリアボタンを出す
+    var pas = state.pref && window.RV_PREF_AREAS && RV_PREF_AREAS[state.pref];
+    $("prefAreas").hidden = !pas;
+    if (pas) $("prefAreas").innerHTML = '<p class="pa-h">' + esc(prefName(state.pref)) + 'のエリア</p>' + pas.map(function(a){
+      var n = shops.filter(function(s){ return s.pref === state.pref && s.area === a.key; }).length;
+      return '<button type="button" class="pa-b" data-parea="' + esc(a.key) + '" aria-pressed="' + (state.area === a.key) + '"' + (n ? '' : ' disabled') + '>' + esc(a.label) + '<small>' + n + '</small></button>';
+    }).join("");
+    var areaLabel = state.area;
+    [].concat(window.RV_PICKUP_AREAS || [], (window.RV_PREF_AREAS && RV_PREF_AREAS[state.pref]) || []).forEach(function(a){ if (a.key === state.area) areaLabel = a.label; });
+    var on = [state.kw ? "「" + state.kw + "」" : "", state.pref ? prefName(state.pref) : "", state.genre, areaLabel].filter(Boolean);
     $("filterNow").hidden = !on.length;
     $("filterText").textContent = "絞り込み中：" + on.join(" × ") + "（" + rows.length + "件）";
     [].forEach.call(document.querySelectorAll(".pref-a"), function(a){ a.setAttribute("aria-pressed", String(state.pref === a.dataset.pref)); });
