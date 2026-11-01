@@ -100,7 +100,7 @@
   try { localStorage.setItem("area_nocount", "1"); } catch (e) {}
   meText();
 
-  // 店舗名（伏せ字）とエリアは jobs.js から。一覧に出ていないページは非公開扱い
+  // 店舗名とエリアは jobs.js から。一覧に出ていないページは非公開扱い
   var INFO = {};
   (window.AREA_JOBS || []).forEach(function(j){
     if (!j.url) return;
@@ -108,7 +108,7 @@
     INFO[slug] = { name: j.name, area: j.area, type: j.type };
   });
   // 一覧に出していない（非公開待機の）ページ
-  var PENDING = { "umeda-f01": { name: "Z●RO（ゼ●）", area: "梅田", type: "ホテル・派遣型エステ" }, "namba-f01": { name: "ア●マワン", area: "難波", type: "ホテル型エステ" } };
+  var PENDING = { "umeda-f01": { name: "ZERO（ゼロ）", area: "梅田", type: "ホテル・派遣型エステ" }, "namba-f01": { name: "アロマワン", area: "難波", type: "ホテル型エステ" } };
   Object.keys(PENDING).forEach(function(s){ if (!INFO[s]) { INFO[s] = PENDING[s]; INFO[s].pending = true; } });
   var esc = function(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return { "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]; }); };
   var nf = function(n){ return Number(n || 0).toLocaleString("ja-JP"); };
