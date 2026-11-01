@@ -106,6 +106,10 @@
   .shop .acts .wr{background:var(--pink);color:#fff}
   .shop h3 a{color:inherit}
   .shop.is-soon{border-color:var(--line);outline-color:transparent}
+  .kw-sec{background:#0B0A0D;padding:12px 0 0}
+  .kw-box{background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:12px 12px 4px}
+  .kw-h{margin:0 0 8px;font-size:.84rem;font-weight:700;letter-spacing:.08em;color:var(--gold-lt)}
+  .kw-sec .kw-ex{color:#8C847D;margin-bottom:10px}
   .kw{display:flex;gap:8px;margin:0 0 8px}
   .kw input{flex:1;min-width:0;font:inherit;font-size:16px;border:1.5px solid var(--gold);border-radius:8px;background:#fff;padding:11px 12px;color:var(--ink)}
   .kw input:focus{outline:2px solid var(--pink-line);border-color:var(--pink)}
@@ -322,6 +326,13 @@
   <ol class="news-list" id="newsList"></ol>
 </details></div></section>
 
+<!-- フリーワード検索（新着ニュースの下） -->
+<section class="kw-sec" id="search" aria-label="フリーワードで探す"><div class="wrap"><div class="kw-box">
+  <p class="kw-h">🔍 フリーワードで探す</p>
+  <form class="kw" id="kwForm" role="search"><input type="search" id="kw" placeholder="店名・駅名・条件など" aria-label="フリーワードで探す" enterkeyhint="search"><button type="submit" class="btn btn-pink">検索</button></form>
+  <p class="kw-ex">例：<button type="button" data-kw="日払い">日払い</button><button type="button" data-kw="寮">寮</button><button type="button" data-kw="出稼ぎ">出稼ぎ</button><button type="button" data-kw="未経験">未経験</button><button type="button" data-kw="個室待機">個室待機</button><button type="button" data-kw="日本橋">日本橋</button></p>
+</div></div></section>
+
 <section class="pk-sec" id="pickup"><div class="wrap pk-layout">
   <div class="side">
   <aside class="rank" id="rankBox" aria-label="有料掲載店ランキング" hidden>
@@ -349,8 +360,6 @@
 <main class="wrap">
   <section class="sec" id="find">
     <h2 class="sec-h">お店を探す <small>Search</small></h2>
-    <form class="kw" id="kwForm" role="search"><input type="search" id="kw" placeholder="店名・駅名・条件など" aria-label="フリーワードで探す" enterkeyhint="search"><button type="submit" class="btn btn-pink">検索</button></form>
-    <p class="kw-ex">例：<button type="button" data-kw="日払い">日払い</button><button type="button" data-kw="寮">寮</button><button type="button" data-kw="出稼ぎ">出稼ぎ</button><button type="button" data-kw="未経験">未経験</button><button type="button" data-kw="個室待機">個室待機</button><button type="button" data-kw="日本橋">日本橋</button></p>
     <p class="pill-h">ジャンル</p>
     <div class="pills" id="genrePills"></div>
     <p class="pill-h">エリア</p>
@@ -369,7 +378,7 @@
     <div class="guide-box" id="shopGuide">
       <p class="gb-t">エリアやフリーワードで探すと、ここにお店が表示されます</p>
       <p class="gb-s">掲載店は大阪を中心に全国へ広がっています。働きたい場所や、気になる条件から探してください。</p>
-      <div class="gb-btns"><a href="#pickup" class="btn btn-dark">📍 エリアから探す</a><a href="#find" class="btn btn-pink" data-focus-kw>🔍 フリーワードで探す</a><a href="#pref" class="btn btn-line">🗾 大阪府外から探す</a></div>
+      <div class="gb-btns"><a href="#pickup" class="btn btn-dark">📍 エリアから探す</a><a href="#search" class="btn btn-pink" data-focus-kw>🔍 フリーワードで探す</a><a href="#pref" class="btn btn-line">🗾 大阪府外から探す</a></div>
     </div>
     <div class="shops" id="shopGrid"></div>
     <div class="empty" id="shopEmpty" hidden>この条件のお店は準備中です。</div>
@@ -449,7 +458,7 @@
   $("kwForm").onsubmit = function(e){ e.preventDefault(); state.kw = $("kw").value.trim(); $("kw").blur(); render(); $("shops").scrollIntoView({ behavior: "smooth" }); };
   document.addEventListener("click", function(e){
     var b = e.target.closest("[data-kw]"); if (b) { state.kw = $("kw").value = b.dataset.kw; render(); $("shops").scrollIntoView({ behavior: "smooth" }); return; }
-    if (e.target.closest("[data-focus-kw]")) { e.preventDefault(); $("find").scrollIntoView({ behavior: "smooth" }); setTimeout(function(){ $("kw").focus(); }, 400); }
+    if (e.target.closest("[data-focus-kw]")) { e.preventDefault(); $("search").scrollIntoView({ behavior: "smooth" }); setTimeout(function(){ $("kw").focus(); }, 400); }
   });
 
   // 大阪府外の都道府県（お店の pref と同じ言葉。掲載ありは件数つき、なしは「準備中」）
