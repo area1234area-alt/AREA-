@@ -147,6 +147,14 @@
     main .how p{font-size:.74rem;line-height:1.6}
     .sec{padding:22px 0}
   }
+  .sec-acc > summary{list-style:none;display:flex;align-items:center;gap:10px;cursor:pointer}
+  .sec-acc > summary::-webkit-details-marker{display:none}
+  .sec-acc > summary .sec-h{margin:0}
+  .sec-acc > summary .pk-chev{margin-left:auto;border-color:var(--gold-ink)}
+  .sec-acc[open] > summary .pk-chev{transform:rotate(-135deg)}
+  .sec-acc[open] > summary{margin-bottom:14px}
+  .sa-n{font-family:var(--body);font-size:.68rem;font-weight:700;color:var(--pink-deep);background:var(--pink-soft);border:1px solid var(--pink-line);border-radius:999px;padding:0 8px;letter-spacing:0}
+  .sa-n:empty{display:none}
   .pk-res{margin-top:16px}
   .pk-res .shop{color:var(--ink)}
   .pk-res .shop h3,.pk-res .shop h3 a{color:var(--ink)}
@@ -479,18 +487,22 @@
 
 
   <section class="sec" id="latest">
-    <h2 class="sec-h">新着の口コミ <small>New</small></h2>
-    <p class="lead">運営が内容を確認した口コミだけを掲載しています。</p>
-    <div id="latestList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
+    <details class="sec-acc">
+      <summary><h2 class="sec-h">新着の口コミ <small>New</small><span class="sa-n" id="latestN"></span></h2><i class="pk-chev" aria-hidden="true"></i></summary>
+      <p class="lead">運営が内容を確認した口コミだけを掲載しています。</p>
+      <div id="latestList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
+    </details>
   </section>
 
   <section class="sec">
-    <h2 class="sec-h">口コミの見かた <small>Guide</small></h2>
-    <div class="how">
-      <div><b><i>01</i>稼ぎを数字で</b><p>口コミごとに、勤務時間・日給・時給換算を同じ形で並べています。</p></div>
-      <div><b><i>02</i>良い点も、悪い点も</b><p>良かった点と気になった点の両方を、そのまま掲載しています。</p></div>
-      <div><b><i>03</i>運営が確認して掲載</b><p>個人が特定される内容や、事実と異なる内容は掲載しません。</p></div>
-    </div>
+    <details class="sec-acc">
+      <summary><h2 class="sec-h">口コミの見かた <small>Guide</small></h2><i class="pk-chev" aria-hidden="true"></i></summary>
+      <div class="how">
+        <div><b><i>01</i>稼ぎを数字で</b><p>口コミごとに、勤務時間・日給・時給換算を同じ形で並べています。</p></div>
+        <div><b><i>02</i>良い点も、悪い点も</b><p>良かった点と気になった点の両方を、そのまま掲載しています。</p></div>
+        <div><b><i>03</i>運営が確認して掲載</b><p>個人が特定される内容や、事実と異なる内容は掲載しません。</p></div>
+      </div>
+    </details>
   </section>
 
   <section class="cta">
@@ -790,6 +802,7 @@
     shops.forEach(function(s){ counts[s.id] = rows.filter(function(r){ return RV.shopOf(r) === s; }).length; });
     $("stReviews").textContent = rows.length;
     render(); renderPickup();
+    $("latestN").textContent = rows.length ? rows.slice(0, 6).length + "件" : "";
     $("latestList").innerHTML = rows.length ? rows.slice(0, 6).map(rvAcc).join("")
       : '<div class="rv-empty">口コミはまだありません。最初の口コミをお待ちしています。</div>';
   });
