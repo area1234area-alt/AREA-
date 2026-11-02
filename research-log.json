@@ -425,6 +425,51 @@
       ],
       "page": "review/shop.html?id=fivestar-rokucho",
       "drafted": "2026-11-01"
+    },
+    {
+      "name": "Bianca.（ビアンカ）",
+      "site": "review",
+      "area": "梅田・曽根崎",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-02",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/bianca-esthe/"
+      ],
+      "page": "review/shop.html?id=bianca-umeda",
+      "drafted": "2026-11-02"
+    },
+    {
+      "name": "SWEET×DIAMOND（スイート・ダイヤモンド）",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-02",
+      "status": "drafted",
+      "found": "2026-11-02",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/sweetdiamond-nihonbashi/"
+      ],
+      "page": "review/shop.html?id=sweetdiamond-nipponbashi",
+      "drafted": "2026-11-02"
+    },
+    {
+      "name": "Mrs.Blue Dahlia（ミセスブルーダリア）",
+      "site": "review",
+      "area": "高槻",
+      "genre": "メンズエステ",
+      "open": "2026-09-07",
+      "status": "drafted",
+      "found": "2026-11-02",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/mrs-bluedahlia/"
+      ],
+      "page": "review/shop.html?id=mrs-bluedahlia",
+      "drafted": "2026-11-02"
     }
   ]
 }
