@@ -972,14 +972,95 @@
   .pu-btns .col{border:1px solid rgba(201,162,39,.6);color:#F1DA9C}
 </style>
 <link rel="stylesheet" href="round.css">
+
+<!-- ============ 関西／関東の切り替え ============
+  ・/kansai で開くと関西だけ、/kanto で開くと関東だけを表示（?r=kansai / ?r=kanto でも可）
+  ・URL指定なしで来た人には最初に「関西／関東」を選んでもらい、選んだほうを次回から自動で開く
+  ・投稿や広告には /kansai か /kanto のURLを貼る -->
+<script>
+(function(){
+  var p = location.pathname.replace(/\/+$/, "");
+  if (/\/(kansai|kanto)$/.test(p) && /\/$/.test(location.pathname)) { location.replace(p + location.search + location.hash); return; }
+  var r = "", m = p.match(/\/(kansai|kanto)$/);
+  if (m) r = m[1];
+  if (!r) { var q = location.search.match(/[?&]r=(kansai|kanto)\b/); if (q) r = q[1]; }
+  var saved = ""; try { saved = localStorage.getItem("areaRegion") || ""; } catch(e){}
+  if (r) { try { localStorage.setItem("areaRegion", r); } catch(e){} } else if (saved === "kansai" || saved === "kanto") r = saved;
+  window.AREA_REGION = r;   // "" のときは選択画面を出す
+  var KANSAI = /大阪|京都|兵庫|奈良|滋賀|和歌山|梅田|北新地|心斎橋|難波|なんば|ミナミ|本町|天満|十三|江坂|豊中|三宮|神戸|祇園|木屋町|先斗町|京橋|堺/;
+  var KANTO  = /東京|神奈川|埼玉|千葉|茨城|栃木|群馬|歌舞伎町|新宿|六本木|銀座|池袋|上野|横浜|渋谷|錦糸町|吉祥寺|町田|川崎|大宮/;
+  window.areaRegionOf = function(text){ text = String(text || ""); if (KANTO.test(text)) return "kanto"; if (KANSAI.test(text)) return "kansai"; return ""; };
+  window.areaRegionOfJob = function(j){ return areaRegionOf(j.pref) || areaRegionOf(j.area) || areaRegionOf(j.address); };
+  if (r) document.documentElement.setAttribute("data-region", r);
+  else document.documentElement.setAttribute("data-region-gate", "");
+  // ピックアップ（area-ads.js）も選んだ地域のものだけにする。region 欄があればそれを優先
+  window.areaRegionFilter = function(list){ if (!r) return list; return (list || []).filter(function(a){ var g = a.region || areaRegionOf(a.area); return !g || g === r; }); };
+})();
+</script>
+<style>
+  /* 地域選択（最初の1回だけ） */
+  .rg-gate{ position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:16px;
+    background: radial-gradient(120% 80% at 50% 0%, #2a1a22 0%, #141115 60%); color:#fff; }
+  html[data-region-gate] .rg-gate{ display:flex; }
+  html[data-region-gate] body{ overflow:hidden; }
+  .rg-box{ width:100%; max-width:420px; text-align:center; }
+  .rg-logo{ font-family: var(--font-display); font-size:2rem; letter-spacing:.08em; color: var(--gold); }
+  .rg-lead{ margin:10px 0 4px; font-size:1.05rem; font-weight:700; letter-spacing:.04em; }
+  .rg-sub{ margin:0 0 22px; font-size:.82rem; color:rgba(255,255,255,.6); }
+  .rg-btns{ display:grid; gap:14px; }
+  .rg-btn{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; padding:20px 20px; cursor:pointer;
+    background:#1d181f; color:#fff; border:1.5px solid var(--gold); border-radius:3px; text-align:left; font:inherit; transition: background .15s, transform .15s; }
+  .rg-btn:hover, .rg-btn:focus-visible{ background:#2a2129; transform: translateY(-1px); }
+  .rg-btn b{ display:block; font-family: var(--font-display); font-size:1.5rem; letter-spacing:.12em; color:#fff; }
+  .rg-btn small{ display:block; margin-top:4px; font-size:.8rem; color:rgba(255,255,255,.65); }
+  .rg-btn .rg-go{ flex:0 0 auto; width:36px; height:36px; display:grid; place-items:center; background: var(--pink); color:#141115; font-weight:900; border-radius:3px; }
+  .rg-note{ margin-top:18px; font-size:.74rem; color:rgba(255,255,255,.5); }
+  /* ヘッダーの小さな切り替えボタン */
+  .rg-switch{ position:relative; margin-left:10px; margin-right:auto; }
+  .rg-switch > button{ display:inline-flex; align-items:center; gap:4px; padding:6px 10px; background:transparent; color:#D9D4DA;
+    border:1px solid #4a4250; border-radius:3px; font:inherit; font-size:.78rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+  .rg-switch > button:hover{ color: var(--gold); border-color: var(--gold); }
+  .rg-switch > button i{ font-style:normal; font-size:.7em; opacity:.8; }
+  .rg-menu{ position:absolute; top:calc(100% + 6px); left:0; min-width:150px; background:#1d181f; border:1px solid var(--gold); border-radius:3px;
+    box-shadow:0 10px 24px rgba(0,0,0,.4); padding:4px; display:none; z-index:60; }
+  .rg-switch.open .rg-menu{ display:block; }
+  .rg-menu a{ display:block; padding:10px 12px; color:#fff; font-size:.85rem; font-weight:700; }
+  .rg-menu a small{ display:block; font-weight:400; font-size:.72rem; color:rgba(255,255,255,.55); }
+  .rg-menu a[aria-current]{ color: var(--gold); }
+  .rg-menu a:hover{ background:#2a2129; }
+  html:not([data-region]) .rg-switch{ visibility:hidden; }
+  @media (max-width: 760px){ .rg-switch{ margin-left:8px; } }
+  @media (max-width: 370px){ .rg-switch > button{ padding:5px 7px; font-size:.72rem; } }
+  /* 選んでいない地域のエリアボタンは出さない */
+  html[data-region="kansai"] .rg-only-kanto, html[data-region="kanto"] .rg-only-kansai{ display:none !important; }
+</style>
 </head>
 <body>
+<div class="rg-gate" role="dialog" aria-modal="true" aria-labelledby="rgLead">
+  <div class="rg-box">
+    <div class="rg-logo">Area</div>
+    <p class="rg-lead" id="rgLead">お仕事を探すエリアを選んでください</p>
+    <p class="rg-sub">選んだエリアの求人だけを表示します</p>
+    <div class="rg-btns">
+      <button type="button" class="rg-btn" data-rg="kansai"><span><b>関西</b><small>大阪・京都・兵庫</small></span><span class="rg-go">›</span></button>
+      <button type="button" class="rg-btn" data-rg="kanto"><span><b>関東</b><small>東京・神奈川</small></span><span class="rg-go">›</span></button>
+    </div>
+    <p class="rg-note">あとから画面上の「エリア切替」でいつでも変えられます</p>
+  </div>
+</div>
 
 <div class="beta-bar"><b>試作中</b>Areaはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
 
 <header>
   <div class="header-inner">
     <a href="#top" class="logo-badge"><span class="logo"><span class="job">Area</span></span></a>
+    <div class="rg-switch" id="rgSwitch">
+      <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="エリア切替"><span id="rgCur">関西</span><i>▼</i></button>
+      <div class="rg-menu" role="menu">
+        <a href="/kansai" data-rg="kansai" role="menuitem">関西<small>大阪・京都・兵庫</small></a>
+        <a href="/kanto" data-rg="kanto" role="menuitem">関東<small>東京・神奈川</small></a>
+      </div>
+    </div>
     <nav class="nav-links">
       <a href="#areas">エリアから探す</a>
       <a href="#jobs">体験入店</a>
@@ -1003,7 +1084,7 @@
       <div class="hc-eyebrow">Night Work Recruit</div>
       <h1>自分に合う夜のお仕事を、<br>ここから。</h1>
       <div class="hc-orn"><span></span><b></b><span></span></div>
-      <p>関西のナイトワーク求人を、エリアと職種から探せます。<br>応募は各お店へ直接。<span class="hc-note">（関東エリアは準備中）</span></p>
+      <p id="rgHeroText">関西・関東のナイトワーク求人を、エリアと職種から探せます。<br>応募は各お店へ直接。</p>
       <div class="hero-actions">
         <a href="#jobs" class="hc-btn hc-main">求人を見る</a>
         <a href="#areas" class="hc-btn hc-sub">エリアから探す</a>
@@ -1037,8 +1118,8 @@
         <h2>🚉 人気エリアで探す</h2>
         <p>エリアを選ぶと、そのエリアの求人一覧ページが開きます。求人がまだないエリアは「準備中」と表示しています。</p>
       </div>
-      <h3 class="area-region">関東</h3>
-      <div class="area-pill-grid">
+      <h3 class="area-region rg-only-kanto">関東</h3>
+      <div class="area-pill-grid rg-only-kanto">
         <a class="area-pill" href="#jobs"><span>歌舞伎町</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>六本木</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>銀座</span><span class="chev">›</span></a>
@@ -1046,8 +1127,8 @@
         <a class="area-pill" href="#jobs"><span>上野</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>横浜</span><span class="chev">›</span></a>
       </div>
-      <h3 class="area-region">関西</h3>
-      <div class="area-pill-grid">
+      <h3 class="area-region rg-only-kansai">関西</h3>
+      <div class="area-pill-grid rg-only-kansai">
         <a class="area-pill" href="#jobs"><span>梅田</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>北新地</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>心斎橋</span><span class="chev">›</span></a>
@@ -1060,7 +1141,7 @@
         <a class="area-pill" href="#jobs"><span>祇園</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>京都駅</span><span class="chev">›</span></a>
       </div>
-      <p class="area-more"><a href="osaka.html">大阪府の求人一覧を見る →</a>　<a href="#jobs" id="showAllJobs">新着の求人を見る →</a></p>
+      <p class="area-more"><a href="osaka.html" class="rg-only-kansai">大阪府の求人一覧を見る →</a>　<a href="#jobs" id="showAllJobs">新着の求人を見る →</a></p>
 
       <div class="section-head job-type-head" id="types">
         <h2>💼 職種で探す</h2>
@@ -1091,6 +1172,10 @@
       <div class="job-empty" id="jobEmpty" hidden>この条件の求人は準備中です。条件を変えてお試しください。</div>
       <div class="job-grid" id="jobGrid"></div>
       <script src="jobs.js"></script>
+      <script>
+        /* 選んだ地域（関西／関東）の求人だけにしぼる。件数・準備中表示もこの結果で決まる */
+        (function(){ if (window.AREA_REGION && window.AREA_JOBS) AREA_JOBS = window.AREA_JOBS = AREA_JOBS.filter(function(j){ var g = areaRegionOfJob(j); return !g || g === AREA_REGION; }); })();
+      </script>
       <script>
         (function(){ var g=document.getElementById("jobGrid"); if(window.AREA_JOBS) g.innerHTML=AREA_JOBS.map(areaJobCard).join(""); })();
       </script>
@@ -1296,10 +1381,38 @@
   fetch(REVIEW_URL + "?view=reviews").then(function(r){ return r.json(); }).then(function(j){
     if (!j || !j.ok || !j.rows || !j.rows.length) return;      // 0件なら見本のまま
     var OTHER = /風俗|デリヘル|ヘルス|ホテヘル|ソープ|ピンサロ|メンズエステ|メンエス|エステ|セクキャバ|おっパブ|いちゃキャバ|性感/i;
-    list = j.rows.filter(function(r){ return !OTHER.test(String(r.genre || "") + " " + String(r.style || "") + " " + String(r.shop || "")); });
+    list = j.rows.filter(function(r){ var g = window.areaRegionOf ? areaRegionOf(String(r.area || "") + " " + String(r.shop || "")) : ""; if (window.AREA_REGION && g && g !== AREA_REGION) return false; return !OTHER.test(String(r.genre || "") + " " + String(r.style || "") + " " + String(r.shop || "")); });
     if (!list.length) return;
     render();
   }).catch(function(){});
+})();
+</script>
+
+<script>
+/* 関西／関東：選択画面・ヘッダーの切り替え・見出しの文言 */
+(function(){
+  var R = window.AREA_REGION;
+  var NAME = { kansai: "関西", kanto: "関東" }, SUB = { kansai: "大阪・京都・兵庫", kanto: "東京・神奈川" };
+  function choose(r){ try { localStorage.setItem("areaRegion", r); } catch(e){}
+    var p = location.pathname.replace(/\/+$/, "");
+    if (/\/(kansai|kanto)$/.test(p) || /[?&]r=/.test(location.search)) { location.href = "/" + r; return; }
+    location.reload(); }
+  [].forEach.call(document.querySelectorAll(".rg-btn"), function(b){ b.addEventListener("click", function(){ choose(b.dataset.rg); }); });
+  var sw = document.getElementById("rgSwitch");
+  if (sw) {
+    var btn = sw.querySelector("button");
+    btn.addEventListener("click", function(e){ e.stopPropagation(); var o = sw.classList.toggle("open"); btn.setAttribute("aria-expanded", String(o)); });
+    document.addEventListener("click", function(){ sw.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); });
+    [].forEach.call(sw.querySelectorAll("[data-rg]"), function(a){
+      if (a.dataset.rg === R) a.setAttribute("aria-current", "true");
+      a.addEventListener("click", function(e){ e.preventDefault(); choose(a.dataset.rg); });
+    });
+  }
+  if (!R) { var f = document.querySelector(".rg-btn"); if (f) f.focus(); return; }
+  var cur = document.getElementById("rgCur"); if (cur) cur.textContent = NAME[R];
+  var hero = document.getElementById("rgHeroText");
+  if (hero) hero.innerHTML = NAME[R] + "（" + SUB[R] + "）のナイトワーク求人を、エリアと職種から探せます。<br>応募は各お店へ直接。";
+  document.title = "Area｜" + NAME[R] + "（" + SUB[R] + "）のナイトワーク・体験入店求人";
 })();
 </script>
 

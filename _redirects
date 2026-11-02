@@ -1,3 +1,7 @@
 # 風俗・メンズエステを別サイト（review/）に移したため、旧ページは新しい口コミページへ案内する
 /juso-e01.html      /review/shop.html?id=kanojonchi     302!
 /honmachi-e01.html  /review/shop.html?id=galsselection  302!
+
+# 関西・関東の入口（投稿・広告にはこのURLを貼る）。中身はトップページで、表示する地域だけが変わる
+/kansai   /index.html   200
+/kanto    /index.html   200

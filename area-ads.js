@@ -24,7 +24,7 @@ window.AREA_PICKUP = [
   var sec = document.getElementById("pickupNew"), box = document.getElementById("puBox"); if (!sec || !box) return;
   var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
   var today = new Date(); today.setHours(0, 0, 0, 0);
-  var list = (window.AREA_PICKUP || []).filter(function (a) { return a && (!a.until || new Date(a.until + "T23:59:59") >= today); });
+  var list = (window.areaRegionFilter || function (x) { return x; })(window.AREA_PICKUP || []).filter(function (a) { return a && (!a.until || new Date(a.until + "T23:59:59") >= today); });
   if (!list.length) return;
   box.innerHTML = list.map(function (p) { return '<div class="pu"><div class="pu-h">PICK UP<b>' + esc(p.label || "注目") + '</b></div><div class="pu-body">' +
     (p.video ? '<a href="' + esc(p.url) + '" aria-label="' + esc(p.name) + 'の求人を見る"><video src="' + esc(p.video) + '" poster="' + esc(p.img || "") + '" autoplay muted loop playsinline preload="metadata"></video></a>' : '<a href="' + esc(p.url) + '"><img src="' + esc(p.img) + '" alt="' + esc(p.name) + '"></a>') +
