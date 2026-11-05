@@ -24,6 +24,10 @@
   <div class="en">Member</div>
   <h1 class="ttl">Area 会員</h1>
   <p class="lead">プロフィールを登録すると、掲載中のお店から<br>お仕事のお誘い（オファー）が届きます。</p>
+  <div class="steps-mini">
+    <div><b>1</b>無料で登録</div><div><b>2</b>プロフィール公開</div><div><b>3</b>お店からオファー</div><div><b>4</b>気になるお店に応募</div>
+  </div>
+  <p class="lead" style="margin-top:6px"><a href="#guide">オファー機能のくわしい説明を見る ↓</a></p>
   <div class="tabs" style="grid-template-columns:1fr 1fr">
     <button type="button" id="tLogin" class="on">ログイン</button>
     <button type="button" id="tReg">新規会員登録</button>
@@ -81,6 +85,7 @@
     <div class="card">
       <h2>新着のオファー</h2>
       <div id="homeOffers"></div>
+      <p class="note" style="margin-top:10px"><a href="#guide">オファー機能の使い方を見る</a></p>
     </div>
   </div>
 
@@ -144,6 +149,53 @@
       <div id="pubView"></div>
     </div>
   </div>
+</section>
+
+<section id="guide" class="guide">
+  <div class="en">How it works</div>
+  <h2 class="gttl">オファー機能とは？</h2>
+  <p class="lead">自分から探さなくても、あなたのプロフィールを見たお店から<br>「うちで働きませんか？」とお誘いが届く仕組みです。</p>
+
+  <div class="g-hero">
+    <div class="g-bubble"><span class="pill new">NEW</span><b>CLUB 〇〇 からオファーが届いています</b><small>時給4,000円〜・体験入店の日は全額日払い</small></div>
+    <p>届いたオファーは、マイページの「オファー履歴」にたまっていきます。<br>お店の名前・届いた日時・メッセージ・条件をあとから見返せます。</p>
+  </div>
+
+  <h3 class="g-h">使い方は4ステップ</h3>
+  <ol class="g-steps">
+    <li><span>01</span><div><b>無料で会員登録</b><p>ユーザー名・メールアドレス・生年月日だけで登録できます。料金は一切かかりません。</p></div></li>
+    <li><span>02</span><div><b>プロフィールを公開</b><p>希望の勤務地・職種・時給・出勤時間、自己PRを入れます。くわしく書くほど、合うお店から届きやすくなります。</p></div></li>
+    <li><span>03</span><div><b>お店からオファーが届く</b><p>Areaに掲載中のお店が、あなたのプロフィールを見てお誘いを送ります。条件は、そのお店の求人ページと同じ内容です。</p></div></li>
+    <li><span>04</span><div><b>気になったら、お店に直接応募</b><p>オファーから求人ページを開いて、お店に直接連絡します。返事をするかどうか、応募するかどうかは自由です。</p></div></li>
+  </ol>
+
+  <h3 class="g-h">オファー機能のいいところ</h3>
+  <div class="g-merits">
+    <div><b>探す手間が減る</b><p>条件に合いそうなお店のほうから声がかかります。</p></div>
+    <div><b>条件をくらべやすい</b><p>届いたオファーの時給や待遇を、履歴でならべて見られます。</p></div>
+    <div><b>断ってもOK</b><p>「今回は見送ります」をボタンひとつで返せます。</p></div>
+    <div><b>ずっと無料</b><p>会員から料金をいただくことはありません。</p></div>
+  </div>
+
+  <h3 class="g-h">安心して使えるように</h3>
+  <ul class="g-safe">
+    <li><b>メールアドレスはお店に見えません。</b>生年月日も、お店には年齢だけを表示します。</li>
+    <li><b>公開・非公開はいつでも切り替えOK。</b>非公開にすると、お店の検索に出なくなります。</li>
+    <li><b>オファーを送れるのは、Areaの掲載審査を通ったお店だけです。</b></li>
+    <li><b>5日間ログインがないと、アカウントは自動で削除されます。</b>プロフィール・SNS・オファー履歴も残りません。4日目にお知らせが届きます。</li>
+    <li><b>退会はマイページからすぐにでき、</b>その場で全データを削除します。</li>
+    <li><b>18歳未満の方・高校生の方は登録できません。</b></li>
+  </ul>
+
+  <h3 class="g-h">よくある質問</h3>
+  <div class="g-faq">
+    <details><summary>オファーが届いたら、必ず面接に行かないといけませんか？</summary><p>いいえ。返事も応募も自由です。気になるお店だけ、求人ページからお店に連絡してください。</p></details>
+    <details><summary>Areaがお店を紹介してくれるのですか？</summary><p>Areaは求人広告の掲載サイトなので、お店の紹介や面接の調整はしていません。応募・面接・条件の相談は、あなたとお店で直接行ってください。</p></details>
+    <details><summary>今働いているお店に知られませんか？</summary><p>心配なときは、プロフィールの「在籍店舗」を空欄にしたり、公開をオフにしたりできます。</p></details>
+    <details><summary>オファーがなかなか届きません</summary><p>希望の勤務地・職種・自己PRをくわしく書くと届きやすくなります。こまめにログインしている人は、お店の画面で「24時間以内にログイン」と表示されます。</p></details>
+    <details><summary>5日でアカウントが消えるのはなぜですか？</summary><p>個人情報をできるだけ長く持たないためです。使い続けたいときは、5日以内に一度ログインしてください。ログインするたびにカウントはリセットされます。</p></details>
+  </div>
+  <a class="btn gold" href="#top" id="guideCta">無料で登録してオファーを待つ</a>
 </section>
 
 <section id="terms" class="card" style="margin-top:30px">
@@ -263,6 +315,7 @@
     $("warnBox").innerHTML = warn ? '<div class="msg warn">'+E(warn)+'</div>' : "";
     if (u) { fillEdit(u); renderHome(); tab(startTab || "home"); }
   }
+  $("guideCta").onclick = function(e){ e.preventDefault(); if (M.current()) { tab("edit"); } else { $("tReg").click(); } window.scrollTo(0,0); };
   render();
 })();
 </script>

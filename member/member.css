@@ -74,3 +74,32 @@ th{color:var(--gold);font-weight:500;white-space:nowrap}
 .hidden{display:none !important}
 .sns a{margin-right:10px;font-size:13px}
 @media (max-width:420px){.grid{grid-template-columns:1fr 1fr}.tabs button{font-size:11px}}
+
+/* オファー機能の説明コーナー */
+.steps-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:4px 0 0}
+.steps-mini div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center;font-size:11px;color:var(--ink-soft);line-height:1.4}
+.steps-mini b{display:block;font-family:var(--en);font-size:20px;color:var(--gold-lt);font-style:italic}
+.guide{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.gttl{font-family:var(--serif);font-size:22px;text-align:center;margin:6px 0 4px;letter-spacing:.08em}
+.g-hero{background:linear-gradient(160deg,#1d1622,#120f14);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:14px 0}
+.g-hero p{font-size:13px;color:var(--ink-soft);margin:12px 0 0}
+.g-bubble{background:var(--panel2);border:1px solid var(--line2);border-left:3px solid var(--pink);border-radius:10px;padding:12px 14px}
+.g-bubble b{display:block;color:var(--gold-lt);margin-top:4px}
+.g-bubble small{color:var(--rose);font-size:12px}
+.g-h{font-family:var(--serif);font-size:17px;color:var(--gold-lt);margin:26px 0 10px;letter-spacing:.06em}
+.g-steps{list-style:none;margin:0;padding:0}
+.g-steps li{display:flex;gap:12px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:14px;margin:8px 0}
+.g-steps span{font-family:var(--en);font-style:italic;font-size:26px;color:var(--gold);line-height:1;min-width:34px}
+.g-steps b{font-size:15px}
+.g-steps p{margin:4px 0 0;font-size:13px;color:var(--ink-soft)}
+.g-merits{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.g-merits div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+.g-merits b{color:var(--gold-lt);font-size:14px}
+.g-merits p{margin:4px 0 0;font-size:12px;color:var(--ink-soft)}
+.g-safe{margin:0;padding:0;list-style:none}
+.g-safe li{position:relative;padding:10px 0 10px 24px;border-bottom:1px solid var(--line2);font-size:13px;color:var(--ink-soft)}
+.g-safe li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--gold)}
+.g-safe b{color:var(--ink)}
+.g-faq details{background:var(--panel);border:1px solid var(--line2);border-radius:10px;margin:8px 0;padding:0 14px}
+.g-faq summary{cursor:pointer;padding:12px 0;font-size:14px;color:var(--ink)}
+.g-faq p{margin:0 0 12px;font-size:13px;color:var(--ink-soft)}
