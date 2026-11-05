@@ -1066,6 +1066,7 @@
       <a href="#jobs">体験入店</a>
       <a href="#voices">口コミ</a>
       <a href="#about">Areaとは</a>
+      <a href="member/">会員登録・マイページ</a>
     </nav>
     <a href="#voices" class="header-voice">口コミ</a>
     <button class="nav-toggle" aria-label="メニュー">☰</button>
@@ -1097,6 +1098,39 @@
   <section class="area-ad-sec" aria-label="広告"><div class="wrap"><div class="area-ad" id="areaAd"></div></div></section>
   <section class="pu-sec" id="pickupNew" aria-label="ピックアップ" hidden><div class="wrap"><div class="pu-wrap" id="puBox"></div></div></section>
   <script src="area-ads.js"></script>
+
+  <!-- ============ 会員登録（オファー機能）の入口 ============ -->
+  <section class="mb-sec" aria-label="会員登録">
+    <style>
+      .mb-sec{background:#0B0A0D;padding:18px 0 6px}
+      .mb-sec .mb{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;color:#F4EFE6;background:radial-gradient(120% 140% at 100% 0%,rgba(255,111,160,.22),transparent 55%),linear-gradient(150deg,#1d1622 0%,#0d0b0f 70%);border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:18px 18px 16px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+      .mb-sec .mb-en{font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;letter-spacing:.3em;color:#C9A227;font-size:12px}
+      .mb-sec .mb-t{font-family:var(--font-display);font-size:20px;font-weight:700;line-height:1.45;margin:4px 0 6px;letter-spacing:.04em}
+      .mb-sec .mb-t em{font-style:normal;background:linear-gradient(135deg,#E8CB7A,#FFF1C4 50%,#D4AF4F);-webkit-background-clip:text;background-clip:text;color:transparent}
+      .mb-sec .mb-s{font-size:12.5px;color:#B7AEA6;line-height:1.7;margin:0 0 12px}
+      .mb-sec .mb-n{background:#1B171F;border:1px solid rgba(255,255,255,.08);border-left:3px solid #FF6FA0;border-radius:10px;padding:9px 12px;font-size:12.5px;margin:0 0 12px}
+      .mb-sec .mb-n b{color:#F1DA9C}
+      .mb-sec .mb-n i{font-style:normal;font-size:10px;border:1px solid #FF6FA0;color:#FF6FA0;border-radius:6px;padding:0 6px;margin-right:6px}
+      .mb-sec .mb-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+      .mb-sec .mb-tags span{font-size:11px;border:1px solid rgba(201,162,39,.45);color:#F1DA9C;border-radius:6px;padding:2px 8px}
+      .mb-sec .mb-btn{display:block;text-align:center;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1a1408;font-weight:700;border-radius:8px;padding:12px;font-size:15px;letter-spacing:.06em}
+      .mb-sec .mb-sub{display:block;text-align:center;font-size:12px;color:#B7AEA6;margin-top:8px;text-decoration:underline}
+      @media(min-width:760px){.mb-sec .mb{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center;padding:22px 26px}.mb-sec .mb-t{font-size:24px}}
+    </style>
+    <a class="mb" href="member/">
+      <div>
+        <div class="mb-en">Member ・ Offer</div>
+        <div class="mb-t">プロフィールを登録して、<br><em>お店からのオファー</em>を待とう</div>
+        <p class="mb-s">希望の勤務地・時給を登録しておくと、Areaに掲載中のお店から「うちで働きませんか？」とお誘いが届きます。応募はお店に直接、返事も自由です。</p>
+      </div>
+      <div>
+        <div class="mb-n"><i>NEW</i><b>CLUB 〇〇</b> からオファーが届いています</div>
+        <div class="mb-tags"><span>登録無料</span><span>メールはお店に非公開</span><span>いつでも退会OK</span><span>18歳以上</span></div>
+        <span class="mb-btn">無料で会員登録する</span>
+        <span class="mb-sub">オファー機能のくわしい説明を見る</span>
+      </div>
+    </a>
+  </section>
 
   <!-- ============ SEARCH VISUAL ============ -->
   <!-- 差し替え方法: 下のimgのsrcを新しい画像に置き換えます。透明ボタン(.sv-hit)の位置は下のCSSで % 指定です。 -->
