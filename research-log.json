@@ -470,6 +470,35 @@
       ],
       "page": "review/shop.html?id=mrs-bluedahlia",
       "drafted": "2026-11-02"
+    },
+    {
+      "name": "BASIS（バーシス）",
+      "site": "review",
+      "area": "東梅田",
+      "genre": "メンズエステ（メンズ脱毛＆リラクゼーション）",
+      "open": "2026-10-26",
+      "status": "drafted",
+      "found": "2026-11-05",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "page": "review/shop.html?id=basis-umeda",
+      "drafted": "2026-11-05"
+    },
+    {
+      "name": "KOUYOU",
+      "site": "review",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-05",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://kouyou-salon.com/"
+      ],
+      "page": "review/shop.html?id=kouyou-ikebukuro",
+      "drafted": "2026-11-05"
     }
   ]
 }
