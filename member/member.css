@@ -1,0 +1,76 @@
+/* Area 会員機能（試作）共通スタイル */
+:root{
+  --bg:#0B0A0D; --panel:#141117; --panel2:#1B171F; --line:rgba(201,162,39,.22); --line2:rgba(255,255,255,.08);
+  --ink:#F4EFE6; --ink-soft:#B7AEA6; --ink-dim:#8C847D;
+  --gold:#C9A227; --gold-lt:#F1DA9C; --gold-dk:#8E6F1C; --pink:#FF6FA0; --rose:#E9A5B9; --red:#E0606B; --ok:#7FC8A0;
+  --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
+  --serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+  --en:'Cormorant Garamond','Times New Roman',serif;
+  --sans:'Noto Sans JP','Hiragino Sans',sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--gold-lt)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px 120px}
+.demo-bar{background:#2a1d0a;color:var(--gold-lt);font-size:12px;text-align:center;padding:7px 12px;border-bottom:1px solid var(--line)}
+.head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;max-width:720px;margin:0 auto}
+.logo{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:.06em;text-decoration:none;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.head nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.head nav a,.head nav button{font-size:12px;color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:6px 10px;border-radius:8px;background:none;cursor:pointer;font-family:inherit}
+h1.ttl{font-family:var(--serif);font-size:24px;text-align:center;margin:18px 0 4px;letter-spacing:.08em}
+.en{font-family:var(--en);font-style:italic;color:var(--gold);text-align:center;letter-spacing:.3em;font-size:14px}
+.lead{color:var(--ink-soft);text-align:center;font-size:13px;margin:6px 0 20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin:14px 0}
+.card h2{font-family:var(--serif);font-size:18px;margin:0 0 12px;color:var(--gold-lt);letter-spacing:.06em}
+.card h3{font-size:14px;margin:18px 0 8px;color:var(--gold);letter-spacing:.06em;border-bottom:1px solid var(--line2);padding-bottom:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}
+.grid .full{grid-column:1/-1}
+label{display:block;font-size:12px;color:var(--ink-soft);margin-bottom:4px}
+label .req{color:var(--pink);margin-left:4px}
+input,select,textarea{width:100%;background:#0E0C10;border:1px solid var(--line2);color:var(--ink);border-radius:8px;padding:10px 11px;font-size:15px;font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{min-height:96px;resize:vertical}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink-soft);margin:10px 0}
+.check input{width:auto;margin-top:4px}
+.btn{display:block;width:100%;text-align:center;border:0;border-radius:8px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit;letter-spacing:.06em;margin-top:12px}
+.btn.gold{background:var(--goldgrad);color:#1a1408}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
+.btn.danger{background:none;border:1px solid rgba(224,96,107,.5);color:var(--red)}
+.btn.sm{display:inline-block;width:auto;padding:8px 14px;font-size:13px;margin:0}
+.row{display:flex;gap:10px}
+.row>*{flex:1}
+.msg{font-size:13px;padding:10px 12px;border-radius:8px;margin:10px 0}
+.msg.err{background:rgba(224,96,107,.12);border:1px solid rgba(224,96,107,.4);color:#F2B3B8}
+.msg.ok{background:rgba(127,200,160,.1);border:1px solid rgba(127,200,160,.4);color:#BFE6CF}
+.msg.warn{background:rgba(201,162,39,.12);border:1px solid var(--line);color:var(--gold-lt)}
+.note{font-size:12px;color:var(--ink-dim);line-height:1.7}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0 4px}
+.tabs button{background:var(--panel);border:1px solid var(--line2);color:var(--ink-soft);border-radius:8px;padding:10px 4px;font-size:12px;cursor:pointer;font-family:inherit;position:relative}
+.tabs button.on{border-color:var(--gold);color:var(--gold-lt)}
+.badge{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:var(--pink);color:#fff;font-size:11px;line-height:18px;text-align:center;margin-left:4px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:var(--panel2);border:1px solid var(--line2);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:12px;color:var(--ink-dim);font-weight:400}
+.stat span{font-size:15px}
+.offer{background:var(--panel2);border:1px solid var(--line2);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px;margin:10px 0}
+.offer.unread{border-left-color:var(--pink)}
+.offer .top{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--ink-dim)}
+.offer .shop{font-size:15px;font-weight:700;color:var(--gold-lt);margin:4px 0}
+.offer .body{font-size:14px;white-space:pre-wrap;color:var(--ink)}
+.offer .cond{font-size:12px;color:var(--rose);margin-top:6px}
+.offer .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pill{display:inline-block;font-size:11px;border:1px solid var(--line);color:var(--gold-lt);border-radius:6px;padding:1px 7px;margin:2px 4px 2px 0}
+.pill.new{border-color:var(--pink);color:var(--pink)}
+.prof{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px}
+.prof dt{color:var(--ink-dim);font-size:12px;padding-top:2px}
+.prof dd{margin:0}
+.empty{text-align:center;color:var(--ink-dim);font-size:13px;padding:24px 0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{border-bottom:1px solid var(--line2);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--gold);font-weight:500;white-space:nowrap}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.danger-txt{color:var(--red)}
+.ok-txt{color:var(--ok)}
+.hidden{display:none !important}
+.sns a{margin-right:10px;font-size:13px}
+@media (max-width:420px){.grid{grid-template-columns:1fr 1fr}.tabs button{font-size:11px}}
