@@ -26,7 +26,7 @@ export default async (req) => {
   let body = {}; try { body = await req.json(); } catch (e) {}
   const shop = SHOPS[body.shop];
   const people = Math.max(1, Math.min(10, parseInt(body.people, 10) || 1));
-  if (!shop) return json({ error: "お店が見つかりません" }, 400);
+  if (!shop || !shop.partner) return json({ error: "このお店は紹介IDの対象ではありません" }, 400);
   const now = jst(), h = now.getUTCHours();
   if (shop.settai && h < 6) return json({ error: "0時〜6時は、このお店の紹介IDは発行していません。" }, 403);
   const st = store();
