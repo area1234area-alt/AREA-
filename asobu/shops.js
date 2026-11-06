@@ -19,7 +19,7 @@ window.ASOBU_SHOPS=[
 "img/lilith/photo2.jpg",
 "img/lilith/photo3.jpg"
 ],
-"planFrom": "初回 60分 3,500円〜"
+"planFrom": "飲み放題 60分 3,500円〜"
 },
 {
 "key": "blanc",
@@ -37,7 +37,7 @@ window.ASOBU_SHOPS=[
 "images": [
 "img/blanc/main.jpg"
 ],
-"planFrom": "初回 60分 3,500円〜"
+"planFrom": "飲み放題 60分 3,500円〜"
 },
 {
 "key": "cronos",
