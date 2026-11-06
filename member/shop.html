@@ -4,89 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>店舗用：オファーを送る｜Area（試作）</title>
+<title>店舗用：オファーを送る｜Area</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="member.css">
 </head>
 <body>
-<div class="demo-bar">試作版（店舗用の画面）。本番では、掲載審査を通ったお店だけがログインして使えます。</div>
 <header class="head">
   <a class="logo" href="../index.html">Area</a>
-  <nav><a href="index.html">会員マイページ</a><a href="admin.html">管理画面</a></nav>
+  <nav id="nav"><a href="../index.html">サイトへ</a></nav>
 </header>
 <main class="wrap">
   <div class="en">For Shops</div>
-  <h1 class="ttl">会員にオファーを送る</h1>
-  <p class="lead">プロフィールを公開している会員に、お仕事のお誘いを送れます。<br>送った内容は会員のマイページの「オファー履歴」に残ります。</p>
+  <h1 class="ttl">店舗用：会員にオファーを送る</h1>
+  <p class="lead">Areaに掲載中のお店だけが使えます。<br>プロフィールを公開している会員に、お仕事のお誘いを送れます。</p>
+  <div id="msg"></div>
 
-  <div class="card">
-    <h2>送るお店</h2>
-    <label>店舗（Areaに掲載中のお店）</label>
-    <select id="shopSel"></select>
-    <p class="note" style="margin-top:8px">オファーの条件は、求人ページに載せている内容と同じにしてください。求人ページにない条件・誇大な条件は送れません（本番では運営が確認します）。</p>
+  <!-- 未ログイン -->
+  <div class="card hidden" id="vLogin">
+    <h2>LINEでログイン</h2>
+    <p class="note">お店の担当者のLINEでログインしてください。</p>
+    <a class="btn line" href="/api/auth/line/start?next=/member/shop.html">LINEでログイン</a>
   </div>
 
-  <div class="card">
-    <h2>会員をさがす</h2>
-    <div class="grid">
-      <div><label>希望勤務地</label><select id="fArea"></select></div>
-      <div><label>希望職種</label><select id="fJob"></select></div>
+  <!-- 店舗アカウントがまだ -->
+  <div class="hidden" id="vJoin">
+    <div class="card">
+      <h2>招待コードをお持ちの店舗</h2>
+      <p class="note">Areaの運営からお渡しした招待コードを入れると、すぐに使えます。</p>
+      <input id="code" placeholder="例）AB12CD34" maxlength="12" style="text-transform:uppercase">
+      <button class="btn gold" type="button" id="btnRedeem">招待コードで始める</button>
     </div>
-    <div id="list" style="margin-top:12px"></div>
+    <form class="card" id="fApply">
+      <h2>はじめての店舗（利用申し込み）</h2>
+      <p class="note">運営が確認して承認すると、オファーを送れるようになります。</p>
+      <label>店名<span class="req">必須</span></label><input name="name" maxlength="60" required>
+      <label style="margin-top:10px">Areaの求人ページ（あれば）</label><select name="url" id="urlSel"></select>
+      <label style="margin-top:10px">連絡先（電話番号など）<span class="req">必須</span></label><input name="contact" maxlength="80" required>
+      <button class="btn gold" type="submit">申し込む</button>
+    </form>
   </div>
 
-  <div class="card hidden" id="sendBox">
-    <h2 id="sendTtl">オファーを送る</h2>
-    <label>メッセージ</label>
-    <textarea id="body" maxlength="600">はじめまして。プロフィールを拝見してご連絡しました。
+  <!-- 承認待ち -->
+  <div class="card hidden" id="vPending"><h2>承認をお待ちください</h2><p class="note" id="pendingText"></p></div>
+
+  <!-- 承認済み -->
+  <div class="hidden" id="vShop">
+    <div class="card">
+      <h2 id="shopName"></h2>
+      <div class="stats"><div class="stat"><b>今月の残り送信数</b><span id="remain"></span></div><div class="stat"><b>同じ会員への送信</b><span>30日に1回まで</span></div></div>
+      <p class="note" style="margin-top:10px">オファーの条件は、求人ページに載せている内容と同じにしてください。求人ページにない条件・紹介料などの内容は送れません。</p>
+    </div>
+    <div class="card">
+      <h2>会員をさがす</h2>
+      <div class="grid"><div><label>希望勤務地</label><select id="fArea"></select></div><div><label>希望職種</label><select id="fJob"></select></div></div>
+      <div id="list" style="margin-top:12px"></div>
+    </div>
+    <div class="card hidden" id="sendBox">
+      <h2 id="sendTtl">オファーを送る</h2>
+      <label>メッセージ</label>
+      <textarea id="body" maxlength="600">はじめまして。プロフィールを拝見してご連絡しました。
 当店は体験入店から始められます。ご興味があれば、求人ページから気軽にお問い合わせください。</textarea>
-    <label style="margin-top:10px">提示する条件（求人ページの内容から）</label>
-    <input id="wage" placeholder="例）時給4,000円〜・体験入店の日は全額日払い">
-    <div id="sendMsg"></div>
-    <div class="row"><button class="btn ghost" type="button" id="cancel">やめる</button><button class="btn gold" type="button" id="send">送信する</button></div>
+      <label style="margin-top:10px">提示する条件（求人ページの内容から）</label>
+      <input id="wage" maxlength="120">
+      <div id="sendMsg"></div>
+      <div class="row"><button class="btn ghost" type="button" id="cancel">やめる</button><button class="btn gold" type="button" id="send">送信する</button></div>
+    </div>
   </div>
 </main>
 <script src="../jobs.js"></script>
-<script src="member.js"></script>
+<script src="member-api.js"></script>
 <script>
 (function(){
-  var M = AreaMember; M.seed(); M.sweep(); var E = M.esc, $ = function(id){ return document.getElementById(id); };
-  var shops = (window.AREA_JOBS || []).filter(function(j){ return j.url && j.name; });
-  $("shopSel").innerHTML = shops.map(function(j, i){ return '<option value="'+i+'">'+E(j.name)+'（'+E(j.area)+'）</option>'; }).join("");
-  function fillWage(){ var j = shops[$("shopSel").value]; if (j) $("wage").value = (j.payDetail || j.pay || "").replace(/お店に確認中/g, "").slice(0, 80); }
-  $("shopSel").onchange = fillWage; fillWage();
-  function uniq(key){ var d = M.load(); var s = {}; d.users.forEach(function(u){ if (u.profile[key]) s[u.profile[key]] = 1; }); return Object.keys(s); }
+  var A = AreaAPI, E = A.esc, $ = function(id){ return document.getElementById(id); };
+  var jobs = (window.AREA_JOBS || []).filter(function(j){ return j.url && j.name; });
+  $("urlSel").innerHTML = '<option value="">なし・わからない</option>' + jobs.map(function(j){ return '<option value="'+E(j.url)+'">'+E(j.name)+'（'+E(j.area)+'）</option>'; }).join("");
+  function only(id){ ["vLogin","vJoin","vPending","vShop"].forEach(function(x){ $(x).classList.toggle("hidden", x !== id); }); }
+  function msg(t, k){ $("msg").innerHTML = t ? '<div class="msg '+(k||"err")+'">'+E(t)+'</div>' : ""; }
+  var data = null, target = null;
+  function uniq(key){ var s = {}; data.members.forEach(function(m){ if (m[key]) s[m[key]] = 1; }); return Object.keys(s); }
   function opts(sel, list){ sel.innerHTML = '<option value="">すべて</option>' + list.map(function(x){ return '<option>'+E(x)+'</option>'; }).join(""); }
-  opts($("fArea"), uniq("area")); opts($("fJob"), uniq("job"));
-  var target = null;
   function render(){
-    var d = M.load(), a = $("fArea").value, jb = $("fJob").value, t = M.now(d);
-    var us = d.users.filter(function(u){ return u.profile.public !== false && (!a || u.profile.area === a) && (!jb || u.profile.job === jb); })
-      .sort(function(x, y){ return (y.plan === "premium") - (x.plan === "premium") || y.lastLogin - x.lastLogin; });
-    $("list").innerHTML = us.length ? us.map(function(u){
-      var p = u.profile, age = M.ageOf(p.birth, t), sent = d.offers.filter(function(o){ return o.userId === u.id; }).length;
-      return '<div class="offer"><div class="top"><span>'+(u.plan === "premium" ? '<span class="pill">プレミアム</span>' : '')+(t - u.lastLogin < M.DAY ? '<span class="pill new">24時間以内にログイン</span>' : '')+'</span><span>オファー '+sent+'件</span></div>'
-        + '<div class="shop">'+E(p.name)+(age != null ? '（'+age+'歳）' : '')+'</div>'
-        + '<div class="note">'+[p.area && "希望："+p.area, p.job, p.wageHour && "時給"+p.wageHour, p.hours].filter(Boolean).map(E).join("・")+'</div>'
-        + (p.prTitle ? '<div class="body" style="margin-top:6px"><b>'+E(p.prTitle)+'</b></div>' : '')
-        + (p.prBody ? '<div class="body note">'+E(p.prBody)+'</div>' : '')
-        + '<div class="acts"><button class="btn gold sm" data-to="'+u.id+'" data-name="'+E(p.name)+'">オファーを送る</button></div></div>';
+    var a = $("fArea").value, jb = $("fJob").value;
+    var us = data.members.filter(function(m){ return (!a || m.area === a) && (!jb || m.job === jb); });
+    $("remain").textContent = data.shop.remaining + " 通";
+    $("list").innerHTML = us.length ? us.map(function(m){
+      return '<div class="offer"><div class="top"><span>'+(m.plan === "premium" ? '<span class="pill">プレミアム</span>' : '')+(m.recent ? '<span class="pill new">24時間以内にログイン</span>' : '')+'</span><span>'+(m.sentByMe ? '送信済み' : '')+'</span></div>'
+        + '<div class="shop">'+E(m.name)+(m.age != null ? '（'+m.age+'歳）' : '')+'</div>'
+        + '<div class="note">'+[m.area && "希望："+m.area, m.job, m.wageHour && "時給"+m.wageHour, m.hours, m.height && m.height+"cm"].filter(Boolean).map(E).join("・")+'</div>'
+        + (m.prTitle ? '<div class="body" style="margin-top:6px"><b>'+E(m.prTitle)+'</b></div>' : '') + (m.prBody ? '<div class="body note">'+E(m.prBody)+'</div>' : '')
+        + '<div class="acts">'+(m.sentByMe ? '<span class="note">30日以内に送信済み</span>' : '<button class="btn gold sm" data-to="'+E(m.id)+'" data-name="'+E(m.name)+'">オファーを送る</button>')+'</div></div>';
     }).join("") : '<div class="empty">条件に合う会員はいません</div>';
     [].forEach.call(document.querySelectorAll("[data-to]"), function(b){ b.onclick = function(){ target = b.dataset.to; $("sendTtl").textContent = b.dataset.name + " さんにオファーを送る"; $("sendMsg").innerHTML = ""; $("sendBox").classList.remove("hidden"); $("sendBox").scrollIntoView({ behavior: "smooth" }); }; });
   }
+  async function loadShop(){
+    data = await A.shopMembers(); only("vShop"); $("shopName").textContent = data.shop.name;
+    var j = jobs.find(function(x){ return x.url === data.shop.url; }); if (j && !$("wage").value) $("wage").value = (j.payDetail || j.pay || "").replace(/お店に確認中/g, "").slice(0, 120);
+    opts($("fArea"), uniq("area")); opts($("fJob"), uniq("job")); render();
+  }
   $("fArea").onchange = render; $("fJob").onchange = render;
   $("cancel").onclick = function(){ $("sendBox").classList.add("hidden"); };
-  $("send").onclick = function(){
-    var j = shops[$("shopSel").value]; var body = $("body").value.trim();
-    if (!body) return $("sendMsg").innerHTML = '<div class="msg err">メッセージを入力してください</div>';
-    if (/紹介料|スカウトバック|バック.*紹介/.test(body)) return $("sendMsg").innerHTML = '<div class="msg err">紹介料などの内容は送れません</div>';
-    var r = M.sendOffer({ userId: target, shop: j.name, shopUrl: j.url, body: body, wage: $("wage").value.trim() });
-    $("sendMsg").innerHTML = r.err ? '<div class="msg err">'+E(r.err)+'</div>' : '<div class="msg ok">送信しました。会員のマイページに届きます。</div>';
-    render();
-  };
-  render();
+  $("send").onclick = async function(){ var b = $("send"); b.disabled = true;
+    try { var r = await A.shopSend({ memberId: target, body: $("body").value.trim(), wage: $("wage").value.trim() });
+      $("sendMsg").innerHTML = '<div class="msg ok">送信しました。会員のマイページに届きます。</div>'; data.shop.remaining = r.remaining;
+      data.members.forEach(function(m){ if (m.id === target) m.sentByMe = true; }); render();
+    } catch (x) { $("sendMsg").innerHTML = '<div class="msg err">'+E(x.message)+'</div>'; } b.disabled = false; };
+  $("btnRedeem").onclick = async function(){ try { await A.shopRedeem($("code").value); msg("店舗アカウントが有効になりました。", "ok"); await loadShop(); } catch (x) { msg(x.message); } };
+  $("fApply").onsubmit = async function(e){ e.preventDefault(); var f = e.target;
+    try { await A.shopApply({ name: f.name.value.trim(), url: f.url.value, contact: f.contact.value.trim() }); only("vPending"); $("pendingText").textContent = "申し込みを受け付けました。運営が確認して承認すると、この画面からオファーを送れるようになります。"; } catch (x) { msg(x.message); } };
+  (async function(){
+    var cfg = await A.config(); if (!cfg.enabled) { msg("店舗用の画面は準備中です。", "warn"); return; }
+    try {
+      var r = await A.me(); $("nav").innerHTML = '<a href="../index.html">サイトへ</a><a href="/api/auth/logout">ログアウト</a>';
+      if (!r.shop || r.shop.status === "rejected") { only("vJoin"); if (r.shop) msg("前回の申し込みは承認されませんでした。内容を見直して、もう一度お申し込みください。", "warn"); return; }
+      if (r.shop.status === "pending") { only("vPending"); $("pendingText").textContent = "「" + r.shop.name + "」の申し込みを確認中です。承認されると、この画面からオファーを送れるようになります。"; return; }
+      if (r.shop.status === "suspended") { msg("この店舗アカウントは停止中です。運営にお問い合わせください。"); return; }
+      await loadShop();
+    } catch (e) { if (e.status === 401) only("vLogin"); else msg(e.message); }
+  })();
 })();
 </script>
 </body>

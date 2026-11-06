@@ -103,3 +103,6 @@ th{color:var(--gold);font-weight:500;white-space:nowrap}
 .g-faq details{background:var(--panel);border:1px solid var(--line2);border-radius:10px;margin:8px 0;padding:0 14px}
 .g-faq summary{cursor:pointer;padding:12px 0;font-size:14px;color:var(--ink)}
 .g-faq p{margin:0 0 12px;font-size:13px;color:var(--ink-soft)}
+
+.btn.line{background:#06C755;color:#fff}
+.btn.line::before{content:"LINE";font-family:Arial,sans-serif;font-weight:900;font-size:12px;background:#fff;color:#06C755;border-radius:5px;padding:1px 5px;margin-right:8px;vertical-align:2px}

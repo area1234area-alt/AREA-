@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>マイページ｜Area 会員（試作）</title>
+<title>マイページ｜Area 会員</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="member.css">
 </head>
 <body>
-<div class="demo-bar">試作版です。入力した内容はこの端末のブラウザだけに保存され、外部には送られません。</div>
+<div class="demo-bar hidden" id="prepBar">会員機能はただいま準備中です。もうしばらくお待ちください。</div>
 <header class="head">
   <a class="logo" href="../index.html">Area</a>
   <nav id="nav"></nav>
@@ -29,34 +29,27 @@
     <div><b>1</b>無料で登録</div><div><b>2</b>プロフィール公開</div><div><b>3</b>お店からオファー</div><div><b>4</b>気になるお店に応募</div>
   </div>
   <p class="lead" style="margin-top:6px"><a href="#guide">オファー機能のくわしい説明を見る ↓</a></p>
-  <div class="tabs" style="grid-template-columns:1fr 1fr">
-    <button type="button" id="tLogin" class="on">ログイン</button>
-    <button type="button" id="tReg">新規会員登録</button>
+  <div class="card" id="loginBox">
+    <h2>LINEでログイン・会員登録</h2>
+    <p class="note">パスワードはいりません。LINEのアカウントでそのままログインできます。<br>LINEの名前やトーク内容がお店に見えることはありません。</p>
+    <div id="loginMsg"></div>
+    <a class="btn line" id="lineBtn" href="/api/auth/line/start?next=/member/">LINEでログイン</a>
+    <p class="note" style="margin-top:10px">はじめての方も、このボタンから登録できます。ログインすると、削除前日のお知らせをAreaの公式LINEから受け取れます。</p>
   </div>
 
-  <form id="fLogin" class="card">
-    <h2>ログイン</h2>
-    <label>メールアドレス</label><input name="email" type="email" autocomplete="email" required>
-    <label style="margin-top:10px">パスワード</label><input name="password" type="password" autocomplete="current-password" required>
-    <div id="loginMsg"></div>
-    <button class="btn gold" type="submit">ログイン</button>
-    <p class="note" style="margin-top:12px">試作用のサンプル会員：miku@example.com ／ パスワード demo1234</p>
-  </form>
-
   <form id="fReg" class="card hidden">
-    <h2>新規会員登録</h2>
-    <h3>基本情報</h3>
+    <h2>はじめに、会員情報を入力してください</h2>
     <div class="grid">
       <div class="full"><label>ユーザー名<span class="req">必須</span></label><input name="username" maxlength="20" required></div>
-      <div class="full"><label>メールアドレス<span class="req">必須</span></label><input name="email" type="email" autocomplete="email" required></div>
-      <div class="full"><label>パスワード（8文字以上）<span class="req">必須</span></label><input name="password" type="password" minlength="8" autocomplete="new-password" required></div>
+      <div class="full"><label>メールアドレス（任意）</label><input name="email" type="email" autocomplete="email"></div>
       <div><label>生年月日<span class="req">必須</span></label><input name="birth" type="date" required></div>
-      <div><label>会員プラン</label><select name="plan"><option value="free">フリー（無料）</option><option value="premium">プレミアム（無料・試作）</option></select></div>
+      <div><label>会員プラン</label><select name="plan"><option value="free">フリー（無料）</option><option value="premium">プレミアム（無料）</option></select></div>
     </div>
     <label class="check"><input type="checkbox" name="agree"> <span><a href="#terms">利用規約</a>と<a href="#privacy">プライバシーポリシー</a>に同意します。18歳以上（高校生不可）です。</span></label>
-    <div class="msg warn">5日間ログインがないと、プロフィールやSNS情報もふくめてアカウントは自動で削除されます。</div>
+    <div class="msg warn">5日間ログインがないと、プロフィールやSNS情報もふくめてアカウントは自動で削除されます（4日目にLINEでお知らせします）。</div>
     <div id="regMsg"></div>
     <button class="btn gold" type="submit">登録してプロフィールを入力する</button>
+    <a class="btn ghost" href="/api/auth/logout">別のLINEアカウントでログインする</a>
   </form>
 </section>
 
@@ -165,7 +158,7 @@
 
   <h3 class="g-h">使い方は4ステップ</h3>
   <ol class="g-steps">
-    <li><span>01</span><div><b>無料で会員登録</b><p>ユーザー名・メールアドレス・生年月日だけで登録できます。料金は一切かかりません。</p></div></li>
+    <li><span>01</span><div><b>無料で会員登録</b><p>LINEでログインして、ユーザー名と生年月日を入れるだけ。料金は一切かかりません。</p></div></li>
     <li><span>02</span><div><b>プロフィールを公開</b><p>希望の勤務地・職種・時給・出勤時間、自己PRを入れます。くわしく書くほど、合うお店から届きやすくなります。</p></div></li>
     <li><span>03</span><div><b>お店からオファーが届く</b><p>Areaに掲載中のお店が、あなたのプロフィールを見てお誘いを送ります。条件は、そのお店の求人ページと同じ内容です。</p></div></li>
     <li><span>04</span><div><b>気になったら、お店に直接応募</b><p>オファーから求人ページを開いて、お店に直接連絡します。返事をするかどうか、応募するかどうかは自由です。</p></div></li>
@@ -184,7 +177,7 @@
     <li><b>メールアドレスはお店に見えません。</b>生年月日も、お店には年齢だけを表示します。</li>
     <li><b>公開・非公開はいつでも切り替えOK。</b>非公開にすると、お店の検索に出なくなります。</li>
     <li><b>オファーを送れるのは、Areaの掲載審査を通ったお店だけです。</b></li>
-    <li><b>5日間ログインがないと、アカウントは自動で削除されます。</b>プロフィール・SNS・オファー履歴も残りません。4日目にお知らせが届きます。</li>
+    <li><b>5日間ログインがないと、アカウントは自動で削除されます。</b>プロフィール・SNS・オファー履歴も残りません。4日目にAreaの公式LINEでお知らせします。</li>
     <li><b>退会はマイページからすぐにでき、</b>その場で全データを削除します。</li>
     <li><b>18歳未満の方・高校生の方は登録できません。</b></li>
   </ul>
@@ -205,121 +198,14 @@
   <p class="note" id="privacy">
     ・Areaは求人広告の掲載サイトです。職業の紹介・あっせんは行いません。オファーへの返事・応募・面接・条件の相談は、会員とお店が直接行います。<br>
     ・18歳未満の方、高校生の方は登録できません。<br>
-    ・プロフィールは、Areaに掲載中で審査を通ったお店だけが見られます。メールアドレスはお店に表示しません。<br>
-    ・最終ログインから5日間ログインがない場合、プロフィール・SNS情報・オファー履歴をふくむアカウントを自動で削除します。4日目に登録メールアドレスへお知らせします。削除したデータは元に戻せません。<br>
+    ・プロフィールは、Areaに掲載中で審査を通ったお店だけが見られます。LINEのアカウント情報・メールアドレス・生年月日はお店に表示しません（年齢のみ表示）。<br>・会員情報は、Areaが利用するクラウドサービス（Netlify、米国）のサーバーに保存します。<br>
+    ・最終ログインから5日間ログインがない場合、プロフィール・SNS情報・オファー履歴をふくむアカウントを自動で削除します。4日目にAreaの公式LINEでお知らせします。削除したデータは元に戻せません。<br>
     ・退会はマイページからいつでもでき、すぐに全データを削除します。
   </p>
 </section>
 </main>
 
-<script src="member.js"></script>
-<script>
-(function(){
-  var M = AreaMember; M.seed();
-  var AREAS = ["梅田","北新地","心斎橋","難波","十三","天満","江坂","京橋","祇園","三宮","池袋","上野","銀座","六本木","歌舞伎町","渋谷"];
-  var JOBS = ["キャバクラ","ラウンジ","クラブ","ガールズバー","スナック","昼キャバ"];
-  function opts(sel, list){ sel.innerHTML = '<option value="">未選択</option>' + list.map(function(x){ return '<option>'+x+'</option>'; }).join(""); }
-  opts(document.getElementById("areaSel"), AREAS); opts(document.getElementById("jobSel"), JOBS);
-  var $ = function(id){ return document.getElementById(id); }, E = M.esc;
-  function show(msgEl, text, kind){ msgEl.innerHTML = text ? '<div class="msg '+(kind||"err")+'">'+E(text)+'</div>' : ""; }
-
-  // 認証タブ
-  $("tLogin").onclick = function(){ $("tLogin").classList.add("on"); $("tReg").classList.remove("on"); $("fLogin").classList.remove("hidden"); $("fReg").classList.add("hidden"); };
-  $("tReg").onclick = function(){ $("tReg").classList.add("on"); $("tLogin").classList.remove("on"); $("fReg").classList.remove("hidden"); $("fLogin").classList.add("hidden"); };
-  $("fLogin").onsubmit = function(e){ e.preventDefault(); var f = e.target; var r = M.login(f.email.value, f.password.value); if (r.err) return show($("loginMsg"), r.err); render(); };
-  $("fReg").onsubmit = function(e){ e.preventDefault(); var f = e.target;
-    var r = M.register({ username: f.username.value.trim(), email: f.email.value, password: f.password.value, birth: f.birth.value, plan: f.plan.value, agree: f.agree.checked });
-    if (r.err) return show($("regMsg"), r.err); render("edit"); show($("editMsg"), "登録しました。プロフィールを入力すると、お店から見つけてもらいやすくなります。", "ok"); };
-
-  // マイページタブ
-  [].forEach.call(document.querySelectorAll("[data-tab]"), function(b){ b.onclick = function(){ tab(b.dataset.tab); }; });
-  function tab(name){
-    [].forEach.call(document.querySelectorAll("[data-tab]"), function(b){ b.classList.toggle("on", b.dataset.tab === name); });
-    [].forEach.call(document.querySelectorAll("[data-pane]"), function(p){ p.classList.toggle("hidden", p.dataset.pane !== name); });
-    if (name === "offers") renderOffers(); if (name === "public") renderPublic(); window.scrollTo(0, 0);
-  }
-
-  function offerHTML(o, full){
-    var html = '<div class="offer'+(o.read?'':' unread')+'">'
-      + '<div class="top"><span>'+(o.read?'既読':'<span class="pill new">NEW</span>')+'</span><span>'+M.fmt(o.sentAt,true)+'</span></div>'
-      + '<div class="shop">'+E(o.shop)+' からオファーが届いています</div>';
-    if (full) {
-      html += '<div class="body">'+E(o.body)+'</div>' + (o.wage ? '<div class="cond">提示条件：'+E(o.wage)+'</div>' : '')
-        + (o.reply ? '<div class="cond" style="color:var(--gold-lt)">あなたの返事：'+E(o.reply)+'</div>' : '')
-        + '<div class="acts">'
-        + (o.shopUrl ? '<a class="btn gold sm" href="../'+E(o.shopUrl)+'">お店の求人ページを見る</a>' : '')
-        + (o.reply ? '' : '<button class="btn ghost sm" data-reply="'+o.id+'" data-v="興味があります">興味があります</button><button class="btn ghost sm" data-reply="'+o.id+'" data-v="今回は見送ります">今回は見送ります</button>')
-        + '</div>';
-    }
-    return html + '</div>';
-  }
-  function renderOffers(){
-    var u = M.current(); if (!u) return; var list = M.offersFor(u.id);
-    $("offerList").innerHTML = list.length ? list.map(function(o){ return offerHTML(o, true); }).join("") : '<div class="empty">まだオファーは届いていません</div>';
-    list.forEach(function(o){ if (!o.read) M.markRead(o.id); });
-    [].forEach.call(document.querySelectorAll("[data-reply]"), function(b){ b.onclick = function(){ M.setReply(b.dataset.reply, b.dataset.v); renderOffers(); }; });
-    updateBadge();
-  }
-  function updateBadge(){ var u = M.current(); if (!u) return; var n = M.offersFor(u.id).filter(function(o){ return !o.read; }).length; $("unread").innerHTML = n ? '<span class="badge">'+n+'</span>' : ''; }
-  function renderPublic(){
-    var u = M.current(); if (!u) return; var p = u.profile, s = u.sns, age = M.ageOf(p.birth, M.now());
-    var rows = [["名前",p.name],["年齢",age!=null?age+"歳":""],["在籍店舗",p.shop],["血液型",p.blood?p.blood+"型":""],["身長",p.height?p.height+"cm":""],["バスト",p.bust?p.bust+"カップ":""],["出身地",p.hometown],["希望勤務地",p.area],["希望職種",p.job],["希望時給",p.wageHour],["希望日給",p.wageDay],["希望出勤時間",p.hours]];
-    var sns = [["Instagram",s.instagram],["TikTok",s.tiktok],["Facebook",s.facebook]].filter(function(x){ return x[1]; });
-    $("pubView").innerHTML = (p.public ? '' : '<div class="msg warn">いまは非公開です。お店の検索には出ません。</div>')
-      + '<dl class="prof">' + rows.filter(function(r){ return r[1]; }).map(function(r){ return '<dt>'+r[0]+'</dt><dd>'+E(r[1])+'</dd>'; }).join("") + '</dl>'
-      + (p.prTitle || p.prBody ? '<h3>'+E(p.prTitle||"自己PR")+'</h3><p style="white-space:pre-wrap;margin:0">'+E(p.prBody)+'</p>' : '')
-      + (sns.length ? '<h3>SNS</h3><div class="sns">'+sns.map(function(x){ return '<a href="'+E(x[1])+'" target="_blank" rel="noopener">'+x[0]+'</a>'; }).join("")+'</div>' : '');
-  }
-  function fillEdit(u){
-    var f = $("fEdit"), p = u.profile;
-    f.username.value = u.username; f.email.value = u.email; f.plan.value = u.plan; f.public.checked = p.public !== false;
-    ["name","shop","birth","blood","height","bust","hometown","area","job","wageHour","wageDay","hours","prTitle","prBody"].forEach(function(k){ f[k].value = p[k] || ""; });
-    ["instagram","tiktok","facebook"].forEach(function(k){ f[k].value = u.sns[k] || ""; });
-  }
-  $("fEdit").onsubmit = function(e){ e.preventDefault(); var f = e.target, u = M.current(); if (!u) return render();
-    var age = M.ageOf(f.birth.value, M.now()); if (age !== null && age < 18) return show($("editMsg"), "18歳未満の生年月日は登録できません");
-    var bad = ["instagram","tiktok","facebook"].filter(function(k){ return f[k].value && !/^https:\/\//.test(f[k].value); });
-    if (bad.length) return show($("editMsg"), "SNSは https:// から始まるURLで入力してください");
-    M.updateUser(u.id, function(x){
-      x.username = f.username.value.trim() || x.username; x.plan = f.plan.value;
-      var em = f.email.value.trim().toLowerCase(); if (em) x.email = em;
-      ["name","shop","birth","blood","height","bust","hometown","area","job","wageHour","wageDay","hours","prTitle","prBody"].forEach(function(k){ x.profile[k] = f[k].value.trim(); });
-      x.profile.public = f.public.checked;
-      ["instagram","tiktok","facebook"].forEach(function(k){ x.sns[k] = f[k].value.trim(); });
-    });
-    show($("editMsg"), "保存しました", "ok"); renderHome();
-  };
-  $("btnQuit").onclick = function(){ var u = M.current(); if (!u) return;
-    if (!confirm("退会すると、プロフィール・SNS情報・オファー履歴がすべて削除され、元に戻せません。退会しますか？")) return;
-    M.deleteUser(u.id, "本人が退会"); M.logout(); render(); show($("loginMsg"), "退会しました。データはすべて削除されました。", "ok"); };
-
-  function renderHome(){
-    var u = M.current(); if (!u) return;
-    $("hello").textContent = (u.profile.name || u.username) + " さんのマイページ";
-    $("sId").textContent = u.id; $("sPlan").textContent = M.planName(u.plan);
-    $("sCreated").textContent = M.fmt(u.createdAt); $("sLast").textContent = M.fmt(u.lastLogin, true);
-    $("sLeft").textContent = "あと " + M.DELETE_DAYS + " 日（ログインするたびにリセットされます）";
-    var list = M.offersFor(u.id).slice(0, 3);
-    $("homeOffers").innerHTML = list.length ? list.map(function(o){ return offerHTML(o, false); }).join("") + '<button class="btn ghost" type="button" id="goOffers">オファー履歴をすべて見る</button>' : '<div class="empty">まだオファーは届いていません。<br>プロフィールを入力すると、お店から見つけてもらいやすくなります。</div>';
-    var g = $("goOffers"); if (g) g.onclick = function(){ tab("offers"); };
-    updateBadge();
-  }
-  function nav(u){
-    $("nav").innerHTML = u ? '<a href="../index.html">求人を探す</a><button type="button" id="btnOut">ログアウト</button>' : '<a href="../index.html">求人を探す</a>';
-    var b = $("btnOut"); if (b) b.onclick = function(){ M.logout(); render(); };
-  }
-  function render(startTab){
-    // 前回の操作から4日以上たっていたら、今回のログインでリセットされる前に案内を出す
-    var before = M.current(); var warn = "";
-    if (before && (M.now() - before.lastLogin) >= M.WARN_DAYS * M.DAY) warn = "前回のログインから4日以上たっていました。今回のログインで、自動削除までの日数は5日にリセットされました。";
-    var u = M.touch(); nav(u);
-    $("vAuth").classList.toggle("hidden", !!u); $("vMy").classList.toggle("hidden", !u);
-    $("warnBox").innerHTML = warn ? '<div class="msg warn">'+E(warn)+'</div>' : "";
-    if (u) { fillEdit(u); renderHome(); tab(startTab || "home"); }
-  }
-  $("guideCta").onclick = function(e){ e.preventDefault(); if (M.current()) { tab("edit"); } else { $("tReg").click(); } window.scrollTo(0,0); };
-  render();
-})();
-</script>
+<script src="member-api.js"></script>
+<script src="member-page.js"></script>
 </body>
 </html>

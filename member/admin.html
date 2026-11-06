@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>管理画面：会員｜Area（試作）</title>
+<title>管理画面：会員｜Area</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,89 +12,86 @@
 <style>.wrap{max-width:980px}.head{max-width:980px}</style>
 </head>
 <body>
-<div class="demo-bar">試作版（運営用の管理画面）。本番では運営だけがログインして使えます。</div>
 <header class="head">
   <a class="logo" href="../index.html">Area</a>
-  <nav><a href="index.html">会員マイページ</a><a href="shop.html">店舗用</a></nav>
+  <nav id="nav"><a href="index.html">会員マイページ</a><a href="shop.html">店舗用</a></nav>
 </header>
 <main class="wrap">
   <div class="en">Admin</div>
-  <h1 class="ttl">会員の管理</h1>
-  <p class="lead" id="clock"></p>
+  <h1 class="ttl">会員・店舗の管理</h1>
+  <div id="msg"></div>
+  <div class="card hidden" id="vLogin"><h2>管理者ログイン</h2><a class="btn line" href="/api/auth/line/start?next=/member/admin.html">LINEでログイン</a></div>
 
-  <div class="card">
-    <h2>サマリー</h2>
-    <div class="stats" style="grid-template-columns:repeat(4,1fr)">
-      <div class="stat"><b>会員数</b><span id="cUsers"></span></div>
-      <div class="stat"><b>オファー総数</b><span id="cOffers"></span></div>
-      <div class="stat"><b>まもなく削除（4日以上）</b><span id="cWarn"></span></div>
-      <div class="stat"><b>削除済み（累計）</b><span id="cDel"></span></div>
+  <div class="hidden" id="vAdmin">
+    <div class="card">
+      <h2>サマリー</h2>
+      <div class="stats" style="grid-template-columns:repeat(4,1fr)">
+        <div class="stat"><b>会員数</b><span id="cUsers"></span></div>
+        <div class="stat"><b>承認待ちの店舗</b><span id="cPend"></span></div>
+        <div class="stat"><b>まもなく削除（4日以上）</b><span id="cWarn"></span></div>
+        <div class="stat"><b>削除済み（直近）</b><span id="cDel"></span></div>
+      </div>
     </div>
-  </div>
 
-  <div class="card">
-    <h2>会員一覧</h2>
-    <div class="tblwrap"><table>
-      <thead><tr><th>会員ID</th><th>ユーザー名</th><th>プラン</th><th>会員登録日</th><th>最終ログイン</th><th>自動削除まで</th><th>オファー</th><th>公開</th><th></th></tr></thead>
-      <tbody id="tb"></tbody>
-    </table></div>
-    <p class="note" style="margin-top:8px">メールアドレス・プロフィールの中身は、必要なときだけ「詳細」で確認します。</p>
-    <div id="detail"></div>
-  </div>
-
-  <div class="card">
-    <h2>5日間未ログインの自動削除</h2>
-    <p class="note">・最終ログインから<b>5日</b>たった会員は、プロフィール・SNS・オファー履歴をふくめて自動で削除します（ページを開いたときと、毎日の自動処理で実行）。<br>
-    ・<b>4日</b>たった会員には「明日削除されます。ログインすると延長されます」というお知らせを送ります（本番はメール。試作ではこの表の「通知予定」に表示）。<br>
-    ・ログインすると最終ログイン日時が更新され、5日のカウントはリセットされます。<br>
-    ・削除後は、個人情報を残さず「会員ID・削除日・理由」だけを記録します。</p>
-    <h3>試作用：日付を進めて動きを確認</h3>
-    <div class="row" style="flex-wrap:wrap">
-      <button class="btn ghost sm" data-adv="1">1日進める</button>
-      <button class="btn ghost sm" data-adv="2">2日進める</button>
-      <button class="btn ghost sm" id="reset">日付を今日に戻す</button>
-      <button class="btn danger sm" id="wipe">試作データを全部消す</button>
+    <div class="card">
+      <h2>会員一覧</h2>
+      <div class="tblwrap"><table><thead><tr><th>会員ID</th><th>ユーザー名</th><th>プラン</th><th>会員登録日</th><th>最終ログイン</th><th>自動削除まで</th><th>希望</th><th>オファー</th><th>公開</th><th></th></tr></thead><tbody id="tbM"></tbody></table></div>
     </div>
-    <div id="sweepMsg"></div>
-    <h3>削除の記録</h3>
-    <div class="tblwrap"><table><thead><tr><th>会員ID</th><th>削除日時</th><th>理由</th></tr></thead><tbody id="tbDel"></tbody></table></div>
+
+    <div class="card">
+      <h2>店舗</h2>
+      <div class="tblwrap"><table><thead><tr><th>店名</th><th>求人ページ</th><th>連絡先</th><th>状態</th><th>申込日</th><th>今月の送信</th><th></th></tr></thead><tbody id="tbS"></tbody></table></div>
+      <h3>招待コードを発行</h3>
+      <div class="grid"><div><label>店名</label><input id="invName"></div><div><label>求人ページ</label><select id="invUrl"></select></div></div>
+      <button class="btn gold sm" style="margin-top:10px" id="btnInv">発行する</button>
+      <div id="invMsg"></div>
+      <div class="tblwrap" style="margin-top:8px"><table><thead><tr><th>コード</th><th>店名</th><th>発行日</th><th>状態</th></tr></thead><tbody id="tbI"></tbody></table></div>
+    </div>
+
+    <div class="card">
+      <h2>削除の記録</h2>
+      <p class="note">最終ログインから5日で自動削除（4日目に公式LINEでお知らせ）。個人情報は残さず、会員ID・日時・理由だけを記録します。</p>
+      <div class="tblwrap"><table><thead><tr><th>会員ID</th><th>削除日時</th><th>理由</th></tr></thead><tbody id="tbD"></tbody></table></div>
+    </div>
   </div>
 </main>
-<script src="member.js"></script>
+<script src="../jobs.js"></script>
+<script src="member-api.js"></script>
 <script>
 (function(){
-  var M = AreaMember; M.seed(); var E = M.esc, $ = function(id){ return document.getElementById(id); };
-  function render(){
-    var n = M.sweep(); var d = M.load(), t = M.now(d);
-    $("clock").textContent = "基準の日時：" + M.fmt(t, true) + (d.clockOffset ? "（試作用に日付を進めています）" : "");
-    $("sweepMsg").innerHTML = n ? '<div class="msg warn">'+n+'人の会員を、5日間ログインがなかったため削除しました。</div>' : "";
-    var warnN = 0;
-    $("tb").innerHTML = d.users.map(function(u){
-      var left = M.daysLeft(u, d), off = d.offers.filter(function(o){ return o.userId === u.id; }).length;
-      var warn = (t - u.lastLogin) >= M.WARN_DAYS * M.DAY; if (warn) warnN++;
-      var l = left < 1 ? Math.max(0, Math.round(left * 24)) + "時間" : left.toFixed(1) + "日";
-      return '<tr><td>'+u.id+'</td><td>'+E(u.username)+'</td><td>'+M.planName(u.plan)+'</td><td>'+M.fmt(u.createdAt)+'</td><td>'+M.fmt(u.lastLogin, true)+'</td>'
-        + '<td class="'+(warn ? 'danger-txt' : '')+'">'+l+(warn ? '<br>通知予定' : '')+'</td><td>'+off+'件</td><td>'+(u.profile.public !== false ? '公開' : '非公開')+'</td>'
-        + '<td><button class="btn ghost sm" data-d="'+u.id+'">詳細</button></td></tr>';
-    }).join("") || '<tr><td colspan="9" class="empty">会員はいません</td></tr>';
-    $("cUsers").textContent = d.users.length + "人"; $("cOffers").textContent = d.offers.length + "件"; $("cWarn").textContent = warnN + "人"; $("cDel").textContent = d.deleted.length + "件";
-    $("tbDel").innerHTML = d.deleted.slice().reverse().map(function(x){ return '<tr><td>'+x.id+'</td><td>'+M.fmt(x.deletedAt, true)+'</td><td>'+E(x.reason)+'</td></tr>'; }).join("") || '<tr><td colspan="3" class="empty">まだありません</td></tr>';
-    [].forEach.call(document.querySelectorAll("[data-d]"), function(b){ b.onclick = function(){ detail(b.dataset.d); }; });
+  var A = AreaAPI, E = A.esc, $ = function(id){ return document.getElementById(id); }, DAY = 86400000;
+  var jobs = (window.AREA_JOBS || []).filter(function(j){ return j.url && j.name; });
+  $("invUrl").innerHTML = '<option value="">なし</option>' + jobs.map(function(j){ return '<option value="'+E(j.url)+'">'+E(j.name)+'</option>'; }).join("");
+  $("invUrl").onchange = function(){ var j = jobs.find(function(x){ return x.url === $("invUrl").value; }); if (j && !$("invName").value) $("invName").value = j.name; };
+  function msg(t, k){ $("msg").innerHTML = t ? '<div class="msg '+(k||"err")+'">'+E(t)+'</div>' : ""; }
+  var ST = { pending: "承認待ち", approved: "承認済み", suspended: "停止中", rejected: "却下" };
+  async function load(){
+    var d = await A.adminOverview(), t = d.now, warn = 0;
+    $("tbM").innerHTML = d.members.sort(function(a,b){ return b.lastLogin - a.lastLogin; }).map(function(m){
+      var left = 5 - (t - m.lastLogin) / DAY, w = left <= 1; if (w) warn++;
+      return '<tr><td>'+E(m.id)+'</td><td>'+E(m.username)+'</td><td>'+A.planName(m.plan)+'</td><td>'+A.fmt(m.createdAt)+'</td><td>'+A.fmt(m.lastLogin,true)+'</td>'
+        + '<td class="'+(w?'danger-txt':'')+'">'+(left < 1 ? Math.max(0, Math.round(left*24))+'時間' : left.toFixed(1)+'日')+'</td><td>'+E([m.area,m.job].filter(Boolean).join("・"))+'</td><td>'+m.offers+'件</td><td>'+(m.public?'公開':'非公開')+'</td>'
+        + '<td><button class="btn danger sm" data-del="'+E(m.id)+'" data-n="'+E(m.username)+'">削除</button></td></tr>';
+    }).join("") || '<tr><td colspan="10" class="empty">会員はいません</td></tr>';
+    $("tbS").innerHTML = d.shops.map(function(s){
+      return '<tr><td>'+E(s.name)+'</td><td>'+(s.url ? '<a href="../'+E(s.url)+'" target="_blank">'+E(s.url)+'</a>' : '—')+'</td><td>'+E(s.contact)+'</td><td>'+ST[s.status]+'</td><td>'+A.fmt(s.appliedAt)+'</td><td>'+s.count+'通</td><td>'
+        + (s.status !== "approved" ? '<button class="btn gold sm" data-st="approved" data-k="'+E(s.key)+'">承認</button> ' : '')
+        + (s.status === "approved" ? '<button class="btn ghost sm" data-st="suspended" data-k="'+E(s.key)+'">停止</button>' : '')
+        + (s.status === "pending" ? '<button class="btn ghost sm" data-st="rejected" data-k="'+E(s.key)+'">却下</button>' : '') + '</td></tr>';
+    }).join("") || '<tr><td colspan="7" class="empty">店舗はまだありません</td></tr>';
+    $("tbI").innerHTML = d.invites.map(function(i){ return '<tr><td><b>'+E(i.code)+'</b></td><td>'+E(i.name)+'</td><td>'+A.fmt(i.createdAt)+'</td><td>'+(i.usedBy ? '使用済み' : '未使用')+'</td></tr>'; }).join("") || '<tr><td colspan="4" class="empty">まだありません</td></tr>';
+    $("tbD").innerHTML = d.deleted.sort(function(a,b){ return b.deletedAt - a.deletedAt; }).slice(0, 50).map(function(x){ return '<tr><td>'+E(x.id)+'</td><td>'+A.fmt(x.deletedAt,true)+'</td><td>'+E(x.reason)+'</td></tr>'; }).join("") || '<tr><td colspan="3" class="empty">まだありません</td></tr>';
+    $("cUsers").textContent = d.members.length + "人"; $("cPend").textContent = d.shops.filter(function(s){ return s.status === "pending"; }).length + "店"; $("cWarn").textContent = warn + "人"; $("cDel").textContent = d.deleted.length + "件";
+    [].forEach.call(document.querySelectorAll("[data-del]"), function(b){ b.onclick = async function(){ if (!confirm(b.dataset.n + " さんのデータをすべて削除します。よろしいですか？")) return; try { await A.adminDeleteMember(b.dataset.del); load(); } catch (x) { msg(x.message); } }; });
+    [].forEach.call(document.querySelectorAll("[data-st]"), function(b){ b.onclick = async function(){ try { await A.adminShop({ key: b.dataset.k, status: b.dataset.st }); load(); } catch (x) { msg(x.message); } }; });
   }
-  function detail(id){
-    var d = M.load(), u = d.users.find(function(x){ return x.id === id; }); if (!u) return;
-    var p = u.profile, os = d.offers.filter(function(o){ return o.userId === id; }).sort(function(a, b){ return b.sentAt - a.sentAt; });
-    $("detail").innerHTML = '<div class="card" style="background:var(--panel2)"><h2>'+E(u.username)+'（'+u.id+'）</h2>'
-      + '<dl class="prof"><dt>メール</dt><dd>'+E(u.email)+'</dd><dt>登録日</dt><dd>'+M.fmt(u.createdAt, true)+'</dd><dt>最終ログイン</dt><dd>'+M.fmt(u.lastLogin, true)+'</dd>'
-      + '<dt>希望</dt><dd>'+E([p.area, p.job, p.wageHour, p.hours].filter(Boolean).join("・") || "—")+'</dd></dl>'
-      + '<h3>オファー履歴</h3>' + (os.length ? os.map(function(o){ return '<div class="note">'+M.fmt(o.sentAt, true)+'　'+E(o.shop)+'　'+(o.read ? '既読' : '未読')+(o.reply ? '　返事：'+E(o.reply) : '')+'</div>'; }).join("") : '<div class="note">なし</div>')
-      + '<button class="btn danger sm" style="margin-top:12px" id="delOne">この会員を削除する</button></div>';
-    $("delOne").onclick = function(){ if (confirm(u.username + " さんのデータをすべて削除します。よろしいですか？")) { M.deleteUser(id, "運営が削除"); $("detail").innerHTML = ""; render(); } };
-  }
-  [].forEach.call(document.querySelectorAll("[data-adv]"), function(b){ b.onclick = function(){ M.advance(+b.dataset.adv); render(); }; });
-  $("reset").onclick = function(){ M.resetClock(); render(); };
-  $("wipe").onclick = function(){ if (confirm("試作データ（会員・オファー・削除記録）を全部消して、サンプル会員を入れ直します。")) { M.wipe(); M.seed(); render(); } };
-  render();
+  $("btnInv").onclick = async function(){ try { var r = await A.adminInvite({ name: $("invName").value.trim(), url: $("invUrl").value }); $("invMsg").innerHTML = '<div class="msg ok">招待コード：<b>'+E(r.code)+'</b>（お店に伝えてください）</div>'; $("invName").value = ""; load(); } catch (x) { $("invMsg").innerHTML = '<div class="msg err">'+E(x.message)+'</div>'; } };
+  (async function(){
+    var cfg = await A.config(); if (!cfg.enabled) { msg("会員機能はまだ設定されていません（LINEログインの設定待ち）。", "warn"); return; }
+    try { var r = await A.me(); if (!r.admin) { msg("この画面は管理者だけが使えます。"); return; }
+      $("nav").innerHTML += '<a href="/api/auth/logout">ログアウト</a>'; $("vAdmin").classList.remove("hidden"); await load();
+    } catch (e) { if (e.status === 401) $("vLogin").classList.remove("hidden"); else msg(e.message); }
+  })();
 })();
 </script>
 </body>
