@@ -4,7 +4,7 @@
 // ・同じ回線からの発行は1時間に6件まで
 import { getStore } from "@netlify/blobs";
 import crypto from "node:crypto";
-import SHOPS from "../lib/asobu-shops.json";
+import { loadOne } from "../lib/guide-core.mjs";
 import { session, isAdmin } from "../lib/member-core.mjs";
 
 const json = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
@@ -24,9 +24,9 @@ export default async (req) => {
   }
   if (req.method !== "POST") return json({ error: "使えない方法です" }, 405);
   let body = {}; try { body = await req.json(); } catch (e) {}
-  const shop = SHOPS[body.shop];
+  const shop = await loadOne(String(body.shop || ""));
   const people = Math.max(1, Math.min(10, parseInt(body.people, 10) || 1));
-  if (!shop || !shop.partner) return json({ error: "このお店は紹介IDの対象ではありません" }, 400);
+  if (!shop || !shop.ref || shop.status !== "published") return json({ error: "このお店は紹介IDの対象ではありません" }, 400);
   const now = jst(), h = now.getUTCHours();
   if (shop.settai && h < 6) return json({ error: "0時〜6時は、このお店の紹介IDは発行していません。" }, 403);
   const st = store();

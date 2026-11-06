@@ -14,7 +14,7 @@
 <body>
 <header class="head">
   <a class="logo" href="../index.html">Area</a>
-  <nav id="nav"><a href="index.html">会員マイページ</a><a href="shop.html">店舗用</a></nav>
+  <nav id="nav"><a href="#guide">遊ぶ</a><a href="index.html">会員マイページ</a><a href="shop.html">店舗用</a></nav>
 </header>
 <main class="wrap">
   <div class="en">Admin</div>
@@ -33,6 +33,54 @@
       </div>
     </div>
 
+
+    <div class="card" id="guide">
+      <h2>遊ぶ（UMEDA NIGHT GUIDE）</h2>
+      <div id="gMsg"></div>
+      <div class="row" style="align-items:center"><span class="note" id="gCnt"></span><button class="btn gold sm" id="gNew" style="flex:0 0 auto">お店を登録</button></div>
+      <div class="tblwrap" style="margin-top:8px"><table><thead><tr><th>お店</th><th>ジャンル</th><th>掲載</th><th>紹介ID</th><th>許可証</th><th></th></tr></thead><tbody id="gTb"></tbody></table></div>
+      <p class="note">「承認・公開」で一覧とお店ページに出ます。「停止」で非公開に。紹介IDの「対象」にチェックしたお店だけにボタンが出ます。</p>
+
+      <div class="hidden" id="gFormBox">
+        <h3 id="gFormTtl">お店を登録</h3>
+        <form id="gForm">
+          <div class="grid">
+            <div><label>店舗キー（URLになる・半角英小文字）<span class="req">必須</span></label><input name="key" placeholder="例）lilith"></div>
+            <div><label>ジャンル<span class="req">必須</span></label><select name="genre" id="gCat"></select></div>
+            <div><label>店名<span class="req">必須</span></label><input name="name"></div>
+            <div><label>読み</label><input name="kana"></div>
+            <div><label>ジャンルの補足</label><input name="sub" placeholder="例）昼・夜キャバ"></div>
+            <div><label>町名</label><input name="town" placeholder="例）堂山町"></div>
+            <div class="full"><label>住所<span class="req">必須</span></label><input name="address"></div>
+            <div><label>最寄り駅</label><input name="station"></div>
+            <div><label>電話番号</label><input name="tel"></div>
+            <div><label>電話の補足</label><input name="telNote" placeholder="例）20時以降受付"></div>
+            <div><label>営業時間</label><input name="hours"></div>
+            <div><label>定休日</label><input name="holiday"></div>
+            <div><label>料金のめやす（カードに出る）</label><input name="from" placeholder="例）60分 8,000円〜"></div>
+            <div><label>席・設備</label><input name="facility"></div>
+            <div><label>プランの印（カードに出る）</label><input name="planFrom" placeholder="例）飲み放題 60分 3,500円〜"></div>
+            <div class="full"><label>紹介文</label><textarea name="intro"></textarea></div>
+            <div class="full"><label>料金表（1行に「項目｜金額」）</label><textarea name="price" placeholder="1セット 60分｜8,000円"></textarea></div>
+            <div class="full"><label>飲み放題プラン（1行に「料金｜内容｜オプション」）</label><textarea name="plan" placeholder="60分 3,500円｜ウイスキー・ブランデー飲み放題｜焼酎・ビールもご希望の場合 ＋1,500円"></textarea></div>
+            <div class="full"><label>写真（1行に1つ、img/ から）</label><textarea name="images" placeholder="img/lilith/main.jpg"></textarea></div>
+            <div><label>Areaの求人ページ</label><input name="job" placeholder="例）lilith.html"></div>
+            <div><label>並び順（小さいほど上）</label><input name="order" inputmode="numeric"></div>
+            <div><label>許可・届出の種類</label><input name="licenseType" placeholder="例）風俗営業1号 許可"></div>
+            <div><label>許可証を確認した日</label><input name="licenseChecked" type="date"></div>
+          </div>
+          <div id="gFormMsg"></div>
+          <div class="row"><button class="btn ghost" type="button" id="gCancel">やめる</button><button class="btn gold" type="submit">保存する</button></div>
+        </form>
+      </div>
+
+      <h3>紹介ID（<span id="gVisCnt"></span>）</h3>
+      <input type="month" id="gMonth" style="max-width:200px">
+      <div class="tblwrap" style="margin-top:8px"><table><thead><tr><th>紹介ID</th><th>お店</th><th>人数</th><th>プラン</th><th>発行</th></tr></thead><tbody id="gVis"></tbody></table></div>
+
+      <h3>操作の記録（今月）</h3>
+      <div class="tblwrap"><table><thead><tr><th>日時</th><th>誰が</th><th>内容</th></tr></thead><tbody id="gLog"></tbody></table></div>
+    </div>
     <div class="card">
       <h2>会員一覧</h2>
       <div class="tblwrap"><table><thead><tr><th>会員ID</th><th>ユーザー名</th><th>プラン</th><th>会員登録日</th><th>最終ログイン</th><th>自動削除まで</th><th>希望</th><th>オファー</th><th>公開</th><th></th></tr></thead><tbody id="tbM"></tbody></table></div>
@@ -57,6 +105,7 @@
 </main>
 <script src="../jobs.js"></script>
 <script src="member-api.js"></script>
+<script src="admin-guide.js"></script>
 <script>
 (function(){
   var A = AreaAPI, E = A.esc, $ = function(id){ return document.getElementById(id); }, DAY = 86400000;
@@ -89,7 +138,7 @@
   (async function(){
     var cfg = await A.config(); if (!cfg.enabled) { msg("会員機能はまだ設定されていません（LINEログインの設定待ち）。", "warn"); return; }
     try { var r = await A.me(); if (!r.admin) { msg("この画面は管理者だけが使えます。"); return; }
-      $("nav").innerHTML += '<a href="/api/auth/logout">ログアウト</a>'; $("vAdmin").classList.remove("hidden"); await load();
+      $("nav").innerHTML += '<a href="/api/auth/logout">ログアウト</a>'; $("vAdmin").classList.remove("hidden"); if (window.initGuideAdmin) initGuideAdmin(); await load();
     } catch (e) { if (e.status === 401) $("vLogin").classList.remove("hidden"); else msg(e.message); }
   })();
 })();
