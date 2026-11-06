@@ -1,5 +1,5 @@
 // Area 遊ぶ：運営の管理API（/api/guide/admin/...）— 管理者だけ
-import { store, loadAll, loadOne, addLog, ensureSeed, SERVICE, STATUS, jstMonth, validKey } from "../lib/guide-core.mjs";
+import { store, loadAll, loadOne, addLog, ensureSeed, SERVICE, STATUS, jstMonth, validKey, listNews, NEWS_DAYS, NEWS_KINDS, NG_NEWS } from "../lib/guide-core.mjs";
 import { session, isAdmin, configured } from "../lib/member-core.mjs";
 import { getStore } from "@netlify/blobs";
 
@@ -70,6 +70,34 @@ export default async (req) => {
     const vs = getStore({ name: "area-visits", consistency: "strong" }), { blobs } = await vs.list({ prefix: "visit/" + month + "/" });
     const list = (await Promise.all(blobs.map((x) => vs.get(x.key, { type: "json" })))).filter(Boolean).filter((v) => v.src !== "selftest").sort((a, c) => c.at - a.at);
     return json({ month, list });
+  }
+  // ===== お知らせ（今は運営が代わりに投稿。店舗ログインができたら店舗も投稿） =====
+  if (route === "news" && m === "GET") return json({ list: await listNews({ all: true }), kinds: NEWS_KINDS });
+  if (route === "news" && m === "POST") {
+    const shop = str(b.shop, 32), kind = NEWS_KINDS.includes(b.kind) ? b.kind : "お知らせ", title = str(b.title, 40), text = str(b.body, 300);
+    if (!(await loadOne(shop))) return err("お店が見つかりません");
+    if (!title) return err("タイトルを入れてください");
+    if (NG_NEWS.test(title + text)) return err("使えない言葉が入っています（紹介料・スカウト・「Areaを見たら割引」など）");
+    const id = "N" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), at = Date.now();
+    await st.setJSON("news/" + id, { id, shop, kind, title, body: text, at, expires: at + NEWS_DAYS * 86400e3, by: who });
+    await addLog(who, `${shop} のお知らせ「${title}」を投稿`);
+    return json({ ok: true });
+  }
+  if (route === "news" && m === "DELETE") {
+    const id = str(b.id, 30); await st.delete("news/" + id); await addLog(who, `お知らせ ${id} を削除`); return json({ ok: true });
+  }
+  // ===== 掲載の申請 =====
+  if (route === "applies" && m === "GET") {
+    const { blobs } = await st.list({ prefix: "apply/" });
+    const list = (await Promise.all(blobs.map((x) => st.get(x.key, { type: "json" })))).filter(Boolean).sort((a, c) => c.at - a.at);
+    return json({ list });
+  }
+  if (route === "apply" && m === "POST") {
+    const id = str(b.id, 30), a = await st.get("apply/" + id, { type: "json" }); if (!a) return err("申請が見つかりません", 404);
+    const to = ["新規", "対応中", "登録済み", "見送り"].includes(b.state) ? b.state : a.state;
+    a.state = to; a.memo = str(b.memo != null ? b.memo : a.memo, 300); a.updatedAt = Date.now();
+    await st.setJSON("apply/" + id, a); await addLog(who, `掲載申請 ${a.name} を「${to}」に`);
+    return json({ ok: true });
   }
   return err("見つかりません", 404);
 };

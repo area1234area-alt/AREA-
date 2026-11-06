@@ -18,6 +18,7 @@
     <h1>関西で飲みに行く</h1>
     <p>いまは大阪・梅田のお店を掲載中。料金・営業時間・場所をまとめてチェック</p>
   </section>
+  <section class="newsbar" id="newsbar" hidden><h2><span>NEWS</span>新着のお知らせ</h2><div class="nw-row" id="news"></div></section>
   <div class="chips" id="chips"></div>
   <p class="count" id="count"></p>
   <div class="list" id="list"></div>
@@ -44,6 +45,12 @@
         + '<dl><dt>営業</dt><dd>'+esc(s.hours)+'</dd>'+(s.holiday?'<dt>定休</dt><dd>'+esc(s.holiday)+'</dd>':'')+'<dt>最寄り</dt><dd>'+esc(s.station)+'</dd></dl>'
         + '<div class="fr">'+esc(s.from)+'</div>'+(s.planFrom?'<span class="plf">'+esc(s.planFrom)+'</span>':'')+(s.partner?'<span class="goln">紹介IDをもらって行く →</span>':'')+'</a>';
     }).join("");
+  }
+  var N = window.ASOBU_NEWS || [];
+  if (N.length) {
+    document.getElementById("newsbar").hidden = false;
+    document.getElementById("news").innerHTML = N.slice(0, 8).map(function(n){ var d = new Date(n.at);
+      return '<a class="nwc" href="'+n.shop+'.html"><div class="nw-top"><span class="nw-k">'+esc(n.kind)+'</span><time>'+(d.getMonth()+1)+'/'+d.getDate()+'</time></div><b>'+esc(n.title)+'</b><span class="nw-s">'+esc(n.name)+'</span></a>'; }).join("");
   }
   chips.onclick = function(e){ var b = e.target.closest("button"); if (!b) return; cur = b.dataset.g; render(); };
   render();

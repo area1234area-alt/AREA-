@@ -121,3 +121,19 @@ td{color:var(--ink)}
 .pk-o{display:flex;gap:6px;align-items:flex-start;font-size:12px;color:var(--soft);margin-top:6px}
 .pk-o input{margin-top:3px;accent-color:var(--amber)}
 .t-plan{margin-top:6px;font-size:14px;font-weight:700;color:var(--ink)}
+
+/* お知らせ（7日表示） */
+.newsbar{margin:6px 0 4px}
+.newsbar h2,.news h2{font-family:var(--serif);font-size:18px;margin:0 0 8px;letter-spacing:.06em}
+.newsbar h2 span,.news h2 span{font-family:var(--en);font-style:italic;color:var(--sky);font-size:13px;letter-spacing:.25em;margin-right:8px}
+.nw-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.nw-row::-webkit-scrollbar{display:none}
+.nwc{flex:0 0 220px;display:block;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.nwc b{display:block;font-size:14px;line-height:1.5;margin:4px 0 2px}
+.nw-s{font-size:11px;color:var(--soft)}
+.nw-top{display:flex;justify-content:space-between;font-size:11px;color:var(--dim)}
+.nw-k{color:#06112a;background:var(--sky);border-radius:999px;padding:0 8px;font-weight:700}
+.news{margin:14px 0}
+.nw{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:8px}
+.nw h3{font-size:15px;margin:6px 0 2px}
+.nw p{margin:0;font-size:13px;color:var(--soft)}

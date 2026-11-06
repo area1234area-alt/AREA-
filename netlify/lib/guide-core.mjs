@@ -48,6 +48,17 @@ export async function loadOne(key) {
   const c = await st.get("cat/" + l.genre, { type: "json" });
   return { key, ...b, ...l, settai: !!(c && c.settai) };
 }
+// ===== お知らせ（7日で自動終了） =====
+export const NEWS_DAYS = 7;
+export const NEWS_KINDS = ["お知らせ", "イベント", "新人", "空き状況"];
+export const NG_NEWS = /紹介料|スカウト|バック|本番|裏オプ|Area.{0,12}(割引|引き|無料|サービス)/;
+export async function listNews({ shop = null, all = false } = {}) {
+  const st = store(), { blobs } = await st.list({ prefix: "news/" });
+  const now = Date.now();
+  const list = (await Promise.all(blobs.map((b) => st.get(b.key, { type: "json" })))).filter(Boolean)
+    .filter((n) => (all || n.expires > now) && (!shop || n.shop === shop)).sort((a, b) => b.at - a.at);
+  return list;
+}
 export async function addLog(who, what) {
   const t = Date.now();
   await store().setJSON(`log/${jstMonth(t)}/${t}-${Math.random().toString(36).slice(2, 6)}`, { t, who, what });
@@ -55,14 +66,15 @@ export async function addLog(who, what) {
 
 // ===== 公開ページ =====
 const E = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmtDay = (t) => { const d = new Date(t + 9 * 3600e3); return (d.getUTCMonth() + 1) + "/" + d.getUTCDate(); };
 const telHref = (t) => "tel:" + String(t).replace(/[^0-9+]/g, "");
 
-export function listJS(shops) {
+export function listJS(shops, news = []) {
   const pick = (s) => ({ key: s.key, name: s.name, genre: s.genre, sub: s.sub || "", town: s.town, station: s.station, hours: s.hours, holiday: s.holiday || "", from: s.from, settai: s.settai, partner: !!s.ref, images: s.images || [], planFrom: s.planFrom || "" });
-  return "/* Area 遊ぶ：お店一覧のデータ（サーバーで作成） */\nwindow.ASOBU_SHOPS=" + JSON.stringify(shops.filter((s) => s.status === "published").map(pick)) + ";\n";
+  return "/* Area 遊ぶ：お店一覧のデータ（サーバーで作成） */\nwindow.ASOBU_SHOPS=" + JSON.stringify(shops.filter((s) => s.status === "published").map(pick)) + ";\nwindow.ASOBU_NEWS=" + JSON.stringify(news.filter((n) => shops.some((s) => s.key === n.shop && s.status === "published")).slice(0, 20).map((n) => ({ id: n.id, shop: n.shop, name: (shops.find((s) => s.key === n.shop) || {}).name || "", kind: n.kind, title: n.title, body: n.body, at: n.at, expires: n.expires }))) + ";\n";
 }
 
-export function shopPage(s, { preview = false } = {}) {
+export function shopPage(s, { preview = false, news = [] } = {}) {
   const ims = s.images || [], pl = s.plan || [], ref = !!s.ref;
   const rows = (s.price || []).map(([a, b]) => `<tr><th>${E(a)}</th><td>${E(b)}</td></tr>`).join("");
   const tel = s.tel ? `<a href="${telHref(s.tel)}">${E(s.tel)}</a>${s.telNote ? "（" + E(s.telNote) + "）" : ""}` : "お店にご確認ください";
@@ -109,6 +121,7 @@ ${hero}
   <div class="from"><b>料金のめやす</b>${E(s.from)}</div>
 </div>
 ${introHtml}
+${news.length ? `<section class="news"><h2><span>NEWS</span>お店からのお知らせ</h2>${news.map((n) => `<article class="nw"><div class="nw-top"><span class="nw-k">${E(n.kind)}</span><time>${fmtDay(n.at)}</time></div><h3>${E(n.title)}</h3>${n.body ? `<p>${E(n.body).replace(/\n/g, "<br>")}</p>` : ""}</article>`).join("")}<p class="note">お知らせは投稿から7日間表示されます。</p></section>` : ""}
 ${planHtml}
 ${go}
 <section class="box"><h2><span>PRICE</span>料金</h2><table>${rows}</table><p class="note">表示は1名様あたりの基本料金です。ドリンク・指名などは別途かかることがあります。</p></section>
