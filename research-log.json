@@ -499,6 +499,201 @@
       ],
       "page": "review/shop.html?id=kouyou-ikebukuro",
       "drafted": "2026-11-05"
+    },
+    {
+      "name": "AROMA NOVA 新大阪ルーム（アロマノヴァ）",
+      "site": "review",
+      "area": "新大阪",
+      "genre": "メンズエステ",
+      "open": "2026-09-25",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://aromanova.jp/"
+      ],
+      "page": "review/shop.html?id=aromanova-shinosaka",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "MARIMO SPA（マリモスパ）",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-08",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://marimospa.com/"
+      ],
+      "page": "review/shop.html?id=marimo-spa",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "メンエス紳士クラブ 京橋ルーム（メンエスしんしクラブ）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://shinshiclub.net/"
+      ],
+      "page": "review/shop.html?id=shinshiclub-kyobashi",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "PLUMEA（プルメア）",
+      "site": "review",
+      "area": "京都・河原町",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=26",
+        "https://plumea-esthe.com/"
+      ],
+      "page": "review/shop.html?id=plumea-kyoto",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "CALLACE（カラーチェ）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=28",
+        "https://callace-salon.com/"
+      ],
+      "page": "review/shop.html?id=callace-sannomiya",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "秘めたるエステ（ひめたるエステ）",
+      "site": "review",
+      "area": "築地",
+      "genre": "メンズエステ",
+      "open": "2026-10-08",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://himetaru-esthe.com/"
+      ],
+      "page": "review/shop.html?id=himetaru-esthe",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "人妻物語（ひとづまものがたり）",
+      "site": "review",
+      "area": "銀座",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://tumamono.com/"
+      ],
+      "page": "review/shop.html?id=tumamono-ginza",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "凪の華 渋谷（なぎのはな）",
+      "site": "review",
+      "area": "渋谷",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://naginohana.com/hana/"
+      ],
+      "page": "review/shop.html?id=naginohana-shibuya",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "凪の華 恵比寿（なぎのはな）",
+      "site": "review",
+      "area": "恵比寿",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://naginohana-ebisu.com/hana/"
+      ],
+      "page": "review/shop.html?id=naginohana-ebisu",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "アロマGR（アロマジーアール）",
+      "site": "review",
+      "area": "大塚",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://ootsuka-aromagr.com/"
+      ],
+      "page": "review/shop.html?id=aromagr-otsuka",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "RODIEL 池袋ルーム（ロディエル）",
+      "site": "review",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://rodiel-tokyo.com/"
+      ],
+      "page": "review/shop.html?id=rodiel-ikebukuro",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Flag ship（フラッグシップ）",
+      "site": "review",
+      "area": "高田馬場",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://tokyo-flagship.com/"
+      ],
+      "page": "review/shop.html?id=flagship-takadanobaba",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Remember 小岩ルーム（リメンバー）",
+      "site": "review",
+      "area": "小岩",
+      "genre": "メンズエステ",
+      "open": "2026-10-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://remember-healing.com/"
+      ],
+      "page": "review/shop.html?id=remember-koiwa",
+      "drafted": "2026-11-06"
     }
   ]
 }
