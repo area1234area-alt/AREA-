@@ -67,3 +67,23 @@ td{color:var(--ink)}
 .ft p{margin:4px 0}
 .ft a{color:var(--dim)}
 @media (max-width:560px){.list{grid-template-columns:1fr}.shop-hd h1{font-size:24px}}
+
+/* このお店に行く（紹介ID） */
+.go{margin:14px 0;background:linear-gradient(160deg,#16244a,#0d1430);border:1px solid var(--line);border-radius:14px;padding:16px;scroll-margin-top:12px}
+.go h2{font-family:var(--serif);font-size:19px;margin:0 0 4px;letter-spacing:.06em}
+.go-ex{margin:0 0 10px;font-size:12px;color:var(--soft)}
+.go label{display:block;font-size:12px;color:var(--soft);margin-bottom:6px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.nums button{font:inherit;font-size:14px;color:var(--ink);background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:9px 0;cursor:pointer}
+.nums button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.go-btn{display:block;width:100%;margin-top:12px;font:700 16px var(--sans);border:0;border-radius:999px;padding:14px;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--sky));color:#06112a}
+.go-btn:disabled{opacity:.6}
+.ticket{background:var(--panel);border:1.5px dashed var(--sky);border-radius:12px;padding:14px;text-align:center}
+.t-k{font-size:12px;color:var(--soft)}
+.t-id{font-size:32px;font-weight:700;letter-spacing:.1em;color:var(--amber);font-family:ui-monospace,Menlo,monospace}
+.t-d{font-size:12px;color:var(--soft)}
+.t-how{margin:12px 0 0;padding-left:1.3em;font-size:14px}
+.t-how li{margin:3px 0}
+.t-note{font-size:12px;color:var(--dim);margin:8px 0 0}
+.t-err{font-size:13px;color:#F2B3B8;margin:10px 0 0}
+.card .goln{display:block;margin-top:8px;font-size:12px;color:var(--sky)}

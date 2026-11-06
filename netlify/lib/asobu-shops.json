@@ -1,0 +1,87 @@
+{
+ "cronos": {
+  "name": "CLUB Cronos",
+  "genre": "キャバクラ",
+  "settai": true
+ },
+ "bpanic": {
+  "name": "B-panic 梅田店",
+  "genre": "キャバクラ",
+  "settai": true
+ },
+ "pinkmonster": {
+  "name": "PINK MONSTER 梅田",
+  "genre": "コンカフェ",
+  "settai": false
+ },
+ "othree": {
+  "name": "ラウンジ オースリー",
+  "genre": "ラウンジ",
+  "settai": true
+ },
+ "yakiniku": {
+  "name": "焼肉とバニーガール 梅田東通り店",
+  "genre": "ガールズバー",
+  "settai": false
+ },
+ "sui": {
+  "name": "翠",
+  "genre": "キャバクラ",
+  "settai": true
+ },
+ "ciao": {
+  "name": "Ciao",
+  "genre": "キャバクラ",
+  "settai": true
+ },
+ "noel": {
+  "name": "CLUB Noel",
+  "genre": "キャバクラ",
+  "settai": true
+ },
+ "classmate": {
+  "name": "くらすめいと",
+  "genre": "ガールズバー",
+  "settai": false
+ },
+ "onechan": {
+  "name": "CLUB ONE CHAN 梅田堂山",
+  "genre": "熟女キャバクラ",
+  "settai": true
+ },
+ "kclass": {
+  "name": "アイドル学園 K-CLASS 大阪梅田店",
+  "genre": "コンカフェ",
+  "settai": false
+ },
+ "zoo": {
+  "name": "Cafe&Bar ZOOぱーく",
+  "genre": "コンカフェ",
+  "settai": false
+ },
+ "chariot": {
+  "name": "BAR LOUNGE CHARIOT",
+  "genre": "スナック",
+  "settai": true
+ },
+ "barms": {
+  "name": "Bar Ms.",
+  "genre": "ガールズバー",
+  "settai": false
+ },
+ "marine": {
+  "name": "BAR Marine",
+  "genre": "コンカフェ",
+  "settai": false
+ },
+ "blanc": {
+  "name": "CLUB BLANC",
+  "genre": "キャバクラ",
+  "settai": true
+ },
+ "kamon": {
+  "name": "club 華門（昼の部）",
+  "genre": "昼キャバ",
+  "settai": true
+ }
+}

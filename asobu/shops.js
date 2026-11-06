@@ -10,7 +10,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "昼の部 13:00〜20:00／夜の部 20:00〜LAST",
 "holiday": "",
-"from": "昼 4,000円〜／夜 7,000円〜"
+"from": "昼 4,000円〜／夜 7,000円〜",
+"settai": true
 },
 {
 "key": "bpanic",
@@ -22,7 +23,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "15:00〜LAST",
 "holiday": "不定休",
-"from": "5,000円〜（飲み放題）"
+"from": "5,000円〜（飲み放題）",
+"settai": true
 },
 {
 "key": "pinkmonster",
@@ -34,7 +36,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・梅田駅から徒歩圏",
 "hours": "18:00〜LAST",
 "holiday": "",
-"from": "40分 2,000円〜（飲み放題）"
+"from": "40分 2,000円〜（飲み放題）",
+"settai": false
 },
 {
 "key": "othree",
@@ -46,7 +49,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "12:00〜25:00",
 "holiday": "月曜日",
-"from": "昼 4,000円〜／夜 5,000円〜"
+"from": "昼 4,000円〜／夜 5,000円〜",
+"settai": true
 },
 {
 "key": "yakiniku",
@@ -58,7 +62,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "17:00〜LAST",
 "holiday": "",
-"from": "120分 4,000円〜"
+"from": "120分 4,000円〜",
+"settai": false
 },
 {
 "key": "sui",
@@ -70,7 +75,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "6:00〜LAST",
 "holiday": "",
-"from": "お店に確認"
+"from": "お店に確認",
+"settai": true
 },
 {
 "key": "ciao",
@@ -82,7 +88,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "6:00〜21:00",
 "holiday": "",
-"from": "50分 6,000円〜"
+"from": "50分 6,000円〜",
+"settai": true
 },
 {
 "key": "noel",
@@ -94,7 +101,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "19:00〜LAST",
 "holiday": "火曜日",
-"from": "60分 7,000円〜"
+"from": "60分 7,000円〜",
+"settai": true
 },
 {
 "key": "classmate",
@@ -106,7 +114,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "12:00〜23:00",
 "holiday": "",
-"from": "60分 3,000円（飲み放題）"
+"from": "60分 3,000円（飲み放題）",
+"settai": false
 },
 {
 "key": "onechan",
@@ -118,7 +127,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "15:00〜LAST",
 "holiday": "",
-"from": "50分 2,800円〜（飲み放題）"
+"from": "50分 2,800円〜（飲み放題）",
+"settai": true
 },
 {
 "key": "kclass",
@@ -130,7 +140,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "18:00〜LAST",
 "holiday": "",
-"from": "60分 2,000円〜（飲み放題）"
+"from": "60分 2,000円〜（飲み放題）",
+"settai": false
 },
 {
 "key": "zoo",
@@ -142,7 +153,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "19:00〜LAST",
 "holiday": "",
-"from": "50分 3,000円〜"
+"from": "50分 3,000円〜",
+"settai": false
 },
 {
 "key": "chariot",
@@ -154,7 +166,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・梅田駅から徒歩圏",
 "hours": "月〜金 20:00〜1:00／土 20:00〜0:00",
 "holiday": "",
-"from": "60分 4,000円〜"
+"from": "60分 4,000円〜",
+"settai": true
 },
 {
 "key": "barms",
@@ -166,7 +179,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・梅田駅から徒歩圏",
 "hours": "平日 20:00〜LAST／土 15:00〜LAST／日祝 15:00〜24:00",
 "holiday": "",
-"from": "60分 3,000円（飲み放題）"
+"from": "60分 3,000円（飲み放題）",
+"settai": false
 },
 {
 "key": "marine",
@@ -178,7 +192,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・梅田駅から徒歩圏",
 "hours": "15:00〜LAST",
 "holiday": "",
-"from": "60分 4,000円（飲み放題）"
+"from": "60分 4,000円（飲み放題）",
+"settai": false
 },
 {
 "key": "blanc",
@@ -190,7 +205,8 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "19:00〜LAST",
 "holiday": "",
-"from": "60分 8,000円〜"
+"from": "60分 8,000円〜",
+"settai": true
 },
 {
 "key": "kamon",
@@ -202,6 +218,7 @@ window.ASOBU_SHOPS=[
 "station": "東梅田駅・中崎町駅から徒歩圏",
 "hours": "13:30〜21:00（受付は20:00まで）",
 "holiday": "",
-"from": "50分 4,000円〜"
+"from": "50分 4,000円〜",
+"settai": true
 }
 ];
