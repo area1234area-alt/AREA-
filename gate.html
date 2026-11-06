@@ -44,6 +44,20 @@ a{color:inherit;text-decoration:none}
 .icon{position:absolute;top:18px;right:18px;font-family:var(--en);font-style:italic;font-size:64px;line-height:1;opacity:.14}
 .foot{max-width:960px;margin:22px auto 0;padding:0 16px 40px;text-align:center;font-size:11px;color:#8C847D;line-height:1.8}
 .foot a{text-decoration:underline}
+.step{display:none;max-width:960px;margin:18px auto 0;padding:0 16px}
+body.s2 .doors{display:none} body.s2 .q{display:none}
+.step .back{display:inline-block;font-size:13px;color:var(--dim);margin-bottom:10px}
+.step h3{font-family:var(--serif);font-size:24px;text-align:center;margin:4px 0 2px;letter-spacing:.1em}
+.step .sub{text-align:center;color:var(--dim);font-size:13px;margin:0 0 14px}
+.regions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rg{display:block;border-radius:16px;padding:26px 18px;text-align:center;border:1px solid var(--bd);background:var(--bgc)}
+.rg b{display:block;font-family:var(--serif);font-size:30px;letter-spacing:.12em}
+.rg span{display:block;font-size:12px;color:var(--dim);margin-top:4px}
+.rg i{display:inline-block;margin-top:14px;font-style:normal;font-size:13px;font-weight:700;border-radius:999px;padding:8px 18px;background:var(--btn);color:var(--btnc)}
+.rg em{display:block;font-style:normal;font-size:11px;color:var(--dim);margin-top:8px}
+.st-play{--bd:rgba(110,170,255,.35);--bgc:linear-gradient(160deg,#16244a,#0b1126);--btn:linear-gradient(135deg,#4F8DFF,#7FC1FF);--btnc:#06112a}
+.st-work{--bd:rgba(201,162,39,.45);--bgc:linear-gradient(160deg,#3a1526,#150c11);--btn:var(--goldgrad);--btnc:#1a1408}
+.st-play h3{color:#8EC2FF}.st-work h3{color:#F1DA9C}
 @media (max-width:640px){
   .logo{font-size:38px}
   .doors{grid-template-columns:1fr;gap:12px}
@@ -61,7 +75,7 @@ a{color:inherit;text-decoration:none}
 </header>
 
 <main class="doors">
-  <a class="door play" href="asobu/">
+  <a class="door play" href="#play">
     <span class="icon">01</span>
     <span class="en">PLAY</span>
     <h2>遊ぶ</h2>
@@ -73,7 +87,7 @@ a{color:inherit;text-decoration:none}
     </ul>
     <span class="btn">お店をさがす</span>
   </a>
-  <a class="door work" href="index.html">
+  <a class="door work" href="#work">
     <span class="icon">02</span>
     <span class="en">WORK</span>
     <h2>働く</h2>
@@ -87,10 +101,34 @@ a{color:inherit;text-decoration:none}
   </a>
 </main>
 
+<section class="step st-play" id="s-play">
+  <a class="back" href="#">← もどる</a>
+  <h3>遊ぶ</h3>
+  <p class="sub">エリアを選んでください</p>
+  <div class="regions">
+    <a class="rg" href="asobu/"><b>関西</b><span>大阪・京都・兵庫</span><i>お店をさがす</i></a>
+    <a class="rg" href="asobu/kanto.html"><b>関東</b><span>東京・神奈川</span><i>お店をさがす</i><em>準備中</em></a>
+  </div>
+</section>
+<section class="step st-work" id="s-work">
+  <a class="back" href="#">← もどる</a>
+  <h3>働く</h3>
+  <p class="sub">エリアを選んでください</p>
+  <div class="regions">
+    <a class="rg" href="/kansai"><b>関西</b><span>大阪・京都・兵庫</span><i>求人をさがす</i></a>
+    <a class="rg" href="/kanto"><b>関東</b><span>東京・神奈川</span><i>求人をさがす</i></a>
+  </div>
+</section>
+
 <footer class="foot">
   Areaは、お店の情報と求人情報を掲載する広告メディアです。<br>
   20歳未満の方の飲酒、18歳未満の方の応募はできません。<br>
   掲載内容は変わることがあります。ご来店・ご応募の前にお店へご確認ください。
 </footer>
+<script>
+function sh(){var h=location.hash.slice(1);document.body.classList.toggle("s2",h==="play"||h==="work");
+document.getElementById("s-play").style.display=h==="play"?"block":"";document.getElementById("s-work").style.display=h==="work"?"block":"";if(h==="play"||h==="work"){document.getElementById("s-"+h).querySelectorAll(".rg").length;}window.scrollTo(0,0);}
+window.addEventListener("hashchange",sh);sh();
+</script>
 </body>
 </html>
