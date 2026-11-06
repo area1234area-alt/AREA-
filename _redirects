@@ -1,3 +1,6 @@
+# Areaの入口（遊ぶ・働くの選択）。求人のトップは /index.html・/kansai・/kanto
+/   /gate.html   200!
+
 # 風俗・メンズエステを別サイト（review/）に移したため、旧ページは新しい口コミページへ案内する
 /juso-e01.html      /review/shop.html?id=kanojonchi     302!
 /honmachi-e01.html  /review/shop.html?id=galsselection  302!

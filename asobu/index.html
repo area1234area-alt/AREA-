@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>梅田のキャバクラ・ラウンジ・ガールズバー・コンカフェ｜Area 遊ぶ</title>
+<meta name="description" content="梅田（堂山町・曽根崎）のキャバクラ、昼キャバ、ラウンジ、熟女キャバクラ、ガールズバー、コンカフェ、スナックの料金・営業時間・場所をまとめています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asobu.css">
+</head>
+<body>
+<header class="hd"><a class="logo" href="/">Area</a><span class="lbl">遊ぶ</span><nav><a href="../index.html">求人をさがす</a></nav></header>
+<main class="wrap">
+  <section class="hero">
+    <div class="en">UMEDA NIGHT</div>
+    <h1>梅田で飲みに行く</h1>
+    <p>料金・営業時間・場所をまとめてチェック</p>
+  </section>
+  <div class="chips" id="chips"></div>
+  <p class="count" id="count"></p>
+  <div class="list" id="list"></div>
+</main>
+<footer class="ft">
+  <p>Areaは、お店の情報を掲載する広告メディアです。料金・営業時間などは変わることがあります。ご来店の前にお店へご確認ください。</p>
+  <p>20歳未満の方の飲酒はできません。</p>
+  <p><a href="/">Areaトップ</a>｜<a href="../index.html">求人をさがす</a></p>
+</footer>
+<script src="shops.js"></script>
+<script>
+(function(){
+  var S = window.ASOBU_SHOPS || [], G = ["すべて","キャバクラ","昼キャバ","ラウンジ","熟女キャバクラ","ガールズバー","コンカフェ","スナック"], cur = "すべて";
+  function esc(s){ return String(s||"").replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+  var chips = document.getElementById("chips");
+  G = G.filter(function(g){ return g === "すべて" || S.some(function(s){ return s.genre === g; }); });
+  chips.innerHTML = G.map(function(g){ return '<button type="button" data-g="'+g+'">'+g+'</button>'; }).join("");
+  function render(){
+    [].forEach.call(chips.children, function(b){ b.classList.toggle("on", b.dataset.g === cur); });
+    var l = S.filter(function(s){ return cur === "すべて" || s.genre === cur; });
+    document.getElementById("count").textContent = l.length + "件のお店";
+    document.getElementById("list").innerHTML = l.map(function(s){
+      return '<a class="card" href="'+s.key+'.html"><div class="g">'+esc(s.genre)+(s.sub?'｜'+esc(s.sub):'')+'・梅田 '+esc(s.town)+'</div><h2>'+esc(s.name)+'</h2>'
+        + '<dl><dt>営業</dt><dd>'+esc(s.hours)+'</dd>'+(s.holiday?'<dt>定休</dt><dd>'+esc(s.holiday)+'</dd>':'')+'<dt>最寄り</dt><dd>'+esc(s.station)+'</dd></dl>'
+        + '<div class="fr">'+esc(s.from)+'</div></a>';
+    }).join("");
+  }
+  chips.onclick = function(e){ var b = e.target.closest("button"); if (!b) return; cur = b.dataset.g; render(); };
+  render();
+})();
+</script>
+</body>
+</html>
