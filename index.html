@@ -1099,37 +1099,11 @@
   <section class="pu-sec" id="pickupNew" aria-label="ピックアップ" hidden><div class="wrap"><div class="pu-wrap" id="puBox"></div></div></section>
   <script src="area-ads.js"></script>
 
-  <!-- ============ 会員登録（オファー機能）の入口 ============ -->
-  <section class="mb-sec" aria-label="会員登録">
-    <style>
-      .mb-sec{background:#0B0A0D;padding:18px 0 6px}
-      .mb-sec .mb{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;color:#F4EFE6;background:radial-gradient(120% 140% at 100% 0%,rgba(255,111,160,.22),transparent 55%),linear-gradient(150deg,#1d1622 0%,#0d0b0f 70%);border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:18px 18px 16px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18)}
-      .mb-sec .mb-en{font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;letter-spacing:.3em;color:#C9A227;font-size:12px}
-      .mb-sec .mb-t{font-family:var(--font-display);font-size:20px;font-weight:700;line-height:1.45;margin:4px 0 6px;letter-spacing:.04em}
-      .mb-sec .mb-t em{font-style:normal;background:linear-gradient(135deg,#E8CB7A,#FFF1C4 50%,#D4AF4F);-webkit-background-clip:text;background-clip:text;color:transparent}
-      .mb-sec .mb-s{font-size:12.5px;color:#B7AEA6;line-height:1.7;margin:0 0 12px}
-      .mb-sec .mb-n{background:#1B171F;border:1px solid rgba(255,255,255,.08);border-left:3px solid #FF6FA0;border-radius:10px;padding:9px 12px;font-size:12.5px;margin:0 0 12px}
-      .mb-sec .mb-n b{color:#F1DA9C}
-      .mb-sec .mb-n i{font-style:normal;font-size:10px;border:1px solid #FF6FA0;color:#FF6FA0;border-radius:6px;padding:0 6px;margin-right:6px}
-      .mb-sec .mb-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
-      .mb-sec .mb-tags span{font-size:11px;border:1px solid rgba(201,162,39,.45);color:#F1DA9C;border-radius:6px;padding:2px 8px}
-      .mb-sec .mb-btn{display:block;text-align:center;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1a1408;font-weight:700;border-radius:8px;padding:12px;font-size:15px;letter-spacing:.06em}
-      .mb-sec .mb-sub{display:block;text-align:center;font-size:12px;color:#B7AEA6;margin-top:8px;text-decoration:underline}
-      @media(min-width:760px){.mb-sec .mb{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:center;padding:22px 26px}.mb-sec .mb-t{font-size:24px}}
-    </style>
-    <a class="mb" href="member/">
-      <div>
-        <div class="mb-en">Member ・ Offer</div>
-        <div class="mb-t">プロフィールを登録して、<br><em>お店からのオファー</em>を待とう</div>
-        <p class="mb-s">希望の勤務地・時給を登録しておくと、Areaに掲載中のお店から「うちで働きませんか？」とお誘いが届きます。応募はお店に直接、返事も自由です。</p>
-      </div>
-      <div>
-        <div class="mb-n"><i>NEW</i><b>CLUB 〇〇</b> からオファーが届いています</div>
-        <div class="mb-tags"><span>登録無料</span><span>メールはお店に非公開</span><span>いつでも退会OK</span><span>18歳以上</span></div>
-        <span class="mb-btn">無料で会員登録する</span>
-        <span class="mb-sub">オファー機能のくわしい説明を見る</span>
-      </div>
-    </a>
+  <!-- ============ 会員登録（オファー機能）の入口：画像バナー ============ -->
+  <section class="mb-sec" aria-label="会員登録" style="background:#0B0A0D;padding:18px 0 8px">
+    <style>.ofr-bn{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;position:relative;border-radius:12px;box-shadow:0 0 0 1px rgba(201,162,39,.5),0 12px 34px rgba(0,0,0,.35);transition:transform .2s}.ofr-bn:hover{transform:translateY(-2px)}.ofr-bn::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);background-size:250% 100%;animation:ofrShine 4.5s ease-in-out infinite;pointer-events:none}@keyframes ofrShine{0%,60%{background-position:150% 0}100%{background-position:-50% 0}}@media (prefers-reduced-motion:reduce){.ofr-bn::after{animation:none}}.ofr-cta{display:block;max-width:1100px;width:calc(100% - 32px);margin:10px auto 0;text-align:center;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1a1408;font-weight:700;border-radius:8px;padding:13px;font-size:15px;letter-spacing:.06em;text-decoration:none}.ofr-sub{display:block;text-align:center;font-size:12px;color:#B7AEA6;margin-top:8px}</style>
+    <a class="ofr-bn" href="member/"><picture><source media="(max-width:820px)" srcset="img/offer/offer-catch-800.jpg"><img src="img/offer/offer-catch.jpg" alt="プロフィールを登録すると、掲載中のお店からお仕事のオファーが届きます。まずは無料で登録" width="1536" height="1024" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
+    <a class="ofr-cta" href="member/">無料で会員登録してオファーを待つ</a>
   </section>
 
   <!-- ============ SEARCH VISUAL ============ -->
@@ -1217,6 +1191,12 @@
   </section>
 
   <!-- ============ FEATURES ============ -->
+  <!-- ============ オファー機能の説明（画像） ============ -->
+  <section class="ofr-sec" aria-label="オファー機能" style="background:#0B0A0D;padding:26px 0 18px">
+    <a class="ofr-bn" href="member/#guide"><picture><source media="(max-width:820px)" srcset="img/offer/offer-steps-800.jpg"><img src="img/offer/offer-steps.jpg" alt="Areaのオファー機能：無料で登録→プロフィール公開→お店からオファーが届く→気になったらお店に応募" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
+    <a class="ofr-cta" href="member/">オファー機能を使ってみる（無料）</a>
+  </section>
+
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
