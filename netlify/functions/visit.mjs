@@ -36,9 +36,9 @@ export default async (req) => {
   if (n >= 6) return json({ error: "短い時間に何度も発行されています。しばらくしてからお試しください。" }, 429);
   await st.setJSON(ipKey, { n: n + 1 });
   const id = "AR-" + crypto.randomBytes(3).toString("hex").toUpperCase().slice(0, 5);
-  const rec = { id, shop: body.shop, name: shop.name, settai: !!shop.settai, people, at: Date.now(), status: "issued", src: String(body.src || "web").slice(0, 20) };
+  const rec = { id, shop: body.shop, name: shop.name, settai: !!shop.settai, people, plan: String(body.plan || "").slice(0, 120), at: Date.now(), status: "issued", src: String(body.src || "web").slice(0, 20) };
   await st.setJSON("visit/" + now.toISOString().slice(0, 7) + "/" + id, rec);
-  return json({ id, name: shop.name, people, expires: Date.now() + 3 * 3600e3 });
+  return json({ id, name: shop.name, people, plan: rec.plan, expires: Date.now() + 3 * 3600e3 });
 };
 
 export const config = { path: "/api/visit" };
