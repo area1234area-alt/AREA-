@@ -12,7 +12,13 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 8,000円〜",
 "settai": true,
-"partner": true
+"partner": true,
+"images": [
+"img/lilith/main.jpg",
+"img/lilith/photo1.jpg",
+"img/lilith/photo2.jpg",
+"img/lilith/photo3.jpg"
+]
 },
 {
 "key": "blanc",
@@ -26,7 +32,10 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 8,000円〜",
 "settai": true,
-"partner": true
+"partner": true,
+"images": [
+"img/blanc/main.jpg"
+]
 },
 {
 "key": "cronos",
@@ -40,7 +49,10 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "昼 4,000円〜／夜 7,000円〜",
 "settai": true,
-"partner": false
+"partner": false,
+"images": [
+"img/umeda-c06/main.jpg"
+]
 },
 {
 "key": "bpanic",
@@ -54,7 +66,8 @@ window.ASOBU_SHOPS=[
 "holiday": "不定休",
 "from": "5,000円〜（飲み放題）",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "pinkmonster",
@@ -68,7 +81,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "40分 2,000円〜（飲み放題）",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "othree",
@@ -82,7 +96,8 @@ window.ASOBU_SHOPS=[
 "holiday": "月曜日",
 "from": "昼 4,000円〜／夜 5,000円〜",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "yakiniku",
@@ -96,7 +111,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "120分 4,000円〜",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "sui",
@@ -110,7 +126,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "お店に確認",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "ciao",
@@ -124,7 +141,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "50分 6,000円〜",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "noel",
@@ -138,7 +156,8 @@ window.ASOBU_SHOPS=[
 "holiday": "火曜日",
 "from": "60分 7,000円〜",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "classmate",
@@ -152,7 +171,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 3,000円（飲み放題）",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "onechan",
@@ -166,7 +186,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "50分 2,800円〜（飲み放題）",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "kclass",
@@ -180,7 +201,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 2,000円〜（飲み放題）",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "zoo",
@@ -194,7 +216,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "50分 3,000円〜",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "chariot",
@@ -208,7 +231,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 4,000円〜",
 "settai": true,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "barms",
@@ -222,7 +246,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 3,000円（飲み放題）",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "marine",
@@ -236,7 +261,8 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "60分 4,000円（飲み放題）",
 "settai": false,
-"partner": false
+"partner": false,
+"images": []
 },
 {
 "key": "kamon",
@@ -250,6 +276,13 @@ window.ASOBU_SHOPS=[
 "holiday": "",
 "from": "50分 4,000円〜",
 "settai": true,
-"partner": false
+"partner": false,
+"images": [
+"img/kamon/main.jpg",
+"img/kamon/photo1.jpg",
+"img/kamon/photo2.jpg",
+"img/kamon/photo3.jpg",
+"img/kamon/photo4.jpg"
+]
 }
 ];
