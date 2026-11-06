@@ -18,7 +18,8 @@ window.ASOBU_SHOPS=[
 "img/lilith/photo1.jpg",
 "img/lilith/photo2.jpg",
 "img/lilith/photo3.jpg"
-]
+],
+"planFrom": "初回 60分 3,500円〜"
 },
 {
 "key": "blanc",
@@ -35,7 +36,8 @@ window.ASOBU_SHOPS=[
 "partner": true,
 "images": [
 "img/blanc/main.jpg"
-]
+],
+"planFrom": "初回 60分 3,500円〜"
 },
 {
 "key": "cronos",
@@ -52,7 +54,8 @@ window.ASOBU_SHOPS=[
 "partner": false,
 "images": [
 "img/umeda-c06/main.jpg"
-]
+],
+"planFrom": null
 },
 {
 "key": "bpanic",
@@ -67,7 +70,8 @@ window.ASOBU_SHOPS=[
 "from": "5,000円〜（飲み放題）",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "pinkmonster",
@@ -82,7 +86,8 @@ window.ASOBU_SHOPS=[
 "from": "40分 2,000円〜（飲み放題）",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "othree",
@@ -97,7 +102,8 @@ window.ASOBU_SHOPS=[
 "from": "昼 4,000円〜／夜 5,000円〜",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "yakiniku",
@@ -112,7 +118,8 @@ window.ASOBU_SHOPS=[
 "from": "120分 4,000円〜",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "sui",
@@ -127,7 +134,8 @@ window.ASOBU_SHOPS=[
 "from": "お店に確認",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "ciao",
@@ -142,7 +150,8 @@ window.ASOBU_SHOPS=[
 "from": "50分 6,000円〜",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "noel",
@@ -157,7 +166,8 @@ window.ASOBU_SHOPS=[
 "from": "60分 7,000円〜",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "classmate",
@@ -172,7 +182,8 @@ window.ASOBU_SHOPS=[
 "from": "60分 3,000円（飲み放題）",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "onechan",
@@ -187,7 +198,8 @@ window.ASOBU_SHOPS=[
 "from": "50分 2,800円〜（飲み放題）",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "kclass",
@@ -202,7 +214,8 @@ window.ASOBU_SHOPS=[
 "from": "60分 2,000円〜（飲み放題）",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "zoo",
@@ -217,7 +230,8 @@ window.ASOBU_SHOPS=[
 "from": "50分 3,000円〜",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "chariot",
@@ -232,7 +246,8 @@ window.ASOBU_SHOPS=[
 "from": "60分 4,000円〜",
 "settai": true,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "barms",
@@ -247,7 +262,8 @@ window.ASOBU_SHOPS=[
 "from": "60分 3,000円（飲み放題）",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "marine",
@@ -262,7 +278,8 @@ window.ASOBU_SHOPS=[
 "from": "60分 4,000円（飲み放題）",
 "settai": false,
 "partner": false,
-"images": []
+"images": [],
+"planFrom": null
 },
 {
 "key": "kamon",
@@ -283,6 +300,7 @@ window.ASOBU_SHOPS=[
 "img/kamon/photo2.jpg",
 "img/kamon/photo3.jpg",
 "img/kamon/photo4.jpg"
-]
+],
+"planFrom": null
 }
 ];

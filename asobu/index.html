@@ -42,7 +42,7 @@
     document.getElementById("list").innerHTML = l.map(function(s){
       return '<a class="card" href="'+s.key+'.html">'+(s.images&&s.images.length?'<img class="thumb" src="../'+esc(s.images[0])+'" alt="" loading="lazy">':'')+'<div class="g">'+esc(s.genre)+(s.sub?'｜'+esc(s.sub):'')+'・梅田 '+esc(s.town)+'</div><h2>'+esc(s.name)+'</h2>'
         + '<dl><dt>営業</dt><dd>'+esc(s.hours)+'</dd>'+(s.holiday?'<dt>定休</dt><dd>'+esc(s.holiday)+'</dd>':'')+'<dt>最寄り</dt><dd>'+esc(s.station)+'</dd></dl>'
-        + '<div class="fr">'+esc(s.from)+'</div>'+(s.partner?'<span class="goln">紹介IDをもらって行く →</span>':'')+'</a>';
+        + '<div class="fr">'+esc(s.from)+'</div>'+(s.planFrom?'<span class="plf">'+esc(s.planFrom)+'</span>':'')+(s.partner?'<span class="goln">紹介IDをもらって行く →</span>':'')+'</a>';
     }).join("");
   }
   chips.onclick = function(e){ var b = e.target.closest("button"); if (!b) return; cur = b.dataset.g; render(); };
