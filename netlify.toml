@@ -5,6 +5,10 @@
   command = 'mkdir -p _site && for f in $(ls -A); do case "$f" in _site|node_modules|netlify|.git|.gitignore|package.json|package-lock.json|netlify.toml|README.md) ;; *) cp -R "$f" _site/ ;; esac; done'
   publish = "_site"
 
+# LINE_MESSAGING_TOKEN に本物でない短い値が入っていると、コード中の「トークン」という文字と一致してビルドが止まるため、このキーだけ秘密スキャンから外す
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "LINE_MESSAGING_TOKEN"
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
