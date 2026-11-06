@@ -59,12 +59,13 @@ body.s2 .doors{display:none} body.s2 .q{display:none}
 .st-work{--bd:rgba(201,162,39,.45);--bgc:linear-gradient(160deg,#3a1526,#150c11);--btn:var(--goldgrad);--btnc:#1a1408}
 .st-play h3{color:#8EC2FF}.st-work h3{color:#F1DA9C}
 /* 画像3枚を同じ大きさにそろえる（1枚の幅＝--imgw、縦横比3:2） */
-:root{--imgw:260px}
+:root{--imgw:300px}
 .doors{display:flex !important;justify-content:center;align-items:stretch;flex-wrap:wrap}
 .door{flex:0 0 auto}
 .banners{display:grid;grid-template-columns:var(--imgw) var(--imgw);gap:10px;margin-top:4px}
 .bn img{width:var(--imgw) !important;max-width:none;aspect-ratio:3/2;object-fit:cover}
-.bn.wk{width:var(--imgw);align-self:center}
+.bn.wk,.bn.ph{width:var(--imgw);align-self:center;margin-bottom:12px}
+.bn.ph{box-sizing:border-box;width:var(--imgw);height:calc(var(--imgw) * 2 / 3 + 2px);display:grid;place-items:center;background:repeating-linear-gradient(135deg,rgba(110,170,255,.08) 0 12px,rgba(110,170,255,.03) 12px 24px);color:#8EC2FF;font-size:13px;letter-spacing:.2em}
 .bn{display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(110,170,255,.35);transition:transform .2s,box-shadow .2s}
 .bn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(40,90,200,.35)}
 .bn img{display:block;width:100%;height:auto}
@@ -72,7 +73,7 @@ body.s2 .doors{display:none} body.s2 .q{display:none}
 .cap{display:block;text-align:center;font-size:12px;font-weight:700;padding:8px 4px;background:linear-gradient(135deg,#4F8DFF,#7FC1FF);color:#06112a}
 .bn:focus-visible{outline:2px solid #8EC2FF;outline-offset:2px}
 @media (max-width:640px){
-  :root{--imgw:calc((100vw - 32px - 36px - 12px) / 2)}
+  :root{--imgw:calc(100vw - 32px - 36px)}
   .doors{flex-direction:column;align-items:stretch}
   .logo{font-size:38px}
   .doors{grid-template-columns:1fr;gap:12px}
@@ -90,16 +91,14 @@ body.s2 .doors{display:none} body.s2 .q{display:none}
 </header>
 
 <main class="doors">
-  <div class="door play">
+  <a class="door play" href="#play">
     <span class="icon">01</span>
     <span class="en">PLAY</span>
     <h2>遊ぶ</h2>
     <p class="who">お店に飲みに行きたい方へ</p>
-    <div class="banners">
-      <a class="bn" href="asobu/kanto.html"><img src="img/gate/play-kanto.jpg" alt="関東のキャバクラ PLAY 遊ぶ 東京・横浜・千葉の人気店を探す" width="900" height="604"><span class="cap">関東のお店（準備中）</span></a>
-      <a class="bn" href="asobu/"><img src="img/gate/play-kansai.jpg" alt="関西のキャバクラ PLAY 遊ぶ 大阪・神戸・京都の人気店を探す" width="900" height="604"><span class="cap">関西のお店をさがす</span></a>
-    </div>
-  </div>
+    <span class="bn ph"><span>画像準備中</span></span>
+    <span class="btn">お店をさがす</span>
+  </a>
   <a class="door work" href="#work">
     <span class="icon">02</span>
     <span class="en">WORK</span>
