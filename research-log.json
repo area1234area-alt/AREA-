@@ -694,6 +694,141 @@
       ],
       "page": "review/shop.html?id=remember-koiwa",
       "drafted": "2026-11-06"
+    },
+    {
+      "name": "ひよこ倶楽部（ひよこくらぶ）",
+      "site": "review",
+      "area": "東梅田",
+      "genre": "メンズエステ",
+      "open": "2026-09-08",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://hiyokoclub-osaka.com/"
+      ],
+      "page": "review/shop.html?id=hiyokoclub-higashiumeda",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Spa aura（スパオーラ）",
+      "site": "review",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "open": "2026-09-10",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://spa-aura-esthe.com/"
+      ],
+      "page": "review/shop.html?id=spaaura-ikebukuro",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "El Edén（エルエデン）",
+      "site": "review",
+      "area": "麻布十番",
+      "genre": "メンズエステ",
+      "open": "2026-09-10",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://el-eden.net/"
+      ],
+      "page": "review/shop.html?id=eleden-azabujuban",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "GRAND SLAM（グランドスラム）",
+      "site": "review",
+      "area": "田町",
+      "genre": "メンズエステ",
+      "open": "2026-09-14",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://grandslam-esthe.com/"
+      ],
+      "page": "review/shop.html?id=grandslam-tamachi",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "TREVI（トレヴィ）",
+      "site": "review",
+      "area": "恵比寿",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://trevi.in/"
+      ],
+      "page": "review/shop.html?id=trevi-ebisu",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "エマニエル（エマニエル）",
+      "site": "review",
+      "area": "日暮里",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://www.emanieru.com/"
+      ],
+      "page": "review/shop.html?id=emanieru-nippori",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "M's LABO（エムズラボ）",
+      "site": "review",
+      "area": "亀有（葛飾区）",
+      "genre": "メンズエステ",
+      "open": "2026-09-18",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://m-s-labo.com/"
+      ],
+      "page": "review/shop.html?id=mslabo-kameari",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "灯庵 -TOUAN-（とうあん）",
+      "site": "review",
+      "area": "自由が丘",
+      "genre": "メンズエステ",
+      "open": "2026-09-18",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://spa-touan.org/"
+      ],
+      "page": "review/shop.html?id=touan-jiyugaoka",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "素敵なワイフ（すてきなワイフ）",
+      "site": "review",
+      "area": "北千住",
+      "genre": "メンズエステ",
+      "open": "2026-09-24",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://www.wife-kitasenju.com/"
+      ],
+      "page": "review/shop.html?id=sutekinawife-kitasenju",
+      "drafted": "2026-11-06"
     }
   ]
 }
