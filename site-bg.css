@@ -1,0 +1,7 @@
+/* Area 共通の背景：夜景をうっすら（20%）＋ 左に青・右にワインレッドの光
+   夜景の差し替え：img/gate/night.jpg を置き換える ／ 濃さ：opacity を調整 */
+body{position:relative;isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:url("/img/gate/night.jpg") center/cover no-repeat;opacity:.2;pointer-events:none}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 55% 70% at 22% 55%,rgba(47,95,220,.32),transparent 70%),
+             radial-gradient(ellipse 55% 70% at 78% 55%,rgba(150,30,70,.32),transparent 70%)}

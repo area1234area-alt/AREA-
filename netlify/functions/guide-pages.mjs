@@ -4,7 +4,7 @@ import { loadAll, loadOne, listJS, shopPage, listNews } from "../lib/guide-core.
 import { session, isAdmin, configured } from "../lib/member-core.mjs";
 
 const admin = (req) => { try { const s = configured() && session(req); return !!(s && isAdmin(s.sub)); } catch (e) { return false; } };
-const notFound = () => new Response(`<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>お店が見つかりません｜Area 遊ぶ</title><link rel="stylesheet" href="/asobu/asobu.css"></head><body><main class="wrap" style="padding-top:60px;text-align:center"><h1 style="font-size:20px">お店が見つかりません</h1><p style="color:var(--soft)">掲載が終わったか、URLが変わった可能性があります。</p><a class="call" href="/asobu/">梅田のお店一覧へ</a></main></body></html>`, { status: 404, headers: { "content-type": "text/html; charset=utf-8" } });
+const notFound = () => new Response(`<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>お店が見つかりません｜Area 遊ぶ</title><link rel="stylesheet" href="/asobu/asobu.css"><link rel="stylesheet" href="/site-bg.css"></head><body><main class="wrap" style="padding-top:60px;text-align:center"><h1 style="font-size:20px">お店が見つかりません</h1><p style="color:var(--soft)">掲載が終わったか、URLが変わった可能性があります。</p><a class="call" href="/asobu/">梅田のお店一覧へ</a></main></body></html>`, { status: 404, headers: { "content-type": "text/html; charset=utf-8" } });
 
 export default async (req) => {
   const path = new URL(req.url).pathname;

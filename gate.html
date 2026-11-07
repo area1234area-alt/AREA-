@@ -86,13 +86,8 @@ body.s2 .doors{display:none} body.s2 .q{display:none}
   .door .btn{font-size:12px;padding:10px 4px;letter-spacing:.04em}
 }
 
-/* 背景：求人トップと同じ夜景をうっすら（20%）＋ 左に青・右にワインレッドの光 */
-body{position:relative;isolation:isolate}
-body::before{content:"";position:fixed;inset:0;z-index:-2;background:url("img/gate/night.jpg") center/cover no-repeat;opacity:.2;pointer-events:none}
-body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(ellipse 55% 70% at 22% 55%,rgba(47,95,220,.32),transparent 70%),
-             radial-gradient(ellipse 55% 70% at 78% 55%,rgba(150,30,70,.32),transparent 70%)}
 </style>
+<link rel="stylesheet" href="/site-bg.css">
 </head>
 <body>
 <header class="top">

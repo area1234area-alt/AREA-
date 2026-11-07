@@ -106,6 +106,7 @@ ${s.status !== "published" ? '<meta name="robots" content="noindex">' : ""}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="asobu.css">
+<link rel="stylesheet" href="/site-bg.css">
 </head>
 <body>
 ${s.status !== "published" ? `<div style="background:#5a3b0a;color:#ffe2a6;text-align:center;font-size:12px;padding:6px">管理者だけに見えている確認用の表示です（状態：${E(STATUS[s.status] || s.status)}）</div>` : ""}
