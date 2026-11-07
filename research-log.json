@@ -934,6 +934,52 @@
       ],
       "page": "shinchi-l01.html",
       "drafted": "2026-11-07"
+    },
+    {
+      "name": "めろめろLv.∞（めろめろレベルインフィニティ）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://osaka.refle.info/newopen.html",
+        "https://meromero.jp/"
+      ],
+      "page": "review/shop.html?id=meromero-kyobashi",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Mrs.coco（ミセスココ）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://mrs-coco.com/"
+      ],
+      "page": "review/shop.html?id=mrs-coco-sakaisuji",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Premium ARROWS（プレミアムアローズ）",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://premium-arrows.com/"
+      ],
+      "page": "review/shop.html?id=premium-arrows",
+      "drafted": "2026-11-07"
     }
   ]
 }
