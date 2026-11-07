@@ -73,13 +73,17 @@ body.s2 .doors{display:none} body.s2 .q{display:none}
 .cap{display:block;text-align:center;font-size:12px;font-weight:700;padding:8px 4px;background:linear-gradient(135deg,#4F8DFF,#7FC1FF);color:#06112a}
 .bn:focus-visible{outline:2px solid #8EC2FF;outline-offset:2px}
 @media (max-width:640px){
-  :root{--imgw:calc(100vw - 32px - 36px)}
-  .doors{flex-direction:column;align-items:stretch}
-  .logo{font-size:38px}
-  .doors{grid-template-columns:1fr;gap:12px}
-  .door{min-height:250px;padding:20px 18px 18px}
-  .door h2{font-size:28px}
-  .door ul{margin-bottom:14px}
+  /* スマホも左右2枚並び。画像の幅＝（画面幅−左右16px×2−間8px）÷2 −枠の内側10px×2 −線2px */
+  :root{--imgw:calc((100vw - 40px) / 2 - 22px)}
+  .logo{font-size:36px}
+  .doors{flex-direction:row;flex-wrap:nowrap;gap:8px;padding:0 16px}
+  .door{min-height:0;padding:12px 10px 12px;border-radius:14px}
+  .door .icon{font-size:30px;top:10px;right:10px}
+  .door .en{font-size:11px;letter-spacing:.2em}
+  .door h2{font-size:20px;margin:2px 0 0}
+  .door .who{font-size:10px;margin:0 0 8px;line-height:1.5}
+  .bn.wk,.bn.pl,.bn.ph{margin-bottom:8px;border-radius:8px}
+  .door .btn{font-size:12px;padding:10px 4px;letter-spacing:.04em}
 }
 </style>
 </head>
