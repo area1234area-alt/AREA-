@@ -114,6 +114,13 @@ section{padding:56px 0 8px}
 .opt td.y{white-space:nowrap;font-variant-numeric:tabular-nums}
 .small{font-size:12px;color:var(--dim);margin:8px 0 0}
 
+.pc .yen.ask{font-size:17px;color:var(--goldlt);letter-spacing:.04em;margin-top:8px}
+.dm{margin-top:16px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.18),transparent 70%),var(--panel2);border:1px solid var(--gold);border-radius:18px;padding:26px 16px}
+.dm-t{font-family:var(--serif);font-size:22px;margin:0 0 6px;line-height:1.5}
+.dm-s{color:var(--soft);font-size:13px;margin:0 0 16px}
+br.sp{display:none}
+@media (max-width:600px){br.sp{display:inline}.dm-t{font-size:19px}}
+.fab{position:fixed;right:14px;bottom:14px;z-index:20;text-decoration:none;font-weight:700;font-size:14px;color:#1a1408;background:var(--goldgrad);border-radius:999px;padding:12px 18px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
 /* 流れ */
 .flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:f}
 .flow li{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:16px;counter-increment:f}
@@ -147,7 +154,7 @@ section{padding:56px 0 8px}
 .msg.ok{color:var(--goldlt)}.msg.ng{color:#F2B3B8}
 .hp{position:absolute;left:-9999px}
 
-.ft{max-width:1040px;margin:60px auto 0;padding:20px 16px 40px;border-top:1px solid var(--line2);font-size:12px;color:var(--dim);text-align:center}
+.ft{max-width:1040px;margin:60px auto 0;padding:20px 16px 80px;border-top:1px solid var(--line2);font-size:12px;color:var(--dim);text-align:center}
 .ft p{margin:4px 0}.ft a{color:var(--dim)}
 
 @media (max-width:860px){
@@ -184,7 +191,7 @@ section{padding:56px 0 8px}
       <div class="hd-card play"><img src="/img/gate/play-hero.jpg" alt="Area 遊ぶの入口" width="900" height="600"><div class="t"><small>PLAY</small><b>遊ぶ</b><span>飲みに行く店を探すお客様へ、お店を掲載</span></div></div>
     </div>
     <p class="plus">求人 ＋ 集客 を、まとめて1店舗ぶんの手間で</p>
-    <div class="hero-cta"><a class="btn gold" href="#apply">無料で掲載を申し込む</a><a class="btn line" href="#price">料金を見る</a></div>
+    <div class="hero-cta"><a class="btn gold" href="#apply">無料で掲載を申し込む</a><a class="btn line" href="https://lin.ee/v7GLaD2" target="_blank" rel="noopener">料金はDMで</a></div>
     <div class="nums">
       <div class="num"><b>53</b><span>掲載中の求人</span></div>
       <div class="num"><b>18</b><span>「遊ぶ」掲載店（梅田）</span></div>
@@ -230,31 +237,36 @@ section{padding:56px 0 8px}
   <section id="price">
     <div class="en">PRICE</div>
     <h2 class="sec">料金プラン</h2>
-    <p class="sec-lead">すべて税込・月額です。最低契約期間はありません。無料掲載から始めて、あとでプランを変えられます。</p>
+    <p class="sec-lead">お店の規模やエリア、掲載の時期に合わせてご案内しています。<b>有料プランの料金は、DMでお気軽にお問い合わせください。</b>最低契約期間はありません。</p>
     <div class="tabs" role="tablist" aria-label="料金の種類">
       <button role="tab" aria-selected="true" aria-controls="pr-play" id="tb-play">来店（遊ぶ）</button>
       <button role="tab" aria-selected="false" aria-controls="pr-work" id="tb-work">求人（働く）</button>
     </div>
     <div class="prices" id="pr-play" role="tabpanel" aria-labelledby="tb-play">
       <div class="pc"><div class="nm">FREE</div><div class="yen">0<small>円／月</small></div><ul><li>お店ページ（基本情報）</li><li>一覧に掲載</li><li>料金・営業時間・場所</li></ul><div class="for">まず載せてみたいお店に</div></div>
-      <div class="pc"><div class="nm">STANDARD</div><div class="yen">10,000<small>円／月</small></div><ul><li>FREEの内容すべて</li><li>写真・紹介文の掲載</li><li>料金プランの掲載</li><li>お知らせ（7日間表示）</li></ul><div class="for">写真でお店の雰囲気を伝えたいお店に</div></div>
-      <div class="pc rec"><span class="badge">おすすめ</span><div class="nm">PREMIUM</div><div class="yen">20,000<small>円／月</small></div><ul><li>STANDARDの内容すべて</li><li>一覧の上位に表示</li><li>お知らせの回数を多めに</li><li>求人ページへのリンク</li></ul><div class="for">来店も求人も伸ばしたいお店に</div></div>
-      <div class="pc"><div class="nm">SPONSOR</div><div class="yen">30,000<small>円／月</small></div><ul><li>PREMIUMの内容すべて</li><li>一覧の最上位に表示</li><li>トップの広告バナー枠</li></ul><div class="for">エリアで一番目立ちたいお店に</div></div>
+      <div class="pc"><div class="nm">STANDARD</div><div class="yen ask">料金はDMで</div><ul><li>FREEの内容すべて</li><li>写真・紹介文の掲載</li><li>料金プランの掲載</li><li>お知らせ（7日間表示）</li></ul><div class="for">写真でお店の雰囲気を伝えたいお店に</div></div>
+      <div class="pc rec"><span class="badge">おすすめ</span><div class="nm">PREMIUM</div><div class="yen ask">料金はDMで</div><ul><li>STANDARDの内容すべて</li><li>一覧の上位に表示</li><li>お知らせの回数を多めに</li><li>求人ページへのリンク</li></ul><div class="for">来店も求人も伸ばしたいお店に</div></div>
+      <div class="pc"><div class="nm">SPONSOR</div><div class="yen ask">料金はDMで</div><ul><li>PREMIUMの内容すべて</li><li>一覧の最上位に表示</li><li>トップの広告バナー枠</li></ul><div class="for">エリアで一番目立ちたいお店に</div></div>
     </div>
     <div class="prices" id="pr-work" role="tabpanel" aria-labelledby="tb-work" hidden>
       <div class="pc"><div class="nm">FREE</div><div class="yen">0<small>円／月</small></div><ul><li>求人ページ（基本情報）</li><li>エリア・職種の一覧に掲載</li><li>条件が確認中でも先に掲載</li></ul><div class="for">まず載せてみたいお店に</div></div>
-      <div class="pc"><div class="nm">STANDARD</div><div class="yen">ご相談<small></small></div><ul><li>FREEの内容すべて</li><li>写真・特徴タグの掲載</li><li>「NEW」「PICKUP」表示</li></ul><div class="for">応募を増やしたいお店に</div></div>
-      <div class="pc rec"><span class="badge">おすすめ</span><div class="nm">PREMIUM</div><div class="yen">ご相談<small></small></div><ul><li>STANDARDの内容すべて</li><li>一覧の上位に表示</li><li>「遊ぶ」のお店ページとセット</li></ul><div class="for">求人も来店も伸ばしたいお店に</div></div>
-      <div class="pc"><div class="nm">BANNER</div><div class="yen">ご相談<small></small></div><ul><li>求人トップの広告バナー枠</li><li>口コミサイト側にも同じ枠</li></ul><div class="for">大きく告知したいお店に</div></div>
+      <div class="pc"><div class="nm">STANDARD</div><div class="yen ask">料金はDMで</div><ul><li>FREEの内容すべて</li><li>写真・特徴タグの掲載</li><li>「NEW」「PICKUP」表示</li></ul><div class="for">応募を増やしたいお店に</div></div>
+      <div class="pc rec"><span class="badge">おすすめ</span><div class="nm">PREMIUM</div><div class="yen ask">料金はDMで</div><ul><li>STANDARDの内容すべて</li><li>一覧の上位に表示</li><li>「遊ぶ」のお店ページとセット</li></ul><div class="for">求人も来店も伸ばしたいお店に</div></div>
+      <div class="pc"><div class="nm">BANNER</div><div class="yen ask">料金はDMで</div><ul><li>求人トップの広告バナー枠</li><li>口コミサイト側にも同じ枠</li></ul><div class="for">大きく告知したいお店に</div></div>
     </div>
     <div class="opt">
-      <h3>原稿制作オプション（1原稿あたり）</h3>
+      <h3>原稿制作オプション</h3>
       <table>
-        <tr><th>BASIC</th><td class="y">10,000円</td><td>電話・LINEで聞き取り、約400字の原稿とキャッチコピー1本。写真はお店からお預かり。修正1回</td></tr>
-        <tr><th>STANDARD</th><td class="y">30,000〜50,000円</td><td>お店で取材。キャッチコピー3案、店長のコメント、近くのお店と比べた強み、1日の流れ（約1,800字）。修正2回</td></tr>
-        <tr><th>PREMIUM</th><td class="y">80,000〜120,000円</td><td>STANDARDに加えて、写真撮影（約10枚）、SNS用の縦型動画30秒、SNS投稿文、月1回の情報更新</td></tr>
+        <tr><th>BASIC</th><td>電話・LINEで聞き取り、約400字の原稿とキャッチコピー1本。写真はお店からお預かり。修正1回</td></tr>
+        <tr><th>STANDARD</th><td>お店で取材。キャッチコピー3案、店長のコメント、近くのお店と比べた強み、1日の流れ（約1,800字）。修正2回</td></tr>
+        <tr><th>PREMIUM</th><td>STANDARDに加えて、写真撮影（約10枚）、SNS用の縦型動画30秒、SNS投稿文、月1回の情報更新</td></tr>
       </table>
       <p class="small">お金をいただいて作る記事には「PR」と表示します。</p>
+    </div>
+    <div class="dm">
+      <p class="dm-t">料金・空き枠・キャンペーンは<br class="sp">DMでお答えします</p>
+      <p class="dm-s">「掲載料金を知りたい」とひと言送るだけでOK。しつこい営業はしません。</p>
+      <a class="btn gold" href="https://lin.ee/v7GLaD2" target="_blank" rel="noopener">DMで料金を聞く</a>
     </div>
   </section>
 
@@ -284,7 +296,8 @@ section{padding:56px 0 8px}
   <section id="faq" class="faq">
     <div class="en">FAQ</div>
     <h2 class="sec">よくあるご質問</h2>
-    <details><summary>本当に無料で載せられますか？</summary><p>はい。FREEプランは月0円で、基本情報のページを掲載します。写真や上位表示をご希望のときに有料プランへ切り替えられます。</p></details>
+    <details><summary>本当に無料で載せられますか？</summary><p>はい。FREEプランは月0円で、基本情報のページを掲載します。写真や上位表示をご希望のときは有料プランへ切り替えられます。有料プランの料金は<a href="https://lin.ee/v7GLaD2" target="_blank" rel="noopener">DM</a>でご案内します。</p></details>
+    <details><summary>有料プランはいくらですか？</summary><p>お店のエリア・ジャンル・掲載時期によってご案内が変わるため、DMで個別にお伝えしています。お気軽にどうぞ。</p></details>
     <details><summary>求人だけ、来店だけの掲載もできますか？</summary><p>できます。お申し込みフォームで「求人だけ」「来店だけ」を選んでください。</p></details>
     <details><summary>原稿や写真がなくても大丈夫ですか？</summary><p>大丈夫です。お店の情報をお聞きして、運営がページを作ります。写真撮影が必要な場合は原稿制作オプションをご利用ください。</p></details>
     <details><summary>解約はいつでもできますか？</summary><p>最低契約期間はありません。翌月から停止できます。</p></details>
@@ -294,7 +307,7 @@ section{padding:56px 0 8px}
   <section id="apply">
     <div class="en">APPLY</div>
     <h2 class="sec">掲載のお申し込み</h2>
-    <p class="sec-lead">送信後、運営からご連絡します。お申し込みだけで料金がかかることはありません。</p>
+    <p class="sec-lead">送信後、運営からご連絡します。お申し込みだけで料金がかかることはありません。料金だけ先に知りたい方は<a href="https://lin.ee/v7GLaD2" target="_blank" rel="noopener">DM</a>へどうぞ。</p>
     <form class="form" id="f" novalidate>
       <div class="fg">
         <div class="full"><label for="want">掲載したい内容<i>必須</i></label><select id="want" name="want"><option>求人と来店の両方</option><option>求人だけ</option><option>来店だけ</option></select></div>
@@ -319,6 +332,7 @@ section{padding:56px 0 8px}
 </div>
 </main>
 
+<a class="fab" href="https://lin.ee/v7GLaD2" target="_blank" rel="noopener">料金をDMで聞く</a>
 <footer class="ft">
   <p>Areaは、お店の情報と求人情報を掲載する広告媒体です。職業紹介・あっせんは行いません。</p>
   <p><a href="/">Areaトップ</a>｜<a href="/kansai">求人をさがす</a>｜<a href="/asobu/">遊ぶ</a></p>
