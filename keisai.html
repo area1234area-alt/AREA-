@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>掲載のご案内｜Area 求人と来店集客をひとつの媒体で</title>
+<meta name="description" content="Area（エリア）は、ナイトワークの女性求人と、来店のお客様向けのお店情報をひとつにまとめた広告媒体です。キャバクラ・ラウンジ・ガールズバーなど飲み屋の掲載のご案内。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* 掲載店向けLP。Areaの黒×金を土台に、「遊ぶ」は青、「働く」はワインで色分け */
+:root{
+  --bg:#09080B; --panel:#141117; --panel2:#1B171F; --line:rgba(201,162,39,.32); --line2:rgba(255,255,255,.09);
+  --ink:#F6F1E7; --soft:#C9C0B6; --dim:#8C847D;
+  --gold:#C9A227; --goldlt:#F1DA9C; --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
+  --blue:#4F8DFF; --sky:#8EC2FF; --wine:#B23A62; --rose:#F2A6BF;
+  --serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+  --en:'Cormorant Garamond','Times New Roman',serif;
+  --sans:'Noto Sans JP','Hiragino Sans',sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.8;-webkit-text-size-adjust:100%}
+a{color:var(--goldlt)}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.hd{display:flex;align-items:center;gap:10px;max-width:1040px;margin:0 auto;padding:12px 16px}
+.logo{font-family:var(--serif);font-weight:800;font-size:26px;letter-spacing:.06em;text-decoration:none;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lbl{font-size:12px;border:1px solid var(--line);color:var(--goldlt);border-radius:6px;padding:1px 8px}
+.hd .cta-s{margin-left:auto;font-size:13px;font-weight:700;text-decoration:none;color:#1a1408;background:var(--goldgrad);border-radius:999px;padding:7px 14px}
+.en{font-family:var(--en);font-style:italic;letter-spacing:.3em;color:var(--gold);font-size:14px}
+h2.sec{font-family:var(--serif);font-size:28px;letter-spacing:.06em;margin:4px 0 6px;line-height:1.4;text-wrap:balance}
+.sec-lead{color:var(--soft);margin:0 0 22px;max-width:62ch}
+section{padding:56px 0 8px}
+
+/* ヒーロー */
+.hero{padding:34px 0 10px;text-align:center}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(28px,6vw,46px);line-height:1.35;letter-spacing:.06em;margin:10px 0 12px;text-wrap:balance}
+.hero h1 .ln{display:inline-block}
+.hero h1 .g{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--soft);margin:0 auto;max-width:40em}
+.hero-doors{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:760px;margin:24px auto 0}
+.hd-card{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--bd);background:#000;text-align:left}
+.hd-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;opacity:.92}
+.hd-card.work img{object-position:center 70%}
+.hd-card .t{padding:12px 14px 14px;background:var(--bgc)}
+.hd-card .t small{font-family:var(--en);font-style:italic;letter-spacing:.25em;color:var(--c)}
+.hd-card .t b{display:block;font-family:var(--serif);font-size:20px;margin:2px 0}
+.hd-card .t span{font-size:13px;color:var(--soft)}
+.play{--bd:rgba(110,170,255,.4);--bgc:linear-gradient(160deg,#16244a,#0b1126);--c:var(--sky)}
+.work{--bd:rgba(201,162,39,.5);--bgc:linear-gradient(160deg,#3a1526,#150c11);--c:var(--goldlt)}
+.plus{font-family:var(--serif);font-size:15px;color:var(--goldlt);margin:22px 0 0;letter-spacing:.1em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:14px 26px;font-size:15px;letter-spacing:.06em}
+.btn.gold{background:var(--goldgrad);color:#1a1408}
+.btn.line{border:1px solid var(--line);color:var(--goldlt)}
+
+/* 数字 */
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:30px}
+.num{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:16px 10px;text-align:center}
+.num b{display:block;font-family:var(--serif);font-size:32px;color:var(--goldlt);font-variant-numeric:tabular-nums;line-height:1.2}
+.num span{font-size:12px;color:var(--soft)}
+.num-note{font-size:11px;color:var(--dim);margin:8px 0 0;text-align:right}
+
+/* 悩み→解決 */
+.pains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pain{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:16px}
+.pain .q{font-size:13px;color:var(--dim);margin:0 0 6px}
+.pain .q::before{content:"「"}.pain .q::after{content:"」"}
+.pain .a{font-weight:700;margin:0}
+.pain .a::before{content:"→ ";color:var(--gold)}
+
+/* 強み */
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.feat{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:16px;padding:20px}
+.feat .no{font-family:var(--en);font-style:italic;font-size:30px;color:var(--gold);line-height:1}
+.feat h3{font-family:var(--serif);font-size:19px;margin:6px 0 6px;line-height:1.5}
+.feat p{margin:0;color:var(--soft);font-size:14px}
+
+/* 掲載イメージ */
+.shows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.show{background:var(--panel);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+.show .ph{display:grid;grid-template-columns:2fr 1fr;gap:3px;background:#000}
+.show .ph img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;min-height:0}
+.show .ph .main{grid-row:span 2;aspect-ratio:4/3}
+.show .ph .sm{aspect-ratio:auto}
+.show .bd{padding:14px 16px 16px}
+.show .tg{font-size:12px;font-weight:700;color:var(--c)}
+.show h3{font-family:var(--serif);font-size:18px;margin:2px 0 6px}
+.show ul{margin:0 0 10px;padding-left:1.2em;font-size:13px;color:var(--soft)}
+.show a{font-size:13px;font-weight:700;text-decoration:none;color:var(--c)}
+
+/* 料金 */
+.tabs{display:inline-flex;background:var(--panel);border:1px solid var(--line2);border-radius:999px;padding:4px;margin-bottom:16px}
+.tabs button{font:700 14px var(--sans);color:var(--soft);background:none;border:0;border-radius:999px;padding:8px 18px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--goldgrad);color:#1a1408}
+.tabs button:focus-visible{outline:2px solid var(--goldlt);outline-offset:2px}
+.prices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.prices[hidden]{display:none}
+.pc{background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:16px 14px;display:flex;flex-direction:column}
+.pc.rec{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.pc .nm{font-family:var(--en);font-style:italic;letter-spacing:.2em;color:var(--goldlt);font-size:15px}
+.pc .badge{align-self:flex-start;font-size:11px;font-weight:700;color:#1a1408;background:var(--goldgrad);border-radius:999px;padding:0 10px;margin-bottom:4px}
+.pc .yen{font-family:var(--serif);font-size:26px;margin:4px 0 0;font-variant-numeric:tabular-nums}
+.pc .yen small{font-size:12px;color:var(--soft);font-family:var(--sans)}
+.pc ul{list-style:none;margin:10px 0 0;padding:0;font-size:13px;color:var(--soft);display:grid;gap:4px}
+.pc li::before{content:"✓ ";color:var(--gold)}
+.pc .for{margin-top:auto;padding-top:10px;font-size:12px;color:var(--dim)}
+.opt{margin-top:16px;background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:16px}
+.opt h3{font-family:var(--serif);font-size:18px;margin:0 0 8px}
+.opt table{width:100%;border-collapse:collapse;font-size:14px}
+.opt th,.opt td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line2);vertical-align:top}
+.opt th{color:var(--goldlt);font-weight:700;white-space:nowrap}
+.opt td.y{white-space:nowrap;font-variant-numeric:tabular-nums}
+.small{font-size:12px;color:var(--dim);margin:8px 0 0}
+
+/* 流れ */
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:f}
+.flow li{background:var(--panel);border:1px solid var(--line2);border-radius:14px;padding:16px;counter-increment:f}
+.flow li::before{content:"STEP " counter(f);display:block;font-family:var(--en);font-style:italic;letter-spacing:.2em;color:var(--gold);font-size:13px}
+.flow b{display:block;font-size:16px;margin:2px 0 4px}
+.flow span{font-size:13px;color:var(--soft)}
+
+/* 条件・FAQ */
+.rules{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.rules ul{margin:0;padding-left:1.2em;color:var(--soft);font-size:14px;display:grid;gap:4px}
+.faq details{background:var(--panel);border:1px solid var(--line2);border-radius:12px;margin-bottom:8px}
+.faq summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q. ";color:var(--gold)}
+.faq details p{margin:0;padding:0 16px 14px;color:var(--soft);font-size:14px}
+
+/* 申し込み */
+.form{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:22px}
+.fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fg .full{grid-column:1/-1}
+.form label{display:block;font-size:13px;color:var(--soft);margin-bottom:4px}
+.form label i{font-style:normal;font-size:11px;color:#1a1408;background:var(--goldlt);border-radius:4px;padding:0 5px;margin-left:4px}
+.form input,.form select,.form textarea{width:100%;font:15px var(--sans);color:var(--ink);background:#0E0C10;border:1px solid var(--line2);border-radius:10px;padding:11px 12px}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--gold);outline-offset:0;border-color:transparent}
+.form textarea{min-height:90px;resize:vertical}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--soft);margin-top:14px}
+.chk input{width:auto;margin-top:4px;accent-color:var(--gold)}
+.send{display:block;width:100%;margin-top:16px;font:700 16px var(--sans);border:0;border-radius:999px;padding:15px;cursor:pointer;background:var(--goldgrad);color:#1a1408;letter-spacing:.08em}
+.send:disabled{opacity:.6}
+.msg{margin:12px 0 0;font-size:14px}
+.msg.ok{color:var(--goldlt)}.msg.ng{color:#F2B3B8}
+.hp{position:absolute;left:-9999px}
+
+.ft{max-width:1040px;margin:60px auto 0;padding:20px 16px 40px;border-top:1px solid var(--line2);font-size:12px;color:var(--dim);text-align:center}
+.ft p{margin:4px 0}.ft a{color:var(--dim)}
+
+@media (max-width:860px){
+  .prices{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pains{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  h2.sec{font-size:23px}
+  section{padding-top:44px}
+  .hero-doors{gap:8px}
+  .hd-card .t{padding:10px}
+  .hd-card .t b{font-size:16px}
+  .hd-card .t span{font-size:11px;line-height:1.5;display:block}
+  .feats,.shows{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+  .num b{font-size:26px}
+  .opt th{white-space:normal}
+}
+</style>
+<link rel="stylesheet" href="/site-bg.css">
+</head>
+<body>
+<header class="hd"><a class="logo" href="/">Area</a><span class="lbl">掲載のご案内</span><a class="cta-s" href="#apply">掲載を申し込む</a></header>
+
+<main>
+<div class="wrap">
+  <section class="hero">
+    <div class="en">FOR SHOP OWNERS</div>
+    <h1><span class="ln">女性の<span class="g">求人</span>も、</span><span class="ln">お客様の<span class="g">来店</span>も。</span><br><span class="ln">ひとつの媒体で。</span></h1>
+    <p>Area（エリア）は、ナイトワークの女性求人と、飲みに行きたいお客様向けのお店情報を、ひとつのサイトにまとめた広告媒体です。1回のお申し込みで、お店の情報が2つの入口に並びます。</p>
+    <div class="hero-doors">
+      <div class="hd-card work"><img src="/img/top/sv-800.jpg" alt="Area 求人の入口" width="800" height="801"><div class="t"><small>WORK</small><b>働く</b><span>働くお店を探す女性へ、求人を掲載</span></div></div>
+      <div class="hd-card play"><img src="/img/gate/play-hero.jpg" alt="Area 遊ぶの入口" width="900" height="600"><div class="t"><small>PLAY</small><b>遊ぶ</b><span>飲みに行く店を探すお客様へ、お店を掲載</span></div></div>
+    </div>
+    <p class="plus">求人 ＋ 集客 を、まとめて1店舗ぶんの手間で</p>
+    <div class="hero-cta"><a class="btn gold" href="#apply">無料で掲載を申し込む</a><a class="btn line" href="#price">料金を見る</a></div>
+    <div class="nums">
+      <div class="num"><b>53</b><span>掲載中の求人</span></div>
+      <div class="num"><b>18</b><span>「遊ぶ」掲載店（梅田）</span></div>
+      <div class="num"><b>2</b><span>エリア（関西・関東）</span></div>
+    </div>
+    <p class="num-note">2026年11月時点。関東の「遊ぶ」は準備中です。</p>
+  </section>
+
+  <section id="why">
+    <div class="en">WHY AREA</div>
+    <h2 class="sec">こんなお悩みに</h2>
+    <p class="sec-lead">求人媒体と集客媒体を別々に契約すると、費用も原稿の手間も2倍になります。Areaは1つにまとめます。</p>
+    <div class="pains">
+      <div class="pain"><p class="q">求人と集客で、媒体ごとに原稿を書くのが大変</p><p class="a">お店の基本情報は1回お預かりすれば、求人と来店の両方のページに使います</p></div>
+      <div class="pain"><p class="q">大手の媒体は高くて続けられない</p><p class="a">月0円の無料掲載から始められます。効果を見てから有料プランへ</p></div>
+      <div class="pain"><p class="q">原稿を書く時間も、写真を用意する時間もない</p><p class="a">運営が原稿を作ります。写真撮影・動画まで任せられるプランもあります</p></div>
+    </div>
+  </section>
+
+  <section id="feature">
+    <div class="en">FEATURES</div>
+    <h2 class="sec">Areaに掲載する4つの理由</h2>
+    <div class="feats">
+      <div class="feat"><div class="no">01</div><h3>求人と来店、2つの入口に同時掲載</h3><p>サイトの入口で「遊ぶ」「働く」を選ぶ作りです。働きたい女性にも、飲みに行きたいお客様にも、同じお店が見つかります。</p></div>
+      <div class="feat"><div class="no">02</div><h3>店名そのまま、お店専用ページ付き</h3><p>店名を伏せずに掲載します。求人ページ・お店ページとも、時給・料金・営業時間・最寄り駅などを見やすく整理します。</p></div>
+      <div class="feat"><div class="no">03</div><h3>7日間の「お知らせ」でイベントを告知</h3><p>イベント・新人入店・期間限定プランなどを、「遊ぶ」の一覧とお店ページに7日間表示します（有料プラン）。</p></div>
+      <div class="feat"><div class="no">04</div><h3>来店が見える「紹介ID」（試験運用中）</h3><p>お客様がAreaで紹介IDを受け取り、お店で見せて来店する仕組みです。Areaを見て来たお客様の数が分かります。いまはご承諾いただいたお店だけで試しています。</p></div>
+    </div>
+  </section>
+
+  <section id="sample">
+    <div class="en">SAMPLE</div>
+    <h2 class="sec">掲載イメージ</h2>
+    <p class="sec-lead">掲載中のお店（club Lilith）の実際のページです。</p>
+    <div class="shows">
+      <div class="show work"><div class="ph"><img class="main" src="/img/lilith/photo1.jpg" alt="求人ページの店内写真" loading="lazy"><img class="sm" src="/img/lilith/photo2.jpg" alt="" loading="lazy"><img class="sm" src="/img/lilith/photo3.jpg" alt="" loading="lazy"></div>
+        <div class="bd"><div class="tg">働く ｜ 求人ページ</div><h3>女性が見る求人ページ</h3><ul><li>時給・待遇・勤務時間・最寄り駅</li><li>体験入店・日払い・ノルマなし などの特徴タグ</li><li>応募はお店へ直接（Areaは仲介しません）</li></ul><a href="/lilith.html" target="_blank" rel="noopener">求人ページを見る →</a></div></div>
+      <div class="show play"><div class="ph"><img class="main" src="/img/lilith/main.jpg" alt="遊ぶページのメイン画像" loading="lazy"><img class="sm" src="/img/lilith/photo2.jpg" alt="" loading="lazy"><img class="sm" src="/img/lilith/photo1.jpg" alt="" loading="lazy"></div>
+        <div class="bd"><div class="tg">遊ぶ ｜ お店ページ</div><h3>お客様が見るお店ページ</h3><ul><li>料金・セット・営業時間・定休日・場所</li><li>飲み放題などの料金プラン</li><li>お知らせ（7日間）・紹介ID（承諾店のみ）</li></ul><a href="/asobu/lilith.html" target="_blank" rel="noopener">お店ページを見る →</a></div></div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="en">PRICE</div>
+    <h2 class="sec">料金プラン</h2>
+    <p class="sec-lead">すべて税込・月額です。最低契約期間はありません。無料掲載から始めて、あとでプランを変えられます。</p>
+    <div class="tabs" role="tablist" aria-label="料金の種類">
+      <button role="tab" aria-selected="true" aria-controls="pr-play" id="tb-play">来店（遊ぶ）</button>
+      <button role="tab" aria-selected="false" aria-controls="pr-work" id="tb-work">求人（働く）</button>
+    </div>
+    <div class="prices" id="pr-play" role="tabpanel" aria-labelledby="tb-play">
+      <div class="pc"><div class="nm">FREE</div><div class="yen">0<small>円／月</small></div><ul><li>お店ページ（基本情報）</li><li>一覧に掲載</li><li>料金・営業時間・場所</li></ul><div class="for">まず載せてみたいお店に</div></div>
+      <div class="pc"><div class="nm">STANDARD</div><div class="yen">10,000<small>円／月</small></div><ul><li>FREEの内容すべて</li><li>写真・紹介文の掲載</li><li>料金プランの掲載</li><li>お知らせ（7日間表示）</li></ul><div class="for">写真でお店の雰囲気を伝えたいお店に</div></div>
+      <div class="pc rec"><span class="badge">おすすめ</span><div class="nm">PREMIUM</div><div class="yen">20,000<small>円／月</small></div><ul><li>STANDARDの内容すべて</li><li>一覧の上位に表示</li><li>お知らせの回数を多めに</li><li>求人ページへのリンク</li></ul><div class="for">来店も求人も伸ばしたいお店に</div></div>
+      <div class="pc"><div class="nm">SPONSOR</div><div class="yen">30,000<small>円／月</small></div><ul><li>PREMIUMの内容すべて</li><li>一覧の最上位に表示</li><li>トップの広告バナー枠</li></ul><div class="for">エリアで一番目立ちたいお店に</div></div>
+    </div>
+    <div class="prices" id="pr-work" role="tabpanel" aria-labelledby="tb-work" hidden>
+      <div class="pc"><div class="nm">FREE</div><div class="yen">0<small>円／月</small></div><ul><li>求人ページ（基本情報）</li><li>エリア・職種の一覧に掲載</li><li>条件が確認中でも先に掲載</li></ul><div class="for">まず載せてみたいお店に</div></div>
+      <div class="pc"><div class="nm">STANDARD</div><div class="yen">ご相談<small></small></div><ul><li>FREEの内容すべて</li><li>写真・特徴タグの掲載</li><li>「NEW」「PICKUP」表示</li></ul><div class="for">応募を増やしたいお店に</div></div>
+      <div class="pc rec"><span class="badge">おすすめ</span><div class="nm">PREMIUM</div><div class="yen">ご相談<small></small></div><ul><li>STANDARDの内容すべて</li><li>一覧の上位に表示</li><li>「遊ぶ」のお店ページとセット</li></ul><div class="for">求人も来店も伸ばしたいお店に</div></div>
+      <div class="pc"><div class="nm">BANNER</div><div class="yen">ご相談<small></small></div><ul><li>求人トップの広告バナー枠</li><li>口コミサイト側にも同じ枠</li></ul><div class="for">大きく告知したいお店に</div></div>
+    </div>
+    <div class="opt">
+      <h3>原稿制作オプション（1原稿あたり）</h3>
+      <table>
+        <tr><th>BASIC</th><td class="y">10,000円</td><td>電話・LINEで聞き取り、約400字の原稿とキャッチコピー1本。写真はお店からお預かり。修正1回</td></tr>
+        <tr><th>STANDARD</th><td class="y">30,000〜50,000円</td><td>お店で取材。キャッチコピー3案、店長のコメント、近くのお店と比べた強み、1日の流れ（約1,800字）。修正2回</td></tr>
+        <tr><th>PREMIUM</th><td class="y">80,000〜120,000円</td><td>STANDARDに加えて、写真撮影（約10枚）、SNS用の縦型動画30秒、SNS投稿文、月1回の情報更新</td></tr>
+      </table>
+      <p class="small">お金をいただいて作る記事には「PR」と表示します。</p>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="en">FLOW</div>
+    <h2 class="sec">掲載までの流れ</h2>
+    <ol class="flow">
+      <li><b>お申し込み</b><span>このページのフォームから送信。1分ほどで終わります</span></li>
+      <li><b>運営からご連絡</b><span>内容の確認と、営業許可などの確認をします</span></li>
+      <li><b>原稿づくり</b><span>お店の情報・写真をお預かりして、運営がページを作ります</span></li>
+      <li><b>掲載スタート</b><span>内容をご確認いただいてから公開します</span></li>
+    </ol>
+  </section>
+
+  <section id="rules">
+    <div class="en">RULES</div>
+    <h2 class="sec">掲載の条件</h2>
+    <div class="rules"><ul>
+      <li>風俗営業の許可など、必要な届出・許可があるお店に限ります</li>
+      <li>求人は18歳未満（高校生を含む）の方を対象にできません。お客様向けの掲載は、20歳未満の飲酒につながる内容は載せられません</li>
+      <li>「遊ぶ」は飲食のお店（キャバクラ・ラウンジ・ガールズバー・コンカフェ・スナック・バーなど）が対象です。性風俗・メンズエステは「遊ぶ」には載せられません</li>
+      <li>Areaは広告媒体です。職業紹介やお店へのあっせんは行いません。女性の応募・面接・採用は、お店と女性の間で直接行っていただきます</li>
+      <li>事実と違う内容（実際と違う時給・料金など）は載せられません</li>
+    </ul></div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="en">FAQ</div>
+    <h2 class="sec">よくあるご質問</h2>
+    <details><summary>本当に無料で載せられますか？</summary><p>はい。FREEプランは月0円で、基本情報のページを掲載します。写真や上位表示をご希望のときに有料プランへ切り替えられます。</p></details>
+    <details><summary>求人だけ、来店だけの掲載もできますか？</summary><p>できます。お申し込みフォームで「求人だけ」「来店だけ」を選んでください。</p></details>
+    <details><summary>原稿や写真がなくても大丈夫ですか？</summary><p>大丈夫です。お店の情報をお聞きして、運営がページを作ります。写真撮影が必要な場合は原稿制作オプションをご利用ください。</p></details>
+    <details><summary>解約はいつでもできますか？</summary><p>最低契約期間はありません。翌月から停止できます。</p></details>
+    <details><summary>「紹介ID」はどのお店でも使えますか？</summary><p>いまは試験運用中のため、ご承諾いただいたお店だけで使っています。ご興味があればお申し込みの際にお知らせください。</p></details>
+  </section>
+
+  <section id="apply">
+    <div class="en">APPLY</div>
+    <h2 class="sec">掲載のお申し込み</h2>
+    <p class="sec-lead">送信後、運営からご連絡します。お申し込みだけで料金がかかることはありません。</p>
+    <form class="form" id="f" novalidate>
+      <div class="fg">
+        <div class="full"><label for="want">掲載したい内容<i>必須</i></label><select id="want" name="want"><option>求人と来店の両方</option><option>求人だけ</option><option>来店だけ</option></select></div>
+        <div><label for="name">店名<i>必須</i></label><input id="name" name="name" maxlength="60" autocomplete="organization" required></div>
+        <div><label for="genre">ジャンル<i>必須</i></label><select id="genre" name="genre" required><option value="">選んでください</option><option>キャバクラ</option><option>昼キャバ</option><option>ラウンジ</option><option>クラブ</option><option>熟女キャバクラ</option><option>ガールズバー</option><option>コンカフェ</option><option>スナック</option><option>バー</option><option>一般飲食</option></select></div>
+        <div class="full"><label for="address">住所<i>必須</i></label><input id="address" name="address" maxlength="120" autocomplete="street-address" required></div>
+        <div><label for="person">ご担当者名<i>必須</i></label><input id="person" name="person" maxlength="30" autocomplete="name" required></div>
+        <div><label for="contact">連絡先（電話・メール・LINE ID）<i>必須</i></label><input id="contact" name="contact" maxlength="80" required></div>
+        <div><label for="tel">お店の電話番号</label><input id="tel" name="tel" maxlength="20" inputmode="tel" autocomplete="tel"></div>
+        <div><label for="url">お店のホームページ・SNS</label><input id="url" name="url" maxlength="200" inputmode="url" placeholder="https://"></div>
+        <div><label for="plan">ご希望のプラン</label><select id="plan" name="plan"><option>相談したい</option><option>FREE</option><option>STANDARD</option><option>PREMIUM</option><option>SPONSOR</option></select></div>
+        <div><label for="writing">原稿制作オプション</label><select id="writing" name="writing"><option>いらない・相談したい</option><option>BASIC</option><option>STANDARD</option><option>PREMIUM</option></select></div>
+        <div class="full"><label for="license">風俗営業の許可番号（分かれば）</label><input id="license" name="license" maxlength="40"></div>
+        <div class="full"><label for="note">ご質問・ご要望</label><textarea id="note" name="note" maxlength="500"></textarea></div>
+      </div>
+      <input class="hp" type="text" name="website2" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="chk"><input type="checkbox" id="agree"> 上の「掲載の条件」を確認し、同意します</label>
+      <button class="send" type="submit" id="send">申し込む</button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </section>
+</div>
+</main>
+
+<footer class="ft">
+  <p>Areaは、お店の情報と求人情報を掲載する広告媒体です。職業紹介・あっせんは行いません。</p>
+  <p><a href="/">Areaトップ</a>｜<a href="/kansai">求人をさがす</a>｜<a href="/asobu/">遊ぶ</a></p>
+  <p>© 2026 Area</p>
+</footer>
+
+<script>
+(function(){
+  /* 料金タブ */
+  var tabs = document.querySelectorAll('.tabs [role="tab"]');
+  [].forEach.call(tabs, function(t){ t.addEventListener('click', function(){
+    [].forEach.call(tabs, function(x){ var on = x === t; x.setAttribute('aria-selected', on ? 'true' : 'false'); document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+  }); });
+
+  /* 申し込み送信（/api/guide/apply） */
+  var f = document.getElementById('f'), msg = document.getElementById('msg'), btn = document.getElementById('send');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = function(id){ return (document.getElementById(id).value || '').trim(); };
+    var miss = ['name','genre','address','person','contact'].filter(function(id){ return !v(id); });
+    if (miss.length) { msg.className = 'msg ng'; msg.textContent = '店名・ジャンル・住所・ご担当者名・連絡先を入力してください。'; document.getElementById(miss[0]).focus(); return; }
+    if (!document.getElementById('agree').checked) { msg.className = 'msg ng'; msg.textContent = '「掲載の条件」への同意にチェックを入れてください。'; return; }
+    var w = v('writing');
+    var body = { want: v('want'), name: v('name'), genre: v('genre'), address: v('address'), person: v('person'), contact: v('contact'), tel: v('tel'), url: v('url'),
+      plan: v('plan'), writing: w.indexOf('いらない') === 0 ? '' : w, license: v('license'), note: v('note'), agree: true, website2: f.website2.value };
+    btn.disabled = true; msg.className = 'msg'; msg.textContent = '送信しています…';
+    fetch('/api/guide/apply', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
+      .then(function(x){
+        if (!x.ok || !x.d.ok) throw new Error(x.d.error || '送信できませんでした');
+        f.reset(); msg.className = 'msg ok'; msg.textContent = 'お申し込みを受け付けました（受付番号 ' + (x.d.id || '') + '）。運営からご連絡します。';
+      })
+      .catch(function(err){ msg.className = 'msg ng'; msg.textContent = err.message + '。時間をおいてもう一度お試しください。'; })
+      .then(function(){ btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>

@@ -4,7 +4,8 @@ import crypto from "node:crypto";
 
 const json = (d, s = 200) => new Response(JSON.stringify(d), { status: s, headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
 const str = (v, n) => String(v == null ? "" : v).trim().slice(0, n);
-const GENRES = ["キャバクラ", "昼キャバ", "ラウンジ", "熟女キャバクラ", "スナック", "ガールズバー", "コンカフェ", "バー", "一般飲食"];
+const GENRES = ["キャバクラ", "昼キャバ", "ラウンジ", "クラブ", "熟女キャバクラ", "スナック", "ガールズバー", "コンカフェ", "バー", "一般飲食"];
+const WANTS = ["求人と来店の両方", "求人だけ", "来店だけ"];
 const PLANS = ["FREE", "STANDARD", "PREMIUM", "SPONSOR", "相談したい"];
 
 export default async (req) => {
@@ -12,7 +13,7 @@ export default async (req) => {
   let b = {}; try { b = await req.json(); } catch (e) {}
   if (b.website2) return json({ ok: true }); // 機械的な送信よけ
   const a = { name: str(b.name, 60), genre: GENRES.includes(b.genre) ? b.genre : "", address: str(b.address, 120), tel: str(b.tel, 20), person: str(b.person, 30), contact: str(b.contact, 80),
-    url: /^https?:\/\//.test(b.url || "") ? str(b.url, 200) : "", license: str(b.license, 40), plan: PLANS.includes(b.plan) ? b.plan : "相談したい", note: str(b.note, 500) };
+    url: /^https?:\/\//.test(b.url || "") ? str(b.url, 200) : "", license: str(b.license, 40), plan: PLANS.includes(b.plan) ? b.plan : "相談したい", want: WANTS.includes(b.want) ? b.want : "求人と来店の両方", writing: str(b.writing, 30), note: str(b.note, 500) };
   if (!a.name || !a.genre || !a.address || !a.person || !a.contact) return json({ error: "店名・ジャンル・住所・ご担当者・連絡先は必須です" }, 400);
   if (!b.agree) return json({ error: "掲載の条件への同意が必要です" }, 400);
   const st = store();
