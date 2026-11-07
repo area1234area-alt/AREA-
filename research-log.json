@@ -829,6 +829,66 @@
       ],
       "page": "review/shop.html?id=sutekinawife-kitasenju",
       "drafted": "2026-11-06"
+    },
+    {
+      "name": "Motenashi 赤羽ルーム（もてなし）",
+      "site": "review",
+      "area": "赤羽",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://motenashi.esthe-hp.com/"
+      ],
+      "page": "review/shop.html?id=motenashi-akabane",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Motenashi 荻窪ルーム（もてなし）",
+      "site": "review",
+      "area": "荻窪",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://motenashi.esthe-hp.com/"
+      ],
+      "page": "review/shop.html?id=motenashi-ogikubo",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Motenashi 吉祥寺ルーム（もてなし）",
+      "site": "review",
+      "area": "吉祥寺",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://motenashi.esthe-hp.com/"
+      ],
+      "page": "review/shop.html?id=motenashi-kichijoji",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "大人の階段（おとなのかいだん）",
+      "site": "review",
+      "area": "日暮里",
+      "genre": "メンズエステ",
+      "open": "2026-09-29",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://otona-no-kaidan.com/"
+      ],
+      "page": "review/shop.html?id=otonanokaidan-nippori",
+      "drafted": "2026-11-07"
     }
   ]
 }
