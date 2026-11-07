@@ -889,6 +889,51 @@
       ],
       "page": "review/shop.html?id=otonanokaidan-nippori",
       "drafted": "2026-11-07"
+    },
+    {
+      "name": "T.i.M -TIME is MATCH-（ティーアイエム）",
+      "site": "bar",
+      "area": "本町",
+      "genre": "ラウンジ",
+      "open": "2026-11下旬",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
+        "https://www.pokepara-tainew.jp/osaka/m300/a15015/shop24843/"
+      ],
+      "page": "honmachi-l01.html",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "美魔女LOUNGE 夢宵（ユメヨイ）",
+      "site": "bar",
+      "area": "福島（野田阪神）",
+      "genre": "ラウンジ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
+        "https://www.pokepara-tainew.jp/osaka/m300/a308/shop24633/"
+      ],
+      "page": "fukushima-l01.html",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "TŌU（トウ）",
+      "site": "bar",
+      "area": "北新地",
+      "genre": "ラウンジ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
+        "https://www.pokepara-tainew.jp/osaka/m300/a305/shop24717/"
+      ],
+      "page": "shinchi-l01.html",
+      "drafted": "2026-11-07"
     }
   ]
 }
