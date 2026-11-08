@@ -980,6 +980,21 @@
       ],
       "page": "review/shop.html?id=premium-arrows",
       "drafted": "2026-11-07"
+    },
+    {
+      "name": "APEX 三宮店（アペックス）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-08",
+      "source": [
+        "https://www.kking.jp/ippan/1530683/",
+        "https://apex-esthe.com/"
+      ],
+      "page": "review/shop.html?id=apex-sannomiya",
+      "drafted": "2026-11-08"
     }
   ]
 }
