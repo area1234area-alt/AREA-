@@ -124,6 +124,16 @@ section{padding:56px 0 8px}
 .hk .tg{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 12px}
 .hk .tg span{font-size:11px;background:rgba(255,111,160,.14);border:1px solid var(--line);border-radius:999px;padding:0 8px}
 .hk a{margin-top:auto;text-align:center;font-size:13px;font-weight:700;text-decoration:none;color:#06260f;background:#06C755;border-radius:999px;padding:9px}
+.hk-cta{margin-top:16px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(6,199,85,.16),transparent 70%),var(--panel2);border:1px solid rgba(6,199,85,.45);border-radius:18px;padding:22px 16px}
+.hk-cta-t{font-family:var(--serif);font-size:21px;line-height:1.5;font-weight:700}
+.hk-cta-s{margin:6px auto 14px;max-width:34em;font-size:13px;color:var(--soft)}
+.hk-cta-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px}
+.hk-qr{width:132px;height:132px;display:grid;place-items:center;text-align:center;font-size:12px;line-height:1.6;color:var(--dim);background:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 8px,transparent 8px 16px);border:1px dashed var(--line2);border-radius:12px}
+.hk-qr img{width:132px;height:132px;border-radius:12px;background:#fff;padding:6px}
+.hk-fab{position:fixed;right:14px;bottom:14px;z-index:20;text-decoration:none;font-weight:700;font-size:14px;color:#06260f;background:#06C755;border-radius:999px;padding:12px 18px;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:opacity .2s}
+.hk-fab[hidden]{display:none}
+br.sp{display:none}
+@media (max-width:600px){br.sp{display:inline}.hk-cta-t{font-size:18px}}
 .hk .hk-wait{margin-top:auto;text-align:center;font-size:13px;font-weight:700;color:var(--dim);border:1px dashed var(--line2);border-radius:999px;padding:9px}
 .hk-more{display:block;margin:12px auto 0;font:700 14px var(--sans);color:var(--pinklt);background:none;border:1px solid var(--line);border-radius:999px;padding:10px 26px;cursor:pointer}
 .hk-box{margin-top:14px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--soft)}
@@ -269,7 +279,7 @@ section{padding:56px 0 8px}
   <section id="haken">
     <div class="en">DISPATCH</div>
     <h2 class="sec">派遣で働けるお店</h2>
-    <p class="sec-lead">提携している人材会社（有料職業紹介事業 許可番号 13-ユ-208776）のお仕事です。お店の名前と写真は、提携会社にご相談いただいたときにお伝えします。気になる番号を、提携会社のLINEに直接送ってください。Areaは間に入りません。</p>
+    <p class="sec-lead">提携している人材会社（有料職業紹介事業 許可番号 13-ユ-208776）のお仕事です。お店の名前と写真は、提携会社にご相談いただいたときにお伝えします。気になる番号を、下の窓口（提携会社のLINE）に直接送ってください。Areaは間に入りません。</p>
     <div class="hk-head">
       <div class="rtabs" role="tablist" aria-label="派遣のエリア" id="hk-region">
         <button role="tab" aria-selected="true" data-r="kansai">関西</button>
@@ -281,8 +291,15 @@ section{padding:56px 0 8px}
     <p class="count" id="hk-count"></p>
     <div class="hk-list" id="hk-list"></div>
     <button class="hk-more" id="hk-more" type="button" hidden>もっと見る</button>
-    <div class="hk-box"><b>派遣・紹介のお仕事の流れ：</b>提携会社のLINEで番号を送る → 提携会社に登録 → 好きな日にお店で働く → お給料を受け取る。登録・お仕事の案内・条件のご相談は、すべて提携会社が行います。<br><b>提携会社：</b>有料職業紹介事業 許可番号 13-ユ-208776</div>
-    <div class="cta"><span class="btn line" id="hk-line">提携会社のLINE（準備中）</span></div>
+    <div class="hk-box"><b>派遣・紹介のお仕事の流れ：</b>気になる番号をメモ → 提携会社のLINE（下の窓口）に送る → 提携会社に登録 → 好きな日にお店で働く → お給料を受け取る。登録・お仕事の案内・条件のご相談は、すべて提携会社が行います。<br><b>提携会社：</b>有料職業紹介事業 許可番号 13-ユ-208776</div>
+    <div class="hk-cta" id="hk-cta">
+      <div class="hk-cta-t">気になる番号が決まったら<br class="sp">提携会社のLINEへ</div>
+      <p class="hk-cta-s">どのお店も同じ窓口で受け付けています。「北新地 キャバクラ No.01」のように番号を送るだけでOKです。</p>
+      <div class="hk-cta-row">
+        <div class="hk-qr" id="hk-qr" aria-label="LINEのQRコード">QRコード<br>準備中</div>
+        <a class="btn lineg" id="hk-line" href="#hk-cta" aria-disabled="true">提携会社のLINE（準備中）</a>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -394,7 +411,20 @@ section{padding:56px 0 8px}
 })();
 /* 派遣のお仕事：関西／関東 → エリア → 業種 */
 (function(){
-  var H = window.AREA_HAKEN || [], LINE = ''; /* 提携会社のLINE（URLが届いたらここに入れる） */
+  var H = window.AREA_HAKEN || [];
+  /* 提携会社のLINE：URLとQR画像が届いたらこの2行に入れる（全店舗共通の窓口） */
+  var LINE = '', LINE_QR = '';
+  (function(){
+    var btn = document.getElementById('hk-line'), qr = document.getElementById('hk-qr');
+    if (LINE) { btn.href = LINE; btn.target = '_blank'; btn.rel = 'noopener'; btn.removeAttribute('aria-disabled'); btn.textContent = '提携会社のLINEで相談する'; }
+    if (LINE_QR) { qr.innerHTML = '<img src="' + LINE_QR + '" alt="提携会社のLINEのQRコード">'; }
+    var fab = document.createElement('a'); fab.className = 'hk-fab'; fab.hidden = true;
+    fab.href = LINE || '#hk-cta'; if (LINE) { fab.target = '_blank'; fab.rel = 'noopener'; }
+    fab.textContent = LINE ? 'LINEで派遣を相談' : 'LINEで派遣を相談（準備中）';
+    document.body.appendChild(fab);
+    var sec = document.getElementById('haken');
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ fab.hidden = !es[0].isIntersecting; }, { threshold: 0.05 }).observe(sec);
+  })();
   var KANSAI = ['大阪府','京都府','兵庫県','奈良県','滋賀県','和歌山県'];
   var st = { r: 'kansai', a: 'すべて', t: 'すべて', n: 12 };
   function esc(s){ return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
@@ -412,7 +442,7 @@ section{padding:56px 0 8px}
     document.getElementById('hk-count').textContent = l.length + '件のお仕事';
     var cls = { 'キャバクラ': '', 'クラブ': 'cl', 'ラウンジ': 'lg' };
     document.getElementById('hk-list').innerHTML = l.length ? l.slice(0, st.n).map(function(h){
-      return '<div class="hk"><div class="top"><span class="ty ' + (cls[h.type] || '') + '">' + esc(h.type) + '</span><span class="ar">' + esc(h.area) + '</span></div><h3>' + esc(h.no) + '</h3><div class="pay">' + esc(h.pay) + '</div><div class="tg">' + (h.tags || []).map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div>' + (LINE ? '<a href="' + LINE + '" target="_blank" rel="noopener">提携会社のLINEで相談</a>' : '<span class="hk-wait">LINE準備中</span>') + '</div>';
+      return '<div class="hk"><div class="top"><span class="ty ' + (cls[h.type] || '') + '">' + esc(h.type) + '</span><span class="ar">' + esc(h.area) + '</span></div><h3>' + esc(h.no) + '</h3><div class="pay">' + esc(h.pay) + '</div><div class="tg">' + (h.tags || []).map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div></div>';
     }).join('') : '<div class="empty">このエリアの派遣のお仕事は準備中です。</div>';
     document.getElementById('hk-more').hidden = l.length <= st.n;
   }
