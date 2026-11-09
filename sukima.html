@@ -128,7 +128,7 @@ section{padding:56px 0 8px}
 .hk-cta-t{font-family:var(--serif);font-size:21px;line-height:1.5;font-weight:700}
 .hk-cta-s{margin:6px auto 14px;max-width:34em;font-size:13px;color:var(--soft)}
 .hk-cta-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px}
-.hk-qr{width:132px;height:132px;display:grid;place-items:center;text-align:center;font-size:12px;line-height:1.6;color:var(--dim);background:repeating-linear-gradient(45deg,rgba(255,255,255,.04) 0 8px,transparent 8px 16px);border:1px dashed var(--line2);border-radius:12px}
+.hk-qr{width:132px;height:132px}
 .hk-qr img{width:132px;height:132px;border-radius:12px;background:#fff;padding:6px}
 .hk-fab{position:fixed;right:14px;bottom:14px;z-index:20;text-decoration:none;font-weight:700;font-size:14px;color:#06260f;background:#06C755;border-radius:999px;padding:12px 18px;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:opacity .2s}
 .hk-fab[hidden]{display:none}
@@ -285,8 +285,8 @@ br.sp{display:none}
       <div class="hk-cta-t">派遣・紹介のお仕事は<br class="sp">提携会社のLINEへ</div>
       <p class="hk-cta-s">「派遣のお仕事について聞きたい」と送るだけでOK。面談・登録の流れや、働けるお店の案内は提携会社が行います。</p>
       <div class="hk-cta-row">
-        <div class="hk-qr" id="hk-qr" aria-label="LINEのQRコード">QRコード<br>準備中</div>
-        <a class="btn lineg" id="hk-line" href="#hk-cta" aria-disabled="true">提携会社のLINE（準備中）</a>
+        <div class="hk-qr" id="hk-qr"><img src="img/sukima/haken-line-qr.png" alt="提携会社のLINEのQRコード" width="132" height="132" loading="lazy"></div>
+        <a class="btn lineg" id="hk-line" href="https://lin.ee/5zi3G7H" target="_blank" rel="noopener">提携会社のLINEで相談する</a>
       </div>
     </div>
   </section>
@@ -401,7 +401,7 @@ br.sp{display:none}
 (function(){
   var H = window.AREA_HAKEN || [];
   /* 提携会社のLINE：URLとQR画像が届いたらこの2行に入れる（全店舗共通の窓口） */
-  var LINE = '', LINE_QR = '';
+  var LINE = 'https://lin.ee/5zi3G7H', LINE_QR = 'img/sukima/haken-line-qr.png';
   (function(){
     var btn = document.getElementById('hk-line'), qr = document.getElementById('hk-qr');
     if (LINE) { btn.href = LINE; btn.target = '_blank'; btn.rel = 'noopener'; btn.removeAttribute('aria-disabled'); btn.textContent = '提携会社のLINEで相談する'; }
