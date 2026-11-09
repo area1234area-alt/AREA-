@@ -124,6 +124,7 @@ section{padding:56px 0 8px}
 .hk .tg{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 12px}
 .hk .tg span{font-size:11px;background:rgba(255,111,160,.14);border:1px solid var(--line);border-radius:999px;padding:0 8px}
 .hk a{margin-top:auto;text-align:center;font-size:13px;font-weight:700;text-decoration:none;color:#06260f;background:#06C755;border-radius:999px;padding:9px}
+.hk .hk-wait{margin-top:auto;text-align:center;font-size:13px;font-weight:700;color:var(--dim);border:1px dashed var(--line2);border-radius:999px;padding:9px}
 .hk-more{display:block;margin:12px auto 0;font:700 14px var(--sans);color:var(--pinklt);background:none;border:1px solid var(--line);border-radius:999px;padding:10px 26px;cursor:pointer}
 .hk-box{margin-top:14px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--soft)}
 .hk-box b{color:var(--ink)}
@@ -200,7 +201,7 @@ section{padding:56px 0 8px}
   <section class="hero">
     <picture class="hero-img"><source type="image/webp" srcset="img/sukima/hero-800.webp 800w, img/sukima/hero-1600.webp 1600w" sizes="(max-width: 1040px) 100vw, 1008px"><img src="img/sukima/hero-1600.jpg" srcset="img/sukima/hero-800.jpg 800w, img/sukima/hero-1600.jpg 1600w" sizes="(max-width: 1040px) 100vw, 1008px" width="1672" height="941" alt="スキマ時間で、夜のお仕事。1日だけから。Wワーク OK・自由なシフト・高収入も可能" fetchpriority="high"></picture>
     <h1 class="vh">スキマ時間で、夜のお仕事。1日だけから。</h1>
-    <p>「在籍はまだ決めたくない」「空いている日だけ働きたい」。そんな方向けに、単発・週1日から・日払いOKのお店をまとめました。掲載店には直接応募、派遣のお仕事はAreaの公式LINEで相談できます。</p>
+    <p>「在籍はまだ決めたくない」「空いている日だけ働きたい」。そんな方向けに、単発・週1日から・日払いOKのお店をまとめました。掲載店にはお店へ、派遣・紹介のお仕事は提携会社のLINEへ、どちらも直接応募できます。</p>
     <div class="cta"><a class="btn pink" href="#shops">単発OKのお店を見る</a><a class="btn line" href="#haken">派遣のお仕事を見る</a></div>
     <p class="note">Areaの利用は無料です。18歳未満（高校生を含む）の方は応募できません。</p>
     <div class="tags"><span>1日だけOK</span><span>週1日〜</span><span>日払いのお店あり</span><span>ノルマなしのお店多数</span><span>未経験歓迎</span><span>送りありのお店も</span><span>終電上がりOK</span></div>
@@ -268,7 +269,7 @@ section{padding:56px 0 8px}
   <section id="haken">
     <div class="en">DISPATCH</div>
     <h2 class="sec">派遣で働けるお店</h2>
-    <p class="sec-lead">提携している派遣会社（労働者派遣事業の許可あり）のお仕事です。お店の名前と写真は、ご相談いただいてからお伝えします。気になる番号を、Areaの公式LINEで送ってください。</p>
+    <p class="sec-lead">提携している人材会社（有料職業紹介事業 許可番号 13-ユ-308774）のお仕事です。お店の名前と写真は、提携会社にご相談いただいたときにお伝えします。気になる番号を、提携会社のLINEに直接送ってください。Areaは間に入りません。</p>
     <div class="hk-head">
       <div class="rtabs" role="tablist" aria-label="派遣のエリア" id="hk-region">
         <button role="tab" aria-selected="true" data-r="kansai">関西</button>
@@ -280,8 +281,8 @@ section{padding:56px 0 8px}
     <p class="count" id="hk-count"></p>
     <div class="hk-list" id="hk-list"></div>
     <button class="hk-more" id="hk-more" type="button" hidden>もっと見る</button>
-    <div class="hk-box"><b>派遣のお仕事の流れ：</b>公式LINEで番号を送る → 提携の派遣会社に登録 → 好きな日にお店で働く → お給料を受け取る。雇用主は提携の派遣会社です。時給・お給料の受け取り方はお店や案件によって変わります。</div>
-    <div class="cta"><a class="btn lineg" href="https://lin.ee/v7GLaD2" target="_blank" rel="noopener">公式LINEで派遣のお仕事を相談する</a></div>
+    <div class="hk-box"><b>派遣・紹介のお仕事の流れ：</b>提携会社のLINEで番号を送る → 提携会社に登録 → 好きな日にお店で働く → お給料を受け取る。登録・お仕事の案内・条件のご相談は、すべて提携会社が行います。<br><b>提携会社：</b>有料職業紹介事業 許可番号 13-ユ-308774</div>
+    <div class="cta"><span class="btn line" id="hk-line">提携会社のLINE（準備中）</span></div>
   </section>
 
   <section>
@@ -293,7 +294,7 @@ section{padding:56px 0 8px}
       <li><b>面接・体験入店</b><span>日時や条件は、お店と直接決めます</span></li>
       <li><b>働いてお給料</b><span>お給料はお店から受け取ります。日払いのお店はその日に</span></li>
     </ol>
-    <p class="flow-note">掲載店のお仕事は、お店に直接応募します。派遣のお仕事は、Areaの公式LINEでご相談を受けて提携の派遣会社におつなぎします。どちらも働く方の手数料は0円です。</p>
+    <p class="flow-note">掲載店のお仕事は、お店に直接応募します。派遣・紹介のお仕事は、提携会社のLINEに直接ご相談ください。どちらも働く方の手数料は0円です。</p>
   </section>
 
   <section>
@@ -339,7 +340,7 @@ section{padding:56px 0 8px}
     <details><summary>ノルマや罰金はありますか？</summary><p>「ノルマなし」のお店を選べます。罰金の有無は応募のときにお店へ確認してください。</p></details>
     <details><summary>お酒が飲めなくても働けますか？</summary><p>飲めなくても大丈夫なお店があります。ソフトドリンクで接客できるか、応募のときに確認してください。</p></details>
     <details><summary>Areaに登録や手数料は必要ですか？</summary><p>いりません。求人ページから直接お店に応募できます。会員登録すると、お店からオファーを受け取れる機能も使えます。</p></details>
-    <details><summary>派遣のお仕事はどうやって始めますか？</summary><p>「派遣で働けるお店」の番号を、Areaの公式LINEで送ってください。提携の派遣会社への登録をご案内します。お店の名前や写真はそのときにお伝えします。</p></details>
+    <details><summary>派遣のお仕事はどうやって始めますか？</summary><p>「派遣で働けるお店」の番号を、提携会社のLINEに直接送ってください。登録やお店の案内は提携会社が行います。Areaはやりとりの間に入りません。</p></details>
   </section>
 
   <section>
@@ -357,7 +358,7 @@ section{padding:56px 0 8px}
 </main>
 
 <footer class="ft">
-  <p>掲載店の求人は、お店に直接ご応募ください。派遣のお仕事の雇用主は、労働者派遣事業の許可を持つ提携の派遣会社です。</p>
+  <p>掲載店の求人は、お店に直接ご応募ください。派遣・紹介のお仕事は、提携会社（有料職業紹介事業 許可番号 13-ユ-308774）に直接ご相談ください。Areaは求人情報の掲載のみを行い、やりとりの間には入りません。</p>
   <p>18歳未満（高校生を含む）の方は応募できません。</p>
   <p><a href="/">Areaトップ</a>｜<a href="/kansai">求人をさがす</a>｜<a href="/keisai">掲載をお考えの店舗様</a></p>
 </footer>
@@ -393,7 +394,7 @@ section{padding:56px 0 8px}
 })();
 /* 派遣のお仕事：関西／関東 → エリア → 業種 */
 (function(){
-  var H = window.AREA_HAKEN || [], LINE = 'https://lin.ee/v7GLaD2';
+  var H = window.AREA_HAKEN || [], LINE = ''; /* 提携会社のLINE（URLが届いたらここに入れる） */
   var KANSAI = ['大阪府','京都府','兵庫県','奈良県','滋賀県','和歌山県'];
   var st = { r: 'kansai', a: 'すべて', t: 'すべて', n: 12 };
   function esc(s){ return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
@@ -411,7 +412,7 @@ section{padding:56px 0 8px}
     document.getElementById('hk-count').textContent = l.length + '件のお仕事';
     var cls = { 'キャバクラ': '', 'クラブ': 'cl', 'ラウンジ': 'lg' };
     document.getElementById('hk-list').innerHTML = l.length ? l.slice(0, st.n).map(function(h){
-      return '<div class="hk"><div class="top"><span class="ty ' + (cls[h.type] || '') + '">' + esc(h.type) + '</span><span class="ar">' + esc(h.area) + '</span></div><h3>' + esc(h.no) + '</h3><div class="pay">' + esc(h.pay) + '</div><div class="tg">' + (h.tags || []).map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div><a href="' + LINE + '" target="_blank" rel="noopener">LINEで相談</a></div>';
+      return '<div class="hk"><div class="top"><span class="ty ' + (cls[h.type] || '') + '">' + esc(h.type) + '</span><span class="ar">' + esc(h.area) + '</span></div><h3>' + esc(h.no) + '</h3><div class="pay">' + esc(h.pay) + '</div><div class="tg">' + (h.tags || []).map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div>' + (LINE ? '<a href="' + LINE + '" target="_blank" rel="noopener">提携会社のLINEで相談</a>' : '<span class="hk-wait">LINE準備中</span>') + '</div>';
     }).join('') : '<div class="empty">このエリアの派遣のお仕事は準備中です。</div>';
     document.getElementById('hk-more').hidden = l.length <= st.n;
   }
