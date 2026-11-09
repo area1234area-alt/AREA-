@@ -995,6 +995,96 @@
       ],
       "page": "review/shop.html?id=apex-sannomiya",
       "drafted": "2026-11-08"
+    },
+    {
+      "name": "RedRibbon 日本橋馬喰町（レッドリボン）",
+      "site": "review",
+      "area": "日本橋・馬喰町",
+      "genre": "メンズエステ",
+      "open": "2026-11-07",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://estheone.jp/s/rrnihonbashi/"
+      ],
+      "page": "review/shop.html?id=redribbon-bakurocho",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "RedRibbon 戸越ルーム（レッドリボン）",
+      "site": "review",
+      "area": "戸越",
+      "genre": "メンズエステ",
+      "open": "2026-11-07",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://redribbon-koyama.com/"
+      ],
+      "page": "review/shop.html?id=redribbon-togoshi",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Amateras 町田ルーム（アマテラス）",
+      "site": "review",
+      "area": "町田",
+      "genre": "メンズエステ",
+      "open": "2026-11-02",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://amaterasu-tachikawa.com/"
+      ],
+      "page": "review/shop.html?id=amateras-machida",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Amateras 八王子ルーム（アマテラス）",
+      "site": "review",
+      "area": "八王子",
+      "genre": "メンズエステ",
+      "open": "2026-11-02",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://amaterasu-tachikawa.com/"
+      ],
+      "page": "review/shop.html?id=amateras-hachioji",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Amateras 立川ルーム（アマテラス）",
+      "site": "review",
+      "area": "立川",
+      "genre": "メンズエステ",
+      "open": "2026-11-02",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://amaterasu-tachikawa.com/"
+      ],
+      "page": "review/shop.html?id=amateras-tachikawa",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Love Labyrinth（ラブラビリンス）",
+      "site": "review",
+      "area": "二子玉川",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://lovelaby.com/"
+      ],
+      "page": "review/shop.html?id=lovelaby-futakotamagawa",
+      "drafted": "2026-11-09"
     }
   ]
 }
