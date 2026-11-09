@@ -7,5 +7,6 @@
 
 # 関西・関東の入口（投稿・広告にはこのURLを貼る）。中身はトップページで、表示する地域だけが変わる
 /keisai   /keisai.html   200
+/sukima   /sukima.html   200
 /kansai   /index.html   200
 /kanto    /index.html   200
