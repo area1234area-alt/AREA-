@@ -411,7 +411,7 @@ section{padding:56px 0 8px}
     document.getElementById('hk-count').textContent = l.length + '件のお仕事';
     var cls = { 'キャバクラ': '', 'クラブ': 'cl', 'ラウンジ': 'lg' };
     document.getElementById('hk-list').innerHTML = l.length ? l.slice(0, st.n).map(function(h){
-      return '<div class="hk"><div class="top"><span class="ty ' + (cls[h.type] || '') + '">' + esc(h.type) + '</span><span class="ar">' + esc(h.area) + '</span></div><h3>' + esc(h.area) + ' ' + esc(h.no) + '</h3><div class="pay">' + esc(h.pay) + '</div><div class="tg">' + (h.tags || []).map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div><a href="' + LINE + '" target="_blank" rel="noopener">LINEでこの番号を相談</a></div>';
+      return '<div class="hk"><div class="top"><span class="ty ' + (cls[h.type] || '') + '">' + esc(h.type) + '</span><span class="ar">' + esc(h.area) + '</span></div><h3>' + esc(h.no) + '</h3><div class="pay">' + esc(h.pay) + '</div><div class="tg">' + (h.tags || []).map(function(t){ return '<span>' + esc(t) + '</span>'; }).join('') + '</div><a href="' + LINE + '" target="_blank" rel="noopener">LINEで相談</a></div>';
     }).join('') : '<div class="empty">このエリアの派遣のお仕事は準備中です。</div>';
     document.getElementById('hk-more').hidden = l.length <= st.n;
   }
