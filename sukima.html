@@ -37,10 +37,14 @@ section{padding:56px 0 8px}
 .center{text-align:center}.center .sec-lead{margin-left:auto;margin-right:auto}
 
 /* ヒーロー */
-.hero{padding:36px 0 8px;text-align:center}
+.hero{padding:12px 0 8px;text-align:center}
 .hero .kick{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--pinklt);border:1px solid var(--line);border-radius:999px;padding:3px 14px}
 .hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(30px,7vw,52px);line-height:1.3;letter-spacing:.06em;margin:14px 0 10px}
 .hero h1 .ln{display:inline-block}
+.hero-img{display:block;margin:0 0 18px}
+.hero-img img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:600px){.hero-img{margin:0 -16px 16px}.hero-img img{border-radius:0;border-left:0;border-right:0}}
 .hero h1 .p{background:var(--pinkgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 .g{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--soft);margin:0 auto;max-width:36em}
@@ -170,8 +174,8 @@ section{padding:56px 0 8px}
 
 <main class="wrap">
   <section class="hero">
-    <span class="kick">1日だけ・空いた日だけ</span>
-    <h1><span class="ln">スキマ時間で、</span><span class="ln"><span class="p">夜のお仕事</span>。</span><br><span class="ln"><span class="g">1日だけ</span>から。</span></h1>
+    <picture class="hero-img"><source type="image/webp" srcset="img/sukima/hero-800.webp 800w, img/sukima/hero-1600.webp 1600w" sizes="(max-width: 1040px) 100vw, 1008px"><img src="img/sukima/hero-1600.jpg" srcset="img/sukima/hero-800.jpg 800w, img/sukima/hero-1600.jpg 1600w" sizes="(max-width: 1040px) 100vw, 1008px" width="1672" height="941" alt="スキマ時間で、夜のお仕事。1日だけから。Wワーク OK・自由なシフト・高収入も可能" fetchpriority="high"></picture>
+    <h1 class="vh">スキマ時間で、夜のお仕事。1日だけから。</h1>
     <p>「在籍はまだ決めたくない」「空いている日だけ働きたい」。そんな方向けに、単発・週1日から・日払いOKのお店をまとめました。気になるお店には、Areaを通さず直接応募できます。</p>
     <div class="cta"><a class="btn pink" href="#shops">単発OKのお店を見る</a><a class="btn line" href="#styles">働き方を見る</a></div>
     <p class="note">Areaの利用は無料です。18歳未満（高校生を含む）の方は応募できません。</p>
