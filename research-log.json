@@ -1085,6 +1085,36 @@
       ],
       "page": "review/shop.html?id=lovelaby-futakotamagawa",
       "drafted": "2026-11-09"
+    },
+    {
+      "name": "Lollapalooza 赤羽ルーム（ララ・パルーザ）",
+      "site": "review",
+      "area": "赤羽",
+      "genre": "メンズエステ",
+      "open": "2026-11-06",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://lolla-esthe.com/"
+      ],
+      "page": "review/shop.html?id=lolla-akabane",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "ヌルヌルパニック 練馬ルーム（ぬるぬるぱにっく）",
+      "site": "review",
+      "area": "練馬",
+      "genre": "メンズエステ",
+      "open": "2026-11-05",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://nurupani.com/"
+      ],
+      "page": "review/shop.html?id=nurupani-nerima",
+      "drafted": "2026-11-09"
     }
   ]
 }
