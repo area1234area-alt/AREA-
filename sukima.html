@@ -124,7 +124,11 @@ section{padding:56px 0 8px}
 .hk .tg{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 12px}
 .hk .tg span{font-size:11px;background:rgba(255,111,160,.14);border:1px solid var(--line);border-radius:999px;padding:0 8px}
 .hk a{margin-top:auto;text-align:center;font-size:13px;font-weight:700;text-decoration:none;color:#06260f;background:#06C755;border-radius:999px;padding:9px}
-.hk-cta{margin-top:16px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(6,199,85,.16),transparent 70%),var(--panel2);border:1px solid rgba(6,199,85,.45);border-radius:18px;padding:22px 16px}
+.hk-cta{margin-top:16px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(6,199,85,.16),transparent 70%),var(--panel2);border:1px solid rgba(6,199,85,.45);border-radius:18px;padding:0;overflow:hidden;display:grid;grid-template-columns:minmax(0,44%) minmax(0,1fr);align-items:center}
+.hk-cta-img{display:block;height:100%}
+.hk-cta-img img{display:block;width:100%;height:100%;object-fit:cover}
+.hk-cta-body{padding:22px 20px}
+@media (min-width:701px){.hk-cta-t{font-size:26px}.hk-cta-s{font-size:14px;margin-bottom:20px}.hk-qr,.hk-qr img{width:160px;height:160px}.hk-cta .btn{font-size:16px;padding:16px 30px}}
 .hk-cta-t{font-family:var(--serif);font-size:21px;line-height:1.5;font-weight:700}
 .hk-cta-s{margin:6px auto 14px;max-width:34em;font-size:13px;color:var(--soft)}
 .hk-cta-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px}
@@ -133,6 +137,7 @@ section{padding:56px 0 8px}
 .hk-fab{position:fixed;right:14px;bottom:14px;z-index:20;text-decoration:none;font-weight:700;font-size:14px;color:#06260f;background:#06C755;border-radius:999px;padding:12px 18px;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:opacity .2s}
 .hk-fab[hidden]{display:none}
 br.sp{display:none}
+@media (max-width:700px){.hk-cta{grid-template-columns:1fr}.hk-cta-img img{height:auto}.hk-cta-body{padding:18px 16px 20px}}
 @media (max-width:600px){br.sp{display:inline}.hk-cta-t{font-size:18px}}
 .hk .hk-wait{margin-top:auto;text-align:center;font-size:13px;font-weight:700;color:var(--dim);border:1px dashed var(--line2);border-radius:999px;padding:9px}
 .hk-more{display:block;margin:12px auto 0;font:700 14px var(--sans);color:var(--pinklt);background:none;border:1px solid var(--line);border-radius:999px;padding:10px 26px;cursor:pointer}
@@ -282,11 +287,14 @@ br.sp{display:none}
     <p class="sec-lead">提携している人材会社（有料職業紹介事業 許可番号 13-ユ-208776）のお仕事です。働けるお店は、提携会社との面談・登録のときに、希望の条件に合わせて案内されます。ご相談は下の窓口（提携会社のLINE）へ直接どうぞ。Areaは間に入りません。</p>
     <div class="hk-box"><b>派遣・紹介のお仕事の流れ：</b>下の窓口（提携会社のLINE）で相談 → 面談・登録 → 条件に合うお店の案内 → 好きな日にお店で働く → お給料を受け取る。登録・お仕事の案内・条件のご相談は、すべて提携会社が行います。<br><b>提携会社：</b>有料職業紹介事業 許可番号 13-ユ-208776</div>
     <div class="hk-cta" id="hk-cta">
+      <picture class="hk-cta-img"><source type="image/webp" srcset="img/sukima/haken-600.webp 600w, img/sukima/haken-1000.webp 1000w" sizes="(max-width: 700px) 100vw, 440px"><img src="img/sukima/haken-1000.jpg" srcset="img/sukima/haken-600.jpg 600w, img/sukima/haken-1000.jpg 1000w" sizes="(max-width: 700px) 100vw, 440px" width="1243" height="1266" alt="スキマ時間で、夜のお仕事。1日だけから。登録してすぐ働けます" loading="lazy"></picture>
+      <div class="hk-cta-body">
       <div class="hk-cta-t">派遣・紹介のお仕事は<br class="sp">提携会社のLINEへ</div>
       <p class="hk-cta-s">「派遣のお仕事について聞きたい」と送るだけでOK。面談・登録の流れや、働けるお店の案内は提携会社が行います。</p>
       <div class="hk-cta-row">
         <div class="hk-qr" id="hk-qr"><img src="img/sukima/haken-line-qr.png" alt="提携会社のLINEのQRコード" width="132" height="132" loading="lazy"></div>
         <a class="btn lineg" id="hk-line" href="https://lin.ee/5zi3G7H" target="_blank" rel="noopener">提携会社のLINEで相談する</a>
+      </div>
       </div>
     </div>
   </section>
