@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CLUB CROSS（クラブ クロス） の求人｜ミナミのクラブ｜Area</title>
-<meta name="description" content="大阪・ミナミの大型クラブ「CLUB CROSS」のフロアレディ求人。平均時給4,000円〜5,000円、週2日からOK。大手グループ運営・社長に直接相談できる・30代からの再スタート歓迎。">
+<meta name="description" content="大阪・ミナミ（東心斎橋）の大型店「CLUB CROSS」のフロアレディ求人。時給4,000円〜・平均5,000円、週2日からOK、ドレス無料、当日体験入店OK。ベテランのママが丁寧に教えるので未経験の方も安心。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,10 +17,10 @@ var SHOP = {
   tel: "",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
   telLabel: "",             // 表示用の電話番号 例）06-1234-5678
   line: "https://lin.ee/v7GLaD2",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "", // 一番上の大きい画像
-  messageImage: "",         // 「お店からのメッセージ」の画像
-  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: ["", "", ""], // お店の写真（何枚でも）
+  heroImage: "img/minami-k01/main.jpg", // 一番上の大きい画像
+  messageImage: "img/minami-k01/photo3.jpg",         // 「お店からのメッセージ」の画像
+  pointImages: ["img/minami-k01/photo4.jpg", "img/minami-k01/photo2.jpg", "img/minami-k01/photo3.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["img/minami-k01/main.jpg", "img/minami-k01/photo2.jpg", "img/minami-k01/photo3.jpg", "img/minami-k01/photo4.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -258,7 +258,7 @@ var SHOP = {
     <div class="shop-badge"><span>求人<b>募集</b></span></div>
     <div class="shop-name">
       <strong>CLUB CROSS<small>（クラブ クロス）</small></strong>
-      <span>大阪市 ミナミ ／ クラブ</span>
+      <span>大阪市 心斎橋（東心斎橋） ／ クラブ</span>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="ページ内メニュー" aria-expanded="false"><i><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i></button>
   </div>
@@ -281,23 +281,23 @@ var SHOP = {
     </div>
     <div class="ph hero" data-img="heroImage">画像準備中<br>（お店のメイン画像）</div>
     <div class="chips" style="margin-top:22px">
-      <span class="chip">ミナミ</span><span class="chip">大型クラブ</span><span class="chip">週2日〜OK</span><span class="chip">30代歓迎</span><span class="chip">終電上がり相談可</span>
+      <span class="chip">ミナミ・心斎橋</span><span class="chip">未経験歓迎</span><span class="chip">週2日〜OK</span><span class="chip">ドレス無料</span><span class="chip">当日体験入店OK</span><span class="chip">送りあり</span>
     </div>
-    <p class="catch">大手グループが運営する、ミナミの大型クラブ。<br>夜のお仕事にもう一度チャレンジしたい方も、落ち着いて長く続けたい方も歓迎です。</p>
+    <p class="catch">2014年から続く、大手グループのミナミの大型店。<br>ベテランのママたちがそばで教えてくれるので、はじめての方も、久しぶりの方も安心です。</p>
 
     <div class="pay-row">
       <div class="lbl">給与</div>
-      <div class="val">平均時給 4,000円〜5,000円<small>体験入店は時給3,000円×3時間（どなたも同じ金額）。同伴・本指名はそれぞれ2,000円のバックがつきます。</small></div>
+      <div class="val">時給 4,000円〜（在籍の平均は5,000円）<small>売上によって時給が上がり、入店時の時給から下がることはありません。体験入店は時給3,000円（どなたも同じ）。同伴・本指名のバックあり。</small></div>
     </div>
 
     <!-- お店のポイント（横にスワイプできるスライド） -->
     <div class="pslide" aria-roledescription="スライド">
       <h3>お店のポイント</h3>
       <div class="pslide-track" id="pTrack">
-        <div class="pslide-card"><span class="pslide-no">POINT 01</span><b class="pslide-big gold-text">平均時給 4,000円〜</b><p>平均時給は4,000円〜5,000円</p></div>
-        <div class="pslide-card"><span class="pslide-no">POINT 02</span><b class="pslide-big gold-text">大手グループ運営</b><p>飲食・美容・アパレルも手がける会社のお店</p></div>
-        <div class="pslide-card"><span class="pslide-no">POINT 03</span><b class="pslide-big gold-text">社長に直接相談</b><p>社長がお店に出ていて、困ったことをすぐ話せる</p></div>
-        <div class="pslide-card"><span class="pslide-no">POINT 04</span><b class="pslide-big gold-text">週2日〜OK</b><p>30代からの再スタートも歓迎</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 01</span><b class="pslide-big gold-text">平均時給 5,000円</b><p>入店時は4,000円〜。時給は下がらない仕組み</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 02</span><b class="pslide-big gold-text">ママが丁寧に指導</b><p>ベテランのママ6名が席でフォロー</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 03</span><b class="pslide-big gold-text">週2日・終電OK</b><p>昼のお仕事や学校との掛け持ちも</p></div>
+        <div class="pslide-card"><span class="pslide-no">POINT 04</span><b class="pslide-big gold-text">ドレス無料</b><p>手ぶらで体験入店できます</p></div>
       </div>
       <div class="pslide-nav">
         <button type="button" class="pslide-arrow" id="pPrev" aria-label="前へ">‹</button>
@@ -308,8 +308,8 @@ var SHOP = {
 
     <dl class="dl" style="margin-top:22px">
       <div><dt>業種</dt><dd>クラブ</dd></div>
-      <div><dt>営業時間</dt><dd>20:00〜翌1:00<small>定休日：日曜・祝日</small></dd></div>
-      <div><dt>最寄駅</dt><dd>なんば・心斎橋周辺<small>くわしい場所は面接が決まったときにご案内します</small></dd></div>
+      <div><dt>営業時間</dt><dd>20:00〜翌1:00（月〜土）<small>定休日：日曜・祝日</small></dd></div>
+      <div><dt>最寄駅</dt><dd>大阪メトロ「心斎橋駅」5番出口 徒歩7分</dd></div>
     </dl>
 
     <div class="cta"><a href="#apply">応募・お問い合わせへ進む</a></div>
@@ -320,10 +320,10 @@ var SHOP = {
     <h2 data-en="Message">お店からのメッセージ</h2>
     <div class="ph msg-img dark" data-img="messageImage">画像準備中<br>（メッセージ用の画像）</div>
     <div class="clamp" id="msgText">
-      <p>ミナミの大型クラブで、一緒に働いてくれる女性を募集しています。</p>
-      <p>飲食・美容・アパレルなどの事業を手がける会社が運営しているお店です。社長もお店に出ているので、働き方やお給料のことを直接相談できます。</p>
-      <p>お客様は会社の経営者や役員の方が中心で、ゆったりと落ち着いた雰囲気です。「しばらく離れていたけど、また夜のお仕事を始めたい」「ひとつのお店で長く続けたい」という方にぴったりです。30代からのスタートも大歓迎です。</p>
-      <p>出勤は週2日から。毎回でなければ、終電での上がりも相談できます。給与や勤務の決まりは、面接のときにお店から直接説明があります。</p>
+      <p>ミナミ・東心斎橋で2014年から営業している大型店です。飲食・美容・アパレルなどを手がけるグループが運営していて、近くには系列のマルゴー・バカラもあります。</p>
+      <p>お店にはベテランのママが6名。席の上でのフォローはもちろん、お酒の作り方から一つひとつ教えてくれるので、未経験からスタートした女の子がたくさん活躍しています。社長もお店に出ているので、働き方の相談も直接できます。</p>
+      <p>お客様は40代〜60代の会社役員の方が中心。ママのお客様が多く、落ち着いて会話を楽しめる雰囲気です。「キャバクラのにぎやかさが少し合わなかった」「もう一度、夜のお仕事を始めたい」という方にも向いています。</p>
+      <p>出勤は週2日から。在籍している女の子の6〜7割は、昼のお仕事や学校と掛け持ちしています。毎回でなければ終電での上がりもでき、「平日は終電まで、休みの前日だけラストまで」といった働き方も相談できます。</p>
     </div>
     <button class="more" type="button" data-more="msgText">続きを見る</button>
   </section>
@@ -333,19 +333,19 @@ var SHOP = {
     <h2 data-en="What to bring">体験入店・面接に必要なもの</h2>
     <div class="legend"><span><i class="mk o">○</i>必要</span></div>
     <ul class="ids">
-      <li><i class="mk o">○</i>顔写真付きの身分証明書</li>
+      <li><i class="mk o">○</i>顔写真付きの身分証明書（運転免許証・パスポート・マイナンバーカード・住基カードのいずれか）</li>
     </ul>
-    <p class="note">ほかに必要なもの（住民票・履歴書など）は、事前にお店へご確認ください。</p>
+    <p class="note">ドレスやワンピースは無料で借りられるので、手ぶらで大丈夫です。ヘアメイクはお店の近くのセットサロン（1,500円ほど）でしてから出勤します。</p>
   </section>
 
   <!-- 体験入店の流れ -->
   <section class="blk" id="flow">
     <h2 data-en="Flow">体験入店の流れ</h2>
     <ol class="flow">
-      <li><span class="n">1</span><div><b>お店に連絡する</b><p>「Areaを見た」と伝えて、面接・体験入店の日を決めます。</p></div></li>
-      <li><span class="n">2</span><div><b>面接</b><p>顔写真付きの身分証明書を持ってお店へ。</p></div></li>
-      <li><span class="n">3</span><div><b>お給料などの説明</b><p>時給やバック、勤務の決まりを直接聞けます。社長にも相談できます。</p></div></li>
-      <li><span class="n">4</span><div><b>体験入店</b><p>時給3,000円で3時間。どなたも同じ条件で、お店の雰囲気を確かめられます。</p></div></li>
+      <li><span class="n">1</span><div><b>連絡する</b><p>「クロス」とひと言送って、面接の日を決めます。面接は17時からです。</p></div></li>
+      <li><span class="n">2</span><div><b>面接</b><p>顔写真付きの身分証明書を持ってお店へ。経験より、雰囲気や愛嬌を見てもらえます。</p></div></li>
+      <li><span class="n">3</span><div><b>お給料などの説明</b><p>時給・バック・勤務の決まりを直接聞けます。社長にも相談できます。</p></div></li>
+      <li><span class="n">4</span><div><b>体験入店</b><p>面接の日にそのまま体験入店もOK。時給は3,000円で、どなたも同じです。</p></div></li>
     </ol>
   </section>
 
@@ -354,15 +354,15 @@ var SHOP = {
     <h2 data-en="Point">お店のポイント</h2>
     <div class="safe">
       <div class="safe-head">ポイント 1</div>
-      <div class="safe-body"><div class="ph" data-img="pointImages.0">画像準備中</div><div><h3>大きな会社が運営する安心感</h3><p>飲食・美容・アパレルなどを手がける会社のお店。系列にマルゴー・バカラがあります。</p></div></div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.0">画像準備中</div><div><h3>大手グループが運営</h3><p>飲食・美容・アパレルなどを手がけるグループのお店。2014年から続いていて、系列にマルゴー・バカラがあります。</p></div></div>
     </div>
     <div class="safe">
       <div class="safe-head">ポイント 2</div>
-      <div class="safe-body"><div class="ph" data-img="pointImages.1">画像準備中</div><div><h3>社長に直接相談できる</h3><p>社長がお店にいるので、働き方の悩みもその場で話せます。</p></div></div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.1">画像準備中</div><div><h3>ママと社長がそばにいる</h3><p>ベテランのママ6名が席でフォローし、社長もお店に。困ったことをすぐ相談できます。</p></div></div>
     </div>
     <div class="safe">
       <div class="safe-head">ポイント 3</div>
-      <div class="safe-body"><div class="ph" data-img="pointImages.2">画像準備中</div><div><h3>落ち着いた客層・30代も歓迎</h3><p>お客様は経営者層が中心。久しぶりの方も、30代からの方も働きやすいお店です。</p></div></div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.2">画像準備中</div><div><h3>落ち着いた客層</h3><p>お客様は40代〜60代の会社役員が中心。ゆったり会話ができ、30歳前後の女の子が多く活躍しています。</p></div></div>
     </div>
   </section>
 
@@ -394,16 +394,20 @@ var SHOP = {
     <h2 data-en="Recruit">募集要項</h2>
     <p class="upd">情報の確認日：2026年11月10日</p>
     <dl class="tbl">
-      <div><dt>職種</dt><dd>クラブのフロアレディ</dd></div>
-      <div><dt>応募資格</dt><dd>18歳以上（高校生不可）<small>未経験の方・久しぶりの方・30代の方も歓迎</small></dd></div>
-      <div><dt>給与</dt><dd>平均時給 4,000円〜5,000円<small>時給は面接で決まります</small></dd></div>
-      <div><dt>体験入店</dt><dd>時給 3,000円 × 3時間<small>どなたも同じ金額です</small></dd></div>
+      <div><dt>職種</dt><dd>フロアレディ<small>お客様の隣で、お酒を作りながら会話をするお仕事です。お酒の作り方などは黒服が一から教えてくれます</small></dd></div>
+      <div><dt>応募資格</dt><dd>20歳以上<small>未経験の方・久しぶりの方歓迎。金髪など明るすぎる髪色、隠せない場所のタトゥーはNG</small></dd></div>
+      <div><dt>給与</dt><dd>時給 4,000円〜（在籍の平均は5,000円）<small>売上に応じて時給が上がります。入店時の時給から下がることはありません</small></dd></div>
+      <div><dt>体験入店</dt><dd>時給 3,000円（どなたも同じ）<small>面接の日にそのまま体験入店できます</small></dd></div>
       <div><dt>バック</dt><dd>同伴 2,000円／本指名 2,000円</dd></div>
-      <div><dt>給料日</dt><dd>毎月20日締め・翌月10日払い</dd></div>
+      <div><dt>給料日</dt><dd>毎月20日締め・翌月10日払い（手渡し）<small>日払いは相談できます</small></dd></div>
+      <div><dt>差し引き</dt><dd>所得税・雑費・親睦会費<small>金額は面接のときにご確認ください。インボイスによる差し引きはありません</small></dd></div>
+      <div><dt>ノルマ</dt><dd>あり<small>くわしい内容は面接のときにご確認ください</small></dd></div>
       <div><dt>勤務日</dt><dd>週2日から</dd></div>
-      <div><dt>勤務時間</dt><dd>営業時間 20:00〜翌1:00 の間<small>毎回でなければ、終電での上がりも相談できます</small></dd></div>
+      <div><dt>勤務時間</dt><dd>20:00〜翌1:00 の間<small>出勤は遅くとも21:00まで。毎回でなければ終電での上がりも相談できます</small></dd></div>
       <div><dt>休日</dt><dd>日曜・祝日（店休日）</dd></div>
-      <div><dt>ノルマ・服装・送り</dt><dd>要確認<small>面接のときにお店へご確認ください</small></dd></div>
+      <div><dt>服装</dt><dd>ドレス・ワンピース（ロング・ミニどちらも可）<small>無料で借りられます。黒一色は避けるのがおすすめ</small></dd></div>
+      <div><dt>ヘアメイク</dt><dd>必須（お店の外のセットサロンで1,500円ほど）</dd></div>
+      <div><dt>送り</dt><dd>あり（1:00から・大阪府内）<small>大阪市内 1,000円／大阪市外 2,000円／府外は相談</small></dd></div>
       <div><dt>交通費</dt><dd>要確認</dd></div>
     </dl>
     <p class="note" style="margin-top:16px">遅刻・欠勤のときの決まりは、面接のときに必ずお店へご確認ください。</p>
@@ -414,11 +418,12 @@ var SHOP = {
   <!-- よくある質問 -->
   <section class="blk faq" id="faq">
     <h2 data-en="Q &amp; A">よくある質問</h2>
-    <details><summary>時給はいくらですか？</summary><p>平均時給は4,000円〜5,000円です。体験入店の日は時給3,000円で3時間です。</p></details>
-    <details><summary>しばらく夜のお仕事から離れていても大丈夫ですか？</summary><p>大丈夫です。もう一度始めたい方や、30代からスタートする方も歓迎しています。</p></details>
-    <details><summary>週に何日から働けますか？</summary><p>週2日から働けます。</p></details>
-    <details><summary>終電で帰れますか？</summary><p>毎回でなければ、終電での上がりも相談できます。</p></details>
-    <details><summary>お給料はいつもらえますか？</summary><p>毎月20日締めで、翌月10日に支払われます。</p></details>
+    <details><summary>時給はいくらですか？</summary><p>入店時は4,000円からで、在籍している女の子の平均は5,000円です。売上で上がる仕組みで、入店時の時給から下がることはありません。体験入店の日は3,000円です。</p></details>
+    <details><summary>未経験でも大丈夫ですか？</summary><p>大丈夫です。未経験から始めた女の子が多く、ベテランのママが席で一つひとつ教えてくれます。</p></details>
+    <details><summary>昼のお仕事と掛け持ちできますか？</summary><p>できます。週2日から働けて、在籍している女の子の6〜7割が掛け持ちです。毎回でなければ終電での上がりも相談できます。</p></details>
+    <details><summary>ドレスを持っていません</summary><p>ドレス・ワンピースは無料で借りられます。ヘアメイクはお店の近くのセットサロン（1,500円ほど）でしてから出勤します。</p></details>
+    <details><summary>何歳から働けますか？</summary><p>20歳以上の方が対象です。30歳前後の女の子が多く活躍しています。</p></details>
+    <details><summary>お給料はいつもらえますか？</summary><p>毎月20日締めで、翌月10日に手渡しです。日払いも相談できます。</p></details>
   </section>
 
   <!-- 口コミ（Areaに投稿された口コミのうち、このお店のもの） -->
@@ -433,13 +438,16 @@ var SHOP = {
     <h2 data-en="Shop info">お店情報</h2>
     <dl class="tbl">
       <div><dt>店舗名</dt><dd>CLUB CROSS<small>クラブ クロス</small></dd></div>
-      <div><dt>業種</dt><dd>クラブ（大型店）</dd></div>
-      <div><dt>エリア</dt><dd>大阪府大阪市 ミナミ</dd></div>
+      <div><dt>業種</dt><dd>クラブ（口座制）</dd></div>
+      <div><dt>オープン</dt><dd>2014年7月</dd></div>
+      <div><dt>エリア</dt><dd>大阪府大阪市 心斎橋（東心斎橋）</dd></div>
       <div><dt>SNS</dt><dd><span id="snsCell">準備中</span></dd></div>
-      <div><dt>住所</dt><dd>大阪府大阪市中央区<small>くわしい場所は面接が決まったときにご案内します</small></dd></div>
-      <div><dt>営業時間</dt><dd>20:00〜翌1:00<small>定休日：日曜・祝日</small></dd></div>
-      <div><dt>客層</dt><dd>経営者層が中心</dd></div>
-      <div><dt>運営</dt><dd>飲食・美容・アパレルなどを手がける会社<small>系列店：マルゴー／バカラ</small></dd></div>
+      <div><dt>住所</dt><dd>大阪府大阪市中央区東心斎橋2-5-3 玉屋町VIPビル1F<small>大阪メトロ「心斎橋駅」5番出口から徒歩7分</small></dd></div>
+      <div><dt>営業時間</dt><dd>20:00〜翌1:00（月〜土）<small>定休日：日曜・祝日</small></dd></div>
+      <div><dt>席数</dt><dd>テーブル11卓・カウンター5席・VIPルーム1部屋</dd></div>
+      <div><dt>在籍・出勤</dt><dd>ママ6名／1日の出勤15〜20名<small>女の子の平均年齢は30歳前後</small></dd></div>
+      <div><dt>客層</dt><dd>40代〜60代の会社役員が中心</dd></div>
+      <div><dt>運営</dt><dd>飲食・美容・アパレルなどを手がけるグループ<small>系列店：マルゴー／バカラ</small></dd></div>
     </dl>
   </section>
 
@@ -462,7 +470,7 @@ var SHOP = {
 
   <section class="blk notes">
     <ul>
-      <li>18歳未満の方、高校生の方は応募できません。</li>
+      <li>20歳未満の方は応募できません。</li>
       <li>掲載内容はお店から提供された情報をもとにしています（2026年11月10日時点）。</li>
       <li>時給・保証・バックなどの条件は、面接のときに必ずお店へ直接ご確認ください。</li>
       <li>Areaは求人情報を掲載する広告媒体です。お仕事の紹介・あっせんは行っていません。</li>
