@@ -37,6 +37,13 @@ async function addSeedShops(st) {
     if (SEED.listing[k] && !(await st.get(lk))) await st.setJSON(lk, { ...SEED.listing[k], status: "pending", createdAt: now, updatedAt: now });
     await st.set("meta/added/" + k, String(now));
   }
+  // SEED.patch：初期データから決まった変更を1回だけ当てる（電話→LINEに切り替えなど）
+  for (const p of SEED.patch || []) {
+    if (!p.id || await st.get("meta/patch/" + p.id)) continue;
+    const b = await st.get("biz/" + p.key, { type: "json" });
+    if (b && p.biz) await st.setJSON("biz/" + p.key, { ...b, ...p.biz, updatedAt: Date.now() });
+    if (b) await st.set("meta/patch/" + p.id, String(Date.now()));
+  }
   // SEED.publish：運営が公開を決めたお店を1回だけ「公開中」にする（写真が空なら初期データの写真も入れる）
   for (const k of SEED.publish || []) {
     if (await st.get("meta/published/" + k)) continue;
@@ -100,7 +107,7 @@ export function listJS(shops, news = []) {
 export function shopPage(s, { preview = false, news = [] } = {}) {
   const ims = s.images || [], pl = s.plan || [], ref = !!s.ref;
   const rows = (s.price || []).map(([a, b]) => `<tr><th>${E(a)}</th><td>${E(b)}</td></tr>`).join("");
-  const tel = s.tel ? `<a href="${telHref(s.tel)}">${E(s.tel)}</a>${s.telNote ? "（" + E(s.telNote) + "）" : ""}` : "お店にご確認ください";
+  const tel = s.tel ? `<a href="${telHref(s.tel)}">${E(s.tel)}</a>${s.telNote ? "（" + E(s.telNote) + "）" : ""}` : (s.line ? "LINEで受付中" : "お店にご確認ください");
   const maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(s.address + " " + s.name);
   const info = [["ジャンル", E(s.genre + (s.sub ? "（" + s.sub + "）" : ""))], ["エリア", E("梅田（" + s.town + "）")], ["最寄り駅", E(s.station)], ["営業時間", E(s.hours)], ["定休日", E(s.holiday || "お店にご確認ください")],
     ["住所", E(s.address) + `<br><a class="mp" href="${maps}" target="_blank" rel="noopener">地図で見る</a>`], ["電話番号", tel]];
@@ -152,6 +159,7 @@ ${go}
 ${gal}
 <section class="box"><h2><span>INFO</span>お店の情報</h2><table>${info.map(([a, b]) => `<tr><th>${a}</th><td>${b}</td></tr>`).join("")}</table></section>
 ${s.tel ? `<a class="call" href="${telHref(s.tel)}">電話でお店に問い合わせる</a>` : ""}
+${/^https:\/\/lin\.ee\/[A-Za-z0-9]+$/.test(s.line || "") ? `<a class="call" style="background:#06C755;border-color:#06C755;color:#fff" href="${E(s.line)}" target="_blank" rel="noopener">LINEで予約・問い合わせる</a>` : ""}
 ${job}
 </main>
 ${ref ? '<script src="go.js"></script>' : ""}

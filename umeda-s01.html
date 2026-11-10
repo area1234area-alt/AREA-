@@ -14,9 +14,9 @@
    （空欄 "" のままだと「画像準備中」の枠が出ます）
    ================================================================ */
 var SHOP = {
-  tel: "08042468008",       // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
-  telLabel: "080-4246-8008",// 表示用の電話番号 例）06-1234-5678
-  line: "",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
+  tel: "",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
+  telLabel: "",             // 表示用の電話番号 例）06-1234-5678
+  line: "https://lin.ee/Rj4BmIa",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
   heroImage: "img/umeda-s01/main.jpg", // 一番上の大きい画像
   messageImage: "img/umeda-s01/photo2.jpg", // 「お店からのメッセージ」の画像
   pointImages: ["img/umeda-s01/photo3.jpg", "img/umeda-s01/photo1.jpg", "img/umeda-s01/photo2.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
@@ -343,7 +343,7 @@ var SHOP = {
   <section class="blk" id="flow">
     <h2 data-en="Flow">体験入店の流れ</h2>
     <ol class="flow">
-      <li><span class="n">1</span><div><b>お店に連絡する</b><p>「Areaを見た」と伝えて、面接の日を決めます。電話は19時以降につながります。</p></div></li>
+      <li><span class="n">1</span><div><b>お店に連絡する</b><p>LINEで「Areaを見た」と送って、面接の日を決めます。</p></div></li>
       <li><span class="n">2</span><div><b>面接</b><p>顔写真付きの身分証明書を持ってお店へ。</p></div></li>
       <li><span class="n">3</span><div><b>お給料などの説明</b><p>時給やバック、勤務の決まりを直接聞けます。気になることはその場で質問してください。</p></div></li>
       <li><span class="n">4</span><div><b>体験入店</b><p>体験入店ができるか、その日のお給料の受け取り方は、面接のときに確認してください。</p></div></li>
@@ -416,7 +416,7 @@ var SHOP = {
   <section class="blk faq" id="faq">
     <h2 data-en="Q &amp; A">よくある質問</h2>
     <details><summary>どんな女の子が働いていますか？</summary><p>20代前半〜半ばの女の子が中心です。在籍は11人ほどの、こぢんまりしたお店です。</p></details>
-    <details><summary>電話は何時からつながりますか？</summary><p>19時以降につながります。「Areaを見た」と伝えるとスムーズです。</p></details>
+    <details><summary>どうやって連絡すればいいですか？</summary><p>LINEで受け付けています。「Areaを見た」と送るとスムーズです。質問だけでも大丈夫です。</p></details>
     <details><summary>時給はいくらですか？</summary><p>ただいまお店に確認中です。面接のときに、時給やバックについて直接説明があります。</p></details>
     <details><summary>お店はどこにありますか？</summary><p>大阪市北区兎我野町です。東梅田駅・中崎町駅から徒歩5分、阪急・阪神の大阪梅田駅から徒歩8分です。</p></details>
   </section>
@@ -451,7 +451,7 @@ var SHOP = {
 
   <section class="blk apply" id="apply">
     <h2 data-en="Contact">応募・お問い合わせ</h2>
-    <p>応募はお店へ直接ご連絡ください。<br>「Areaを見た」と伝えるとスムーズです。質問だけでも大丈夫です。<br><small>電話は19時以降につながります。</small></p>
+    <p>応募・お問い合わせはLINEで受け付けています。<br>「Areaを見た」と送るとスムーズです。質問だけでも大丈夫です。</p>
     <a class="tel" id="applyTel" href="#apply">お店に電話する</a>
     <span class="num" id="applyNum"></span>
     <p id="telWait" hidden style="margin-top:18px;border:1px solid var(--line);padding:14px">お店の電話番号は、ただいま準備中です。<br>もうすぐ掲載しますので、少しだけお待ちください。</p>
@@ -521,6 +521,9 @@ var SHOP = {
   if (SHOP.tel) {
     ["applyTel","dockTel"].forEach(function(id){ document.getElementById(id).href = "tel:" + SHOP.tel; });
     document.getElementById("applyNum").textContent = SHOP.telLabel;
+  } else if (SHOP.line) {
+    // 電話は受け付けず、LINEだけで受け付けるお店：電話のボタンは出さない
+    ["applyTel","dockTel","applyNum"].forEach(function(id){ var e = document.getElementById(id); if (e) e.hidden = true; e && (e.style.display = "none"); });
   } else {
     // 電話番号がまだ無いときも応募ボタンは出しておき、押したら「準備中」の案内を出す
     document.getElementById("applyNum").hidden = true;
