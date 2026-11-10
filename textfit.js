@@ -34,15 +34,27 @@
 
   /* ことばの切れ目に改行位置（ゼロ幅スペース）を入れる */
   var HIRA = /[ぁ-ゟ]/, PUNCT = /[、。，．！？!?・／）」』】〉》]/;
+  var KANJI = /[\u4E00-\u9FFF\u3005]/;
   var OPEN = /[（「『【〈《]/;
   var SKIP = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, INPUT: 1, SELECT: 1, OPTION: 1, CODE: 1, PRE: 1, SVG: 1, NOSCRIPT: 1 };
+  // ひらがな1文字だけで区切るのは助詞のときだけ（「落ち着く」の「ち」などで切らない）
+  var PART = /[のがをにはへとでもや]/;
   function seg(t) {
-    var out = '', prev = '';
+    var out = '', prev = '', run = 0;
     for (var i = 0; i < t.length; i++) {
-      var c = t.charAt(i);
-      if (prev && !/\s/.test(c) && !PUNCT.test(c) && (
-          (HIRA.test(prev) && !HIRA.test(c)) || PUNCT.test(prev) || OPEN.test(c))) out += '​';
-      out += c; prev = c;
+      var c = t.charAt(i), pp = t.charAt(i - 2), brk = false;
+      if (prev && !/\s/.test(c) && !PUNCT.test(c)) {
+        if (PUNCT.test(prev) || OPEN.test(c)) brk = true;
+        else if (HIRA.test(prev) && !HIRA.test(c)) brk = run >= 2 || PART.test(prev);
+      }
+      if (prev === 'の' && c === '子' && /[女男]/.test(pp)) brk = false; // 女の子・男の子
+      // 「お店」「ご案内」：お・ご は後ろのことばにくっつけ、前で区切る
+      if ((prev === 'お' || prev === 'ご') && KANJI.test(c)) {
+        brk = false;
+        if (pp && HIRA.test(pp) && out.charAt(out.length - 2) !== '\u200B') out = out.slice(0, -1) + '\u200B' + prev;
+      }
+      if (brk) out += '\u200B';
+      out += c; run = HIRA.test(c) ? run + 1 : 0; prev = c;
     }
     return out;
   }
