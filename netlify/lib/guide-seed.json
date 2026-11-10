@@ -301,9 +301,10 @@
    },
    "name": "girls lounge fama",
    "station": "東梅田駅・中崎町駅から徒歩5分",
-   "tel": "080-4246-8008",
-   "telNote": "19時以降受付",
-   "town": "兎我野町"
+   "tel": "",
+   "telNote": null,
+   "town": "兎我野町",
+   "line": "https://lin.ee/Rj4BmIa"
   }
  },
  "listing": {
@@ -1043,5 +1044,16 @@
  ],
  "publish": [
   "fama"
+ ],
+ "patch": [
+  {
+   "id": "fama-line-1",
+   "key": "fama",
+   "biz": {
+    "tel": "",
+    "telNote": null,
+    "line": "https://lin.ee/Rj4BmIa"
+   }
+  }
  ]
 }
