@@ -16,13 +16,27 @@ export const validKey = (k) => /^[a-z0-9][a-z0-9-]{1,30}$/.test(String(k || ""))
 
 export async function ensureSeed() {
   const st = store();
-  if (await st.get("meta/seeded")) return;
+  if (await st.get("meta/seeded")) return addSeedShops(st);
   for (const [k, b] of Object.entries(SEED.biz)) await st.setJSON("biz/" + k, { ...b, createdAt: Date.now(), updatedAt: Date.now() });
   for (const [k, l] of Object.entries(SEED.listing)) await st.setJSON(`listing/${SERVICE}/${k}`, { ...l, createdAt: Date.now(), updatedAt: Date.now(), publishedAt: Date.now() });
   for (const c of SEED.cats) await st.setJSON("cat/" + c.name, c);
   for (const a of SEED.areas) await st.setJSON("area/" + a.key, a);
   for (const p of SEED.plans) await st.setJSON("plan/" + p.key, p);
   await st.set("meta/seeded", String(Date.now()));
+  for (const k of SEED.added || []) await st.set("meta/added/" + k, String(Date.now()));
+}
+
+// あとから追加したお店（SEED.added）を1回だけ入れる。入れるときは「審査待ち」にして、管理画面で承認すると公開される。
+// 一度入れたお店は印（meta/added/キー）が残るので、管理画面で消したり変えたりしても上書きしない。
+async function addSeedShops(st) {
+  for (const k of SEED.added || []) {
+    if (await st.get("meta/added/" + k)) continue;
+    const now = Date.now();
+    if (SEED.biz[k] && !(await st.get("biz/" + k))) await st.setJSON("biz/" + k, { ...SEED.biz[k], createdAt: now, updatedAt: now });
+    const lk = `listing/${SERVICE}/${k}`;
+    if (SEED.listing[k] && !(await st.get(lk))) await st.setJSON(lk, { ...SEED.listing[k], status: "pending", createdAt: now, updatedAt: now });
+    await st.set("meta/added/" + k, String(now));
+  }
 }
 
 async function listJSON(prefix) {
