@@ -17,10 +17,10 @@ var SHOP = {
   tel: "07013599578",       // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
   telLabel: "070-1359-9578",// 表示用の電話番号 例）06-1234-5678
   line: "https://lin.ee/v7GLaD2",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "", // 一番上の大きい画像
-  messageImage: "",         // 「お店からのメッセージ」の画像
-  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: ["", "", ""], // お店の写真（何枚でも）
+  heroImage: "img/miyako-c01/g10.jpg", // 一番上の大きい画像
+  messageImage: "img/miyako-c01/g05.jpg",         // 「お店からのメッセージ」の画像
+  pointImages: ["img/miyako-c01/g07.jpg", "img/miyako-c01/g04.jpg", "img/miyako-c01/g02.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["img/miyako-c01/g04.jpg", "img/miyako-c01/g02.jpg", "img/miyako-c01/g03.jpg", "img/miyako-c01/g05.jpg", "img/miyako-c01/g06.jpg", "img/miyako-c01/g09.jpg", "img/miyako-c01/g01.jpg", "img/miyako-c01/g07.jpg", "img/miyako-c01/g08.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -263,7 +263,7 @@ var SHOP = {
     <button class="menu-btn" id="menuBtn" aria-label="ページ内メニュー" aria-expanded="false"><i><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i></button>
   </div>
   <div class="menu-panel" id="menuPanel" hidden>
-    <a href="#top">トップ</a><a href="#flow">応募から渡航まで</a><a href="#gallery">お店の写真・SNS</a><a href="#youkou">募集要項</a><a href="#faq">よくある質問</a><a href="#voices">口コミ</a><a href="#shop">お店情報</a><a href="#apply">応募・連絡先</a>
+    <a href="#top">トップ</a><a href="#flow">応募から渡航まで</a><a href="#gallery">お店の写真・SNS</a><a href="#youkou">募集要項</a><a href="#faq">よくある質問</a><a href="#voices">口コミ</a><a href="#shop">お店情報</a><a href="#group">系列店</a><a href="#apply">応募・連絡先</a>
   </div>
   <nav class="tabs" id="tabs">
     <a href="#top" class="on">トップ</a><a href="#shop">お店情報</a><a href="#youkou">募集要項</a><a href="#faq">よくある質問</a><a href="#voices">口コミ</a>
@@ -275,6 +275,7 @@ var SHOP = {
   <!-- トップ -->
   <section class="blk" id="top">
     <div class="shop-title">
+      <img src="img/miyako-c01/logo.png" alt="Club UN JOUR RESORT" width="330" style="display:block;width:min(260px,70%);height:auto;margin:0 auto 10px">
       <div class="pre">Miyakojima ・ Resort Cabaret</div>
       <h1 class="sr-only">UNJOUR RESORT（アンジュールリゾート）宮古島のリゾートバイト</h1>
       <div class="orn">RESORT BAITO</div>
@@ -368,7 +369,8 @@ var SHOP = {
 
   <!-- ギャラリー・SNS -->
   <section class="blk" id="gallery">
-    <h2 data-en="Gallery">ギャラリー</h2>
+    <h2 data-en="Gallery">店内ギャラリー</h2>
+    <video src="img/miyako-c01/interior.mp4" poster="img/miyako-c01/interior-poster.jpg" muted autoplay loop playsinline controls preload="metadata" aria-label="UN JOUR RESORT 店内の映像" style="display:block;width:100%;height:auto;aspect-ratio:744/440;border:1px solid var(--line);background:#000;margin:0 0 12px"></video>
     <div class="gallery" id="galleryGrid"></div>
   </section>
 
@@ -449,7 +451,7 @@ var SHOP = {
       <div><dt>営業時間</dt><dd>20:00〜0:00<small>定休日なし（月に1回店休日あり）</small></dd></div>
       <div><dt>客層</dt><dd>島に住んでいる方6割・旅行の方4割</dd></div>
       <div><dt>設備</dt><dd>VIPルーム・カラオケ</dd></div>
-      <div><dt>運営</dt><dd>全国で約20店舗を運営するグループ<small>京都の「Club UNJOUR 祇園」と同じ名前のお店です</small></dd></div>
+      <div><dt>運営</dt><dd>KAISER GROUP<small>全国で約20店舗。系列店は<a href="#group" style="text-decoration:underline">このページの下</a>にまとめています</small></dd></div>
     </dl>
   </section>
 
@@ -460,8 +462,21 @@ var SHOP = {
     <a class="tel" id="applyTel" href="#apply">お店に電話する</a>
     <span class="num" id="applyNum"></span>
     <p id="telWait" hidden style="margin-top:18px;border:1px solid var(--line);padding:14px">お店の電話番号は、ただいま準備中です。<br>LINEからお問い合わせください。</p>
-    <p style="margin-top:14px;font-size:.85rem">同じグループの <a href="miyako-c02.html" style="text-decoration:underline">club Baron Blue（バロンブルー）</a> の求人も見てみる</p>
     <a class="line" id="applyLine" hidden target="_blank" rel="noopener">LINEで応募する</a>
+  </section>
+
+
+  <!-- 系列店 -->
+  <section class="blk" id="group">
+    <style>.grp-lead{font-size:.86rem;color:var(--ink-soft);margin:0 0 14px}.grp-area{border-top:1px solid var(--line);padding:12px 0 4px}.grp-area h3{margin:0 0 8px;font-family:var(--font-serif);font-size:.95rem;color:var(--gold-lt);letter-spacing:.08em}.grp-area ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.grp-area li>a,.grp-area li>span{display:block;height:100%;border:1px solid var(--line2);background:var(--panel);border-radius:8px;padding:10px 10px;font-family:var(--font-en);font-size:.95rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;line-height:1.35}.grp-area li>a{border-color:var(--line)}.grp-area small{display:block;font-family:var(--font-body);font-size:.68rem;color:var(--gold-lt);letter-spacing:0;margin-top:4px}.grp-area li.grp-me>span{border-color:var(--gold);background:var(--panel2)}</style>
+    <h2 data-en="Group">系列店</h2>
+    <p class="grp-lead">同じグループ（KAISER GROUP）のお店です。Areaに求人が載っているお店は、そのまま求人ページを見られます。</p>
+    <div class="grp-area"><h3>沖縄 宮古島</h3><ul><li class="grp-me"><span>UN JOUR RESORT</span><small>このお店</small></li><li><a href="miyako-c02.html">club Baron Blue<small>Areaで求人を見る ›</small></a></li><li><span>AILAND</span></li></ul></div>
+    <div class="grp-area"><h3>京都 祇園</h3><ul><li><a href="gion-c01.html">Club UN JOUR 祇園<small>Areaで求人を見る ›</small></a></li><li><a href="gion-c04.html">CLUB HANA-KOMACHI（華小町）<small>Areaで求人を見る ›</small></a></li><li><a href="gion-c02.html">club GALLE<small>Areaで求人を見る ›</small></a></li><li><a href="gion-c05.html">CLUB MILANO<small>Areaで求人を見る ›</small></a></li></ul></div>
+    <div class="grp-area"><h3>大阪 北新地</h3><ul><li><span>Club UN JOUR</span></li><li><span>club Baron</span></li><li><span>club Baron REX</span></li><li><span>CLUB VEGA</span></li></ul></div>
+    <div class="grp-area"><h3>大阪 ミナミ</h3><ul><li><span>Club UN JOUR MINAMI</span></li><li><span>club Ambiente</span></li><li><span>CLUB ARROW</span></li></ul></div>
+    <div class="grp-area"><h3>大阪 梅田・京橋</h3><ul><li><span>VANCOOL</span></li><li><a href="umeda-c03.html">CLUB LISBOA<small>Areaで求人を見る ›</small></a></li><li><a href="umeda-c04.html">club AJITO<small>Areaで求人を見る ›</small></a></li><li><span>HANABI CLUB</span></li></ul></div>
+    <div class="grp-area"><h3>東京 六本木</h3><ul><li><span>UNJOUR TOKYO</span></li><li><span>Baron ROPPONGI</span></li></ul></div>
   </section>
 
   <!-- オファー機能バナー -->
