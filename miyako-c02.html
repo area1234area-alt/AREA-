@@ -17,10 +17,10 @@ var SHOP = {
   tel: "",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
   telLabel: "",             // 表示用の電話番号 例）06-1234-5678
   line: "https://lin.ee/v7GLaD2",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "", // 一番上の大きい画像
-  messageImage: "",         // 「お店からのメッセージ」の画像
-  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: ["", "", ""], // お店の写真（何枚でも）
+  heroImage: "img/miyako-c02/g08.jpg", // 一番上の大きい画像
+  messageImage: "img/miyako-c02/g03.jpg",         // 「お店からのメッセージ」の画像
+  pointImages: ["img/miyako-c02/g05.jpg", "img/miyako-c02/g07.jpg", "img/miyako-c02/g02.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["img/miyako-c02/g08.jpg", "img/miyako-c02/g07.jpg", "img/miyako-c02/g09.jpg", "img/miyako-c02/g10.jpg", "img/miyako-c02/g03.jpg", "img/miyako-c02/g01.jpg", "img/miyako-c02/g02.jpg", "img/miyako-c02/g04.jpg", "img/miyako-c02/g05.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -275,6 +275,7 @@ var SHOP = {
   <!-- トップ -->
   <section class="blk" id="top">
     <div class="shop-title">
+      <img src="img/miyako-c02/logo.png" alt="club Baron Blue" width="320" style="display:block;width:min(260px,70%);height:auto;margin:0 auto 10px">
       <div class="pre">Miyakojima ・ Resort Cabaret</div>
       <h1 class="sr-only">club Baron Blue（バロンブルー）宮古島のリゾートバイト</h1>
       <div class="orn">RESORT BAITO</div>
@@ -368,7 +369,8 @@ var SHOP = {
 
   <!-- ギャラリー・SNS -->
   <section class="blk" id="gallery">
-    <h2 data-en="Gallery">ギャラリー</h2>
+    <h2 data-en="Gallery">店内ギャラリー</h2>
+    <video src="img/miyako-c02/interior.mp4" poster="img/miyako-c02/interior-poster.jpg" muted autoplay loop playsinline controls preload="metadata" aria-label="club Baron Blue 店内の映像" style="display:block;width:100%;height:auto;aspect-ratio:730/458;border:1px solid var(--line);background:#000;margin:0 0 12px"></video>
     <div class="gallery" id="galleryGrid"></div>
   </section>
 
