@@ -1036,6 +1036,7 @@
   html[data-region="kansai"] .rg-only-kanto, html[data-region="kanto"] .rg-only-kansai{ display:none !important; }
 </style>
 <link rel="stylesheet" href="/site-bg.css">
+<script src="/kuchikomi-reward.js"></script>
 </head>
 <body>
 <div class="rg-gate" role="dialog" aria-modal="true" aria-labelledby="rgLead">
@@ -1386,6 +1387,7 @@
     var st = el("div", "voice-stars", "★★★★★".slice(0, n)); st.setAttribute("aria-label", "5点中" + n + "点");
     st.appendChild(el("i", "", "★★★★★".slice(0, 5 - n))); head.appendChild(st);
     c.appendChild(head);
+    if (window.AREA_RW && AREA_RW(r)) { var rw = document.createElement("div"); rw.innerHTML = AREA_RW(r); c.appendChild(rw.firstChild); }
     if (r.good) { var g = el("p", "quote"); g.appendChild(el("span", "voice-label", "良かった点")); g.appendChild(document.createTextNode(r.good)); c.appendChild(g); }
     if (r.bad)  { var b = el("p", "quote"); b.appendChild(el("span", "voice-label bad", "気になった点")); b.appendChild(document.createTextNode(r.bad)); c.appendChild(b); }
     c.appendChild(el("div", "who", [r.age, r.genre, r.style, period(r.period)].filter(Boolean).join("・") || "匿名"));

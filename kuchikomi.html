@@ -185,6 +185,7 @@
 </style>
 <link rel="stylesheet" href="round.css">
 <link rel="stylesheet" href="/site-bg.css">
+<script src="/kuchikomi-reward.js"></script>
 </head>
 <body>
 <div class="page">
@@ -280,7 +281,7 @@
   function card(r){
     var n = Math.max(0, Math.min(5, Math.round(Number(r.overall) || 0)));
     var who = [r.age, r.style, r.period && !/GMT|T\d\d:/.test(r.period) ? "働いた時期：" + r.period : ""].filter(Boolean).join("・") || "匿名";
-    return '<div class="rvc"><div class="who"><span>' + esc(who) + '</span>' + (n ? '<span class="st">' + "★★★★★".slice(0, n) + '<i>' + "★★★★★".slice(0, 5 - n) + '</i></span>' : '') + '</div>' +
+    return '<div class="rvc"><div class="who"><span>' + esc(who) + '</span>' + (n ? '<span class="st">' + "★★★★★".slice(0, n) + '<i>' + "★★★★★".slice(0, 5 - n) + '</i></span>' : '') + '</div>' + (window.AREA_RW ? AREA_RW(r) : '') +
       (r.good ? '<p><span class="lb">良かった点</span>' + esc(r.good) + '</p>' : '') +
       (r.bad ? '<p><span class="lb bad">気になった点</span>' + esc(r.bad) + '</p>' : '') + '</div>';
   }

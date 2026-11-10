@@ -37,6 +37,15 @@ async function addSeedShops(st) {
     if (SEED.listing[k] && !(await st.get(lk))) await st.setJSON(lk, { ...SEED.listing[k], status: "pending", createdAt: now, updatedAt: now });
     await st.set("meta/added/" + k, String(now));
   }
+  // SEED.publish：運営が公開を決めたお店を1回だけ「公開中」にする（写真が空なら初期データの写真も入れる）
+  for (const k of SEED.publish || []) {
+    if (await st.get("meta/published/" + k)) continue;
+    const now = Date.now(), lk = `listing/${SERVICE}/${k}`;
+    const l = await st.get(lk, { type: "json" }), b = await st.get("biz/" + k, { type: "json" });
+    if (l) await st.setJSON(lk, { ...l, status: "published", publishedAt: now, updatedAt: now });
+    if (b && !(b.images || []).length && SEED.biz[k] && SEED.biz[k].images) await st.setJSON("biz/" + k, { ...b, images: SEED.biz[k].images, updatedAt: now });
+    if (l) await st.set("meta/published/" + k, String(now));
+  }
 }
 
 async function listJSON(prefix) {

@@ -241,6 +241,7 @@ var SHOP = {
 </style>
 <link rel="stylesheet" href="round.css">
 <link rel="stylesheet" href="/site-bg.css">
+<script src="/kuchikomi-reward.js"></script>
 </head>
 <body>
 <div class="page">
@@ -585,7 +586,7 @@ var SHOP = {
     if (!rows.length) return none();
     box.innerHTML = rows.slice(0, 5).map(function(r){
       var n = Math.max(0, Math.min(5, Number(r.overall) || 0));
-      return '<div class="rv"><div class="rv-top"><span>' + esc(r.age || "") + (r.style ? "・" + esc(r.style) : "") + '</span><span class="rv-stars">' + "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n) + '</span></div>' +
+      return '<div class="rv"><div class="rv-top"><span>' + esc(r.age || "") + (r.style ? "・" + esc(r.style) : "") + '</span><span class="rv-stars">' + "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n) + '</span></div>' + (window.AREA_RW ? AREA_RW(r) : '') +
         (r.good ? '<p><b>良かった点：</b>' + esc(r.good) + '</p>' : '') + (r.bad ? '<p><b>気になった点：</b>' + esc(r.bad) + '</p>' : '') + '</div>';
     }).join("");
   }).catch(none);
