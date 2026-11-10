@@ -287,7 +287,12 @@
   },
   "fama": {
    "address": "大阪府大阪市北区兎我野町13-13 久富トガノレジャービル4F",
-   "images": [],
+   "images": [
+    "img/umeda-s01/main.jpg",
+    "img/umeda-s01/photo1.jpg",
+    "img/umeda-s01/photo2.jpg",
+    "img/umeda-s01/photo3.jpg"
+   ],
    "job": "umeda-s01.html",
    "kana": "ファーマ",
    "license": {
