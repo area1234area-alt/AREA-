@@ -1115,6 +1115,36 @@
       ],
       "page": "review/shop.html?id=nurupani-nerima",
       "drafted": "2026-11-09"
+    },
+    {
+      "name": "泉佐野アジト（いずみさのアジト）",
+      "site": "review",
+      "area": "泉佐野",
+      "genre": "メンズエステ",
+      "open": "2026-11-12",
+      "status": "drafted",
+      "found": "2026-11-10",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://www.ajito-izumisano.com/"
+      ],
+      "page": "review/shop.html?id=ajito-izumisano",
+      "drafted": "2026-11-10"
+    },
+    {
+      "name": "AROMA DIAMOND（アロマダイヤモンド）",
+      "site": "review",
+      "area": "亀戸",
+      "genre": "メンズエステ",
+      "open": "2026-11-10",
+      "status": "drafted",
+      "found": "2026-11-10",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://aroma-daiamond.com/"
+      ],
+      "page": "review/shop.html?id=aroma-diamond-kameido",
+      "drafted": "2026-11-10"
     }
   ]
 }
