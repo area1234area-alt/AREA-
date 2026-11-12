@@ -467,6 +467,17 @@
   .area-section{ background: transparent; }
   .area-section .section-head h2{ color: var(--ink); }
   .area-section .section-head p{ color: var(--ink-soft); }
+  /* 条件で探す */
+  .cond-box{ display:grid; gap:14px; }
+  .cond-g{ background:rgba(11,10,13,.82); border:1px solid rgba(201,162,39,.4); border-radius:14px; padding:14px 14px 16px; }
+  .cond-g h3{ font-family: var(--font-display); font-size:15px; margin:0 0 10px; color:#F1DA9C; letter-spacing:.08em; }
+  .cond-g h3 small{ font-size:12px; color:#B7AEA6; font-weight:400; margin-left:6px; letter-spacing:0; }
+  .cond-list{ display:flex; flex-wrap:wrap; gap:8px; }
+  .cond-chip{ display:inline-flex; align-items:center; gap:6px; padding:9px 12px; border:1px solid rgba(201,162,39,.55); border-radius:8px; background:#16131A; color:#F4ECE0; font-size:14px; font-weight:500; text-decoration:none; line-height:1.2; white-space:nowrap; transition:background .15s, border-color .15s; }
+  .cond-chip:hover{ background:rgba(201,162,39,.2); border-color:#F1DA9C; }
+  .cond-chip small{ font-size:11px; color:#C9A227; font-weight:700; }
+  .cond-chip.zero{ opacity:.5; border-style:dashed; cursor:default; }
+  .cond-chip.zero small{ color:#B7AEA6; font-weight:400; }
   .area-pill-grid{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1120,7 +1131,7 @@
       <picture><source type="image/webp" srcset="img/top/sv-480.webp 480w, img/top/sv-800.webp 800w, img/top/sv-1162.webp 1162w" sizes="(max-width: 1100px) 100vw, 1100px"><img class="sv-img" src="img/top/sv-1162.jpg" srcset="img/top/sv-480.jpg 480w, img/top/sv-800.jpg 800w, img/top/sv-1162.jpg 1162w" sizes="(max-width: 1100px) 100vw, 1100px" width="1162" height="1163" loading="lazy" decoding="async" alt="夜景を望むテラスラウンジ。エリア・業種・条件から関西・関東の夜のお仕事を探せます"></picture>
       <button type="button" class="sv-hit sv-hit-1" aria-label="エリアで探す"></button>
       <button type="button" class="sv-hit sv-hit-2" aria-label="業種で探す"></button>
-      <button type="button" class="sv-hit sv-hit-3" aria-label="条件で探す（準備中）"></button>
+      <button type="button" class="sv-hit sv-hit-3" aria-label="条件で探す"></button>
     </div>
     <p class="sv-note" id="svNote" hidden>給与・勤務時間などの条件での検索は準備中です。エリア・職種からお探しください。</p>
   </section>
@@ -1169,6 +1180,12 @@
         <a class="area-pill" href="#jobs"><span>コンカフェ</span><span class="chev">›</span></a>
         <a class="area-pill" href="#jobs"><span>スナック</span><span class="chev">›</span></a>
       </div>
+
+      <div class="section-head job-type-head" id="conds">
+        <h2>🔎 条件で探す</h2>
+        <p>気になる条件を押すと、その条件に当てはまるお店の一覧が開きます。条件は各お店の求人内容から自動で判定しています。</p>
+      </div>
+      <div class="cond-box" id="condBox"></div>
     </div>
   </section>
 
@@ -1192,6 +1209,22 @@
       </script>
       <script>
         (function(){ var g=document.getElementById("jobGrid"); if(window.AREA_JOBS) g.innerHTML=AREA_JOBS.map(areaJobCard).join(""); })();
+      </script>
+      <script src="conditions.js"></script>
+      <script>
+        /* 条件で探す：選んだ地域の掲載店から件数を数えてボタンを並べる（0件は「準備中」） */
+        (function(){
+          var box = document.getElementById("condBox"); if (!box || !window.AREA_CONDS) return;
+          var jobs = (window.AREA_JOBS || []).filter(function(j){ return j.url; });
+          var esc = function(t){ return String(t).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+          box.innerHTML = AREA_CONDS.map(function(g){
+            return '<div class="cond-g"><h3>' + esc(g.group) + '<small>から探す</small></h3><div class="cond-list">' + g.items.map(function(c){
+              var n = jobs.filter(function(j){ return areaCondMatch(j, c); }).length;
+              return n ? '<a class="cond-chip" href="area.html?cond=' + c.key + '">' + esc(c.label) + '<small>' + n + '</small></a>'
+                       : '<span class="cond-chip zero" aria-disabled="true">' + esc(c.label) + '<small>準備中</small></span>';
+            }).join("") + '</div></div>';
+          }).join("");
+        })();
       </script>
     </div>
   </section>
@@ -1359,7 +1392,7 @@
   var h1 = document.querySelector(".sv-hit-1"), h2 = document.querySelector(".sv-hit-2"), h3 = document.querySelector(".sv-hit-3"), note = document.getElementById("svNote");
   if (h1) h1.addEventListener("click", function(){ go("areas"); });
   if (h2) h2.addEventListener("click", function(){ go("types"); });
-  if (h3) h3.addEventListener("click", function(){ if (note) note.hidden = false; });
+  if (h3) h3.addEventListener("click", function(){ go("conds"); });
 })();
 </script>
 
