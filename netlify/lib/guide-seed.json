@@ -308,7 +308,13 @@
   },
   "vancool": {
    "address": "大阪府大阪市北区堂山町1-14 こだまレジャービルB2",
-   "images": [],
+   "images": [
+    "img/umeda-c07/main.jpg",
+    "img/umeda-c07/g08.jpg",
+    "img/umeda-c07/g01.jpg",
+    "img/umeda-c07/g03.jpg",
+    "img/umeda-c07/g06.jpg"
+   ],
    "job": "umeda-c07.html",
    "kana": "ヴァンクール",
    "license": {
@@ -1123,6 +1129,19 @@
     "tel": "",
     "telNote": null,
     "line": "https://lin.ee/Rj4BmIa"
+   }
+  },
+  {
+   "id": "vancool-img-1",
+   "key": "vancool",
+   "biz": {
+    "images": [
+     "img/umeda-c07/main.jpg",
+     "img/umeda-c07/g08.jpg",
+     "img/umeda-c07/g01.jpg",
+     "img/umeda-c07/g03.jpg",
+     "img/umeda-c07/g06.jpg"
+    ]
    }
   }
  ]
