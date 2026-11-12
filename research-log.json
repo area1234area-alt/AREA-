@@ -1145,6 +1145,20 @@
       ],
       "page": "review/shop.html?id=aroma-diamond-kameido",
       "drafted": "2026-11-10"
+    },
+    {
+      "name": "Madam Stars（マダムスターズ）",
+      "site": "review",
+      "area": "大阪府内（出張）",
+      "genre": "メンズエステ（出張）",
+      "open": "不明（2026-11-02 新規掲載）",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "page": "review/shop.html?id=madamstars-osaka",
+      "drafted": "2026-11-12"
     }
   ]
 }
