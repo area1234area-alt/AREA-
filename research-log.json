@@ -1151,14 +1151,172 @@
       "site": "review",
       "area": "大阪府内（出張）",
       "genre": "メンズエステ（出張）",
-      "open": "不明（2026-11-02 新規掲載）",
+      "open": "2026-11-04",
       "status": "drafted",
       "found": "2026-11-12",
       "source": [
-        "https://osaka.refle.info/newshop.html"
+        "https://osaka.refle.info/newshop.html",
+        "https://mens-mg.com/newshop.php?p=1"
       ],
       "page": "review/shop.html?id=madamstars-osaka",
       "drafted": "2026-11-12"
+    },
+    {
+      "name": "MAGNITUDE（マグニチュード）",
+      "site": "review",
+      "area": "江坂",
+      "genre": "メンズエステ",
+      "open": "2026-11-20",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://magnitude-esthe.com/"
+      ],
+      "page": "review/shop.html?id=magnitude-esaka",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "Mrs.Mermaid 新大阪ルーム（ミセスマーメイド）",
+      "site": "review",
+      "area": "新大阪",
+      "genre": "メンズエステ",
+      "open": "2026-10-28",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://www.mrsmermaid.net/"
+      ],
+      "page": "review/shop.html?id=mrsmermaid-shinosaka",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "EUPHORIA 目黒ルーム（ユーフォリア）",
+      "site": "review",
+      "area": "目黒",
+      "genre": "メンズエステ",
+      "open": "2026-11-11",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://euphoria-esthe.com/"
+      ],
+      "page": "review/shop.html?id=euphoria-meguro",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "EUPHORIA 恵比寿ルーム（ユーフォリア）",
+      "site": "review",
+      "area": "恵比寿",
+      "genre": "メンズエステ",
+      "open": "2026-11-11",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://euphoria-esthe.com/"
+      ],
+      "page": "review/shop.html?id=euphoria-ebisu",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "MAISON de Aroma（メゾンドアロマ）",
+      "site": "review",
+      "area": "錦糸町",
+      "genre": "メンズエステ",
+      "open": "2026-11-10",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://maison-de-aroma.com/"
+      ],
+      "page": "review/shop.html?id=maison-de-aroma-kinshicho",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "小悪魔Spa Tokyo 立川ルーム（こあくまスパ）",
+      "site": "review",
+      "area": "立川",
+      "genre": "メンズエステ",
+      "open": "2026-11-09",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://mens-esthe-aroma.site/"
+      ],
+      "page": "review/shop.html?id=koakuma-spa-tachikawa",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "CRYSTAL（クリスタル）",
+      "site": "review",
+      "area": "千歳烏山",
+      "genre": "メンズエステ",
+      "open": "2026-11-09",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://crystal-esthe.net/"
+      ],
+      "page": "review/shop.html?id=crystal-chitosekarasuyama",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "Tart（タルト）",
+      "site": "review",
+      "area": "高槻",
+      "genre": "メンズエステ",
+      "open": "2026-08-21",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "fate（フェイト）",
+      "site": "review",
+      "area": "梅田",
+      "genre": "メンズエステ",
+      "open": "2026-08-17",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "CURE CELEB（キュアセレブ）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-08-05",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "Mrs.Amour Spa（ミセスアムールスパ）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-07-20",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
     }
   ]
 }
