@@ -301,7 +301,7 @@
   // ピックアップ（店名を公開している掲載店）
   var picks = base.filter(function(j){ return j.url; });
   $("picks").innerHTML = picks.length ? picks.map(function(j){
-    return '<div class="pick"><a class="ph-link" href="' + esc(j.url) + '">' + ph(j) + '</a><div class="body"><b><a href="' + esc(j.url) + '">' + esc(j.name) + '</a></b>' +
+    return '<div class="pick"><a class="ph-link" href="' + esc(j.url) + '">' + ph(j) + '</a><div class="body">' + (window.areaPremiumBadge ? areaPremiumBadge(j, 'margin-bottom:6px') : '') + '<b><a href="' + esc(j.url) + '">' + esc(j.name) + '</a></b>' +
       '<span class="meta">' + esc(j.city || "") + ' ' + esc(j.area) + ' ／ ' + esc(j.type) + '</span>' +
       (j.catchCopy ? '<p class="catch">' + esc(j.catchCopy) + '</p>' : '') +
       '<div class="rvline" data-rv="' + j._i + '"><em>–</em><span>口コミを読み込んでいます…</span></div>' +
@@ -315,7 +315,7 @@
     var tags = (j.tags || []).slice(0, 5).concat(j.trial ? ["体験入店あり"] : []);
     return '<article class="rank' + (j.url ? ' featured' : '') + '">' +
       '<div class="rank-top"><span class="no">' + (n < 10 ? "0" + n : n) + '</span><div class="rank-name">' + name +
-        '<small>' + esc(j.type) + ' ／ ' + esc(j.city || "大阪市") + ' ' + esc(j.area) + (j.url ? ' ／ 掲載店' : '') + '</small></div></div>' +
+        '<small>' + esc(j.type) + ' ／ ' + esc(j.city || "大阪市") + ' ' + esc(j.area) + (j.url ? ' ／ 掲載店' : '') + '</small>' + (window.areaPremiumBadge ? areaPremiumBadge(j, 'margin-top:6px') : '') + '</div></div>' +
       '<div class="rank-body">' + ph(j) + '<ul class="info">' +
         '<li><i>給与</i>' + esc(j.pay || "確認中") + '</li>' +
         '<li><i>時間</i>' + esc(j.hours || "確認中") + '</li>' +
