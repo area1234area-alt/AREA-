@@ -17,10 +17,10 @@ var SHOP = {
   tel: "",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
   telLabel: "",             // 表示用の電話番号 例）06-1234-5678
   line: "https://lin.ee/Rj4BmIa",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "", // 一番上の大きい画像
-  messageImage: "", // 「お店からのメッセージ」の画像
-  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: [], // お店の写真（何枚でも）
+  heroImage: "img/umeda-c07/main.jpg", // 一番上の大きい画像
+  messageImage: "img/umeda-c07/g01.jpg", // 「お店からのメッセージ」の画像
+  pointImages: ["img/umeda-c07/g08.jpg", "img/umeda-c07/g03.jpg", "img/umeda-c07/g06.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["img/umeda-c07/g01.jpg","img/umeda-c07/g02.jpg","img/umeda-c07/g03.jpg","img/umeda-c07/g04.jpg","img/umeda-c07/g05.jpg","img/umeda-c07/g06.jpg","img/umeda-c07/g07.jpg","img/umeda-c07/g08.jpg","img/umeda-c07/g09.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -370,7 +370,8 @@ var SHOP = {
 
   <!-- ギャラリー -->
   <section class="blk" id="gallery">
-    <h2 data-en="Gallery">ギャラリー</h2>
+    <h2 data-en="Gallery">店内ギャラリー</h2>
+    <video src="img/umeda-c07/interior.mp4" poster="img/umeda-c07/interior-poster.jpg" muted autoplay loop playsinline controls preload="metadata" aria-label="VANCOOL 店内の映像" style="display:block;width:100%;height:auto;aspect-ratio:736/448;border:1px solid var(--line);background:#000;margin:0 0 12px"></video>
     <div class="gallery" id="galleryGrid"></div>
   </section>
 
