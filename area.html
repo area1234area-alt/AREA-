@@ -243,24 +243,28 @@
 </div>
 
 <script src="jobs.js"></script>
+<script src="conditions.js"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
   var esc = function(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
   var q = new URLSearchParams(location.search);
   var areaKey = q.get("area") || "", typeKey = q.get("type") || "";
+  var cond = q.get("cond") && window.areaCondFind ? areaCondFind(q.get("cond")) : null;
+  var regionNow = ""; try { regionNow = localStorage.getItem("areaRegion") || ""; } catch(e){}
   var info = areaKey ? (window.areaInfo(areaKey) || { key: areaKey, label: areaKey, en: "", stations: [], near: [], pref: "" }) : null;
   var jobs = (window.AREA_JOBS || []).map(function(j, i){ j._i = i; return j; });
-  var base = jobs.filter(function(j){ return (!areaKey || j.area === areaKey) && (!typeKey || j.type === typeKey); });
+  var base = jobs.filter(function(j){ return (!areaKey || j.area === areaKey) && (!typeKey || j.type === typeKey) && (!cond || areaCondMatch(j, cond)); });
+  if (cond && !areaKey && (regionNow === "kansai" || regionNow === "kanto") && window.areaRegionOfJobLite) base = base.filter(function(j){ var g = areaRegionOfJobLite(j); return !g || g === regionNow; });
   var st = { station: "", type: "" };
 
   // 見出し・パンくず
-  var label = info ? info.label : (typeKey || "すべて");
+  var label = info ? info.label : (cond ? "「" + cond.label + "」" : (typeKey || "すべて"));
   var prefLink = info && info.pref === "大阪府" ? '<a href="osaka.html">大阪府</a> ＞ ' : (info && info.pref ? esc(info.pref) + ' ＞ ' : '');
   $("crumb").innerHTML = '<a href="index.html">Area</a> ＞ ' + prefLink + '<b>' + esc(label) + (info ? 'エリア' : '') + 'の求人</b>';
   $("heroEn").textContent = info ? (info.en ? info.en + " ・ Recruit" : "Area Recruit") : "Job type ・ Recruit";
   $("heroTitle").textContent = label + (info ? "エリア" : "") + "の求人";
-  $("heroLead").textContent = info ? (info.label + "エリアのナイトワーク求人です。駅や職種で絞り込めます。応募は各お店へ直接。") : (label + "の求人一覧です。");
+  $("heroLead").textContent = info ? (info.label + "エリアのナイトワーク求人です。駅や職種で絞り込めます。応募は各お店へ直接。") : (cond ? (cond.label + "に当てはまるお店の一覧です。条件は各お店の求人内容から判定しています。くわしい条件は面接で必ず確認してください。") : (label + "の求人一覧です。"));
   document.title = label + (info ? "エリア" : "") + "のナイトワーク求人｜Area";
   $("pickTitle").textContent = label + (info ? "エリア" : "") + "の注目店";
   $("listTitle").textContent = label + (info ? "エリア" : "") + "の求人一覧";
