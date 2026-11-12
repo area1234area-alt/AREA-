@@ -108,6 +108,21 @@ window.AREA_JOBS = [
   { name: "梅田のキャバクラ", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市", pay: "2万5千円〜2万8千円" }
 ];
 
+/* 有料掲載（PREMIUM）のお店：一覧で上に出し、金色の「PREMIUM」印を付ける。
+   有料のお店が増えたら、下の一覧に求人ページのファイル名を足すだけ。
+   カイザーグループ：VANCOOL・UNJOUR祇園・華小町・GALLE・MILANO・LISBOA・AJITO・UNJOUR RESORT・Baron Blue */
+window.AREA_PREMIUM = ["umeda-c07.html", "gion-c01.html", "gion-c04.html", "gion-c02.html", "gion-c05.html", "umeda-c03.html", "umeda-c04.html", "miyako-c01.html", "miyako-c02.html"];
+(function () {
+  var J = window.AREA_JOBS;
+  J.forEach(function (j) { j.premium = !!(j.url && window.AREA_PREMIUM.indexOf(j.url) >= 0); });
+  var a = J.map(function (j, i) { return [j, i]; });
+  a.sort(function (x, y) { return (y[0].premium ? 1 : 0) - (x[0].premium ? 1 : 0) || x[1] - y[1]; });
+  J.length = 0; a.forEach(function (x) { J.push(x[0]); });
+})();
+window.areaPremiumBadge = function (j, style) {
+  return j && j.premium ? '<span class="area-premium" style="display:inline-block;font-family:serif;font-weight:700;font-size:11px;letter-spacing:.14em;color:#1A1620;background:linear-gradient(90deg,#B8892B,#F6E3A8,#C9A227);border-radius:4px;padding:3px 9px;box-shadow:0 2px 8px rgba(0,0,0,.35);' + (style || '') + '">PREMIUM</span>' : '';
+};
+
 /* 求人カードのHTMLを作る（両ページ共通） */
 window.areaJobCard = function (j) {
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -119,7 +134,7 @@ window.areaJobCard = function (j) {
     var en = j.nameEn || String(j.name).replace(/（.*?）|\(.*?\)/g, "").trim();
     var kana = j.kana || ((String(j.name).match(/（(.*?)）/) || [])[1] || "");
     return '<div class="job-card photo-card">' +
-      '<a class="dc-pw"' + href + '><span class="dc-ph' + (j.photo ? '' : ' noimg') + (j.logoInPhoto ? ' logo' : '') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
+      '<a class="dc-pw"' + href + (j.premium ? ' style="position:relative"' : '') + '>' + window.areaPremiumBadge(j, 'position:absolute;top:10px;' + (j.logoInPhoto ? 'left' : 'right') + ':10px;z-index:5') + '<span class="dc-ph' + (j.photo ? '' : ' noimg') + (j.logoInPhoto ? ' logo' : '') + '">' + (j.photo ? '<img src="' + esc(j.photo) + '" alt="' + esc(j.name) + 'の店内" loading="lazy">' : '<span class="dc-noimg">画像準備中</span>') + '</span>' +
         '<span class="dc-tate' + (j.logoInPhoto ? ' right' : '') + '">' + tate(j.area) + '<i class="dot"></i>' + tate(j.type) + '</span>' +
         (j.logoInPhoto ? (j.trial ? '<span class="dc-over"><span class="dc-badge">体験入店あり</span></span>' : '') :
         '<span class="dc-over">' + (j.isNew ? '<span class="dc-badge">NEW OPEN</span>' : '') + (j.trial ? '<span class="dc-badge">体験入店あり</span>' : '') +
