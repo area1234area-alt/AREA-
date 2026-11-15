@@ -1317,6 +1317,66 @@
         "https://osaka.refle.info/newopen.html"
       ],
       "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "LEALYS（リアリス）",
+      "site": "bar",
+      "area": "歌舞伎町",
+      "genre": "キャバクラ",
+      "open": "2026-12-03（予定・年は掲載時期から判断）",
+      "address": "東京都新宿区歌舞伎町2-26-3 互福ビル1F",
+      "status": "drafted",
+      "found": "2026-11-15",
+      "page": "kabuki-c01.html",
+      "source": [
+        "https://www.caba2.net/s/11905",
+        "https://www.caba2.net/tokyo/_list?industry%5B0%5D=1"
+      ],
+      "drafted": "2026-11-15"
+    },
+    {
+      "name": "VIVIA LOUNGE（ビビアラウンジ）",
+      "site": "bar",
+      "area": "上野",
+      "genre": "キャバクラ",
+      "open": "2026-10（日付不明）",
+      "address": "東京都台東区上野2-12-16 小島ビル5F",
+      "status": "drafted",
+      "found": "2026-11-15",
+      "page": "ueno-c10.html",
+      "source": [
+        "https://www.caba2.net/s/12237",
+        "https://www.caba2.net/tokyo/_list?industry%5B0%5D=1"
+      ],
+      "drafted": "2026-11-15"
+    },
+    {
+      "name": "CLUB VISION（ヴィジョン）",
+      "site": "bar",
+      "area": "練馬",
+      "genre": "キャバクラ",
+      "open": "12月（予定・日付不明）",
+      "address": "東京都練馬区豊玉北5-22-10 コンフォートX 2F",
+      "status": "listed",
+      "found": "2026-11-15",
+      "source": [
+        "https://www.caba2.net/s/12316"
+      ],
+      "memo": "対象エリア外（練馬）のためリスト化のみ"
+    },
+    {
+      "name": "NOT A LOUNGE 12（ノット ア ラウンジ トゥエルブ）",
+      "site": "bar",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "open": "不明（2026-11-13新規掲載）",
+      "address": "大阪府大阪市中央区宗右衛門町2-21 ARTEMIS 3F",
+      "status": "listed",
+      "found": "2026-11-15",
+      "source": [
+        "https://www.caba2.net/s/12368"
+      ],
+      "memo": "オープン日が確認できないためリスト化のみ"
     }
   ]
 }
