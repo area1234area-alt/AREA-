@@ -1202,7 +1202,8 @@
       </div>
       <div class="job-empty" id="jobEmpty" hidden>この条件の求人は準備中です。条件を変えてお試しください。</div>
       <div class="job-grid" id="jobGrid"></div>
-      <script src="jobs.js"></script>
+      <script src="group.js"></script>
+<script src="jobs.js"></script>
       <script>
         /* 選んだ地域（関西／関東）の求人だけにしぼる。件数・準備中表示もこの結果で決まる */
         (function(){ if (window.AREA_REGION && window.AREA_JOBS) AREA_JOBS = window.AREA_JOBS = AREA_JOBS.filter(function(j){ var g = areaRegionOfJob(j); return !g || g === AREA_REGION; }); })();
