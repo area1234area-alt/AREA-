@@ -17,10 +17,10 @@ var SHOP = {
   tel: "08049819816",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
   telLabel: "080-4981-9816",             // 表示用の電話番号 例）06-1234-5678
   line: "https://lin.ee/v7GLaD2",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "", // 一番上の大きい画像
-  messageImage: "",         // 「お店からのメッセージ」の画像
-  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: ["", "", ""], // お店の写真（何枚でも）
+  heroImage: "img/gion-c04/g01.jpg", // 一番上の大きい画像
+  messageImage: "img/gion-c04/g05.jpg",         // 「お店からのメッセージ」の画像
+  pointImages: ["img/gion-c04/g07.jpg", "img/gion-c04/g03.jpg", "img/gion-c04/g02.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["img/gion-c04/g01.jpg","img/gion-c04/g02.jpg","img/gion-c04/g03.jpg","img/gion-c04/g04.jpg","img/gion-c04/g05.jpg","img/gion-c04/g06.jpg","img/gion-c04/g07.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -336,7 +336,9 @@ var SHOP = {
     </div>
   </section>
 
-  <section class="blk" id="gallery"><h2 data-en="Gallery">ギャラリー</h2><div class="gallery" id="galleryGrid"></div></section>
+  <section class="blk" id="gallery"><h2 data-en="Gallery">店内ギャラリー</h2>
+    <video src="img/gion-c04/interior.mp4" poster="img/gion-c04/interior-poster.jpg" muted autoplay loop playsinline controls preload="metadata" aria-label="華小町 店内の映像" style="display:block;width:100%;height:auto;aspect-ratio:744/390;border:1px solid var(--line);background:#000;margin:0 0 12px"></video>
+<div class="gallery" id="galleryGrid"></div></section>
   <section class="blk">
     <h2 data-en="Official">Instagram</h2>
     <div class="ig-head"><div class="ph" data-img="instagram.icon">アイコン</div><div><b id="igId">アカウント準備中</b><span>華小町</span></div><span class="ig-logo" aria-hidden="true"></span></div>
