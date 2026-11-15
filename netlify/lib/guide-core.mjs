@@ -163,6 +163,7 @@ ${/^https:\/\/lin\.ee\/[A-Za-z0-9]+$/.test(s.line || "") ? `<a class="call" styl
 ${job}
 </main>
 ${ref ? '<script src="go.js"></script>' : ""}
+<script src="/share.js" defer></script>
 <footer class="ft">
 <p>Areaは、お店の情報を掲載する広告メディアです。料金・営業時間などは変わることがあります。ご来店の前にお店へご確認ください。</p>
 <p>20歳未満の方の飲酒はできません。</p>
