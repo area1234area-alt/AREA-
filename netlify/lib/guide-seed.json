@@ -326,6 +326,25 @@
    "tel": "06-6940-0222",
    "telNote": "受付13時〜",
    "town": "堂山町"
+  },
+  "bijinchaya": {
+   "address": "大阪府大阪市北区堂山町17-8 北シャトービルB1F",
+   "images": [
+    "img/umeda-c08/main.jpg",
+    "img/umeda-c08/g02.jpg",
+    "img/umeda-c08/g03.jpg"
+   ],
+   "job": "umeda-c08.html",
+   "kana": "ビジンチャヤ",
+   "license": {
+    "checkedAt": 0,
+    "type": ""
+   },
+   "name": "美人茶屋 梅田",
+   "station": "梅田駅から徒歩5分",
+   "tel": "06-6363-0005",
+   "telNote": null,
+   "town": "堂山町"
   }
  },
  "listing": {
@@ -1022,6 +1041,59 @@
    "ref": false,
    "status": "published",
    "sub": "キャバクラ"
+  },
+  "bijinchaya": {
+   "area": "umeda",
+   "facility": "VIPルーム4室（座敷・朱雀・青龍・白虎）",
+   "from": "60分 6,600円〜",
+   "genre": "キャバクラ",
+   "holiday": "日曜・祝日",
+   "hours": "20:00〜LAST",
+   "intro": "桜と朱色の格子が目を引く、梅田・堂山町の和モダンな高級キャバクラ。座敷・朱雀・青龍・白虎と趣の違うVIPルームがあり、接待や記念日にも使いやすいお店です。20時台に入ると1セット6,600円から楽しめます。",
+   "order": 51,
+   "plan": [],
+   "planFrom": "",
+   "price": [
+    [
+     "OPEN〜20:59（60分）",
+     "6,600円"
+    ],
+    [
+     "21:00〜22:59（60分）",
+     "7,700円"
+    ],
+    [
+     "23:00〜LAST（60分）",
+     "9,900円"
+    ],
+    [
+     "延長30分",
+     "3,300円／3,850円／4,950円（時間帯による）"
+    ],
+    [
+     "VIPルーム（座敷）",
+     "11,000円"
+    ],
+    [
+     "VIPルーム（朱雀・青龍）",
+     "16,500円"
+    ],
+    [
+     "VIPルーム（白虎）",
+     "22,000円"
+    ],
+    [
+     "ハウスボトル",
+     "1,100円"
+    ],
+    [
+     "サービス料",
+     "25％"
+    ]
+   ],
+   "ref": false,
+   "status": "published",
+   "sub": "キャバクラ"
   }
  },
  "cats": [
@@ -1115,11 +1187,13 @@
  ],
  "added": [
   "fama",
-  "vancool"
+  "vancool",
+  "bijinchaya"
  ],
  "publish": [
   "fama",
-  "vancool"
+  "vancool",
+  "bijinchaya"
  ],
  "patch": [
   {
