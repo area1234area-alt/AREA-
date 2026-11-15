@@ -4,6 +4,8 @@
 window.AREA_GROUPS = [
   { name: "カイザーグループ", en: "KAISER GROUP",
     urls: ["umeda-c07.html", "gion-c01.html", "gion-c04.html", "gion-c02.html", "gion-c05.html", "umeda-c03.html", "umeda-c04.html", "miyako-c01.html", "miyako-c02.html"] },
+  { name: "INSOUグループ", en: "INSOU GROUP",
+    urls: ["umeda-c01.html", "umeda-c08.html"] },
   // グループ名を出さない系列店（name を空にする）。shops は「系列店」として名前を出すお店
   { name: "", en: "", urls: ["lilith.html", "blanc.html"],
     shops: { "lilith.html": "Club Lilith", "blanc.html": "CLUB BLANC" } }
