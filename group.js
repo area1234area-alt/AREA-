@@ -3,7 +3,7 @@
    グループやお店が増えたら、下の一覧に足すだけで、求人ページ・一覧カードの両方に反映されます。 */
 window.AREA_GROUPS = [
   { name: "カイザーグループ", en: "KAISER GROUP",
-    urls: ["umeda-c07.html", "gion-c01.html", "gion-c04.html", "gion-c02.html", "gion-c05.html", "umeda-c03.html", "umeda-c04.html", "miyako-c01.html", "miyako-c02.html"] },
+    urls: ["umeda-c07.html", "gion-c01.html", "gion-c04.html", "gion-c02.html", "gion-c05.html", "umeda-c03.html", "umeda-c04.html", "miyako-c01.html", "miyako-c02.html", "minami-c07.html"] },
   { name: "INSOUグループ", en: "INSOU GROUP",
     urls: ["umeda-c01.html", "umeda-c08.html"] },
   // グループ名を出さない系列店（name を空にする）。shops は「系列店」として名前を出すお店
