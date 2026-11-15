@@ -46,7 +46,7 @@ window.AREA_JOBS = [
     features: ["お昼から夕方に働ける", "和モダンの店内・VIPルームあり", "定休日：月曜日"],
     tel: "0647928802", reviewKey: "華門|カモン|kamon", added: "2026-10-12" },
   { name: "ELENA HOUSE（エレナハウス）", nameEn: "ELENA HOUSE", kana: "エレナハウス", type: "キャバクラ", area: "梅田", address: "大阪府 大阪市 堂山町",
-    pay: "時給 最大5,000円", url: "umeda-c01.html", photo: "", pickup: true, pref: "大阪府", city: "大阪市", // 写真が来たら photo: "img/umeda-c01/main.jpg"
+    pay: "時給 最大5,000円", url: "umeda-c01.html", photo: "img/umeda-c01/g01.jpg", pickup: true, pref: "大阪府", city: "大阪市",
     catchCopy: "経験・実績しだいで時給最大5,000円。送りあり・終電上がりOKの、梅田・堂山町のキャバクラ",
     hours: "営業時間 20:00〜翌1:00", station: "梅田駅", transport: "要確認",
     qualify: "19歳以上（18歳・高校生不可）", payDetail: "時給2,000円〜最大5,000円（経験・実績により面接で決定／本指名スライド制で指名に応じて時給アップ）／全額日払いは不可", tags: ["送りあり", "終電上がりOK", "ヘアメイク店内"],
