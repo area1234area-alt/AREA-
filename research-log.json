@@ -1377,6 +1377,47 @@
         "https://www.caba2.net/s/12368"
       ],
       "memo": "オープン日が確認できないためリスト化のみ"
+    },
+    {
+      "name": "NAMEX SPA 新井薬師ルーム（ネイメックススパ）",
+      "area": "新井薬師前（中野区）",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-16",
+      "found": "2026-11-16",
+      "status": "drafted",
+      "page": "review/shop.html?id=namex-araiyakushi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "CLUB HORUS（ホルス）",
+      "area": "北新地",
+      "genre": "ニュークラブ",
+      "site": "bar",
+      "open": "不明",
+      "found": "2026-11-16",
+      "status": "listed",
+      "memo": "一覧に「NEW OPEN」等の表記あり。詳細ページを取得できずオープン日・住所未確認のためリスト化のみ",
+      "source": [
+        "https://www.caba2.net/osaka/_list",
+        "https://www.caba2.net/osaka/kitashinchi/kitashinchi/horus"
+      ]
+    },
+    {
+      "name": "Club Neptune（ネプチューン）",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "site": "bar",
+      "open": "不明",
+      "found": "2026-11-16",
+      "status": "listed",
+      "memo": "一覧に「NEW OPEN」等の表記あり。詳細ページを取得できずオープン日・住所未確認のためリスト化のみ",
+      "source": [
+        "https://www.caba2.net/osaka/_list",
+        "https://www.caba2.net/osaka/minami/minami/neptune"
+      ]
     }
   ]
 }
