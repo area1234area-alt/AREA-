@@ -17,10 +17,10 @@ var SHOP = {
   tel: "",                  // お店の電話番号（数字だけ。もらえたら入れる。空なら電話ボタンは「準備中」）
   telLabel: "",             // 表示用の電話番号 例）06-1234-5678
   line: "https://lin.ee/v7GLaD2",                 // お店のLINE応募URL（もらえたら入れる。空ならボタンは出ない）
-  heroImage: "", // 一番上の大きい画像
-  messageImage: "",         // 「お店からのメッセージ」の画像
-  pointImages: ["", "", ""],// 「はじめてでも安心なポイント」1〜3の小さい画像
-  gallery: ["", "", ""], // お店の写真（何枚でも）
+  heroImage: "img/umeda-c04/main.jpg", // 一番上の大きい画像
+  messageImage: "img/umeda-c04/g02.jpg",         // 「お店からのメッセージ」の画像
+  pointImages: ["img/umeda-c04/g03.jpg", "img/umeda-c04/g05.jpg", "img/umeda-c04/g06.jpg"],// 「はじめてでも安心なポイント」1〜3の小さい画像
+  gallery: ["img/umeda-c04/g01.jpg","img/umeda-c04/g02.jpg","img/umeda-c04/g03.jpg","img/umeda-c04/g04.jpg","img/umeda-c04/g05.jpg","img/umeda-c04/g06.jpg","img/umeda-c04/g07.jpg"], // お店の写真（何枚でも）
   instagram: {
     url: "",                // 例）https://www.instagram.com/アカウント名/
     id: "",                 // 例）club_lilith
@@ -323,7 +323,7 @@ var SHOP = {
     <div class="clamp" id="msgText">
       <p>梅田・堂山町のキャバクラで、フロアレディを募集しています。</p>
       <p>時給は4,000円〜6,000円からスタート。本指名スライド制で、指名が増えるほど時給が上がり、最大で10,000円です。達成率に応じた時給アップもあります。</p>
-      <p>同伴・本指名・場内・ボトルのバックがあり、ヘアメイクはお店の中でできます。送りもあります。</p>
+      <p>同伴・本指名・場内・ボトルのバックがあり、ヘアメイクはお店の中でできて、レンタルドレスと更衣室もあるので手ぶらで出勤できます。送りもあります。</p>
       <p>給与や勤務条件は、面接のときにお店から直接説明があります。気になることは、まずは気軽にお店に聞いてみてください。</p>
     </div>
     <button class="more" type="button" data-more="msgText">続きを見る</button>
@@ -363,7 +363,7 @@ var SHOP = {
     </div>
     <div class="safe">
       <div class="safe-head">ポイント 3</div>
-      <div class="safe-body"><div class="ph" data-img="pointImages.2">画像準備中</div><div><h3>ヘアメイクはお店で</h3><p>ヘアメイクはお店の中でできます。送りもあります。</p></div></div>
+      <div class="safe-body"><div class="ph" data-img="pointImages.2">画像準備中</div><div><h3>ヘアメイクはお店で</h3><p>ヘアメイクはお店の中でできて、レンタルドレスと更衣室もあるので手ぶらで出勤できます。送りもあります。</p></div></div>
     </div>
   </section>
 
@@ -406,7 +406,7 @@ var SHOP = {
       <div><dt>勤務日</dt><dd>お店に確認中</dd></div>
       <div><dt>勤務時間</dt><dd>営業時間 20:00〜翌1:30 の間<small>終電での上がりは不可。くわしい勤務時間はお店に確認中</small></dd></div>
       <div><dt>休日</dt><dd>日曜日（店休日）</dd></div>
-      <div><dt>服装</dt><dd>ドレス</dd></div>
+      <div><dt>服装</dt><dd>ドレス<small>レンタルドレスあり／更衣室あり</small></dd></div>
       <div><dt>送り</dt><dd>あり<small>大阪市内 500円・市外 1,000円</small></dd></div>
       <div><dt>ヘアメイク</dt><dd>お店の中でできます</dd></div>
       <div><dt>寮</dt><dd>なし</dd></div>
