@@ -1232,6 +1232,19 @@
 
   <!-- ============ FEATURES ============ -->
   <!-- ============ オファー機能の説明（画像） ============ -->
+  <section class="section" id="columns" style="background:#0B0A0D">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 style="color:#F4ECE0">最新の店舗コラム</h2>
+        <p style="color:#B7AEA6">Area編集部が、お店の働き方やお給料のしくみをくわしく紹介しています。</p>
+      </div>
+      <div id="colBox"></div>
+      <p style="text-align:center;margin:18px 0 0"><a href="column/index.html" style="color:#F1DA9C;font-weight:700">コラムをすべて見る →</a></p>
+    </div>
+  </section>
+  <script src="columns.js"></script>
+  <script>areaRenderColumns(document.getElementById("colBox"), { limit: 6 });</script>
+
   <section class="ofr-sec" aria-label="オファー機能" style="background:#0B0A0D;padding:26px 0 18px">
     <a class="ofr-bn" href="member/#guide"><picture><source media="(max-width:820px)" srcset="img/offer/offer-steps-800.jpg"><img src="img/offer/offer-steps.jpg" alt="Areaのオファー機能：無料で登録→プロフィール公開→お店からオファーが届く→気になったらお店に応募" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
     <a class="ofr-cta" href="member/">オファー機能を使ってみる（無料）</a>
