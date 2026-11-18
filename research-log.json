@@ -1418,6 +1418,97 @@
         "https://www.caba2.net/osaka/_list",
         "https://www.caba2.net/osaka/minami/minami/neptune"
       ]
+    },
+    {
+      "name": "LUNA（ルナ）",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-15",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=luna-sakaisuji",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "むちむちお姉さん 蒲田店（むちむちおねえさん）",
+      "area": "蒲田",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-18",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=muchimuchi-kamata",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "SELECT+ 西葛西ルーム（セレクトプラス）",
+      "area": "西葛西",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=selectplus-nishikasai",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "WHITE ROOM 板橋ルーム（ホワイトルーム）",
+      "area": "板橋",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-12",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=whiteroom-itabashi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Mellow 大塚ルーム（メロウ）",
+      "area": "大塚",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=mellow-otsuka",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Mellow 日暮里ルーム（メロウ）",
+      "area": "日暮里",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=mellow-nippori",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Heaven's Road（ヘブンズロード）",
+      "area": "立川",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=heavensroad-tachikawa",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
     }
   ]
 }
