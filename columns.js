@@ -4,6 +4,8 @@
    hook はカードに大きく出す短いひとこと。「|」で改行位置を決める（スマホで1行8字まで・3行まで）。
    date から7日以内のコラムには「NEW」が付きます。 */
 window.AREA_COLUMNS = [
+  { url: "column/ueno-luxor.html", hook: "上野で選ぶなら|まず広さを見て", region: "kanto", area: "上野", shop: "Club LUXOR", date: "2026-11-18", img: "img/ueno-c11/main.jpg",
+    title: "上野で働くなら、まず“お店の広さ”を見て。70坪の「Club LUXOR」" },
   { url: "column/akiba-hugmo.html", hook: "安いのに稼げる、|はありえない", region: "kanto", area: "秋葉原", shop: "HUGMO", date: "2026-11-18", img: "img/akiba-cf01/main.jpg",
     title: "安いのに稼げる、はありえない。秋葉原のコンカフェ「HUGMO」が稼げる理由" },
   { url: "column/umeda-ajito.html", hook: "指名を取るほど|時給1万円へ", region: "kansai", area: "梅田", shop: "AJITO", date: "2026-11-17", img: "img/umeda-c04/main.jpg",
