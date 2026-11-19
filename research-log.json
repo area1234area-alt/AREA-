@@ -1565,6 +1565,49 @@
         "https://mens-mg.com/newshop.php?p=1&pref=13",
         "https://rosespa-tokyo.com/"
       ]
+    },
+    {
+      "name": "Muse（ミューズ）",
+      "site": "bar",
+      "area": "歌舞伎町",
+      "genre": "ラウンジ",
+      "open": "2026-10-01",
+      "address": "東京都新宿区歌舞伎町2-21-4 三経ビル21 B1",
+      "status": "drafted",
+      "found": "2026-11-19",
+      "page": "kabuki-l01.html",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/m4/a10000/shop24640/",
+        "https://www.pokepara-tainew.jp/tokyo/m4/a10000/tg_19/",
+        "https://a-muse-lounge.jp/"
+      ],
+      "drafted": "2026-11-19"
+    },
+    {
+      "name": "VINTAGE CLUB PABLO（パブロ）",
+      "site": "bar",
+      "area": "歌舞伎町",
+      "genre": "ガールズラウンジ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-19",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/m4/a10000/tg_19/"
+      ],
+      "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "GIRLS BAR SIRIUS（シリウス）",
+      "site": "bar",
+      "area": "吉祥寺",
+      "genre": "ガールズバー",
+      "open": "2026-11-01",
+      "status": "listed",
+      "found": "2026-11-19",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/tg_19/"
+      ],
+      "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
     }
   ]
 }
