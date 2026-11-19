@@ -1509,6 +1509,62 @@
       "source": [
         "https://mens-mg.com/newshop.php?p=1"
       ]
+    },
+    {
+      "name": "Aroma Rize（アロマリゼ）",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-09",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=aromarize-sannomiya",
+      "source": [
+        "https://kobe.refle.info/newopen.html",
+        "https://kobe.refle.info/shop/aroma-rize/"
+      ]
+    },
+    {
+      "name": "RINGEL（リンジェル）",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-01",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=ringel-sannomiya",
+      "source": [
+        "https://kobe.refle.info/newopen.html",
+        "https://kobe.refle.info/shop/ringelmenseste/"
+      ]
+    },
+    {
+      "name": "Nia spa（ニアスパ）",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=niaspa-ikebukuro",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://niaspa.shop/"
+      ]
+    },
+    {
+      "name": "ROSÉ SPA 八王子ルーム（ロゼスパ）",
+      "area": "八王子",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-12-01",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=rosespa-hachioji",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://rosespa-tokyo.com/"
+      ]
     }
   ]
 }
