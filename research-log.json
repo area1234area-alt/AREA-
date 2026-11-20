@@ -1608,6 +1608,34 @@
         "https://www.pokepara-tainew.jp/tokyo/tg_19/"
       ],
       "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "おふくろさん 別館 練馬店（おふくろさん）",
+      "area": "練馬",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-23",
+      "found": "2026-11-20",
+      "status": "drafted",
+      "page": "review/shop.html?id=ofukurosan-nerima",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://ofukurosan-nerima.com/"
+      ]
+    },
+    {
+      "name": "いちゃZOOO 大井町ルーム（いちゃズー）",
+      "area": "大井町",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-16",
+      "found": "2026-11-20",
+      "status": "drafted",
+      "page": "review/shop.html?id=ichazooo-oimachi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://ichazooo.com/"
+      ]
     }
   ]
 }
