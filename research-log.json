@@ -1636,6 +1636,62 @@
         "https://mens-mg.com/newshop.php?p=1",
         "https://ichazooo.com/"
       ]
+    },
+    {
+      "name": "マーメイドSPA",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/51654/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "CHARMIA（シャルミア）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/51349/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "Elsia Spa（エルシアスパ）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/49273/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "First class〜Platinum〜 三宮店",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/50331/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
     }
   ]
 }
