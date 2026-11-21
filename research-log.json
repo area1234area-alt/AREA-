@@ -1705,6 +1705,20 @@
         "https://note.com/gomachan_0327/n/n7e21360d5ef7"
       ],
       "note": "検索結果のタイトルで新店舗として確認のみ。ページ取得ができず、住所・オープン日など未確認のためカード未作成"
+    },
+    {
+      "name": "2時間の癒し（にじかんのいやし）",
+      "site": "review",
+      "area": "心斎橋",
+      "genre": "メンズエステ",
+      "open": "2026-11-10",
+      "status": "drafted",
+      "found": "2026-11-22",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/nijikannoiyashi/"
+      ],
+      "note": "一覧ページの公開情報（最寄り駅・営業時間・オープン日）のみで作成。住所・女子給は未確認"
     }
   ]
 }
