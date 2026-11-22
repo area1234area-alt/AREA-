@@ -8,7 +8,7 @@ export default async () => {
     const idle = t - m.lastLogin;
     if (idle >= DELETE_DAYS * DAY) { await deleteMemberAll(m, "5日間ログインなし"); removed++; continue; }
     if (idle >= WARN_DAYS * DAY && !m.warnedAt) {
-      const ok = await linePush(m.sub, "【NIGHT STYLE】最後のログインから4日たちました。明日、会員データ（プロフィール・オファー履歴）が自動で削除されます。続けて使う場合は、マイページにログインしてください。\nhttps://lambent-lebkuchen-007367.netlify.app/member/");
+      const ok = await linePush(m.sub, "【NIGHT STYLE】最後のログインから4日たちました。明日、会員データ（プロフィール・オファー履歴）が自動で削除されます。続けて使う場合は、マイページにログインしてください。\nhttps://nightstyle-kyujin.netlify.app/member/");
       m.warnedAt = t; m.warnedByLine = ok; await putMember(m); warned++;
     }
   }
