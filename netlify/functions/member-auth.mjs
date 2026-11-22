@@ -3,7 +3,7 @@
 import { configured, sign, verify, cookies, setCookie, clearCookie, randomId, origin, getMember, putMember, err } from "../lib/member-core.mjs";
 
 const SESSION_DAYS = 30;
-const SAFE_NEXT = /^\/member\/(index\.html|shop\.html|admin\.html)?(#[a-z]*)?$/;
+const SAFE_NEXT = /^\/(member\/(index\.html|shop\.html|admin\.html)?|review\/admin\.html)(#[a-z]*)?$/;
 
 export default async (req) => {
   const url = new URL(req.url);

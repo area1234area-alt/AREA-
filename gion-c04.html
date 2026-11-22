@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script src="/ns-review.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>華小町（はなこまち）の求人｜祇園のキャバクラ｜NIGHT STYLE</title>
@@ -363,7 +364,7 @@ var SHOP = {
     <a href="column/gion-4shops.html" style="display:block;margin-top:8px;border:1px solid var(--line);background:var(--panel2);padding:14px 14px 12px"><span style="display:block;font-size:.7rem;color:var(--gold-lt);letter-spacing:.1em">COLUMN</span><b style="display:block;font-family:var(--font-serif);font-size:1rem;line-height:1.6;margin-top:2px;font-size:.9rem">祇園でキャバクラを探すなら知っておきたい4店</b><span style="display:block;font-size:.78rem;color:var(--ink-soft);margin-top:6px">コラムを読む ›</span></a>
   </section>
 
-  <section class="blk" id="voices"><h2 data-en="Voice">口コミ</h2><div id="rvList"><div class="rv-empty">口コミを読み込んでいます…</div></div><a class="rv-write" href="https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec">このお店の口コミを書く</a></section>
+  <section class="blk" id="voices"><h2 data-en="Voice">口コミ</h2><div id="rvList"><div class="rv-empty">口コミを読み込んでいます…</div></div><a class="rv-write" href="/review/write.html">このお店の口コミを書く</a></section>
 
   <section class="blk" id="group">
     <style>.grp-lead{font-size:.86rem;color:var(--ink-soft);margin:0 0 14px}.grp-area{border-top:1px solid var(--line);padding:12px 0 4px}.grp-area h3{margin:0 0 8px;font-family:var(--font-serif);font-size:.95rem;color:var(--gold-lt);letter-spacing:.08em}.grp-area ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.grp-area li>a,.grp-area li>span{display:block;height:100%;border:1px solid var(--line2);background:var(--panel);border-radius:8px;padding:10px 10px;font-family:var(--font-en);font-size:.95rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;line-height:1.35}.grp-area li>a{border-color:var(--line)}.grp-area small{display:block;font-family:var(--font-body);font-size:.68rem;color:var(--gold-lt);letter-spacing:0;margin-top:4px}.grp-area li.grp-me>span{border-color:var(--gold);background:var(--panel2)}</style>
@@ -517,7 +518,7 @@ var SHOP = {
   window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   // 口コミ：NIGHT STYLEに承認済みの口コミから、このお店のものを表示
-  var URL = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec?view=reviews";
+  var URL = "/review/write.html?view=reviews";
   var box = document.getElementById("rvList");
   var esc = function(s){ return String(s || "").replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
   var none = function(){ box.innerHTML = '<div class="rv-empty">まだ口コミはありません。<br>働いたことのある方は、ぜひ口コミを書いてください。</div>'; };

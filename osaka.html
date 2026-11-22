@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script src="/ns-review.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大阪府のナイトワーク求人｜体験入店・アルバイト情報｜NIGHT STYLE</title>
@@ -281,10 +282,10 @@ var OSAKA_PERKS = ["即日体験入店OK", "未経験歓迎", "日払いOK", "�
     <section class="sec">
       <h2 class="sec-h"><small>Voice</small>大阪府の最新在籍キャスト口コミ</h2>
       <div class="hscroll" id="rvCast"><div class="rv-empty">口コミを読み込んでいます…</div></div>
-      <a class="rv-write" href="https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec">口コミを書く</a>
+      <a class="rv-write" href="/review/write.html">口コミを書く</a>
     </section>
 
-    <div class="sec"><a href="https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec" class="ph wide-banner" data-img="reviewBanner" style="display:grid">口コミ投稿のご案内バナー（準備中）</a></div>
+    <div class="sec"><a href="/review/write.html" class="ph wide-banner" data-img="reviewBanner" style="display:grid">口コミ投稿のご案内バナー（準備中）</a></div>
 
     <!-- 求人一覧 -->
     <section class="sec" id="jobList">
@@ -480,7 +481,7 @@ var OSAKA_PERKS = ["即日体験入店OK", "未経験歓迎", "日払いOK", "�
       (r.good ? '<p>' + esc(r.good) + '</p>' : r.bad ? '<p>' + esc(r.bad) + '</p>' : '') +
       '<div class="shop">' + esc(areaShopName(r.shop)) + '（' + esc(r.area) + (r.genre ? ' ／ ' + esc(r.genre) : '') + '）</div></div>';
   };
-  var URL = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec?view=reviews";
+  var URL = "/review/write.html?view=reviews";
   var noneMsg = '<div class="rv-empty">まだ口コミはありません。</div>';
   render();
   fetch(URL).then(function(r){ return r.json(); }).then(function(d){

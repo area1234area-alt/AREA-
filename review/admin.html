@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>口コミの承認｜NIGHT STYLE 管理</title>
+<link rel="stylesheet" href="/site-bg.css">
+<style>
+:root{--ink:#46405A;--soft:#756E88;--dim:#9C96AC;--pink:#E8759D;--pink-bg:#FFF5F9;--lav:#8A73D1;--lav-bg:#F7F4FF;--line:#EEE6F4}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Noto Sans JP','Hiragino Sans',sans-serif;color:var(--ink);line-height:1.7}
+main{max-width:760px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.3rem;margin:0 0 4px}
+.sub{font-size:.84rem;color:var(--soft);margin:0 0 14px}
+.tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:.84rem;font-weight:700;color:var(--soft);cursor:pointer}
+.tabs button.on{background:var(--pink);border-color:var(--pink);color:#fff}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin-bottom:12px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.8rem;color:var(--soft)}
+.top b{color:var(--ink);font-size:1rem}
+.st{font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 10px}
+.st.pending{background:#FFF4E0;color:#A26A12}.st.approved{background:#E6F6EF;color:#22795A}.st.hidden{background:#EEE;color:#777}
+.meta{font-size:.8rem;color:var(--soft);margin:6px 0}
+.meta span{display:inline-block;background:var(--lav-bg);border-radius:8px;padding:0 8px;margin:0 4px 4px 0}
+p{margin:6px 0;font-size:.9rem;white-space:pre-wrap}
+p small{display:block;font-size:.72rem;font-weight:700;color:var(--lav)}
+.acts{display:flex;gap:8px;margin-top:10px}
+.acts button{border:0;border-radius:999px;padding:8px 16px;font:inherit;font-size:.84rem;font-weight:700;cursor:pointer}
+.ok{background:linear-gradient(135deg,#F7B0C9,#C9B6F2);color:var(--ink)}
+.ng{background:#F1EEF5;color:var(--soft)}
+.del{background:transparent;color:#C9485B;margin-left:auto}
+.empty,.login{text-align:center;color:var(--soft);padding:30px 10px}
+.login a{display:inline-block;margin-top:10px;background:#06C755;color:#fff;font-weight:700;border-radius:999px;padding:11px 22px;text-decoration:none}
+</style>
+<link rel="stylesheet" href="/ns-theme.css">
+</head>
+<body>
+<main>
+  <h1>口コミの承認</h1>
+  <p class="sub">NIGHT STYLE の投稿フォームから届いた口コミです。「掲載する」を押したものだけサイトに出ます。</p>
+  <div class="tabs" id="tabs">
+    <button data-s="pending" class="on">承認待ち</button><button data-s="approved">掲載中</button><button data-s="hidden">掲載しない</button><button data-s="all">すべて</button>
+  </div>
+  <div id="list"><div class="empty">読み込み中…</div></div>
+</main>
+<script>
+(function(){
+  var rows = [], tab = "pending", $ = function(id){ return document.getElementById(id); };
+  var esc = function(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); };
+  var LBL = { pending: "承認待ち", approved: "掲載中", hidden: "掲載しない" };
+  function when(t){ var d = new Date(t); return d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate() + " " + d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0"); }
+  function render(){
+    var list = rows.filter(function(r){ return tab === "all" || r.status === tab; });
+    [].forEach.call($("tabs").children, function(b){
+      var n = b.dataset.s === "all" ? rows.length : rows.filter(function(r){ return r.status === b.dataset.s; }).length;
+      b.textContent = (b.dataset.s === "all" ? "すべて" : LBL[b.dataset.s]) + "（" + n + "）";
+      b.classList.toggle("on", b.dataset.s === tab);
+    });
+    if (!list.length) { $("list").innerHTML = '<div class="empty">ここに表示する口コミはありません</div>'; return; }
+    $("list").innerHTML = list.map(function(r){
+      var meta = [r.genre, r.area, r.period ? "働いた時期 " + r.period : "", r.hours ? r.hours + "時間" : "", r.daily ? Number(r.daily).toLocaleString("ja-JP") + "円" : "",
+        r.overall ? "満足度 " + r.overall : "", r.age, r.height && r.weight ? "スペック " + r.height + "-" + r.weight : ""].filter(Boolean);
+      return '<div class="card"><div class="top"><b>' + esc(r.shop) + '</b><span>投稿ID ' + esc(r.postId) + '・' + when(r.createdAt) + ' <span class="st ' + r.status + '">' + LBL[r.status] + '</span></span></div>' +
+        '<div class="meta">' + meta.map(function(m){ return '<span>' + esc(m) + '</span>'; }).join("") + '</div>' +
+        (r.good ? '<p><small>良かった点</small>' + esc(r.good) + '</p>' : '') + (r.bad ? '<p><small>気になった点</small>' + esc(r.bad) + '</p>' : '') +
+        '<div class="acts">' + (r.status !== "approved" ? '<button class="ok" data-a="approve" data-id="' + esc(r.id) + '">掲載する</button>' : '') +
+        (r.status !== "hidden" ? '<button class="ng" data-a="hide" data-id="' + esc(r.id) + '">' + (r.status === "approved" ? "掲載をやめる" : "掲載しない") + '</button>' : '') +
+        '<button class="del" data-a="delete" data-id="' + esc(r.id) + '">削除</button></div></div>';
+    }).join("");
+  }
+  function load(){
+    fetch("/api/ns-review/admin").then(function(r){
+      if (r.status === 401) { $("list").innerHTML = '<div class="login">管理者のLINEでログインしてください<br><a href="/api/auth/line/start?next=/review/admin.html">LINEでログイン</a></div>'; return null; }
+      if (r.status === 403) { $("list").innerHTML = '<div class="login">このLINEアカウントには管理の権限がありません</div>'; return null; }
+      return r.json();
+    }).then(function(j){ if (j) { rows = j.rows || []; render(); } })
+      .catch(function(){ $("list").innerHTML = '<div class="empty">読み込めませんでした。時間をおいて再読み込みしてください</div>'; });
+  }
+  $("tabs").onclick = function(e){ if (e.target.dataset.s) { tab = e.target.dataset.s; render(); } };
+  $("list").onclick = function(e){
+    var b = e.target.closest("button[data-a]"); if (!b) return;
+    if (b.dataset.a === "delete" && !confirm("この口コミを削除します。元に戻せません。よろしいですか？")) return;
+    b.disabled = true;
+    fetch("/api/ns-review/admin", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ id: b.dataset.id, action: b.dataset.a }) })
+      .then(function(r){ return r.json(); }).then(load).catch(function(){ b.disabled = false; alert("うまくいきませんでした。もう一度お試しください"); });
+  };
+  load();
+})();
+</script>
+</body>
+</html>

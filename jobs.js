@@ -229,7 +229,7 @@ window.areaInfo = function (key) {
 /* ===== 口コミ（飲み屋）共通 =====
    口コミ台帳から承認済みの口コミを読み、求人の reviewKey（店名の言い方を | で区切ったもの）で店ごとに振り分ける。
    口コミページは kuchikomi.html?u=（求人ページのファイル名） で開く */
-window.AREA_REVIEW_API = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec";
+window.AREA_REVIEW_API = "/review/write.html";
 window.areaReviews = (function () {
   var cache = null;
   var keyOf = function (j) {

@@ -8,3 +8,8 @@ Area とは更新を共有しない（運営する人が別のため）。
 - 共有ボタン：全ページ（share.js）。LINE／X／Threads／Facebook／リンクコピー
 - Area から外したもの：「遊ぶ」（asobu/・来店デモ・紹介ID）、入口ページ（gate）、店舗向け掲載案内（keisai）、スキマ・派遣枠（sukima）
 - Area のロゴ入り画像（トップのヒーロー、口コミ側のヒーロー、オファー機能のバナー）は非表示。NIGHT STYLE 用の画像ができたら差し替える
+
+## 口コミ（2026-11-22〜）
+- 投稿は NIGHT STYLE 専用フォーム `/review/write.html`（年代・スペック＝身長-体重 は任意）。保存先は Netlify Blobs の ns-reviews（`netlify/functions/ns-review.mjs`）
+- 承認は `/review/admin.html`（管理者のLINEでログイン）。「掲載する」を押したものだけ表示
+- 表示は Area で承認済みの口コミ（Googleのフォーム側）と NIGHT STYLE の口コミを合わせて出す（`ns-review.js`）

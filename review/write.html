@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script src="/ns-review.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>口コミを書く｜NIGHT STYLE REVIEW</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site-bg.css">
+<style>
+:root{--ink:#46405A;--soft:#756E88;--dim:#9C96AC;--pink:#E8759D;--pink-deep:#D96690;--pink-bg:#FFF5F9;--lav:#8A73D1;--lav-bg:#F7F4FF;--line:#EEE6F4;--err:#C9485B}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Noto Sans JP','Hiragino Sans',sans-serif;color:var(--ink);line-height:1.8;-webkit-text-size-adjust:100%}
+.head{display:flex;align-items:center;justify-content:space-between;max-width:640px;margin:0 auto;padding:14px 16px}
+.logo{font-family:'Quicksand','Zen Maru Gothic',sans-serif;font-weight:700;letter-spacing:.06em;color:var(--pink-deep);text-decoration:none;font-size:1.15rem}
+.logo small{color:var(--lav);font-size:.6rem;letter-spacing:.14em;margin-left:4px}
+.back{font-size:.8rem;color:var(--soft)}
+main{max-width:640px;margin:0 auto;padding:4px 16px 60px}
+h1{font-family:'Zen Maru Gothic',sans-serif;font-size:1.4rem;margin:8px 0 4px;letter-spacing:.04em}
+.lead{font-size:.86rem;color:var(--soft);margin:0 0 18px}
+form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:6px 18px 20px;box-shadow:0 10px 28px rgba(200,120,170,.10)}
+fieldset{border:0;margin:0;padding:16px 0;border-bottom:1px dashed var(--line)}
+fieldset:last-of-type{border-bottom:0}
+legend{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:1rem;padding:0;margin-bottom:6px}
+legend .opt,.lbl .opt{display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:.68rem;font-weight:700;color:var(--lav);background:var(--lav-bg);border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px}
+.req{display:inline-block;font-size:.68rem;font-weight:700;color:#fff;background:var(--pink);border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px}
+.lbl{display:block;font-size:.84rem;font-weight:700;margin:12px 0 4px}
+.hint{font-size:.76rem;color:var(--dim);margin:2px 0 0}
+input[type=text],input[type=number],input[type=month],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--pink-bg);border:1.5px solid transparent;border-radius:14px;padding:11px 14px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#F3B3CB;background:#fff}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.unit{position:relative}
+.unit input{padding-right:44px}
+.unit span{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:.82rem;color:var(--dim);pointer-events:none}
+.spec-prev{margin-top:8px;font-size:.84rem;color:var(--soft)}
+.spec-prev b{color:var(--pink-deep);font-family:'Quicksand',sans-serif;font-size:1.05rem;letter-spacing:.04em}
+.stars{display:flex;gap:6px}
+.stars label{cursor:pointer}
+.stars input{position:absolute;opacity:0;pointer-events:none}
+.stars span{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--pink-bg);font-size:1.3rem;color:#E6D7E2}
+.stars input:checked ~ span,.stars label.on span{color:#F0A33C;background:#FFF4E0}
+.stars input:focus-visible ~ span{outline:3px solid var(--lav);outline-offset:2px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:.84rem;margin-top:6px}
+.agree input{width:20px;height:20px;margin-top:3px;accent-color:var(--pink-deep);flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:15px;font:inherit;font-weight:700;font-size:1rem;letter-spacing:.06em;color:var(--ink);background:linear-gradient(135deg,#F7B0C9,#C9B6F2);cursor:pointer;margin-top:18px}
+.btn:disabled{opacity:.6;cursor:default}
+.btn:focus-visible{outline:3px solid var(--lav);outline-offset:3px}
+.msg{margin-top:12px;font-size:.86rem;font-weight:700;color:var(--err)}
+.done{text-align:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 18px}
+.done h2{font-family:'Zen Maru Gothic',sans-serif;margin:0 0 6px;font-size:1.25rem}
+.done .pid{display:inline-block;margin:12px 0;font-family:'Quicksand',sans-serif;font-weight:700;font-size:1.8rem;letter-spacing:.14em;color:var(--pink-deep);background:var(--pink-bg);border-radius:14px;padding:6px 18px}
+.done p{font-size:.86rem;color:var(--soft);margin:6px 0}
+.done a{color:var(--lav);font-weight:700}
+.rules{font-size:.76rem;color:var(--dim);margin:14px 4px 0}
+</style>
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
+</head>
+<body>
+<header class="head">
+  <a class="logo" href="./">NIGHT STYLE<small>REVIEW</small></a>
+  <a class="back" href="javascript:history.back()">← もどる</a>
+</header>
+<main>
+  <h1>口コミを書く</h1>
+  <p class="lead">働いたお店の、良かったところも気になったところも、そのまま教えてください。運営が内容を確認してから掲載します。名前や連絡先は載りません。</p>
+
+  <form id="f" novalidate>
+    <fieldset>
+      <legend>お店のこと</legend>
+      <label class="lbl" for="shop">お店の名前<span class="req">必須</span></label>
+      <input type="text" id="shop" name="shop" maxlength="60" autocomplete="off" required>
+      <div class="row2">
+        <div><label class="lbl" for="area">エリア</label><input type="text" id="area" name="area" maxlength="40" placeholder="例）梅田"></div>
+        <div><label class="lbl" for="genre">業種<span class="req">必須</span></label>
+          <select id="genre" name="genre" required><option value="">選んでください</option><option>デリヘル</option><option>ホテヘル</option><option>メンズエステ</option><option>セクキャバ</option><option>キャバクラ</option><option>ラウンジ</option><option>ガールズバー</option><option>スナック</option><option>その他</option></select></div>
+      </div>
+      <label class="lbl" for="period">働いた時期</label>
+      <input type="month" id="period" name="period">
+    </fieldset>
+
+    <fieldset>
+      <legend>お給料</legend>
+      <div class="row2">
+        <div><label class="lbl" for="hours">1日の勤務時間</label><div class="unit"><input type="number" id="hours" name="hours" inputmode="decimal" min="1" max="24" step="0.5"><span>時間</span></div></div>
+        <div><label class="lbl" for="daily">その日の日給</label><div class="unit"><input type="number" id="daily" name="daily" inputmode="numeric" min="1000" step="1000" placeholder="30000"><span>円</span></div></div>
+      </div>
+      <p class="hint">両方入れると、時給換算が口コミに表示されます。</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>口コミ</legend>
+      <span class="lbl" id="ovl">総合の満足度</span>
+      <div class="stars" role="radiogroup" aria-labelledby="ovl">
+        <label><input type="radio" name="overall" value="1"><span aria-label="1">★</span></label>
+        <label><input type="radio" name="overall" value="2"><span aria-label="2">★</span></label>
+        <label><input type="radio" name="overall" value="3"><span aria-label="3">★</span></label>
+        <label><input type="radio" name="overall" value="4"><span aria-label="4">★</span></label>
+        <label><input type="radio" name="overall" value="5"><span aria-label="5">★</span></label>
+      </div>
+      <label class="lbl" for="good">良かった点</label>
+      <textarea id="good" name="good" maxlength="1000" placeholder="お給料、待機、スタッフの対応、お客さんの層など"></textarea>
+      <label class="lbl" for="bad">気になった点</label>
+      <textarea id="bad" name="bad" maxlength="1000" placeholder="入る前に知っておきたかったことなど"></textarea>
+      <p class="hint">どちらか一方だけでも投稿できます。</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>あなたのこと<span class="opt">任意</span></legend>
+      <p class="hint" style="margin-top:0">入れると「どんな人が働いていたか」がわかり、読む人の参考になります。空のままでも投稿できます。</p>
+      <label class="lbl" for="age">年齢<span class="opt">任意</span></label>
+      <select id="age" name="age"><option value="">書かない</option><option>18〜19歳</option><option>20代前半</option><option>20代後半</option><option>30代前半</option><option>30代後半</option><option>40代以上</option></select>
+      <span class="lbl">スペック（身長・体重）<span class="opt">任意</span></span>
+      <div class="row2">
+        <div class="unit"><input type="number" id="height" name="height" inputmode="numeric" min="130" max="200" placeholder="身長" aria-label="身長（cm）"><span>cm</span></div>
+        <div class="unit"><input type="number" id="weight" name="weight" inputmode="numeric" min="30" max="150" placeholder="体重" aria-label="体重（kg）"><span>kg</span></div>
+      </div>
+      <p class="spec-prev" id="specPrev" hidden>口コミには <b id="specVal"></b> と表示されます</p>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true"><label>ウェブサイト<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <label class="agree"><input type="checkbox" id="agree" name="agree"><span>18歳以上です。実際に働いた体験をもとに書き、個人が特定できる内容（キャストやスタッフの実名など）は書きません。</span></label>
+    <button class="btn" type="submit" id="send">口コミを送る</button>
+    <div class="msg" id="msg" role="alert"></div>
+    <p class="rules">投稿は運営が確認してから掲載します。内容によっては掲載しないことがあります。</p>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <h2>口コミを受け付けました</h2>
+    <p>あなたの投稿ID</p>
+    <div class="pid" id="pid"></div>
+    <p>運営が確認したあと、サイトに掲載されます。<br>投稿IDは、問い合わせのときに使うのでメモしておいてください。</p>
+    <p style="margin-top:16px"><a href="./">口コミのトップへもどる</a></p>
+  </div>
+</main>
+<script>
+(function(){
+  var f = document.getElementById("f"), $ = function(id){ return document.getElementById(id); };
+  var q = new URLSearchParams(location.search);
+  if (q.get("shop")) $("shop").value = q.get("shop").slice(0, 60);
+  if (q.get("area")) $("area").value = q.get("area").slice(0, 40);
+
+  // 星：選んだ数まで色を付ける
+  var stars = f.querySelectorAll(".stars label");
+  [].forEach.call(stars, function(l, i){ l.querySelector("input").addEventListener("change", function(){
+    [].forEach.call(stars, function(x, k){ x.classList.toggle("on", k <= i); });
+  }); });
+
+  // スペックの見え方
+  function spec(){
+    var h = $("height").value.trim(), w = $("weight").value.trim();
+    $("specPrev").hidden = !(h && w);
+    $("specVal").textContent = "スペック " + h + "-" + w;
+  }
+  $("height").addEventListener("input", spec); $("weight").addEventListener("input", spec);
+
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var d = Object.fromEntries(new FormData(f).entries());
+    d.agree = $("agree").checked;
+    var m = $("msg"); m.textContent = "";
+    if (!d.shop.trim()) return (m.textContent = "お店の名前を入力してください", $("shop").focus());
+    if (!d.genre) return (m.textContent = "業種を選んでください", $("genre").focus());
+    if (!d.good.trim() && !d.bad.trim()) return (m.textContent = "良かった点か気になった点を書いてください", $("good").focus());
+    if (!!d.height !== !!d.weight) return (m.textContent = "スペックは身長と体重の両方を入れてください（どちらも空でもOKです）", $(d.height ? "weight" : "height").focus());
+    if (!d.agree) return (m.textContent = "18歳以上であることの確認にチェックを入れてください", $("agree").focus());
+    $("send").disabled = true; $("send").textContent = "送信中…";
+    fetch("/api/ns-review", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(d) })
+      .then(function(r){ return r.json().then(function(j){ if (!r.ok) throw new Error(j.error || "送信できませんでした"); return j; }); })
+      .then(function(j){ f.hidden = true; $("pid").textContent = j.postId; $("done").hidden = false; window.scrollTo(0, 0); })
+      .catch(function(x){ m.textContent = (x && x.message) || "送信できませんでした。時間をおいてもう一度お試しください"; $("send").disabled = false; $("send").textContent = "口コミを送る"; });
+  });
+})();
+</script>
+</body>
+</html>

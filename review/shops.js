@@ -972,7 +972,7 @@ window.RV_RANK = [
 ];
 
 /* 口コミの読み込み先（NIGHT STYLEの口コミ台帳と同じ） */
-window.RV_API = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec";
+window.RV_API = "/review/write.html";
 
 /* ---- ここから下は共通の部品（ふだんは触らなくてOK） ---- */
 window.RV = (function () {

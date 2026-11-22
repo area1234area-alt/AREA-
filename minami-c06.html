@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script src="/ns-review.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OPUS（オーパス） の求人｜心斎橋・ミナミのキャバクラ｜NIGHT STYLE</title>
@@ -432,7 +433,7 @@ var SHOP = {
   <section class="blk" id="voices">
     <h2 data-en="Voice">口コミ</h2>
     <div id="rvList"><div class="rv-empty">口コミを読み込んでいます…</div></div>
-    <a class="rv-write" href="https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec">このお店の口コミを書く</a>
+    <a class="rv-write" href="/review/write.html">このお店の口コミを書く</a>
   </section>
 
   <!-- お店情報 -->
@@ -579,7 +580,7 @@ var SHOP = {
   window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   // 口コミ：NIGHT STYLEに承認済みの口コミから、このお店のものを表示
-  var URL = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec?view=reviews";
+  var URL = "/review/write.html?view=reviews";
   var box = document.getElementById("rvList");
   var esc = function(s){ return String(s || "").replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
   var none = function(){ box.innerHTML = '<div class="rv-empty">まだ口コミはありません。<br>働いたことのある方は、ぜひ口コミを書いてください。</div>'; };

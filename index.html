@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script src="/ns-review.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NIGHT STYLE｜関西・関東のナイトワーク・体験入店求人</title>
@@ -1286,7 +1287,7 @@
       <p class="voice-note" id="voiceNote">※上記はサービスイメージのサンプルです。</p>
       <div class="voice-actions">
         <button type="button" class="btn btn-secondary" id="voiceMore" hidden>口コミをもっと見る</button>
-        <a class="btn btn-primary" id="voiceWrite" href="https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec" target="_blank" rel="noopener noreferrer">口コミを書く</a>
+        <a class="btn btn-primary" id="voiceWrite" href="/review/write.html" target="_blank" rel="noopener noreferrer">口コミを書く</a>
       </div>
     </div>
   </section>
@@ -1404,7 +1405,7 @@
 /* 口コミ：管理画面で「承認」したものだけを、新しい順に表示する。
    読み込めない間・承認済みが0件の間は、上の見本をそのまま出す */
 (function(){
-  var REVIEW_URL = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec";
+  var REVIEW_URL = "/review/write.html";
   var STEP = 6, shown = STEP, list = [];
   var grid = document.getElementById("voiceGrid"), note = document.getElementById("voiceNote"), more = document.getElementById("voiceMore");
   if (!grid) return;
