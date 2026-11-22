@@ -4,35 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>条件マッチ サンプル｜Area REVIEW</title>
+<title>条件マッチ サンプル｜NIGHT STYLE REVIEW</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  body{background:#0B0A0D;color:#F4EFE6}
+  body{background:#FFFFFF;color:#46405A}
   .wrap{max-width:760px}
   .intro{padding:22px 0 8px}
   .intro h1{font-family:var(--serif);font-size:1.3rem;letter-spacing:.06em;margin:0 0 6px}
-  .intro p{font-size:.8rem;color:#B7AEA6;margin:0}
+  .intro p{font-size:.8rem;color:#756E88;margin:0}
   .ptabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:16px 0 14px}
-  .ptabs button{background:#141117;border:1px solid #3A3442;border-radius:10px;color:#F4EFE6;padding:10px 4px;font-weight:700;font-size:.82rem;cursor:pointer;line-height:1.4}
-  .ptabs button small{display:block;font-weight:500;font-size:.64rem;color:#8C847D}
-  .ptabs button[aria-selected="true"]{background:var(--goldgrad);color:#1A1406;border-color:transparent}
+  .ptabs button{background:#FFF5F9;border:1px solid #E9E2F2;border-radius:10px;color:#46405A;padding:10px 4px;font-weight:700;font-size:.82rem;cursor:pointer;line-height:1.4}
+  .ptabs button small{display:block;font-weight:500;font-size:.64rem;color:#9C96AC}
+  .ptabs button[aria-selected="true"]{background:var(--goldgrad);color:#46405A;border-color:transparent}
   .ptabs button[aria-selected="true"] small{color:#4A3A12}
-  .pane{background:#141117;border:1px solid rgba(201,162,39,.45);border-radius:12px;padding:16px 14px}
+  .pane{background:#FFF5F9;border:1px solid rgba(224,127,163,.45);border-radius:12px;padding:16px 14px}
   .pane h2{margin:0 0 4px;font-family:var(--serif);font-size:1.05rem}
-  .pane .what{font-size:.74rem;color:#B7AEA6;margin:0 0 14px}
+  .pane .what{font-size:.74rem;color:#756E88;margin:0 0 14px}
 
   /* A：チャット */
   .chat{display:flex;flex-direction:column;gap:10px;max-height:460px;overflow-y:auto;padding:4px 2px 8px}
   .msg{max-width:84%;padding:10px 12px;border-radius:14px;font-size:.86rem;line-height:1.6}
-  .msg.bot{background:#221D27;border:1px solid #3A3442;align-self:flex-start;border-top-left-radius:4px}
-  .msg.me{background:#E0527F;color:#fff;align-self:flex-end;border-top-right-radius:4px}
+  .msg.bot{background:#F7F4FF;border:1px solid #E9E2F2;align-self:flex-start;border-top-left-radius:4px}
+  .msg.me{background:#E8759D;color:#fff;align-self:flex-end;border-top-right-radius:4px}
   .msg .bn{display:block;font-size:.66rem;color:#FFD84D;margin-bottom:2px;font-weight:700}
   .choices{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
   .choices button{background:transparent;border:1px solid var(--gold);color:var(--gold-lt);border-radius:999px;padding:7px 12px;font-size:.8rem;cursor:pointer}
-  .choices button.on{background:var(--gold);color:#1A1406}
+  .choices button.on{background:var(--gold);color:#46405A}
   .choices .go{background:var(--pink);border-color:var(--pink);color:#fff}
 
   /* B：フォーム */
@@ -42,34 +42,36 @@
 
   /* C：自由入力 */
   .ask{display:flex;gap:8px}
-  .ask textarea{flex:1;min-height:70px;border-radius:10px;border:1px solid #3A3442;background:#0F0D12;color:#F4EFE6;padding:10px;font:inherit;font-size:.86rem;resize:vertical}
+  .ask textarea{flex:1;min-height:70px;border-radius:10px;border:1px solid #E9E2F2;background:#FFF8FB;color:#46405A;padding:10px;font:inherit;font-size:.86rem;resize:vertical}
   .ask button{flex:none;width:76px;border:0;border-radius:10px;background:var(--pink);color:#fff;font-weight:700;cursor:pointer}
   .ex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
-  .ex button{background:#221D27;border:1px solid #3A3442;color:#CFC6BD;border-radius:999px;padding:5px 10px;font-size:.72rem;cursor:pointer}
-  .understood{margin:12px 0 0;font-size:.76rem;color:#B7AEA6}
-  .understood b{display:inline-block;background:#221D27;border:1px solid #3A3442;color:#FFD84D;border-radius:6px;padding:1px 8px;margin:2px 4px 2px 0;font-weight:500}
+  .ex button{background:#F7F4FF;border:1px solid #E9E2F2;color:#756E88;border-radius:999px;padding:5px 10px;font-size:.72rem;cursor:pointer}
+  .understood{margin:12px 0 0;font-size:.76rem;color:#756E88}
+  .understood b{display:inline-block;background:#F7F4FF;border:1px solid #E9E2F2;color:#FFD84D;border-radius:6px;padding:1px 8px;margin:2px 4px 2px 0;font-weight:500}
 
   /* 結果カード（共通） */
   .res{margin-top:14px}
-  .res-h{font-size:.78rem;color:#B7AEA6;margin:0 0 8px}
-  .rcard{display:block;background:#0F0D12;border:1px solid rgba(201,162,39,.5);border-radius:12px;padding:12px;margin-bottom:10px;color:inherit}
+  .res-h{font-size:.78rem;color:#756E88;margin:0 0 8px}
+  .rcard{display:block;background:#FFF8FB;border:1px solid rgba(224,127,163,.5);border-radius:12px;padding:12px;margin-bottom:10px;color:inherit}
   .rcard .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
   .rcard h3{margin:0;font-family:var(--serif);font-size:1rem}
-  .rcard .sub{font-size:.7rem;color:#8C847D}
-  .score{flex:none;text-align:center;font-size:.62rem;color:#B7AEA6}
-  .score b{display:block;font-family:var(--en);font-size:1.3rem;color:#F7A9C4;line-height:1}
+  .rcard .sub{font-size:.7rem;color:#9C96AC}
+  .score{flex:none;text-align:center;font-size:.62rem;color:#756E88}
+  .score b{display:block;font-family:var(--en);font-size:1.3rem;color:#E07FA3;line-height:1}
   .rcard .pay{margin:6px 0 0;font-size:.82rem}
   .hits{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-  .hits span{font-size:.66rem;border-radius:6px;padding:1px 7px;background:rgba(224,82,127,.15);border:1px solid rgba(224,82,127,.5);color:#F7A9C4}
-  .hits span.miss{background:transparent;border-color:#3A3442;color:#6E6773;text-decoration:line-through}
-  .disc{margin:10px 0 0;font-size:.68rem;color:#8C847D;line-height:1.7}
-  .none{font-size:.82rem;color:#B7AEA6}
+  .hits span{font-size:.66rem;border-radius:6px;padding:1px 7px;background:rgba(224,82,127,.15);border:1px solid rgba(224,82,127,.5);color:#E07FA3}
+  .hits span.miss{background:transparent;border-color:#E9E2F2;color:#6E6773;text-decoration:line-through}
+  .disc{margin:10px 0 0;font-size:.68rem;color:#9C96AC;line-height:1.7}
+  .none{font-size:.82rem;color:#756E88}
 </style>
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
 </head>
 <body>
 <div class="beta">サンプル画面です（本番には出していません）。お店の条件は、今掲載しているデータから自動で読み取っています。</div>
 <header class="head"><div class="wrap">
-  <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
+  <a href="./" class="logo"><b>NIGHT STYLE</b><small>REVIEW</small></a>
   <nav><a href="./">トップへ</a></nav>
 </div></header>
 
@@ -151,13 +153,13 @@
         '<div class="score"><b>' + r.pct + '%</b>希望に近い</div></div>' +
         '<p class="pay">' + esc(s.pay || "女子給は確認中") + '</p>' +
         (r.hits.length ? '<div class="hits">' + r.hits.map(function(h){ return '<span' + (h[1] ? '' : ' class="miss"') + '>' + esc(label(h[0])) + '</span>'; }).join("") + '</div>' : '') + '</a>';
-    }).join("") + '<p class="disc">※条件が近い掲載店を表示しているだけで、Areaはお仕事の紹介・あっせんを行いません。応募は各お店に直接ご連絡ください。入力した条件は保存しません。「確認中」の条件は、一致しないものとして計算しています。</p>';
+    }).join("") + '<p class="disc">※条件が近い掲載店を表示しているだけで、NIGHT STYLEはお仕事の紹介・あっせんを行いません。応募は各お店に直接ご連絡ください。入力した条件は保存しません。「確認中」の条件は、一致しないものとして計算しています。</p>';
   }
 
   /* ---- A：チャット型 ---- */
   (function(){
     var chat = $("chat"), want = { feats: [] }, step = 0;
-    var bot = function(t){ chat.insertAdjacentHTML("beforeend", '<div class="msg bot"><span class="bn">Area ナビ</span>' + t + '</div>'); chat.scrollTop = chat.scrollHeight; };
+    var bot = function(t){ chat.insertAdjacentHTML("beforeend", '<div class="msg bot"><span class="bn">NIGHT STYLE ナビ</span>' + t + '</div>'); chat.scrollTop = chat.scrollHeight; };
     var me = function(t){ chat.insertAdjacentHTML("beforeend", '<div class="msg me">' + esc(t) + '</div>'); chat.scrollTop = chat.scrollHeight; };
     var ask = function(q, opts, multi, done){
       var id = "c" + Math.random().toString(36).slice(2);

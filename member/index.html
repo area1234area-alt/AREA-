@@ -4,17 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>マイページ｜Area 会員</title>
+<title>マイページ｜NIGHT STYLE 会員</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="member.css">
 <link rel="stylesheet" href="/site-bg.css">
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
 </head>
 <body>
 <div class="demo-bar hidden" id="prepBar">会員機能はただいま準備中です。もうしばらくお待ちください。</div>
 <header class="head">
-  <a class="logo" href="../index.html">Area</a>
+  <a class="logo" href="../index.html">NIGHT STYLE</a>
   <nav id="nav"></nav>
 </header>
 
@@ -23,7 +25,7 @@
 <!-- ===== ログイン・会員登録 ===== -->
 <section id="vAuth" class="hidden">
   <div class="en">Member</div>
-  <h1 class="ttl">Area 会員</h1>
+  <h1 class="ttl">NIGHT STYLE 会員</h1>
   <div style="margin:10px 0 14px"><picture><source media="(max-width:820px)" srcset="../img/offer/offer-catch-800.jpg"><img src="../img/offer/offer-catch.jpg" alt="プロフィールを登録すると、掲載中のお店からお仕事のオファーが届きます。まずは無料で登録" width="1536" height="1024" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></div>
   <p class="lead">プロフィールを登録すると、掲載中のお店から<br>お仕事のお誘い（オファー）が届きます。</p>
   <div class="steps-mini">
@@ -35,7 +37,7 @@
     <p class="note">パスワードはいりません。LINEのアカウントでそのままログインできます。<br>LINEの名前やトーク内容がお店に見えることはありません。</p>
     <div id="loginMsg"></div>
     <a class="btn line" id="lineBtn" href="/api/auth/line/start?next=/member/">LINEでログイン</a>
-    <p class="note" style="margin-top:10px">はじめての方も、このボタンから登録できます。ログインすると、削除前日のお知らせをAreaの公式LINEから受け取れます。</p>
+    <p class="note" style="margin-top:10px">はじめての方も、このボタンから登録できます。ログインすると、削除前日のお知らせをNIGHT STYLEの公式LINEから受け取れます。</p>
   </div>
 
   <form id="fReg" class="card hidden">
@@ -149,7 +151,7 @@
 <section id="guide" class="guide">
   <div class="en">How it works</div>
   <h2 class="gttl">オファー機能とは？</h2>
-  <div style="margin:12px 0 4px"><picture><source media="(max-width:820px)" srcset="../img/offer/offer-steps-800.jpg"><img src="../img/offer/offer-steps.jpg" alt="Areaのオファー機能：無料で登録→プロフィール公開→お店からオファーが届く→気になったらお店に応募" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></div>
+  <div style="margin:12px 0 4px"><picture><source media="(max-width:820px)" srcset="../img/offer/offer-steps-800.jpg"><img src="../img/offer/offer-steps.jpg" alt="NIGHT STYLEのオファー機能：無料で登録→プロフィール公開→お店からオファーが届く→気になったらお店に応募" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></div>
   <p class="lead">自分から探さなくても、あなたのプロフィールを見たお店から<br>「うちで働きませんか？」とお誘いが届く仕組みです。</p>
 
   <div class="g-hero">
@@ -161,7 +163,7 @@
   <ol class="g-steps">
     <li><span>01</span><div><b>無料で会員登録</b><p>LINEでログインして、ユーザー名と生年月日を入れるだけ。料金は一切かかりません。</p></div></li>
     <li><span>02</span><div><b>プロフィールを公開</b><p>希望の勤務地・職種・時給・出勤時間、自己PRを入れます。くわしく書くほど、合うお店から届きやすくなります。</p></div></li>
-    <li><span>03</span><div><b>お店からオファーが届く</b><p>Areaに掲載中のお店が、あなたのプロフィールを見てお誘いを送ります。条件は、そのお店の求人ページと同じ内容です。</p></div></li>
+    <li><span>03</span><div><b>お店からオファーが届く</b><p>NIGHT STYLEに掲載中のお店が、あなたのプロフィールを見てお誘いを送ります。条件は、そのお店の求人ページと同じ内容です。</p></div></li>
     <li><span>04</span><div><b>気になったら、お店に直接応募</b><p>オファーから求人ページを開いて、お店に直接連絡します。返事をするかどうか、応募するかどうかは自由です。</p></div></li>
   </ol>
 
@@ -177,8 +179,8 @@
   <ul class="g-safe">
     <li><b>メールアドレスはお店に見えません。</b>生年月日も、お店には年齢だけを表示します。</li>
     <li><b>公開・非公開はいつでも切り替えOK。</b>非公開にすると、お店の検索に出なくなります。</li>
-    <li><b>オファーを送れるのは、Areaの掲載審査を通ったお店だけです。</b></li>
-    <li><b>5日間ログインがないと、アカウントは自動で削除されます。</b>プロフィール・SNS・オファー履歴も残りません。4日目にAreaの公式LINEでお知らせします。</li>
+    <li><b>オファーを送れるのは、NIGHT STYLEの掲載審査を通ったお店だけです。</b></li>
+    <li><b>5日間ログインがないと、アカウントは自動で削除されます。</b>プロフィール・SNS・オファー履歴も残りません。4日目にNIGHT STYLEの公式LINEでお知らせします。</li>
     <li><b>退会はマイページからすぐにでき、</b>その場で全データを削除します。</li>
     <li><b>18歳未満の方・高校生の方は登録できません。</b></li>
   </ul>
@@ -186,7 +188,7 @@
   <h3 class="g-h">よくある質問</h3>
   <div class="g-faq">
     <details><summary>オファーが届いたら、必ず面接に行かないといけませんか？</summary><p>いいえ。返事も応募も自由です。気になるお店だけ、求人ページからお店に連絡してください。</p></details>
-    <details><summary>Areaがお店を紹介してくれるのですか？</summary><p>Areaは求人広告の掲載サイトなので、お店の紹介や面接の調整はしていません。応募・面接・条件の相談は、あなたとお店で直接行ってください。</p></details>
+    <details><summary>NIGHT STYLEがお店を紹介してくれるのですか？</summary><p>NIGHT STYLEは求人広告の掲載サイトなので、お店の紹介や面接の調整はしていません。応募・面接・条件の相談は、あなたとお店で直接行ってください。</p></details>
     <details><summary>今働いているお店に知られませんか？</summary><p>心配なときは、プロフィールの「在籍店舗」を空欄にしたり、公開をオフにしたりできます。</p></details>
     <details><summary>オファーがなかなか届きません</summary><p>希望の勤務地・職種・自己PRをくわしく書くと届きやすくなります。こまめにログインしている人は、お店の画面で「24時間以内にログイン」と表示されます。</p></details>
     <details><summary>5日でアカウントが消えるのはなぜですか？</summary><p>個人情報をできるだけ長く持たないためです。使い続けたいときは、5日以内に一度ログインしてください。ログインするたびにカウントはリセットされます。</p></details>
@@ -197,10 +199,10 @@
 <section id="terms" class="card" style="margin-top:30px">
   <h2>利用規約・プライバシーポリシー（試作の要点）</h2>
   <p class="note" id="privacy">
-    ・Areaは求人広告の掲載サイトです。職業の紹介・あっせんは行いません。オファーへの返事・応募・面接・条件の相談は、会員とお店が直接行います。<br>
+    ・NIGHT STYLEは求人広告の掲載サイトです。職業の紹介・あっせんは行いません。オファーへの返事・応募・面接・条件の相談は、会員とお店が直接行います。<br>
     ・18歳未満の方、高校生の方は登録できません。<br>
-    ・プロフィールは、Areaに掲載中で審査を通ったお店だけが見られます。LINEのアカウント情報・メールアドレス・生年月日はお店に表示しません（年齢のみ表示）。<br>・会員情報は、Areaが利用するクラウドサービス（Netlify、米国）のサーバーに保存します。<br>
-    ・最終ログインから5日間ログインがない場合、プロフィール・SNS情報・オファー履歴をふくむアカウントを自動で削除します。4日目にAreaの公式LINEでお知らせします。削除したデータは元に戻せません。<br>
+    ・プロフィールは、NIGHT STYLEに掲載中で審査を通ったお店だけが見られます。LINEのアカウント情報・メールアドレス・生年月日はお店に表示しません（年齢のみ表示）。<br>・会員情報は、NIGHT STYLEが利用するクラウドサービス（Netlify、米国）のサーバーに保存します。<br>
+    ・最終ログインから5日間ログインがない場合、プロフィール・SNS情報・オファー履歴をふくむアカウントを自動で削除します。4日目にNIGHT STYLEの公式LINEでお知らせします。削除したデータは元に戻せません。<br>
     ・退会はマイページからいつでもでき、すぐに全データを削除します。
   </p>
 </section>

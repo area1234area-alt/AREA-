@@ -1,4 +1,4 @@
-/* Area 会員機能 — サーバー（/api/m/...）とのやりとり */
+/* NIGHT STYLE 会員機能 — サーバー（/api/m/...）とのやりとり */
 (function (w) {
   async function call(path, opt) {
     opt = opt || {};

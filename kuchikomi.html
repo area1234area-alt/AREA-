@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>口コミ｜Area</title>
+<title>口コミ｜NIGHT STYLE</title>
 <meta name="description" content="実際に働いた方の口コミ。良かった点・気になった点を読んでから、お店に直接応募できます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0B0A0D; --panel:#141117; --panel2:#1B171F; --line:rgba(201,162,39,.24); --line2:rgba(255,255,255,.08);
-    --ink:#F4EFE6; --soft:#B7AEA6; --dim:#8C847D; --gold:#C9A227; --gold-lt:#F1DA9C;
-    --goldgrad:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);
-    --serif:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
-    --en:'Cormorant Garamond','Times New Roman',serif;
+    --bg:#FFFFFF; --panel:#FFF5F9; --panel2:#F7F4FF; --line:rgba(224,127,163,.24); --line2:rgba(138,115,209,.14);
+    --ink:#46405A; --soft:#756E88; --dim:#9C96AC; --gold:#E07FA3; --gold-lt:#8A73D1;
+    --goldgrad:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);
+    --serif:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;
+    --en:'Quicksand','Times New Roman',serif;
     --body:'Noto Sans JP','Hiragino Sans',sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth;scroll-padding-top:70px}
-  body{margin:0;background:#050406;color:var(--ink);font-family:var(--body);line-height:1.85;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:#FDF6FA;color:var(--ink);font-family:var(--body);line-height:1.85;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   ul,ol{margin:0;padding:0;list-style:none}
   img{display:block;max-width:100%}
@@ -28,7 +28,7 @@
   .page{max-width:760px;margin:0 auto;background:var(--bg);box-shadow:0 0 0 1px var(--line2)}
   .gt{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  .beta{background:#000;color:var(--gold-lt);text-align:center;font-size:.68rem;letter-spacing:.08em;padding:6px 14px;border-bottom:1px solid var(--line)}
+  .beta{background:#FFFFFF;color:var(--gold-lt);text-align:center;font-size:.68rem;letter-spacing:.08em;padding:6px 14px;border-bottom:1px solid var(--line)}
   .head{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
   .logo{font-family:var(--en);font-weight:700;font-size:1.7rem;line-height:1;letter-spacing:.06em}
   .head nav{display:flex;gap:6px}
@@ -42,7 +42,7 @@
   .shortcuts a{font-size:.7rem;border:1px solid var(--line2);padding:3px 10px;color:var(--soft)}
 
   /* 見出し */
-  .hero{text-align:center;padding:30px 16px 22px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.22),transparent 70%)}
+  .hero{text-align:center;padding:30px 16px 22px;background:radial-gradient(ellipse at 50% 0%,rgba(224,127,163,.22),transparent 70%)}
   .hero .en{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.3em;font-size:.9rem;color:var(--gold)}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.35rem,5.6vw,1.9rem);letter-spacing:.1em;line-height:1.5;margin:6px 0 0}
   .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0}
@@ -61,8 +61,8 @@
   .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{border:1px solid var(--line);background:transparent;color:var(--gold-lt);padding:6px 12px;font-size:.8rem;cursor:pointer;letter-spacing:.04em}
   .chip small{color:var(--dim);margin-left:4px}
-  .chip[aria-pressed="true"]{background:var(--goldgrad);color:#1A1406;border-color:transparent}
-  .chip[aria-pressed="true"] small{color:#3A2E10}
+  .chip[aria-pressed="true"]{background:var(--goldgrad);color:#46405A;border-color:transparent}
+  .chip[aria-pressed="true"] small{color:#46405A}
   .chip.zero{color:var(--dim);border-color:var(--line2);cursor:default}
   .filter-label{font-size:.72rem;color:var(--gold);letter-spacing:.14em;margin:14px 0 8px}
   .filter-label:first-child{margin-top:0}
@@ -70,31 +70,31 @@
   .filter-now button{border:1px solid var(--line);background:transparent;padding:3px 10px;font-size:.72rem;color:var(--soft);cursor:pointer}
 
   /* ピックアップ */
-  .pick-wrap{background:radial-gradient(ellipse at 0% 0%,rgba(201,162,39,.16),transparent 60%),#100E12}
+  .pick-wrap{background:radial-gradient(ellipse at 0% 0%,rgba(224,127,163,.16),transparent 60%),#F7F4FF}
   .hscroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:16px;margin:0 -16px;padding:2px 16px 8px}
   .hscroll > *{scroll-snap-align:start;flex:0 0 80%}
   @media (min-width:600px){ .hscroll > *{flex-basis:46%} }
   .pick{display:block;border:1px solid var(--gold);background:var(--panel);position:relative}
-  .pick::after{content:"";position:absolute;inset:4px;border:1px solid rgba(201,162,39,.25);pointer-events:none}
+  .pick::after{content:"";position:absolute;inset:4px;border:1px solid rgba(224,127,163,.25);pointer-events:none}
   .pick .ph{aspect-ratio:16/9}
   .pick .body{padding:12px 14px 14px}
   .pick b{display:block;font-family:var(--serif);font-size:1.02rem;letter-spacing:.04em}
   .pick .meta{font-size:.72rem;color:var(--soft)}
-  .pick .catch{font-size:.78rem;margin:8px 0 0;padding-top:8px;border-top:1px solid var(--line2);color:#E6DFD5}
-  .pick .go{display:block;margin-top:10px;text-align:center;background:var(--goldgrad);color:#1A1406;font-family:var(--serif);font-weight:700;font-size:.84rem;letter-spacing:.16em;padding:8px}
+  .pick .catch{font-size:.78rem;margin:8px 0 0;padding-top:8px;border-top:1px solid var(--line2);color:#55506A}
+  .pick .go{display:block;margin-top:10px;text-align:center;background:var(--goldgrad);color:#46405A;font-family:var(--serif);font-weight:700;font-size:.84rem;letter-spacing:.16em;padding:8px}
   .pick-none{border:1px solid var(--line);padding:20px 14px;text-align:center;color:var(--soft);font-size:.84rem}
 
   /* 画像枠 */
-  .ph{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,rgba(201,162,39,.12),transparent 65%),linear-gradient(160deg,#1A161D,#0F0D11);display:grid;place-items:center;color:var(--dim);font-size:.7rem;letter-spacing:.1em}
+  .ph{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,rgba(224,127,163,.12),transparent 65%),linear-gradient(160deg,#FFEFF5,#F7F4FF);display:grid;place-items:center;color:var(--dim);font-size:.7rem;letter-spacing:.1em}
   .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .ph.logo img{object-fit:contain;background:#0B0A0D}
+  .ph.logo img{object-fit:contain;background:#FFFFFF}
 
   /* ランキング形式の一覧 */
   .rank{border:1px solid var(--line);background:var(--panel);margin-top:14px;position:relative}
-  .rank.featured{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,162,39,.25) inset}
-  .rank-top{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2);background:linear-gradient(90deg,rgba(201,162,39,.12),transparent 70%)}
-  .no{flex:0 0 auto;width:44px;height:44px;display:grid;place-items:center;font-family:var(--en);font-weight:700;font-size:1.25rem;color:#1A1406;background:var(--goldgrad);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
-  .rank:not(.featured) .no{background:#2A2530;color:var(--gold-lt)}
+  .rank.featured{border-color:var(--gold);box-shadow:0 0 0 1px rgba(224,127,163,.25) inset}
+  .rank-top{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line2);background:linear-gradient(90deg,rgba(224,127,163,.12),transparent 70%)}
+  .no{flex:0 0 auto;width:44px;height:44px;display:grid;place-items:center;font-family:var(--en);font-weight:700;font-size:1.25rem;color:#46405A;background:var(--goldgrad);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .rank:not(.featured) .no{background:#F7F4FF;color:var(--gold-lt)}
   .rank-name{min-width:0}
   .rank-name a,.rank-name span.n{font-family:var(--serif);font-weight:700;font-size:1.06rem;letter-spacing:.04em;line-height:1.35;display:block}
   .rank-name a{text-decoration:underline;text-decoration-color:rgba(241,218,156,.4);text-underline-offset:4px}
@@ -103,12 +103,12 @@
   .rank-body .ph{aspect-ratio:4/3;border:1px solid var(--line)}
   .info li{position:relative;padding-left:3.6em;font-size:.78rem;line-height:1.55;margin-bottom:6px}
   .info li i{position:absolute;left:0;top:0;font-style:normal;color:var(--gold);font-size:.7rem;letter-spacing:.1em;font-family:var(--serif)}
-  .rank-desc{padding:0 14px;font-size:.82rem;color:#E6DFD5}
+  .rank-desc{padding:0 14px;font-size:.82rem;color:#55506A}
   .rank-tags{display:flex;flex-wrap:wrap;gap:5px;padding:10px 14px 0}
   .rank-tags span{font-size:.66rem;border:1px solid var(--line);color:var(--gold-lt);padding:1px 8px}
   .rank-acts{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:12px 14px 14px}
   .rank-acts a,.rank-acts span{text-align:center;padding:10px 6px;font-size:.82rem;letter-spacing:.08em}
-  .rank-acts .main{background:var(--goldgrad);color:#1A1406;font-family:var(--serif);font-weight:700}
+  .rank-acts .main{background:var(--goldgrad);color:#46405A;font-family:var(--serif);font-weight:700}
   .rank-acts .tel{border:1px solid var(--gold);color:var(--gold-lt)}
   .rank-acts .off{border:1px solid var(--line2);color:var(--dim)}
   .empty{border:1px solid var(--line);padding:24px 14px;text-align:center;color:var(--soft);font-size:.86rem;margin-top:14px}
@@ -132,20 +132,20 @@
   .dir{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
   .dir a,.dir span{display:flex;flex-direction:column;justify-content:center;min-height:52px;text-align:center;padding:6px 4px;font-family:var(--serif);font-weight:700;font-size:.84rem;line-height:1.35;letter-spacing:.04em;border:1px solid var(--gold);color:var(--gold-lt)}
   .dir a small{font-family:var(--body);font-weight:400;font-size:.62rem;color:var(--soft)}
-  .dir a.cur{background:var(--goldgrad);color:#1A1406;border-color:transparent}
-  .dir a.cur small{color:#3A2E10}
+  .dir a.cur{background:var(--goldgrad);color:#46405A;border-color:transparent}
+  .dir a.cur small{color:#46405A}
   .dir span{border-color:var(--line2);color:var(--dim);font-weight:600}
   .dir span small{font-family:var(--body);font-size:.6rem;letter-spacing:.08em}
 
   .notes{font-size:.74rem;color:var(--dim)}
   .notes li{padding-left:1.1em;position:relative;margin:3px 0}
   .notes li::before{content:"※";position:absolute;left:0}
-  footer{background:#000;border-top:1px solid var(--line);padding:22px 16px;text-align:center;font-size:.74rem;color:var(--dim)}
+  footer{background:#FFFFFF;border-top:1px solid var(--line);padding:22px 16px;text-align:center;font-size:.74rem;color:var(--dim)}
   footer a{color:var(--soft);margin:0 8px}
   footer p{margin:8px 0 0;font-family:var(--en);letter-spacing:.14em}
 
   /* ===== 口コミページ ===== */
-  .shop-h{padding:22px 16px 18px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.2),transparent 70%)}
+  .shop-h{padding:22px 16px 18px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(224,127,163,.2),transparent 70%)}
   .shop-h .en{font-family:var(--en);font-style:italic;font-weight:600;letter-spacing:.3em;font-size:.86rem;color:var(--gold)}
   .shop-h h1{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,5.4vw,1.8rem);letter-spacing:.06em;line-height:1.45;margin:6px 0 4px}
   .shop-h .meta{font-size:.78rem;color:var(--soft)}
@@ -165,8 +165,8 @@
   .rvc .lb.bad{border-color:#6B5F70;color:#C9BFC9}
   .rv-none{border:1px dashed var(--line);padding:24px 14px;text-align:center;color:var(--soft);font-size:.86rem}
   .more-btn{display:block;width:100%;margin-top:12px;border:1px solid var(--line);background:transparent;color:var(--gold-lt);padding:11px;font-size:.84rem;cursor:pointer}
-  .motive{border:1px solid var(--gold);background:linear-gradient(160deg,#1B1610,#0F0D11);padding:20px 16px 18px;position:relative;text-align:center}
-  .motive::after{content:"";position:absolute;inset:4px;border:1px solid rgba(201,162,39,.25);pointer-events:none}
+  .motive{border:1px solid var(--gold);background:linear-gradient(160deg,#FFEFF5,#F7F4FF);padding:20px 16px 18px;position:relative;text-align:center}
+  .motive::after{content:"";position:absolute;inset:4px;border:1px solid rgba(224,127,163,.25);pointer-events:none}
   .motive .en{font-family:var(--en);font-style:italic;color:var(--gold);letter-spacing:.24em;font-size:.82rem}
   .motive h2{font-family:var(--serif);font-size:1.08rem;letter-spacing:.08em;margin:4px 0 12px}
   .motive ul{text-align:left;margin:0 0 14px;font-size:.84rem}
@@ -174,24 +174,26 @@
   .motive li::before{content:"◆";position:absolute;left:0;color:var(--gold);font-size:.7rem;top:10px}
   .acts{display:grid;gap:8px;position:relative;z-index:1}
   .acts a,.acts span{display:block;text-align:center;padding:14px 8px;font-size:.92rem;letter-spacing:.12em}
-  .acts .main{background:var(--goldgrad);color:#1A1406;font-family:var(--serif);font-weight:700}
+  .acts .main{background:var(--goldgrad);color:#46405A;font-family:var(--serif);font-weight:700}
   .acts .tel{border:1px solid var(--gold);color:var(--gold-lt)}
   .acts .off{border:1px solid var(--line2);color:var(--dim);font-size:.82rem}
-  .write{display:block;text-align:center;margin-top:10px;padding:12px;border:1px solid #E0527F;color:#F7A9C4;font-size:.86rem;letter-spacing:.1em;position:relative;z-index:1}
+  .write{display:block;text-align:center;margin-top:10px;padding:12px;border:1px solid #E8759D;color:#E07FA3;font-size:.86rem;letter-spacing:.1em;position:relative;z-index:1}
   .dock{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1.4fr;gap:6px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(0,0,0,.94);border-top:1px solid var(--line)}
   .dock a{text-align:center;padding:12px 6px;font-size:.84rem;letter-spacing:.08em}
-  .dock .w{border:1px solid #E0527F;color:#F7A9C4}
-  .dock .m{background:var(--goldgrad);color:#1A1406;font-family:var(--serif);font-weight:700}
+  .dock .w{border:1px solid #E8759D;color:#E07FA3}
+  .dock .m{background:var(--goldgrad);color:#46405A;font-family:var(--serif);font-weight:700}
 </style>
 <link rel="stylesheet" href="round.css">
 <link rel="stylesheet" href="/site-bg.css">
 <script src="/kuchikomi-reward.js"></script>
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
 </head>
 <body>
 <div class="page">
-  <div class="beta">Areaはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
+  <div class="beta">NIGHT STYLEはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
   <div class="head">
-    <a href="index.html" class="logo gt">Area</a>
+    <a href="index.html" class="logo gt">NIGHT STYLE</a>
     <nav><a href="osaka.html">大阪府</a><a href="area.html" id="backArea">エリア</a><a href="index.html#voices">口コミ</a></nav>
   </div>
   <div class="crumb" id="crumb"></div>
@@ -227,8 +229,8 @@
 
   <!-- オファー機能バナー -->
   <section class="blk" aria-label="会員登録" style="padding-left:0;padding-right:0">
-    <style>.ofr-bn{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;position:relative;border-radius:12px;box-shadow:0 0 0 1px rgba(201,162,39,.5),0 12px 34px rgba(0,0,0,.35);transition:transform .2s}.ofr-bn:hover{transform:translateY(-2px)}.ofr-bn::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);background-size:250% 100%;animation:ofrShine 4.5s ease-in-out infinite;pointer-events:none}@keyframes ofrShine{0%,60%{background-position:150% 0}100%{background-position:-50% 0}}@media (prefers-reduced-motion:reduce){.ofr-bn::after{animation:none}}.ofr-cta{display:block;max-width:1100px;width:calc(100% - 32px);margin:10px auto 0;text-align:center;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1a1408;font-weight:700;border-radius:8px;padding:13px;font-size:15px;letter-spacing:.06em;text-decoration:none}.ofr-sub{display:block;text-align:center;font-size:12px;color:#B7AEA6;margin-top:8px}</style>
-    <p style="text-align:center;font-size:13px;color:#B7AEA6;margin:0 16px 12px">ほかのお店からもお誘いを受けてみませんか？</p>
+    <style>.ofr-bn{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;position:relative;border-radius:12px;box-shadow:0 0 0 1px rgba(224,127,163,.5),0 12px 34px rgba(150,110,160,.16);transition:transform .2s}.ofr-bn:hover{transform:translateY(-2px)}.ofr-bn::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(110deg,transparent 40%,rgba(138,115,209,.22) 50%,transparent 60%);background-size:250% 100%;animation:ofrShine 4.5s ease-in-out infinite;pointer-events:none}@keyframes ofrShine{0%,60%{background-position:150% 0}100%{background-position:-50% 0}}@media (prefers-reduced-motion:reduce){.ofr-bn::after{animation:none}}.ofr-cta{display:block;max-width:1100px;width:calc(100% - 32px);margin:10px auto 0;text-align:center;background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);color:#46405A;font-weight:700;border-radius:8px;padding:13px;font-size:15px;letter-spacing:.06em;text-decoration:none}.ofr-sub{display:block;text-align:center;font-size:12px;color:#756E88;margin-top:8px}</style>
+    <p style="text-align:center;font-size:13px;color:#756E88;margin:0 16px 12px">ほかのお店からもお誘いを受けてみませんか？</p>
     <a class="ofr-bn" href="member/"><picture><source media="(max-width:820px)" srcset="img/offer/offer-catch-800.jpg"><img src="img/offer/offer-catch.jpg" alt="プロフィールを登録すると、掲載中のお店からお仕事のオファーが届きます。まずは無料で登録" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
   </section>
 
@@ -237,13 +239,13 @@
       <li>口コミは、実際に働いた方から寄せられたものを運営が確認して掲載しています。感じ方には個人差があります。</li>
       <li>謝礼をお渡しする口コミの決まりは「<a href="kuchikomi-kitei.html" style="text-decoration:underline">口コミ謝礼の規定</a>」をご覧ください。</li>
       <li>給与・待遇などの条件は、面接のときに必ずお店へ直接ご確認ください。</li>
-      <li>Areaは求人情報を掲載する広告媒体です。お仕事の紹介・あっせんは行っていません。18歳未満の方、高校生の方は応募できません。</li>
+      <li>NIGHT STYLEは求人情報を掲載する広告媒体です。お仕事の紹介・あっせんは行っていません。18歳未満の方、高校生の方は応募できません。</li>
     </ul>
   </section>
 
   <footer>
     <div><a href="index.html">トップ</a><a href="osaka.html">大阪府の求人</a><a href="index.html#voices">口コミ</a></div>
-    <p>© 2026 Area</p>
+    <p>© 2026 NIGHT STYLE</p>
   </footer>
   <div class="dock"><a class="w" id="dockW" target="_blank" rel="noopener">口コミを書く</a><a class="m" id="dockM">求人を見て応募する</a></div>
 </div>
@@ -260,8 +262,8 @@
 
   var info = window.areaInfo(J.area);
   var label = info ? info.label : J.area;
-  document.title = J.name + "の口コミ・評判｜" + label + "の" + J.type + "｜Area";
-  $("crumb").innerHTML = '<a href="index.html">Area</a> ＞ <a href="area.html?area=' + encodeURIComponent(J.area) + '">' + esc(label) + 'の求人</a> ＞ <a href="' + esc(J.url) + '">' + esc(J.name) + '</a> ＞ <b>口コミ</b>';
+  document.title = J.name + "の口コミ・評判｜" + label + "の" + J.type + "｜NIGHT STYLE";
+  $("crumb").innerHTML = '<a href="index.html">NIGHT STYLE</a> ＞ <a href="area.html?area=' + encodeURIComponent(J.area) + '">' + esc(label) + 'の求人</a> ＞ <a href="' + esc(J.url) + '">' + esc(J.name) + '</a> ＞ <b>口コミ</b>';
   $("backArea").href = "area.html?area=" + encodeURIComponent(J.area);
   $("name").textContent = J.name;
   $("meta").textContent = (J.city || "大阪市") + " " + J.area + " ／ " + J.type;

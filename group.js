@@ -1,4 +1,4 @@
-/* Area グループ店の表示
+/* NIGHT STYLE グループ店の表示
    グループ運営のお店は、店名の近くに必ずグループ名を出します（ネームバリューと安心感のため）。
    グループやお店が増えたら、下の一覧に足すだけで、求人ページ・一覧カードの両方に反映されます。 */
 window.AREA_GROUPS = [
@@ -28,10 +28,10 @@ window.areaGroupOf = function (url) {
   function run() {
     var g = window.areaGroupOf(location.pathname); if (!g) return;
     var here = location.pathname.split("/").pop(), label = window.areaGroupLabel(here);
-    var css = '.grp-chip{display:table;font-size:10px;font-weight:700;letter-spacing:.06em;color:#1A1620;background:linear-gradient(90deg,#B8892B,#F6E3A8,#C9A227);border-radius:3px;padding:1px 6px;margin:1px 0 2px;line-height:1.5;white-space:nowrap}'
+    var css = '.grp-chip{display:table;font-size:10px;font-weight:700;letter-spacing:.06em;color:#FFF8FB;background:linear-gradient(90deg,#B8892B,#8A73D1,#E07FA3);border-radius:3px;padding:1px 6px;margin:1px 0 2px;line-height:1.5;white-space:nowrap}'
       + '.grp-line{margin:14px auto 0;text-align:center}'
-      + '.grp-line b{display:inline-block;font-family:var(--font-serif,serif);font-size:13px;letter-spacing:.24em;color:#F1DA9C;border-top:1px solid rgba(201,162,39,.55);border-bottom:1px solid rgba(201,162,39,.55);padding:6px 14px}'
-      + '.grp-line small{display:block;font-size:12px;color:#cfc3b2;margin-top:6px;letter-spacing:.04em}';
+      + '.grp-line b{display:inline-block;font-family:var(--font-serif,serif);font-size:13px;letter-spacing:.24em;color:#8A73D1;border-top:1px solid rgba(224,127,163,.55);border-bottom:1px solid rgba(224,127,163,.55);padding:6px 14px}'
+      + '.grp-line small{display:block;font-size:12px;color:#756E88;margin-top:6px;letter-spacing:.04em}';
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     var sub = document.querySelector('.shop-name span');
     if (sub && g.name && !sub.querySelector('.grp-chip')) {
@@ -45,7 +45,7 @@ window.areaGroupOf = function (url) {
       var d = document.createElement('div'); d.className = 'grp-line';
       if (g.name) d.innerHTML = '<b>' + g.en + '</b><small>' + g.name + ' 運営のお店です</small>';
       else {
-        var links = (g.urls || []).filter(function (u) { return u !== here; }).map(function (u) { return '<a href="' + u + '" style="color:#F1DA9C">' + ((g.shops || {})[u] || u) + '</a>'; }).join('・');
+        var links = (g.urls || []).filter(function (u) { return u !== here; }).map(function (u) { return '<a href="' + u + '" style="color:#8A73D1">' + ((g.shops || {})[u] || u) + '</a>'; }).join('・');
         d.innerHTML = '<b>SISTER SHOP</b><small>系列店：' + links + '</small>';
       }
       orn ? t.insertBefore(d, orn) : t.appendChild(d);

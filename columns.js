@@ -1,4 +1,4 @@
-/* Area 最新店舗コラム集
+/* NIGHT STYLE 最新店舗コラム集
    新しいコラムを書いたら、AREA_COLUMNS のいちばん上に1行足すだけでトップとコラム一覧に出ます。
    region: "kansai"（関西）／"kanto"（関東）／"special"（特集：石垣島・宮古島などのリゾート。関西・関東の両方に出る）
    hook はカードに大きく出す短いひとこと。「|」で改行位置を決める（スマホで1行8字まで・3行まで）。
@@ -34,29 +34,29 @@ window.AREA_COLUMNS = [
 
 (function () {
   var NEW_DAYS = 7;
-  var G = 'linear-gradient(135deg,#8E6F1C,#E8CB7A 30%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C)';
+  var G = 'linear-gradient(135deg,#F2A7C3,#F8C6D8 30%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3)';
   var css = ''
     + '.cl-tabs{display:flex;justify-content:center;gap:8px;margin:0 0 16px}'
-    + '.cl-tabs button{font:inherit;font-weight:700;font-size:.92rem;min-width:96px;padding:9px 18px;border-radius:999px;border:1px solid rgba(201,162,39,.55);background:transparent;color:#E9E2D8;cursor:pointer}'
-    + '.cl-tabs button[aria-selected="true"]{background:' + G + ';color:#1a1408;border-color:transparent}'
-    + '.cl-tabs button:focus-visible,.cl-card:focus-visible,.cl-more:focus-visible{outline:2px solid #F1DA9C;outline-offset:2px}'
+    + '.cl-tabs button{font:inherit;font-weight:700;font-size:.92rem;min-width:96px;padding:9px 18px;border-radius:999px;border:1px solid rgba(224,127,163,.55);background:transparent;color:#46405A;cursor:pointer}'
+    + '.cl-tabs button[aria-selected="true"]{background:' + G + ';color:#46405A;border-color:transparent}'
+    + '.cl-tabs button:focus-visible,.cl-card:focus-visible,.cl-more:focus-visible{outline:2px solid #8A73D1;outline-offset:2px}'
     /* スマホ：横に3つ。写真＋短いひとこと（hook）だけにして、字は小さくしすぎない */
     + '.cl-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}'
-    + '.cl-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;border:1px solid rgba(201,162,39,.35);background:#141116;border-radius:10px;overflow:hidden;transition:transform .15s,border-color .15s}'
+    + '.cl-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;border:1px solid rgba(224,127,163,.35);background:#FFFFFF;border-radius:10px;overflow:hidden;transition:transform .15s,border-color .15s}'
     + '.cl-card:hover{transform:translateY(-2px);border-color:rgba(241,218,156,.9)}'
-    + '.cl-img{position:relative;aspect-ratio:1/1;background:radial-gradient(circle at 50% 40%,#2a2016,#0b0a0d 70%);display:grid;place-items:center;overflow:hidden}'
+    + '.cl-img{position:relative;aspect-ratio:1/1;background:radial-gradient(circle at 50% 40%,#FFEFF5,#FFFFFF 70%);display:grid;place-items:center;overflow:hidden}'
     + '.cl-img img{width:100%;height:100%;object-fit:cover;display:block}'
-    + '.cl-img .cl-ph{font-family:"Shippori Mincho B1","Noto Serif JP",serif;color:#F1DA9C;font-size:.95rem;letter-spacing:.04em;padding:0 6px;text-align:center;line-height:1.4}'
+    + '.cl-img .cl-ph{font-family:"Zen Maru Gothic","Noto Serif JP",serif;color:#8A73D1;font-size:.95rem;letter-spacing:.04em;padding:0 6px;text-align:center;line-height:1.4}'
     + '.cl-badges{position:absolute;left:5px;top:5px;display:flex;flex-wrap:wrap;gap:4px}'
-    + '.cl-badge{font-size:.62rem;font-weight:800;letter-spacing:.06em;padding:2px 6px;border-radius:3px;line-height:1.3;box-shadow:0 1px 4px rgba(0,0,0,.4)}'
+    + '.cl-badge{font-size:.62rem;font-weight:800;letter-spacing:.06em;padding:2px 6px;border-radius:3px;line-height:1.3;box-shadow:0 1px 4px rgba(150,110,160,.16)}'
     + '.cl-badge.new{background:#E0272F;color:#fff}'
     + '.cl-badge.sp{background:linear-gradient(135deg,#0E7C86,#3FC1C9);color:#fff}'
     + '.cl-body{padding:7px 7px 9px;display:flex;flex-direction:column;gap:3px;flex:1}'
-    + '.cl-meta{font-size:.66rem;color:#C9A227;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}'
-    + '.cl-hook{font-size:min(.82rem,3.25vw);font-weight:800;line-height:1.5;color:#F4ECE0;margin:0;letter-spacing:0}'
+    + '.cl-meta{font-size:.66rem;color:#E07FA3;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}'
+    + '.cl-hook{font-size:min(.82rem,3.25vw);font-weight:800;line-height:1.5;color:#46405A;margin:0;letter-spacing:0}'
     + '.cl-hook .cl-l{display:block;white-space:nowrap}'
     + '.cl-title,.cl-foot,.cl-shop{display:none}'
-    + '.cl-more{display:flex;align-items:center;justify-content:center;gap:6px;margin:16px auto 0;max-width:420px;padding:13px 16px;border-radius:999px;border:1px solid rgba(201,162,39,.75);color:#F1DA9C;font-weight:700;text-decoration:none;font-size:.92rem}'
+    + '.cl-more{display:flex;align-items:center;justify-content:center;gap:6px;margin:16px auto 0;max-width:420px;padding:13px 16px;border-radius:999px;border:1px solid rgba(224,127,163,.75);color:#8A73D1;font-weight:700;text-decoration:none;font-size:.92rem}'
     + '.cl-more b{color:#fff}'
     + '.cl-empty{grid-column:1/-1;text-align:center;color:#9a9088;padding:24px 0}'
     /* PC：横に2つ。写真を左、ひとこと＋タイトル＋「読む」を右に */
@@ -67,12 +67,12 @@ window.AREA_COLUMNS = [
     + '.cl-badges{left:8px;top:8px;gap:6px}.cl-badge{font-size:.7rem;padding:3px 8px}'
     + '.cl-body{padding:14px 16px;gap:6px;min-width:0}'
     + '.cl-meta{font-size:.74rem}.cl-shop{display:inline}'
-    + '.cl-hook{font-family:"Shippori Mincho B1","Noto Serif JP",serif;font-size:1.12rem;color:#F1DA9C;letter-spacing:.02em}'
+    + '.cl-hook{font-family:"Zen Maru Gothic","Noto Serif JP",serif;font-size:1.12rem;color:#8A73D1;letter-spacing:.02em}'
     + '.cl-hook .cl-l{display:inline;white-space:normal}'
     + '.cl-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.86rem;font-weight:500;line-height:1.6;color:#D9D1C6;margin:0}'
     + '.cl-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px}'
     + '.cl-date{font-size:.72rem;color:#9a9088}'
-    + '.cl-read{font-size:.8rem;font-weight:700;color:#1a1408;background:' + G + ';border-radius:999px;padding:5px 14px}'
+    + '.cl-read{font-size:.8rem;font-weight:700;color:#46405A;background:' + G + ';border-radius:999px;padding:5px 14px}'
     + '}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 

@@ -1,4 +1,4 @@
-/* Area REVIEW（風俗・メンズエステ・セクキャバの口コミサイト）の店舗データ
+/* NIGHT STYLE REVIEW（風俗・メンズエステ・セクキャバの口コミサイト）の店舗データ
    ・店舗を増やすときは、この一覧に1件足すだけでOK（トップの一覧と店舗ページの両方に出ます）
    ・店舗ページは shop.html?id=（id の値） で開きます
    ・hold: "理由" を入れると、一覧にも店舗ページにも出しません（理由は画面に出ません）
@@ -919,7 +919,7 @@ window.RV_GENRES = [
 ];
 
 /* LINEの相談窓口（店舗のLINE担当が決まるまでの仮）。応募の受付ではなく、口コミ・掲載についての相談用 */
-window.RV_LINE = "https://lin.ee/v7GLaD2";
+window.RV_LINE = "";
 
 /* 広告バナー（トップのヒーロー直下の枠）
    ・広告費をいただいているお店のバナーをここに足す。複数あると5秒ごとに切り替わる
@@ -971,7 +971,7 @@ window.RV_RANK = [
   { name: "Y's", sub: "デリヘル", img: "img/ads/ys.jpg", url: "https://claude.ai/artifact/YPLwWJQiW9We1dAoJmLaKA" }
 ];
 
-/* 口コミの読み込み先（Areaの口コミ台帳と同じ） */
+/* 口コミの読み込み先（NIGHT STYLEの口コミ台帳と同じ） */
 window.RV_API = "https://script.google.com/macros/s/AKfycbxV6TXowRKiK_Z6MVrdsMwkZdnJ622lR388-dIBGZJud2FyxwcCpaUfUpmw1szI2lg/exec";
 
 /* ---- ここから下は共通の部品（ふだんは触らなくてOK） ---- */
@@ -1027,9 +1027,9 @@ window.RV = (function () {
   var gate = function () {
     try { if (localStorage.getItem("rvAge") === "ok") return; } catch (e) {}
     var g = document.createElement("div"); g.className = "gate";
-    g.innerHTML = '<div class="gate-box"><div class="f-logo" style="font-family:var(--en);font-weight:700;font-size:1.6rem;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent">Area REVIEW</div>' +
+    g.innerHTML = '<div class="gate-box"><div class="f-logo" style="font-family:var(--en);font-weight:700;font-size:1.6rem;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent">NIGHT STYLE REVIEW</div>' +
       '<h2>18歳以上の方ですか？</h2><p>このサイトには、風俗・メンズエステ・セクキャバで働いた方の口コミを掲載しています。18歳未満の方はご覧になれません。</p>' +
-      '<div class="row"><a class="btn btn-line" style="color:#B7AEA6;border-color:#3A3440" href="https://www.google.com/">いいえ</a><button type="button" class="btn btn-gold">はい</button></div></div>';
+      '<div class="row"><a class="btn btn-line" style="color:#756E88;border-color:#3A3440" href="https://www.google.com/">いいえ</a><button type="button" class="btn btn-gold">はい</button></div></div>';
     document.body.appendChild(g); document.body.style.overflow = "hidden";
     g.querySelector("button").onclick = function () {
       try { localStorage.setItem("rvAge", "ok"); } catch (e) {}

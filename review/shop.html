@@ -3,26 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>口コミ・評判｜Area REVIEW</title>
+<title>口コミ・評判｜NIGHT STYLE REVIEW</title>
 <meta name="description" content="実際に働いた女性の口コミだけを掲載。勤務時間・日給・時給換算と、良かった点・気になった点をお店ごとに確認できます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   .shop-head{padding:10px 0 2px}
   .shop-tags{display:flex;gap:6px;flex-wrap:wrap}
   .shop-tags span{font-size:.68rem;letter-spacing:.06em;padding:2px 9px;border:1px solid var(--gold);color:var(--gold-ink);background:#fff}
   .shop-tags span.pk{border-color:var(--pink-line);background:var(--pink-soft);color:var(--pink-deep)}
-  .shop-head h1{margin:10px 0 0;font-family:var(--serif);font-size:1.7rem;letter-spacing:.04em;line-height:1.45;font-weight:700;background:linear-gradient(90deg,#E0527F,#C9A227);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E0527F}
+  .shop-head h1{margin:10px 0 0;font-family:var(--serif);font-size:1.7rem;letter-spacing:.04em;line-height:1.45;font-weight:700;background:linear-gradient(90deg,#E8759D,#E07FA3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#E8759D}
   .shop-head .kana{font-size:.78rem;color:var(--ink-soft);margin:0 0 12px}
   .shop-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:.86rem;margin-bottom:6px}
   .shop-meta a.cnt{color:var(--pink-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
   .shop-meta .btn{padding:10px 18px;font-size:.84rem}
 
-  .tabs{display:flex;gap:8px;margin:18px 0 0;position:sticky;top:56px;z-index:30;background:var(--bg);padding-top:8px;border-bottom:2px solid #141115}
+  .tabs{display:flex;gap:8px;margin:18px 0 0;position:sticky;top:56px;z-index:30;background:var(--bg);padding-top:8px;border-bottom:2px solid #46405A}
   .tabs button{flex:1;border:1px solid var(--line);border-bottom:0;background:#fff;color:var(--ink-soft);padding:12px 6px 11px;font-size:.92rem;font-weight:700;letter-spacing:.08em;border-radius:12px 12px 0 0;cursor:pointer}
-  .tabs button[aria-selected="true"]{background:#141115;color:var(--gold-lt);border-color:#141115}
+  .tabs button[aria-selected="true"]{background:#8A73D1;color:var(--gold-lt);border-color:#46405A}
   .panel{padding:18px 0 6px}
 
   .outline{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:.86rem}
@@ -39,10 +39,10 @@
   .rv-tools{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:.8rem;color:var(--ink-soft)}
   .rv-tools select{font:inherit;font-size:.8rem;border:1px solid var(--line);background:#fff;padding:6px 8px}
 
-  .cta{margin:26px 0 0;background:#141115;color:#fff;text-align:center;padding:26px 18px;position:relative}
-  .cta::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,39,.35);pointer-events:none}
+  .cta{margin:26px 0 0;background:#8A73D1;color:#fff;text-align:center;padding:26px 18px;position:relative}
+  .cta::after{content:"";position:absolute;inset:5px;border:1px solid rgba(224,127,163,.35);pointer-events:none}
   .cta h2{font-family:var(--serif);font-size:1.08rem;letter-spacing:.08em;margin:0 0 6px}
-  .cta p{font-size:.8rem;color:#CFC6BD;margin:0 0 16px}
+  .cta p{font-size:.8rem;color:#756E88;margin:0 0 16px}
   .cta .btn{position:relative;z-index:1}
 
   .missing{padding:60px 0;text-align:center}
@@ -51,11 +51,11 @@
   .ext-h{font-family:var(--serif);font-size:1rem;letter-spacing:.08em;margin:0 0 4px}
   .ext-lead{font-size:.74rem;color:var(--dim);margin:0 0 12px}
   .rv.is-ext{background:#FCFAF6;border-style:dashed}
-  .ext-badge{flex:none;font-size:.64rem;letter-spacing:.06em;padding:2px 8px;background:#EFE9DC;color:#6B5A2A}
+  .ext-badge{flex:none;font-size:.64rem;letter-spacing:.06em;padding:2px 8px;background:#46405A;color:#6B5A2A}
   .rv-label.note{background:#F1F0F6;color:#4A4660;border-color:#DCDAE6}
   .ext-src{margin-top:10px;font-size:.72rem;color:var(--dim)}
   .ext-src a{text-decoration:underline;text-underline-offset:3px}
-  .shop-banner{margin:12px 0 4px;border:1px solid var(--gold);outline:1px solid rgba(201,162,39,.3);outline-offset:3px}
+  .shop-banner{margin:12px 0 4px;border:1px solid var(--gold);outline:1px solid rgba(224,127,163,.3);outline-offset:3px}
   .shop-banner img{width:100%;height:auto}
   .gallery{margin:0 0 16px}
   .gallery h3,.income h3{font-family:var(--serif);font-size:.98rem;letter-spacing:.08em;margin:0 0 8px}
@@ -75,14 +75,14 @@
   details.income[open] summary{margin-bottom:8px}
   details.income ol{margin:0;padding-left:1.4em;font-size:.84rem;line-height:1.8}
   details.income li{margin-bottom:6px}
-  .jobbox{margin:22px 0 4px;padding:16px 14px;background:#141115;border:1px solid var(--gold);border-radius:12px;color:#F4EFE6}
+  .jobbox{margin:22px 0 4px;padding:16px 14px;background:#8A73D1;border:1px solid var(--gold);border-radius:12px;color:#46405A}
   .job-h{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-family:var(--serif);font-size:1.05rem;letter-spacing:.06em}
   .job-h b{font-size:.72rem;font-family:var(--body);background:var(--pink);color:#fff;padding:2px 10px;border-radius:999px}
-  .job-catch{margin:0 0 12px;font-size:.84rem;color:#F1DA9C}
+  .job-catch{margin:0 0 12px;font-size:.84rem;color:#8A73D1}
   .job-tbl{background:#fff;color:var(--ink)}
   .job-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
   .job-acts a{display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 6px;border-radius:8px;font-weight:700;font-size:.9rem;letter-spacing:.06em}
-  .job-acts .tel{background:var(--goldgrad);color:#1A1406}
+  .job-acts .tel{background:var(--goldgrad);color:#46405A}
   .job-acts .hp{border:1px solid var(--gold);color:var(--gold-lt)}
   .points{margin:16px 0 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px}
   .points h3{font-family:var(--serif);font-size:.98rem;letter-spacing:.08em;margin:0 0 4px}
@@ -98,13 +98,15 @@
   .menu-tbl th,.menu-tbl td{padding:7px 4px;border-top:1px dashed var(--line);text-align:left;font-weight:500}
   .menu-tbl tr:first-child th,.menu-tbl tr:first-child td{border-top:0}
   .menu-tbl td{text-align:right;font-weight:700;color:var(--pink-deep)}
-  .job-note{margin:12px 0 0;font-size:.7rem;color:#B7AEA6;line-height:1.7}
+  .job-note{margin:12px 0 0;font-size:.7rem;color:#756E88;line-height:1.7}
 </style>
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
 </head>
 <body>
-<div class="beta">Area REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
+<div class="beta">NIGHT STYLE REVIEW は試作公開中です。掲載内容は順次追加・更新していきます。</div>
 <header class="head"><div class="wrap">
-  <a href="./" class="logo"><b>Area</b><small>REVIEW</small></a>
+  <a href="./" class="logo"><b>NIGHT STYLE</b><small>REVIEW</small></a>
   <nav><a href="./#search">お店を探す</a><a href="#" class="pk" data-write>口コミを書く</a></nav>
 </div></header>
 
@@ -138,7 +140,7 @@
       <p class="job-catch" id="jobCatch"></p>
       <table class="outline job-tbl"><tbody id="jobRows"></tbody></table>
       <div class="job-acts" id="jobActs"></div>
-      <p class="job-note">応募・面接・採用は、お店が直接行います。Areaはお仕事の紹介・あっせんを行っていません。18歳未満の方、高校生の方は応募できません。</p>
+      <p class="job-note">応募・面接・採用は、お店が直接行います。NIGHT STYLEはお仕事の紹介・あっせんを行っていません。18歳未満の方、高校生の方は応募できません。</p>
     </section>
     <p class="notice" id="notice">※この欄は、お店から確認できた内容と、投稿された口コミをまとめたものです。最新の条件は、お店に直接ご確認ください。</p>
   </section>
@@ -151,7 +153,7 @@
     <button type="button" class="btn btn-line more" id="more" hidden>口コミをもっと見る</button>
     <div class="ext" id="ext" hidden>
       <h3 class="ext-h">他サイトの口コミ（要約）</h3>
-      <p class="ext-lead">ほかの求人サイトに投稿された、働いた女性の口コミを運営が要約したものです。Areaに投稿された口コミではありません。くわしくは出典をご覧ください。</p>
+      <p class="ext-lead">ほかの求人サイトに投稿された、働いた女性の口コミを運営が要約したものです。NIGHT STYLEに投稿された口コミではありません。くわしくは出典をご覧ください。</p>
       <div id="extList"></div>
     </div>
   </section>
@@ -172,9 +174,9 @@
       <a href="https://hadalog-sample.netlify.app" target="_blank" rel="noopener"><img src="img/site-hadalog.jpg" alt="肌ログ｜コスメのクチコミ・ランキング" width="800" height="400" loading="lazy"><span>コスメの口コミを見る<i aria-hidden="true">→</i></span></a>
     </div>
   </nav>
-  <div class="f-logo">Area REVIEW</div>
+  <div class="f-logo">NIGHT STYLE REVIEW</div>
   <p>働いた女性の口コミを、運営が確認したうえで掲載しています。お店の紹介・あっせんは行っていません。18歳未満の方はご覧になれません。</p>
-  <div>© 2026 Area</div>
+  <div>© 2026 NIGHT STYLE</div>
 </footer>
 
 <script src="shops.js"></script>
@@ -189,7 +191,7 @@
     return;
   }
   var label = S.areaLabel || S.area;
-  document.title = S.name + "の口コミ・評判｜" + label + "の" + S.genre + "｜Area REVIEW";
+  document.title = S.name + "の口コミ・評判｜" + label + "の" + S.genre + "｜NIGHT STYLE REVIEW";
   var md = document.querySelector('meta[name="description"]');
   if (md) md.setAttribute("content", S.name + "（" + label + "・" + S.genre + "）で実際に働いた女性の口コミ。勤務時間・日給・時給換算、良かった点・気になった点を掲載。");
 
@@ -198,7 +200,7 @@
   [].forEach.call(document.querySelectorAll("[data-write]"), function(a){ a.href = write; a.target = "_blank"; a.rel = "noopener"; });
 
   var info = S.pref || ((S.areaLabel || "").indexOf("・") > 0 && /^(鳥取|愛媛|島根|香川|徳島|高知|岡山|広島|山口|兵庫|京都|奈良|和歌山|滋賀)/.test(S.areaLabel) ? "" : (window.AREA_DIR_PREF || "大阪"));
-  $("crumb").innerHTML = '<a href="./">Area REVIEW</a> › ' + (info ? esc(info) + ' › ' : '') + '<a href="./?area=' + encodeURIComponent(S.area) + '#shops">' + esc(label) + '</a> › <a href="./?genre=' + encodeURIComponent(S.genre) + '#shops">' + esc(S.genre) + '</a> › <b>' + esc(S.name) + '</b>';
+  $("crumb").innerHTML = '<a href="./">NIGHT STYLE REVIEW</a> › ' + (info ? esc(info) + ' › ' : '') + '<a href="./?area=' + encodeURIComponent(S.area) + '#shops">' + esc(label) + '</a> › <a href="./?genre=' + encodeURIComponent(S.genre) + '#shops">' + esc(S.genre) + '</a> › <b>' + esc(S.name) + '</b>';
   $("tags").innerHTML = '<span class="pk">' + esc(S.genre) + '</span>' + (S.style ? '<span>' + esc(S.style) + '</span>' : '') + '<span>' + esc(label) + '</span>';
   $("shopName").textContent = S.name;
   $("kana").textContent = S.kana ? "（" + S.kana + "）" : "";
@@ -275,7 +277,7 @@
       return (hb && yb ? yb / hb : -1) - (ha && ya ? ya / ha : -1);
     });
     $("rvList").innerHTML = rows.length ? rows.slice(0, shown).map(card).join("")
-      : '<div class="rv-empty">Areaに投稿された口コミは、まだありません。<br>働いたことがある方は、ぜひ最初の口コミを。</div>';
+      : '<div class="rv-empty">NIGHT STYLEに投稿された口コミは、まだありません。<br>働いたことがある方は、ぜひ最初の口コミを。</div>';
     $("more").hidden = rows.length <= shown;
     $("rvCount").textContent = rows.length ? "運営が確認した口コミ " + rows.length + "件" : "口コミ 0件";
   }

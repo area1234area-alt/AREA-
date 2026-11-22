@@ -4,22 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>店舗用：オファーを送る｜Area</title>
+<title>店舗用：オファーを送る｜NIGHT STYLE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Shippori+Mincho+B1:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="member.css">
 <link rel="stylesheet" href="/site-bg.css">
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
 </head>
 <body>
 <header class="head">
-  <a class="logo" href="../index.html">Area</a>
+  <a class="logo" href="../index.html">NIGHT STYLE</a>
   <nav id="nav"><a href="../index.html">サイトへ</a></nav>
 </header>
 <main class="wrap">
   <div class="en">For Shops</div>
   <h1 class="ttl">店舗用：会員にオファーを送る</h1>
-  <p class="lead">Areaに掲載中のお店だけが使えます。<br>プロフィールを公開している会員に、お仕事のお誘いを送れます。</p>
+  <p class="lead">NIGHT STYLEに掲載中のお店だけが使えます。<br>プロフィールを公開している会員に、お仕事のお誘いを送れます。</p>
   <div id="msg"></div>
 
   <!-- 未ログイン -->
@@ -33,7 +35,7 @@
   <div class="hidden" id="vJoin">
     <div class="card">
       <h2>招待コードをお持ちの店舗</h2>
-      <p class="note">Areaの運営からお渡しした招待コードを入れると、すぐに使えます。</p>
+      <p class="note">NIGHT STYLEの運営からお渡しした招待コードを入れると、すぐに使えます。</p>
       <input id="code" placeholder="例）AB12CD34" maxlength="12" style="text-transform:uppercase">
       <button class="btn gold" type="button" id="btnRedeem">招待コードで始める</button>
     </div>
@@ -41,7 +43,7 @@
       <h2>はじめての店舗（利用申し込み）</h2>
       <p class="note">運営が確認して承認すると、オファーを送れるようになります。</p>
       <label>店名<span class="req">必須</span></label><input name="name" maxlength="60" required>
-      <label style="margin-top:10px">Areaの求人ページ（あれば）</label><select name="url" id="urlSel"></select>
+      <label style="margin-top:10px">NIGHT STYLEの求人ページ（あれば）</label><select name="url" id="urlSel"></select>
       <label style="margin-top:10px">連絡先（電話番号など）<span class="req">必須</span></label><input name="contact" maxlength="80" required>
       <button class="btn gold" type="submit">申し込む</button>
     </form>

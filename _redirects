@@ -1,12 +1,13 @@
-# Areaの入口（遊ぶ・働くの選択）。求人のトップは /index.html・/kansai・/kanto
-/   /gate.html   200!
+# NIGHT STYLE の入口：トップは求人（働く）。初回は関西／関東を選ぶ画面が出る
+/kansai   /index.html   200
+/kanto    /index.html   200
+/sukima   /   302!
 
-# 風俗・メンズエステを別サイト（review/）に移したため、旧ページは新しい口コミページへ案内する
+# 旧ページ（風俗・メンズエステは review/ に移動）
 /juso-e01.html      /review/shop.html?id=kanojonchi     302!
 /honmachi-e01.html  /review/shop.html?id=galsselection  302!
 
-# 関西・関東の入口（投稿・広告にはこのURLを貼る）。中身はトップページで、表示する地域だけが変わる
-/keisai   /keisai.html   200
-/sukima   /sukima.html   200
-/kansai   /index.html   200
-/kanto    /index.html   200
+# 「遊ぶ」と店舗向け掲載案内は NIGHT STYLE では扱わない
+/asobu/*   /   302!
+/keisai    /   302!
+/gate.html /   302!

@@ -1,4 +1,4 @@
-/* Area 会員マイページ（LINEログイン＋サーバー保存） */
+/* NIGHT STYLE 会員マイページ（LINEログイン＋サーバー保存） */
 (function () {
   var A = AreaAPI, E = A.esc, $ = function (id) { return document.getElementById(id); };
   var AREAS = ["梅田","北新地","心斎橋","難波","十三","天満","江坂","京橋","祇園","三宮","池袋","上野","銀座","六本木","歌舞伎町","渋谷"];

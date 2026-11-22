@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Area｜関西・関東のナイトワーク・体験入店求人</title>
-<meta name="description" content="関西（大阪・兵庫・京都）と関東のナイトワーク求人、体験入店情報、店舗情報、口コミが探せる求人サイト「Area」。自分に合うお店を、安心して見つけよう。">
+<title>NIGHT STYLE｜関西・関東のナイトワーク・体験入店求人</title>
+<meta name="description" content="関西（大阪・兵庫・京都）と関東のナイトワーク求人、体験入店情報、店舗情報、口コミが探せる求人サイト「NIGHT STYLE」。自分に合うお店を、安心して見つけよう。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Shippori+Mincho+B1:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #FFFFFF;
-    --ink: #141115;
+    --ink: #46405A;
     --ink-soft: #5A5460;
-    --primary: #141115;
-    --primary-dark: #000000;
-    --pink: #FF6FA0;
+    --primary: #46405A;
+    --primary-dark: #F7F4FF;
+    --pink: #F0839F;
     --pink-soft: #FFF0F5;
     --pink-line: #FFD8E6;
-    --gold: #C9A227;
-    --gold-soft: #FBF3D9;
+    --gold: #E07FA3;
+    --gold-soft: #F7F2FF;
     --surface: #FFFFFF;
-    --font-display: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    --font-display: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN',sans-serif;
     --font-body: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
     --radius-lg: 28px;
     --radius-md: 18px;
     --radius-sm: 12px;
-    --shadow: 0 10px 30px rgba(124,42,73,0.10);
+    --shadow: 0 10px 30px rgba(200,120,170,0.10);
   }
 
   *{ box-sizing: border-box; }
@@ -52,8 +52,8 @@
 
   /* ---------- 試作中バー ---------- */
   .beta-bar{
-    background: linear-gradient(90deg, #C9A227, #F1DA9C 50%, #C9A227);
-    color: #141115;
+    background: linear-gradient(90deg, #E07FA3, #8A73D1 50%, #E07FA3);
+    color: #46405A;
     text-align:center;
     font-size: 0.74rem;
     font-weight: 700;
@@ -62,8 +62,8 @@
   }
   .beta-bar b{
     display:inline-block;
-    background:#141115;
-    color:#F1DA9C;
+    background:#8A73D1;
+    color:#FFFFFF;
     border-radius: 999px;
     padding: 0 9px;
     margin-right: 6px;
@@ -91,7 +91,7 @@
     -webkit-text-stroke: 0.5px var(--primary-dark);
     margin-left: 1px;
   }
-  .logo.on-dark .job{ color: #fff; }
+  .logo.on-dark .job{ color: #46405A; }
   .logo.on-dark .pi{ color: var(--pink); -webkit-text-stroke: 0.5px var(--primary-dark); }
   .logo-badge{
     display:inline-flex;
@@ -109,9 +109,9 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(20,17,21,0.96);
+    background: rgba(255,255,255,0.94);
     backdrop-filter: blur(6px);
-    border-bottom: 1px solid #2C2830;
+    border-bottom: 1px solid #F7F4FF;
   }
   .header-inner{
     display:flex;
@@ -130,7 +130,7 @@
   .header-cta{
     display:inline-block;
     background: var(--pink);
-    color: #141115;
+    color: #46405A;
     padding: 10px 20px;
     border-radius: 999px;
     font-weight: 800;
@@ -151,7 +151,7 @@
     border: 1.5px solid var(--gold);
     white-space: nowrap;
   }
-  .header-voice:hover{ background: var(--gold); color: #141115; }
+  .header-voice:hover{ background: var(--gold); color: #46405A; }
   .job-grid .job-card{ grid-template-columns: 1fr; grid-template-areas: "tags" "title" "area" "pay" "note"; }
   .job-apply-note{ grid-area: note; margin-top: 10px; font-size: 0.74rem; color: var(--ink-soft); border-top: 1px dashed var(--pink-line); padding-top: 8px; }
   @media (max-width: 760px){ .nav-toggle{ margin-left: auto; } }
@@ -166,7 +166,7 @@
     .header-voice, .header-cta{ padding: 8px 10px; font-size: 0.74rem; }
     .logo-badge{ padding: 5px 10px; }
   }
-  /* ヘッダーの「Area」「口コミ」ボタンは丸ではなく長四角にする */
+  /* ヘッダーの「NIGHT STYLE」「口コミ」ボタンは丸ではなく長四角にする */
   header .logo-badge, header .header-voice, header .header-cta{ border-radius: 3px !important; }
   header .logo-badge{ padding: 6px 18px; }
   header .header-voice{ padding-left: 20px; padding-right: 20px; }
@@ -193,7 +193,7 @@
     min-height: 480px;
     max-height: 820px;
     overflow: hidden;
-    background: #141115;
+    background: #8A73D1;
   }
   .hero-img{
     position:absolute;
@@ -251,7 +251,7 @@
   }
   .hero-actions .btn-primary{
     background: var(--pink);
-    color: #141115;
+    color: #46405A;
     border: 1.5px solid var(--gold);
     box-shadow: 0 8px 18px rgba(255,111,160,0.35);
   }
@@ -271,7 +271,7 @@
     .hero-actions .btn{ padding: 14px 30px; font-size: 0.98rem; }
   }
   /* バナー型ヒーロー: 画像内の文字が切れないよう全体を表示し、見出しとボタンは画像の下に置く */
-  .hero{ height:auto; min-height:0; max-height:none; overflow:visible; background:#141115; }
+  .hero{ height:auto; min-height:0; max-height:none; overflow:visible; background:#8A73D1; }
   .hero-img{ position:static; display:block; width:100%; height:auto; aspect-ratio:3 / 2; object-fit:cover; }
   .hero-scrim{ display:none; }
   .hero-copy{ position:static; max-width:760px; margin:0 auto; padding:22px 20px 30px; text-align:center; }
@@ -279,7 +279,7 @@
   .hero-actions{ justify-content:center; }
   @media (min-width: 900px){
     .hero{ height:auto; min-height:0; }
-    .hero-img{ height:auto; max-height:80vh; object-fit:contain; background:#141115; }
+    .hero-img{ height:auto; max-height:80vh; object-fit:contain; background:#8A73D1; }
     .hero-copy{ margin:0 auto; max-width:760px; padding:26px 20px 40px; text-align:center; }
     .hero-copy p{ margin-left:auto; }
     .hero-actions{ justify-content:center; }
@@ -296,7 +296,7 @@
   .btn-primary{
     background: var(--primary);
     color: #fff;
-    box-shadow: 0 10px 22px rgba(124,42,73,0.28);
+    box-shadow: 0 10px 22px rgba(200,120,170,0.28);
   }
   .btn-secondary{
     background: #fff;
@@ -305,7 +305,7 @@
   }
   .btn-line{
     background: var(--pink);
-    color: #141115;
+    color: #46405A;
     border: 1.5px solid var(--gold);
     box-shadow: 0 10px 22px rgba(255,111,160,0.32);
   }
@@ -360,9 +360,9 @@
   .action-photo img{
     width:100%; height:100%; object-fit: cover;
   }
-  .action-photo-1{ background: linear-gradient(135deg, #141115, #3a2130 55%, var(--gold)); }
-  .action-photo-2{ background: linear-gradient(135deg, #5c1e36, #c9a24b); }
-  .action-photo-3{ background: linear-gradient(135deg, #141115, #7c2a49); }
+  .action-photo-1{ background: linear-gradient(135deg, #8A73D1, #FFEFF5 55%, var(--gold)); }
+  .action-photo-2{ background: linear-gradient(135deg, #FFEFF5, #c9a24b); }
+  .action-photo-3{ background: linear-gradient(135deg, #8A73D1, #7c2a49); }
   .action-photo-4{ background: linear-gradient(135deg, #c9a24b, #f5a9c6); }
   .action-badge{
     position:absolute;
@@ -416,7 +416,7 @@
   }
 
   /* ---------- LINEバナー(ヒーロー直下の目立つ位置) ---------- */
-  .lb{ background:#141115; padding: 4px 16px 30px; }
+  .lb{ background:#8A73D1; padding: 4px 16px 30px; }
   .lb-link{
     display:block;
     max-width: 720px;
@@ -436,7 +436,7 @@
     position:absolute; width:1px; height:1px; padding:0; margin:-1px;
     overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
-  .sv{ background:#07060d; }
+  .sv{ background:#F7F4FF; }
   .sv-frame{
     position:relative;
     max-width: 640px;
@@ -463,21 +463,21 @@
   .sv-hit:focus-visible{ outline: 2px solid #E5CB8A; outline-offset: 2px; }
   .sv-hit:active{ background: rgba(229,203,138,0.2); }
 
-  /* ---------- Area ---------- */
+  /* ---------- NIGHT STYLE ---------- */
   .area-section{ background: transparent; }
   .area-section .section-head h2{ color: var(--ink); }
   .area-section .section-head p{ color: var(--ink-soft); }
   /* 条件で探す */
   .cond-box{ display:grid; gap:14px; }
-  .cond-g{ background:rgba(11,10,13,.82); border:1px solid rgba(201,162,39,.4); border-radius:14px; padding:14px 14px 16px; }
-  .cond-g h3{ font-family: var(--font-display); font-size:15px; margin:0 0 10px; color:#F1DA9C; letter-spacing:.08em; }
-  .cond-g h3 small{ font-size:12px; color:#B7AEA6; font-weight:400; margin-left:6px; letter-spacing:0; }
+  .cond-g{ background:rgba(255,255,255,.82); border:1px solid rgba(224,127,163,.4); border-radius:14px; padding:14px 14px 16px; }
+  .cond-g h3{ font-family: var(--font-display); font-size:15px; margin:0 0 10px; color:#8A73D1; letter-spacing:.08em; }
+  .cond-g h3 small{ font-size:12px; color:#756E88; font-weight:400; margin-left:6px; letter-spacing:0; }
   .cond-list{ display:flex; flex-wrap:wrap; gap:8px; }
-  .cond-chip{ display:inline-flex; align-items:center; gap:6px; padding:9px 12px; border:1px solid rgba(201,162,39,.55); border-radius:8px; background:#16131A; color:#F4ECE0; font-size:14px; font-weight:500; text-decoration:none; line-height:1.2; white-space:nowrap; transition:background .15s, border-color .15s; }
-  .cond-chip:hover{ background:rgba(201,162,39,.2); border-color:#F1DA9C; }
-  .cond-chip small{ font-size:11px; color:#C9A227; font-weight:700; }
+  .cond-chip{ display:inline-flex; align-items:center; gap:6px; padding:9px 12px; border:1px solid rgba(224,127,163,.55); border-radius:8px; background:#F7F4FF; color:#46405A; font-size:14px; font-weight:500; text-decoration:none; line-height:1.2; white-space:nowrap; transition:background .15s, border-color .15s; }
+  .cond-chip:hover{ background:rgba(224,127,163,.2); border-color:#8A73D1; }
+  .cond-chip small{ font-size:11px; color:#E07FA3; font-weight:700; }
   .cond-chip.zero{ opacity:.5; border-style:dashed; cursor:default; }
-  .cond-chip.zero small{ color:#B7AEA6; font-weight:400; }
+  .cond-chip.zero small{ color:#756E88; font-weight:400; }
   .area-pill-grid{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -491,8 +491,8 @@
     align-items:center;
     justify-content:space-between;
     gap: 6px;
-    background: linear-gradient(180deg, #F1DA9C, var(--gold));
-    color: #1A1620;
+    background: linear-gradient(180deg, #8A73D1, var(--gold));
+    color: #FFF8FB;
     font-family: var(--font-display);
     font-weight: 800;
     font-size: 1rem;
@@ -522,15 +522,15 @@
   #areas, #types, #jobs{ scroll-margin-top: 84px; }
   .area-pill[hidden]{ display:none; }
   @media (max-width: 700px){ .type-grid .area-pill:last-child{ grid-column: auto; } }
-  .area-pill.is-active{ background: #141115; color: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+  .area-pill.is-active{ background: #8A73D1; color: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
   .area-pill.is-active .chev{ opacity: 1; }
-  .area-pill.is-soon{ background: #EFE9DC; color: #8A8377; box-shadow: none; cursor: default; }
+  .area-pill.is-soon{ background: #46405A; color: #9C96AC; box-shadow: none; cursor: default; }
   .area-pill.is-soon:hover{ transform: none; filter: none; }
   .area-pill.is-soon{ padding-left: 14px; padding-right: 12px; }
   .area-pill.is-soon span:first-child{ white-space: nowrap; font-size: 0.86rem; }
   .area-pill .soon{ font-size: 0.68rem; font-weight: 700; letter-spacing: .04em; white-space: nowrap; }
   .job-filter{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; max-width:760px; margin:0 auto 12px; padding:10px 14px; background: var(--gold-soft); border:1px solid var(--gold); border-radius:12px; font-size:0.86rem; font-weight:700; }
-  .job-filter button{ background:#141115; color:#fff; border:0; border-radius:999px; padding:7px 14px; font-size:0.78rem; font-weight:700; cursor:pointer; font-family:inherit; }
+  .job-filter button{ background:#8A73D1; color:#fff; border:0; border-radius:999px; padding:7px 14px; font-size:0.78rem; font-weight:700; cursor:pointer; font-family:inherit; }
   .job-filter[hidden], .job-empty[hidden], .sv-note[hidden], .job-card[hidden]{ display:none; }
   .job-empty{ max-width:760px; margin:0 auto 12px; padding:22px 16px; text-align:center; background: var(--surface); border:1px dashed var(--pink-line); border-radius: var(--radius-md); color: var(--ink-soft); font-size:0.9rem; }
   .sv-note{ max-width:760px; margin:10px auto 0; padding:0 20px; text-align:center; font-size:0.82rem; color: var(--ink-soft); }
@@ -578,7 +578,7 @@
     padding: 4px 10px;
     border-radius: 999px;
   }
-  .tag.gold{ background: #FBF3DD; color: #93732A; }
+  .tag.gold{ background: #46405A; color: #93732A; }
   .job-card h3{
     font-family: var(--font-display);
     font-size: 1.02rem;
@@ -607,7 +607,7 @@
     margin-top: 16px;
     padding: 10px 14px;
     background: var(--pink);
-    color: #141115;
+    color: #46405A;
     border: 1.3px solid var(--gold);
     border-radius: 999px;
     font-weight: 700;
@@ -756,8 +756,8 @@
 
   /* ---------- CTA band ---------- */
   .cta-band{
-    background: linear-gradient(135deg, #1A1620, #000000);
-    color: #fff;
+    background: linear-gradient(135deg, #FFF8FB, #FFFFFF);
+    color: #46405A;
     border-radius: var(--radius-lg);
     margin: 0 24px;
     padding: 52px 30px;
@@ -778,7 +778,7 @@
 
   /* ---------- Footer ---------- */
   footer{
-    background: #141115;
+    background: #8A73D1;
     padding: 56px 0 32px;
     border-top: 1px solid var(--gold);
   }
@@ -789,7 +789,7 @@
     flex-wrap: wrap;
     gap: 32px;
     padding-bottom: 32px;
-    border-bottom: 1px solid #2C2830;
+    border-bottom: 1px solid #F7F4FF;
   }
   .footer-desc{
     color: #ADA6AE;
@@ -817,7 +817,7 @@
     font-size: 0.78rem;
   }
   .job-grid .job-card{ grid-template-columns: 1fr; grid-template-areas: "tags" "title" "area" "pay" "note"; }
-  .job-detail-link{ grid-area: note; display:inline-block; justify-self:start; margin-top:10px; background: var(--pink); color:#141115; border:1.5px solid var(--gold); border-radius:999px; padding:9px 18px; font-family: var(--font-display); font-weight:800; font-size:.86rem; }
+  .job-detail-link{ grid-area: note; display:inline-block; justify-self:start; margin-top:10px; background: var(--pink); color:#46405A; border:1.5px solid var(--gold); border-radius:999px; padding:9px 18px; font-family: var(--font-display); font-weight:800; font-size:.86rem; }
   .job-card .job-body{min-width:0}
   .job-card.has-photo{grid-template-columns:1fr 38%; grid-template-areas:none; gap:16px; align-items:stretch}
   .job-photo{display:block; overflow:hidden; border-radius:12px; min-height:110px}
@@ -825,150 +825,150 @@
   .job-card .job-detail-link{display:inline-block}
   @media (max-width:560px){ .job-card.has-photo{grid-template-columns:1fr 34%; gap:12px} }
   /* 写真つき求人カード（雑誌風） */
-  .job-card.photo-card{display:block !important;padding:22px 18px 20px !important;background:#0B0A0D !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;color:#F4EFE6}
+  .job-card.photo-card{display:block !important;padding:22px 18px 20px !important;background:#FFFFFF !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;color:#46405A}
   .dc-pw{display:block;position:relative;margin:12px 12px 0 0}
-  .dc-pw::before{content:"";position:absolute;top:-12px;right:-12px;width:100%;height:100%;border:1px solid #C9A227;pointer-events:none}
+  .dc-pw::before{content:"";position:absolute;top:-12px;right:-12px;width:100%;height:100%;border:1px solid #E07FA3;pointer-events:none}
   .dc-ph{display:block;position:relative;aspect-ratio:16/10;overflow:hidden}
   .dc-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .dc-tate{position:absolute;top:0;left:14px;display:flex;flex-direction:column;align-items:center;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;font-weight:500;font-size:.8rem;color:#F1DA9C;background:rgba(5,4,6,.82);padding:10px 7px;border-bottom:1px solid #C9A227}
+  .dc-tate{position:absolute;top:0;left:14px;display:flex;flex-direction:column;align-items:center;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;font-weight:500;font-size:.8rem;color:#8A73D1;background:rgba(255,255,255,.82);padding:10px 7px;border-bottom:1px solid #E07FA3}
   .dc-tate i{display:block;font-style:normal;line-height:1.45}
-  .dc-tate i.dot{width:4px;height:4px;border-radius:50%;background:#C9A227;margin:5px 0}
+  .dc-tate i.dot{width:4px;height:4px;border-radius:50%;background:#E07FA3;margin:5px 0}
   .dc-in{display:block;padding-top:16px}
   .dc-txt{min-width:0}
-  .dc-badge{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.12em;color:#F1DA9C;border:1px solid rgba(201,162,39,.5);padding:0 8px;margin-bottom:4px}
-  .dc-name{font-family:'Cormorant Garamond','Times New Roman',serif;font-weight:600;font-size:1.75rem;line-height:1.1;letter-spacing:.04em;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .dc-info{font-size:.76rem;color:#B7AEA6;margin-top:2px}
-  .dc-btn{display:block;width:100%;text-align:center;margin-top:16px;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1A1406 !important;font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;font-weight:700;font-size:1.1rem;letter-spacing:.2em;padding:16px 16px;box-shadow:0 10px 26px rgba(201,162,39,.22);white-space:nowrap}
-  .dc-btn.off{background:none;border:1px solid rgba(255,255,255,.15);color:#8C847D !important}
+  .dc-badge{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.12em;color:#8A73D1;border:1px solid rgba(224,127,163,.5);padding:0 8px;margin-bottom:4px}
+  .dc-name{font-family:'Quicksand','Times New Roman',serif;font-weight:600;font-size:1.75rem;line-height:1.1;letter-spacing:.04em;background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .dc-info{font-size:.76rem;color:#756E88;margin-top:2px}
+  .dc-btn{display:block;width:100%;text-align:center;margin-top:16px;background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);color:#46405A !important;font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.2em;padding:16px 16px;box-shadow:0 10px 26px rgba(224,127,163,.22);white-space:nowrap}
+  .dc-btn.off{background:none;border:1px solid rgba(255,255,255,.15);color:#9C96AC !important}
 
   /* カード下半分：アールデコの扇模様＋金の飾り */
   .job-card.photo-card{position:relative;overflow:hidden}
-  .dc-in{display:block;position:relative;margin:18px -18px -20px;padding:22px 22px 24px;background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.16),transparent 65%),linear-gradient(180deg,#110E13,#0B0A0D)}
-  .dc-in::before{content:"";position:absolute;inset:0;background:url("img/pattern/damask-black.png") center top/101px auto repeat;opacity:.5;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.15) 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.15) 100%)}
-  .dc-in::after{content:"";position:absolute;inset:10px;border:1px solid rgba(201,162,39,.35);pointer-events:none;
+  .dc-in{display:block;position:relative;margin:18px -18px -20px;padding:22px 22px 24px;background:radial-gradient(ellipse at 50% 0%,rgba(224,127,163,.16),transparent 65%),linear-gradient(180deg,#F7F4FF,#FFFFFF)}
+  .dc-in::before{content:"";position:absolute;inset:0;background:url("img/pattern/damask-black.png") center top/101px auto repeat;opacity:.5;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(150,110,160,.16) 55%,rgba(0,0,0,.15) 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(150,110,160,.16) 55%,rgba(0,0,0,.15) 100%)}
+  .dc-in::after{content:"";position:absolute;inset:10px;border:1px solid rgba(224,127,163,.35);pointer-events:none;
     -webkit-mask:linear-gradient(#000 0 0) top left/22px 22px no-repeat,linear-gradient(#000 0 0) top right/22px 22px no-repeat,linear-gradient(#000 0 0) bottom left/22px 22px no-repeat,linear-gradient(#000 0 0) bottom right/22px 22px no-repeat;
     mask:linear-gradient(#000 0 0) top left/22px 22px no-repeat,linear-gradient(#000 0 0) top right/22px 22px no-repeat,linear-gradient(#000 0 0) bottom left/22px 22px no-repeat,linear-gradient(#000 0 0) bottom right/22px 22px no-repeat}
   .dc-in > *{position:relative;z-index:1}
   .dc-head{text-align:center}
-  .dc-kana{font-size:.72rem;letter-spacing:.5em;color:#B7AEA6;padding-left:.5em;margin-top:4px}
+  .dc-kana{font-size:.72rem;letter-spacing:.5em;color:#756E88;padding-left:.5em;margin-top:4px}
   .dc-orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0 4px}
-  .dc-orn span{width:56px;height:1px;background:linear-gradient(90deg,transparent,#C9A227)}
-  .dc-orn span:last-child{background:linear-gradient(90deg,#C9A227,transparent)}
-  .dc-orn b{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#8E6F1C,#FFF1C4,#D4AF4F)}
-  .dc-dl{margin:12px 0 0;border-top:1px solid rgba(201,162,39,.22)}
+  .dc-orn span{width:56px;height:1px;background:linear-gradient(90deg,transparent,#E07FA3)}
+  .dc-orn span:last-child{background:linear-gradient(90deg,#E07FA3,transparent)}
+  .dc-orn b{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#F2A7C3,#FDE7F0,#D8C8F6)}
+  .dc-dl{margin:12px 0 0;border-top:1px solid rgba(224,127,163,.22)}
   .dc-dl > div{display:grid;grid-template-columns:3.4em 1fr;gap:10px;padding:8px 2px;border-bottom:1px solid rgba(255,255,255,.07);font-size:.82rem;line-height:1.5}
-  .dc-dl dt{font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;color:#C9A227;letter-spacing:.2em}
-  .dc-dl dd{margin:0;color:#E6DFD5}
+  .dc-dl dt{font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;color:#E07FA3;letter-spacing:.2em}
+  .dc-dl dd{margin:0;color:#55506A}
   .dc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-  .dc-tags span{font-size:.68rem;letter-spacing:.06em;color:#F1DA9C;border:1px solid rgba(201,162,39,.4);padding:2px 9px;background:rgba(201,162,39,.05)}
+  .dc-tags span{font-size:.68rem;letter-spacing:.06em;color:#8A73D1;border:1px solid rgba(224,127,163,.4);padding:2px 9px;background:rgba(224,127,163,.05)}
   .dc-btn{position:relative}
   .dc-btn > span{display:block;border:1px solid rgba(26,20,6,.45);margin:-10px;padding:10px}
-  .dc-btn > span::before,.dc-btn > span::after{content:"";display:inline-block;width:22px;height:1px;background:#1A1406;vertical-align:middle;margin:0 12px;opacity:.6}
+  .dc-btn > span::before,.dc-btn > span::after{content:"";display:inline-block;width:22px;height:1px;background:#46405A;vertical-align:middle;margin:0 12px;opacity:.6}
   .dc-head .dc-badge{margin-bottom:8px}
   .dc-head .dc-name{font-size:2rem}
   .dc-in.dc-top{margin:-22px -18px 30px;padding:26px 22px 18px}
   .dc-in.dc-bottom{margin:18px -18px -20px;padding:18px 22px 24px}
   .dc-in.dc-bottom .dc-dl{margin-top:0}
-  .dc-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(5,4,6,0) 45%,rgba(5,4,6,.55) 70%,rgba(5,4,6,.9) 100%)}
+  .dc-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,0) 45%,rgba(255,255,255,.55) 70%,rgba(255,255,255,.9) 100%)}
   .dc-over{position:absolute;right:14px;bottom:12px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;text-align:right}
-  .dc-over .dc-badge{margin-bottom:4px;background:rgba(5,4,6,.6)}
+  .dc-over .dc-badge{margin-bottom:4px;background:rgba(255,255,255,.6)}
   .dc-over .dc-name{display:block;font-size:2rem;line-height:1.05;filter:drop-shadow(0 2px 6px rgba(0,0,0,.7))}
-  .dc-over .dc-kana{display:block;font-size:.7rem;letter-spacing:.45em;color:#E6DFD5;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+  .dc-over .dc-kana{display:block;font-size:.7rem;letter-spacing:.45em;color:#55506A;margin-top:4px;text-shadow:0 1px 4px rgba(0,0,0,.8)}
   .dc-in.dc-bottom{margin-top:22px}
   /* 写真そのものの額縁：金のグラデ枠＋内側の細線＋四すみの飾り */
-  .dc-ph{border:3px solid transparent;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%) border-box;box-shadow:0 0 0 1px #000,0 12px 30px rgba(0,0,0,.6)}
+  .dc-ph{border:3px solid transparent;background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%) border-box;box-shadow:0 0 0 1px #000,0 12px 30px rgba(150,110,160,.16)}
   .dc-pw::after{content:"";position:absolute;inset:10px;z-index:1;border:1px solid rgba(241,218,156,.75);pointer-events:none;
     background:
-      linear-gradient(#F1DA9C,#F1DA9C) top left/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) top left/1px 14px no-repeat,
-      linear-gradient(#F1DA9C,#F1DA9C) top right/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) top right/1px 14px no-repeat,
-      linear-gradient(#F1DA9C,#F1DA9C) bottom left/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) bottom left/1px 14px no-repeat,
-      linear-gradient(#F1DA9C,#F1DA9C) bottom right/14px 1px no-repeat,linear-gradient(#F1DA9C,#F1DA9C) bottom right/1px 14px no-repeat;
+      linear-gradient(#8A73D1,#8A73D1) top left/14px 1px no-repeat,linear-gradient(#8A73D1,#8A73D1) top left/1px 14px no-repeat,
+      linear-gradient(#8A73D1,#8A73D1) top right/14px 1px no-repeat,linear-gradient(#8A73D1,#8A73D1) top right/1px 14px no-repeat,
+      linear-gradient(#8A73D1,#8A73D1) bottom left/14px 1px no-repeat,linear-gradient(#8A73D1,#8A73D1) bottom left/1px 14px no-repeat,
+      linear-gradient(#8A73D1,#8A73D1) bottom right/14px 1px no-repeat,linear-gradient(#8A73D1,#8A73D1) bottom right/1px 14px no-repeat;
     outline:1px solid rgba(241,218,156,.35);outline-offset:-5px}
   .dc-tate{z-index:2;left:18px;top:3px}
   .dc-over{right:22px;bottom:20px}
-  .logo, .logo .job{ font-family:'Cormorant Garamond','Times New Roman',serif; letter-spacing:.06em; }
+  .logo, .logo .job{ font-family:'Quicksand','Times New Roman',serif; letter-spacing:.06em; }
 
   /* ヒーローの文字・ボタン（高級感） */
-  .hero-copy .hc-eyebrow{font-family:'Cormorant Garamond','Times New Roman',serif;font-style:italic;font-weight:600;font-size:.95rem;letter-spacing:.32em;color:#E8CB7A;margin-bottom:6px}
-  .hero-copy h1{font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif !important;font-weight:700 !important;font-size:clamp(1.45rem,5.2vw,2rem) !important;line-height:1.6 !important;letter-spacing:.12em;color:#fff !important;margin:0 !important}
+  .hero-copy .hc-eyebrow{font-family:'Quicksand','Times New Roman',serif;font-style:italic;font-weight:600;font-size:.95rem;letter-spacing:.32em;color:#F8C6D8;margin-bottom:6px}
+  .hero-copy h1{font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif !important;font-weight:700 !important;font-size:clamp(1.45rem,5.2vw,2rem) !important;line-height:1.6 !important;letter-spacing:.12em;color:#fff !important;margin:0 !important}
   .hc-orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px 0 14px}
-  .hc-orn span{width:64px;height:1px;background:linear-gradient(90deg,transparent,#C9A227)}
-  .hc-orn span:last-child{background:linear-gradient(90deg,#C9A227,transparent)}
-  .hc-orn b{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#8E6F1C,#FFF1C4,#D4AF4F)}
+  .hc-orn span{width:64px;height:1px;background:linear-gradient(90deg,transparent,#E07FA3)}
+  .hc-orn span:last-child{background:linear-gradient(90deg,#E07FA3,transparent)}
+  .hc-orn b{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#F2A7C3,#FDE7F0,#D8C8F6)}
   .hero-copy p{letter-spacing:.06em;line-height:1.95 !important;color:rgba(255,255,255,.8) !important}
   .hero-copy .hc-note{display:inline-block;font-size:.85em;color:rgba(255,255,255,.55)}
   .hero-actions{gap:12px !important;justify-content:center !important;flex-wrap:wrap !important;margin-top:20px}
-  .hc-btn{display:inline-flex;align-items:center;justify-content:center;min-width:180px;padding:15px 26px;font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;font-weight:700;font-size:1rem;letter-spacing:.2em;border-radius:0;white-space:nowrap;transition:filter .2s,background .2s}
-  .hc-main{background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1A1406;box-shadow:0 10px 28px rgba(201,162,39,.28);position:relative}
+  .hc-btn{display:inline-flex;align-items:center;justify-content:center;min-width:180px;padding:15px 26px;font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.2em;border-radius:0;white-space:nowrap;transition:filter .2s,background .2s}
+  .hc-main{background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);color:#46405A;box-shadow:0 10px 28px rgba(224,127,163,.28);position:relative}
   .hc-main::after{content:"";position:absolute;inset:4px;border:1px solid rgba(26,20,6,.4);pointer-events:none}
-  .hc-sub{border:1px solid #C9A227;color:#F1DA9C;background:rgba(5,4,6,.35)}
+  .hc-sub{border:1px solid #E07FA3;color:#8A73D1;background:rgba(255,255,255,.35)}
   .hc-btn:hover{filter:brightness(1.08)}
-  .hc-sub:hover{background:rgba(201,162,39,.12)}
+  .hc-sub:hover{background:rgba(224,127,163,.12)}
   @media (max-width:420px){ .hc-btn{min-width:0;flex:1 1 0;padding:14px 10px;letter-spacing:.12em;font-size:.92rem} }
   /* 1店舗ごとのくくり：金の外枠＋内側の細線 */
-  .job-card.photo-card{border:1px solid #C9A227 !important;outline:1px solid rgba(201,162,39,.35);outline-offset:4px;margin:10px 6px 28px !important;box-shadow:0 18px 40px rgba(0,0,0,.55) !important}
-  .job-card.photo-card .dc-in.dc-bottom{border-top:1px solid rgba(201,162,39,.45)}
-  .dc-ph.noimg{background:radial-gradient(ellipse at 50% 40%,rgba(201,162,39,.14),transparent 65%),linear-gradient(160deg,#1A161D,#0F0D11) padding-box,linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%) border-box}
-  .dc-noimg{position:absolute;inset:0;display:grid;place-items:start center;padding-top:16%;color:#8C847D;font-size:.74rem;letter-spacing:.14em}
+  .job-card.photo-card{border:1px solid #E07FA3 !important;outline:1px solid rgba(224,127,163,.35);outline-offset:4px;margin:10px 6px 28px !important;box-shadow:0 18px 40px rgba(150,110,160,.16) !important}
+  .job-card.photo-card .dc-in.dc-bottom{border-top:1px solid rgba(224,127,163,.45)}
+  .dc-ph.noimg{background:radial-gradient(ellipse at 50% 40%,rgba(224,127,163,.14),transparent 65%),linear-gradient(160deg,#FFEFF5,#F7F4FF) padding-box,linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%) border-box}
+  .dc-noimg{position:absolute;inset:0;display:grid;place-items:start center;padding-top:16%;color:#9C96AC;font-size:.74rem;letter-spacing:.14em}
   .dc-tate.right{left:auto;right:18px}
   .dc-ph.logo{aspect-ratio:480/210}
   .dc-ph.logo ~ .dc-tate{display:none}
 
   /* 広告バナー枠 */
-  .area-ad-sec{background:#0B0A0D;padding:18px 0 6px}
-  .area-ad{position:relative;aspect-ratio:1672/730;overflow:hidden;border:1px solid #C9A227;background:#141115}
-  .area-ad::after{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,39,.35);pointer-events:none;z-index:2}
+  .area-ad-sec{background:#FFFFFF;padding:18px 0 6px}
+  .area-ad{position:relative;aspect-ratio:1672/730;overflow:hidden;border:1px solid #E07FA3;background:#8A73D1}
+  .area-ad::after{content:"";position:absolute;inset:5px;border:1px solid rgba(224,127,163,.35);pointer-events:none;z-index:2}
   .aa-track{position:absolute;inset:0;display:flex;transition:transform .6s ease}
   .aa-track a{flex:0 0 100%;height:100%;display:block}
   .aa-track img{width:100%;height:100%;object-fit:cover;display:block}
-  .aa-pr{position:absolute;left:10px;top:10px;z-index:3;font-size:.62rem;font-weight:700;letter-spacing:.1em;background:rgba(0,0,0,.65);color:#F1DA9C;border:1px solid rgba(201,162,39,.6);padding:1px 7px}
+  .aa-pr{position:absolute;left:10px;top:10px;z-index:3;font-size:.62rem;font-weight:700;letter-spacing:.1em;background:rgba(0,0,0,.65);color:#8A73D1;border:1px solid rgba(224,127,163,.6);padding:1px 7px}
   .aa-dots{position:absolute;left:0;right:0;bottom:10px;z-index:3;display:flex;justify-content:center;gap:6px}
   .aa-dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer}
-  .aa-dots i.on{background:#F1DA9C}
+  .aa-dots i.on{background:#8A73D1}
   .area-ad.ph{aspect-ratio:auto;min-height:150px}
-  .aa-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:40px 7% 20px;color:#F4EFE6;text-decoration:none;background:radial-gradient(ellipse at 20% 50%,rgba(224,82,127,.28),transparent 60%),radial-gradient(ellipse at 85% 50%,rgba(201,162,39,.25),transparent 60%),linear-gradient(135deg,#120E15,#1E1622)}
-  .aa-t{font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:clamp(1.05rem,3.4vw,1.8rem);letter-spacing:.06em}
-  .aa-t b{color:#F7A9C4}
-  .aa-s{font-size:clamp(.7rem,1.8vw,.9rem);color:#CFC6BD}
-  .aa-go{align-self:flex-start;margin-top:6px;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1A1406;font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:.6em 1.1em}
+  .aa-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:40px 7% 20px;color:#46405A;text-decoration:none;background:radial-gradient(ellipse at 20% 50%,rgba(224,82,127,.28),transparent 60%),radial-gradient(ellipse at 85% 50%,rgba(224,127,163,.25),transparent 60%),linear-gradient(135deg,#F7F4FF,#F7F4FF)}
+  .aa-t{font-family:'Zen Maru Gothic',serif;font-weight:700;font-size:clamp(1.05rem,3.4vw,1.8rem);letter-spacing:.06em}
+  .aa-t b{color:#E07FA3}
+  .aa-s{font-size:clamp(.7rem,1.8vw,.9rem);color:#756E88}
+  .aa-go{align-self:flex-start;margin-top:6px;background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);color:#46405A;font-weight:700;font-size:.82rem;letter-spacing:.1em;padding:.6em 1.1em}
 
-  /* ===== 横幅そろえ（2026-10-30）：中身の幅を1100px、スマホは左右16pxの余白で全項目をそろえる（Area REVIEWと同じ） ===== */
+  /* ===== 横幅そろえ（2026-10-30）：中身の幅を1100px、スマホは左右16pxの余白で全項目をそろえる（NIGHT STYLE REVIEWと同じ） ===== */
   .wrap{max-width:1132px !important;padding-left:16px !important;padding-right:16px !important}
   .header-inner{max-width:1132px;margin:0 auto;padding-left:16px !important;padding-right:16px !important}
   .hero{max-width:1100px;margin-left:auto;margin-right:auto}
   .hero-img{width:100%}
-  .hero{box-shadow:0 0 0 100vmax #0B0A0D;clip-path:inset(0 -100vmax)}   /* 幅を絞ったヒーローの左右も黒で埋める */
+  .hero{box-shadow:0 0 0 100vmax #FFFFFF;clip-path:inset(0 -100vmax)}   /* 幅を絞ったヒーローの左右も黒で埋める */
   @media (min-width:860px){ #jobs .job-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;align-items:start} }
   .hero-copy{max-width:none !important}
   .sv-frame{max-width:1100px}
   #jobs .job-grid, .job-filter, .job-empty{max-width:none !important}
   @media (max-width:1131px){ .hero, .sv-frame{margin-left:16px;margin-right:16px;width:auto} }
-  /* 広告バナー：Area REVIEWと同じ形（金の枠＋内側の細線、左上にPR） */
+  /* 広告バナー：NIGHT STYLE REVIEWと同じ形（金の枠＋内側の細線、左上にPR） */
   .area-ad-sec{padding:18px 0 4px}
-  .area-ad{border:1px solid #C9A227;outline:1px solid rgba(201,162,39,.3);outline-offset:-6px}
+  .area-ad{border:1px solid #E07FA3;outline:1px solid rgba(224,127,163,.3);outline-offset:-6px}
   .area-ad::after{display:none}
 
   /* ---------- ピックアップ（新店など。area-ads.js の AREA_PICKUP） ---------- */
-  .pu-sec{background:#0B0A0D;padding:14px 0 4px}
+  .pu-sec{background:#FFFFFF;padding:14px 0 4px}
   .pu-wrap{display:grid;gap:12px}
   .pu-body > a > img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
   @media (min-width:1000px){ .pu-wrap{grid-template-columns:1fr 1fr} .pu-wrap .pu-body{grid-template-columns:1fr} }
-  .pu{border:1px solid rgba(201,162,39,.55);border-radius:12px;overflow:hidden;background:#141117;color:#F4EFE6}
-  .pu-h{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(201,162,39,.25);font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:.2em;font-size:.86rem;color:#F1DA9C}
-  .pu-h b{font-family:'Noto Sans JP',sans-serif;font-size:.62rem;letter-spacing:.08em;color:#1A1406;background:linear-gradient(135deg,#8E6F1C,#E8CB7A 30%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C);border-radius:4px;padding:1px 7px}
+  .pu{border:1px solid rgba(224,127,163,.55);border-radius:12px;overflow:hidden;background:#FFF5F9;color:#46405A}
+  .pu-h{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(224,127,163,.25);font-family:'Quicksand',serif;font-weight:700;letter-spacing:.2em;font-size:.86rem;color:#8A73D1}
+  .pu-h b{font-family:'Noto Sans JP',sans-serif;font-size:.62rem;letter-spacing:.08em;color:#46405A;background:linear-gradient(135deg,#F2A7C3,#F8C6D8 30%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3);border-radius:4px;padding:1px 7px}
   .pu-body{display:grid;gap:0}
   @media (min-width:800px){ .pu-body{grid-template-columns:1.15fr 1fr} }
-  .pu video{display:block;width:100%;height:auto;aspect-ratio:888/494;object-fit:cover;background:#000}
+  .pu video{display:block;width:100%;height:auto;aspect-ratio:888/494;object-fit:cover;background:#FFFFFF}
   .pu-tx{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px}
-  .pu-tx .pu-area{font-size:.7rem;color:#B7AEA6;letter-spacing:.06em}
-  .pu-tx h3{margin:0;font-family:'Shippori Mincho B1',serif;font-size:1.25rem;letter-spacing:.04em;line-height:1.4}
-  .pu-tx h3 small{display:block;font-size:.72rem;color:#B7AEA6;font-family:'Noto Sans JP',sans-serif;font-weight:500}
-  .pu-tx p{margin:0;font-size:.84rem;line-height:1.8;color:#E9E2D8}
-  .pu-pay{font-weight:700;color:#F1DA9C;font-size:.92rem}
+  .pu-tx .pu-area{font-size:.7rem;color:#756E88;letter-spacing:.06em}
+  .pu-tx h3{margin:0;font-family:'Zen Maru Gothic',serif;font-size:1.25rem;letter-spacing:.04em;line-height:1.4}
+  .pu-tx h3 small{display:block;font-size:.72rem;color:#756E88;font-family:'Noto Sans JP',sans-serif;font-weight:500}
+  .pu-tx p{margin:0;font-size:.84rem;line-height:1.8;color:#46405A}
+  .pu-pay{font-weight:700;color:#8A73D1;font-size:.92rem}
   .pu-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
   .pu-btns a{display:flex;align-items:center;justify-content:center;padding:11px 6px;border-radius:8px;font-weight:700;font-size:.84rem;letter-spacing:.04em}
-  .pu-btns .go{background:linear-gradient(135deg,#8E6F1C,#E8CB7A 30%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C);color:#1A1406}
-  .pu-btns .col{border:1px solid rgba(201,162,39,.6);color:#F1DA9C}
+  .pu-btns .go{background:linear-gradient(135deg,#F2A7C3,#F8C6D8 30%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3);color:#46405A}
+  .pu-btns .col{border:1px solid rgba(224,127,163,.6);color:#8A73D1}
 
   /* 求人カードの高さをそろえる（内容が少ないカードも同じ高さ・ボタンは下にそろえる） */
   .job-grid{align-items:stretch !important}
@@ -980,7 +980,7 @@
   .job-card.photo-card .dc-bottom .dc-tags{margin-bottom:16px}
   .job-card.photo-card .dc-bottom .dc-dl{margin-bottom:16px}
   /* ロゴ画像のお店も写真枠の高さを他のお店とそろえる（ロゴは枠の中に収めて表示） */
-  .job-card.photo-card .dc-ph.logo{aspect-ratio:16/10 !important;background-color:#0B0A0D}
+  .job-card.photo-card .dc-ph.logo{aspect-ratio:16/10 !important;background-color:#FFFFFF}
   .job-card.photo-card .dc-ph.logo img{object-fit:cover}
 </style>
 <link rel="stylesheet" href="round.css">
@@ -1012,34 +1012,34 @@
 <style>
   /* 地域選択（最初の1回だけ） */
   .rg-gate{ position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:16px;
-    background: radial-gradient(120% 80% at 50% 0%, #2a1a22 0%, #141115 60%); color:#fff; }
+    background: radial-gradient(120% 80% at 50% 0%, #FFFFFF 0%, #FDEFF6 55%, #F1ECFF 100%); color:#46405A; }
   html[data-region-gate] .rg-gate{ display:flex; }
   html[data-region-gate] body{ overflow:hidden; }
   .rg-box{ width:100%; max-width:420px; text-align:center; }
   .rg-logo{ font-family: var(--font-display); font-size:2rem; letter-spacing:.08em; color: var(--gold); }
   .rg-lead{ margin:10px 0 4px; font-size:1.05rem; font-weight:700; letter-spacing:.04em; }
-  .rg-sub{ margin:0 0 22px; font-size:.82rem; color:rgba(255,255,255,.6); }
+  .rg-sub{ margin:0 0 22px; font-size:.82rem; color:#756E88; }
   .rg-btns{ display:grid; gap:14px; }
   .rg-btn{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; padding:20px 20px; cursor:pointer;
-    background:#1d181f; color:#fff; border:1.5px solid var(--gold); border-radius:3px; text-align:left; font:inherit; transition: background .15s, transform .15s; }
-  .rg-btn:hover, .rg-btn:focus-visible{ background:#2a2129; transform: translateY(-1px); }
-  .rg-btn b{ display:block; font-family: var(--font-display); font-size:1.5rem; letter-spacing:.12em; color:#fff; }
-  .rg-btn small{ display:block; margin-top:4px; font-size:.8rem; color:rgba(255,255,255,.65); }
-  .rg-btn .rg-go{ flex:0 0 auto; width:36px; height:36px; display:grid; place-items:center; background: var(--pink); color:#141115; font-weight:900; border-radius:3px; }
-  .rg-note{ margin-top:18px; font-size:.74rem; color:rgba(255,255,255,.5); }
+    background:#F7F4FF; color:#46405A; border:1.5px solid var(--gold); border-radius:3px; text-align:left; font:inherit; transition: background .15s, transform .15s; }
+  .rg-btn:hover, .rg-btn:focus-visible{ background:#F7F4FF; transform: translateY(-1px); }
+  .rg-btn b{ display:block; font-family: var(--font-display); font-size:1.5rem; letter-spacing:.12em; color:#46405A; }
+  .rg-btn small{ display:block; margin-top:4px; font-size:.8rem; color:#756E88; }
+  .rg-btn .rg-go{ flex:0 0 auto; width:36px; height:36px; display:grid; place-items:center; background: var(--pink); color:#46405A; font-weight:900; border-radius:3px; }
+  .rg-note{ margin-top:18px; font-size:.74rem; color:#756E88; }
   /* ヘッダーの小さな切り替えボタン */
   .rg-switch{ position:relative; margin-left:10px; margin-right:auto; }
-  .rg-switch > button{ display:inline-flex; align-items:center; gap:4px; padding:6px 10px; background:transparent; color:#D9D4DA;
-    border:1px solid #4a4250; border-radius:3px; font:inherit; font-size:.78rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+  .rg-switch > button{ display:inline-flex; align-items:center; gap:4px; padding:6px 10px; background:#fff; color:#46405A;
+    border:1px solid #E5DDF2; border-radius:3px; font:inherit; font-size:.78rem; font-weight:700; cursor:pointer; white-space:nowrap; }
   .rg-switch > button:hover{ color: var(--gold); border-color: var(--gold); }
   .rg-switch > button i{ font-style:normal; font-size:.7em; opacity:.8; }
-  .rg-menu{ position:absolute; top:calc(100% + 6px); left:0; min-width:150px; background:#1d181f; border:1px solid var(--gold); border-radius:3px;
-    box-shadow:0 10px 24px rgba(0,0,0,.4); padding:4px; display:none; z-index:60; }
+  .rg-menu{ position:absolute; top:calc(100% + 6px); left:0; min-width:150px; background:#F7F4FF; border:1px solid var(--gold); border-radius:3px;
+    box-shadow:0 10px 24px rgba(150,110,160,.16); padding:4px; display:none; z-index:60; }
   .rg-switch.open .rg-menu{ display:block; }
-  .rg-menu a{ display:block; padding:10px 12px; color:#fff; font-size:.85rem; font-weight:700; }
-  .rg-menu a small{ display:block; font-weight:400; font-size:.72rem; color:rgba(255,255,255,.55); }
+  .rg-menu a{ display:block; padding:10px 12px; color:#46405A; font-size:.85rem; font-weight:700; }
+  .rg-menu a small{ display:block; font-weight:400; font-size:.72rem; color:#756E88; }
   .rg-menu a[aria-current]{ color: var(--gold); }
-  .rg-menu a:hover{ background:#2a2129; }
+  .rg-menu a:hover{ background:#F7F4FF; }
   html:not([data-region]) .rg-switch{ visibility:hidden; }
   @media (max-width: 760px){ .rg-switch{ margin-left:8px; } }
   @media (max-width: 370px){ .rg-switch > button{ padding:5px 7px; font-size:.72rem; } }
@@ -1048,11 +1048,13 @@
 </style>
 <link rel="stylesheet" href="/site-bg.css">
 <script src="/kuchikomi-reward.js"></script>
+<link rel="stylesheet" href="/ns-theme.css">
+<script src="/share.js" defer></script>
 </head>
 <body>
 <div class="rg-gate" role="dialog" aria-modal="true" aria-labelledby="rgLead">
   <div class="rg-box">
-    <div class="rg-logo">Area</div>
+    <div class="rg-logo">NIGHT STYLE</div>
     <p class="rg-lead" id="rgLead">お仕事を探すエリアを選んでください</p>
     <p class="rg-sub">選んだエリアの求人だけを表示します</p>
     <div class="rg-btns">
@@ -1063,11 +1065,11 @@
   </div>
 </div>
 
-<div class="beta-bar"><b>試作中</b>Areaはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
+<div class="beta-bar"><b>試作中</b>NIGHT STYLEはただいま試作公開中です。掲載内容は順次追加・更新していきます。</div>
 
 <header>
   <div class="header-inner">
-    <a href="#top" class="logo-badge"><span class="logo"><span class="job">Area</span></span></a>
+    <a href="#top" class="logo-badge"><span class="logo"><span class="job">NIGHT STYLE</span></span></a>
     <div class="rg-switch" id="rgSwitch">
       <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="エリア切替"><span id="rgCur">関西</span><i>▼</i></button>
       <div class="rg-menu" role="menu">
@@ -1078,11 +1080,9 @@
     <nav class="nav-links">
       <a href="#areas">エリアから探す</a>
       <a href="#jobs">体験入店</a>
-      <a href="/sukima">スキマ・単発</a>
       <a href="#voices">口コミ</a>
-      <a href="#about">Areaとは</a>
+      <a href="#about">NIGHT STYLEとは</a>
       <a href="member/">会員登録・マイページ</a>
-      <a href="asobu/">遊ぶ（来店の方）</a>
     </nav>
     <a href="#voices" class="header-voice">口コミ</a>
     <button class="nav-toggle" aria-label="メニュー">☰</button>
@@ -1095,7 +1095,7 @@
   <!-- 差し替え方法: 下のimgタグのsrc(data:image/jpeg;base64,...)を新しい画像に置き換えてください。
        見せたい位置は上のCSS .hero の --hero-pos で調整できます。画像はスマホでは縦長に切り取られて表示されます。 -->
   <section class="hero">
-    <picture><source type="image/webp" srcset="img/top/hero-480.webp 480w, img/top/hero-800.webp 800w, img/top/hero-1200.webp 1200w, img/top/hero-1536.webp 1536w" sizes="(max-width: 1100px) 100vw, 1100px"><img class="hero-img" src="img/top/hero-1536.jpg" srcset="img/top/hero-480.jpg 480w, img/top/hero-800.jpg 800w, img/top/hero-1200.jpg 1200w, img/top/hero-1536.jpg 1536w" sizes="(max-width: 1100px) 100vw, 1100px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Area 求人サイト｜ナイトワーク専門の求人サイト。あなたにぴったりの輝けるお仕事を。"></picture>
+    <picture><source type="image/webp" srcset="img/top/hero-480.webp 480w, img/top/hero-800.webp 800w, img/top/hero-1200.webp 1200w, img/top/hero-1536.webp 1536w" sizes="(max-width: 1100px) 100vw, 1100px"><img class="hero-img" src="img/top/hero-1536.jpg" srcset="img/top/hero-480.jpg 480w, img/top/hero-800.jpg 800w, img/top/hero-1200.jpg 1200w, img/top/hero-1536.jpg 1536w" sizes="(max-width: 1100px) 100vw, 1100px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="NIGHT STYLE 求人サイト｜ナイトワーク専門の求人サイト。あなたにぴったりの輝けるお仕事を。"></picture>
     <div class="hero-scrim"></div>
     <div class="hero-copy">
       <div class="hc-eyebrow">Night Work Recruit</div>
@@ -1111,8 +1111,8 @@
 
 
   <!-- ============ 会員登録（オファー機能）の入口：画像バナー ============ -->
-  <section class="mb-sec" aria-label="会員登録" style="background:#0B0A0D;padding:18px 0 8px">
-    <style>.ofr-bn{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;position:relative;border-radius:12px;box-shadow:0 0 0 1px rgba(201,162,39,.5),0 12px 34px rgba(0,0,0,.35);transition:transform .2s}.ofr-bn:hover{transform:translateY(-2px)}.ofr-bn::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);background-size:250% 100%;animation:ofrShine 4.5s ease-in-out infinite;pointer-events:none}@keyframes ofrShine{0%,60%{background-position:150% 0}100%{background-position:-50% 0}}@media (prefers-reduced-motion:reduce){.ofr-bn::after{animation:none}}.ofr-cta{display:block;max-width:1100px;width:calc(100% - 32px);margin:10px auto 0;text-align:center;background:linear-gradient(135deg,#8E6F1C 0%,#E8CB7A 28%,#FFF1C4 50%,#D4AF4F 72%,#8E6F1C 100%);color:#1a1408;font-weight:700;border-radius:8px;padding:13px;font-size:15px;letter-spacing:.06em;text-decoration:none}.ofr-sub{display:block;text-align:center;font-size:12px;color:#B7AEA6;margin-top:8px}</style>
+  <section class="mb-sec" aria-label="会員登録" style="background:#FFFFFF;padding:18px 0 8px">
+    <style>.ofr-bn{display:block;max-width:1100px;margin:0 auto;width:calc(100% - 32px);text-decoration:none;position:relative;border-radius:12px;box-shadow:0 0 0 1px rgba(224,127,163,.5),0 12px 34px rgba(150,110,160,.16);transition:transform .2s}.ofr-bn:hover{transform:translateY(-2px)}.ofr-bn::after{content:"";position:absolute;inset:0;border-radius:12px;background:linear-gradient(110deg,transparent 40%,rgba(138,115,209,.22) 50%,transparent 60%);background-size:250% 100%;animation:ofrShine 4.5s ease-in-out infinite;pointer-events:none}@keyframes ofrShine{0%,60%{background-position:150% 0}100%{background-position:-50% 0}}@media (prefers-reduced-motion:reduce){.ofr-bn::after{animation:none}}.ofr-cta{display:block;max-width:1100px;width:calc(100% - 32px);margin:10px auto 0;text-align:center;background:linear-gradient(135deg,#F2A7C3 0%,#F8C6D8 28%,#FDE7F0 50%,#D8C8F6 72%,#F2A7C3 100%);color:#46405A;font-weight:700;border-radius:8px;padding:13px;font-size:15px;letter-spacing:.06em;text-decoration:none}.ofr-sub{display:block;text-align:center;font-size:12px;color:#756E88;margin-top:8px}</style>
     <a class="ofr-bn" href="member/"><picture><source media="(max-width:820px)" srcset="img/offer/offer-catch-800.jpg"><img src="img/offer/offer-catch.jpg" alt="プロフィールを登録すると、掲載中のお店からお仕事のオファーが届きます。まずは無料で登録" width="1536" height="1024" loading="eager" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
     <a class="ofr-cta" href="member/">無料で会員登録してオファーを待つ</a>
   </section>
@@ -1120,12 +1120,12 @@
   <!-- ============ 広告バナー枠（ヒーロー直下）。中身は area-ads.js の AREA_ADS で管理 ============ -->
   <section class="area-ad-sec" aria-label="広告"><div class="wrap"><div class="area-ad" id="areaAd"></div></div></section>
   <section class="pu-sec" id="pickupNew" aria-label="ピックアップ" hidden><div class="wrap"><div class="pu-wrap" id="puBox"></div></div></section>
-  <section class="section" id="columns" style="background:#0B0A0D;padding-top:18px;padding-bottom:22px">
+  <section class="section" id="columns" style="background:#FFFFFF;padding-top:18px;padding-bottom:22px">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:14px">
-        <p style="color:#C9A227;font-size:.74rem;letter-spacing:.24em;margin:0 0 4px">COLUMN</p>
-        <h2 style="color:#F4ECE0;margin-bottom:8px">働く前に読むと、失敗しない。</h2>
-        <p style="color:#B7AEA6">働き方やお給料のしくみを、Area編集部がお店ごとにまとめました。</p>
+        <p style="color:#E07FA3;font-size:.74rem;letter-spacing:.24em;margin:0 0 4px">COLUMN</p>
+        <h2 style="color:#46405A;margin-bottom:8px">働く前に読むと、失敗しない。</h2>
+        <p style="color:#756E88">働き方やお給料のしくみを、NIGHT STYLE編集部がお店ごとにまとめました。</p>
       </div>
       <div id="colBox"></div>
     </div>
@@ -1235,15 +1235,15 @@
 
   <!-- ============ FEATURES ============ -->
   <!-- ============ オファー機能の説明（画像） ============ -->
-  <section class="ofr-sec" aria-label="オファー機能" style="background:#0B0A0D;padding:26px 0 18px">
-    <a class="ofr-bn" href="member/#guide"><picture><source media="(max-width:820px)" srcset="img/offer/offer-steps-800.jpg"><img src="img/offer/offer-steps.jpg" alt="Areaのオファー機能：無料で登録→プロフィール公開→お店からオファーが届く→気になったらお店に応募" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
+  <section class="ofr-sec" aria-label="オファー機能" style="background:#FFFFFF;padding:26px 0 18px">
+    <a class="ofr-bn" href="member/#guide"><picture><source media="(max-width:820px)" srcset="img/offer/offer-steps-800.jpg"><img src="img/offer/offer-steps.jpg" alt="NIGHT STYLEのオファー機能：無料で登録→プロフィール公開→お店からオファーが届く→気になったらお店に応募" width="1536" height="1024" loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:12px"></picture></a>
     <a class="ofr-cta" href="member/">オファー機能を使ってみる（無料）</a>
   </section>
 
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head">
-        <h2>Areaが選ばれる理由</h2>
+        <h2>NIGHT STYLEが選ばれる理由</h2>
         <p>はじめてのナイトワーク探しでも迷わないように、必要な情報だけをシンプルに。</p>
       </div>
       <div class="feature-grid">
@@ -1270,7 +1270,7 @@
   <section class="section voice-section" id="voices">
     <div class="wrap">
       <div class="section-head">
-        <h2>Area利用者の口コミ</h2>
+        <h2>NIGHT STYLE利用者の口コミ</h2>
         <p>体験入店やお店選びの参考になった声を紹介します。</p>
       </div>
       <div class="voice-grid" id="voiceGrid">
@@ -1298,17 +1298,17 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <span class="logo on-dark"><span class="job">Area</span></span>
+        <span class="logo on-dark"><span class="job">NIGHT STYLE</span></span>
         <p class="footer-desc">関西のナイトワーク求人と体験入店情報、口コミを探せる求人サイトです。関東エリアは準備中です。</p>
       </div>
       <div class="footer-links">
         <div>
           <h4>サイトについて</h4>
           <ul>
-            <li><a href="#about">Areaとは</a></li>
+            <li><a href="#about">NIGHT STYLEとは</a></li>
             <li><a href="#jobs">求人を探す</a></li>
             <li><a href="#voices">口コミを見る</a></li>
-            <li><a href="/keisai">掲載をお考えの店舗様</a></li>
+            <li hidden><a href="/keisai">掲載をお考えの店舗様</a></li>
           </ul>
         </div>
         <div>
@@ -1320,7 +1320,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Area</div>
+    <div class="footer-bottom">© 2026 NIGHT STYLE</div>
   </div>
 </footer>
 
@@ -1336,7 +1336,7 @@
     nav.style.background = '#fff';
     nav.style.padding = '18px 24px';
     nav.style.borderRadius = '16px';
-    nav.style.boxShadow = '0 10px 30px rgba(124,42,73,0.15)';
+    nav.style.boxShadow = '0 10px 30px rgba(200,120,170,0.15)';
   });
 </script>
 
@@ -1471,7 +1471,7 @@
   var cur = document.getElementById("rgCur"); if (cur) cur.textContent = NAME[R];
   var hero = document.getElementById("rgHeroText");
   if (hero) hero.innerHTML = NAME[R] + "（" + SUB[R] + "）のナイトワーク求人を、エリアと職種から探せます。<br>応募は各お店へ直接。";
-  document.title = "Area｜" + NAME[R] + "（" + SUB[R] + "）のナイトワーク・体験入店求人";
+  document.title = "NIGHT STYLE｜" + NAME[R] + "（" + SUB[R] + "）のナイトワーク・体験入店求人";
 })();
 </script>
 
