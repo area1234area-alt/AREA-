@@ -1719,6 +1719,45 @@
         "https://osaka.refle.info/shop/nijikannoiyashi/"
       ],
       "note": "一覧ページの公開情報（最寄り駅・営業時間・オープン日）のみで作成。住所・女子給は未確認"
+    },
+    {
+      "name": "lotus（ロータス）",
+      "site": "review",
+      "area": "泉佐野",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "なまえすて",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "ミセス出来心",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
     }
   ]
 }
