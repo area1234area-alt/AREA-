@@ -1758,6 +1758,104 @@
         "https://osaka.refle.info/newshop.html"
       ],
       "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "フルーツコレクション",
+      "site": "review",
+      "area": "秋葉原",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=fruitscollection-akihabara"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "SPA GLORIA（スパグロリア）",
+      "site": "review",
+      "area": "国分寺",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=spagloria-kokubunji"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "ADAMAS（アダマス）",
+      "site": "review",
+      "area": "中野",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=adamas-nakano"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "VERMOUTH 亀戸ルーム（ベルモット）",
+      "site": "review",
+      "area": "亀戸",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=vermouth-kameido"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "VERMOUTH 府中ルーム（ベルモット）",
+      "site": "review",
+      "area": "府中",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=vermouth-fuchu"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "Dejavu Tokyo（デジャヴ東京）",
+      "site": "review",
+      "area": "麻布十番",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=dejavu-tokyo-azabujuban"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "ELTERAS（エルテラス）",
+      "site": "review",
+      "area": "東新宿",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=elteras-higashishinjuku"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
     }
   ]
 }
