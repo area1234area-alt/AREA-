@@ -1856,6 +1856,47 @@
         "https://www.ms-guide.jp/shop/detail.php?id=elteras-higashishinjuku"
       ],
       "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "Bar Avalanche（アバランチ）",
+      "site": "jobs",
+      "area": "十三",
+      "genre": "ガールズバー",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://www.gb-walker.jp/recruit/kansai/list-shop/kodawari/newopen/",
+        "https://www.gb-walker.jp/recruit/kansai/shop/avalanche/"
+      ],
+      "note": "新店一覧に掲載。オープン日・営業時間・時給の記載なく作成見送り（listedのまま）"
+    },
+    {
+      "name": "BABAR（ババール）",
+      "site": "jobs",
+      "area": "尼崎・立花",
+      "genre": "ガールズバー",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://www.gb-walker.jp/recruit/kansai/list-shop/kodawari/newopen/",
+        "https://www.gb-walker.jp/recruit/kansai/shop/babar11/"
+      ],
+      "note": "新店一覧に掲載。オープン日の記載なし、対象エリア外（尼崎）のため作成見送り"
+    },
+    {
+      "name": "上野 LIRIC TOKYO UENO（リリック）",
+      "site": "jobs",
+      "area": "上野",
+      "genre": "キャバクラ",
+      "open": "2026-07-21",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://note.com/gomachan_0327/n/nb82ffa9ea069"
+      ],
+      "note": "2026年7月グランドオープンで直近1〜2ヶ月の新店に当たらないため作成見送り"
     }
   ]
 }
