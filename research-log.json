@@ -1911,6 +1911,33 @@
         "https://www.caba2.net/osaka/kitashinchi/_list"
       ],
       "note": "一覧に「新店舗」表記あり。オープン日・求人条件は未確認（詳細ページ取得できず）"
+    },
+    {
+      "name": "anemore（アネモア）",
+      "site": "review",
+      "area": "銀座",
+      "genre": "メンズエステ",
+      "open": "2026-12-01（予定）",
+      "status": "drafted",
+      "found": "2026-11-25",
+      "drafted": "2026-11-25",
+      "page": "review/shop.html?id=anemore-ginza",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "CIRCUS Lounge Tokyo（サーカスラウンジトーキョー）",
+      "site": "bar",
+      "area": "六本木・西麻布",
+      "genre": "ラウンジ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-25",
+      "note": "新着掲載のみでオープン日未確認のため作成見送り",
+      "source": [
+        "https://castwalker.jp/kanto/newopen/"
+      ]
     }
   ]
 }
