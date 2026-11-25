@@ -1,1982 +1,1982 @@
 {
- "note": "新店リサーチの記録。status: listed=リスト化のみ / drafted=カード・求人ページ作成済み(プレビュー) / approved=掲載OK / rejected=掲載しない。rejectedは今後作らない。",
- "shops": [
-  {
-   "name": "銀座 BARCELONA 萌葱（モエギ）",
-   "site": "bar",
-   "area": "銀座",
-   "genre": "キャバクラ",
-   "open": "2026-11-02",
-   "address": "東京都中央区銀座8-7-8 GINZA8ビル7・8F",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "ginza-c01.html",
-   "source": [
-    "https://www.barcelona.co.jp/ginza/castrecruit/",
-    "https://yorucareer.com/shop/moegi-ginza/"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "NOVA ROPPONGI（ノヴァ六本木）",
-   "site": "bar",
-   "area": "六本木",
-   "genre": "キャバクラ",
-   "open": "2026-09-28",
-   "address": "東京都港区六本木7-13-8 フュージョンビル2〜4F",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "roppongi-c01.html",
-   "source": [
-    "https://www.connect-jobs.info/job/roppongi/14909/"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "club Ganesa 夜の部（ガネーシャ）",
-   "site": "bar",
-   "area": "ミナミ",
-   "genre": "キャバクラ",
-   "open": "9/1（年不明）",
-   "status": "listed",
-   "found": "2026-11-01"
-  },
-  {
-   "name": "CLUB SCENE（クラブシーン）",
-   "site": "bar",
-   "area": "ミナミ",
-   "genre": "キャバクラ",
-   "open": "2025-11-28",
-   "address": "大阪市中央区心斎橋筋2-2-3 エンジョイトラストビル4F",
-   "status": "listed",
-   "found": "2026-11-01",
-   "note": "オープンは2025年11月28日で新店ではないため作成見送り（listedのまま）",
-   "source": [
-    "https://www.caba2.net/osaka/minami/minami/Scene",
-    "https://www.club-scene.net/"
-   ]
-  },
-  {
-   "name": "Bar Ratel（バーラーテル）",
-   "site": "bar",
-   "area": "天満",
-   "genre": "ガールズバー",
-   "open": "不明",
-   "address": "大阪市北区天神橋4-2-7 天満松栄会館3F",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "tenma-g02.html",
-   "source": [
-    "https://castwalker.jp/kansai/newopen/",
-    "https://www.caba2.jp/osaka/detail/6529/"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Club Alice（クラブアリス）",
-   "site": "bar",
-   "area": "祇園・木屋町",
-   "genre": "キャバクラ",
-   "open": "不明",
-   "status": "listed",
-   "found": "2026-11-01"
-  },
-  {
-   "name": "上野 LUMINOUS（ルミナス）",
-   "site": "bar",
-   "area": "上野",
-   "genre": "キャバクラ",
-   "open": "2026-05-01",
-   "address": "東京都台東区上野2-12-3 小島ビル大国屋ビル4F",
-   "status": "listed",
-   "found": "2026-11-01"
-  },
-  {
-   "name": "AMOUR LUNA（アムールルナ）",
-   "site": "review",
-   "area": "十三（新大阪）",
-   "genre": "メンズエステ",
-   "open": "2026-11-01",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=amour-luna",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "神SPA",
-   "site": "review",
-   "area": "東梅田",
-   "genre": "メンズエステ",
-   "open": "2026-10-23",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=kamispa",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "こころポンパージュ",
-   "site": "review",
-   "area": "梅田（出張）",
-   "genre": "メンズエステ",
-   "open": "2026-10-26",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=cocopom",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "しろかの",
-   "site": "review",
-   "area": "梅田",
-   "genre": "メンズエステ",
-   "open": "2026-10-20",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=shirokano-umeda",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "LOVE Studio（ラブスタ）",
-   "site": "review",
-   "area": "新大阪・西中島（出張）",
-   "genre": "メンズエステ",
-   "open": "2026-10-20",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=lovestudio",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "美魔女refle 堺筋本町店",
-   "site": "review",
-   "area": "堺筋本町",
-   "genre": "メンズエステ",
-   "open": "2026-10-02",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=bimajo-refle-sakaisuji",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Le Savon（ルサボン）",
-   "site": "review",
-   "area": "京橋",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=le-savon",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "miu（ミュー）",
-   "site": "review",
-   "area": "高槻",
-   "genre": "メンズエステ",
-   "open": "2026-09-22",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=miu-takatsuki",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "むチューSPA",
-   "site": "review",
-   "area": "西中島",
-   "genre": "メンズエステ",
-   "open": "2026-09-15",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=muchu-spa",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Tokyo Z SPA",
-   "site": "review",
-   "area": "上野",
-   "genre": "メンズエステ",
-   "open": "2026-10-25",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=tokyo-zspa",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "NOエステ",
-   "site": "review",
-   "area": "五反田",
-   "genre": "メンズエステ",
-   "open": "2026-10-27",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=no-esthe",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "禁断の妻 新橋ルーム",
-   "site": "review",
-   "area": "新橋",
-   "genre": "メンズエステ",
-   "open": "2026-10-20",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=kindan-tsuma-shinbashi",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Belle Mme 渋谷店",
-   "site": "review",
-   "area": "渋谷",
-   "genre": "メンズエステ",
-   "open": "2026-10-31",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=belle-mme-shibuya",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "NAMEX SPA 高田馬場ルーム",
-   "site": "review",
-   "area": "高田馬場",
-   "genre": "メンズエステ",
-   "open": "2026-10-22",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=namex-takadanobaba",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Aaron（アロン）",
-   "site": "review",
-   "area": "王子",
-   "genre": "メンズエステ",
-   "open": "2026-10-30",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=aaron-oji",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Tigger 三軒茶屋ルーム",
-   "site": "review",
-   "area": "三軒茶屋",
-   "genre": "メンズエステ",
-   "open": "2026-10-25",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "page": "review/shop.html?id=tigger-sangenjaya",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Club Lilith -MINAMI-（リリスミナミ）",
-   "site": "bar",
-   "area": "ミナミ",
-   "genre": "キャバクラ",
-   "open": "不明",
-   "status": "listed",
-   "found": "2026-11-01",
-   "source": [
-    "https://castwalker.jp/kansai/newopen/"
-   ],
-   "note": "大阪市中央区東心斎橋2-6-20 日宝アポロ会館4F。詳細ページを取得できず作成見送り"
-  },
-  {
-   "name": "ストロボ",
-   "site": "review",
-   "area": "日本橋",
-   "genre": "メンズエステ",
-   "open": "不明",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "page": "review/shop.html?id=strobo-nipponbashi",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Starlight.Mrs 大阪（スターライトミセス）",
-   "site": "review",
-   "area": "堺筋本町",
-   "genre": "メンズエステ",
-   "open": "不明",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "page": "review/shop.html?id=starlight-mrs",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "とろ蜜エステ",
-   "site": "review",
-   "area": "鶯谷（出張）",
-   "genre": "メンズエステ",
-   "open": "2026-10-29",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "page": "review/shop.html?id=toromitsu-esthe",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "CAMPUS（キャンパス）",
-   "site": "review",
-   "area": "日本橋（東京）",
-   "genre": "メンズエステ",
-   "open": "2026-10-28",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "page": "review/shop.html?id=campus-esthe",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "熟女の手 笹塚店",
-   "site": "review",
-   "area": "笹塚",
-   "genre": "メンズエステ",
-   "open": "2026-10-19",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "page": "review/shop.html?id=jukujo-te-sasazuka",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "RODIEL 成増ルーム",
-   "site": "review",
-   "area": "成増",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "page": "review/shop.html?id=rodiel-narimasu",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "五つ星エステ 六町ルーム",
-   "site": "review",
-   "area": "六町",
-   "genre": "メンズエステ",
-   "open": "2026-11-01",
-   "status": "drafted",
-   "found": "2026-11-01",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "page": "review/shop.html?id=fivestar-rokucho",
-   "drafted": "2026-11-01"
-  },
-  {
-   "name": "Bianca.（ビアンカ）",
-   "site": "review",
-   "area": "梅田・曽根崎",
-   "genre": "メンズエステ",
-   "open": "2026-09-01",
-   "status": "drafted",
-   "found": "2026-11-02",
-   "source": [
-    "https://osaka.refle.info/newopen.html",
-    "https://osaka.refle.info/shop/bianca-esthe/"
-   ],
-   "page": "review/shop.html?id=bianca-umeda",
-   "drafted": "2026-11-02"
-  },
-  {
-   "name": "SWEET×DIAMOND（スイート・ダイヤモンド）",
-   "site": "review",
-   "area": "日本橋",
-   "genre": "メンズエステ",
-   "open": "2026-09-02",
-   "status": "drafted",
-   "found": "2026-11-02",
-   "source": [
-    "https://osaka.refle.info/newopen.html",
-    "https://osaka.refle.info/shop/sweetdiamond-nihonbashi/"
-   ],
-   "page": "review/shop.html?id=sweetdiamond-nipponbashi",
-   "drafted": "2026-11-02"
-  },
-  {
-   "name": "Mrs.Blue Dahlia（ミセスブルーダリア）",
-   "site": "review",
-   "area": "高槻",
-   "genre": "メンズエステ",
-   "open": "2026-09-07",
-   "status": "drafted",
-   "found": "2026-11-02",
-   "source": [
-    "https://osaka.refle.info/newopen.html",
-    "https://osaka.refle.info/shop/mrs-bluedahlia/"
-   ],
-   "page": "review/shop.html?id=mrs-bluedahlia",
-   "drafted": "2026-11-02"
-  },
-  {
-   "name": "BASIS（バーシス）",
-   "site": "review",
-   "area": "東梅田",
-   "genre": "メンズエステ（メンズ脱毛＆リラクゼーション）",
-   "open": "2026-10-26",
-   "status": "drafted",
-   "found": "2026-11-05",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "page": "review/shop.html?id=basis-umeda",
-   "drafted": "2026-11-05"
-  },
-  {
-   "name": "KOUYOU",
-   "site": "review",
-   "area": "池袋",
-   "genre": "メンズエステ",
-   "open": "2026-11-01",
-   "status": "drafted",
-   "found": "2026-11-05",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://kouyou-salon.com/"
-   ],
-   "page": "review/shop.html?id=kouyou-ikebukuro",
-   "drafted": "2026-11-05"
-  },
-  {
-   "name": "AROMA NOVA 新大阪ルーム（アロマノヴァ）",
-   "site": "review",
-   "area": "新大阪",
-   "genre": "メンズエステ",
-   "open": "2026-09-25",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://aromanova.jp/"
-   ],
-   "page": "review/shop.html?id=aromanova-shinosaka",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "MARIMO SPA（マリモスパ）",
-   "site": "review",
-   "area": "日本橋",
-   "genre": "メンズエステ",
-   "open": "2026-09-08",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://marimospa.com/"
-   ],
-   "page": "review/shop.html?id=marimo-spa",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "メンエス紳士クラブ 京橋ルーム（メンエスしんしクラブ）",
-   "site": "review",
-   "area": "京橋",
-   "genre": "メンズエステ",
-   "open": "2026-09-15",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://shinshiclub.net/"
-   ],
-   "page": "review/shop.html?id=shinshiclub-kyobashi",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "PLUMEA（プルメア）",
-   "site": "review",
-   "area": "京都・河原町",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=26",
-    "https://plumea-esthe.com/"
-   ],
-   "page": "review/shop.html?id=plumea-kyoto",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "CALLACE（カラーチェ）",
-   "site": "review",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "open": "2026-10-05",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=28",
-    "https://callace-salon.com/"
-   ],
-   "page": "review/shop.html?id=callace-sannomiya",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "秘めたるエステ（ひめたるエステ）",
-   "site": "review",
-   "area": "築地",
-   "genre": "メンズエステ",
-   "open": "2026-10-08",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://himetaru-esthe.com/"
-   ],
-   "page": "review/shop.html?id=himetaru-esthe",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "人妻物語（ひとづまものがたり）",
-   "site": "review",
-   "area": "銀座",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://tumamono.com/"
-   ],
-   "page": "review/shop.html?id=tumamono-ginza",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "凪の華 渋谷（なぎのはな）",
-   "site": "review",
-   "area": "渋谷",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://naginohana.com/hana/"
-   ],
-   "page": "review/shop.html?id=naginohana-shibuya",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "凪の華 恵比寿（なぎのはな）",
-   "site": "review",
-   "area": "恵比寿",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://naginohana-ebisu.com/hana/"
-   ],
-   "page": "review/shop.html?id=naginohana-ebisu",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "アロマGR（アロマジーアール）",
-   "site": "review",
-   "area": "大塚",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://ootsuka-aromagr.com/"
-   ],
-   "page": "review/shop.html?id=aromagr-otsuka",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "RODIEL 池袋ルーム（ロディエル）",
-   "site": "review",
-   "area": "池袋",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://rodiel-tokyo.com/"
-   ],
-   "page": "review/shop.html?id=rodiel-ikebukuro",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "Flag ship（フラッグシップ）",
-   "site": "review",
-   "area": "高田馬場",
-   "genre": "メンズエステ",
-   "open": "2026-10-01",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://tokyo-flagship.com/"
-   ],
-   "page": "review/shop.html?id=flagship-takadanobaba",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "Remember 小岩ルーム（リメンバー）",
-   "site": "review",
-   "area": "小岩",
-   "genre": "メンズエステ",
-   "open": "2026-10-15",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://remember-healing.com/"
-   ],
-   "page": "review/shop.html?id=remember-koiwa",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "ひよこ倶楽部（ひよこくらぶ）",
-   "site": "review",
-   "area": "東梅田",
-   "genre": "メンズエステ",
-   "open": "2026-09-08",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://hiyokoclub-osaka.com/"
-   ],
-   "page": "review/shop.html?id=hiyokoclub-higashiumeda",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "Spa aura（スパオーラ）",
-   "site": "review",
-   "area": "池袋",
-   "genre": "メンズエステ",
-   "open": "2026-09-10",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://spa-aura-esthe.com/"
-   ],
-   "page": "review/shop.html?id=spaaura-ikebukuro",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "El Edén（エルエデン）",
-   "site": "review",
-   "area": "麻布十番",
-   "genre": "メンズエステ",
-   "open": "2026-09-10",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://el-eden.net/"
-   ],
-   "page": "review/shop.html?id=eleden-azabujuban",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "GRAND SLAM（グランドスラム）",
-   "site": "review",
-   "area": "田町",
-   "genre": "メンズエステ",
-   "open": "2026-09-14",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://grandslam-esthe.com/"
-   ],
-   "page": "review/shop.html?id=grandslam-tamachi",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "TREVI（トレヴィ）",
-   "site": "review",
-   "area": "恵比寿",
-   "genre": "メンズエステ",
-   "open": "2026-09-15",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://trevi.in/"
-   ],
-   "page": "review/shop.html?id=trevi-ebisu",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "エマニエル（エマニエル）",
-   "site": "review",
-   "area": "日暮里",
-   "genre": "メンズエステ",
-   "open": "2026-09-15",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://www.emanieru.com/"
-   ],
-   "page": "review/shop.html?id=emanieru-nippori",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "M's LABO（エムズラボ）",
-   "site": "review",
-   "area": "亀有（葛飾区）",
-   "genre": "メンズエステ",
-   "open": "2026-09-18",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://m-s-labo.com/"
-   ],
-   "page": "review/shop.html?id=mslabo-kameari",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "灯庵 -TOUAN-（とうあん）",
-   "site": "review",
-   "area": "自由が丘",
-   "genre": "メンズエステ",
-   "open": "2026-09-18",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://spa-touan.org/"
-   ],
-   "page": "review/shop.html?id=touan-jiyugaoka",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "素敵なワイフ（すてきなワイフ）",
-   "site": "review",
-   "area": "北千住",
-   "genre": "メンズエステ",
-   "open": "2026-09-24",
-   "status": "drafted",
-   "found": "2026-11-06",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://www.wife-kitasenju.com/"
-   ],
-   "page": "review/shop.html?id=sutekinawife-kitasenju",
-   "drafted": "2026-11-06"
-  },
-  {
-   "name": "Motenashi 赤羽ルーム（もてなし）",
-   "site": "review",
-   "area": "赤羽",
-   "genre": "メンズエステ",
-   "open": "2026-10-05",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=2",
-    "https://motenashi.esthe-hp.com/"
-   ],
-   "page": "review/shop.html?id=motenashi-akabane",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "Motenashi 荻窪ルーム（もてなし）",
-   "site": "review",
-   "area": "荻窪",
-   "genre": "メンズエステ",
-   "open": "2026-10-05",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=2",
-    "https://motenashi.esthe-hp.com/"
-   ],
-   "page": "review/shop.html?id=motenashi-ogikubo",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "Motenashi 吉祥寺ルーム（もてなし）",
-   "site": "review",
-   "area": "吉祥寺",
-   "genre": "メンズエステ",
-   "open": "2026-10-05",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=2",
-    "https://motenashi.esthe-hp.com/"
-   ],
-   "page": "review/shop.html?id=motenashi-kichijoji",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "大人の階段（おとなのかいだん）",
-   "site": "review",
-   "area": "日暮里",
-   "genre": "メンズエステ",
-   "open": "2026-09-29",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=2",
-    "https://otona-no-kaidan.com/"
-   ],
-   "page": "review/shop.html?id=otonanokaidan-nippori",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "T.i.M -TIME is MATCH-（ティーアイエム）",
-   "site": "bar",
-   "area": "本町",
-   "genre": "ラウンジ",
-   "open": "2026-11下旬",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
-    "https://www.pokepara-tainew.jp/osaka/m300/a15015/shop24843/"
-   ],
-   "page": "honmachi-l01.html",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "美魔女LOUNGE 夢宵（ユメヨイ）",
-   "site": "bar",
-   "area": "福島（野田阪神）",
-   "genre": "ラウンジ",
-   "open": "2026-09-01",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
-    "https://www.pokepara-tainew.jp/osaka/m300/a308/shop24633/"
-   ],
-   "page": "fukushima-l01.html",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "TŌU（トウ）",
-   "site": "bar",
-   "area": "北新地",
-   "genre": "ラウンジ",
-   "open": "2026-09-01",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
-    "https://www.pokepara-tainew.jp/osaka/m300/a305/shop24717/"
-   ],
-   "page": "shinchi-l01.html",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "めろめろLv.∞（めろめろレベルインフィニティ）",
-   "site": "review",
-   "area": "京橋",
-   "genre": "メンズエステ",
-   "open": "2026-09-01",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://osaka.refle.info/newopen.html",
-    "https://meromero.jp/"
-   ],
-   "page": "review/shop.html?id=meromero-kyobashi",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "Mrs.coco（ミセスココ）",
-   "site": "review",
-   "area": "堺筋本町",
-   "genre": "メンズエステ",
-   "open": "2026-09-01",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://mrs-coco.com/"
-   ],
-   "page": "review/shop.html?id=mrs-coco-sakaisuji",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "Premium ARROWS（プレミアムアローズ）",
-   "site": "review",
-   "area": "日本橋",
-   "genre": "メンズエステ",
-   "open": "2026-09-01",
-   "status": "drafted",
-   "found": "2026-11-07",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=27",
-    "https://premium-arrows.com/"
-   ],
-   "page": "review/shop.html?id=premium-arrows",
-   "drafted": "2026-11-07"
-  },
-  {
-   "name": "APEX 三宮店（アペックス）",
-   "site": "review",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "open": "2026-11-01",
-   "status": "drafted",
-   "found": "2026-11-08",
-   "source": [
-    "https://www.kking.jp/ippan/1530683/",
-    "https://apex-esthe.com/"
-   ],
-   "page": "review/shop.html?id=apex-sannomiya",
-   "drafted": "2026-11-08"
-  },
-  {
-   "name": "RedRibbon 日本橋馬喰町（レッドリボン）",
-   "site": "review",
-   "area": "日本橋・馬喰町",
-   "genre": "メンズエステ",
-   "open": "2026-11-07",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://estheone.jp/s/rrnihonbashi/"
-   ],
-   "page": "review/shop.html?id=redribbon-bakurocho",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "RedRibbon 戸越ルーム（レッドリボン）",
-   "site": "review",
-   "area": "戸越",
-   "genre": "メンズエステ",
-   "open": "2026-11-07",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://redribbon-koyama.com/"
-   ],
-   "page": "review/shop.html?id=redribbon-togoshi",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "Amateras 町田ルーム（アマテラス）",
-   "site": "review",
-   "area": "町田",
-   "genre": "メンズエステ",
-   "open": "2026-11-02",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://amaterasu-tachikawa.com/"
-   ],
-   "page": "review/shop.html?id=amateras-machida",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "Amateras 八王子ルーム（アマテラス）",
-   "site": "review",
-   "area": "八王子",
-   "genre": "メンズエステ",
-   "open": "2026-11-02",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://amaterasu-tachikawa.com/"
-   ],
-   "page": "review/shop.html?id=amateras-hachioji",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "Amateras 立川ルーム（アマテラス）",
-   "site": "review",
-   "area": "立川",
-   "genre": "メンズエステ",
-   "open": "2026-11-02",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://amaterasu-tachikawa.com/"
-   ],
-   "page": "review/shop.html?id=amateras-tachikawa",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "Love Labyrinth（ラブラビリンス）",
-   "site": "review",
-   "area": "二子玉川",
-   "genre": "メンズエステ",
-   "open": "2026-11-01",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://lovelaby.com/"
-   ],
-   "page": "review/shop.html?id=lovelaby-futakotamagawa",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "Lollapalooza 赤羽ルーム（ララ・パルーザ）",
-   "site": "review",
-   "area": "赤羽",
-   "genre": "メンズエステ",
-   "open": "2026-11-06",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://lolla-esthe.com/"
-   ],
-   "page": "review/shop.html?id=lolla-akabane",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "ヌルヌルパニック 練馬ルーム（ぬるぬるぱにっく）",
-   "site": "review",
-   "area": "練馬",
-   "genre": "メンズエステ",
-   "open": "2026-11-05",
-   "status": "drafted",
-   "found": "2026-11-09",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://nurupani.com/"
-   ],
-   "page": "review/shop.html?id=nurupani-nerima",
-   "drafted": "2026-11-09"
-  },
-  {
-   "name": "泉佐野アジト（いずみさのアジト）",
-   "site": "review",
-   "area": "泉佐野",
-   "genre": "メンズエステ",
-   "open": "2026-11-12",
-   "status": "drafted",
-   "found": "2026-11-10",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://www.ajito-izumisano.com/"
-   ],
-   "page": "review/shop.html?id=ajito-izumisano",
-   "drafted": "2026-11-10"
-  },
-  {
-   "name": "AROMA DIAMOND（アロマダイヤモンド）",
-   "site": "review",
-   "area": "亀戸",
-   "genre": "メンズエステ",
-   "open": "2026-11-10",
-   "status": "drafted",
-   "found": "2026-11-10",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://aroma-daiamond.com/"
-   ],
-   "page": "review/shop.html?id=aroma-diamond-kameido",
-   "drafted": "2026-11-10"
-  },
-  {
-   "name": "Madam Stars（マダムスターズ）",
-   "site": "review",
-   "area": "大阪府内（出張）",
-   "genre": "メンズエステ（出張）",
-   "open": "2026-11-04",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://osaka.refle.info/newshop.html",
-    "https://mens-mg.com/newshop.php?p=1"
-   ],
-   "page": "review/shop.html?id=madamstars-osaka",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "MAGNITUDE（マグニチュード）",
-   "site": "review",
-   "area": "江坂",
-   "genre": "メンズエステ",
-   "open": "2026-11-20",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://magnitude-esthe.com/"
-   ],
-   "page": "review/shop.html?id=magnitude-esaka",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "Mrs.Mermaid 新大阪ルーム（ミセスマーメイド）",
-   "site": "review",
-   "area": "新大阪",
-   "genre": "メンズエステ",
-   "open": "2026-10-28",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://www.mrsmermaid.net/"
-   ],
-   "page": "review/shop.html?id=mrsmermaid-shinosaka",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "EUPHORIA 目黒ルーム（ユーフォリア）",
-   "site": "review",
-   "area": "目黒",
-   "genre": "メンズエステ",
-   "open": "2026-11-11",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://euphoria-esthe.com/"
-   ],
-   "page": "review/shop.html?id=euphoria-meguro",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "EUPHORIA 恵比寿ルーム（ユーフォリア）",
-   "site": "review",
-   "area": "恵比寿",
-   "genre": "メンズエステ",
-   "open": "2026-11-11",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://euphoria-esthe.com/"
-   ],
-   "page": "review/shop.html?id=euphoria-ebisu",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "MAISON de Aroma（メゾンドアロマ）",
-   "site": "review",
-   "area": "錦糸町",
-   "genre": "メンズエステ",
-   "open": "2026-11-10",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://maison-de-aroma.com/"
-   ],
-   "page": "review/shop.html?id=maison-de-aroma-kinshicho",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "小悪魔Spa Tokyo 立川ルーム（こあくまスパ）",
-   "site": "review",
-   "area": "立川",
-   "genre": "メンズエステ",
-   "open": "2026-11-09",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://mens-esthe-aroma.site/"
-   ],
-   "page": "review/shop.html?id=koakuma-spa-tachikawa",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "CRYSTAL（クリスタル）",
-   "site": "review",
-   "area": "千歳烏山",
-   "genre": "メンズエステ",
-   "open": "2026-11-09",
-   "status": "drafted",
-   "found": "2026-11-12",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://crystal-esthe.net/"
-   ],
-   "page": "review/shop.html?id=crystal-chitosekarasuyama",
-   "drafted": "2026-11-12"
-  },
-  {
-   "name": "Tart（タルト）",
-   "site": "review",
-   "area": "高槻",
-   "genre": "メンズエステ",
-   "open": "2026-08-21",
-   "status": "listed",
-   "found": "2026-11-12",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
-  },
-  {
-   "name": "fate（フェイト）",
-   "site": "review",
-   "area": "梅田",
-   "genre": "メンズエステ",
-   "open": "2026-08-17",
-   "status": "listed",
-   "found": "2026-11-12",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
-  },
-  {
-   "name": "CURE CELEB（キュアセレブ）",
-   "site": "review",
-   "area": "堺筋本町",
-   "genre": "メンズエステ",
-   "open": "2026-08-05",
-   "status": "listed",
-   "found": "2026-11-12",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
-  },
-  {
-   "name": "Mrs.Amour Spa（ミセスアムールスパ）",
-   "site": "review",
-   "area": "堺筋本町",
-   "genre": "メンズエステ",
-   "open": "2026-07-20",
-   "status": "listed",
-   "found": "2026-11-12",
-   "source": [
-    "https://osaka.refle.info/newopen.html"
-   ],
-   "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
-  },
-  {
-   "name": "LEALYS（リアリス）",
-   "site": "bar",
-   "area": "歌舞伎町",
-   "genre": "キャバクラ",
-   "open": "2026-12-03（予定・年は掲載時期から判断）",
-   "address": "東京都新宿区歌舞伎町2-26-3 互福ビル1F",
-   "status": "drafted",
-   "found": "2026-11-15",
-   "page": "kabuki-c01.html",
-   "source": [
-    "https://www.caba2.net/s/11905",
-    "https://www.caba2.net/tokyo/_list?industry%5B0%5D=1"
-   ],
-   "drafted": "2026-11-15"
-  },
-  {
-   "name": "VIVIA LOUNGE（ビビアラウンジ）",
-   "site": "bar",
-   "area": "上野",
-   "genre": "キャバクラ",
-   "open": "2026-10（日付不明）",
-   "address": "東京都台東区上野2-12-16 小島ビル5F",
-   "status": "drafted",
-   "found": "2026-11-15",
-   "page": "ueno-c10.html",
-   "source": [
-    "https://www.caba2.net/s/12237",
-    "https://www.caba2.net/tokyo/_list?industry%5B0%5D=1"
-   ],
-   "drafted": "2026-11-15"
-  },
-  {
-   "name": "CLUB VISION（ヴィジョン）",
-   "site": "bar",
-   "area": "練馬",
-   "genre": "キャバクラ",
-   "open": "12月（予定・日付不明）",
-   "address": "東京都練馬区豊玉北5-22-10 コンフォートX 2F",
-   "status": "listed",
-   "found": "2026-11-15",
-   "source": [
-    "https://www.caba2.net/s/12316"
-   ],
-   "memo": "対象エリア外（練馬）のためリスト化のみ"
-  },
-  {
-   "name": "NOT A LOUNGE 12（ノット ア ラウンジ トゥエルブ）",
-   "site": "bar",
-   "area": "ミナミ",
-   "genre": "キャバクラ",
-   "open": "不明（2026-11-13新規掲載）",
-   "address": "大阪府大阪市中央区宗右衛門町2-21 ARTEMIS 3F",
-   "status": "listed",
-   "found": "2026-11-15",
-   "source": [
-    "https://www.caba2.net/s/12368"
-   ],
-   "memo": "オープン日が確認できないためリスト化のみ"
-  },
-  {
-   "name": "NAMEX SPA 新井薬師ルーム（ネイメックススパ）",
-   "area": "新井薬師前（中野区）",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-16",
-   "found": "2026-11-16",
-   "status": "drafted",
-   "page": "review/shop.html?id=namex-araiyakushi",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "CLUB HORUS（ホルス）",
-   "area": "北新地",
-   "genre": "ニュークラブ",
-   "site": "bar",
-   "open": "不明",
-   "found": "2026-11-16",
-   "status": "listed",
-   "memo": "一覧に「NEW OPEN」等の表記あり。詳細ページを取得できずオープン日・住所未確認のためリスト化のみ",
-   "source": [
-    "https://www.caba2.net/osaka/_list",
-    "https://www.caba2.net/osaka/kitashinchi/kitashinchi/horus"
-   ]
-  },
-  {
-   "name": "Club Neptune（ネプチューン）",
-   "area": "ミナミ",
-   "genre": "キャバクラ",
-   "site": "bar",
-   "open": "不明",
-   "found": "2026-11-16",
-   "status": "listed",
-   "memo": "一覧に「NEW OPEN」等の表記あり。詳細ページを取得できずオープン日・住所未確認のためリスト化のみ",
-   "source": [
-    "https://www.caba2.net/osaka/_list",
-    "https://www.caba2.net/osaka/minami/minami/neptune"
-   ]
-  },
-  {
-   "name": "LUNA（ルナ）",
-   "area": "堺筋本町",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-15",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=luna-sakaisuji",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "むちむちお姉さん 蒲田店（むちむちおねえさん）",
-   "area": "蒲田",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-18",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=muchimuchi-kamata",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "SELECT+ 西葛西ルーム（セレクトプラス）",
-   "area": "西葛西",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-20",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=selectplus-nishikasai",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "WHITE ROOM 板橋ルーム（ホワイトルーム）",
-   "area": "板橋",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-12",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=whiteroom-itabashi",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "Mellow 大塚ルーム（メロウ）",
-   "area": "大塚",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-20",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=mellow-otsuka",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "Mellow 日暮里ルーム（メロウ）",
-   "area": "日暮里",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-20",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=mellow-nippori",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "Heaven's Road（ヘブンズロード）",
-   "area": "立川",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-20",
-   "found": "2026-11-18",
-   "status": "drafted",
-   "page": "review/shop.html?id=heavensroad-tachikawa",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "Aroma Rize（アロマリゼ）",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-09",
-   "found": "2026-11-19",
-   "status": "drafted",
-   "page": "review/shop.html?id=aromarize-sannomiya",
-   "source": [
-    "https://kobe.refle.info/newopen.html",
-    "https://kobe.refle.info/shop/aroma-rize/"
-   ]
-  },
-  {
-   "name": "RINGEL（リンジェル）",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-01",
-   "found": "2026-11-19",
-   "status": "drafted",
-   "page": "review/shop.html?id=ringel-sannomiya",
-   "source": [
-    "https://kobe.refle.info/newopen.html",
-    "https://kobe.refle.info/shop/ringelmenseste/"
-   ]
-  },
-  {
-   "name": "Nia spa（ニアスパ）",
-   "area": "池袋",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-20",
-   "found": "2026-11-19",
-   "status": "drafted",
-   "page": "review/shop.html?id=niaspa-ikebukuro",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://niaspa.shop/"
-   ]
-  },
-  {
-   "name": "ROSÉ SPA 八王子ルーム（ロゼスパ）",
-   "area": "八王子",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-12-01",
-   "found": "2026-11-19",
-   "status": "drafted",
-   "page": "review/shop.html?id=rosespa-hachioji",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1&pref=13",
-    "https://rosespa-tokyo.com/"
-   ]
-  },
-  {
-   "name": "Muse（ミューズ）",
-   "site": "bar",
-   "area": "歌舞伎町",
-   "genre": "ラウンジ",
-   "open": "2026-10-01",
-   "address": "東京都新宿区歌舞伎町2-21-4 三経ビル21 B1",
-   "status": "drafted",
-   "found": "2026-11-19",
-   "page": "kabuki-l01.html",
-   "source": [
-    "https://www.pokepara-tainew.jp/tokyo/m4/a10000/shop24640/",
-    "https://www.pokepara-tainew.jp/tokyo/m4/a10000/tg_19/",
-    "https://a-muse-lounge.jp/"
-   ],
-   "drafted": "2026-11-19"
-  },
-  {
-   "name": "VINTAGE CLUB PABLO（パブロ）",
-   "site": "bar",
-   "area": "歌舞伎町",
-   "genre": "ガールズラウンジ",
-   "open": "不明",
-   "status": "listed",
-   "found": "2026-11-19",
-   "source": [
-    "https://www.pokepara-tainew.jp/tokyo/m4/a10000/tg_19/"
-   ],
-   "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "GIRLS BAR SIRIUS（シリウス）",
-   "site": "bar",
-   "area": "吉祥寺",
-   "genre": "ガールズバー",
-   "open": "2026-11-01",
-   "status": "listed",
-   "found": "2026-11-19",
-   "source": [
-    "https://www.pokepara-tainew.jp/tokyo/tg_19/"
-   ],
-   "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "おふくろさん 別館 練馬店（おふくろさん）",
-   "area": "練馬",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-23",
-   "found": "2026-11-20",
-   "status": "drafted",
-   "page": "review/shop.html?id=ofukurosan-nerima",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://ofukurosan-nerima.com/"
-   ]
-  },
-  {
-   "name": "いちゃZOOO 大井町ルーム（いちゃズー）",
-   "area": "大井町",
-   "genre": "メンズエステ",
-   "site": "review",
-   "open": "2026-11-16",
-   "found": "2026-11-20",
-   "status": "drafted",
-   "page": "review/shop.html?id=ichazooo-oimachi",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1",
-    "https://ichazooo.com/"
-   ]
-  },
-  {
-   "name": "マーメイドSPA",
-   "site": "review",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-21",
-   "source": [
-    "https://menesth.jp/26/area132/",
-    "https://menesth.jp/26/shop/51654/"
-   ],
-   "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "CHARMIA（シャルミア）",
-   "site": "review",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-21",
-   "source": [
-    "https://menesth.jp/26/area132/",
-    "https://menesth.jp/26/shop/51349/"
-   ],
-   "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "Elsia Spa（エルシアスパ）",
-   "site": "review",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-21",
-   "source": [
-    "https://menesth.jp/26/area132/",
-    "https://menesth.jp/26/shop/49273/"
-   ],
-   "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "First class〜Platinum〜 三宮店",
-   "site": "review",
-   "area": "神戸・三宮",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-21",
-   "source": [
-    "https://menesth.jp/26/area132/",
-    "https://menesth.jp/26/shop/50331/"
-   ],
-   "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "北新地ツバキラウンジ",
-   "site": "bar",
-   "area": "北新地",
-   "genre": "ラウンジ",
-   "open": "不明",
-   "status": "listed",
-   "found": "2026-11-21",
-   "source": [
-    "https://note.com/gomachan_0327/n/n7e21360d5ef7"
-   ],
-   "note": "検索結果のタイトルで新店舗として確認のみ。ページ取得ができず、住所・オープン日など未確認のためカード未作成"
-  },
-  {
-   "name": "2時間の癒し（にじかんのいやし）",
-   "site": "review",
-   "area": "心斎橋",
-   "genre": "メンズエステ",
-   "open": "2026-11-10",
-   "status": "drafted",
-   "found": "2026-11-22",
-   "source": [
-    "https://osaka.refle.info/newopen.html",
-    "https://osaka.refle.info/shop/nijikannoiyashi/"
-   ],
-   "note": "一覧ページの公開情報（最寄り駅・営業時間・オープン日）のみで作成。住所・女子給は未確認"
-  },
-  {
-   "name": "lotus（ロータス）",
-   "site": "review",
-   "area": "泉佐野",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://osaka.refle.info/newshop.html"
-   ],
-   "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "なまえすて",
-   "site": "review",
-   "area": "京橋",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://osaka.refle.info/newshop.html"
-   ],
-   "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "ミセス出来心",
-   "site": "review",
-   "area": "日本橋",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://osaka.refle.info/newshop.html"
-   ],
-   "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "フルーツコレクション",
-   "site": "review",
-   "area": "秋葉原",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=fruitscollection-akihabara"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "SPA GLORIA（スパグロリア）",
-   "site": "review",
-   "area": "国分寺",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=spagloria-kokubunji"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "ADAMAS（アダマス）",
-   "site": "review",
-   "area": "中野",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=adamas-nakano"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "VERMOUTH 亀戸ルーム（ベルモット）",
-   "site": "review",
-   "area": "亀戸",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=vermouth-kameido"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "VERMOUTH 府中ルーム（ベルモット）",
-   "site": "review",
-   "area": "府中",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=vermouth-fuchu"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "Dejavu Tokyo（デジャヴ東京）",
-   "site": "review",
-   "area": "麻布十番",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=dejavu-tokyo-azabujuban"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "ELTERAS（エルテラス）",
-   "site": "review",
-   "area": "東新宿",
-   "genre": "メンズエステ",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-23",
-   "source": [
-    "https://www.ms-guide.jp/news/?vm=pc",
-    "https://www.ms-guide.jp/shop/detail.php?id=elteras-higashishinjuku"
-   ],
-   "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
-  },
-  {
-   "name": "Bar Avalanche（アバランチ）",
-   "site": "jobs",
-   "area": "十三",
-   "genre": "ガールズバー",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-24",
-   "source": [
-    "https://www.gb-walker.jp/recruit/kansai/list-shop/kodawari/newopen/",
-    "https://www.gb-walker.jp/recruit/kansai/shop/avalanche/"
-   ],
-   "note": "新店一覧に掲載。オープン日・営業時間・時給の記載なく作成見送り（listedのまま）"
-  },
-  {
-   "name": "BABAR（ババール）",
-   "site": "jobs",
-   "area": "尼崎・立花",
-   "genre": "ガールズバー",
-   "open": "",
-   "status": "listed",
-   "found": "2026-11-24",
-   "source": [
-    "https://www.gb-walker.jp/recruit/kansai/list-shop/kodawari/newopen/",
-    "https://www.gb-walker.jp/recruit/kansai/shop/babar11/"
-   ],
-   "note": "新店一覧に掲載。オープン日の記載なし、対象エリア外（尼崎）のため作成見送り"
-  },
-  {
-   "name": "上野 LIRIC TOKYO UENO（リリック）",
-   "site": "jobs",
-   "area": "上野",
-   "genre": "キャバクラ",
-   "open": "2026-07-21",
-   "status": "listed",
-   "found": "2026-11-24",
-   "source": [
-    "https://note.com/gomachan_0327/n/nb82ffa9ea069"
-   ],
-   "note": "2026年7月グランドオープンで直近1〜2ヶ月の新店に当たらないため作成見送り"
-  },
-  {
-   "name": "ZAURUS（ザウルス）",
-   "site": "jobs",
-   "area": "北新地",
-   "genre": "キャバクラ",
-   "open": "不明",
-   "address": "大阪市北区曾根崎新地1-5-29 ESPACE北新地ONE 5F",
-   "status": "listed",
-   "found": "2026-11-24",
-   "source": [
-    "https://www.caba2.net/osaka/kitashinchi/_list"
-   ],
-   "note": "一覧に「新店舗」表記あり。オープン日・求人条件は未確認（詳細ページ取得できず）"
-  },
-  {
-   "name": "anemore（アネモア）",
-   "site": "review",
-   "area": "銀座",
-   "genre": "メンズエステ",
-   "open": "2026-12-01（予定）",
-   "status": "drafted",
-   "found": "2026-11-25",
-   "drafted": "2026-11-25",
-   "page": "review/shop.html?id=anemore-ginza",
-   "source": [
-    "https://mens-mg.com/newshop.php?p=1"
-   ]
-  },
-  {
-   "name": "CIRCUS Lounge Tokyo（サーカスラウンジトーキョー）",
-   "site": "bar",
-   "area": "六本木・西麻布",
-   "genre": "ラウンジ",
-   "open": "不明",
-   "status": "listed",
-   "found": "2026-11-25",
-   "note": "新着掲載のみでオープン日未確認のため作成見送り",
-   "source": [
-    "https://castwalker.jp/kanto/newopen/"
-   ]
-  },
-  {
-   "name": "WHITE ROSE（ホワイトローズ）",
-   "site": "bar",
-   "area": "浅草",
-   "genre": "ラウンジ",
-   "open": "2026-10-01（一覧の記載）",
-   "status": "listed",
-   "found": "2026-11-25",
-   "note": "新着一覧のみで住所・給与など詳細ページを確認できず作成見送り",
-   "source": [
-    "https://www.pokepara-tainew.jp/tokyo/tg_19/"
-   ]
-  },
-  {
-   "name": "Bishuka（ビシュカ）",
-   "site": "bar",
-   "area": "浅草",
-   "genre": "ガールズバー",
-   "open": "2026-10-01（一覧の記載）",
-   "status": "listed",
-   "found": "2026-11-25",
-   "note": "新着一覧のみで住所・給与など詳細ページを確認できず作成見送り",
-   "source": [
-    "https://www.pokepara-tainew.jp/tokyo/tg_19/"
-   ]
-  },
-  {
-   "name": "O-RA TOKYO（オーラトウキョウ）",
-   "site": "bar",
-   "area": "神田",
-   "genre": "ガールズバー",
-   "open": "10月（年記載なし）",
-   "status": "listed",
-   "found": "2026-11-25",
-   "note": "新着一覧のみで住所・給与など詳細ページを確認できず作成見送り",
-   "source": [
-    "https://www.pokepara-tainew.jp/tokyo/tg_19/"
-   ]
-  }
- ]
+  "note": "新店リサーチの記録。status: listed=リスト化のみ / drafted=カード・求人ページ作成済み(プレビュー) / approved=掲載OK / rejected=掲載しない。rejectedは今後作らない。",
+  "shops": [
+    {
+      "name": "銀座 BARCELONA 萌葱（モエギ）",
+      "site": "bar",
+      "area": "銀座",
+      "genre": "キャバクラ",
+      "open": "2026-11-02",
+      "address": "東京都中央区銀座8-7-8 GINZA8ビル7・8F",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "ginza-c01.html",
+      "source": [
+        "https://www.barcelona.co.jp/ginza/castrecruit/",
+        "https://yorucareer.com/shop/moegi-ginza/"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "NOVA ROPPONGI（ノヴァ六本木）",
+      "site": "bar",
+      "area": "六本木",
+      "genre": "キャバクラ",
+      "open": "2026-09-28",
+      "address": "東京都港区六本木7-13-8 フュージョンビル2〜4F",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "roppongi-c01.html",
+      "source": [
+        "https://www.connect-jobs.info/job/roppongi/14909/"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "club Ganesa 夜の部（ガネーシャ）",
+      "site": "bar",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "open": "9/1（年不明）",
+      "status": "listed",
+      "found": "2026-11-01"
+    },
+    {
+      "name": "CLUB SCENE（クラブシーン）",
+      "site": "bar",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "open": "2025-11-28",
+      "address": "大阪市中央区心斎橋筋2-2-3 エンジョイトラストビル4F",
+      "status": "listed",
+      "found": "2026-11-01",
+      "note": "オープンは2025年11月28日で新店ではないため作成見送り（listedのまま）",
+      "source": [
+        "https://www.caba2.net/osaka/minami/minami/Scene",
+        "https://www.club-scene.net/"
+      ]
+    },
+    {
+      "name": "Bar Ratel（バーラーテル）",
+      "site": "bar",
+      "area": "天満",
+      "genre": "ガールズバー",
+      "open": "不明",
+      "address": "大阪市北区天神橋4-2-7 天満松栄会館3F",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "tenma-g02.html",
+      "source": [
+        "https://castwalker.jp/kansai/newopen/",
+        "https://www.caba2.jp/osaka/detail/6529/"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Club Alice（クラブアリス）",
+      "site": "bar",
+      "area": "祇園・木屋町",
+      "genre": "キャバクラ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-01"
+    },
+    {
+      "name": "上野 LUMINOUS（ルミナス）",
+      "site": "bar",
+      "area": "上野",
+      "genre": "キャバクラ",
+      "open": "2026-05-01",
+      "address": "東京都台東区上野2-12-3 小島ビル大国屋ビル4F",
+      "status": "listed",
+      "found": "2026-11-01"
+    },
+    {
+      "name": "AMOUR LUNA（アムールルナ）",
+      "site": "review",
+      "area": "十三（新大阪）",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=amour-luna",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "神SPA",
+      "site": "review",
+      "area": "東梅田",
+      "genre": "メンズエステ",
+      "open": "2026-10-23",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=kamispa",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "こころポンパージュ",
+      "site": "review",
+      "area": "梅田（出張）",
+      "genre": "メンズエステ",
+      "open": "2026-10-26",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=cocopom",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "しろかの",
+      "site": "review",
+      "area": "梅田",
+      "genre": "メンズエステ",
+      "open": "2026-10-20",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=shirokano-umeda",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "LOVE Studio（ラブスタ）",
+      "site": "review",
+      "area": "新大阪・西中島（出張）",
+      "genre": "メンズエステ",
+      "open": "2026-10-20",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=lovestudio",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "美魔女refle 堺筋本町店",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-10-02",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=bimajo-refle-sakaisuji",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Le Savon（ルサボン）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=le-savon",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "miu（ミュー）",
+      "site": "review",
+      "area": "高槻",
+      "genre": "メンズエステ",
+      "open": "2026-09-22",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=miu-takatsuki",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "むチューSPA",
+      "site": "review",
+      "area": "西中島",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=muchu-spa",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Tokyo Z SPA",
+      "site": "review",
+      "area": "上野",
+      "genre": "メンズエステ",
+      "open": "2026-10-25",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=tokyo-zspa",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "NOエステ",
+      "site": "review",
+      "area": "五反田",
+      "genre": "メンズエステ",
+      "open": "2026-10-27",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=no-esthe",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "禁断の妻 新橋ルーム",
+      "site": "review",
+      "area": "新橋",
+      "genre": "メンズエステ",
+      "open": "2026-10-20",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=kindan-tsuma-shinbashi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Belle Mme 渋谷店",
+      "site": "review",
+      "area": "渋谷",
+      "genre": "メンズエステ",
+      "open": "2026-10-31",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=belle-mme-shibuya",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "NAMEX SPA 高田馬場ルーム",
+      "site": "review",
+      "area": "高田馬場",
+      "genre": "メンズエステ",
+      "open": "2026-10-22",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=namex-takadanobaba",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Aaron（アロン）",
+      "site": "review",
+      "area": "王子",
+      "genre": "メンズエステ",
+      "open": "2026-10-30",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=aaron-oji",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Tigger 三軒茶屋ルーム",
+      "site": "review",
+      "area": "三軒茶屋",
+      "genre": "メンズエステ",
+      "open": "2026-10-25",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "page": "review/shop.html?id=tigger-sangenjaya",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Club Lilith -MINAMI-（リリスミナミ）",
+      "site": "bar",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-01",
+      "source": [
+        "https://castwalker.jp/kansai/newopen/"
+      ],
+      "note": "大阪市中央区東心斎橋2-6-20 日宝アポロ会館4F。詳細ページを取得できず作成見送り"
+    },
+    {
+      "name": "ストロボ",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "不明",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "page": "review/shop.html?id=strobo-nipponbashi",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Starlight.Mrs 大阪（スターライトミセス）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "不明",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "page": "review/shop.html?id=starlight-mrs",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "とろ蜜エステ",
+      "site": "review",
+      "area": "鶯谷（出張）",
+      "genre": "メンズエステ",
+      "open": "2026-10-29",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "page": "review/shop.html?id=toromitsu-esthe",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "CAMPUS（キャンパス）",
+      "site": "review",
+      "area": "日本橋（東京）",
+      "genre": "メンズエステ",
+      "open": "2026-10-28",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "page": "review/shop.html?id=campus-esthe",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "熟女の手 笹塚店",
+      "site": "review",
+      "area": "笹塚",
+      "genre": "メンズエステ",
+      "open": "2026-10-19",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "page": "review/shop.html?id=jukujo-te-sasazuka",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "RODIEL 成増ルーム",
+      "site": "review",
+      "area": "成増",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "page": "review/shop.html?id=rodiel-narimasu",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "五つ星エステ 六町ルーム",
+      "site": "review",
+      "area": "六町",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-01",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "page": "review/shop.html?id=fivestar-rokucho",
+      "drafted": "2026-11-01"
+    },
+    {
+      "name": "Bianca.（ビアンカ）",
+      "site": "review",
+      "area": "梅田・曽根崎",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-02",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/bianca-esthe/"
+      ],
+      "page": "review/shop.html?id=bianca-umeda",
+      "drafted": "2026-11-02"
+    },
+    {
+      "name": "SWEET×DIAMOND（スイート・ダイヤモンド）",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-02",
+      "status": "drafted",
+      "found": "2026-11-02",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/sweetdiamond-nihonbashi/"
+      ],
+      "page": "review/shop.html?id=sweetdiamond-nipponbashi",
+      "drafted": "2026-11-02"
+    },
+    {
+      "name": "Mrs.Blue Dahlia（ミセスブルーダリア）",
+      "site": "review",
+      "area": "高槻",
+      "genre": "メンズエステ",
+      "open": "2026-09-07",
+      "status": "drafted",
+      "found": "2026-11-02",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/mrs-bluedahlia/"
+      ],
+      "page": "review/shop.html?id=mrs-bluedahlia",
+      "drafted": "2026-11-02"
+    },
+    {
+      "name": "BASIS（バーシス）",
+      "site": "review",
+      "area": "東梅田",
+      "genre": "メンズエステ（メンズ脱毛＆リラクゼーション）",
+      "open": "2026-10-26",
+      "status": "drafted",
+      "found": "2026-11-05",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "page": "review/shop.html?id=basis-umeda",
+      "drafted": "2026-11-05"
+    },
+    {
+      "name": "KOUYOU",
+      "site": "review",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-05",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://kouyou-salon.com/"
+      ],
+      "page": "review/shop.html?id=kouyou-ikebukuro",
+      "drafted": "2026-11-05"
+    },
+    {
+      "name": "AROMA NOVA 新大阪ルーム（アロマノヴァ）",
+      "site": "review",
+      "area": "新大阪",
+      "genre": "メンズエステ",
+      "open": "2026-09-25",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://aromanova.jp/"
+      ],
+      "page": "review/shop.html?id=aromanova-shinosaka",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "MARIMO SPA（マリモスパ）",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-08",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://marimospa.com/"
+      ],
+      "page": "review/shop.html?id=marimo-spa",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "メンエス紳士クラブ 京橋ルーム（メンエスしんしクラブ）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://shinshiclub.net/"
+      ],
+      "page": "review/shop.html?id=shinshiclub-kyobashi",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "PLUMEA（プルメア）",
+      "site": "review",
+      "area": "京都・河原町",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=26",
+        "https://plumea-esthe.com/"
+      ],
+      "page": "review/shop.html?id=plumea-kyoto",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "CALLACE（カラーチェ）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=28",
+        "https://callace-salon.com/"
+      ],
+      "page": "review/shop.html?id=callace-sannomiya",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "秘めたるエステ（ひめたるエステ）",
+      "site": "review",
+      "area": "築地",
+      "genre": "メンズエステ",
+      "open": "2026-10-08",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://himetaru-esthe.com/"
+      ],
+      "page": "review/shop.html?id=himetaru-esthe",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "人妻物語（ひとづまものがたり）",
+      "site": "review",
+      "area": "銀座",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://tumamono.com/"
+      ],
+      "page": "review/shop.html?id=tumamono-ginza",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "凪の華 渋谷（なぎのはな）",
+      "site": "review",
+      "area": "渋谷",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://naginohana.com/hana/"
+      ],
+      "page": "review/shop.html?id=naginohana-shibuya",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "凪の華 恵比寿（なぎのはな）",
+      "site": "review",
+      "area": "恵比寿",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://naginohana-ebisu.com/hana/"
+      ],
+      "page": "review/shop.html?id=naginohana-ebisu",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "アロマGR（アロマジーアール）",
+      "site": "review",
+      "area": "大塚",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://ootsuka-aromagr.com/"
+      ],
+      "page": "review/shop.html?id=aromagr-otsuka",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "RODIEL 池袋ルーム（ロディエル）",
+      "site": "review",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://rodiel-tokyo.com/"
+      ],
+      "page": "review/shop.html?id=rodiel-ikebukuro",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Flag ship（フラッグシップ）",
+      "site": "review",
+      "area": "高田馬場",
+      "genre": "メンズエステ",
+      "open": "2026-10-01",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://tokyo-flagship.com/"
+      ],
+      "page": "review/shop.html?id=flagship-takadanobaba",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Remember 小岩ルーム（リメンバー）",
+      "site": "review",
+      "area": "小岩",
+      "genre": "メンズエステ",
+      "open": "2026-10-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://remember-healing.com/"
+      ],
+      "page": "review/shop.html?id=remember-koiwa",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "ひよこ倶楽部（ひよこくらぶ）",
+      "site": "review",
+      "area": "東梅田",
+      "genre": "メンズエステ",
+      "open": "2026-09-08",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://hiyokoclub-osaka.com/"
+      ],
+      "page": "review/shop.html?id=hiyokoclub-higashiumeda",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Spa aura（スパオーラ）",
+      "site": "review",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "open": "2026-09-10",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://spa-aura-esthe.com/"
+      ],
+      "page": "review/shop.html?id=spaaura-ikebukuro",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "El Edén（エルエデン）",
+      "site": "review",
+      "area": "麻布十番",
+      "genre": "メンズエステ",
+      "open": "2026-09-10",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://el-eden.net/"
+      ],
+      "page": "review/shop.html?id=eleden-azabujuban",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "GRAND SLAM（グランドスラム）",
+      "site": "review",
+      "area": "田町",
+      "genre": "メンズエステ",
+      "open": "2026-09-14",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://grandslam-esthe.com/"
+      ],
+      "page": "review/shop.html?id=grandslam-tamachi",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "TREVI（トレヴィ）",
+      "site": "review",
+      "area": "恵比寿",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://trevi.in/"
+      ],
+      "page": "review/shop.html?id=trevi-ebisu",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "エマニエル（エマニエル）",
+      "site": "review",
+      "area": "日暮里",
+      "genre": "メンズエステ",
+      "open": "2026-09-15",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://www.emanieru.com/"
+      ],
+      "page": "review/shop.html?id=emanieru-nippori",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "M's LABO（エムズラボ）",
+      "site": "review",
+      "area": "亀有（葛飾区）",
+      "genre": "メンズエステ",
+      "open": "2026-09-18",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://m-s-labo.com/"
+      ],
+      "page": "review/shop.html?id=mslabo-kameari",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "灯庵 -TOUAN-（とうあん）",
+      "site": "review",
+      "area": "自由が丘",
+      "genre": "メンズエステ",
+      "open": "2026-09-18",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://spa-touan.org/"
+      ],
+      "page": "review/shop.html?id=touan-jiyugaoka",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "素敵なワイフ（すてきなワイフ）",
+      "site": "review",
+      "area": "北千住",
+      "genre": "メンズエステ",
+      "open": "2026-09-24",
+      "status": "drafted",
+      "found": "2026-11-06",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://www.wife-kitasenju.com/"
+      ],
+      "page": "review/shop.html?id=sutekinawife-kitasenju",
+      "drafted": "2026-11-06"
+    },
+    {
+      "name": "Motenashi 赤羽ルーム（もてなし）",
+      "site": "review",
+      "area": "赤羽",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://motenashi.esthe-hp.com/"
+      ],
+      "page": "review/shop.html?id=motenashi-akabane",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Motenashi 荻窪ルーム（もてなし）",
+      "site": "review",
+      "area": "荻窪",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://motenashi.esthe-hp.com/"
+      ],
+      "page": "review/shop.html?id=motenashi-ogikubo",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Motenashi 吉祥寺ルーム（もてなし）",
+      "site": "review",
+      "area": "吉祥寺",
+      "genre": "メンズエステ",
+      "open": "2026-10-05",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://motenashi.esthe-hp.com/"
+      ],
+      "page": "review/shop.html?id=motenashi-kichijoji",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "大人の階段（おとなのかいだん）",
+      "site": "review",
+      "area": "日暮里",
+      "genre": "メンズエステ",
+      "open": "2026-09-29",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=2",
+        "https://otona-no-kaidan.com/"
+      ],
+      "page": "review/shop.html?id=otonanokaidan-nippori",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "T.i.M -TIME is MATCH-（ティーアイエム）",
+      "site": "bar",
+      "area": "本町",
+      "genre": "ラウンジ",
+      "open": "2026-11下旬",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
+        "https://www.pokepara-tainew.jp/osaka/m300/a15015/shop24843/"
+      ],
+      "page": "honmachi-l01.html",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "美魔女LOUNGE 夢宵（ユメヨイ）",
+      "site": "bar",
+      "area": "福島（野田阪神）",
+      "genre": "ラウンジ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
+        "https://www.pokepara-tainew.jp/osaka/m300/a308/shop24633/"
+      ],
+      "page": "fukushima-l01.html",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "TŌU（トウ）",
+      "site": "bar",
+      "area": "北新地",
+      "genre": "ラウンジ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://www.pokepara-tainew.jp/osaka/g24/tg_60/",
+        "https://www.pokepara-tainew.jp/osaka/m300/a305/shop24717/"
+      ],
+      "page": "shinchi-l01.html",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "めろめろLv.∞（めろめろレベルインフィニティ）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://osaka.refle.info/newopen.html",
+        "https://meromero.jp/"
+      ],
+      "page": "review/shop.html?id=meromero-kyobashi",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Mrs.coco（ミセスココ）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://mrs-coco.com/"
+      ],
+      "page": "review/shop.html?id=mrs-coco-sakaisuji",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "Premium ARROWS（プレミアムアローズ）",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "2026-09-01",
+      "status": "drafted",
+      "found": "2026-11-07",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=27",
+        "https://premium-arrows.com/"
+      ],
+      "page": "review/shop.html?id=premium-arrows",
+      "drafted": "2026-11-07"
+    },
+    {
+      "name": "APEX 三宮店（アペックス）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-08",
+      "source": [
+        "https://www.kking.jp/ippan/1530683/",
+        "https://apex-esthe.com/"
+      ],
+      "page": "review/shop.html?id=apex-sannomiya",
+      "drafted": "2026-11-08"
+    },
+    {
+      "name": "RedRibbon 日本橋馬喰町（レッドリボン）",
+      "site": "review",
+      "area": "日本橋・馬喰町",
+      "genre": "メンズエステ",
+      "open": "2026-11-07",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://estheone.jp/s/rrnihonbashi/"
+      ],
+      "page": "review/shop.html?id=redribbon-bakurocho",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "RedRibbon 戸越ルーム（レッドリボン）",
+      "site": "review",
+      "area": "戸越",
+      "genre": "メンズエステ",
+      "open": "2026-11-07",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://redribbon-koyama.com/"
+      ],
+      "page": "review/shop.html?id=redribbon-togoshi",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Amateras 町田ルーム（アマテラス）",
+      "site": "review",
+      "area": "町田",
+      "genre": "メンズエステ",
+      "open": "2026-11-02",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://amaterasu-tachikawa.com/"
+      ],
+      "page": "review/shop.html?id=amateras-machida",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Amateras 八王子ルーム（アマテラス）",
+      "site": "review",
+      "area": "八王子",
+      "genre": "メンズエステ",
+      "open": "2026-11-02",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://amaterasu-tachikawa.com/"
+      ],
+      "page": "review/shop.html?id=amateras-hachioji",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Amateras 立川ルーム（アマテラス）",
+      "site": "review",
+      "area": "立川",
+      "genre": "メンズエステ",
+      "open": "2026-11-02",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://amaterasu-tachikawa.com/"
+      ],
+      "page": "review/shop.html?id=amateras-tachikawa",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Love Labyrinth（ラブラビリンス）",
+      "site": "review",
+      "area": "二子玉川",
+      "genre": "メンズエステ",
+      "open": "2026-11-01",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://lovelaby.com/"
+      ],
+      "page": "review/shop.html?id=lovelaby-futakotamagawa",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "Lollapalooza 赤羽ルーム（ララ・パルーザ）",
+      "site": "review",
+      "area": "赤羽",
+      "genre": "メンズエステ",
+      "open": "2026-11-06",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://lolla-esthe.com/"
+      ],
+      "page": "review/shop.html?id=lolla-akabane",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "ヌルヌルパニック 練馬ルーム（ぬるぬるぱにっく）",
+      "site": "review",
+      "area": "練馬",
+      "genre": "メンズエステ",
+      "open": "2026-11-05",
+      "status": "drafted",
+      "found": "2026-11-09",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://nurupani.com/"
+      ],
+      "page": "review/shop.html?id=nurupani-nerima",
+      "drafted": "2026-11-09"
+    },
+    {
+      "name": "泉佐野アジト（いずみさのアジト）",
+      "site": "review",
+      "area": "泉佐野",
+      "genre": "メンズエステ",
+      "open": "2026-11-12",
+      "status": "drafted",
+      "found": "2026-11-10",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://www.ajito-izumisano.com/"
+      ],
+      "page": "review/shop.html?id=ajito-izumisano",
+      "drafted": "2026-11-10"
+    },
+    {
+      "name": "AROMA DIAMOND（アロマダイヤモンド）",
+      "site": "review",
+      "area": "亀戸",
+      "genre": "メンズエステ",
+      "open": "2026-11-10",
+      "status": "drafted",
+      "found": "2026-11-10",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://aroma-daiamond.com/"
+      ],
+      "page": "review/shop.html?id=aroma-diamond-kameido",
+      "drafted": "2026-11-10"
+    },
+    {
+      "name": "Madam Stars（マダムスターズ）",
+      "site": "review",
+      "area": "大阪府内（出張）",
+      "genre": "メンズエステ（出張）",
+      "open": "2026-11-04",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newshop.html",
+        "https://mens-mg.com/newshop.php?p=1"
+      ],
+      "page": "review/shop.html?id=madamstars-osaka",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "MAGNITUDE（マグニチュード）",
+      "site": "review",
+      "area": "江坂",
+      "genre": "メンズエステ",
+      "open": "2026-11-20",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://magnitude-esthe.com/"
+      ],
+      "page": "review/shop.html?id=magnitude-esaka",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "Mrs.Mermaid 新大阪ルーム（ミセスマーメイド）",
+      "site": "review",
+      "area": "新大阪",
+      "genre": "メンズエステ",
+      "open": "2026-10-28",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://www.mrsmermaid.net/"
+      ],
+      "page": "review/shop.html?id=mrsmermaid-shinosaka",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "EUPHORIA 目黒ルーム（ユーフォリア）",
+      "site": "review",
+      "area": "目黒",
+      "genre": "メンズエステ",
+      "open": "2026-11-11",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://euphoria-esthe.com/"
+      ],
+      "page": "review/shop.html?id=euphoria-meguro",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "EUPHORIA 恵比寿ルーム（ユーフォリア）",
+      "site": "review",
+      "area": "恵比寿",
+      "genre": "メンズエステ",
+      "open": "2026-11-11",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://euphoria-esthe.com/"
+      ],
+      "page": "review/shop.html?id=euphoria-ebisu",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "MAISON de Aroma（メゾンドアロマ）",
+      "site": "review",
+      "area": "錦糸町",
+      "genre": "メンズエステ",
+      "open": "2026-11-10",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://maison-de-aroma.com/"
+      ],
+      "page": "review/shop.html?id=maison-de-aroma-kinshicho",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "小悪魔Spa Tokyo 立川ルーム（こあくまスパ）",
+      "site": "review",
+      "area": "立川",
+      "genre": "メンズエステ",
+      "open": "2026-11-09",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://mens-esthe-aroma.site/"
+      ],
+      "page": "review/shop.html?id=koakuma-spa-tachikawa",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "CRYSTAL（クリスタル）",
+      "site": "review",
+      "area": "千歳烏山",
+      "genre": "メンズエステ",
+      "open": "2026-11-09",
+      "status": "drafted",
+      "found": "2026-11-12",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://crystal-esthe.net/"
+      ],
+      "page": "review/shop.html?id=crystal-chitosekarasuyama",
+      "drafted": "2026-11-12"
+    },
+    {
+      "name": "Tart（タルト）",
+      "site": "review",
+      "area": "高槻",
+      "genre": "メンズエステ",
+      "open": "2026-08-21",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "fate（フェイト）",
+      "site": "review",
+      "area": "梅田",
+      "genre": "メンズエステ",
+      "open": "2026-08-17",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "CURE CELEB（キュアセレブ）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-08-05",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "Mrs.Amour Spa（ミセスアムールスパ）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "2026-07-20",
+      "status": "listed",
+      "found": "2026-11-12",
+      "source": [
+        "https://osaka.refle.info/newopen.html"
+      ],
+      "note": "オープンから約3ヶ月以上経過のためリスト化のみ"
+    },
+    {
+      "name": "LEALYS（リアリス）",
+      "site": "bar",
+      "area": "歌舞伎町",
+      "genre": "キャバクラ",
+      "open": "2026-12-03（予定・年は掲載時期から判断）",
+      "address": "東京都新宿区歌舞伎町2-26-3 互福ビル1F",
+      "status": "drafted",
+      "found": "2026-11-15",
+      "page": "kabuki-c01.html",
+      "source": [
+        "https://www.caba2.net/s/11905",
+        "https://www.caba2.net/tokyo/_list?industry%5B0%5D=1"
+      ],
+      "drafted": "2026-11-15"
+    },
+    {
+      "name": "VIVIA LOUNGE（ビビアラウンジ）",
+      "site": "bar",
+      "area": "上野",
+      "genre": "キャバクラ",
+      "open": "2026-10（日付不明）",
+      "address": "東京都台東区上野2-12-16 小島ビル5F",
+      "status": "drafted",
+      "found": "2026-11-15",
+      "page": "ueno-c10.html",
+      "source": [
+        "https://www.caba2.net/s/12237",
+        "https://www.caba2.net/tokyo/_list?industry%5B0%5D=1"
+      ],
+      "drafted": "2026-11-15"
+    },
+    {
+      "name": "CLUB VISION（ヴィジョン）",
+      "site": "bar",
+      "area": "練馬",
+      "genre": "キャバクラ",
+      "open": "12月（予定・日付不明）",
+      "address": "東京都練馬区豊玉北5-22-10 コンフォートX 2F",
+      "status": "listed",
+      "found": "2026-11-15",
+      "source": [
+        "https://www.caba2.net/s/12316"
+      ],
+      "memo": "対象エリア外（練馬）のためリスト化のみ"
+    },
+    {
+      "name": "NOT A LOUNGE 12（ノット ア ラウンジ トゥエルブ）",
+      "site": "bar",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "open": "不明（2026-11-13新規掲載）",
+      "address": "大阪府大阪市中央区宗右衛門町2-21 ARTEMIS 3F",
+      "status": "listed",
+      "found": "2026-11-15",
+      "source": [
+        "https://www.caba2.net/s/12368"
+      ],
+      "memo": "オープン日が確認できないためリスト化のみ"
+    },
+    {
+      "name": "NAMEX SPA 新井薬師ルーム（ネイメックススパ）",
+      "area": "新井薬師前（中野区）",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-16",
+      "found": "2026-11-16",
+      "status": "drafted",
+      "page": "review/shop.html?id=namex-araiyakushi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "CLUB HORUS（ホルス）",
+      "area": "北新地",
+      "genre": "ニュークラブ",
+      "site": "bar",
+      "open": "不明",
+      "found": "2026-11-16",
+      "status": "listed",
+      "memo": "一覧に「NEW OPEN」等の表記あり。詳細ページを取得できずオープン日・住所未確認のためリスト化のみ",
+      "source": [
+        "https://www.caba2.net/osaka/_list",
+        "https://www.caba2.net/osaka/kitashinchi/kitashinchi/horus"
+      ]
+    },
+    {
+      "name": "Club Neptune（ネプチューン）",
+      "area": "ミナミ",
+      "genre": "キャバクラ",
+      "site": "bar",
+      "open": "不明",
+      "found": "2026-11-16",
+      "status": "listed",
+      "memo": "一覧に「NEW OPEN」等の表記あり。詳細ページを取得できずオープン日・住所未確認のためリスト化のみ",
+      "source": [
+        "https://www.caba2.net/osaka/_list",
+        "https://www.caba2.net/osaka/minami/minami/neptune"
+      ]
+    },
+    {
+      "name": "LUNA（ルナ）",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-15",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=luna-sakaisuji",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "むちむちお姉さん 蒲田店（むちむちおねえさん）",
+      "area": "蒲田",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-18",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=muchimuchi-kamata",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "SELECT+ 西葛西ルーム（セレクトプラス）",
+      "area": "西葛西",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=selectplus-nishikasai",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "WHITE ROOM 板橋ルーム（ホワイトルーム）",
+      "area": "板橋",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-12",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=whiteroom-itabashi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Mellow 大塚ルーム（メロウ）",
+      "area": "大塚",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=mellow-otsuka",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Mellow 日暮里ルーム（メロウ）",
+      "area": "日暮里",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=mellow-nippori",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Heaven's Road（ヘブンズロード）",
+      "area": "立川",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-18",
+      "status": "drafted",
+      "page": "review/shop.html?id=heavensroad-tachikawa",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "Aroma Rize（アロマリゼ）",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-09",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=aromarize-sannomiya",
+      "source": [
+        "https://kobe.refle.info/newopen.html",
+        "https://kobe.refle.info/shop/aroma-rize/"
+      ]
+    },
+    {
+      "name": "RINGEL（リンジェル）",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-01",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=ringel-sannomiya",
+      "source": [
+        "https://kobe.refle.info/newopen.html",
+        "https://kobe.refle.info/shop/ringelmenseste/"
+      ]
+    },
+    {
+      "name": "Nia spa（ニアスパ）",
+      "area": "池袋",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-20",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=niaspa-ikebukuro",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://niaspa.shop/"
+      ]
+    },
+    {
+      "name": "ROSÉ SPA 八王子ルーム（ロゼスパ）",
+      "area": "八王子",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-12-01",
+      "found": "2026-11-19",
+      "status": "drafted",
+      "page": "review/shop.html?id=rosespa-hachioji",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&pref=13",
+        "https://rosespa-tokyo.com/"
+      ]
+    },
+    {
+      "name": "Muse（ミューズ）",
+      "site": "bar",
+      "area": "歌舞伎町",
+      "genre": "ラウンジ",
+      "open": "2026-10-01",
+      "address": "東京都新宿区歌舞伎町2-21-4 三経ビル21 B1",
+      "status": "drafted",
+      "found": "2026-11-19",
+      "page": "kabuki-l01.html",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/m4/a10000/shop24640/",
+        "https://www.pokepara-tainew.jp/tokyo/m4/a10000/tg_19/",
+        "https://a-muse-lounge.jp/"
+      ],
+      "drafted": "2026-11-19"
+    },
+    {
+      "name": "VINTAGE CLUB PABLO（パブロ）",
+      "site": "bar",
+      "area": "歌舞伎町",
+      "genre": "ガールズラウンジ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-19",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/m4/a10000/tg_19/"
+      ],
+      "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "GIRLS BAR SIRIUS（シリウス）",
+      "site": "bar",
+      "area": "吉祥寺",
+      "genre": "ガールズバー",
+      "open": "2026-11-01",
+      "status": "listed",
+      "found": "2026-11-19",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/tg_19/"
+      ],
+      "note": "新店一覧に掲載。詳細ページを取得できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "おふくろさん 別館 練馬店（おふくろさん）",
+      "area": "練馬",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-23",
+      "found": "2026-11-20",
+      "status": "drafted",
+      "page": "review/shop.html?id=ofukurosan-nerima",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://ofukurosan-nerima.com/"
+      ]
+    },
+    {
+      "name": "いちゃZOOO 大井町ルーム（いちゃズー）",
+      "area": "大井町",
+      "genre": "メンズエステ",
+      "site": "review",
+      "open": "2026-11-16",
+      "found": "2026-11-20",
+      "status": "drafted",
+      "page": "review/shop.html?id=ichazooo-oimachi",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1",
+        "https://ichazooo.com/"
+      ]
+    },
+    {
+      "name": "マーメイドSPA",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/51654/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "CHARMIA（シャルミア）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/51349/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "Elsia Spa（エルシアスパ）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/49273/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "First class〜Platinum〜 三宮店",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://menesth.jp/26/area132/",
+        "https://menesth.jp/26/shop/50331/"
+      ],
+      "note": "一覧にオープン記念表記あり。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "北新地ツバキラウンジ",
+      "site": "bar",
+      "area": "北新地",
+      "genre": "ラウンジ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-21",
+      "source": [
+        "https://note.com/gomachan_0327/n/n7e21360d5ef7"
+      ],
+      "note": "検索結果のタイトルで新店舗として確認のみ。ページ取得ができず、住所・オープン日など未確認のためカード未作成"
+    },
+    {
+      "name": "2時間の癒し（にじかんのいやし）",
+      "site": "review",
+      "area": "心斎橋",
+      "genre": "メンズエステ",
+      "open": "2026-11-10",
+      "status": "drafted",
+      "found": "2026-11-22",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/nijikannoiyashi/"
+      ],
+      "note": "一覧ページの公開情報（最寄り駅・営業時間・オープン日）のみで作成。住所・女子給は未確認"
+    },
+    {
+      "name": "lotus（ロータス）",
+      "site": "review",
+      "area": "泉佐野",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "なまえすて",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "ミセス出来心",
+      "site": "review",
+      "area": "日本橋",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://osaka.refle.info/newshop.html"
+      ],
+      "note": "新規掲載一覧に更新日のみ記載。オープン日・詳細を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "フルーツコレクション",
+      "site": "review",
+      "area": "秋葉原",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=fruitscollection-akihabara"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "SPA GLORIA（スパグロリア）",
+      "site": "review",
+      "area": "国分寺",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=spagloria-kokubunji"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "ADAMAS（アダマス）",
+      "site": "review",
+      "area": "中野",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=adamas-nakano"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "VERMOUTH 亀戸ルーム（ベルモット）",
+      "site": "review",
+      "area": "亀戸",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=vermouth-kameido"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "VERMOUTH 府中ルーム（ベルモット）",
+      "site": "review",
+      "area": "府中",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=vermouth-fuchu"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "Dejavu Tokyo（デジャヴ東京）",
+      "site": "review",
+      "area": "麻布十番",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=dejavu-tokyo-azabujuban"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "ELTERAS（エルテラス）",
+      "site": "review",
+      "area": "東新宿",
+      "genre": "メンズエステ",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-23",
+      "source": [
+        "https://www.ms-guide.jp/news/?vm=pc",
+        "https://www.ms-guide.jp/shop/detail.php?id=elteras-higashishinjuku"
+      ],
+      "note": "新規掲載一覧に掲載日のみ記載。オープン日・新規開店の明示を確認できず作成見送り（listedのまま）"
+    },
+    {
+      "name": "Bar Avalanche（アバランチ）",
+      "site": "jobs",
+      "area": "十三",
+      "genre": "ガールズバー",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://www.gb-walker.jp/recruit/kansai/list-shop/kodawari/newopen/",
+        "https://www.gb-walker.jp/recruit/kansai/shop/avalanche/"
+      ],
+      "note": "新店一覧に掲載。オープン日・営業時間・時給の記載なく作成見送り（listedのまま）"
+    },
+    {
+      "name": "BABAR（ババール）",
+      "site": "jobs",
+      "area": "尼崎・立花",
+      "genre": "ガールズバー",
+      "open": "",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://www.gb-walker.jp/recruit/kansai/list-shop/kodawari/newopen/",
+        "https://www.gb-walker.jp/recruit/kansai/shop/babar11/"
+      ],
+      "note": "新店一覧に掲載。オープン日の記載なし、対象エリア外（尼崎）のため作成見送り"
+    },
+    {
+      "name": "上野 LIRIC TOKYO UENO（リリック）",
+      "site": "jobs",
+      "area": "上野",
+      "genre": "キャバクラ",
+      "open": "2026-07-21",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://note.com/gomachan_0327/n/nb82ffa9ea069"
+      ],
+      "note": "2026年7月グランドオープンで直近1〜2ヶ月の新店に当たらないため作成見送り"
+    },
+    {
+      "name": "ZAURUS（ザウルス）",
+      "site": "jobs",
+      "area": "北新地",
+      "genre": "キャバクラ",
+      "open": "不明",
+      "address": "大阪市北区曾根崎新地1-5-29 ESPACE北新地ONE 5F",
+      "status": "listed",
+      "found": "2026-11-24",
+      "source": [
+        "https://www.caba2.net/osaka/kitashinchi/_list"
+      ],
+      "note": "一覧に「新店舗」表記あり。オープン日・求人条件は未確認（詳細ページ取得できず）"
+    },
+    {
+      "name": "anemore（アネモア）",
+      "site": "review",
+      "area": "銀座",
+      "genre": "メンズエステ",
+      "open": "2026-12-01（予定）",
+      "status": "drafted",
+      "found": "2026-11-25",
+      "drafted": "2026-11-25",
+      "page": "review/shop.html?id=anemore-ginza",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1"
+      ]
+    },
+    {
+      "name": "CIRCUS Lounge Tokyo（サーカスラウンジトーキョー）",
+      "site": "bar",
+      "area": "六本木・西麻布",
+      "genre": "ラウンジ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-25",
+      "note": "新着掲載のみでオープン日未確認のため作成見送り",
+      "source": [
+        "https://castwalker.jp/kanto/newopen/"
+      ]
+    },
+    {
+      "name": "WHITE ROSE（ホワイトローズ）",
+      "site": "bar",
+      "area": "浅草",
+      "genre": "ラウンジ",
+      "open": "2026-10-01（一覧の記載）",
+      "status": "listed",
+      "found": "2026-11-25",
+      "note": "新着一覧のみで住所・給与など詳細ページを確認できず作成見送り",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/tg_19/"
+      ]
+    },
+    {
+      "name": "Bishuka（ビシュカ）",
+      "site": "bar",
+      "area": "浅草",
+      "genre": "ガールズバー",
+      "open": "2026-10-01（一覧の記載）",
+      "status": "listed",
+      "found": "2026-11-25",
+      "note": "新着一覧のみで住所・給与など詳細ページを確認できず作成見送り",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/tg_19/"
+      ]
+    },
+    {
+      "name": "O-RA TOKYO（オーラトウキョウ）",
+      "site": "bar",
+      "area": "神田",
+      "genre": "ガールズバー",
+      "open": "10月（年記載なし）",
+      "status": "listed",
+      "found": "2026-11-25",
+      "note": "新着一覧のみで住所・給与など詳細ページを確認できず作成見送り",
+      "source": [
+        "https://www.pokepara-tainew.jp/tokyo/tg_19/"
+      ]
+    }
+  ]
 }
