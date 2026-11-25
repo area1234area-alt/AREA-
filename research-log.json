@@ -1977,6 +1977,48 @@
       "source": [
         "https://www.pokepara-tainew.jp/tokyo/tg_19/"
       ]
+    },
+    {
+      "name": "MOTEJO（モテジョ）",
+      "site": "review",
+      "area": "京橋ほか（複数エリア）",
+      "genre": "メンズエステ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-26",
+      "source": [
+        "https://osaka.refle.info/G0001/",
+        "https://osaka.refle.info/shop/motejo/"
+      ],
+      "note": "一覧に「NEW OPEN」割引の記載のみ。オープン日・詳細未確認のためlisted"
+    },
+    {
+      "name": "YOLU SPA Mrs店（ヨルスパミセス）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-26",
+      "source": [
+        "https://osaka.refle.info/G0001/",
+        "https://osaka.refle.info/shop/mrs-yoluspa/"
+      ],
+      "note": "一覧に「GRAND OPEN」記載のみ。オープン日・詳細未確認のためlisted"
+    },
+    {
+      "name": "Office Lady（オフィスレディ）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "不明",
+      "status": "listed",
+      "found": "2026-11-26",
+      "source": [
+        "https://osaka.refle.info/G0001/",
+        "https://osaka.refle.info/shop/officelady-osaka/"
+      ],
+      "note": "一覧に「オープン記念」クーポン記載のみ。オープン日・詳細未確認のためlisted"
     }
   ]
 }
