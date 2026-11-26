@@ -2019,6 +2019,20 @@
         "https://osaka.refle.info/shop/officelady-osaka/"
       ],
       "note": "一覧に「オープン記念」クーポン記載のみ。オープン日・詳細未確認のためlisted"
+    },
+    {
+      "name": "Sugar＆Salt（シュガーソルト）",
+      "site": "review",
+      "area": "京橋",
+      "genre": "メンズエステ",
+      "open": "2026-11-21",
+      "status": "drafted",
+      "found": "2026-11-26",
+      "source": [
+        "https://osaka.refle.info/newopen.html",
+        "https://osaka.refle.info/shop/sugarsalt/"
+      ],
+      "note": "一覧ページの公開情報（オープン日・最寄り駅・営業時間）でカード作成。詳細ページは未取得（施術形式・女子給は未確認）"
     }
   ]
 }
