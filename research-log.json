@@ -2033,6 +2033,36 @@
         "https://osaka.refle.info/shop/sugarsalt/"
       ],
       "note": "一覧ページの公開情報（オープン日・最寄り駅・営業時間）でカード作成。詳細ページは未取得（施術形式・女子給は未確認）"
+    },
+    {
+      "name": "aromiu（アロミュー）",
+      "site": "review",
+      "area": "神戸・三宮",
+      "genre": "メンズエステ",
+      "open": "2026-11-26",
+      "status": "drafted",
+      "found": "2026-11-27",
+      "drafted": "2026-11-27",
+      "page": "review/shop.html?id=aromiu-sannomiya",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&region=kansai"
+      ],
+      "note": "一覧ページの公開情報（オープン日・最寄り駅・営業時間・形態）でカード作成。公式サイトは今回未取得（住所・女子給は未確認）"
+    },
+    {
+      "name": "YOLU SPA PREMIUM（ヨルスパ プレミアム）",
+      "site": "review",
+      "area": "堺",
+      "genre": "メンズエステ",
+      "open": "2026-11-21",
+      "status": "drafted",
+      "found": "2026-11-27",
+      "drafted": "2026-11-27",
+      "page": "review/shop.html?id=yoluspa-premium-sakai",
+      "source": [
+        "https://mens-mg.com/newshop.php?p=1&region=kansai"
+      ],
+      "note": "一覧ページの公開情報（オープン日・最寄り駅・営業時間・形態）でカード作成。公式サイトは今回未取得（住所・女子給は未確認）"
     }
   ]
 }
