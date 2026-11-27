@@ -2106,6 +2106,38 @@
         "https://note.com/gomachan_0327/n/n3fae858a0df3"
       ],
       "note": "直近1〜2ヶ月のオープンではないためリスト化のみ"
+    },
+    {
+      "name": "銀座 CLUB Ulu GINZA（ウル）",
+      "site": "bar",
+      "area": "銀座",
+      "genre": "高級クラブ",
+      "open": "2026-11（日付未確認）",
+      "address": "東京都中央区銀座7-7-12 ZXビル7F・8F",
+      "status": "drafted",
+      "found": "2026-11-28",
+      "drafted": "2026-11-28",
+      "page": "ginza-c02.html",
+      "source": [
+        "https://note.com/gomachan_0327/n/ne390e1b2e334"
+      ],
+      "note": "出典は第三者の紹介記事のみ（公式サイト・電話番号は未確認）。日給・営業時間は記事記載どおり"
+    },
+    {
+      "name": "銀座 club ES（エス）",
+      "site": "bar",
+      "area": "銀座",
+      "genre": "高級クラブ",
+      "open": "2026-10-13",
+      "address": "東京都中央区銀座7-7-12 ZXビル5F",
+      "status": "drafted",
+      "found": "2026-11-28",
+      "drafted": "2026-11-28",
+      "page": "ginza-c03.html",
+      "source": [
+        "https://note.com/gomachan_0327/n/n91869d5f9001"
+      ],
+      "note": "出典は第三者の紹介記事のみ（公式サイト・電話番号は未確認）。日給・営業時間は記事記載どおり"
     }
   ]
 }
