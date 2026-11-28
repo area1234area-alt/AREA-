@@ -2138,6 +2138,93 @@
         "https://note.com/gomachan_0327/n/n91869d5f9001"
       ],
       "note": "出典は第三者の紹介記事のみ（公式サイト・電話番号は未確認）。日給・営業時間は記事記載どおり"
+    },
+    {
+      "name": "CLUB HORUS MINAMI（ホルス ミナミ）",
+      "site": "bar",
+      "area": "ミナミ",
+      "genre": "ニュークラブ",
+      "open": "2026-10-29",
+      "address": "大阪府大阪市中央区東心斎橋2-8-5 ニューグランドビルB1F",
+      "status": "drafted",
+      "found": "2026-11-28",
+      "drafted": "2026-11-28",
+      "page": "minami-c08.html",
+      "source": [
+        "https://www.caba2.net/osaka/minami/minami/horus",
+        "https://www.horus-minami.com/"
+      ],
+      "note": "リニューアルオープン（10/29、年はページ上の11/29日曜の店休告知から2026年と判断）。北新地のCLUB HORUS（listed）とは別店舗。時給・営業時間は掲載どおり"
+    },
+    {
+      "name": "Relafull（リラフル）",
+      "site": "review",
+      "area": "堺筋本町",
+      "genre": "メンズエステ",
+      "open": "",
+      "address": "大阪市中央区材木町",
+      "status": "listed",
+      "found": "2026-11-28",
+      "source": [
+        "https://osaka.refle.info/shop/relafull/"
+      ],
+      "note": "オープン日の記載なし。長堀橋店の告知あり（詳細未確認）。新店か未確認のためlisted"
+    },
+    {
+      "name": "THE MARRIOTT（マリオット）",
+      "site": "bar",
+      "area": "王子",
+      "genre": "キャバクラ",
+      "open": "",
+      "address": "東京都北区王子1-6-7 中川ビルB1",
+      "status": "listed",
+      "found": "2026-11-28",
+      "source": [
+        "https://castwalker.jp/kanto/newopen/"
+      ],
+      "note": "NEW OPEN一覧に掲載。オープン日・求人条件未確認"
+    },
+    {
+      "name": "THE IMPERIAL CLUB（インペリアルクラブ）",
+      "site": "bar",
+      "area": "駒込（北区中里）",
+      "genre": "ラウンジ",
+      "open": "",
+      "address": "東京都北区中里1-6-4 ラ・ガール駒込2F",
+      "status": "listed",
+      "found": "2026-11-28",
+      "source": [
+        "https://castwalker.jp/kanto/newopen/"
+      ],
+      "note": "NEW OPEN一覧に掲載。オープン日・求人条件未確認"
+    },
+    {
+      "name": "スナック・ラウンジ Louvre（ルーブル）",
+      "site": "bar",
+      "area": "赤羽",
+      "genre": "スナック",
+      "open": "",
+      "address": "東京都北区赤羽1-36-7 第3ヒロビル4F",
+      "status": "listed",
+      "found": "2026-11-28",
+      "source": [
+        "https://castwalker.jp/kanto/newopen/"
+      ],
+      "note": "NEW OPEN一覧に掲載。オープン日・求人条件未確認"
+    },
+    {
+      "name": "CAFE&BAR N°19（ナンバージューク）",
+      "site": "bar",
+      "area": "中野",
+      "genre": "ガールズバー",
+      "open": "",
+      "address": "東京都中野区中野5-46-4 慶ビル201",
+      "status": "listed",
+      "found": "2026-11-28",
+      "source": [
+        "https://castwalker.jp/kanto/newopen/"
+      ],
+      "note": "NEW OPEN一覧に掲載。オープン日・求人条件未確認"
     }
   ]
 }
