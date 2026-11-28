@@ -982,6 +982,23 @@
   /* ロゴ画像のお店も写真枠の高さを他のお店とそろえる（ロゴは枠の中に収めて表示） */
   .job-card.photo-card .dc-ph.logo{aspect-ratio:16/10 !important;background-color:#0B0A0D}
   .job-card.photo-card .dc-ph.logo img{object-fit:cover}
+
+  /* ===== 課長（案内役キャラクター） ===== */
+  .ph{display:inline-block}
+  .kc-hero-img{aspect-ratio:3 / 1 !important;object-fit:cover}
+  .kc-intro{display:flex;align-items:flex-start;gap:12px;max-width:560px;margin:0 auto 18px;text-align:left}
+  .kc-intro img{width:84px;height:84px;flex:0 0 84px;border-radius:50%;display:block}
+  .kc{display:flex;align-items:flex-start;gap:10px;max-width:640px;margin:-4px 0 16px}
+  .kc img{width:56px;height:56px;flex:0 0 56px;border-radius:50%;display:block}
+  .kc-bub{position:relative;flex:1;min-width:0;background:#1B1720;border:1px solid rgba(232,203,122,.45);border-radius:14px;padding:10px 14px;color:#F4ECE0;font-size:clamp(.84rem,3.6vw,.95rem);line-height:1.75}
+  .kc-bub::before{content:"";position:absolute;left:-8px;top:18px;width:14px;height:14px;background:#1B1720;border-left:1px solid rgba(232,203,122,.45);border-bottom:1px solid rgba(232,203,122,.45);transform:rotate(45deg)}
+  .kc-bub b{display:block;font-size:.72rem;letter-spacing:.12em;color:#FF5FB8;margin-bottom:2px}
+  .kc-bub p{margin:0 !important;color:#F4ECE0 !important;letter-spacing:.02em !important;line-height:1.75 !important}
+  .kc-bub-lg{font-size:clamp(.86rem,3.7vw,1rem)}
+  .kc-bub .kc-catch{margin-top:6px !important;font-weight:700;color:#FFD84D !important}
+  .section:not(#columns) .kc-bub{background:#fff;color:#2a2228;border-color:#E7C9DA}
+  .section:not(#columns) .kc-bub::before{background:#fff;border-color:#E7C9DA}
+  .section:not(#columns) .kc-bub p{color:#2a2228 !important}
 </style>
 <link rel="stylesheet" href="round.css">
 
@@ -1095,11 +1112,12 @@
   <!-- 差し替え方法: 下のimgタグのsrc(data:image/jpeg;base64,...)を新しい画像に置き換えてください。
        見せたい位置は上のCSS .hero の --hero-pos で調整できます。画像はスマホでは縦長に切り取られて表示されます。 -->
   <section class="hero">
-    <picture><source type="image/webp" srcset="img/top/hero-480.webp 480w, img/top/hero-800.webp 800w, img/top/hero-1200.webp 1200w, img/top/hero-1536.webp 1536w" sizes="(max-width: 1100px) 100vw, 1100px"><img class="hero-img" src="img/top/hero-1536.jpg" srcset="img/top/hero-480.jpg 480w, img/top/hero-800.jpg 800w, img/top/hero-1200.jpg 1200w, img/top/hero-1536.jpg 1536w" sizes="(max-width: 1100px) 100vw, 1100px" width="1536" height="1024" fetchpriority="high" decoding="async" alt="Area 求人サイト｜ナイトワーク専門の求人サイト。あなたにぴったりの輝けるお仕事を。"></picture>
+    <picture><source type="image/webp" srcset="img/kacho/banner-800.webp 800w, img/kacho/banner-1536.webp 1536w, img/kacho/banner-2172.webp 2172w" sizes="(max-width: 1100px) 100vw, 1100px"><img class="hero-img kc-hero-img" src="img/kacho/banner-1536.jpg" srcset="img/kacho/banner-800.jpg 800w, img/kacho/banner-1536.jpg 1536w" sizes="(max-width: 1100px) 100vw, 1100px" width="1536" height="512" fetchpriority="high" decoding="async" alt="ナイトワーク探すなら課長｜Area"></picture>
     <div class="hero-scrim"></div>
     <div class="hero-copy">
-      <div class="hc-eyebrow">Night Work Recruit</div>
-      <h1>自分に合う夜のお仕事を、<br>ここから。</h1>
+      <div class="kc-intro"><picture><source type="image/webp" srcset="img/kacho/kacho-320.webp 1x, img/kacho/kacho-640.webp 2x"><img src="img/kacho/kacho-160.png" width="96" height="96" alt="Areaの案内役・課長" decoding="async"></picture><div class="kc-bub kc-bub-lg"><b>案内役の課長です</b><p><span class="ph">会社では期待されず、</span><span class="ph">家では相手にされず、</span><span class="ph">夜の街では</span><span class="ph">頼りにされるおっちゃんや。</span></p><p class="kc-catch"><span class="ph">出世は諦めたけど、</span><span class="ph">アナタの稼ぎは</span><span class="ph">諦めへん。</span></p></div></div>
+      <div class="hc-eyebrow">Area × 課長</div>
+      <h1>夜のお仕事探しは、<br>課長に聞いて。</h1>
       <div class="hc-orn"><span></span><b></b><span></span></div>
       <p id="rgHeroText">関西・関東のナイトワーク求人を、エリアと職種から探せます。<br>応募は各お店へ直接。</p>
       <div class="hero-actions">
@@ -1127,6 +1145,8 @@
         <h2 style="color:#F4ECE0;margin-bottom:8px">働く前に読むと、失敗しない。</h2>
         <p style="color:#B7AEA6">働き方やお給料のしくみを、Area編集部がお店ごとにまとめました。</p>
       </div>
+      <div class="kc"><picture><source type="image/webp" srcset="img/kacho/kacho-160.webp 1x, img/kacho/kacho-320.webp 2x"><img src="img/kacho/kacho-160.png" width="56" height="56" alt="課長" loading="lazy" decoding="async"></picture><div class="kc-bub"><b>課長のひとこと</b><p><span class="ph">面接の前に</span><span class="ph">3分だけ読んどき。</span><span class="ph">知らんと損する話、</span><span class="ph">まとめといたで。</span></p></div></div>
+
       <div id="colBox"></div>
     </div>
   </section>
@@ -1145,6 +1165,8 @@
         <h2>🚉 人気エリアで探す</h2>
         <p>エリアを選ぶと、そのエリアの求人一覧ページが開きます。求人がまだないエリアは「準備中」と表示しています。</p>
       </div>
+      <div class="kc"><picture><source type="image/webp" srcset="img/kacho/kacho-160.webp 1x, img/kacho/kacho-320.webp 2x"><img src="img/kacho/kacho-160.png" width="56" height="56" alt="課長" loading="lazy" decoding="async"></picture><div class="kc-bub"><b>課長のひとこと</b><p><span class="ph">通いやすい場所で</span><span class="ph">選ぶのが、</span><span class="ph">長続きのいちばんの</span><span class="ph">コツやで。</span></p></div></div>
+
       <h3 class="area-region rg-only-kanto">関東</h3>
       <div class="area-pill-grid rg-only-kanto">
         <a class="area-pill" href="#jobs"><span>歌舞伎町</span><span class="chev">›</span></a>
@@ -1199,6 +1221,8 @@
         <h2>新着の体験入店求人</h2>
         <p>最新の求人情報です。応募は各店舗の窓口へ直接行う形に切り替え中です。</p>
       </div>
+      <div class="kc"><picture><source type="image/webp" srcset="img/kacho/kacho-160.webp 1x, img/kacho/kacho-320.webp 2x"><img src="img/kacho/kacho-160.png" width="56" height="56" alt="課長" loading="lazy" decoding="async"></picture><div class="kc-bub"><b>課長のひとこと</b><p><span class="ph">気になるお店は、</span><span class="ph">まず体入で</span><span class="ph">試してみ。</span><span class="ph">合わへんかったら、</span><span class="ph">次いったらええ。</span></p></div></div>
+
       <div class="job-filter" id="jobFilter" hidden>
         <span id="jobFilterText"></span>
         <button type="button" id="jobFilterClear">条件をクリア</button>
@@ -1246,6 +1270,8 @@
         <h2>Areaが選ばれる理由</h2>
         <p>はじめてのナイトワーク探しでも迷わないように、必要な情報だけをシンプルに。</p>
       </div>
+      <div class="kc"><picture><source type="image/webp" srcset="img/kacho/kacho-160.webp 1x, img/kacho/kacho-320.webp 2x"><img src="img/kacho/kacho-160.png" width="56" height="56" alt="課長" loading="lazy" decoding="async"></picture><div class="kc-bub"><b>課長のひとこと</b><p><span class="ph">Areaは</span><span class="ph">お店を紹介せえへん。</span><span class="ph">アナタが自分で</span><span class="ph">選べるように、</span><span class="ph">情報を並べてるだけや。</span></p></div></div>
+
       <div class="feature-grid">
         <div class="feature">
           <div class="feature-num">01</div>
